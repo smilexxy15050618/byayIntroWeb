@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ${CICD_GIT_REPO_NAME}
+  labels:
+    app: ${CICD_GIT_REPO_NAME}
+spec:
+  ports:
+  - name: port
+    protocol: TCP
+    port: 6003
+  selector:
+    app: ${CICD_GIT_REPO_NAME}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${CICD_GIT_REPO_NAME}
+  labels:
+    app: ${CICD_GIT_REPO_NAME}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ${CICD_GIT_REPO_NAME}
+  template:
+    metadata:
+      labels:
+        app: ${CICD_GIT_REPO_NAME}
+    spec:
+      containers:
+      - name: ${CICD_GIT_REPO_NAME}
+        image: ${CICD_IMAGE}:${CICD_GIT_COMMIT}
+        env:
+          - name: API_ENV
+            valueFrom:
+              secretKeyRef:
+                name: active-profile
+                key: ACTIVE_PROFILE

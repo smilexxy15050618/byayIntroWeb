@@ -1,0 +1,13 @@
+export { default as Banner } from './banner';
+export { default as BannerImg } from './banner-img';
+export { default as PromotionBannerImg } from './promotion-banner-img';
+export { default as Intro } from './intro';
+export { default as Title } from './title';
+export { default as Support } from './support';
+export { default as SupportMD } from './support_md';
+export { default as OperateCard } from './operate';
+export { default as DemandCard } from './demand';
+export { default as Guarantee } from './guarantee';
+export { default as Deploy } from './deploy';
+export { default as Contact } from './contact';
+export { default as BaiduApplication } from './baidu-application';
