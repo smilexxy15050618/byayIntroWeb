@@ -25,6 +25,7 @@ const BG = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/
 const BG_BALL = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/bg/ball.png';
 const BG_BOTTLE = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/bg/bottle.png';
 
+
 const BASE_URL_MOBILE = [
   'https://cdn.byai.com/static/intro/img/retail/mobile_old_banner.png',
   'https://cdn.byai.com/static/intro/img/retail/mobile_banner_1.png',
@@ -87,6 +88,7 @@ const CarouselWrapper = styled.div`
 
   .carousel-indicators {
     bottom: ${calWidthAndHeight(32)};
+    background:red;
   }
 
   .main-title {
@@ -296,7 +298,8 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
       <Visible md lg xl xxl xxxl>
         <div className="carousel-body">
           <img className="carousel-bg-ball" src={BG_BALL} />
-          <Carousel style={{ width: '100%' }} controls={false} indicators={false} interval={1000}>
+          <Carousel fade style={{ width: '100%' }} 
+          interval={1000}>
             <Carousel.Item className="main-container">
               <div className="main-title">百应智能用户运营平台</div>
               <div>用AI助力构建ToC长期信任关系</div>
@@ -329,6 +332,11 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
                 }}>
                 免费体验 <AngleRight />
               </div>
+            </Carousel.Item>
+
+
+            <Carousel.Item >
+                123123
             </Carousel.Item>
           </Carousel>
         </div>
