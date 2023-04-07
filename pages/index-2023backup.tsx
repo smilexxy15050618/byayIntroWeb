@@ -4,7 +4,7 @@ import CustomerIconsBlock from '../src/components/common/CustomerIconsBlock';
 import Advantage from '../src/components/homepage/version2023/advantage';
 import CustomerWords from '../src/components/homepage/version2023/CustomerWords';
 import Solution from '../src/components/homepage/version2023/Solution';
-import { IndustryCarousel } from '../src/components/IndustryCarousel-2023';
+import { IndustryCarousel } from '../src/components/IndustryCarousel-2022';
 import { Layout } from '../src/components/Layout';
 import { FormType } from '../src/components/TryForm';
 import VideoList from '../src/components/videoList';
