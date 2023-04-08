@@ -13,164 +13,50 @@ interface ICarouselProps {
   style?: CSSProperties;
 }
 
-const CardContent = styled.div`
-  flex: 1;
-  padding: 40px 24px 0;
-  @media (max-width: 768px) {
-    padding: 30px 18px 0;
-  }
-  position: relative;
-  .customer-words-icon {
-    margin-bottom: 24px;
-    width: 120px;
-    height: 40px;
-    background: #ffffff;
-    @media (max-width: 768px) {
-      margin-bottom: 20px;
-      width: 92px;
-      height: 30px;
-    }
-  }
-  .customer-words-desc {
-    height: 112px;
-    font-size: 16px;
-    font-family: PingFangSC-Regular, PingFang SC;
-    font-weight: 400;
-    color: rgba(10, 15, 44, 0.55);
-    line-height: 28px;
-    @media (max-width: 768px) {
-      font-size: 13px;
-      font-family: PingFangSC-Regular, PingFang SC;
-      font-weight: 400;
-      line-height: 20px;
-    }
-  }
-  .customer-words-name {
-    position: absolute;
-    bottom: 48px;
-    left: 24px;
-    height: 24px;
-    font-size: 18px;
-    font-family: PingFangSC-Regular, PingFang SC;
-    font-weight: 400;
-    color: #000000;
-    line-height: 24px;
-    @media (max-width: 768px) {
-      bottom: 32px;
-      left: 18px;
-      font-size: 14px;
-      line-height: 22px;
-    }
-  }
-`;
-const Card = styled.div<{ bg: string }>`
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  width: 385px;
-  height: 532px;
-  background: #ffffff;
-  box-shadow: 0px 0px 32px 1px rgba(101, 115, 133, 0.1);
-  border-radius: 8px;
-  margin-left: 32px;
-  transition: all 0.2s ease;
-  cursor:pointer;
-  &:hover{
-      box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12) !important;
-  }
-  @media (max-width: 768px) {
-    width: 295px;
-    height: 414px;
-    background: #ffffff;
-    border-radius: 6px;
-    margin-left: 0px;
-  }
-  @media (max-width: 768px) {
-  }
-  .customer-words-bg {
-    width: 385px;
-    height: 220px;
-    @media (max-width: 768px) {
-      width: 295px;
-      height: 168px;
-    }
-    background-position: top;
-    background-image: url(${props => props.bg});
-    background-size: auto 100%;
-  }
 
-  .customer-words-tag {
-    display: flex;
-    align-items: center;
-    img {
-      height: 16px;
-      line-height: 30px;
-      margin: 0 4px 0 0;
-    }
-    position: absolute;
-    padding-left: 13px;
-    top: 0;
-    left: 0;
-    width: 80px;
-    height: 30px;
-    background: #2b58f9;
-    border-radius: 8px 0px 9px 0px;
-    border: 0px solid #ffffff;
-    font-size: 14px;
-    font-family: PingFangSC-Regular, PingFang SC;
-    font-weight: 400;
-    color: #ffffff;
-    line-height: 30px;
-    @media (max-width: 768px) {
-      padding-left: 10px;
-      height: 24px;
-      line-height: 24px;
-      font-size: 12px;
-      width: 53px;
-      border-radius: 6px 0px 7px 0px;
-      img {
-        height: 12px;
-        line-height: 30px;
-        margin: 0 4px 0 0;
-      }
-    }
-  }
- 
-  .customer-words-bg {
-    transition: all 1.5s ease;
-  }
-  &:hover {
-    box-shadow: 0px 0px 32px 1px rgba(101, 115, 133, 0.2);
-    @media (max-width: 768px) {
-      box-shadow: 0px 0px 24px 1px rgba(101, 115, 133, 0.1);
-    }
 
-    .customer-words-bg {
-      background-size: auto 110%;
-    }
-  }
-`;
 const HoveUp = styled.div`
-    width:1200px;
-    margin:0 auto;
-  .hoer_bg_more{
-    transition:all 0.3s;
-    &:hover{
-      transform:translateY(-19px);
+           width: 1080px;
+           height: 440px;
+    .hoer_bg_more{
+        opacity: 1;
+        border-radius: 8px;
+      
+        box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
     }
-  }
 `
-const ArrowGroup = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 62px;
-  > * {
-    height: 48px;
-  }
-  cursor: pointer;
-`;
+const CardContent = styled.aside`
+    background:#fff;
+    display:flex;
+    position:relative;
+    .img_area{
+        right:0;
+       
+        img{
+          
+            margin:0;
+            transform: scale(1.03)
+        }
+    }
+    .text_area{
+        width:520px;
+        margin-top:65px;
+        margin-left:80px;
+        margin-right:86px;
+    }
+`
+const ArrowClick = styled.div`
+    width: 18.81px;
+    height: 36.19px;
+    opacity: 1;
+    background: rgba(90, 90, 90, 1);
+    align-self:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+    cursor:pointer;
+`
 
 const Arrow = styled.div`
   width: 48px;
@@ -188,53 +74,45 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
   const [controlledSwiper, setControlledSwiper] = useState(null);
   const [currIndex, setCurrIndex] = useState(0);
   return (
-    <div style={style}>
-      <HoveUp className='ssaaa'>
+    <div style={{width:'1200px',margin:'0 auto',display:'flex',justifyContent:'center'}}>
+        <ArrowClick style={{marginRight:30}}>
+            <span onClick={e => {
+            const res = controlledSwiper.navigation.onPrevClick(e);
+          }}>&lt;</span>
+        </ArrowClick>
+         
+      <HoveUp >
       <Swiper
         effect="slide"
         autoplay={{
           delay: 5000,
         }}
-        slidesPerView='auto'
+        slidesPerView={1}
         onSwiper={swiper => setControlledSwiper(swiper)}
         onSlideChange={swiper => {
           setCurrIndex(swiper.activeIndex);
         }}
-        style={{ paddingRight: 32, overflow: 'hidden', paddingBottom: 30, marginBottom: -30, paddingTop:20 }}>
+        style={{  }}>
         {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
-          <SwiperSlide style={{ width: 'auto' }} className='hoer_bg_more'>
-            <Card bg={bg} >
-              <div className="customer-words-tag">
-                <img src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/earth.png" />
-                {tagName}
-              </div>
-              <div className="customer-words-bg"></div>
-              <CardContent>
-                <div className="customer-words-icon">
-                  <img src={avatarSrc} />
+          <SwiperSlide style={{ width: 'auto',paddingTop:10 }} className='hoer_bg_more'>
+            <CardContent>
+                <div className='text_area'>
+                我们已经合作有一段时间了，百应给我们提供了专业且全面的解决方案，整体跑下来结果一直都不错。密切的合作一直都不错。密切的合作一直都不错。密切的合作。
                 </div>
-                <div className="customer-words-desc">{content}</div>
-                <div className="customer-words-name">{personName}</div>
-              </CardContent>
-            </Card>
+                <div className='img_area'>
+                    <img src="https://img.js.design/assets/img/642e7f5ed23919d9e828ea29.png" width={330} />
+                </div>
+            </CardContent>
           </SwiperSlide>
         ))}
       </Swiper>
       </HoveUp>
-      <ArrowGroup>
-        <img
-          src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%B7%A6.png"
-          onClick={e => {
-            const res = controlledSwiper.navigation.onPrevClick(e);
-          }}
-        />
-        <img
-          src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%8F%B3.png"
-          onClick={e => {
+      <ArrowClick style={{marginLeft:30}}>
+        <span  onClick={e => {
             controlledSwiper.navigation.onNextClick(e);
-          }}
-        />
-      </ArrowGroup>
+          }}>&gt;</span>
+      </ArrowClick>
+       
     </div>
   );
 };
@@ -483,20 +361,7 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
           }}>
           {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
             <SwiperSlide style={{ width: '295px' }}>
-              <Card bg={bg}>
-                <div className="customer-words-tag">
-                  <img src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/earth.png" />
-                  {tagName}
-                </div>
-                <div className="customer-words-bg"></div>
-                <CardContent>
-                  <div className="customer-words-icon">
-                    <img src={avatarSrc} />
-                  </div>
-                  <div className="customer-words-desc">{content}</div>
-                  <div className="customer-words-name">{personName}</div>
-                </CardContent>
-              </Card>
+           
             </SwiperSlide>
           ))}
         </Swiper>
