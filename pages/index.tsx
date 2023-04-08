@@ -4,6 +4,8 @@ import CustomerIconsBlock from '../src/components/common/CustomerIconsBlock';
 import Advantage from '../src/components/homepage/version2023/AiPlatform';
 import CustomerWords from '../src/components/homepage/version2023/CustomerWords';
 import Solution from '../src/components/homepage/version2023/Solution-2023';
+import HeightestAi from '../src/components/homepage/version2023/HeightestAi';
+import CustomerWords from '../src/components/homepage/version2023/CustomerWords2023';
 import { IndustryCarousel } from '../src/components/IndustryCarousel-2023';
 import { Layout } from '../src/components/Layout';
 import { FormType } from '../src/components/TryForm';
@@ -134,6 +136,7 @@ export default props => {
           <Advantage></Advantage>
           <CustomerWords></CustomerWords>
           <CustomerIconsBlock padding="0 0 83px" />
+          <HeightestAi />
           <ByVoiceFooter
             title="就现在，开启AI电话增长之旅"
             desc="留下联系方式，将有AI行业专家为您提供专属服务"

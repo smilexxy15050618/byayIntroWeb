@@ -22,15 +22,14 @@ export const TitleMobile = styled.div`
   line-height: 32px;
 `;
 
-export const TITLE_HEIGHT = '44px';
+export const TITLE_HEIGHT = '48px';
 
 export const Title = styled.div`
-  font-size: 36px;
+  font-size: 40px;
   text-align: center;
-
+  color: rgba(26, 26, 26, 1);
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: #333333;
   line-height: ${TITLE_HEIGHT};
 `;
 export const Desc = styled.div`
