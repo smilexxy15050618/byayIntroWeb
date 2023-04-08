@@ -1,13 +1,13 @@
 import { Visible } from 'react-grid-system';
 import ByVoiceFooter from '../src/components/common/ByVoiceFooter';
 import CustomerIconsBlock from '../src/components/common/CustomerIconsBlock';
-import Advantage from '../src/components/homepage/version2023/advantage';
+import Advantage from '../src/components/homepage/version2023/AiPlatform';
 import CustomerWords from '../src/components/homepage/version2023/CustomerWords';
-import Solution from '../src/components/homepage/version2023/Solution';
+import Solution from '../src/components/homepage/version2023/Solution-2023';
 import { IndustryCarousel } from '../src/components/IndustryCarousel-2023';
 import { Layout } from '../src/components/Layout';
 import { FormType } from '../src/components/TryForm';
-import VideoList from '../src/components/videoList';
+import VideoList from '../src/components/videoList-2023';
 import VideoListMobile from '../src/components/videoList/VidelListMobile';
 import { Wrapper } from '../src/components/voice-robot/style';
 const FOOTER_BG = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/bg/bottom.png';
