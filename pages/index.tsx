@@ -1,8 +1,9 @@
 import { Visible } from 'react-grid-system';
 import ByVoiceFooter from '../src/components/common/ByVoiceFooter';
 import CustomerIconsBlock from '../src/components/common/CustomerIconsBlock';
+import HeightestAi from '../src/components/homepage/version2023/HeightestAi';
 import Advantage from '../src/components/homepage/version2023/advantage';
-import CustomerWords from '../src/components/homepage/version2023/CustomerWords';
+import CustomerWords from '../src/components/homepage/version2023/CustomerWords2023';
 import Solution from '../src/components/homepage/version2023/Solution';
 import { IndustryCarousel } from '../src/components/IndustryCarousel-2023';
 import { Layout } from '../src/components/Layout';
@@ -134,6 +135,7 @@ export default props => {
           <Advantage></Advantage>
           <CustomerWords></CustomerWords>
           <CustomerIconsBlock padding="0 0 83px" />
+          <HeightestAi />
           <ByVoiceFooter
             title="就现在，开启AI电话增长之旅"
             desc="留下联系方式，将有AI行业专家为您提供专属服务"
