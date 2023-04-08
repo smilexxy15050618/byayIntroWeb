@@ -52,27 +52,40 @@ const CarouselWrapper = styled.div`
     }
   }
   .carousel-body {
-    height: 560px;
+    height: 660px;
     min-height: 480px;
-    max-height: calc(100vh - 144px);
-    background: center / cover no-repeat url(${BG}) !important;
-    /* background: right -370px top / auto 580px no-repeat url(${BG_BALL}), center / cover no-repeat url(${BG}) !important; */
+    // max-height: calc(100vh - 144px);
+    // background: center / cover no-repeat url(${BG}) !important;
+    background:#F6FCFF;
     position: relative;
+    overflow:hidden;
     .carousel-bg-ball {
       position: absolute;
       top: 0;
-      right: 0;
-      transform: translateX(40%);
-      width: 560px;
+      left: 0;
+      transform: translate(-17%,-44%);
+      width: 798px;
       opacity: 1;
+    }
+    .carousel-bg-right{
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(47%,-74%);
+      width: 977px;
+      height: 977px;
+      opacity: 1;
+      background: radial-gradient(50% 50%, rgba(43, 88, 249, 0.3) 0%, rgba(43, 88, 249, 0) 100%);
+      filter: blur(100px);
     }
   }
   .main-container {
     max-width: 1200px;
-    margin: 26px auto 0;
+    margin: 0 auto ;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    // padding-top:174px;
     background: right -80px bottom 30px / auto 540px no-repeat url(${BG_BOTTLE});
   }
 
@@ -87,31 +100,73 @@ const CarouselWrapper = styled.div`
   }
 
   .carousel-indicators {
-    bottom: ${calWidthAndHeight(32)};
-    background:red;
+    bottom: ${calWidthAndHeight(35)};
   }
-
+  @keyframes mywidth{
+    from{
+      width:0;
+    }
+    to{
+      width:100%;
+    }
+  }
+  .carousel-indicators{
+    > li{
+      width:90px;
+      height:1px;
+      background:rgba(65,70,79,.15);
+      border:none;
+    }
+    .active{
+    position:relative;
+    }
+  }
+  .carousel-indicators>.active::after{
+    widht:100%;
+    content:'';
+    position:absolute;
+    top:-100%;
+    height:200%;
+    left:0;
+    background-color:blue;
+    animation-name: mywidth;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode:forwards;
+  }
   .main-title {
-    font-size: 58px;
-    line-height: 80px;
-    font-weight: 600;
     color: #333;
-    margin-bottom: 24px};
-    letter-spacing: 2px;
+    margin-bottom: 16px;
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 60px;
+    color: rgba(26, 26, 26, 1);
+  }
+  .sec-title{
+    font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.91px;
+  line-height: 32px;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom:24px;
   }
   .jump-group {
     display: flex;
     gap: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 56px;
   }
   .jump-group-item {
     cursor: pointer;
-    width: 216px;
+    width: 160px;
     box-sizing: border-box;
     background: #E7F9FC;
-    padding: 24px;
+    padding: 16px;
     // border: 1px solid rgba(255, 255, 255, 1);
     border-radius: 8px;
+    border:1px solid #E7F9FC;
+    box-sizing:border-box;
     &.hover {
       border: 1px solid #00c8bd;
     }
@@ -167,15 +222,16 @@ const CarouselWrapper = styled.div`
       height: 104px;
       background: #E7F9FC;
       border-radius: 8px;
-      padding: 24px;
+      padding: 16px;
+      boder:1px solide #E7F9FC;
     }
     .jump-group-item-title {
-      font-size: 18px;
       font-family: PingFangSC-Regular, PingFang SC;
-      font-weight: 400;
-      color: #333333;
-      line-height: 26px;
-      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0px;
+      line-height: 20px;
+      color: rgba(51, 51, 51, 1);
     }
     .jump-group-item-desc {
       height: 22px;
@@ -213,17 +269,22 @@ const CarouselWrapper = styled.div`
   }
 
   .carousel-btn {
+   
+   
+    font-family: PingFangSC-Medium, PingFang SC;
+  
+    text-align: center;
+    cursor: pointer;
     width: 132px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 8px;
+    height: 48px;
+    line-height:48px;
+    opacity: 1;
+    border-radius: 5.33px;
+    background: rgba(43, 88, 249, 1);
     font-size: 16px;
     font-weight: 500;
-    font-family: PingFangSC-Medium, PingFang SC;
-    color: #ffffff;
-    text-align: center;
-    background: #2b58f9;
-    cursor: pointer;
+    letter-spacing: 0px;
+    color: rgba(255, 255, 255, 1);
     &:hover {
       svg {
         animation: lrmove 3s infinite both;
@@ -269,8 +330,8 @@ const CarouselWrapper = styled.div`
     }
 
     .main-title {
-      font-size: ${calWidthAndHeight(40)};
-      line-height: ${calWidthAndHeight(48)};
+      font-size: ${calWidthAndHeight(48)};
+      line-height: ${calWidthAndHeight(60)};
     }
 
     .sub-title {
@@ -298,11 +359,14 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
       <Visible md lg xl xxl xxxl>
         <div className="carousel-body">
           <img className="carousel-bg-ball" src={BG_BALL} />
+          <div className="carousel-bg-right"  ></div>
+
           <Carousel fade style={{ width: '100%' }} 
-          interval={1000}>
+          interval={4000}
+          >
             <Carousel.Item className="main-container">
               <div className="main-title">百应智能用户运营平台</div>
-              <div>用AI助力构建ToC长期信任关系</div>
+              <div className='sec-title'>用AI助力构建ToC长期信任关系</div>
               <div className="jump-group">
                 {jumpData.map(({ title, desc, jumpTarget }, i) => {
                   return (
@@ -330,14 +394,14 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
                 onClick={() => {
                   window.open(`/form?formType=1`);
                 }}>
-                免费体验 <AngleRight />
+                预约体验
               </div>
             </Carousel.Item>
 
-
+{/* 
             <Carousel.Item >
                 123123
-            </Carousel.Item>
+            </Carousel.Item> */}
           </Carousel>
         </div>
       </Visible>
