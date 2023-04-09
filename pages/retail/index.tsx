@@ -10,7 +10,7 @@ import SceneSolution from '../../src/components/scene-solution';
 import VPane from '../../src/components/scene-solution/VPane';
 import { Wrapper } from '../../src/components/voice-robot/style';
 import { FOOTER_BG } from '../../src/constants/img-urls';
-import { BANNER_LIST, MOBILE_SCENE_SOLUTION_LIST, STRATEGY_LIST } from '../../src/constants/retail';
+import { NEW_BANNER, MOBILE_SCENE_SOLUTION_LIST, STRATEGY_LIST } from '../../src/constants/retail';
 import { HOST_ENUM } from '../../src/lib/utils';
 import { IndustryCarousel } from '../../src/retail/components/IndustryCarousel-2023';
 import { IndustryCarouselMobile } from '../../src/retail/components/IndustryCarouselMobile';
@@ -46,7 +46,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
         {(visible, setFormVisible) => (
           <Wrapper>
             <Visible md lg xl xxl xxxl>
-              <IndustryCarousel dataList={BANNER_LIST} />
+              <IndustryCarousel dataList={NEW_BANNER} />
               <SceneSolution
                 onJumpClick={() => {
                   setFormVisible(true, FormType.CUSTOMER);
@@ -230,7 +230,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
               <Play />
             </Visible>
             <Visible xs sm>
-              <IndustryCarouselMobile dataList={BANNER_LIST} />
+              <IndustryCarouselMobile dataList={NEW_BANNER} />
               <SceneSolutionMobile
                 dataList={MOBILE_SCENE_SOLUTION_LIST}
                 onJumpClick={() => {

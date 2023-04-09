@@ -32,28 +32,50 @@ const BASE_URL_MOBILE = [
 ];
 
 const SubTitle = styled.div`
-  font-size: 48px;
-  font-family: PingFangSC-Regular, PingFang SC;
-  color: #ffffff;
-  font-weight: 400;
-  line-height: 64px;
-  letter-spacing: 1px;
+width: 504px;
+height: 96px;
+opacity: 1;
+/** 文本1 */
+font-size: 20px;
+font-weight: 400;
+letter-spacing: 0.91px;
+line-height: 32px;
+color: rgba(51, 51, 51, 1);
+margin-bottom: 40px;
 `;
 
 const Title = styled.div`
-  font-size: 24px;
-  font-family: PingFangSC-Semibold, PingFang SC;
-  font-weight: 600;
-  color: #ffffff;
-  line-height: 36px;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
+width: 480px;
+height: 120px;
+font-size: 48px;
+font-weight: 600;
+letter-spacing: 0px;
+line-height: 60px;
+color: rgba(26, 26, 26, 1);
+margin-bottom: 16px;
 `;
 
 const BgContent = styled.div`
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  position: relative;
+  .jumpbtn {
+    display: inline-block;
+    background: #2B58F9;
+    padding: 13px 34px;
+    font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+  border-radius: 5.33px;
+  }
+  img {
+    width: 720px;
+    height: 576px;
+    position: absolute;
+    top: -152px;
+    right: -120px;
+  }
 `;
 const BgWrapper = styled.div<{ bg: string }>`
   z-index: 0;
@@ -63,9 +85,8 @@ const BgWrapper = styled.div<{ bg: string }>`
   height: 100%;
   width: 100%;
   opacity: 0;
-  /* background: no-repeat center / cover url(${props => props.bg}); */
   transition: opacity 0.3s ease-in;
-  padding: 161px 0 0 0px;
+  padding: 152px 0 0 0px;
   pointer-events: none;
   &::after {
     z-index: -1;
@@ -76,8 +97,7 @@ const BgWrapper = styled.div<{ bg: string }>`
     left: 0;
     width: 100%;
     height: 100%;
-    background: no-repeat center / cover url(${props => props.bg});
-    filter: brightness(50%);
+    background: rgba(246, 252, 255, 1);
   }
   &.active {
     pointer-events: all;
@@ -118,7 +138,7 @@ const BottomMain = styled.div`
 `;
 
 const Wrapper = styled.div`
-  height: 652px;
+  height: 576px;
   position: relative;
   background: rgba(0, 0, 0, 0.7);
 `;
@@ -279,28 +299,14 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
               {subTitle.map(str => {
                 return <SubTitle>{str}</SubTitle>;
               })}
-              <JumpBtn scale={0.8} onClick={() => setForm()} style={{ marginTop: 64, transform: 'scale(0.8)' }}>
-                立即了解增长案例
-              </JumpBtn>
+              <img src="https://cdn.byai.com/static/intro/img/Banner/2021-3-technology-img.png"></img>
+              <div class="jumpbtn" scale={0.8} onClick={() => setForm()}>
+                预约体验
+              </div>
             </BgContent>
           </BgWrapper>
         );
       })}
-      <BottomMain>
-        <BottomWrapper length={dataList.length}>
-          {dataList.map(({ tabName }, i) => {
-            return (
-              <BottomContent
-                onMouseEnter={() => {
-                  setCurrIndex(i);
-                }}
-                className={classNames({ active: i === currIndex })}>
-                {tabName}
-              </BottomContent>
-            );
-          })}
-        </BottomWrapper>
-      </BottomMain>
     </Wrapper>
   );
 };

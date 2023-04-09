@@ -157,3 +157,14 @@ export const BANNER_LIST = [
     subTitle: ['通过AI外呼打标系统进行用户管理，', '沟通效率提升400%'],
   },
 ];
+//新的banner列表
+export const NEW_BANNER = [
+  {
+    tabName: '',
+    bg: '',
+    mobileBg: '',
+    title: '品牌零售智能用户运营解决方案',
+    subTitle: ['针对零售行业会员增长需求，设计用户运营策略，通过对话式AI助力品牌实现「极致用户体验+极致ROI」的全域营销服务'],
+    subTitleMobile: ['针对零售行业会员增长需求，设计用户运营策略，通过对话式AI助力品牌实现「极致用户体验+极致ROI」的全域营销服务'],
+  }
+]
