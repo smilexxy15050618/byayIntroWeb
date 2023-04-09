@@ -12,7 +12,7 @@ import { Wrapper } from '../../src/components/voice-robot/style';
 import { FOOTER_BG } from '../../src/constants/img-urls';
 import { BANNER_LIST, MOBILE_SCENE_SOLUTION_LIST, STRATEGY_LIST } from '../../src/constants/retail';
 import { HOST_ENUM } from '../../src/lib/utils';
-import { IndustryCarousel } from '../../src/retail/components/IndustryCarousel';
+import { IndustryCarousel } from '../../src/retail/components/IndustryCarousel-2023';
 import { IndustryCarouselMobile } from '../../src/retail/components/IndustryCarouselMobile';
 import StrategyMobile from '../../src/retail/components/StrategyMobile';
 import SceneSolutionMobile from '../../src/retail/components/scene-solution';
