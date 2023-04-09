@@ -190,7 +190,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
     <div style={style}>
       {/* <RightArrow className="next-btn swiper-nav-btn" onClick={e => controlledSwiper.navigation.onNextClick(e)} /> */}
       {/* <LefttArrow className="prev-btn swiper-nav-btn" onClick={e => controlledSwiper.navigation.onPrevClick(e)} /> */}
-      <HoveUp className='ssaaa'>
+      <HoveUp >
       <Swiper
         autoplay={{
           delay: 5000,
@@ -512,10 +512,11 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
     </>
   );
 };
-
+export const CustomerId = 'customer_id'
 const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
   return (
     <Pane title="众多政府机构及头部企业的信赖之选"
+    id={CustomerId}
     titleStyle={{marginBottom:'53px'}}
      paneBgColor="white" style={{ paddingBottom: 152 }} mobileStyle={{ paddingBottom: 40 }}>
       <Hidden xs sm>
