@@ -8,6 +8,7 @@ import CustomerIconsBlock from '../../src/components/common/CustomerIconsBlock';
 import Advantage from '../../src/components/homepage/version2023/advantage';
 import SceneSolution from '../../src/components/scene-solution/index2023';
 import AiSolution from '../../src/components/ai-solution/index2023';
+import CustomerSolution from '../../src/components/ai-solution/customerTips';
 import VPane from '../../src/components/scene-solution/VPane';
 import { Wrapper } from '../../src/components/voice-robot/style';
 import { FOOTER_BG } from '../../src/constants/img-urls';
@@ -53,8 +54,11 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
               <SceneSolution
               />
               <AiSolution></AiSolution>
-              <Strategy />
-              <Play />
+              <CustomerSolution></CustomerSolution>
+
+
+              {/* <Strategy /> */}
+              {/* <Play /> */}
             </Visible>
             <Visible xs sm>
               <IndustryCarouselMobile dataList={NEW_BANNER} />
@@ -70,8 +74,8 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
             </Visible>
             {/* <AIEmployee /> */}
 
-            <Advantage></Advantage>
-            <CustomerIconsBlock padding="73px 0 83px" />
+            {/* <Advantage></Advantage> */}
+            {/* <CustomerIconsBlock padding="73px 0 83px" /> */}
             <ByVoiceFooter
               title="就现在，开启AI电话增长之旅"
               desc="留下联系方式，将有AI行业专家为您提供专属服务"
