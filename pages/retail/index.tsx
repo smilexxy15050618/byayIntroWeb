@@ -20,6 +20,7 @@ import SceneSolutionMobile from '../../src/retail/components/scene-solution';
 import Play from './play';
 import Strategy from './strategy';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
+import AI from '../../src/retail/components/ai';
 
 const SmallLabel = styled.div`
   font-size: 14px;
@@ -48,6 +49,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
           <Wrapper>
             <Visible md lg xl xxl xxxl>
               <IndustryCarousel dataList={NEW_BANNER} />
+              <AI></AI>
               <SceneSolution
               />
               <AiSolution></AiSolution>
