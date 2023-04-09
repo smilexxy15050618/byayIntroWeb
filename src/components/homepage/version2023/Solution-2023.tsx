@@ -5,15 +5,18 @@ import Accordion from '../../accordion';
 import AccordionForMobile from '../../accordion/AccordionForMobile';
 import Pane from './Pane';
 import styled from 'styled-components';
+import imgurl from '../../../../img.url.js'
 
 export type ISolutionProps = {};
 
 const labelInfo = [
     {
-        name: '企业'
+        name: '企业',
+        url: '/solution_company.png'
     },
     {
-        name: '政务'
+        name: '政务',
+        url: '/solution_kol.png'
     }
 ]
 const LabelList = styled.div`
@@ -60,6 +63,11 @@ div:nth-child(2) {
     text-align: center;
     margin-top: 8px;
 }
+img {
+  display: block;
+  width: 1012px;
+  margin: 40px auto 0;
+}
 `
 
 export const SOLUTION_ID = 'solution';
@@ -84,6 +92,7 @@ const [currIndex,setCurrIndex] = useState(0);
         <ContentWrapper>
           <div>G2C基层服务和治理自动化解决方案</div>
           <div>打造数字化连接平台，助力政府高效服务及治理，提升平安建设三率</div>
+          <img src={`${imgurl}${labelInfo[currIndex].url}`} alt="" />
         </ContentWrapper>
       </Visible>
       <Visible xs sm>

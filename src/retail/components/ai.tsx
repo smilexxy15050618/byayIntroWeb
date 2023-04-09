@@ -24,7 +24,7 @@ const titleList = [
         url: '/yhgl.png'
     },
 ]
-export type IStrategyProps = {};
+export type IAiProps = {};
 const Pane = styled.div`
 padding: 80px 0;
 .title {
@@ -115,7 +115,7 @@ text-align: left;
  }
 `
 
-const Strategy: FC<IStrategyProps> = ({ }) => {
+const AI: FC<IAiProps> = ({ }) => {
     const [currIndex, setCurrIndex] = useState(0);
     return (
         <Pane>
@@ -142,4 +142,4 @@ const Strategy: FC<IStrategyProps> = ({ }) => {
     );
 };
 
-export default Strategy;
+export default AI;

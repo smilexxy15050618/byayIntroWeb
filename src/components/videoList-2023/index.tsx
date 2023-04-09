@@ -2,6 +2,7 @@ import { FC, ReactNode, useEffect, useState } from 'react';
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { Title, TITLE_HEIGHT } from '../homepage/version2023/styled';
 import { Tick } from './Tick';
+import imgurl from '../../../img.url.js'
 
 export type IVideoListProps = {
     contentList?: { color: string; tag: string; icon?: any; infoList: { title: ReactNode; desc: string[] }[] }[];
@@ -256,6 +257,55 @@ const VideoWrapper = styled.div`
   border-top: 1px solid transparent;
   display: flex;
   flex-direction: column;
+  .card {
+    width: 971px;
+    height: 561px;
+    background: url(${imgurl}/yypt.png) no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    margin: 62px auto 0;
+    position: relative;
+    &:hover {
+      img:first-child {
+        content: url(${imgurl}/hxcard1_active.png) !important;
+      }
+    }
+    img:first-child {
+      width: 120px;
+      position: absolute;
+      top: 160px;
+      left: 234px;
+      &:hover {
+        content: url(${imgurl}/hxcard1_active.png);
+      }
+    }
+    img:nth-child(2) {
+      width: 158px;
+      position: absolute;
+      top: 175px;
+      left: 337px;
+    }
+    img:nth-child(3) {
+      width: 252px;
+      position: absolute;
+      top: 144px;
+      left: 505px;
+    }
+    img:nth-child(4) {
+      width: 142px;
+      position: absolute;
+      top: 14px;
+      left: 278px;
+      z-index: -1;
+    }
+    img:nth-child(5) {
+      width: 177px;
+      position: absolute;
+      top: 0;
+      left: 540px;
+      z-index: -1;
+    }
+  }
 `;
 
 const Menu = styled.div`
@@ -422,6 +472,13 @@ const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
                     </Title>
                     <div style={{ flex: '1', background: 'white', minHeight: 56 }}>
                         <div class="title">基于百应用户运营方法论，百应以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台致力于优化企业和政务的2C沟通环节，建立起与C端用户之间的稳固连接关系，持续创造企业增长和美好社会</div>
+                    </div>
+                    <div class="card">
+                      <img src={imgurl+'/hxcard1.png'} alt="" />
+                      <img src={imgurl+'/hxcard2.png'} alt="" />
+                      <img src={imgurl+'/hxcard3.png'} alt="" />
+                      <img src={imgurl+'/hxcard4.png'} alt="" />
+                      <img src={imgurl+'/hxcard5.png'} alt="" />
                     </div>
                 </VideoWrapper>
             </VideoWrapperStatic>

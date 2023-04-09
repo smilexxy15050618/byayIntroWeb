@@ -1,39 +1,48 @@
 import React, { FC, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import styled from 'styled-components';
 export type IPlatformProps = {};
+import imgurl from '../../../../img.url.js'
 
 const contentList = [
     {
         name: '品牌零售',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务'
+        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        url: '/ppls.png'
     },
     {
         name: '银行',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务'
+        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        url: '/bank.png'
     },
     {
         name: '公安反诈',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务'
+        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        url: '/police.png'
     },
     {
         name: '政务服务',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务'
+        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        url: '/government.png'
     },
     {
         name: '互联网',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务'
+        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        url: '/internet.png'
     },
     {
         name: '保险',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务'
+        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        url: '/insure.png'
     },
     {
         name: '教育',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务'
+        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        url: '/education.png'
     },
     {
         name: '汽车',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务'
+        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        url: '/car.png'
     }
 ]
 const Wrapper = styled.div`
@@ -61,7 +70,13 @@ const Wrapper = styled.div`
     color: rgba(43, 88, 249, 1);
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 32px;
+    img {
+        width: 16px;
+        height: 16px;
+        margin-bottom: 0;
+    }
   }
 `
 const ListWrapper = styled.div`
@@ -74,7 +89,7 @@ const ListWrapper = styled.div`
     height: 266px;
     display: flex;
     flex-direction: column;
-    align-item: center;
+    align-items: center;
     padding: 60px 24px 0;
     box-sizing: border-box;
     &:hover {
@@ -87,12 +102,12 @@ const ListWrapper = styled.div`
             color: rgba(43, 88, 249, 1);
         }
     }
+    img {
+        width: 60px;
+        height: 60px;
+    }
     div {
         text-align: center;
-        img {
-            width: 60px;
-            height: 60px;
-        }
         &:nth-child(2) {
             font-size: 20px;
             font-weight: 500;
@@ -118,10 +133,10 @@ const Platform: FC<IPlatformProps> = () => {
         <Wrapper>
             <div class="title">全行业AI用户运营平台与解决方案</div>
             <ListWrapper>
-                {contentList.map(({ name, content }, index) => {
+                {contentList.map(({ name, content, url }, index) => {
                     return (
                         <div class="content">
-                            <img src=''></img>
+                            <img src={`${imgurl}${url}`}></img>
                             <div>{name}</div>
                             <div>{content}</div>
                         </div>
@@ -130,7 +145,7 @@ const Platform: FC<IPlatformProps> = () => {
             </ListWrapper>
             <div class="more">
                    查看更多
-                   <img></img>
+                   <img src={imgurl+'/down.png'}></img>
                 </div>
         </Wrapper>
     )
