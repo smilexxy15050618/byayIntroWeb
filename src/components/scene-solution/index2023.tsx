@@ -2,6 +2,7 @@ import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from 'react
 import styled from 'styled-components';
 import Pane from '../../components/homepage/version2023/Pane';
 import { Hidden, Visible } from 'react-grid-system';
+import imgurl from '../../../img.url.js'
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import SwiperClass from 'swiper/types/swiper-class';
 interface  SceneSolution{
@@ -64,7 +65,7 @@ li{
 }
 `
 
-const carouselDataList = ['/static/img2023/ban1.jpg','2','3','4']
+const carouselDataList = [imgurl+'/ban1.jpg','2','3','4']
 
 
 const SceneSolution: FC<SceneSolution> = ({}) => {
@@ -90,7 +91,7 @@ const [wrapindex, setWrapindex] = useState(0);
     return (
         <Pane title="场景解决方案"
         titleStyle={{marginBottom:'48px'}}
-         paneBgColor="white" style={{ paddingBottom: 152 }} mobileStyle={{ paddingBottom: 40 }}>
+         paneBgColor="white" style={{ paddingBottom: 80 }} mobileStyle={{ paddingBottom: 40 }}>
           <Hidden xs sm>
             <HoveUp>
                 <Tab>

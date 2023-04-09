@@ -2,6 +2,7 @@ import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from 'react
 import styled from 'styled-components';
 import Pane from '../../components/homepage/version2023/Pane';
 import { Hidden, Visible } from 'react-grid-system';
+import imgurl from '../../../img.url.js'
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import SwiperClass from 'swiper/types/swiper-class';
 interface  SceneSolution{
@@ -17,6 +18,8 @@ const HoveUp = styled.div`
 const Card = styled.div<{bg:number}>`
    width: 1200px;
    margin:0 auto;
+   display:flex;
+   justify-content: space-between;
    .carditem{
     width: 224px;
     height: 240px;
@@ -82,22 +85,25 @@ const [wrapindex, setWrapindex] = useState(0);
 
     return (
         <Pane title=" 全行业AI用户运营平台与解决方案"
-        titleStyle={{marginBottom:'48px'}}
-         paneBgColor="white" style={{ paddingBottom: 152 }} mobileStyle={{ paddingBottom: 40 }}>
+        titleStyle={{marginBottom:'56px'}}
+         paneBgColor="white" style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
           <Hidden xs sm>
             <HoveUp>
                 <Card bg={1}>
-                    <div className='carditem'>
-                        <img src={'/static/img2023/icon2.png'} width={117}/>
-                        <div className='textt_area'>
-                                <div className='title_area'>
-                                智能提效
-                                </div>
-                                <div className='cont_area'>
-                                赋能营销服务降本增效，节省85%以上的人力成本，提升服务效率
-                                </div>
-                        </div>
-                    </div>
+                    {carouselDataList.map(item => 
+                        <div className='carditem'>
+                          <img src={imgurl+'/icon2.png'} width={117}/>
+                          <div className='textt_area'>
+                                  <div className='title_area'>
+                                  {item.title}
+                                  </div>
+                                  <div className='cont_area'>
+                                    {item.content}
+                                  </div>
+                          </div>
+                      </div>
+                    )}
+                  
                 </Card>
             </HoveUp>
           </Hidden>
