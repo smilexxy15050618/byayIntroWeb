@@ -3,10 +3,12 @@ import { FC, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { Visible } from 'react-grid-system';
 import styled from 'styled-components';
+import imgurl from '../../img.url.js'
+
 import { calWidthAndHeight, scrollIntoOffset } from '../lib/utils';
 import { AngleRight } from './accordion/AngleRight';
 import ByProgressSwiper from './common/ByProgressSwiper';
-import { ADVANTAGE_ID } from './homepage/version2023/advantage';
+import { VIDEO_LIST_ID } from '../../src/components/videoList-2023';
 import { SOLUTION_ID } from './homepage/version2023/Solution';
 import { CustomerId  } from './homepage/version2023/CustomerWords2023';
 
@@ -23,7 +25,7 @@ const BASE_URL = [
 ];
 const BG = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/bg/n-bg.png';
 const BG_BALL = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/bg/ball.png';
-const BG_BOTTLE = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/bg/bottle.png';
+const BG_BOTTLE = imgurl+'/ban1.png';
 
 
 const BASE_URL_MOBILE = [
@@ -52,10 +54,9 @@ const CarouselWrapper = styled.div`
     }
   }
   .carousel-body {
-    height: 660px;
+    height: 580px;
     min-height: 480px;
-    // max-height: calc(100vh - 144px);
-    // background: center / cover no-repeat url(${BG}) !important;
+ 
     background:#F6FCFF;
     position: relative;
     overflow:hidden;
@@ -84,9 +85,17 @@ const CarouselWrapper = styled.div`
     margin: 0 auto ;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
+    padding-top:174px;
+    position:relative;
     // padding-top:174px;
-    background: right -80px bottom 30px / auto 540px no-repeat url(${BG_BOTTLE});
+    background: right -80px top 70px / 659px auto no-repeat url(${BG_BOTTLE});
+    /* .fix_img_area{
+      position:absolute;
+      width:659px;
+      height:533px;
+      border:1px solid red;
+    } */
   }
 
   .carousel,
@@ -100,7 +109,7 @@ const CarouselWrapper = styled.div`
   }
 
   .carousel-indicators {
-    bottom: ${calWidthAndHeight(35)};
+    bottom: ${calWidthAndHeight(18)};
   }
   @keyframes mywidth{
     from{
@@ -321,7 +330,7 @@ const CarouselWrapper = styled.div`
 
   @media (max-width: 768px) {
     .carousel-body {
-      height: ${calWidthAndHeight(638)};
+      height: ${calWidthAndHeight(580)};
       text-align: center;
     }
 
@@ -347,7 +356,7 @@ const CarouselWrapper = styled.div`
 `;
 
 const jumpData = [
-  { title: '数据智能赋能用户运营策略', desc: 'ROI导向', jumpTarget: '#' + CustomerId },
+  { title: '数据智能赋能用户运营策略', desc: 'ROI导向', jumpTarget: '#' + VIDEO_LIST_ID },
   { title: '以构建2C长期信任关系为运营导向', desc: '最佳应用实践', jumpTarget: '#' + SOLUTION_ID },
   { title: '长期服务企业和政府头部品牌和机构', desc: '定义先进AI', jumpTarget: '#' + CustomerId },
 ];
@@ -396,12 +405,11 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
                 }}>
                 预约体验
               </div>
+              {/* <div className='fix_img_area'>
+
+              </div> */}
             </Carousel.Item>
 
-{/* 
-            <Carousel.Item >
-                123123
-            </Carousel.Item> */}
           </Carousel>
         </div>
       </Visible>
