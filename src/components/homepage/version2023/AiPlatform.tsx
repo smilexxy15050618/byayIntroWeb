@@ -70,6 +70,7 @@ const ListWrapper = styled.div`
    flex-wrap: wrap;
    .content {
     width: 264px;
+    cursor:pointer;
     height: 266px;
     display: flex;
     flex-direction: column;

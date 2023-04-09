@@ -6,6 +6,7 @@ import Pane from './Pane';
 import styled from 'styled-components';
 import { Hidden, Visible } from 'react-grid-system';
 import ByProgressSwiper from '../../common/ByProgressSwiper';
+import imgurl from '../../../../img.url.js'
 export type ICustomerWordsProps = {};
 
 interface ICarouselProps {
@@ -75,16 +76,19 @@ const CardContent = styled.aside`
     }
 `
 const ArrowClick = styled.div`
-    width: 18.81px;
-    height: 36.19px;
+    width: 40px;
+    height: 40px;
     opacity: 1;
-    background: rgba(90, 90, 90, 1);
     align-self:center;
     display: flex;
     justify-content: center;
     align-items: center;
     color:#fff;
+    img{
+      width:100%;
     cursor:pointer;
+
+    }
 `
 
 const Arrow = styled.div`
@@ -107,7 +111,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
         <ArrowClick onClick={e => {
             const res = controlledSwiper.navigation.onPrevClick(e);
           }} style={{marginRight:30}}>
-            <span >&lt;</span>
+           <img src={`${imgurl}/arowl1.png`}  />
         </ArrowClick>
       <HoveUp >
       <Swiper
@@ -149,7 +153,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       <ArrowClick onClick={e => {
             controlledSwiper.navigation.onNextClick(e);
           }} style={{marginLeft:30}}>
-        <span  >&gt;</span>
+         <img src={`${imgurl}/arowr1.png`}  />
       </ArrowClick>
        
     </div>

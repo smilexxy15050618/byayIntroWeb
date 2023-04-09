@@ -32,6 +32,7 @@ text-align: center;
 font-size: 18px;
 font-weight: 400;
 letter-spacing: 0px;
+cursor:pointer;
 color: rgba(51, 51, 51, 1);
 &.active {
     color: rgba(43, 88, 249, 1);

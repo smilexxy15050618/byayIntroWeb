@@ -12,17 +12,16 @@ const Wrapper = styled.div`
     
 `
 const HoveUp = styled.div`
-   width: 1248px;
+   width: 1250px;
    margin:0 auto; 
 `
 const Card = styled.div<{bg:number}>`
-   width: 1200px;
    margin:0 auto;
-    height: 496px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
+    /* border-radius: 8px;
+    box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12); */
     img{
-        height:100%;
+        width:100%;
+        margin:0;
     }
 `
 
@@ -65,7 +64,7 @@ li{
 }
 `
 
-const carouselDataList = [imgurl+'/ban1.jpg','2','3','4']
+const carouselDataList = [imgurl+'/proinfo1.png','2','3','4']
 
 
 const SceneSolution: FC<SceneSolution> = ({}) => {
