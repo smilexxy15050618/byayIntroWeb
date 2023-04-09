@@ -33,7 +33,7 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  background: #f3f6fa;
+  background: #fff;
 `;
 
 const Model = styled.div`

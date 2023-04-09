@@ -515,7 +515,9 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
 
 const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
   return (
-    <Pane title="众多政府机构及头部企业的信赖之选" paneBgColor="grey" style={{ paddingBottom: 152 }} mobileStyle={{ paddingBottom: 40 }}>
+    <Pane title="众多政府机构及头部企业的信赖之选"
+    titleStyle={{marginBottom:'53px'}}
+     paneBgColor="white" style={{ paddingBottom: 152 }} mobileStyle={{ paddingBottom: 40 }}>
       <Hidden xs sm>
         <Carousel dataList={carouselDataList}></Carousel>
       </Hidden>

@@ -128,7 +128,7 @@ const CarouselWrapper = styled.div`
     top:-100%;
     height:200%;
     left:0;
-    background-color:blue;
+    background-color: rgba(43, 88, 249, 1);
     animation-name: mywidth;
     animation-duration: 4s;
     animation-iteration-count: 1;

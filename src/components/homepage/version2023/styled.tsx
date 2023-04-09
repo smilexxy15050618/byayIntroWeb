@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const PaneWrapper = styled.div<{ bgColor?: 'white' | 'grey' }>`
   background-color: ${props => (props.bgColor === 'grey' ? 'rgba(243, 246, 250, 1)' : 'white')};
-  padding: 80px 0;
+  padding: 77px 0;
 `;
 
 export const PaneWrapperMobile = styled.div<{ bgColor?: 'white' | 'grey' }>`
