@@ -2,7 +2,6 @@ import { Visible } from 'react-grid-system';
 import ByVoiceFooter from '../src/components/common/ByVoiceFooter';
 import CustomerIconsBlock from '../src/components/common/CustomerIconsBlock';
 import Advantage from '../src/components/homepage/version2023/AiPlatform';
-import CustomerWords from '../src/components/homepage/version2023/CustomerWords';
 import Solution from '../src/components/homepage/version2023/Solution-2023';
 import HeightestAi from '../src/components/homepage/version2023/HeightestAi';
 import CustomerWords from '../src/components/homepage/version2023/CustomerWords2023';
