@@ -1,0 +1,112 @@
+import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
+import Pane from '../../components/homepage/version2023/Pane';
+import { Hidden, Visible } from 'react-grid-system';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import SwiperClass from 'swiper/types/swiper-class';
+interface  SceneSolution{
+
+}
+const Wrapper = styled.div`
+    
+`
+const HoveUp = styled.div`
+   width: 1248px;
+   margin:0 auto; 
+`
+const Card = styled.div<{bg:number}>`
+   width: 1200px;
+   margin:0 auto;
+   .carditem{
+    width: 224px;
+    height: 240px;
+    opacity: 1;
+    border-radius: 8px;
+    background: rgba(43, 88, 249, 1);
+    position: relative;
+    img{
+        position: absolute;
+        right: 0;
+        margin:0;
+    }
+    .textt_area{
+        position: absolute;
+        width: 181px;
+        height: 112px;
+        left:22px;
+        bottom:22px;
+        .title_area{
+            font-size: 20px;
+font-weight: 600;
+line-height: 24px;
+color: rgba(255, 255, 255, 1);
+margin-bottom:16px;
+        }
+        .cont_area{
+            font-size: 14px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 24px;
+color: rgba(255, 255, 255, 1);
+        }
+    }
+   }
+    /* border-radius: 8px; */
+    /* box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12); */
+    
+`
+
+
+const carouselDataList = [{
+    title:'智能提效',
+    content:'赋能营销服务降本增效，节省85%以上的人力成本，提升服务效率'
+},{
+    title:'精准营销',
+    content:'自动化营销SOP，“千人千面”提供个性化服务，打造行业最佳转化模型'
+},{
+    title:'极致体验',
+    content:'定制化运营策略，让营销回归服务关怀，为用户提供极致的沟通体验'
+},{
+    title:'自动打标',
+    content:'智能分析用户意向，精细化用户分层，辅助运营人员管理用户资产'
+},{
+    title:'数据管理',
+    content:'持续追踪转化进度，通过效果评估，持续提升运营效率和用户体验'
+},]
+
+
+const SceneSolution: FC<SceneSolution> = ({}) => {
+ 
+
+const [wrapindex, setWrapindex] = useState(0);
+
+    return (
+        <Pane title=" 全行业AI用户运营平台与解决方案"
+        titleStyle={{marginBottom:'48px'}}
+         paneBgColor="white" style={{ paddingBottom: 152 }} mobileStyle={{ paddingBottom: 40 }}>
+          <Hidden xs sm>
+            <HoveUp>
+                <Card bg={1}>
+                    <div className='carditem'>
+                        <img src={'/static/img2023/icon2.png'} width={117}/>
+                        <div className='textt_area'>
+                                <div className='title_area'>
+                                智能提效
+                                </div>
+                                <div className='cont_area'>
+                                赋能营销服务降本增效，节省85%以上的人力成本，提升服务效率
+                                </div>
+                        </div>
+                    </div>
+                </Card>
+            </HoveUp>
+          </Hidden>
+          <Visible xs sm>
+            {/* <CarouselMobile dataList={carouselDataList}></CarouselMobile> */}
+          </Visible>
+        </Pane>
+    );
+  };
+  
+  
+export default SceneSolution;

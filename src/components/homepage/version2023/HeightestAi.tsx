@@ -44,6 +44,35 @@ const CardContent = styled.aside`
         margin-left:80px;
         margin-right:86px;
     }
+    .info_area{
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0px;
+      line-height: 40px;
+      color: rgba(90, 90, 90, 1);
+    }
+    .name_area{
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      color: rgba(90, 90, 90, 1);
+      text-align:right;
+      margin-top:16px;
+      margin-bottom:16px;
+      padding-bottom:16px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);     
+      span{
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+      }
+    }
+    .introduce_area{
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      color: rgba(90, 90, 90, 1);
+    }
 `
 const ArrowClick = styled.div`
     width: 18.81px;
@@ -75,12 +104,11 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
   const [currIndex, setCurrIndex] = useState(0);
   return (
     <div style={{width:'1200px',margin:'0 auto',display:'flex',justifyContent:'center'}}>
-        <ArrowClick style={{marginRight:30}}>
-            <span onClick={e => {
+        <ArrowClick onClick={e => {
             const res = controlledSwiper.navigation.onPrevClick(e);
-          }}>&lt;</span>
+          }} style={{marginRight:30}}>
+            <span >&lt;</span>
         </ArrowClick>
-         
       <HoveUp >
       <Swiper
         effect="slide"
@@ -97,7 +125,18 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
           <SwiperSlide style={{ width: 'auto',paddingTop:10 }} className='hoer_bg_more'>
             <CardContent>
                 <div className='text_area'>
-                我们已经合作有一段时间了，百应给我们提供了专业且全面的解决方案，整体跑下来结果一直都不错。密切的合作一直都不错。密切的合作一直都不错。密切的合作。
+                   <img
+                   style={{marginBottom:45}}
+                    src="https://img.js.design/assets/img/642e7f5da6320a9cbd726401.png" width={127} className='logo_area'/>
+                    <div className='info_area'>
+                     我们已经合作有一段时间了，百应给我们提供了专业且全面的解决方案，整体跑下来结果一直都不错。密切的合作一直都不错。密切的合作一直都不错。密切的合作。
+                    </div>
+                    <p className='name_area'>XXX创始人 &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>代用名</span>
+                    </p>
+                    <div className='introduce_area'>
+                    我们已经合作有一段时间了，百应给我们提供了专业且全面的解决方案，整体跑下来结果一直都不错。
+                    </div>
                 </div>
                 <div className='img_area'>
                     <img src="https://img.js.design/assets/img/642e7f5ed23919d9e828ea29.png" width={330} />
@@ -107,10 +146,10 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
         ))}
       </Swiper>
       </HoveUp>
-      <ArrowClick style={{marginLeft:30}}>
-        <span  onClick={e => {
+      <ArrowClick onClick={e => {
             controlledSwiper.navigation.onNextClick(e);
-          }}>&gt;</span>
+          }} style={{marginLeft:30}}>
+        <span  >&gt;</span>
       </ArrowClick>
        
     </div>
@@ -380,7 +419,10 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
 
 const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
   return (
-    <Pane title="顶尖资本支持，智领未来AI沟通新方式" paneBgColor="grey" style={{ paddingBottom: 152 }} mobileStyle={{ paddingBottom: 40 }}>
+    <Pane title="顶尖资本支持，智领未来AI沟通新方式" paneBgColor="grey" 
+    style={{ paddingBottom: 152}} 
+    titleStyle={{marginBottom:'40px'}}
+    mobileStyle={{ paddingBottom: 40 }}>
       <Hidden xs sm>
         <Carousel dataList={carouselDataList}></Carousel>
       </Hidden>

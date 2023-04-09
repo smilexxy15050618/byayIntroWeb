@@ -8,7 +8,7 @@ import { AngleRight } from './accordion/AngleRight';
 import ByProgressSwiper from './common/ByProgressSwiper';
 import { ADVANTAGE_ID } from './homepage/version2023/advantage';
 import { SOLUTION_ID } from './homepage/version2023/Solution';
-import { VIDEO_LIST_ID } from './videoList';
+import { CustomerId  } from './homepage/version2023/CustomerWords2023';
 
 export interface ICarousel {
   onChange?: (index) => void;
@@ -128,7 +128,7 @@ const CarouselWrapper = styled.div`
     top:-100%;
     height:200%;
     left:0;
-    background-color:blue;
+    background-color: rgba(43, 88, 249, 1);
     animation-name: mywidth;
     animation-duration: 4s;
     animation-iteration-count: 1;
@@ -347,9 +347,9 @@ const CarouselWrapper = styled.div`
 `;
 
 const jumpData = [
-  { title: '数据智能赋能用户运营策略', desc: 'ROI导向', jumpTarget: '#' + VIDEO_LIST_ID },
+  { title: '数据智能赋能用户运营策略', desc: 'ROI导向', jumpTarget: '#' + CustomerId },
   { title: '以构建2C长期信任关系为运营导向', desc: '最佳应用实践', jumpTarget: '#' + SOLUTION_ID },
-  { title: '长期服务企业和政府头部品牌和机构', desc: '定义先进AI', jumpTarget: '#' + ADVANTAGE_ID },
+  { title: '长期服务企业和政府头部品牌和机构', desc: '定义先进AI', jumpTarget: '#' + CustomerId },
 ];
 
 export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
