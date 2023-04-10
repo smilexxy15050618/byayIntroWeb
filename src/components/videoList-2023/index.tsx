@@ -5,93 +5,93 @@ import { Tick } from './Tick';
 import imgurl from '../../../img.url.js'
 
 export type IVideoListProps = {
-    contentList?: { color: string; tag: string; icon?: any; infoList: { title: ReactNode; desc: string[] }[] }[];
+  contentList?: { color: string; tag: string; icon?: any; infoList: { title: ReactNode; desc: string[] }[] }[];
 };
 const VIDEO_SIZE_MAPPER = {
-    VIDEO_WIDTH: {
-        xxl: '720px',
-        xl: '720px',
-        lg: '640px',
-        md: '538px',
-        // xs: '453px',
-        xs: '538px',
-    },
-    VIDEO_HEIGHT: {
-        xxl: '540px',
-        xl: '540px',
-        lg: '480px',
-        md: '403.5px',
-        xs: '403.5px',
-    },
+  VIDEO_WIDTH: {
+    xxl: '720px',
+    xl: '720px',
+    lg: '640px',
+    md: '538px',
+    // xs: '453px',
+    xs: '538px',
+  },
+  VIDEO_HEIGHT: {
+    xxl: '540px',
+    xl: '540px',
+    lg: '480px',
+    md: '403.5px',
+    xs: '403.5px',
+  },
 };
 const SCROLL_TOP = {
-    xxl: '120px',
-    xl: '0px',
-    lg: '0px',
-    md: '0px',
-    xs: '0px',
+  xxl: '120px',
+  xl: '0px',
+  lg: '0px',
+  md: '0px',
+  xs: '0px',
 };
 const map2RenderCssRule = <T,>(rule: Partial<Record<Screen, T>>, mapper: (value: T, screen: Screen) => string) => {
-    return Object.entries(rule).reduce<Partial<Record<Screen, string>>>((prev, [key, value]) => {
-        return {
-            ...prev,
-            [key]: mapper(value, key as Screen),
-        };
-    }, {});
+  return Object.entries(rule).reduce<Partial<Record<Screen, string>>>((prev, [key, value]) => {
+    return {
+      ...prev,
+      [key]: mapper(value, key as Screen),
+    };
+  }, {});
 };
 const screenHeightRules: Array<[Screen, string]> = [
-    ['xxl', ``],
-    ['xl', `@media screen and (min-height: 957px) and (max-height: 1280px)`],
-    ['lg', `@media screen and (min-height: 731px) and (max-height: 956px)`],
-    ['md', `@media screen and (min-height: 563px) and (max-height: 730px)`],
-    ['xs', `@media screen and (max-height: 562px)`],
+  ['xxl', ``],
+  ['xl', `@media screen and (min-height: 957px) and (max-height: 1280px)`],
+  ['lg', `@media screen and (min-height: 731px) and (max-height: 956px)`],
+  ['md', `@media screen and (min-height: 563px) and (max-height: 730px)`],
+  ['xs', `@media screen and (max-height: 562px)`],
 ];
 const screenWidthRules: Array<[Screen, string]> = [
-    ['xl', ``],
-    ['lg', `@media screen and (min-width: 1300px) and (max-width: 1699px)`],
-    ['md', `@media screen and (min-width: 1000px) and (max-width: 1299px)`],
-    ['xs', `@media screen and (max-width: 999px)`],
+  ['xl', ``],
+  ['lg', `@media screen and (min-width: 1300px) and (max-width: 1699px)`],
+  ['md', `@media screen and (min-width: 1000px) and (max-width: 1299px)`],
+  ['xs', `@media screen and (max-width: 999px)`],
 ];
 type Screen = 'xxl' | 'xl' | 'lg' | 'md' | 'xs';
 type ScreenRule = ((value: string) => string) | string;
 const renderCss = <T,>(
-    rule: Partial<Record<Screen, T>>,
-    screenRules: Array<[Screen, string]>,
-    mapper: (value: T, screen: Screen) => string,
+  rule: Partial<Record<Screen, T>>,
+  screenRules: Array<[Screen, string]>,
+  mapper: (value: T, screen: Screen) => string,
 ) => {
-    const obj = map2RenderCssRule(rule, mapper);
-    const cssHelper = (mediaRule: string, rule: string) =>
-        mediaRule
-            ? `
+  const obj = map2RenderCssRule(rule, mapper);
+  const cssHelper = (mediaRule: string, rule: string) =>
+    mediaRule
+      ? `
     ${mediaRule} {
       ${rule}
     }
   `
-            : rule;
+      : rule;
 
-    return screenRules.map(([size, media]) => cssHelper(media, obj[size] ? obj[size] : '')).join('');
+  return screenRules.map(([size, media]) => cssHelper(media, obj[size] ? obj[size] : '')).join('');
 };
 
 const OFFSET_MAPPER = {
-    xxl: '10vh',
-    xl: '8vh',
-    lg: '0px',
-    md: '0px',
-    xs: '0px',
+  xxl: '10vh',
+  xl: '8vh',
+  lg: '0px',
+  md: '0px',
+  xs: '0px',
 };
 const mergeObj = <T extends string>(objList: Array<{ keyName: T; obj: any }>) => {
-    const keyList = ['xxl', 'xl', 'lg', 'md', 'xs'];
-    return keyList.reduce((prev, curr) => {
+  const keyList = ['xxl', 'xl', 'lg', 'md', 'xs'];
+  return keyList.reduce((prev, curr) => {
+    return {
+      [curr]: objList.reduce((prevObj, currObj) => {
         return {
-            [curr]: objList.reduce((prevObj, currObj) => {
-                return {
-                    ...prevObj,
-                    [currObj.keyName]: currObj.obj[curr],
-                };
-            }, {}),
-            ...prev,
+          ...prevObj,
+          [currObj.keyName]: currObj.obj[curr],
         };
-    }, {} as Record<Screen, Record<T, string>>);
+      }, {}),
+      ...prev,
+    };
+  }, {} as Record<Screen, Record<T, string>>);
 };
 export const VIDEO_LIST_ID = 'video-list';
 const TITLE_MARGIN_TOP = '77px';
@@ -100,17 +100,17 @@ const MENU_HEIGHT = '44px';
 const MENU_MARGIN_BOTTOM = '32px';
 const DISAPPEAR_OFFSET = '80px';
 const DISAPPEAR_OFFSET_MAPPER = {
-    xxl: DISAPPEAR_OFFSET,
-    xl: DISAPPEAR_OFFSET,
-    lg: DISAPPEAR_OFFSET,
-    md: '40px',
-    xs: '40px',
+  xxl: DISAPPEAR_OFFSET,
+  xl: DISAPPEAR_OFFSET,
+  lg: DISAPPEAR_OFFSET,
+  md: '40px',
+  xs: '40px',
 };
 const getContentPaddingTopCalcStr = (OFFSET: string, DISAPPEAR_OFFSET: string) =>
-    `${OFFSET} + ${TITLE_MARGIN_TOP} + ${TITLE_HEIGHT} + ${TITLE_MARGIN_BOTTOM} + ${MENU_HEIGHT} + ${MENU_MARGIN_BOTTOM} + ${DISAPPEAR_OFFSET}`;
+  `${OFFSET} + ${TITLE_MARGIN_TOP} + ${TITLE_HEIGHT} + ${TITLE_MARGIN_BOTTOM} + ${MENU_HEIGHT} + ${MENU_MARGIN_BOTTOM} + ${DISAPPEAR_OFFSET}`;
 
 const getJumpStrTopCalcStr = (videoHeight: string, offset: string, disappearOffset: string) =>
-    `${getContentPaddingTopCalcStr(offset, disappearOffset)} + ${videoHeight} - 80px - ${disappearOffset}`;
+  `${getContentPaddingTopCalcStr(offset, disappearOffset)} + ${videoHeight} - 80px - ${disappearOffset}`;
 const JumpStr = styled.div`
   height: 28px;
   font-size: 20px;
@@ -122,13 +122,13 @@ const JumpStr = styled.div`
   cursor: pointer;
   transform: translateY(-100%);
   ${renderCss(
-    mergeObj([
-        { keyName: 'VIDEO_HEIGHT', obj: VIDEO_SIZE_MAPPER.VIDEO_HEIGHT },
-        { keyName: 'OFFSET', obj: OFFSET_MAPPER },
-        { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-    ]),
-    screenHeightRules,
-    v => `top: calc(${getJumpStrTopCalcStr(v.VIDEO_HEIGHT, v.OFFSET, v.DISAPPEAR_OFFSET)});`,
+  mergeObj([
+    { keyName: 'VIDEO_HEIGHT', obj: VIDEO_SIZE_MAPPER.VIDEO_HEIGHT },
+    { keyName: 'OFFSET', obj: OFFSET_MAPPER },
+    { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
+  ]),
+  screenHeightRules,
+  v => `top: calc(${getJumpStrTopCalcStr(v.VIDEO_HEIGHT, v.OFFSET, v.DISAPPEAR_OFFSET)});`,
 )}
 
   .jump-str-arrow {
@@ -148,32 +148,32 @@ const ScrollNode = styled.div`
   width: 1px;
   height: 1px;
   ${renderCss(
-    mergeObj([
-        { keyName: 'SCROLL_TOP', obj: SCROLL_TOP },
-        { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
-        { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-    ]),
-    screenHeightRules,
-    v => `top: calc(-1 * (${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)}) - ${v.SCROLL_TOP});`,
+  mergeObj([
+    { keyName: 'SCROLL_TOP', obj: SCROLL_TOP },
+    { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
+    { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
+  ]),
+  screenHeightRules,
+  v => `top: calc(-1 * (${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)}) - ${v.SCROLL_TOP});`,
 )}
 `;
 const CONTENT_MB_MAP = {
-    xxl: '96px',
-    xl: '76px',
-    lg: '76px',
-    md: '76px',
-    xs: '76px',
+  xxl: '96px',
+  xl: '76px',
+  lg: '76px',
+  md: '76px',
+  xs: '76px',
 };
 const Content = styled.div`
   /* min-height: 100vh; */
   /* DISAPPEAR_OFFSET_MAPPER */
   ${renderCss(
-    mergeObj([
-        { keyName: 'VIDEO_HEIGHT', obj: VIDEO_SIZE_MAPPER.VIDEO_HEIGHT },
-        { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-    ]),
-    screenHeightRules,
-    v => `height: calc(${v.VIDEO_HEIGHT} - ${v.DISAPPEAR_OFFSET});`,
+  mergeObj([
+    { keyName: 'VIDEO_HEIGHT', obj: VIDEO_SIZE_MAPPER.VIDEO_HEIGHT },
+    { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
+  ]),
+  screenHeightRules,
+  v => `height: calc(${v.VIDEO_HEIGHT} - ${v.DISAPPEAR_OFFSET});`,
 )}
   ${renderCss(VIDEO_SIZE_MAPPER.VIDEO_WIDTH, screenHeightRules, v => `padding-left: calc(${v} + 60px);`)}
   position: relative;
@@ -198,12 +198,12 @@ const Wrapper = styled.div`
   ${renderCss(OFFSET_MAPPER, screenHeightRules, v => `margin-top: -${v}`)}
   > :nth-child(2) {
     ${renderCss(
-    mergeObj([
-        { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
-        { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-    ]),
-    screenHeightRules,
-    v => `padding-top: calc(${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)});`,
+  mergeObj([
+    { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
+    { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
+  ]),
+  screenHeightRules,
+  v => `padding-top: calc(${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)});`,
 )}
     ${ScrollNode} {
       top: 0;
@@ -219,15 +219,15 @@ const Wrapper = styled.div`
   }
   > :last-child {
     ${renderCss(
-    mergeObj([
-        { keyName: 'VIDEO_HEIGHT', obj: VIDEO_SIZE_MAPPER.VIDEO_HEIGHT },
-        { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
-        { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-    ]),
-    screenHeightRules,
-    v =>
-        `margin-bottom: calc(100vh - (${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)}) - ${v.VIDEO_HEIGHT
-        } + ${v.DISAPPEAR_OFFSET});`,
+  mergeObj([
+    { keyName: 'VIDEO_HEIGHT', obj: VIDEO_SIZE_MAPPER.VIDEO_HEIGHT },
+    { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
+    { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
+  ]),
+  screenHeightRules,
+  v =>
+    `margin-bottom: calc(100vh - (${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)}) - ${v.VIDEO_HEIGHT
+    } + ${v.DISAPPEAR_OFFSET});`,
 )}
   }
 `;
@@ -259,20 +259,26 @@ const VideoWrapper = styled.div`
   .card {
     width: 956px;
     height: 451px;
-    background: url(${imgurl}/yypt2.png) no-repeat,url(${imgurl}/yypt1.png) no-repeat;
-    background-size: 100% 100%,511px 360px;
-    background-position: 0% 0%,center top;
     border: none;
     margin: 62px auto 0;
     position: relative;
-    perspective: 150;
+    perspective: 50;
     perspective-origin: 50% 35%;
     transform-style: preserve-3d;
+    img:nth-child(6) {
+      width: 511px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate3d(-50%,20%,1px);
+    }
     img:first-child {
       width: 120px;
       position: absolute;
       top: 160px;
       left: 234px;
+      z-index: 1;
+      transform: translateZ(1px);
       &:hover {
         content: url(${imgurl}/hxcard1_active.png);
       }
@@ -282,6 +288,8 @@ const VideoWrapper = styled.div`
       position: absolute;
       top: 175px;
       left: 337px;
+      z-index: 1;
+      transform: translateZ(1px);
       &:hover {
         content: url(${imgurl}/hxcard2_active.png);
       }
@@ -291,6 +299,8 @@ const VideoWrapper = styled.div`
       position: absolute;
       top: 144px;
       left: 505px;
+      z-index: 1;
+      transform: translateZ(1px);
       &:hover {
         content: url(${imgurl}/hxcard3_active.png);
       }
@@ -298,22 +308,29 @@ const VideoWrapper = styled.div`
     img:nth-child(4) {
       width: 142px;
       position: absolute;
-      top: -10px;
+      top: 20px;
       left: 278px;
-      transform: translateZ(-1px);
+      z-index: 2;
       &:hover {
         content: url(${imgurl}/hxcard4_active.png);
       }
     }
     img:nth-child(5) {
       width: 177px;
+      height: 163px;
       position: absolute;
-      top: -10px;
+      top: 40px;
       left: 540px;
-      transform: translateZ(-1px);
-      &:hover {
-        content: url(${imgurl}/hxcard5_active.png);
-      }
+      z-index: 2;
+    }
+    div:last-child {
+      width: 177px;
+      height: 163px;
+      position: absolute;
+      top: 45px;
+      left: 540px;
+      z-index: 3;
+      transform: translateZ(2px);
     }
   }
 `;
@@ -345,10 +362,10 @@ const Menu = styled.div`
 `;
 
 const MENU_BOX_PADDING_LEFT = {
-    xl: '67px',
-    lg: '20px',
-    md: '0px',
-    xs: '0px',
+  xl: '67px',
+  lg: '20px',
+  md: '0px',
+  xs: '0px',
 };
 
 const MenuBox = styled.div`
@@ -398,11 +415,11 @@ const VideoDesc = styled.div`
 `;
 
 const SHADOW_TOP_HEIGHT_MAP = {
-    xxl: '628px',
-    xl: '328px',
-    lg: '328px',
-    md: '328px',
-    xs: '328px',
+  xxl: '628px',
+  xl: '328px',
+  lg: '328px',
+  md: '328px',
+  xs: '328px',
 };
 
 const SHADOW_TOP_HEIGHT = 328;
@@ -413,9 +430,9 @@ const ShadowTop = styled.div`
   background-color: white;
   ${renderCss(SHADOW_TOP_HEIGHT_MAP, screenHeightRules, v => `transform: translateY(calc(248px - ${v}));`)}
   ${renderCss(
-    SHADOW_TOP_HEIGHT_MAP,
-    screenHeightRules,
-    v => `background: linear-gradient(
+  SHADOW_TOP_HEIGHT_MAP,
+  screenHeightRules,
+  v => `background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 1) 0,
     rgba(255, 255, 255, 1) ${parseInt(v) - 76}px,
@@ -444,56 +461,62 @@ const VideoContent = styled.div`
 
 const PANE_CLASS_NAME = 'video-content';
 const prefix =
-    'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E5%AE%98%E7%BD%91%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6/';
+  'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E5%AE%98%E7%BD%91%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6/';
 const videoSrc = ['高用户接听.mp4', '高意向转化.mp4', '优营销模型.mp4'].map(str => `${prefix}${str}`);
 const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
-    const [currIndex, setCurrIndex] = useState(0);
-    useEffect(() => {
-        const ScrollMagic = require('scrollmagic');
-        var controller = new ScrollMagic.Controller();
-        const videoContentList = document.getElementsByClassName('video-content');
-        const nodeList = [...videoContentList];
-        // if (index === videoContentList.length - 1) {
-        nodeList.forEach(ele => {
-            new ScrollMagic.Scene({
-                triggerElement: ele, //触发元素
-                triggerHook: 'onLeave', //触发元素开始离开视口时触发
-                offset: -630, //从开始点滚动多少px触发（施法前摇）
-                duration: 400, //效果持续的距离（法术持续时间/距离）
-            })
-                .addTo(controller)
-                .on('enter', () => {
-                    const index = +ele.getAttribute('data-index');
-                    if (Number.isNaN(index)) {
-                        return;
-                    }
-                    setCurrIndex(index);
-                });
+  const [currIndex, setCurrIndex] = useState(0);
+  const [showImg, setShowImg] = useState(imgurl + '/hxcard5.png');
+  useEffect(() => {
+    const ScrollMagic = require('scrollmagic');
+    var controller = new ScrollMagic.Controller();
+    const videoContentList = document.getElementsByClassName('video-content');
+    const nodeList = [...videoContentList];
+    // if (index === videoContentList.length - 1) {
+    nodeList.forEach(ele => {
+      new ScrollMagic.Scene({
+        triggerElement: ele, //触发元素
+        triggerHook: 'onLeave', //触发元素开始离开视口时触发
+        offset: -630, //从开始点滚动多少px触发（施法前摇）
+        duration: 400, //效果持续的距离（法术持续时间/距离）
+      })
+        .addTo(controller)
+        .on('enter', () => {
+          const index = +ele.getAttribute('data-index');
+          if (Number.isNaN(index)) {
+            return;
+          }
+          setCurrIndex(index);
         });
-    }, []);
+    });
+  }, []);
 
-    return (
-        <Wrapper id={VIDEO_LIST_ID}>
-            <VideoWrapperStatic>
-                {/* <div style={{ position: 'sticky', top: 0, height: 200, left: 0, width: '100%', background: 'white' }}></div> */}
-                <VideoWrapper className="video-wrapper-sticky">
-                    <Title style={{ marginTop: TITLE_MARGIN_TOP, marginBottom: TITLE_MARGIN_BOTTOM, position: 'relative' }}>
-                        百应智能用户运营平台
-                    </Title>
-                    <div style={{ flex: '1', background: 'white', minHeight: 56 }}>
-                        <div class="title">基于百应用户运营方法论，百应以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台致力于优化企业和政务的2C沟通环节，建立起与C端用户之间的稳固连接关系，持续创造企业增长和美好社会</div>
-                    </div>
-                    <div class="card">
-                      <img src={imgurl+'/hxcard1.png'} alt="" />
-                      <img src={imgurl+'/hxcard2.png'} alt="" />
-                      <img src={imgurl+'/hxcard3.png'} alt="" />
-                      <img src={imgurl+'/hxcard4.png'} alt="" />
-                      <img src={imgurl+'/hxcard5.png'} alt="" />
-                    </div>
-                </VideoWrapper>
-            </VideoWrapperStatic>
-        </Wrapper>
-    );
+  return (
+    <Wrapper id={VIDEO_LIST_ID}>
+      <VideoWrapperStatic>
+        {/* <div style={{ position: 'sticky', top: 0, height: 200, left: 0, width: '100%', background: 'white' }}></div> */}
+        <VideoWrapper className="video-wrapper-sticky">
+          <Title style={{ marginTop: TITLE_MARGIN_TOP, marginBottom: TITLE_MARGIN_BOTTOM, position: 'relative' }}>
+            百应智能用户运营平台
+          </Title>
+          <div style={{ flex: '1', background: 'white', minHeight: 56 }}>
+            <div class="title">基于百应用户运营方法论，百应以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台致力于优化企业和政务的2C沟通环节，建立起与C端用户之间的稳固连接关系，持续创造企业增长和美好社会</div>
+          </div>
+          <div class="card">
+            <img src={imgurl + '/hxcard1.png'} alt="" />
+            <img src={imgurl + '/hxcard2.png'} alt="" />
+            <img src={imgurl + '/hxcard3.png'} alt="" />
+            <img src={imgurl + '/hxcard4.png'} alt="" />
+            <img src={showImg} alt="" />
+            <img src={`${imgurl}/yypt1.png`} alt="" />
+            <video muted autoplay="autoplay" loop="loop">
+              <source src={imgurl + '/pan.mp4'} type="video/mp4"></source>
+            </video>
+            <div onMouseEnter={()=>setShowImg(imgurl + '/hxcard5_active.png')} onMouseLeave={()=>setShowImg(imgurl + '/hxcard5.png')} ></div>
+          </div>
+        </VideoWrapper>
+      </VideoWrapperStatic>
+    </Wrapper>
+  );
 };
 
 export default VideoList;
