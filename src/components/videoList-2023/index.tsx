@@ -261,7 +261,7 @@ const VideoWrapper = styled.div`
     height: 451px;
     background: url(${imgurl}/yypt2.png) no-repeat,url(${imgurl}/yypt1.png) no-repeat;
     background-size: 100% 100%,511px 360px;
-    background-position: 0% 0%,center -20px;
+    background-position: 0% 0%,center top;
     border: none;
     margin: 62px auto 0;
     position: relative;
@@ -298,9 +298,9 @@ const VideoWrapper = styled.div`
     img:nth-child(4) {
       width: 142px;
       position: absolute;
-      top: 30px;
+      top: -10px;
       left: 278px;
-      transform: translateZ(-50px);
+      transform: translateZ(-1px);
       &:hover {
         content: url(${imgurl}/hxcard4_active.png);
       }
@@ -308,8 +308,9 @@ const VideoWrapper = styled.div`
     img:nth-child(5) {
       width: 177px;
       position: absolute;
-      top: 0;
+      top: -10px;
       left: 540px;
+      transform: translateZ(-1px);
       &:hover {
         content: url(${imgurl}/hxcard5_active.png);
       }
