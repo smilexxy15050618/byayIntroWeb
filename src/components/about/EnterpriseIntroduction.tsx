@@ -1,26 +1,31 @@
 import * as React from 'react';
-import { Container, Row, Col } from 'react-grid-system';
 import styled from 'styled-components';
-import { media } from '../../constants/style';
+import { Theme } from '../../constants/style';
+import { splitCssValue } from '../../lib/utils';
 
-const Wrap = styled.div<{ backgroundImage?: string }>`
-  padding: 150px 125px;
-  display: flex;
-  justify-content: space-between;
-  background-image: ${props => `url(${props.backgroundImage})`};
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-`;
-
-const Title = styled.h2<{ backgroundImage?: string }>`
-  font-size: 48px;
+const Title = styled.div<{ backgroundImage?: string }>`
+  padding-top: 80px;
+  padding-bottom:44px;
+  font-size: 40px;
+  line-height: 48px;
   color:rgba(43, 43, 43, 1);
   text-align: center;
 `;
 
-const BriefContainer = styled(Container)<{ backgroundImage?: string }>`
-  
+const BriefContainer = styled.div<{ maxWidthPc?: string; minWidthPC?: string }>`
+  @media (min-width: 768px) {
+    max-width: ${props => props.maxWidthPc || Theme.ContentWidth};
+    min-width: ${props => props.minWidthPC || 'unset'};
+    width: calc(
+      100vw / ${splitCssValue(Theme.DesignDraftWidth).num} *
+        ${props => splitCssValue(props.maxWidthPc || Theme.ContentWidth).num}
+    );
+    margin: 0 auto;
+  }
+  height: 100%;
+  @media (max-width: 768px) {
+    width: 100% !important;
+  }
 `;
 
 const BriefContainerWrap = styled.div`
@@ -34,8 +39,9 @@ const BriefContainerWrap = styled.div`
 
 const BriefCover = styled.div<{ backgroundImage?: string }>`
   position: relative;
-    z-index:11;
-    &::before {
+  flex: 1;
+  z-index:11;
+  &::before {
     position: absolute;
     left: 0;
     top: 57px;
@@ -71,61 +77,66 @@ const BriefIntro = styled.div`
   word-break: break-all;
   width: 981px;
   height: 541px;
-  padding-left: 467px;
+  padding: 50px 60px 65px 467px;
   border-radius: 8px;
   background: rgba(246, 252, 255, 1);
-    h4 {
-    margin-top: 10px;
-    margin-bottom: 30px;
-    font-size: 36px;
-    font-weight: 500;
-    color: #0d1924;
+  overflow-y: hide;
+  box-sizing: border-box;
+  &::before {
+    position: absolute;
+    left: 440px;
+    top: 50px;
+    display: block;
+    content: '';
+    width: 506px;
+    height: 89px;
+    background: linear-gradient(0, rgba(255, 255, 255, 0) 0%, rgba(246, 252, 255, 1) 100%);
+  }
+  &::after {
+    position: absolute;
+    left: 440px;
+    bottom: 65px;
+    display: block;
+    content: '';
+    width: 506px;
+    height: 89px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(246, 252, 255, 1) 100%);
   }
   p {
-    margin-top: 25px;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
-    color: #0d1924;
-    line-height: 24px;
+    color: rgba(43, 43, 43, 1);
+    line-height: 35px;
+
     &.inscribed {
       position: absolute;
       bottom: -20px;
     }
   }
-  &::before {
-    position: absolute;
-    left: 440px;
-    top: 0;
-    width: 506px;
-    height: 89px;
-    opacity: 1;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(246, 252, 255, 1) 100%);
-  }
-  &::after {
-    position: absolute;
-    left: 440px;
-    bottom: 0;
-    width: 506px;
-    height: 89px;
-    opacity: 1;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(246, 252, 255, 1) 100%);
+  .content{
+    height: 426px;
+    padding: 20px 0;
+    overflow-y: auto;
   }
 `;
 
 interface IBriefProps {
   backgroundImage: string;
   cover?: string;
+  minWidthPC?: string;
 }
 
-const EnterpriseIntroduction: React.SFC<IBriefProps> = ({ backgroundImage, cover }) => (
-  <BriefContainer>
+const EnterpriseIntroduction: React.SFC<IBriefProps> = ({ minWidthPC,backgroundImage, cover }) => (
+  <BriefContainer maxWidthPc="1200px" minWidthPC={minWidthPC}>
     <Title>百应科技：智能用户运营平台和解决方案</Title>
     <BriefContainerWrap>  
       <BriefCover cover={cover} backgroundImage={backgroundImage} />
       <BriefIntro>
-        <p>百应科技是对话式AI应用领域创领者，致力于为政府机构及头部企业提供智能用户运营平台与解决方案，助力拥有大量C端用户的政府机构及头部企业更有效地连接C端用户，通过数智化连接与沟通形成长期信任、创造价值。</p>
-        <p>基于多模态情感AI（Multimodal & Emotional AI） 、用户标签画像（CDP+）、全场景连接与触达（AICC+）、策略智能与自动化（OSA ）等系列产品矩阵，百应科技为企业客户提供存量时代的精准营销平台，打造核心客户价值；同时为政务客户打造数字化连接平台，实现高效连接群众，高效解决企业增长及政企服务难题。</p>
-        <p>自成立以来，百应科技连续六年保持增长，复合增长率（CAGR）超100%。连续三年被认证为杭州准独角兽企业，拥有中美双AI研究院，百余项AI及大数据领域相关专利和软件著作。</p>
+        <div className='content'>
+          <p>百应科技是对话式AI应用领域创领者，致力于为政府机构及头部企业提供智能用户运营平台与解决方案，助力拥有大量C端用户的政府机构及头部企业更有效地连接C端用户，通过数智化连接与沟通形成长期信任、创造价值。</p>
+          <p>基于多模态情感AI（Multimodal & Emotional AI） 、用户标签画像（CDP+）、全场景连接与触达（AICC+）、策略智能与自动化（OSA ）等系列产品矩阵，百应科技为企业客户提供存量时代的精准营销平台，打造核心客户价值；同时为政务客户打造数字化连接平台，实现高效连接群众，高效解决企业增长及政企服务难题。</p>
+          <p>自成立以来，百应科技连续六年保持增长，复合增长率（CAGR）超100%。连续三年被认证为杭州准独角兽企业，拥有中美双AI研究院，百余项AI及大数据领域相关专利和软件著作。</p>
+        </div>
       </BriefIntro>
     </BriefContainerWrap>  
   </BriefContainer>
