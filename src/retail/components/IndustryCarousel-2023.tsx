@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import JumpBtn from '../../components/JumpBtn';
 import { useTime } from '../../lib/hooks-utils';
 import { calWidthAndHeight, isPc, retailUrl } from '../../lib/utils';
+import imgurl from '../../../img.url.js'
 
 export interface ICarousel {
   onChange?: (index) => void;
@@ -65,9 +66,15 @@ const BgContent = styled.div`
     background: #2B58F9;
     padding: 13px 34px;
     font-size: 24px;
-  font-weight: 500;
-  color: #ffffff;
-  border-radius: 5.33px;
+    font-weight: 500;
+    color: #ffffff;
+    border-radius: 5.33px;
+    &:hover {
+      background: rgba(84, 127, 255, 1);
+    }
+    &:active {
+      background: rgba(25, 60, 212, 1);
+    }
   }
   img {
     width: 720px;
@@ -299,7 +306,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
               {subTitle.map(str => {
                 return <SubTitle>{str}</SubTitle>;
               })}
-              <img src="https://cdn.byai.com/static/intro/img/Banner/2021-3-technology-img.png"></img>
+              <img src={imgurl+'/retail_carousel.png'}></img>
               <div class="jumpbtn" scale={0.8} onClick={() => setForm()}>
                 预约体验
               </div>

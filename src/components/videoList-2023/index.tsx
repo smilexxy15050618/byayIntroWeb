@@ -236,7 +236,6 @@ const VideoWrapperStatic = styled.div`
   height: 100%;
   width: 100%;
   z-index: 2;
-  pointer-events: none;
   .title {
     font-size: 16px;
     font-weight: 400;
@@ -258,18 +257,17 @@ const VideoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   .card {
-    width: 971px;
-    height: 561px;
-    background: url(${imgurl}/yypt.png) no-repeat;
-    background-size: 100% 100%;
+    width: 956px;
+    height: 451px;
+    background: url(${imgurl}/yypt2.png) no-repeat,url(${imgurl}/yypt1.png) no-repeat;
+    background-size: 100% 100%,511px 360px;
+    background-position: 0% 0%,center -20px;
     border: none;
     margin: 62px auto 0;
     position: relative;
-    &:hover {
-      img:first-child {
-        content: url(${imgurl}/hxcard1_active.png) !important;
-      }
-    }
+    perspective: 150;
+    perspective-origin: 50% 35%;
+    transform-style: preserve-3d;
     img:first-child {
       width: 120px;
       position: absolute;
@@ -284,26 +282,37 @@ const VideoWrapper = styled.div`
       position: absolute;
       top: 175px;
       left: 337px;
+      &:hover {
+        content: url(${imgurl}/hxcard2_active.png);
+      }
     }
     img:nth-child(3) {
       width: 252px;
       position: absolute;
       top: 144px;
       left: 505px;
+      &:hover {
+        content: url(${imgurl}/hxcard3_active.png);
+      }
     }
     img:nth-child(4) {
       width: 142px;
       position: absolute;
-      top: 14px;
+      top: 30px;
       left: 278px;
-      z-index: -1;
+      transform: translateZ(-50px);
+      &:hover {
+        content: url(${imgurl}/hxcard4_active.png);
+      }
     }
     img:nth-child(5) {
       width: 177px;
       position: absolute;
       top: 0;
       left: 540px;
-      z-index: -1;
+      &:hover {
+        content: url(${imgurl}/hxcard5_active.png);
+      }
     }
   }
 `;
