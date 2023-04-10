@@ -424,7 +424,7 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
 const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
   return (
     <Pane title="顶尖资本支持，智领未来AI沟通新方式" paneBgColor="grey" 
-    style={{ paddingBottom: 152}} 
+    style={{ paddingBottom: 152,background:`url(${imgurl}/bgblue.png)`}} 
     titleStyle={{marginBottom:'40px'}}
     mobileStyle={{ paddingBottom: 40 }}>
       <Hidden xs sm>
