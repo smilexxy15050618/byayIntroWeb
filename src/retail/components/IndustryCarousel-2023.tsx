@@ -77,10 +77,10 @@ const BgContent = styled.div`
     }
   }
   img {
-    width: 720px;
-    height: 576px;
+    width: 534px;
+    height: 525px;
     position: absolute;
-    top: -152px;
+    top: -100px;
     right: -120px;
   }
 `;
@@ -145,9 +145,22 @@ const BottomMain = styled.div`
 `;
 
 const Wrapper = styled.div`
+width: 100%;
   height: 576px;
   position: relative;
   background: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  .carousel-bg-right{
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(47%,-74%);
+      width: 977px;
+      height: 977px;
+      opacity: 1;
+      background: radial-gradient(50% 50%, rgba(43, 88, 249, 0.3) 0%, rgba(43, 88, 249, 0) 100%);
+      filter: blur(100px);
+    }
 `;
 export const CarouselWrapper = styled.div`
   width: 100%;
@@ -298,6 +311,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
   }, []);
   return (
     <Wrapper onMouseEnter={endTimer} onMouseLeave={startTimer}>
+       <div className="carousel-bg-right"></div>
       {dataList.map(({ bg, title, subTitle }, i) => {
         return (
           <BgWrapper className={classNames({ active: i === currIndex })} bg={bg}>

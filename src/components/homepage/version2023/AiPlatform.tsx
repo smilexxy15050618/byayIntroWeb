@@ -47,7 +47,6 @@ const contentList = [
 ]
 const Wrapper = styled.div`
   width: 1152px;
-  min-height: 100vh;
   background: #fff;
   padding: 77px 0 51px;
   margin: 0 auto;

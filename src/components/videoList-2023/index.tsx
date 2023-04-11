@@ -23,16 +23,6 @@ const VIDEO_SIZE_MAPPER = {
     md: '403.5px',
     xs: '403.5px',
   },
-<<<<<<< HEAD
-};
-const SCROLL_TOP = {
-  xxl: '120px',
-  xl: '0px',
-  lg: '0px',
-  md: '0px',
-  xs: '0px',
-=======
->>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
 };
 
 const map2RenderCssRule = <T,>(rule: Partial<Record<Screen, T>>, mapper: (value: T, screen: Screen) => string) => {
@@ -49,15 +39,6 @@ const screenHeightRules: Array<[Screen, string]> = [
   ['lg', `@media screen and (min-height: 731px) and (max-height: 956px)`],
   ['md', `@media screen and (min-height: 563px) and (max-height: 730px)`],
   ['xs', `@media screen and (max-height: 562px)`],
-<<<<<<< HEAD
-];
-const screenWidthRules: Array<[Screen, string]> = [
-  ['xl', ``],
-  ['lg', `@media screen and (min-width: 1300px) and (max-width: 1699px)`],
-  ['md', `@media screen and (min-width: 1000px) and (max-width: 1299px)`],
-  ['xs', `@media screen and (max-width: 999px)`],
-=======
->>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
 ];
 
 type Screen = 'xxl' | 'xl' | 'lg' | 'md' | 'xs';
@@ -79,123 +60,14 @@ const renderCss = <T,>(
   return screenRules.map(([size, media]) => cssHelper(media, obj[size] ? obj[size] : '')).join('');
 };
 
-<<<<<<< HEAD
-const OFFSET_MAPPER = {
-  xxl: '10vh',
-  xl: '8vh',
-  lg: '0px',
-  md: '0px',
-  xs: '0px',
-};
-const mergeObj = <T extends string>(objList: Array<{ keyName: T; obj: any }>) => {
-  const keyList = ['xxl', 'xl', 'lg', 'md', 'xs'];
-  return keyList.reduce((prev, curr) => {
-    return {
-      [curr]: objList.reduce((prevObj, currObj) => {
-        return {
-          ...prevObj,
-          [currObj.keyName]: currObj.obj[curr],
-        };
-      }, {}),
-      ...prev,
-    };
-  }, {} as Record<Screen, Record<T, string>>);
-};
-=======
 
 
->>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
 export const VIDEO_LIST_ID = 'video-list';
 const TITLE_MARGIN_TOP = '77px';
 const TITLE_MARGIN_BOTTOM = '21px';
 const MENU_MARGIN_BOTTOM = '32px';
-<<<<<<< HEAD
-const DISAPPEAR_OFFSET = '80px';
-const DISAPPEAR_OFFSET_MAPPER = {
-  xxl: DISAPPEAR_OFFSET,
-  xl: DISAPPEAR_OFFSET,
-  lg: DISAPPEAR_OFFSET,
-  md: '40px',
-  xs: '40px',
-};
-const getContentPaddingTopCalcStr = (OFFSET: string, DISAPPEAR_OFFSET: string) =>
-  `${OFFSET} + ${TITLE_MARGIN_TOP} + ${TITLE_HEIGHT} + ${TITLE_MARGIN_BOTTOM} + ${MENU_HEIGHT} + ${MENU_MARGIN_BOTTOM} + ${DISAPPEAR_OFFSET}`;
-
-const getJumpStrTopCalcStr = (videoHeight: string, offset: string, disappearOffset: string) =>
-  `${getContentPaddingTopCalcStr(offset, disappearOffset)} + ${videoHeight} - 80px - ${disappearOffset}`;
-const JumpStr = styled.div`
-  height: 28px;
-  font-size: 20px;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: #2b58f9;
-  line-height: 28px;
-  position: absolute;
-  cursor: pointer;
-  transform: translateY(-100%);
-  ${renderCss(
-  mergeObj([
-    { keyName: 'VIDEO_HEIGHT', obj: VIDEO_SIZE_MAPPER.VIDEO_HEIGHT },
-    { keyName: 'OFFSET', obj: OFFSET_MAPPER },
-    { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-  ]),
-  screenHeightRules,
-  v => `top: calc(${getJumpStrTopCalcStr(v.VIDEO_HEIGHT, v.OFFSET, v.DISAPPEAR_OFFSET)});`,
-)}
-=======
-
->>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
 
 
-<<<<<<< HEAD
-  &:hover {
-    .jump-str-arrow {
-      transform: translateX(8px);
-    }
-  }
-`;
-const ScrollNode = styled.div`
-  position: absolute;
-  opacity: 0;
-  width: 1px;
-  height: 1px;
-  ${renderCss(
-  mergeObj([
-    { keyName: 'SCROLL_TOP', obj: SCROLL_TOP },
-    { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
-    { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-  ]),
-  screenHeightRules,
-  v => `top: calc(-1 * (${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)}) - ${v.SCROLL_TOP});`,
-)}
-`;
-const CONTENT_MB_MAP = {
-  xxl: '96px',
-  xl: '76px',
-  lg: '76px',
-  md: '76px',
-  xs: '76px',
-};
-const Content = styled.div`
-  /* min-height: 100vh; */
-  /* DISAPPEAR_OFFSET_MAPPER */
-  ${renderCss(
-  mergeObj([
-    { keyName: 'VIDEO_HEIGHT', obj: VIDEO_SIZE_MAPPER.VIDEO_HEIGHT },
-    { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-  ]),
-  screenHeightRules,
-  v => `height: calc(${v.VIDEO_HEIGHT} - ${v.DISAPPEAR_OFFSET});`,
-)}
-  ${renderCss(VIDEO_SIZE_MAPPER.VIDEO_WIDTH, screenHeightRules, v => `padding-left: calc(${v} + 60px);`)}
-  position: relative;
-  /* ${renderCss(VIDEO_SIZE_MAPPER.VIDEO_HEIGHT, screenHeightRules, v => `min-height: ${v};`)} */
-  box-sizing: content-box;
-  ${renderCss(CONTENT_MB_MAP, screenHeightRules, v => `margin-bottom: ${v}`)}
-`;
-=======
-
->>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
 const Wrapper = styled.div`
   width: 1200px;
   margin: 0 auto;
@@ -210,45 +82,7 @@ const Wrapper = styled.div`
     color: rgba(51, 51, 51, 1);
     text-align: center;
   }
-<<<<<<< HEAD
-  ${renderCss(OFFSET_MAPPER, screenHeightRules, v => `margin-top: -${v}`)}
-  > :nth-child(2) {
-    ${renderCss(
-  mergeObj([
-    { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
-    { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-  ]),
-  screenHeightRules,
-  v => `padding-top: calc(${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)});`,
-)}
-    ${ScrollNode} {
-      top: 0;
-      @media screen and (min-height: 1281px) {
-        top: -120px;
-      }
-    }
-  }
-  > :nth-child(n + 3) ${JumpStr} {
-    top: auto;
-    bottom: 80px;
-    transform: none;
-  }
-  > :last-child {
-    ${renderCss(
-  mergeObj([
-    { keyName: 'VIDEO_HEIGHT', obj: VIDEO_SIZE_MAPPER.VIDEO_HEIGHT },
-    { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
-    { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-  ]),
-  screenHeightRules,
-  v =>
-    `margin-bottom: calc(100vh - (${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)}) - ${v.VIDEO_HEIGHT
-    } + ${v.DISAPPEAR_OFFSET});`,
-)}
-  }
-=======
  
->>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
 `;
 
 const VideoWrapperStatic = styled.div`
@@ -282,21 +116,23 @@ const VideoWrapper = styled.div`
   }
   .card {
     width: 956px;
-    // height: 451px;
-    overflow:hidden;
+    height: 547px;
+    background: url(${imgurl}/yypt1.png) no-repeat;
+    background-size: 511px 361px;
+    background-position: 235px 25px;
     border: none;
     margin: 62px auto 0;
     position: relative;
-    perspective: 50;
+    perspective: 150;
     perspective-origin: 50% 35%;
     transform-style: preserve-3d;
-    margin-bottom:65px;
-    img:nth-child(6) {
-      width: 511px;
+    video {
+      width: 971px;
+      height: 560px;
       position: absolute;
       top: 0;
-      left: 50%;
-      transform: translate3d(-50%,20%,1px);
+      left: 0;
+      transform: translateZ(-1px);
     }
     video{
       margin-bottom:-2px;
@@ -305,7 +141,7 @@ const VideoWrapper = styled.div`
     img:first-child {
       width: 120px;
       position: absolute;
-      top: 160px;
+      top: 120px;
       left: 234px;
       z-index: 1;
       transform: translateZ(1px);
@@ -316,7 +152,7 @@ const VideoWrapper = styled.div`
     img:nth-child(2) {
       width: 158px;
       position: absolute;
-      top: 175px;
+      top: 135px;
       left: 337px;
       z-index: 1;
       transform: translateZ(1px);
@@ -327,7 +163,7 @@ const VideoWrapper = styled.div`
     img:nth-child(3) {
       width: 252px;
       position: absolute;
-      top: 144px;
+      top: 104px;
       left: 505px;
       z-index: 1;
       transform: translateZ(1px);
@@ -338,9 +174,10 @@ const VideoWrapper = styled.div`
     img:nth-child(4) {
       width: 142px;
       position: absolute;
-      top: 20px;
+      top: -20px;
       left: 278px;
       z-index: 2;
+      transform: translateZ(-1px);
       &:hover {
         content: url(${imgurl}/hxcard4_active.png);
       }
@@ -349,18 +186,13 @@ const VideoWrapper = styled.div`
       width: 177px;
       height: 163px;
       position: absolute;
-      top: 40px;
+      top: -20px;
       left: 540px;
       z-index: 2;
-    }
-    div:last-child {
-      width: 177px;
-      height: 163px;
-      position: absolute;
-      top: 45px;
-      left: 540px;
-      z-index: 3;
-      transform: translateZ(2px);
+      transform: translateZ(-1px);
+      &:hover {
+        content: url(${imgurl}/hxcard5_active.png);
+      }
     }
   }
 `;
@@ -450,33 +282,6 @@ const VideoContent = styled.div`
 
 const prefix =
   'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E5%AE%98%E7%BD%91%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6/';
-<<<<<<< HEAD
-const videoSrc = ['高用户接听.mp4', '高意向转化.mp4', '优营销模型.mp4'].map(str => `${prefix}${str}`);
-const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
-  const [currIndex, setCurrIndex] = useState(0);
-  useEffect(() => {
-    const ScrollMagic = require('scrollmagic');
-    var controller = new ScrollMagic.Controller();
-    const videoContentList = document.getElementsByClassName('video-content');
-    const nodeList = [...videoContentList];
-    // if (index === videoContentList.length - 1) {
-    nodeList.forEach(ele => {
-      new ScrollMagic.Scene({
-        triggerElement: ele, //触发元素
-        triggerHook: 'onLeave', //触发元素开始离开视口时触发
-        offset: -630, //从开始点滚动多少px触发（施法前摇）
-        duration: 400, //效果持续的距离（法术持续时间/距离）
-      })
-        .addTo(controller)
-        .on('enter', () => {
-          const index = +ele.getAttribute('data-index');
-          if (Number.isNaN(index)) {
-            return;
-          }
-          setCurrIndex(index);
-        });
-    });
-=======
 const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
   const [currIndex, setCurrIndex] = useState(0);
   const [showImg, setShowImg] = useState(imgurl + '/hxcard5.png');
@@ -496,7 +301,6 @@ const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
           // videoContent.classList.add('appear')
             controller.destroy();
         });
->>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
   }, []);
 
   return (
@@ -507,11 +311,7 @@ const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
           <Title style={{ marginTop: TITLE_MARGIN_TOP, marginBottom: TITLE_MARGIN_BOTTOM, position: 'relative' }}>
             百应智能用户运营平台
           </Title>
-<<<<<<< HEAD
-          <div style={{ flex: '1', background: 'white', minHeight: 56 }}>
-=======
           <div style={{  background: 'white', minHeight: 56 }}>
->>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
             <div class="title">基于百应用户运营方法论，百应以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台致力于优化企业和政务的2C沟通环节，建立起与C端用户之间的稳固连接关系，持续创造企业增长和美好社会</div>
           </div>
           <div class="card">
@@ -519,19 +319,10 @@ const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
             <img src={imgurl + '/hxcard2.png'} alt="" />
             <img src={imgurl + '/hxcard3.png'} alt="" />
             <img src={imgurl + '/hxcard4.png'} alt="" />
-<<<<<<< HEAD
             <img src={imgurl + '/hxcard5.png'} alt="" />
-            <video muted autoplay="autoplay" loop="loop">
-              <source src={imgurl + '/1681195981221630.mp4'} type="video/mp4"></source>
-            </video>
-=======
-            <img src={showImg} alt="" />
-            <img src={`${imgurl}/yypt1.png`} alt="" />
             <video muted autoplay="autoplay" loop="loop">
               <source src={imgurl + '/pan.mp4'} type="video/mp4"></source>
             </video>
-            <div onMouseEnter={()=>setShowImg(imgurl + '/hxcard5_active.png')} onMouseLeave={()=>setShowImg(imgurl + '/hxcard5.png')} ></div>
->>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
           </div>
         </VideoWrapper>
       </VideoWrapperStatic>
