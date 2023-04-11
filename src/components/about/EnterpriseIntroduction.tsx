@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Theme } from '../../constants/style';
 import { splitCssValue } from '../../lib/utils';
 
-const Title = styled.div<{ backgroundImage?: string }>`
+const Title = styled.div`
   padding-top: 80px;
   padding-bottom:44px;
   font-size: 40px;

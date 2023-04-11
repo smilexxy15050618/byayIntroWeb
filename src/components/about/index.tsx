@@ -6,3 +6,5 @@ export { default as Certificate } from './certificate';
 export { default as Banner } from './banner';
 export { default as TabNav } from './TabNav';
 export { default as EnterpriseIntroduction } from './EnterpriseIntroduction';
+export { default as MissionVision } from './MissionVision'
+export { default as DevelopHistory } from './DevelopHistory'
