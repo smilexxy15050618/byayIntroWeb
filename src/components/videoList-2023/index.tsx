@@ -23,6 +23,7 @@ const VIDEO_SIZE_MAPPER = {
     md: '403.5px',
     xs: '403.5px',
   },
+<<<<<<< HEAD
 };
 const SCROLL_TOP = {
   xxl: '120px',
@@ -30,7 +31,10 @@ const SCROLL_TOP = {
   lg: '0px',
   md: '0px',
   xs: '0px',
+=======
+>>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
 };
+
 const map2RenderCssRule = <T,>(rule: Partial<Record<Screen, T>>, mapper: (value: T, screen: Screen) => string) => {
   return Object.entries(rule).reduce<Partial<Record<Screen, string>>>((prev, [key, value]) => {
     return {
@@ -45,15 +49,18 @@ const screenHeightRules: Array<[Screen, string]> = [
   ['lg', `@media screen and (min-height: 731px) and (max-height: 956px)`],
   ['md', `@media screen and (min-height: 563px) and (max-height: 730px)`],
   ['xs', `@media screen and (max-height: 562px)`],
+<<<<<<< HEAD
 ];
 const screenWidthRules: Array<[Screen, string]> = [
   ['xl', ``],
   ['lg', `@media screen and (min-width: 1300px) and (max-width: 1699px)`],
   ['md', `@media screen and (min-width: 1000px) and (max-width: 1299px)`],
   ['xs', `@media screen and (max-width: 999px)`],
+=======
+>>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
 ];
+
 type Screen = 'xxl' | 'xl' | 'lg' | 'md' | 'xs';
-type ScreenRule = ((value: string) => string) | string;
 const renderCss = <T,>(
   rule: Partial<Record<Screen, T>>,
   screenRules: Array<[Screen, string]>,
@@ -72,6 +79,7 @@ const renderCss = <T,>(
   return screenRules.map(([size, media]) => cssHelper(media, obj[size] ? obj[size] : '')).join('');
 };
 
+<<<<<<< HEAD
 const OFFSET_MAPPER = {
   xxl: '10vh',
   xl: '8vh',
@@ -93,11 +101,15 @@ const mergeObj = <T extends string>(objList: Array<{ keyName: T; obj: any }>) =>
     };
   }, {} as Record<Screen, Record<T, string>>);
 };
+=======
+
+
+>>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
 export const VIDEO_LIST_ID = 'video-list';
 const TITLE_MARGIN_TOP = '77px';
 const TITLE_MARGIN_BOTTOM = '21px';
-const MENU_HEIGHT = '44px';
 const MENU_MARGIN_BOTTOM = '32px';
+<<<<<<< HEAD
 const DISAPPEAR_OFFSET = '80px';
 const DISAPPEAR_OFFSET_MAPPER = {
   xxl: DISAPPEAR_OFFSET,
@@ -130,12 +142,12 @@ const JumpStr = styled.div`
   screenHeightRules,
   v => `top: calc(${getJumpStrTopCalcStr(v.VIDEO_HEIGHT, v.OFFSET, v.DISAPPEAR_OFFSET)});`,
 )}
+=======
 
-  .jump-str-arrow {
-    display: inline-block;
-    transition: all 0.3s ease-in;
-  }
+>>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
 
+
+<<<<<<< HEAD
   &:hover {
     .jump-str-arrow {
       transform: translateX(8px);
@@ -181,6 +193,9 @@ const Content = styled.div`
   box-sizing: content-box;
   ${renderCss(CONTENT_MB_MAP, screenHeightRules, v => `margin-bottom: ${v}`)}
 `;
+=======
+
+>>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
 const Wrapper = styled.div`
   width: 1200px;
   margin: 0 auto;
@@ -195,6 +210,7 @@ const Wrapper = styled.div`
     color: rgba(51, 51, 51, 1);
     text-align: center;
   }
+<<<<<<< HEAD
   ${renderCss(OFFSET_MAPPER, screenHeightRules, v => `margin-top: -${v}`)}
   > :nth-child(2) {
     ${renderCss(
@@ -230,6 +246,9 @@ const Wrapper = styled.div`
     } + ${v.DISAPPEAR_OFFSET});`,
 )}
   }
+=======
+ 
+>>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
 `;
 
 const VideoWrapperStatic = styled.div`
@@ -250,37 +269,46 @@ const VideoWrapper = styled.div`
   position: sticky;
   left: 0;
   width: 100%;
-  ${renderCss(SCROLL_TOP, screenHeightRules, v => `top: ${v}`)}
-  ${renderCss(SCROLL_TOP, screenHeightRules, v => `min-height: calc(100vh - ${v});`)}
-  ${renderCss(OFFSET_MAPPER, screenHeightRules, v => `padding-top: ${v}`)}
+
   border-top: 1px solid transparent;
   display: flex;
   flex-direction: column;
+  transform: translateY(50%);
+  transition: all 0.4s;
+  opacity: 0;
+  &.appear{
+    transform: translateY(0);
+    opacity: 1;
+  }
   .card {
     width: 956px;
-    height: 451px;
-    background: url(${imgurl}/yypt1.png) no-repeat;
-    background-size: 511px 361px;
-    background-position: 235px 60px;
+    // height: 451px;
+    overflow:hidden;
     border: none;
     margin: 62px auto 0;
     position: relative;
-    perspective: 150;
+    perspective: 50;
     perspective-origin: 50% 35%;
     transform-style: preserve-3d;
-    video {
-      width: 971px;
-      height: 560px;
+    margin-bottom:65px;
+    img:nth-child(6) {
+      width: 511px;
       position: absolute;
       top: 0;
-      left: 0;
-      transform: translateZ(-10px);
+      left: 50%;
+      transform: translate3d(-50%,20%,1px);
+    }
+    video{
+      margin-bottom:-2px;
+      height:500px;
     }
     img:first-child {
       width: 120px;
       position: absolute;
       top: 160px;
       left: 234px;
+      z-index: 1;
+      transform: translateZ(1px);
       &:hover {
         content: url(${imgurl}/hxcard1_active.png);
       }
@@ -290,6 +318,8 @@ const VideoWrapper = styled.div`
       position: absolute;
       top: 175px;
       left: 337px;
+      z-index: 1;
+      transform: translateZ(1px);
       &:hover {
         content: url(${imgurl}/hxcard2_active.png);
       }
@@ -299,6 +329,8 @@ const VideoWrapper = styled.div`
       position: absolute;
       top: 144px;
       left: 505px;
+      z-index: 1;
+      transform: translateZ(1px);
       &:hover {
         content: url(${imgurl}/hxcard3_active.png);
       }
@@ -306,51 +338,34 @@ const VideoWrapper = styled.div`
     img:nth-child(4) {
       width: 142px;
       position: absolute;
-      top: -10px;
+      top: 20px;
       left: 278px;
-      transform: translateZ(-1px);
+      z-index: 2;
       &:hover {
         content: url(${imgurl}/hxcard4_active.png);
       }
     }
     img:nth-child(5) {
       width: 177px;
+      height: 163px;
       position: absolute;
-      top: -10px;
+      top: 40px;
       left: 540px;
-      transform: translateZ(-1px);
-      &:hover {
-        content: url(${imgurl}/hxcard5_active.png);
-      }
+      z-index: 2;
+    }
+    div:last-child {
+      width: 177px;
+      height: 163px;
+      position: absolute;
+      top: 45px;
+      left: 540px;
+      z-index: 3;
+      transform: translateZ(2px);
     }
   }
 `;
 
-const Menu = styled.div`
-  cursor: pointer;
-  height: ${MENU_HEIGHT};
-  border-radius: 22px;
-  margin-right: 17px;
-  padding: 0 24px;
-  opacity: 0.5;
-  transition: all 0.3s ease;
-  pointer-events: auto;
-  &.active {
-    background: rgba(235, 235, 235, 0.45);
-    opacity: 1;
-  }
-  line-height: ${MENU_HEIGHT};
-  font-size: 20px;
-  font-family: PingFangSC-Medium, PingFang SC;
-  font-weight: 500;
-  color: #333333;
 
-  > img {
-    height: 28px;
-    margin-bottom: 2px;
-    margin-right: 8px;
-  }
-`;
 
 const MENU_BOX_PADDING_LEFT = {
   xl: '67px',
@@ -384,26 +399,9 @@ const Video = styled.div`
   }
 `;
 
-const VideoTitle = styled.div`
-  width: 420px;
-  font-size: 32px;
-  font-family: PingFangSC-Medium, PingFang SC;
-  font-weight: 500;
-  color: #333333;
-  line-height: 54px;
-  margin-bottom: 25px;
-`;
 
-const VideoDesc = styled.div`
-  font-size: 18px;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: rgba(10, 15, 44, 0.45);
-  line-height: 28px;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-`;
+
+
 
 const SHADOW_TOP_HEIGHT_MAP = {
   xxl: '628px',
@@ -450,9 +448,9 @@ const VideoContent = styled.div`
   /* align-items: center; */
 `;
 
-const PANE_CLASS_NAME = 'video-content';
 const prefix =
   'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E5%AE%98%E7%BD%91%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6/';
+<<<<<<< HEAD
 const videoSrc = ['高用户接听.mp4', '高意向转化.mp4', '优营销模型.mp4'].map(str => `${prefix}${str}`);
 const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
   const [currIndex, setCurrIndex] = useState(0);
@@ -478,6 +476,27 @@ const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
           setCurrIndex(index);
         });
     });
+=======
+const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
+  const [currIndex, setCurrIndex] = useState(0);
+  const [showImg, setShowImg] = useState(imgurl + '/hxcard5.png');
+  useEffect(() => {
+    const ScrollMagic = require('scrollmagic');
+    var controller = new ScrollMagic.Controller();
+    const videoContent = document.getElementById(VIDEO_LIST_ID);
+      new ScrollMagic.Scene({
+        triggerElement: videoContent, //触发元素
+        triggerHook: 'onEnter', //触发元素开始离开视口时触发
+        offset: 0, //从开始点滚动多少px触发（施法前摇）
+        duration: 400, //效果持续的距离（法术持续时间/距离）
+      })
+        .setClassToggle('.video-wrapper-sticky', 'appear')
+        .addTo(controller)
+        .on('enter', () => {
+          // videoContent.classList.add('appear')
+            controller.destroy();
+        });
+>>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
   }, []);
 
   return (
@@ -488,7 +507,11 @@ const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
           <Title style={{ marginTop: TITLE_MARGIN_TOP, marginBottom: TITLE_MARGIN_BOTTOM, position: 'relative' }}>
             百应智能用户运营平台
           </Title>
+<<<<<<< HEAD
           <div style={{ flex: '1', background: 'white', minHeight: 56 }}>
+=======
+          <div style={{  background: 'white', minHeight: 56 }}>
+>>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
             <div class="title">基于百应用户运营方法论，百应以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台致力于优化企业和政务的2C沟通环节，建立起与C端用户之间的稳固连接关系，持续创造企业增长和美好社会</div>
           </div>
           <div class="card">
@@ -496,10 +519,19 @@ const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
             <img src={imgurl + '/hxcard2.png'} alt="" />
             <img src={imgurl + '/hxcard3.png'} alt="" />
             <img src={imgurl + '/hxcard4.png'} alt="" />
+<<<<<<< HEAD
             <img src={imgurl + '/hxcard5.png'} alt="" />
             <video muted autoplay="autoplay" loop="loop">
               <source src={imgurl + '/1681195981221630.mp4'} type="video/mp4"></source>
             </video>
+=======
+            <img src={showImg} alt="" />
+            <img src={`${imgurl}/yypt1.png`} alt="" />
+            <video muted autoplay="autoplay" loop="loop">
+              <source src={imgurl + '/pan.mp4'} type="video/mp4"></source>
+            </video>
+            <div onMouseEnter={()=>setShowImg(imgurl + '/hxcard5_active.png')} onMouseLeave={()=>setShowImg(imgurl + '/hxcard5.png')} ></div>
+>>>>>>> 52044da3de332a265144cfc3608ef388022b61c6
           </div>
         </VideoWrapper>
       </VideoWrapperStatic>

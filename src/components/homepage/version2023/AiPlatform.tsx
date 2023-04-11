@@ -51,6 +51,13 @@ const Wrapper = styled.div`
   background: #fff;
   padding: 77px 0 51px;
   margin: 0 auto;
+  transform: translateY(50%);
+transition: all 0.4s;
+opacity: 0;
+&.appear{
+  transform: translateY(0);
+  opacity: 1;
+}
   .title {
     font-family: PingFangSC;
     font-size: 40px;
@@ -128,9 +135,27 @@ const ListWrapper = styled.div`
    }
 
 `
+const AIID = 'ai_id_2023'
 const Platform: FC<IPlatformProps> = () => {
+    useEffect(() => {
+        const ScrollMagic = require('scrollmagic');
+        var controller = new ScrollMagic.Controller();
+        const videoContent = document.getElementById(AIID);
+          new ScrollMagic.Scene({
+            triggerElement: videoContent, //触发元素
+            triggerHook: 'onEnter', //触发元素开始离开视口时触发
+            offset: 0, //从开始点滚动多少px触发（施法前摇）
+            duration: 400, //效果持续的距离（法术持续时间/距离）
+          })
+            // .setClassToggle('.video-wrapper-sticky', 'appear')
+            .addTo(controller)
+            .on('enter', () => {
+                videoContent.classList.add('appear')
+                controller.destroy();
+            });
+      }, []);
     return (
-        <Wrapper>
+        <Wrapper id={AIID}>
             <div class="title">全行业AI用户运营平台与解决方案</div>
             <ListWrapper>
                 {contentList.map(({ name, content, url }, index) => {

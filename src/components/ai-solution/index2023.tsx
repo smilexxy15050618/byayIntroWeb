@@ -76,18 +76,46 @@ const carouselDataList = [{
     title:'数据管理',
     content:'持续追踪转化进度，通过效果评估，持续提升运营效率和用户体验'
 },]
+const MainWrap = styled.div`
+    transform: translateY(50%);
+    transition: all 0.4s;
+    opacity: 0;
+    &.appear{
+      transform: translateY(0);
+      opacity: 1;
+    }
+`
 
-
+const AISOLUTION = 'ai_jiejue_2918'
 const SceneSolution: FC<SceneSolution> = ({}) => {
  
 
 const [wrapindex, setWrapindex] = useState(0);
-
+useEffect(() => {
+    const ScrollMagic = require('scrollmagic');
+    var controller = new ScrollMagic.Controller();
+    const videoContent = document.getElementById(AISOLUTION);
+      new ScrollMagic.Scene({
+        triggerElement: videoContent, //触发元素
+        triggerHook: 'onEnter', //触发元素开始离开视口时触发
+        offset: 10, //从开始点滚动多少px触发（施法前摇）
+        duration: 400, //效果持续的距离（法术持续时间/距离）
+      })
+        // .setClassToggle('.aitxs', 'appear')
+        .addTo(controller)
+        .on('enter', () => {
+            videoContent.classList.add('appear')
+            // console.log('进入');
+            
+            controller.destroy();
+        });
+  }, []);
     return (
         <Pane title=" 全行业AI用户运营平台与解决方案"
         titleStyle={{marginBottom:'56px'}}
          paneBgColor="white" style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
           <Hidden xs sm>
+            <MainWrap id={AISOLUTION}>
             <HoveUp>
                 <Card bg={1}>
                     {carouselDataList.map(item => 
@@ -106,6 +134,7 @@ const [wrapindex, setWrapindex] = useState(0);
                   
                 </Card>
             </HoveUp>
+            </MainWrap>
           </Hidden>
           <Visible xs sm>
             {/* <CarouselMobile dataList={carouselDataList}></CarouselMobile> */}
