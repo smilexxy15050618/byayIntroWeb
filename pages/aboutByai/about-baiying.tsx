@@ -6,7 +6,7 @@ import { splitCssValue } from '../../src/lib/utils';
 import { Col, ColProps, Container, Hidden, Row, Visible } from 'react-grid-system';
 import { TextArea } from '../../src/components/common/BannerTextElements';
 import BannerWhite from '../../src/components/common/BannerWhite';
-import { TabNav, EnterpriseIntroduction, MissionVision } from '../../src/components/about';
+import { TabNav, EnterpriseIntroduction, MissionVision, SocietyDuty, FlairVoucher } from '../../src/components/about';
 
 
 
@@ -18,6 +18,9 @@ const INTRODUCE_BG = `${imgurl}/about_introduce_bg.png`;
 const MissionVision_BG = `${imgurl}/mission-vision-bg.png`;
 const NORMAL_BG = `${imgurl}/course-normal.png`;
 const ACTIVE_BG = `${imgurl}/course-active.png`;
+const SOCIETYDUTY_BG = `${imgurl}/society-duty.png`;
+const SOCIETYDUTY_IMG1 = `${imgurl}/society-duty_1.png`;
+const SOCIETYDUTY_IMG2 = `${imgurl}/society-duty_2.png`;
 
 const SERVICE_DEMAND = [
   {
@@ -26,49 +29,216 @@ const SERVICE_DEMAND = [
     list:[
       {
         time: '2022.03',
-        title: '入选浙江省2021年度人工智能典型应用场景'
+        title: '入选浙江省2021年度人工智能典型应用场景',
+        urlLink: 'http://baidu.com'
       },
       {
         time: '2022.03',
-        title: '通过全球软件领域最高级别CMMI5认证'
+        title: '通过全球软件领域最高级别CMMI5认证',
+        urlLink: 'http://baidu.com'
       },
       {
         time: '2022.06',
-        title: '获评腾讯智慧零售“千域计划年度认证合作伙伴”'
+        title: '获评腾讯智慧零售“千域计划年度认证合作伙伴”',
+        urlLink: 'http://baidu.com'
       },
       {
         time: '2022.10',
-        title: '入选《国家人工智能创新应用先导区“智赋百景”》'
+        title: '入选《国家人工智能创新应用先导区“智赋百景”》',
+        urlLink: 'http://baidu.com'
       },
       {
         time: '2022.12',
-        title: '入选2022中国企业数智化创新TOP50'
+        title: '入选2022中国企业数智化创新TOP50',
+        urlLink: 'http://baidu.com'
       }
     ]
   },
   {
     title: '2018',
-    cover: `${imgurl}/year-2018.png`
+    cover: `${imgurl}/year-2018.png`,
+    list:[
+      {
+        time: '2022.03',
+        title: '入选浙江省2021年度人工智能典型应用场景',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.03',
+        title: '通过全球软件领域最高级别CMMI5认证',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.06',
+        title: '获评腾讯智慧零售“千域计划年度认证合作伙伴”',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.10',
+        title: '入选《国家人工智能创新应用先导区“智赋百景”》',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.12',
+        title: '入选2022中国企业数智化创新TOP50',
+        urlLink: 'http://baidu.com'
+      }
+    ]
   },
   {
     title: '2019',
-    cover: `${imgurl}/year-2019.png`
+    cover: `${imgurl}/year-2019.png`,
+    list:[
+      {
+        time: '2022.03',
+        title: '入选浙江省2021年度人工智能典型应用场景',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.03',
+        title: '通过全球软件领域最高级别CMMI5认证',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.06',
+        title: '获评腾讯智慧零售“千域计划年度认证合作伙伴”',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.10',
+        title: '入选《国家人工智能创新应用先导区“智赋百景”》',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.12',
+        title: '入选2022中国企业数智化创新TOP50',
+        urlLink: 'http://baidu.com'
+      }
+    ]
   },
   {
     title: '2020',
-    cover: `${imgurl}/year-2020.png`
+    cover: `${imgurl}/year-2020.png`,
+    list:[
+      {
+        time: '2022.03',
+        title: '入选浙江省2021年度人工智能典型应用场景',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.03',
+        title: '通过全球软件领域最高级别CMMI5认证',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.06',
+        title: '获评腾讯智慧零售“千域计划年度认证合作伙伴”',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.10',
+        title: '入选《国家人工智能创新应用先导区“智赋百景”》',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.12',
+        title: '入选2022中国企业数智化创新TOP50',
+        urlLink: 'http://baidu.com'
+      }
+    ]
   },
   {
     title: '2021',
-    cover: `${imgurl}/year-2021.png`
+    cover: `${imgurl}/year-2021.png`,
+    list:[
+      {
+        time: '2022.03',
+        title: '入选浙江省2021年度人工智能典型应用场景',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.03',
+        title: '通过全球软件领域最高级别CMMI5认证',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.06',
+        title: '获评腾讯智慧零售“千域计划年度认证合作伙伴”',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.10',
+        title: '入选《国家人工智能创新应用先导区“智赋百景”》',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.12',
+        title: '入选2022中国企业数智化创新TOP50',
+        urlLink: 'http://baidu.com'
+      }
+    ]
   },
   {
     title: '2022',
-    cover: `${imgurl}/year-2022.png`
+    cover: `${imgurl}/year-2022.png`,
+    list:[
+      {
+        time: '2022.03',
+        title: '入选浙江省2021年度人工智能典型应用场景',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.03',
+        title: '通过全球软件领域最高级别CMMI5认证',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.06',
+        title: '获评腾讯智慧零售“千域计划年度认证合作伙伴”',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.10',
+        title: '入选《国家人工智能创新应用先导区“智赋百景”》',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.12',
+        title: '入选2022中国企业数智化创新TOP50',
+        urlLink: 'http://baidu.com'
+      }
+    ]
   },
   {
     title: '2023',
-    cover: `${imgurl}/year-2023.png`
+    cover: `${imgurl}/year-2023.png`,
+    list:[
+      {
+        time: '2022.03',
+        title: '入选浙江省2021年度人工智能典型应用场景',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.03',
+        title: '通过全球软件领域最高级别CMMI5认证',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.06',
+        title: '获评腾讯智慧零售“千域计划年度认证合作伙伴”',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.10',
+        title: '入选《国家人工智能创新应用先导区“智赋百景”》',
+        urlLink: 'http://baidu.com'
+      },
+      {
+        time: '2022.12',
+        title: '入选2022中国企业数智化创新TOP50',
+        urlLink: 'http://baidu.com'
+      }
+    ]
   }
 ];
 
@@ -132,8 +302,44 @@ const DemandWrap = styled.div`
 
 const DemandLeft = styled.div`
   width:212px;
-  flex: 1;
   margin-left: -12px;
+`;
+
+const DemandRight = styled.div`
+  flex: 1;
+  padding-left: 120px;
+  padding-top: 10px;
+  ul{
+    list-style: none;
+    li{
+      position: relative;
+      height: 53px;
+      line-height: 53px;
+      padding-left: 24px;
+      list-style: none;
+      font-size: 18px;
+      color: rgba(51, 51, 51, 1);
+      &::before {
+        position: absolute;
+        display: block;
+        content: '';
+        left: 0;
+        top: 16px;
+        width: 6px;
+        height: 21px;
+        background: linear-gradient(180deg, rgba(139, 172, 255, 1) 0%, rgba(43, 88, 249, 1) 100%);
+      }
+      span{
+        padding-right: 66px;
+      }
+      a{
+        color: rgba(51, 51, 51, 1);
+      }
+      a:hover{
+        color:rgba(43, 88, 249, 1);
+        text-decoration: none;
+      }
+  }
 `;
 
 const Intro = styled.div`
@@ -167,7 +373,6 @@ const Title = styled.div`
 `;
 
 const DemandItem = styled.div<{ normalBg: string; activeBg: string; active: boolean }>`
-  margin-bottom: 50px;
   position: relative;
   width: 212px;
   height: 80px;
@@ -274,12 +479,23 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
                     </DemandItem>
                   ))}
                 </DemandLeft>
-                <div align="end" style={{ marginTop: 40 }}>
+                <DemandRight>
                   <img src={SERVICE_DEMAND[demandIndex].cover} alt="" />
-                </div>
+                  <ul>
+                    {SERVICE_DEMAND[demandIndex].list.map((item, index) => (
+                      <li><span>{item.time}</span><a href={item.urlLink}>{item.title}</a></li>
+                    ))}
+                  </ul>
+                </DemandRight>
                 </DemandWrap>
             </IntroContent>
           </Intro>
+          <SocietyDuty
+            backgroundImage={SOCIETYDUTY_BG}
+            societyDuty1={SOCIETYDUTY_IMG1}
+            societyDuty2={SOCIETYDUTY_IMG2}
+          />
+          <FlairVoucher />
           develophistory<br />
           dsfds<br />
           dsfds<br />
