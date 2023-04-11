@@ -401,6 +401,14 @@ const ProgressContent = styled.div`
   transition: width 0.3s ease-in-out;
   background: #2b58f9;
 `;
+const MainWrap = styled.div`
+transform: translateY(50%);
+transition: all 0.4s;
+opacity: 0;
+&.appear{
+  transform: translateY(0);
+  opacity: 1;
+}`
 
 const Content = styled.div<{ bgSrc: string; currWidth: number; gap: number; color: string }>`
   position: relative;
@@ -513,14 +521,38 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
   );
 };
 export const CustomerId = 'customer_id'
+ const CustomerIdwrap = 'customer_id_wrap'
+
 const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
+  useEffect(() => {
+    const ScrollMagic = require('scrollmagic');
+    var controller = new ScrollMagic.Controller();
+    const videoContent = document.getElementById(CustomerIdwrap);
+      new ScrollMagic.Scene({
+        triggerElement: videoContent, //触发元素
+        triggerHook: 'onEnter', //触发元素开始离开视口时触发
+        offset: 0, //从开始点滚动多少px触发（施法前摇）
+        duration: 400, //效果持续的距离（法术持续时间/距离）
+      })
+        // .setClassToggle('.video-wrapper-sticky', 'appear')
+        .addTo(controller)
+        .on('enter', () => {
+            videoContent.classList.add('appear')
+            controller.destroy();
+        });
+  }, []);
   return (
-    <Pane title="众多政府机构及头部企业的信赖之选"
-    id={CustomerId}
+  
+    <Pane id={CustomerId} title="众多政府机构及头部企业的信赖之选"
     titleStyle={{marginBottom:'53px'}}
      paneBgColor="white" style={{ paddingBottom: 152 }} mobileStyle={{ paddingBottom: 40 }}>
       <Hidden xs sm>
+      <MainWrap
+    id={CustomerIdwrap}
+    >
         <Carousel dataList={carouselDataList}></Carousel>
+    </MainWrap>
+
       </Hidden>
       <Visible xs sm>
         <CarouselMobile dataList={carouselDataList}></CarouselMobile>

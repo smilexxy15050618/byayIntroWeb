@@ -24,13 +24,7 @@ const VIDEO_SIZE_MAPPER = {
     xs: '403.5px',
   },
 };
-const SCROLL_TOP = {
-  xxl: '120px',
-  xl: '0px',
-  lg: '0px',
-  md: '0px',
-  xs: '0px',
-};
+
 const map2RenderCssRule = <T,>(rule: Partial<Record<Screen, T>>, mapper: (value: T, screen: Screen) => string) => {
   return Object.entries(rule).reduce<Partial<Record<Screen, string>>>((prev, [key, value]) => {
     return {
@@ -46,14 +40,8 @@ const screenHeightRules: Array<[Screen, string]> = [
   ['md', `@media screen and (min-height: 563px) and (max-height: 730px)`],
   ['xs', `@media screen and (max-height: 562px)`],
 ];
-const screenWidthRules: Array<[Screen, string]> = [
-  ['xl', ``],
-  ['lg', `@media screen and (min-width: 1300px) and (max-width: 1699px)`],
-  ['md', `@media screen and (min-width: 1000px) and (max-width: 1299px)`],
-  ['xs', `@media screen and (max-width: 999px)`],
-];
+
 type Screen = 'xxl' | 'xl' | 'lg' | 'md' | 'xs';
-type ScreenRule = ((value: string) => string) | string;
 const renderCss = <T,>(
   rule: Partial<Record<Screen, T>>,
   screenRules: Array<[Screen, string]>,
@@ -72,76 +60,13 @@ const renderCss = <T,>(
   return screenRules.map(([size, media]) => cssHelper(media, obj[size] ? obj[size] : '')).join('');
 };
 
-const OFFSET_MAPPER = {
-  xxl: '10vh',
-  xl: '8vh',
-  lg: '0px',
-  md: '0px',
-  xs: '0px',
-};
-const mergeObj = <T extends string>(objList: Array<{ keyName: T; obj: any }>) => {
-  const keyList = ['xxl', 'xl', 'lg', 'md', 'xs'];
-  return keyList.reduce((prev, curr) => {
-    return {
-      [curr]: objList.reduce((prevObj, currObj) => {
-        return {
-          ...prevObj,
-          [currObj.keyName]: currObj.obj[curr],
-        };
-      }, {}),
-      ...prev,
-    };
-  }, {} as Record<Screen, Record<T, string>>);
-};
+
+
 export const VIDEO_LIST_ID = 'video-list';
 const TITLE_MARGIN_TOP = '77px';
 const TITLE_MARGIN_BOTTOM = '21px';
-const MENU_HEIGHT = '44px';
 const MENU_MARGIN_BOTTOM = '32px';
-const DISAPPEAR_OFFSET = '80px';
-const DISAPPEAR_OFFSET_MAPPER = {
-  xxl: DISAPPEAR_OFFSET,
-  xl: DISAPPEAR_OFFSET,
-  lg: DISAPPEAR_OFFSET,
-  md: '40px',
-  xs: '40px',
-};
-const getContentPaddingTopCalcStr = (OFFSET: string, DISAPPEAR_OFFSET: string) =>
-  `${OFFSET} + ${TITLE_MARGIN_TOP} + ${TITLE_HEIGHT} + ${TITLE_MARGIN_BOTTOM} + ${MENU_HEIGHT} + ${MENU_MARGIN_BOTTOM} + ${DISAPPEAR_OFFSET}`;
 
-const getJumpStrTopCalcStr = (videoHeight: string, offset: string, disappearOffset: string) =>
-  `${getContentPaddingTopCalcStr(offset, disappearOffset)} + ${videoHeight} - 80px - ${disappearOffset}`;
-const JumpStr = styled.div`
-  height: 28px;
-  font-size: 20px;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: #2b58f9;
-  line-height: 28px;
-  position: absolute;
-  cursor: pointer;
-  transform: translateY(-100%);
-  ${renderCss(
-  mergeObj([
-    { keyName: 'VIDEO_HEIGHT', obj: VIDEO_SIZE_MAPPER.VIDEO_HEIGHT },
-    { keyName: 'OFFSET', obj: OFFSET_MAPPER },
-    { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-  ]),
-  screenHeightRules,
-  v => `top: calc(${getJumpStrTopCalcStr(v.VIDEO_HEIGHT, v.OFFSET, v.DISAPPEAR_OFFSET)});`,
-)}
-
-  .jump-str-arrow {
-    display: inline-block;
-    transition: all 0.3s ease-in;
-  }
-
-  &:hover {
-    .jump-str-arrow {
-      transform: translateX(8px);
-    }
-  }
-`;
 
 
 
@@ -184,6 +109,13 @@ const VideoWrapper = styled.div`
   border-top: 1px solid transparent;
   display: flex;
   flex-direction: column;
+  transform: translateY(50%);
+  transition: all 0.4s;
+  opacity: 0;
+  &.appear{
+    transform: translateY(0);
+    opacity: 1;
+  }
   .card {
     width: 956px;
     // height: 451px;
@@ -269,31 +201,7 @@ const VideoWrapper = styled.div`
   }
 `;
 
-const Menu = styled.div`
-  cursor: pointer;
-  height: ${MENU_HEIGHT};
-  border-radius: 22px;
-  margin-right: 17px;
-  padding: 0 24px;
-  opacity: 0.5;
-  transition: all 0.3s ease;
-  pointer-events: auto;
-  &.active {
-    background: rgba(235, 235, 235, 0.45);
-    opacity: 1;
-  }
-  line-height: ${MENU_HEIGHT};
-  font-size: 20px;
-  font-family: PingFangSC-Medium, PingFang SC;
-  font-weight: 500;
-  color: #333333;
 
-  > img {
-    height: 28px;
-    margin-bottom: 2px;
-    margin-right: 8px;
-  }
-`;
 
 const MENU_BOX_PADDING_LEFT = {
   xl: '67px',
@@ -327,26 +235,9 @@ const Video = styled.div`
   }
 `;
 
-const VideoTitle = styled.div`
-  width: 420px;
-  font-size: 32px;
-  font-family: PingFangSC-Medium, PingFang SC;
-  font-weight: 500;
-  color: #333333;
-  line-height: 54px;
-  margin-bottom: 25px;
-`;
 
-const VideoDesc = styled.div`
-  font-size: 18px;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: rgba(10, 15, 44, 0.45);
-  line-height: 28px;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-`;
+
+
 
 const SHADOW_TOP_HEIGHT_MAP = {
   xxl: '628px',
@@ -393,35 +284,27 @@ const VideoContent = styled.div`
   /* align-items: center; */
 `;
 
-const PANE_CLASS_NAME = 'video-content';
 const prefix =
   'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E5%AE%98%E7%BD%91%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6/';
-const videoSrc = ['高用户接听.mp4', '高意向转化.mp4', '优营销模型.mp4'].map(str => `${prefix}${str}`);
 const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
   const [currIndex, setCurrIndex] = useState(0);
   const [showImg, setShowImg] = useState(imgurl + '/hxcard5.png');
   useEffect(() => {
     const ScrollMagic = require('scrollmagic');
     var controller = new ScrollMagic.Controller();
-    const videoContentList = document.getElementsByClassName('video-content');
-    const nodeList = [...videoContentList];
-    // if (index === videoContentList.length - 1) {
-    nodeList.forEach(ele => {
+    const videoContent = document.getElementById(VIDEO_LIST_ID);
       new ScrollMagic.Scene({
-        triggerElement: ele, //触发元素
-        triggerHook: 'onLeave', //触发元素开始离开视口时触发
-        offset: -630, //从开始点滚动多少px触发（施法前摇）
+        triggerElement: videoContent, //触发元素
+        triggerHook: 'onEnter', //触发元素开始离开视口时触发
+        offset: 0, //从开始点滚动多少px触发（施法前摇）
         duration: 400, //效果持续的距离（法术持续时间/距离）
       })
+        .setClassToggle('.video-wrapper-sticky', 'appear')
         .addTo(controller)
         .on('enter', () => {
-          const index = +ele.getAttribute('data-index');
-          if (Number.isNaN(index)) {
-            return;
-          }
-          setCurrIndex(index);
+          // videoContent.classList.add('appear')
+            controller.destroy();
         });
-    });
   }, []);
 
   return (
