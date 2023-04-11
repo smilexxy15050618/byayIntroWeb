@@ -150,11 +150,11 @@ const AI: FC<IAiProps> = ({ }) => {
       }, []);
     return (
     <MainWrap id={AiTSXID} >
-        <div className='aitxs'>
         <Pane>
             <div class="title">AI赋能零售品牌全域增长，打造核心用户价值</div>
             <div class="desc">助力品牌高效引流获客、营销增长、精细化运营，提升会员体验和业绩增量</div>
             <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
+            <div className='aitxs'>
                 <ListWrapper>
                     <div class="lists">
                     {titleList.map(({ title, subTitle }, index) => {
@@ -171,8 +171,8 @@ const AI: FC<IAiProps> = ({ }) => {
                     </div>
                 </ListWrapper>
             </div>
+            </div>
         </Pane>
-        </div>
     </MainWrap>
 
     );
