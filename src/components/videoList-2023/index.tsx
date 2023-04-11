@@ -142,45 +142,9 @@ const JumpStr = styled.div`
     }
   }
 `;
-const ScrollNode = styled.div`
-  position: absolute;
-  opacity: 0;
-  width: 1px;
-  height: 1px;
-  ${renderCss(
-  mergeObj([
-    { keyName: 'SCROLL_TOP', obj: SCROLL_TOP },
-    { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
-    { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-  ]),
-  screenHeightRules,
-  v => `top: calc(-1 * (${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)}) - ${v.SCROLL_TOP});`,
-)}
-`;
-const CONTENT_MB_MAP = {
-  xxl: '96px',
-  xl: '76px',
-  lg: '76px',
-  md: '76px',
-  xs: '76px',
-};
-const Content = styled.div`
-  /* min-height: 100vh; */
-  /* DISAPPEAR_OFFSET_MAPPER */
-  ${renderCss(
-  mergeObj([
-    { keyName: 'VIDEO_HEIGHT', obj: VIDEO_SIZE_MAPPER.VIDEO_HEIGHT },
-    { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-  ]),
-  screenHeightRules,
-  v => `height: calc(${v.VIDEO_HEIGHT} - ${v.DISAPPEAR_OFFSET});`,
-)}
-  ${renderCss(VIDEO_SIZE_MAPPER.VIDEO_WIDTH, screenHeightRules, v => `padding-left: calc(${v} + 60px);`)}
-  position: relative;
-  /* ${renderCss(VIDEO_SIZE_MAPPER.VIDEO_HEIGHT, screenHeightRules, v => `min-height: ${v};`)} */
-  box-sizing: content-box;
-  ${renderCss(CONTENT_MB_MAP, screenHeightRules, v => `margin-bottom: ${v}`)}
-`;
+
+
+
 const Wrapper = styled.div`
   width: 1200px;
   margin: 0 auto;
@@ -195,41 +159,7 @@ const Wrapper = styled.div`
     color: rgba(51, 51, 51, 1);
     text-align: center;
   }
-  ${renderCss(OFFSET_MAPPER, screenHeightRules, v => `margin-top: -${v}`)}
-  > :nth-child(2) {
-    ${renderCss(
-  mergeObj([
-    { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
-    { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-  ]),
-  screenHeightRules,
-  v => `padding-top: calc(${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)});`,
-)}
-    ${ScrollNode} {
-      top: 0;
-      @media screen and (min-height: 1281px) {
-        top: -120px;
-      }
-    }
-  }
-  > :nth-child(n + 3) ${JumpStr} {
-    top: auto;
-    bottom: 80px;
-    transform: none;
-  }
-  > :last-child {
-    ${renderCss(
-  mergeObj([
-    { keyName: 'VIDEO_HEIGHT', obj: VIDEO_SIZE_MAPPER.VIDEO_HEIGHT },
-    { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
-    { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-  ]),
-  screenHeightRules,
-  v =>
-    `margin-bottom: calc(100vh - (${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)}) - ${v.VIDEO_HEIGHT
-    } + ${v.DISAPPEAR_OFFSET});`,
-)}
-  }
+ 
 `;
 
 const VideoWrapperStatic = styled.div`
@@ -250,27 +180,31 @@ const VideoWrapper = styled.div`
   position: sticky;
   left: 0;
   width: 100%;
-  ${renderCss(SCROLL_TOP, screenHeightRules, v => `top: ${v}`)}
-  ${renderCss(SCROLL_TOP, screenHeightRules, v => `min-height: calc(100vh - ${v});`)}
-  ${renderCss(OFFSET_MAPPER, screenHeightRules, v => `padding-top: ${v}`)}
+
   border-top: 1px solid transparent;
   display: flex;
   flex-direction: column;
   .card {
     width: 956px;
-    height: 451px;
+    // height: 451px;
+    overflow:hidden;
     border: none;
     margin: 62px auto 0;
     position: relative;
     perspective: 50;
     perspective-origin: 50% 35%;
     transform-style: preserve-3d;
+    margin-bottom:65px;
     img:nth-child(6) {
       width: 511px;
       position: absolute;
       top: 0;
       left: 50%;
       transform: translate3d(-50%,20%,1px);
+    }
+    video{
+      margin-bottom:-2px;
+      height:500px;
     }
     img:first-child {
       width: 120px;
@@ -498,7 +432,7 @@ const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
           <Title style={{ marginTop: TITLE_MARGIN_TOP, marginBottom: TITLE_MARGIN_BOTTOM, position: 'relative' }}>
             百应智能用户运营平台
           </Title>
-          <div style={{ flex: '1', background: 'white', minHeight: 56 }}>
+          <div style={{  background: 'white', minHeight: 56 }}>
             <div class="title">基于百应用户运营方法论，百应以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台致力于优化企业和政务的2C沟通环节，建立起与C端用户之间的稳固连接关系，持续创造企业增长和美好社会</div>
           </div>
           <div class="card">
