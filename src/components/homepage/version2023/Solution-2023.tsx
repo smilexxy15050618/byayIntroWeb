@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { FC, useState, useEffect, useRef, useCallback, useMemo ,ComponentLifecycle} from 'react';
 import { Visible } from 'react-grid-system';
 import { HOST_ENUM } from '../../../lib/utils';
 import Accordion from '../../accordion';
@@ -82,31 +82,36 @@ img {
 export const SOLUTION_ID = 'solution';
 const SOLUTION_ID_WRAP = 'solution_wrap';
 const Solution: FC<ISolutionProps> = ({}) => {
+const myRef = useRef(null);
   // contentList: { color: string; title: string; maxDesc: string[]; minDesc: string[]; tagList: string[]  }[];
 const [currIndex,setCurrIndex] = useState(0);
 useEffect(() => {
-  const ScrollMagic = require('scrollmagic');
-  var controller = new ScrollMagic.Controller();
-  const videoContent = document.getElementById(SOLUTION_ID_WRAP);
-    new ScrollMagic.Scene({
-      triggerElement: videoContent, //触发元素
-      triggerHook: 'onEnter', //触发元素开始离开视口时触发
-      offset: 0, //从开始点滚动多少px触发（施法前摇）
-      duration: 400, //效果持续的距离（法术持续时间/距离）
-    })
-      // .setClassToggle('.video-wrapper-sticky', 'appear')
-      .addTo(controller)
-      .on('enter', () => {
-          videoContent.classList.add('appear')
-          controller.destroy();
-      });
-}, []);
+ 
+  const timer =  setInterval(()=>{
+    if(myRef.current){
+      clearInterval(timer);
+      const ScrollMagic = require('scrollmagic');
+      var controller = new ScrollMagic.Controller();
+      const videoContent = myRef.current;
+        new ScrollMagic.Scene({
+          triggerElement: videoContent, //触发元素
+          triggerHook: 'onEnter', //触发元素开始离开视口时触发
+          offset: 0, //从开始点滚动多少px触发（施法前摇）
+          duration: 400, //效果持续的距离（法术持续时间/距离）
+        })
+          .addTo(controller)
+          .on('enter', () => {
+              videoContent.classList.add('appear')
+              controller.destroy();
+          });
+    }
+  })
+}, [myRef]);
   return (
     <Pane id={SOLUTION_ID} title="场景解决方案" 
     style={{background: 'rgba(246, 252, 255, 1',paddingTop: '77px'}}
     titleMarginBottom={58}>
-      <Visible md lg xl xxl xxxl>
-    <MainWrap id={SOLUTION_ID_WRAP} >
+    <MainWrap id={SOLUTION_ID_WRAP}      ref={myRef}>
 
         <LabelList>
             {labelInfo.map(({name},i)=> {
@@ -123,10 +128,7 @@ useEffect(() => {
           <img src={`${imgurl}${labelInfo[currIndex].url}`} alt="" />
         </ContentWrapper>
     </MainWrap>
-      </Visible>
-      <Visible xs sm>
-       
-      </Visible>
+     
     </Pane>
   );
 };
