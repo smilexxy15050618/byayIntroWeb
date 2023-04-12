@@ -74,6 +74,7 @@ const Wrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   .title {
     font-size: 16px;
     font-weight: 400;
@@ -133,11 +134,7 @@ const VideoWrapper = styled.div`
       position: absolute;
       top: 0;
       left: 0;
-      transform: translateZ(-1px);
-    }
-    video{
-      margin-bottom:-2px;
-      height:500px;
+      transform: translateZ(-4px);
     }
     img:first-child {
       width: 120px;
@@ -320,7 +317,7 @@ const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
             <img src={imgurl + '/hxcard1.png'} alt="" />
             <img src={imgurl + '/hxcard2.png'} alt="" />
             <img src={imgurl + '/hxcard3.png'} alt="" />
-            <img src={imgurl + '/.png'} alt="" />
+            <img src={imgurl + '/hxcard4.png'} alt="" />
             <img src={imgurl + '/hxcard5.png'} alt="" />
             <video muted autoplay="autoplay" loop="loop">
               <source src={imgurl + '/pan.mp4'} type="video/mp4"></source>
