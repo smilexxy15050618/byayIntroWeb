@@ -6,8 +6,8 @@ import { splitCssValue } from '../../src/lib/utils';
 import { Col, ColProps, Container, Hidden, Row, Visible, ScreenClassRender } from 'react-grid-system';
 import { TextArea } from '../../src/components/common/BannerTextElements';
 import BannerWhite from '../../src/components/common/BannerWhite';
-import { TabNav, EnterpriseIntroduction, MissionVision, SocietyDuty, FlairVoucher, InterCertificate, CertificateNew } from '../../src/components/about';
-
+import { TabNav, EnterpriseIntroduction, MissionVision, SocietyDuty, FlairVoucher, InterCertificate, CertificateNew, JoinUs } from '../../src/components/about';
+import ByVoiceFooterNew from '../../src/components/common/ByVoiceFooterNew';
 
 
 import imgurl from '../../img.url.js'
@@ -23,6 +23,8 @@ const SOCIETYDUTY_IMG1 = `${imgurl}/society-duty_1.png`;
 const SOCIETYDUTY_IMG2 = `${imgurl}/society-duty_2.png`;
 const INTERCERTIFICATE_BG = `${imgurl}/inter-cert_bg.png`;
 const CRDITMEDAL_BG = `${imgurl}/credit-medal-bg.png`;
+const JOINUS_BG = `${imgurl}/web-com.png`;
+const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
 
 const SERVICE_DEMAND = [
   {
@@ -416,6 +418,7 @@ const DemandItem = styled.div<{ normalBg: string; activeBg: string; active: bool
     height: 80px;
     background-image: ${props => (props.active ? `url(${props.activeBg})` : `url(${props.normalBg})`)};
     background-repeat: no-repeat;
+    transition: all 0.3s ease;
   }
   p{
     position: absolute;
@@ -460,21 +463,27 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
               bannerList={[
                 {
                   name: '企业介绍',
+                  jumpTarget: '#qiyejieshao'
                 },
                 {
                   name: '使命愿景',
+                  jumpTarget: '#MissionVision'
                 },
                 {
                   name: '发展历程',
+                  jumpTarget: '#DevelopHistory'
                 },
                 {
                   name: '社会责任',
+                  jumpTarget: '#SocietyDuty'
                 },
                 {
                   name: '荣誉证书',
+                  jumpTarget: '#CreditMedal'
                 },
                 {
                   name: '加入我们',
+                  jumpTarget: '#JoinUs'
                 },
               ]} 
             />
@@ -486,7 +495,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
           <MissionVision
             backgroundImage={MissionVision_BG}
           />
-          <Intro>
+          <Intro id="DevelopHistory">
             <IntroContent>
               <Title>发展历程<p>2016.09 百应科技成立</p></Title>
               <DemandWrap>
@@ -522,7 +531,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
           />
           <FlairVoucher />
           <InterCertificate backgroundImage={INTERCERTIFICATE_BG} />
-          <CreditMedal backgroundImage={CRDITMEDAL_BG}>
+          <CreditMedal backgroundImage={CRDITMEDAL_BG} id="CreditMedal">
             <TitleCredit>荣誉奖项</TitleCredit>
             <ScreenClassRender
               render={screenClass => {
@@ -547,6 +556,20 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
               }}
             />
           </CreditMedal>
+          <JoinUs backgroundImage={JOINUS_BG} />
+          <ByVoiceFooterNew
+            title="用AI助力构建To C长期信关系，一起创造未来"
+            desc="留下联系方式，将有AI行业专家为您提供专属服务"
+            btnTextDemo="体验demo"
+            btnText="预约演练"
+            background={`url(${FOOTER_BG})`}
+            onClick={() => {
+              window.open('/form?formType=1')
+            }}
+            onClickDemo={() => {
+              window.open('/form?formType=1')
+            }}
+          />
           CreditMedal<br />
           dsfds<br />
           dsfds<br />

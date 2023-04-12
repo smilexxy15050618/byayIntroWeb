@@ -71,7 +71,7 @@ const MissionVisionContainerWrap = styled.div<{ backgroundImage?: string }>`
 
 const MissionVision: React.SFC<MissionVisionProps> = ({ minWidthPC, backgroundImage }) => {
   return (
-    <MissionVisionContainer maxWidthPc="1200px" minWidthPC={minWidthPC}>
+    <MissionVisionContainer id="MissionVision" maxWidthPc="1200px" minWidthPC={minWidthPC}>
       <Title>使命和愿景</Title>
       <MissionVisionContainerWrap backgroundImage={backgroundImage}>
         <div className='mission-tips'><span>使命：</span>以AI赋能经济发展和社会生活</div>
