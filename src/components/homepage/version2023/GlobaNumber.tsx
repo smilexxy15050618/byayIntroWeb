@@ -84,7 +84,7 @@ const Item = styled.div`
     flex-direction: column;
     justify-content: space-between;
     &:nth-child(4n) {
-        width: 170px;
+        width: 185px;
     }
     &:before {
       display: block;
@@ -101,7 +101,7 @@ const Item = styled.div`
         font-size: 48px;
         font-weight: 700;
         letter-spacing: 0px;
-        line-height: 30px;
+        line-height: 40px;
         color: rgba(51, 51, 51, 1);
  span:last-child {
     font-size: 16px;
