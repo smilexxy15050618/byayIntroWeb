@@ -50,13 +50,7 @@ const Wrapper = styled.div`
   background: #fff;
   padding: 77px 0 51px;
   margin: 0 auto;
-  transform: translateY(50%);
-transition: all 0.4s;
-opacity: 0;
-&.appear{
-  transform: translateY(0);
-  opacity: 1;
-}
+ 
   .title {
     font-family: PingFangSC;
     font-size: 40px;
@@ -89,6 +83,13 @@ const ListWrapper = styled.div`
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
+   transform: translateY(50%);
+   transition: all 0.4s;
+   opacity: 0;
+   &.appear{
+     transform: translateY(0);
+     opacity: 1;
+   }
    .content {
     width: 264px;
     cursor:pointer;
@@ -154,9 +155,9 @@ const Platform: FC<IPlatformProps> = () => {
             });
       }, []);
     return (
-        <Wrapper id={AIID}>
+        <Wrapper >
             <div class="title">全行业AI用户运营平台与解决方案</div>
-            <ListWrapper>
+            <ListWrapper id={AIID}>
                 {contentList.map(({ name, content, url }, index) => {
                     return (
                         <div class="content">
