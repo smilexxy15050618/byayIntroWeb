@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useState } from 'react';
+import { FC, ReactNode, useEffect, useState, useRef} from 'react';
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { Title, TITLE_HEIGHT } from '../homepage/version2023/styled';
 import { Tick } from './Tick';
@@ -107,13 +107,7 @@ const VideoWrapper = styled.div`
   border-top: 1px solid transparent;
   display: flex;
   flex-direction: column;
-  transform: translateY(50%);
-  transition: all 0.4s;
-  opacity: 0;
-  &.appear{
-    transform: translateY(0);
-    opacity: 1;
-  }
+  
   .card {
     width: 956px;
     height: 547px;
@@ -126,6 +120,13 @@ const VideoWrapper = styled.div`
     perspective: 150;
     perspective-origin: 50% 35%;
     transform-style: preserve-3d;
+    transform: translateY(50%);
+    transition: all 0.4s;
+    opacity: 0;
+    &.appear{
+      transform: translateY(0);
+      opacity: 1;
+    }
     video {
       width: 971px;
       height: 560px;
@@ -285,17 +286,18 @@ const prefix =
 const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
   const [currIndex, setCurrIndex] = useState(0);
   const [showImg, setShowImg] = useState(imgurl + '/hxcard5.png');
+  const myRef = useRef(null);
   useEffect(() => {
     const ScrollMagic = require('scrollmagic');
     var controller = new ScrollMagic.Controller();
-    const videoContent = document.getElementById(VIDEO_LIST_ID);
+    const videoContent = myRef.current;
       new ScrollMagic.Scene({
         triggerElement: videoContent, //触发元素
         triggerHook: 'onEnter', //触发元素开始离开视口时触发
         offset: 0, //从开始点滚动多少px触发（施法前摇）
         duration: 400, //效果持续的距离（法术持续时间/距离）
       })
-        .setClassToggle('.video-wrapper-sticky', 'appear')
+        .setClassToggle('.card', 'appear')
         .addTo(controller)
         .on('enter', () => {
           // videoContent.classList.add('appear')
@@ -304,7 +306,7 @@ const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
   }, []);
 
   return (
-    <Wrapper id={VIDEO_LIST_ID}>
+    <Wrapper id={VIDEO_LIST_ID} ref={myRef}>
       <VideoWrapperStatic>
         {/* <div style={{ position: 'sticky', top: 0, height: 200, left: 0, width: '100%', background: 'white' }}></div> */}
         <VideoWrapper className="video-wrapper-sticky">
@@ -318,7 +320,7 @@ const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
             <img src={imgurl + '/hxcard1.png'} alt="" />
             <img src={imgurl + '/hxcard2.png'} alt="" />
             <img src={imgurl + '/hxcard3.png'} alt="" />
-            <img src={imgurl + '/hxcard4.png'} alt="" />
+            <img src={imgurl + '/.png'} alt="" />
             <img src={imgurl + '/hxcard5.png'} alt="" />
             <video muted autoplay="autoplay" loop="loop">
               <source src={imgurl + '/pan.mp4'} type="video/mp4"></source>

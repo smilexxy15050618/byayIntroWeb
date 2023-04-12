@@ -524,23 +524,33 @@ export const CustomerId = 'customer_id'
  const CustomerIdwrap = 'customer_id_wrap'
 
 const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
+  const myRef = useRef(null);
   useEffect(() => {
-    const ScrollMagic = require('scrollmagic');
-    var controller = new ScrollMagic.Controller();
-    const videoContent = document.getElementById(CustomerIdwrap);
-      new ScrollMagic.Scene({
-        triggerElement: videoContent, //触发元素
-        triggerHook: 'onEnter', //触发元素开始离开视口时触发
-        offset: 0, //从开始点滚动多少px触发（施法前摇）
-        duration: 400, //效果持续的距离（法术持续时间/距离）
-      })
-        // .setClassToggle('.video-wrapper-sticky', 'appear')
-        .addTo(controller)
-        .on('enter', () => {
-            videoContent.classList.add('appear')
-            controller.destroy();
-        });
-  }, []);
+    const timer = setInterval(()=>{
+  console.log(myRef.current,'myRef.current');
+
+      if(myRef.current){
+        clearInterval(timer)
+        const ScrollMagic = require('scrollmagic');
+        var controller = new ScrollMagic.Controller();
+        const videoContent = myRef.current;
+          new ScrollMagic.Scene({
+            triggerElement: videoContent, //触发元素
+            triggerHook: 'onEnter', //触发元素开始离开视口时触发
+            offset: 0, //从开始点滚动多少px触发（施法前摇）
+            duration: 400, //效果持续的距离（法术持续时间/距离）
+          })
+            // .setClassToggle('.video-wrapper-sticky', 'appear')
+            .addTo(controller)
+            .on('enter', () => {
+                videoContent.classList.add('appear')
+                controller.destroy();
+            });
+      }
+    })
+    
+    
+  }, [myRef]);
   return (
   
     <Pane id={CustomerId} title="众多政府机构及头部企业的信赖之选"
@@ -549,6 +559,7 @@ const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
       <Hidden xs sm>
       <MainWrap
     id={CustomerIdwrap}
+    ref={myRef}
     >
         <Carousel dataList={carouselDataList}></Carousel>
     </MainWrap>
