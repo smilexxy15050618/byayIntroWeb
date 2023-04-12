@@ -62,7 +62,20 @@ const ArrowClick = styled.div`
 
     }
 `
-const dataList = [1]
+const dataList = [
+    {
+        url: '/cusino5.png'
+    },
+    {
+        url: '/cusino2.png'
+    },
+    {
+        url: '/cusino3.png'
+    },
+    {
+        url: '/cusino4.png'
+    }
+]
 const Carousel: React.FC<ICarouselProps> = ({ style }) => {
     const [controlledSwiper, setControlledSwiper] = useState(null);
     return (
@@ -92,10 +105,10 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
                                 slidesPerView='auto'
                                 onSwiper={swiper => setControlledSwiper(swiper)}
                                 loop={false}>
-                                {dataList.map((data, i) => (
+                                {dataList.map(({url}) => (
                                     <SwiperSlide style={{}}>
                                         <div className='card'>
-                                            <img src={`${imgurl}/cusino1.png`} />
+                                            <img src={`${imgurl}${url}`} />
                                         </div>
                                     </SwiperSlide>
                                 ))}

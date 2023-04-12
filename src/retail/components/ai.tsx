@@ -11,17 +11,17 @@ const titleList = [
     {
         title: '精准营销',
         subTitle: '智能化打标，打造多维度标签体系智能分析意向，构建用户画像360用户精细化分层，精准营销触达赋能运营人员，有效管理用户资产',
-        url: '/yhgl.png'
+        url: '/jzyx.png'
     },
     {
         title: '智能触达',
         subTitle: '智能化打标，打造多维度标签体系智能分析意向，构建用户画像360用户精细化分层，精准营销触达赋能运营人员，有效管理用户资产',
-        url: '/yhgl.png'
+        url: '/zncd.png'
     },
     {
         title: '数据化运营',
         subTitle: '智能化打标，打造多维度标签体系智能分析意向，构建用户画像360用户精细化分层，精准营销触达赋能运营人员，有效管理用户资产',
-        url: '/yhgl.png'
+        url: '/sjyy.png'
     },
 ]
 export type IAiProps = {};

@@ -73,15 +73,15 @@ const MainWrap = styled.div`
     }
 `
 
-const carouselDataList = [imgurl+'/proinfo1.png','2','3','4']
+const carouselDataList = [imgurl+'/proinfo1.png',imgurl+'/proinfo2.jpg',imgurl+'/proinfo3.jpg',imgurl+'/proinfo4.jpg']
 
 
 const SceneSolution: FC<SceneSolution> = ({}) => {
     const [tabList, setTabList]=  useState( [
-{img:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E4%BC%98%E5%8A%BF/a-1.png',title:'美妆行业',chose:true},
-{img:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E4%BC%98%E5%8A%BF/a-2.png',title:'鞋服行业',chose:false},
-{img:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E4%BC%98%E5%8A%BF/a-3.png',title:'食品行业',chose:false},
-{img:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E4%BC%98%E5%8A%BF/a-3.png',title:'百购行业',chose:false}])
+{img:imgurl+'/makeup.png',title:'美妆行业',chose:true},
+{img:imgurl+'/clothes.png',title:'鞋服行业',chose:false},
+{img:imgurl+'/food.png',title:'食品行业',chose:false},
+{img:imgurl+'/shopping.png',title:'百购行业',chose:false}])
 const choseOne = (i)=>{
     const arr = tabList.map((ele,index)=>{
         ele.chose = false

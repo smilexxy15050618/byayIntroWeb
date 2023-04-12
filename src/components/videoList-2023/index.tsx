@@ -110,13 +110,13 @@ const VideoWrapper = styled.div`
   flex-direction: column;
   
   .card {
-    width: 956px;
-    height: 547px;
+    width: 1280px;
+    height: 738px;
     background: url(${imgurl}/yypt1.png) no-repeat;
     background-size: 511px 361px;
-    background-position: 235px 25px;
+    background-position: center center;
     border: none;
-    margin: 62px auto 0;
+    margin: 0px 0 0 -40px;
     position: relative;
     perspective: 150;
     perspective-origin: 50% 35%;
@@ -124,23 +124,32 @@ const VideoWrapper = styled.div`
     transform: translateY(50%);
     transition: all 0.4s;
     opacity: 0;
+    div {
+      width: 100%;
+      height: 15px;
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      background: #fff;
+      z-index: 1000;
+    }
     &.appear{
       transform: translateY(0);
       opacity: 1;
     }
     video {
-      width: 971px;
-      height: 560px;
+      width: 1280px;
+      height: 738px;
       position: absolute;
       top: 0;
       left: 0;
       transform: translateZ(-4px);
     }
     img:first-child {
-      width: 120px;
+      width: 108px;
       position: absolute;
-      top: 120px;
-      left: 234px;
+      top: 290px;
+      left: 405px;
       z-index: 1;
       transform: translateZ(1px);
       &:hover {
@@ -148,10 +157,10 @@ const VideoWrapper = styled.div`
       }
     }
     img:nth-child(2) {
-      width: 158px;
+      width: 140px;
       position: absolute;
-      top: 135px;
-      left: 337px;
+      top: 305px;
+      left: 500px;
       z-index: 1;
       transform: translateZ(1px);
       &:hover {
@@ -159,10 +168,10 @@ const VideoWrapper = styled.div`
       }
     }
     img:nth-child(3) {
-      width: 252px;
+      width: 215px;
       position: absolute;
-      top: 104px;
-      left: 505px;
+      top: 275px;
+      left: 650px;
       z-index: 1;
       transform: translateZ(1px);
       &:hover {
@@ -170,10 +179,10 @@ const VideoWrapper = styled.div`
       }
     }
     img:nth-child(4) {
-      width: 142px;
+      width: 130px;
       position: absolute;
-      top: -20px;
-      left: 278px;
+      top: 145px;
+      left: 440px;
       z-index: 2;
       transform: translateZ(-1px);
       &:hover {
@@ -181,11 +190,10 @@ const VideoWrapper = styled.div`
       }
     }
     img:nth-child(5) {
-      width: 177px;
-      height: 163px;
+      width: 165px;
       position: absolute;
-      top: -20px;
-      left: 540px;
+      top: 145px;
+      right: 440px;
       z-index: 2;
       transform: translateZ(-1px);
       &:hover {
@@ -322,6 +330,7 @@ const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
             <video muted autoplay="autoplay" loop="loop">
               <source src={imgurl + '/pan.mp4'} type="video/mp4"></source>
             </video>
+            <div></div>
           </div>
         </VideoWrapper>
       </VideoWrapperStatic>

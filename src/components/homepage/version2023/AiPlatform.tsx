@@ -63,15 +63,17 @@ const Wrapper = styled.div`
   }
   .more {
     cursor: pointer;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0px;
-    line-height: 24px;
-    color: rgba(43, 88, 249, 1);
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 32px;
+    a {
+        font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 24px;
+    color: rgba(43, 88, 249, 1);
+    }
     img {
         width: 16px;
         height: 16px;
@@ -169,8 +171,10 @@ const Platform: FC<IPlatformProps> = () => {
                 })}
             </ListWrapper>
             <div class="more">
-                   查看更多
+            <a href="https://crm.byai.com/login" target="_blank" rel="noreferrer">
+            查看更多
                    <img src={imgurl+'/down.png'}></img>
+                </a>
                 </div>
         </Wrapper>
     )
