@@ -22,7 +22,7 @@ const SOCIETYDUTY_BG = `${imgurl}/society-duty.png`;
 const SOCIETYDUTY_IMG1 = `${imgurl}/society-duty_1.png`;
 const SOCIETYDUTY_IMG2 = `${imgurl}/society-duty_2.png`;
 const INTERCERTIFICATE_BG = `${imgurl}/inter-cert_bg.png`;
-const CRDITMEDAL_bg = `${imgurl}/credit-medal-bg.png`;
+const CRDITMEDAL_BG = `${imgurl}/credit-medal-bg.png`;
 
 const SERVICE_DEMAND = [
   {
@@ -348,9 +348,14 @@ const Intro = styled.div`
   background: rgba(246, 252, 255, 1);
 `;
 
-const CreditMedal = styled.div`
+const CreditMedal = styled.div<{ backgroundImage?: string }>`
+  position: relative;
   margin-top: 100px;
-  background: rgba(43, 88, 249, 1);
+  background-color: rgba(43, 88, 249, 1);
+  background-image: ${props => `url(${props.backgroundImage})`};
+  background-repeat: no-repeat;
+  background-size: 764px 506px;
+  background-position: center;
 `;
 
 const IntroContent = styled.div`
@@ -376,7 +381,20 @@ const Title = styled.div`
   line-height: 48px;
   color:rgba(43, 43, 43, 1);
   text-align: center;
-  p{font-size:18px;line-height:44px;color:rgba(43, 88, 249, 1)}
+  p{
+    font-size:18px;
+    line-height:44px;
+    color:rgba(43, 88, 249, 1)
+  }
+`;
+
+const TitleCredit = styled.div`
+  padding-top: 80px;
+  padding-bottom:44px;
+  font-size: 40px;
+  line-height: 48px;
+  color: #fff;
+  text-align: center;
 `;
 
 const DemandItem = styled.div<{ normalBg: string; activeBg: string; active: boolean }>`
@@ -504,8 +522,8 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
           />
           <FlairVoucher />
           <InterCertificate backgroundImage={INTERCERTIFICATE_BG} />
-          <CreditMedal>
-            <Title title="证书及奖项" />
+          <CreditMedal backgroundImage={CRDITMEDAL_BG}>
+            <TitleCredit>荣誉奖项</TitleCredit>
             <ScreenClassRender
               render={screenClass => {
                 let limit;
