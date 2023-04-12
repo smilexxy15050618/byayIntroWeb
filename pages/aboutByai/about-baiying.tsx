@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { Layout } from '../../src/components/Layout';
 import { Theme } from '../../src/constants/style';
 import { splitCssValue } from '../../src/lib/utils';
-import { Col, ColProps, Container, Hidden, Row, Visible } from 'react-grid-system';
+import { Col, ColProps, Container, Hidden, Row, Visible, ScreenClassRender } from 'react-grid-system';
 import { TextArea } from '../../src/components/common/BannerTextElements';
 import BannerWhite from '../../src/components/common/BannerWhite';
-import { TabNav, EnterpriseIntroduction, MissionVision, SocietyDuty, FlairVoucher } from '../../src/components/about';
+import { TabNav, EnterpriseIntroduction, MissionVision, SocietyDuty, FlairVoucher, InterCertificate, CertificateNew } from '../../src/components/about';
 
 
 
@@ -21,6 +21,8 @@ const ACTIVE_BG = `${imgurl}/course-active.png`;
 const SOCIETYDUTY_BG = `${imgurl}/society-duty.png`;
 const SOCIETYDUTY_IMG1 = `${imgurl}/society-duty_1.png`;
 const SOCIETYDUTY_IMG2 = `${imgurl}/society-duty_2.png`;
+const INTERCERTIFICATE_BG = `${imgurl}/inter-cert_bg.png`;
+const CRDITMEDAL_bg = `${imgurl}/credit-medal-bg.png`;
 
 const SERVICE_DEMAND = [
   {
@@ -346,6 +348,11 @@ const Intro = styled.div`
   background: rgba(246, 252, 255, 1);
 `;
 
+const CreditMedal = styled.div`
+  margin-top: 100px;
+  background: rgba(43, 88, 249, 1);
+`;
+
 const IntroContent = styled.div`
   @media (min-width: 768px) {
     max-width: ${props => Theme.ContentWidth};
@@ -496,7 +503,33 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
             societyDuty2={SOCIETYDUTY_IMG2}
           />
           <FlairVoucher />
-          develophistory<br />
+          <InterCertificate backgroundImage={INTERCERTIFICATE_BG} />
+          <CreditMedal>
+            <Title title="证书及奖项" />
+            <ScreenClassRender
+              render={screenClass => {
+                let limit;
+                switch (screenClass) {
+                  case 'lg':
+                    limit = 4;
+                    break;
+                  case 'md':
+                    limit = 3;
+                    break;
+                  case 'sm':
+                    limit = 2;
+                    break;
+                  case 'xs':
+                    limit = 1;
+                    break;
+                  default:
+                    limit = 5;
+                }
+                return <CertificateNew limit={limit} />;
+              }}
+            />
+          </CreditMedal>
+          CreditMedal<br />
           dsfds<br />
           dsfds<br />
           dsfds<br />

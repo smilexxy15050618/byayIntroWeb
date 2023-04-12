@@ -9,3 +9,5 @@ export { default as EnterpriseIntroduction } from './EnterpriseIntroduction';
 export { default as MissionVision } from './MissionVision'
 export { default as SocietyDuty } from './SocietyDuty'
 export { default as FlairVoucher } from './FlairVoucher'
+export { default as InterCertificate } from './InterCertificate'
+export { default as CertificateNew } from './CertificateNew'
