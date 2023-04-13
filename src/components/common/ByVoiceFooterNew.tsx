@@ -7,38 +7,15 @@ interface IProps {
   title: string;
   desc?: string;
   btnText: string;
-  btnTextDemo: string;
   onClick: () => void;
-  onClickDemo: () => void;
 }
 
-const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText, onClickDemo, btnTextDemo }) => {
+const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText }) => {
   return (
     <div className={className}>
       <div className="title">{title}</div>
       <div className="desc">{desc}</div>
       <div className='submit'>
-      <ByNormalBtn
-        onClick={() => onClick()}
-        width="200px"
-        height="48px"
-        color="rgba(43, 43, 43, 1)"
-        bigStyle={`
-          font-size: 16px;
-          font-weight: 500;
-          margin-right:38px;
-        `}
-        smallStyle={`
-          width: 104px;
-          height: 38px;
-          font-size: 16px;
-          font-weight: 500;
-          margin-right:28px;
-        `}
-        borderRadius={4}
-        background="#FFFFFF">
-        {btnTextDemo}
-      </ByNormalBtn>
       <ByNormalBtn
         onClick={() => onClick()}
         width="200px"

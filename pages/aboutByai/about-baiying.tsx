@@ -560,27 +560,12 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
           <ByVoiceFooterNew
             title="用AI助力构建To C长期信关系，一起创造未来"
             desc="留下联系方式，将有AI行业专家为您提供专属服务"
-            btnTextDemo="体验demo"
             btnText="预约演练"
             background={`url(${FOOTER_BG})`}
             onClick={() => {
               window.open('/form?formType=1')
             }}
-            onClickDemo={() => {
-              window.open('/form?formType=1')
-            }}
           />
-          CreditMedal<br />
-          dsfds<br />
-          dsfds<br />
-          dsfds<br />
-          dsfds<br />
-          dsfds<br />
-          dsfds<br />
-          dsfds<br />
-          dsfds<br />
-          dsfds<br />
-
         </Wrapper>
       </>
     )}
