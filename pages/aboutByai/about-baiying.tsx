@@ -484,7 +484,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
                 {
                   name: '加入我们',
                   jumpTarget: '#JoinUs'
-                },
+                }
               ]} 
             />
             <EnterpriseIntroduction
