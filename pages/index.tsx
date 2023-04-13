@@ -4,6 +4,7 @@ import CustomerIconsBlock from '../src/components/common/CustomerIconsBlock';
 import Advantage from '../src/components/homepage/version2023/AiPlatform';
 import Solution from '../src/components/homepage/version2023/Solution-2023';
 import HeightestAi from '../src/components/homepage/version2023/HeightestAi';
+import GlobaNumber from '../src/components/homepage/version2023/GlobaNumber';
 import CustomerWords from '../src/components/homepage/version2023/CustomerWords2023';
 import { IndustryCarousel } from '../src/components/IndustryCarousel-2023';
 import { Layout } from '../src/components/Layout';
@@ -11,6 +12,7 @@ import { FormType } from '../src/components/TryForm';
 import VideoList from '../src/components/videoList-2023';
 import VideoListMobile from '../src/components/videoList/VidelListMobile';
 import { Wrapper } from '../src/components/voice-robot/style';
+import { ScrollToPlugin } from 'gsap/all';
 const FOOTER_BG = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/bg/bottom.png';
 const BASE_URL = 'https://cdn.byai.com/static/intro/img/index/version2021/banner';
 const TEMPORARY_BANNER_BG = `${BASE_URL}/temporary-bg.jpg`;
@@ -133,9 +135,10 @@ export default props => {
           </Visible>
           <Solution />
           <Advantage></Advantage>
+          <GlobaNumber></GlobaNumber>
           <CustomerWords></CustomerWords>
-          <CustomerIconsBlock padding="0 0 83px" />
           <HeightestAi />
+          <CustomerIconsBlock padding="50px 0 80px" />
           <ByVoiceFooter
             title="就现在，开启AI电话增长之旅"
             desc="留下联系方式，将有AI行业专家为您提供专属服务"

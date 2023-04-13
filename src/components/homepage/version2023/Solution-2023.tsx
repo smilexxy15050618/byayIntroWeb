@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { FC, useState, useEffect, useRef, useCallback, useMemo ,ComponentLifecycle} from 'react';
 import { Visible } from 'react-grid-system';
 import { HOST_ENUM } from '../../../lib/utils';
 import Accordion from '../../accordion';
@@ -43,6 +43,15 @@ color: rgba(51, 51, 51, 1);
     border-bottom: 2px solid rgba(43, 88, 249, 1);  
 } 
 `
+const MainWrap = styled.div`
+transform: translateY(50%);
+transition: all 0.4s;
+opacity: 0;
+&.appear{
+  transform: translateY(0);
+  opacity: 1;
+}
+`
 const ContentWrapper = styled.div`
 div:first-child {
     font-family: PingFangSC;
@@ -71,15 +80,39 @@ img {
 `
 
 export const SOLUTION_ID = 'solution';
-
+const SOLUTION_ID_WRAP = 'solution_wrap';
 const Solution: FC<ISolutionProps> = ({}) => {
+const myRef = useRef(null);
   // contentList: { color: string; title: string; maxDesc: string[]; minDesc: string[]; tagList: string[]  }[];
 const [currIndex,setCurrIndex] = useState(0);
+useEffect(() => {
+ 
+  const timer =  setInterval(()=>{
+    if(myRef.current){
+      clearInterval(timer);
+      const ScrollMagic = require('scrollmagic');
+      var controller = new ScrollMagic.Controller();
+      const videoContent = myRef.current;
+        new ScrollMagic.Scene({
+          triggerElement: videoContent, //触发元素
+          triggerHook: 'onEnter', //触发元素开始离开视口时触发
+          offset: 0, //从开始点滚动多少px触发（施法前摇）
+          duration: 400, //效果持续的距离（法术持续时间/距离）
+        })
+          .addTo(controller)
+          .on('enter', () => {
+              videoContent.classList.add('appear')
+              controller.destroy();
+          });
+    }
+  })
+}, [myRef]);
   return (
     <Pane id={SOLUTION_ID} title="场景解决方案" 
     style={{background: 'rgba(246, 252, 255, 1',paddingTop: '77px'}}
     titleMarginBottom={58}>
-      <Visible md lg xl xxl xxxl>
+    <MainWrap id={SOLUTION_ID_WRAP}      ref={myRef}>
+
         <LabelList>
             {labelInfo.map(({name},i)=> {
                 return (
@@ -94,10 +127,8 @@ const [currIndex,setCurrIndex] = useState(0);
           <div>打造数字化连接平台，助力政府高效服务及治理，提升平安建设三率</div>
           <img src={`${imgurl}${labelInfo[currIndex].url}`} alt="" />
         </ContentWrapper>
-      </Visible>
-      <Visible xs sm>
-       
-      </Visible>
+    </MainWrap>
+     
     </Pane>
   );
 };

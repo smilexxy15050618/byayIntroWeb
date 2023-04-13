@@ -47,10 +47,10 @@ const contentList = [
 ]
 const Wrapper = styled.div`
   width: 1152px;
-  min-height: 100vh;
   background: #fff;
   padding: 77px 0 51px;
   margin: 0 auto;
+ 
   .title {
     font-family: PingFangSC;
     font-size: 40px;
@@ -63,15 +63,17 @@ const Wrapper = styled.div`
   }
   .more {
     cursor: pointer;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0px;
-    line-height: 24px;
-    color: rgba(43, 88, 249, 1);
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 32px;
+    a {
+        font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 24px;
+    color: rgba(43, 88, 249, 1);
+    }
     img {
         width: 16px;
         height: 16px;
@@ -83,6 +85,13 @@ const ListWrapper = styled.div`
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
+   transform: translateY(50%);
+   transition: all 0.4s;
+   opacity: 0;
+   &.appear{
+     transform: translateY(0);
+     opacity: 1;
+   }
    .content {
     width: 264px;
     cursor:pointer;
@@ -128,11 +137,29 @@ const ListWrapper = styled.div`
    }
 
 `
+const AIID = 'ai_id_2023'
 const Platform: FC<IPlatformProps> = () => {
+    useEffect(() => {
+        const ScrollMagic = require('scrollmagic');
+        var controller = new ScrollMagic.Controller();
+        const videoContent = document.getElementById(AIID);
+          new ScrollMagic.Scene({
+            triggerElement: videoContent, //触发元素
+            triggerHook: 'onEnter', //触发元素开始离开视口时触发
+            offset: 0, //从开始点滚动多少px触发（施法前摇）
+            duration: 400, //效果持续的距离（法术持续时间/距离）
+          })
+            // .setClassToggle('.video-wrapper-sticky', 'appear')
+            .addTo(controller)
+            .on('enter', () => {
+                videoContent.classList.add('appear')
+                controller.destroy();
+            });
+      }, []);
     return (
-        <Wrapper>
+        <Wrapper >
             <div class="title">全行业AI用户运营平台与解决方案</div>
-            <ListWrapper>
+            <ListWrapper id={AIID}>
                 {contentList.map(({ name, content, url }, index) => {
                     return (
                         <div class="content">
@@ -144,8 +171,10 @@ const Platform: FC<IPlatformProps> = () => {
                 })}
             </ListWrapper>
             <div class="more">
-                   查看更多
+            <a href="https://crm.byai.com/login" target="_blank" rel="noreferrer">
+            查看更多
                    <img src={imgurl+'/down.png'}></img>
+                </a>
                 </div>
         </Wrapper>
     )

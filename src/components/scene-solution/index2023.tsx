@@ -63,16 +63,25 @@ li{
     }
 }
 `
+const MainWrap = styled.div`
+    transform: translateY(50%);
+    transition: all 0.4s;
+    opacity: 0;
+    &.appear{
+      transform: translateY(0);
+      opacity: 1;
+    }
+`
 
-const carouselDataList = [imgurl+'/proinfo1.png','2','3','4']
+const carouselDataList = [imgurl+'/proinfo1.png',imgurl+'/proinfo2.jpg',imgurl+'/proinfo3.jpg',imgurl+'/proinfo4.jpg']
 
 
 const SceneSolution: FC<SceneSolution> = ({}) => {
     const [tabList, setTabList]=  useState( [
-{img:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E4%BC%98%E5%8A%BF/a-1.png',title:'美妆行业',chose:true},
-{img:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E4%BC%98%E5%8A%BF/a-2.png',title:'鞋服行业',chose:false},
-{img:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E4%BC%98%E5%8A%BF/a-3.png',title:'食品行业',chose:false},
-{img:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E4%BC%98%E5%8A%BF/a-3.png',title:'百购行业',chose:false}])
+{img:imgurl+'/makeup.png',title:'美妆行业',chose:true},
+{img:imgurl+'/clothes.png',title:'鞋服行业',chose:false},
+{img:imgurl+'/food.png',title:'食品行业',chose:false},
+{img:imgurl+'/shopping.png',title:'百购行业',chose:false}])
 const choseOne = (i)=>{
     const arr = tabList.map((ele,index)=>{
         ele.chose = false
@@ -84,14 +93,33 @@ const choseOne = (i)=>{
     })
     setTabList(arr)
 }
-
+const HANGYE = 'hangye_2023_2009d'
 const [wrapindex, setWrapindex] = useState(0);
-
+useEffect(() => {
+    const ScrollMagic = require('scrollmagic');
+    var controller = new ScrollMagic.Controller();
+    const videoContent = document.getElementById(HANGYE);
+      new ScrollMagic.Scene({
+        triggerElement: videoContent, //触发元素
+        triggerHook: 'onEnter', //触发元素开始离开视口时触发
+        offset: 10, //从开始点滚动多少px触发（施法前摇）
+        duration: 400, //效果持续的距离（法术持续时间/距离）
+      })
+        // .setClassToggle('.aitxs', 'appear')
+        .addTo(controller)
+        .on('enter', () => {
+            videoContent.classList.add('appear')
+            // console.log('进入');
+            
+            controller.destroy();
+        });
+  }, []);
     return (
         <Pane title="场景解决方案"
         titleStyle={{marginBottom:'48px'}}
          paneBgColor="white" style={{ paddingBottom: 80 }} mobileStyle={{ paddingBottom: 40 }}>
           <Hidden xs sm>
+            <MainWrap id={HANGYE}>
             <HoveUp>
                 <Tab>
                     {tabList.map((item,i)=>{
@@ -108,6 +136,7 @@ const [wrapindex, setWrapindex] = useState(0);
                     <img src={carouselDataList[wrapindex]} alt="" />
                 </Card>
             </HoveUp>
+            </MainWrap>
           </Hidden>
           <Visible xs sm>
             {/* <CarouselMobile dataList={carouselDataList}></CarouselMobile> */}

@@ -11,17 +11,17 @@ const titleList = [
     {
         title: '精准营销',
         subTitle: '智能化打标，打造多维度标签体系智能分析意向，构建用户画像360用户精细化分层，精准营销触达赋能运营人员，有效管理用户资产',
-        url: '/yhgl.png'
+        url: '/jzyx.png'
     },
     {
         title: '智能触达',
         subTitle: '智能化打标，打造多维度标签体系智能分析意向，构建用户画像360用户精细化分层，精准营销触达赋能运营人员，有效管理用户资产',
-        url: '/yhgl.png'
+        url: '/zncd.png'
     },
     {
         title: '数据化运营',
         subTitle: '智能化打标，打造多维度标签体系智能分析意向，构建用户画像360用户精细化分层，精准营销触达赋能运营人员，有效管理用户资产',
-        url: '/yhgl.png'
+        url: '/sjyy.png'
     },
 ]
 export type IAiProps = {};
@@ -114,14 +114,47 @@ text-align: left;
     }
  }
 `
+const MainWrap = styled.div`
+.aitxs{
+    transform: translateY(50%);
+    transition: all 0.4s;
+    opacity: 0;
+    &.appear{
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
 
+`
+const AiTSXID = 'aitsx';
 const AI: FC<IAiProps> = ({ }) => {
     const [currIndex, setCurrIndex] = useState(0);
+    useEffect(() => {
+        const ScrollMagic = require('scrollmagic');
+        var controller = new ScrollMagic.Controller();
+        const videoContent = document.getElementById(AiTSXID);
+          new ScrollMagic.Scene({
+            triggerElement: videoContent, //触发元素
+            triggerHook: 'onEnter', //触发元素开始离开视口时触发
+            offset: 10, //从开始点滚动多少px触发（施法前摇）
+            duration: 400, //效果持续的距离（法术持续时间/距离）
+          })
+            .setClassToggle('.aitxs', 'appear')
+            .addTo(controller)
+            .on('enter', () => {
+                // videoContent.classList.add('appear')
+                // console.log('进入');
+                
+                controller.destroy();
+            });
+      }, []);
     return (
+    <MainWrap id={AiTSXID} >
         <Pane>
             <div class="title">AI赋能零售品牌全域增长，打造核心用户价值</div>
             <div class="desc">助力品牌高效引流获客、营销增长、精细化运营，提升会员体验和业绩增量</div>
             <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
+            <div className='aitxs'>
                 <ListWrapper>
                     <div class="lists">
                     {titleList.map(({ title, subTitle }, index) => {
@@ -138,7 +171,10 @@ const AI: FC<IAiProps> = ({ }) => {
                     </div>
                 </ListWrapper>
             </div>
+            </div>
         </Pane>
+    </MainWrap>
+
     );
 };
 

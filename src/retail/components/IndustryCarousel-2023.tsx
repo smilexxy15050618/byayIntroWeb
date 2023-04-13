@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import JumpBtn from '../../components/JumpBtn';
 import { useTime } from '../../lib/hooks-utils';
 import { calWidthAndHeight, isPc, retailUrl } from '../../lib/utils';
+import imgurl from '../../../img.url.js'
 
 export interface ICarousel {
   onChange?: (index) => void;
@@ -65,15 +66,21 @@ const BgContent = styled.div`
     background: #2B58F9;
     padding: 13px 34px;
     font-size: 24px;
-  font-weight: 500;
-  color: #ffffff;
-  border-radius: 5.33px;
+    font-weight: 500;
+    color: #ffffff;
+    border-radius: 5.33px;
+    &:hover {
+      background: rgba(84, 127, 255, 1);
+    }
+    &:active {
+      background: rgba(25, 60, 212, 1);
+    }
   }
   img {
-    width: 720px;
-    height: 576px;
+    width: 534px;
+    height: 525px;
     position: absolute;
-    top: -152px;
+    top: -100px;
     right: -120px;
   }
 `;
@@ -138,9 +145,22 @@ const BottomMain = styled.div`
 `;
 
 const Wrapper = styled.div`
+width: 100%;
   height: 576px;
   position: relative;
   background: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  .carousel-bg-right{
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(47%,-74%);
+      width: 977px;
+      height: 977px;
+      opacity: 1;
+      background: radial-gradient(50% 50%, rgba(43, 88, 249, 0.3) 0%, rgba(43, 88, 249, 0) 100%);
+      filter: blur(100px);
+    }
 `;
 export const CarouselWrapper = styled.div`
   width: 100%;
@@ -291,6 +311,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
   }, []);
   return (
     <Wrapper onMouseEnter={endTimer} onMouseLeave={startTimer}>
+       <div className="carousel-bg-right"></div>
       {dataList.map(({ bg, title, subTitle }, i) => {
         return (
           <BgWrapper className={classNames({ active: i === currIndex })} bg={bg}>
@@ -299,7 +320,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
               {subTitle.map(str => {
                 return <SubTitle>{str}</SubTitle>;
               })}
-              <img src="https://cdn.byai.com/static/intro/img/Banner/2021-3-technology-img.png"></img>
+              <img src={imgurl+'/retail_carousel.png'}></img>
               <div class="jumpbtn" scale={0.8} onClick={() => setForm()}>
                 预约体验
               </div>

@@ -45,7 +45,7 @@ const BagLabel = styled.div`
 const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
   return (
     <>
-      <Layout hostType={HOST_ENUM.DS_HOST} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
+      <Layout hostType={HOST_ENUM.DS_HOST} headPlaceholder={[false, false]} headFontStyle={['dark', 'dark']}>
         {(visible, setFormVisible) => (
           <Wrapper>
             <Visible md lg xl xxl xxxl>
