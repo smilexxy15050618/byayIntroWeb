@@ -321,7 +321,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
                 return <SubTitle>{str}</SubTitle>;
               })}
               <img src={imgurl+'/retail_carousel.png'}></img>
-              <div class="jumpbtn" scale={0.8} onClick={() => setForm()}>
+              <div className="jumpbtn" scale={0.8} onClick={() => setForm()}>
                 预约体验
               </div>
             </BgContent>

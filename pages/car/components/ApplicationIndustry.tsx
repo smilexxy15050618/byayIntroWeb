@@ -25,8 +25,8 @@ margin-top: 58px;
 export const ApplicationIndustry: FC = () => {
     return (
         <MainWrap>
-            <div class="title">应用行业及场景</div>
-            <div class="content">
+            <div className="title">应用行业及场景</div>
+            <div className="content">
                
             </div>
         </MainWrap>

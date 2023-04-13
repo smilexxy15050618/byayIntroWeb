@@ -319,9 +319,9 @@ const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
             百应智能用户运营平台
           </Title>
           <div style={{  background: 'white', minHeight: 56 }}>
-            <div class="title">基于百应用户运营方法论，百应以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台致力于优化企业和政务的2C沟通环节，建立起与C端用户之间的稳固连接关系，持续创造企业增长和美好社会</div>
+            <div className="title">基于百应用户运营方法论，百应以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台致力于优化企业和政务的2C沟通环节，建立起与C端用户之间的稳固连接关系，持续创造企业增长和美好社会</div>
           </div>
-          <div class="card">
+          <div className="card">
             <img src={imgurl + '/hxcard1.png'} alt="" />
             <img src={imgurl + '/hxcard2.png'} alt="" />
             <img src={imgurl + '/hxcard3.png'} alt="" />

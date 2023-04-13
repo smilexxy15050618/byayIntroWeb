@@ -4,24 +4,19 @@ import imgurl from '../../../img.url.js'
 
 const list = [
     {
-        img: 'https://img.js.design/assets/img/64362782e4c8a0975bc28157.png',
+        img: '/public_security.png',
         banner: '',
-        content: '陪跑中国领先的汽车消费者在线服务平台数字化进阶之路'
+        content: '打造全国反诈成效逆势上扬的“天津样板”。'
     },
     {
-        img: 'https://img.js.design/assets/img/64362782e4c8a0975bc28157.png',
+        img: '/public_security1.png',
         banner: '',
-        content: '助力科技型智能电动汽车品牌实现营销服务数智化升级'
+        content: '高发诈骗类型精准圈定，实效助力反诈指标“双降”。'
     },
     {
-        img: 'https://img.js.design/assets/img/64362782e4c8a0975bc28157.png',
+        img: '/public_security2.png',
         banner: '',
-        content: '携手瓜子二手车，打造行业领军的汽车消费服务智能新体验'
-    },
-    {
-        img: 'https://img.js.design/assets/img/64362782e4c8a0975bc28157.png',
-        banner: '',
-        content: '中国领先的汽车互联网企业的营销服务数字化升级之旅'
+        content: '宣传劝阻全量铺开，首创百万级居民反诈“新路径”。'
     }
 ]
 
@@ -49,12 +44,11 @@ const ListWrapper = styled.div`
   justify-content: space-between;
 `
 const ListItem = styled.div`
-width: 284px;
+width: 378px;
 height: 364px;
-opacity: 1;
 border-radius: 8px;
-background: #FFFFFF;
-box-shadow: 0px 0px 24px 1px #245BDB;
+background: rgba(255, 255, 255, 1);
+box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
 overflow: hidden;
 position: relative;
 .banner {
@@ -73,10 +67,10 @@ position: relative;
     }
 }
 .detail {
-    padding: 17px 24px 0 24px;
+    padding: 22px 24px 0 24px;
     img {
-        width: 65.5px;
-        height: 29.05px;
+        width: 260px;
+        height: 26px;
     }
     div:nth-child(2) {
         font-size: 16px;
@@ -84,7 +78,7 @@ font-weight: 400;
 letter-spacing: -0.17px;
 line-height: 26px;
 color: rgba(0, 0, 0, 1);
-margin-top: 18px;
+margin-top: 17px;
     }
     div:last-child {
         font-size: 16px;
@@ -109,7 +103,7 @@ export const CustomerStories: FC = () => {
                     <ListItem>
                         <div className='banner'></div>
                         <div className="detail">
-                            <img src={img} alt="" />
+                            <img src={imgurl+img} alt="" />
                             <div>{content}</div>
                             <div>体验Demo →</div>
                         </div>

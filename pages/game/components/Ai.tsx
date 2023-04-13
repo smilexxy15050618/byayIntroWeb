@@ -118,11 +118,11 @@ export const Ai: FC<IAiProps> = ({ }) => {
     return (
     <MainWrap>
         <Pane>
-            <div class="title">AI外呼助力游戏平台实现用户激活及体验转化</div>
+            <div className="title">AI外呼助力游戏平台实现用户激活及体验转化</div>
             <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
             <div className='aitxs'>
                 <ListWrapper>
-                    <div class="lists">
+                    <div className="lists">
                     {titleList.map(({ title, subTitle }, index) => {
                         return (
                                 <ListItem className={index==currIndex?'active':null} onClick={()=>setCurrIndex(index)}>
@@ -132,7 +132,7 @@ export const Ai: FC<IAiProps> = ({ }) => {
                         )
                     })}
                     </div>
-                    <div class="imgWrapper">
+                    <div className="imgWrapper">
                          <img src={`${imgurl}${titleList[currIndex].url}`} />
                     </div>
                 </ListWrapper>
