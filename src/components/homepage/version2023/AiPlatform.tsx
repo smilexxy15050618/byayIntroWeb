@@ -158,11 +158,11 @@ const Platform: FC<IPlatformProps> = () => {
       }, []);
     return (
         <Wrapper >
-            <div class="title">全行业AI用户运营平台与解决方案</div>
+            <div className="title">全行业AI用户运营平台与解决方案</div>
             <ListWrapper id={AIID}>
                 {contentList.map(({ name, content, url }, index) => {
                     return (
-                        <div class="content">
+                        <div className="content">
                             <img src={`${imgurl}${url}`}></img>
                             <div>{name}</div>
                             <div>{content}</div>
@@ -170,7 +170,7 @@ const Platform: FC<IPlatformProps> = () => {
                     )
                 })}
             </ListWrapper>
-            <div class="more">
+            <div className="more">
             <a href="https://crm.byai.com/login" target="_blank" rel="noreferrer">
             查看更多
                    <img src={imgurl+'/down.png'}></img>
