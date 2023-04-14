@@ -61,11 +61,33 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList }) => {
   const [index, setIndex] = React.useState(0);
   return (
     <NavItemContainer maxWidthPc="1200px" minWidthPC={minWidthPC}>
-      {bannerList.map((item, navIndex) => (
-        <NavItem active={navIndex === index}>
+      {/* {bannerList.map((item, navIndex) => (
+        <NavItem 
+          active={navIndex === index}
+          onClick={() => {
+            const node = document.querySelector(jumpTarget);
+            if (node) {
+              node.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}>
+        >
           {item.name}
         </NavItem>
-      ))}
+      ))} */}
+      {bannerList.map(({ name, jumpTarget }, navIndex) => {
+        return (
+          <NavItem 
+          active={navIndex === index}
+          onClick={() => {
+            const node = document.querySelector(jumpTarget);
+            if (node) {
+              node.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}>
+          {name}
+        </NavItem>
+        );
+      })}
     </NavItemContainer>
   )
 };

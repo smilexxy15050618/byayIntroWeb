@@ -115,9 +115,9 @@ interface SocietyDutyProps {
 }
 
 const FlairVoucher: React.SFC<SocietyDutyProps> = ({ minWidthPC }) => (
-  <Wrapper>
+  <Wrapper id="FlairVoucher">
     <FlairVoucherContainer maxWidthPc="1200px" minWidthPC={minWidthPC}>
-      <Title>社会责任</Title>
+      <Title>资质凭证</Title>
       <SubTitle>从自身产品安全性到对外数据服务，为数据安全保驾护航</SubTitle>
       <FlairVoucherSlide>
         {SERVICE_DEMAND.map((item, index) => (

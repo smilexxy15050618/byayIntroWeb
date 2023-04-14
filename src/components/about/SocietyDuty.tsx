@@ -119,7 +119,7 @@ interface SocietyDutyProps {
 }
 
 const SocietyDuty: React.SFC<SocietyDutyProps> = ({ minWidthPC, backgroundImage, societyDuty1, societyDuty2 }) => (
-  <SocietyDutyContainer maxWidthPc="1200px" minWidthPC={minWidthPC}>
+  <SocietyDutyContainer id="SocietyDuty" maxWidthPc="1200px" minWidthPC={minWidthPC}>
     <Title>社会责任</Title>
     <SocietyDutyContainerWrap backgroundImage={backgroundImage} societyDuty1={societyDuty1}>
       <div className='title'>每一封感谢信，让我们坚定向前</div>

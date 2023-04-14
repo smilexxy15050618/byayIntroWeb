@@ -6,8 +6,8 @@ import { splitCssValue } from '../../src/lib/utils';
 import { Col, ColProps, Container, Hidden, Row, Visible, ScreenClassRender } from 'react-grid-system';
 import { TextArea } from '../../src/components/common/BannerTextElements';
 import BannerWhite from '../../src/components/common/BannerWhite';
-import { TabNav, EnterpriseIntroduction, MissionVision, SocietyDuty, FlairVoucher, InterCertificate, CertificateNew } from '../../src/components/about';
-
+import { TabNav, EnterpriseIntroduction, MissionVision, SocietyDuty, FlairVoucher, InterCertificate, CertificateNew, JoinUs } from '../../src/components/about';
+import ByVoiceFooterNew from '../../src/components/common/ByVoiceFooterNew';
 
 
 import imgurl from '../../img.url.js'
@@ -22,7 +22,9 @@ const SOCIETYDUTY_BG = `${imgurl}/society-duty.png`;
 const SOCIETYDUTY_IMG1 = `${imgurl}/society-duty_1.png`;
 const SOCIETYDUTY_IMG2 = `${imgurl}/society-duty_2.png`;
 const INTERCERTIFICATE_BG = `${imgurl}/inter-cert_bg.png`;
-const CRDITMEDAL_bg = `${imgurl}/credit-medal-bg.png`;
+const CRDITMEDAL_BG = `${imgurl}/credit-medal-bg.png`;
+const JOINUS_BG = `${imgurl}/web-com.png`;
+const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
 
 const SERVICE_DEMAND = [
   {
@@ -348,9 +350,14 @@ const Intro = styled.div`
   background: rgba(246, 252, 255, 1);
 `;
 
-const CreditMedal = styled.div`
+const CreditMedal = styled.div<{ backgroundImage?: string }>`
+  position: relative;
   margin-top: 100px;
-  background: rgba(43, 88, 249, 1);
+  background-color: rgba(43, 88, 249, 1);
+  background-image: ${props => `url(${props.backgroundImage})`};
+  background-repeat: no-repeat;
+  background-size: 764px 506px;
+  background-position: center;
 `;
 
 const IntroContent = styled.div`
@@ -376,7 +383,20 @@ const Title = styled.div`
   line-height: 48px;
   color:rgba(43, 43, 43, 1);
   text-align: center;
-  p{font-size:18px;line-height:44px;color:rgba(43, 88, 249, 1)}
+  p{
+    font-size:18px;
+    line-height:44px;
+    color:rgba(43, 88, 249, 1)
+  }
+`;
+
+const TitleCredit = styled.div`
+  padding-top: 80px;
+  padding-bottom:44px;
+  font-size: 40px;
+  line-height: 48px;
+  color: #fff;
+  text-align: center;
 `;
 
 const DemandItem = styled.div<{ normalBg: string; activeBg: string; active: boolean }>`
@@ -398,6 +418,7 @@ const DemandItem = styled.div<{ normalBg: string; activeBg: string; active: bool
     height: 80px;
     background-image: ${props => (props.active ? `url(${props.activeBg})` : `url(${props.normalBg})`)};
     background-repeat: no-repeat;
+    transition: all 0.3s ease;
   }
   p{
     position: absolute;
@@ -442,22 +463,28 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
               bannerList={[
                 {
                   name: '企业介绍',
+                  jumpTarget: '#qiyejieshao'
                 },
                 {
                   name: '使命愿景',
+                  jumpTarget: '#MissionVision'
                 },
                 {
                   name: '发展历程',
+                  jumpTarget: '#DevelopHistory'
                 },
                 {
                   name: '社会责任',
+                  jumpTarget: '#SocietyDuty'
                 },
                 {
                   name: '荣誉证书',
+                  jumpTarget: '#CreditMedal'
                 },
                 {
                   name: '加入我们',
-                },
+                  jumpTarget: '#JoinUs'
+                }
               ]} 
             />
             <EnterpriseIntroduction
@@ -468,7 +495,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
           <MissionVision
             backgroundImage={MissionVision_BG}
           />
-          <Intro>
+          <Intro id="DevelopHistory">
             <IntroContent>
               <Title>发展历程<p>2016.09 百应科技成立</p></Title>
               <DemandWrap>
@@ -504,8 +531,8 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
           />
           <FlairVoucher />
           <InterCertificate backgroundImage={INTERCERTIFICATE_BG} />
-          <CreditMedal>
-            <Title title="证书及奖项" />
+          <CreditMedal backgroundImage={CRDITMEDAL_BG} id="CreditMedal">
+            <TitleCredit>荣誉奖项</TitleCredit>
             <ScreenClassRender
               render={screenClass => {
                 let limit;
@@ -529,17 +556,16 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
               }}
             />
           </CreditMedal>
-          CreditMedal<br />
-          dsfds<br />
-          dsfds<br />
-          dsfds<br />
-          dsfds<br />
-          dsfds<br />
-          dsfds<br />
-          dsfds<br />
-          dsfds<br />
-          dsfds<br />
-
+          <JoinUs backgroundImage={JOINUS_BG} />
+          <ByVoiceFooterNew
+            title="用AI助力构建To C长期信关系，一起创造未来"
+            desc="留下联系方式，将有AI行业专家为您提供专属服务"
+            btnText="预约演练"
+            background={`url(${FOOTER_BG})`}
+            onClick={() => {
+              window.open('/form?formType=1')
+            }}
+          />
         </Wrapper>
       </>
     )}
