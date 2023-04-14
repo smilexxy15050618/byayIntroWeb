@@ -4,18 +4,18 @@ import imgurl from '../../../img.url.js'
 
 const list = [
     {
-        img: '/public_security.png',
-        banner: '',
+        img: '/tj_i.png',
+        banner: '/tj.png',
         content: '打造全国反诈成效逆势上扬的“天津样板”。'
     },
     {
-        img: '/public_security1.png',
-        banner: '',
+        img: '/dg_i.png',
+        banner: '/dg.png',
         content: '高发诈骗类型精准圈定，实效助力反诈指标“双降”。'
     },
     {
-        img: '/public_security2.png',
-        banner: '',
+        img: '/lp_i.png',
+        banner: '/lp.png',
         content: '宣传劝阻全量铺开，首创百万级居民反诈“新路径”。'
     }
 ]
@@ -64,6 +64,7 @@ position: relative;
         height: 160px;
         border-radius: 8px 8px, 0px, 0px;
         background: #2B58F9;
+        opacity: 0.2;
     }
 }
 .detail {
@@ -74,19 +75,24 @@ position: relative;
     }
     div:nth-child(2) {
         font-size: 16px;
-font-weight: 400;
-letter-spacing: -0.17px;
-line-height: 26px;
-color: rgba(0, 0, 0, 1);
-margin-top: 17px;
+        font-weight: 400;
+        letter-spacing: -0.17px;
+        line-height: 26px;
+        color: rgba(0, 0, 0, 1);
+        margin-top: 17px;
     }
     div:last-child {
         font-size: 16px;
-font-weight: 500;
-color: rgba(43, 88, 249, 1);
-position: absolute;
-bottom: 32px;
-cursor: pointer;
+        font-weight: 500;
+        color: rgba(43, 88, 249, 1);
+        position: absolute;
+        bottom: 32px;
+        cursor: pointer;
+        &:hover {
+          span {
+            margin-left: 10px;
+          }
+        }
     }
 }
 `
@@ -101,11 +107,11 @@ export const CustomerStories: FC = () => {
             list.map(({img,banner,content},index)=> {
                 return (
                     <ListItem>
-                        <div className='banner'></div>
+                        <div style={{background: `url(${imgurl}${banner})`,backgroundSize: '100% 100%'}} className='banner'></div>
                         <div className="detail">
                             <img src={imgurl+img} alt="" />
                             <div>{content}</div>
-                            <div>体验Demo →</div>
+                            <div>体验Demo <span>→</span></div>
                         </div>
                     </ListItem>
                 )

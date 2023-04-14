@@ -8,16 +8,10 @@ import { RightArrow, LefttArrow } from '@indata/icon-byai';
 
 const dataList = [
     {
-        title: '/why_title1.png',
         url: '/why1.png'
     },
     {
-        title: '/why_title1.png',
-        url: '/why1.png'
-    },
-    {
-        title: '/why_title1.png',
-        url: '/why1.png'
+        url: '/why2.png'
     }
 ]
 const Wrapper = styled.div`
@@ -44,8 +38,8 @@ padding-bottom: 100px;
     }
     .content {
         display: block;
-        width: 409px;
-        height: 328px;
+        width: 100%;
+        height: 100%;
         margin: 0 auto;
     }
     .my-slide {
@@ -98,7 +92,6 @@ export const WhySelect: FC = () => {
             {dataList.map(({url,title})=> (
                 <SwiperSlide>
                     <div className='my-slide'>
-                    <img className="title" src={imgurl+title} alt="" />
                     <img className='content' src={imgurl+url} alt="" />
                     </div>
                 </SwiperSlide>
