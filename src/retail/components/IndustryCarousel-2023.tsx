@@ -64,8 +64,11 @@ const BgContent = styled.div`
   .jumpbtn {
     display: inline-block;
     background: #2B58F9;
-    padding: 13px 34px;
-    font-size: 24px;
+    width: 132px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 16px;
     font-weight: 500;
     color: #ffffff;
     border-radius: 5.33px;
@@ -291,7 +294,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
   };
 
   const setForm = () => {
-    const url = retailUrl(`/form`);
+    const url = retailUrl(`/form?formType=1`);
     window.open(url);
   };
 
@@ -321,7 +324,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
                 return <SubTitle>{str}</SubTitle>;
               })}
               <img src={imgurl+'/retail_carousel.png'}></img>
-              <div className="jumpbtn" scale={0.8} onClick={() => setForm()}>
+              <div className="jumpbtn" onClick={() => setForm()}>
                 预约体验
               </div>
             </BgContent>

@@ -12,11 +12,9 @@ export type ISolutionProps = {};
 const labelInfo = [
     {
         name: '企业',
-        url: '/solution_company.png'
     },
     {
         name: '政务',
-        url: '/solution_kol.png'
     }
 ]
 const LabelList = styled.div`
@@ -122,11 +120,16 @@ useEffect(() => {
                 )
             })}
         </LabelList>
-        <ContentWrapper>
+        {currIndex==0&&<ContentWrapper>
+          <div>B2C数智化用户运营解决方案</div>
+          <div>助力品牌高效连接消费者，打造存量时代的会员运营服务，拉升会员LTV</div>
+          <img src={`${imgurl}/solution_company.png`} alt="" />
+        </ContentWrapper>}
+        {currIndex==1&&<ContentWrapper>
           <div>G2C基层服务和治理自动化解决方案</div>
           <div>打造数字化连接平台，助力政府高效服务及治理，提升平安建设三率</div>
-          <img src={`${imgurl}${labelInfo[currIndex].url}`} alt="" />
-        </ContentWrapper>
+          <img src={`${imgurl}/solution_kol.png`} alt="" />
+        </ContentWrapper>}
     </MainWrap>
      
     </Pane>

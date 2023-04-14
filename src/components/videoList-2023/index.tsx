@@ -1,5 +1,5 @@
 import { FC, ReactNode, useEffect, useState, useRef} from 'react';
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import styled, { css, FlattenSimpleInterpolation, keyframes } from 'styled-components';
 import { Title, TITLE_HEIGHT } from '../homepage/version2023/styled';
 import { Tick } from './Tick';
 import imgurl from '../../../img.url.js'
@@ -7,6 +7,7 @@ import imgurl from '../../../img.url.js'
 export type IVideoListProps = {
   contentList?: { color: string; tag: string; icon?: any; infoList: { title: ReactNode; desc: string[] }[] }[];
 };
+
 const VIDEO_SIZE_MAPPER = {
   VIDEO_WIDTH: {
     xxl: '720px',
@@ -67,7 +68,6 @@ const TITLE_MARGIN_TOP = '77px';
 const TITLE_MARGIN_BOTTOM = '21px';
 const MENU_MARGIN_BOTTOM = '32px';
 
-
 const Wrapper = styled.div`
   width: 1200px;
   margin: 0 auto;
@@ -108,6 +108,16 @@ const VideoWrapper = styled.div`
   border-top: 1px solid transparent;
   display: flex;
   flex-direction: column;
+  @keyframes floatUp {
+    50% {
+      transform: translateZ(1px) translateY(20px);
+    }
+  }
+  @keyframes floatUp1 {
+    50% {
+      transform: translateZ(-1px) translateY(20px);
+    }
+  }
   
   .card {
     width: 1280px;
@@ -128,7 +138,7 @@ const VideoWrapper = styled.div`
       width: 100%;
       height: 15px;
       position: absolute;
-      bottom: 0px;
+      bottom: 52px;
       left: 0;
       background: #fff;
       z-index: 1000;
@@ -143,7 +153,7 @@ const VideoWrapper = styled.div`
       position: absolute;
       top: 0;
       left: 0;
-      transform: translateZ(-4px);
+      transform: translateZ(-4px) scale(0.85);
     }
     img:first-child {
       width: 108px;
@@ -152,6 +162,7 @@ const VideoWrapper = styled.div`
       left: 405px;
       z-index: 1;
       transform: translateZ(1px);
+      animation: floatUp 3s ease-out infinite;
       &:hover {
         content: url(${imgurl}/hxcard1_active.png);
       }
@@ -163,6 +174,7 @@ const VideoWrapper = styled.div`
       left: 500px;
       z-index: 1;
       transform: translateZ(1px);
+      animation: floatUp 3s ease-out infinite;
       &:hover {
         content: url(${imgurl}/hxcard2_active.png);
       }
@@ -174,6 +186,7 @@ const VideoWrapper = styled.div`
       left: 650px;
       z-index: 1;
       transform: translateZ(1px);
+      animation: floatUp 3s ease-out infinite;
       &:hover {
         content: url(${imgurl}/hxcard3_active.png);
       }
@@ -185,6 +198,7 @@ const VideoWrapper = styled.div`
       left: 440px;
       z-index: 2;
       transform: translateZ(-1px);
+      animation: floatUp1 3s ease-out infinite;
       &:hover {
         content: url(${imgurl}/hxcard4_active.png);
       }
@@ -196,6 +210,7 @@ const VideoWrapper = styled.div`
       right: 440px;
       z-index: 2;
       transform: translateZ(-1px);
+      animation: floatUp1 3s ease-out infinite;
       &:hover {
         content: url(${imgurl}/hxcard5_active.png);
       }
@@ -319,7 +334,7 @@ const VideoList: FC<IVideoListProps> = ({ contentList = [] }) => {
             百应智能用户运营平台
           </Title>
           <div style={{  background: 'white', minHeight: 56 }}>
-            <div className="title">基于百应用户运营方法论，百应以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台<br/>致力于优化企业和政务的2C沟通环节，建立起与C端用户之间的稳固连接关系，持续创造企业增长和美好社会</div>
+            <div className="title">基于百应用户运营方法论，百应以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台<br/>致力于优化企业和政务的2C沟通环节，建立起与C端用户之间的稳固连接关系，持续创造企业增长，构建美好社会</div>
           </div>
           <div className="card">
             <img src={imgurl + '/hxcard1.png'} alt="" />
