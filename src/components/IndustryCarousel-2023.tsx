@@ -434,18 +434,19 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
               <div  className="main-container">
                 
               <div className="main-title">百应科技荣誉入选</div>
-              <div className='sec-title'>《国家人工智能创新应用先导区“智赋百景”》</div>
-              <div className='third-title' style={{marginBottom:'16px'}}>《国家人工智能创新应用先导区“智赋百景”》</div>
+              <div className='sec-title'  style={{marginBottom:'16px'}}>《国家人工智能创新应用先导区“智赋百景”》</div>
+              <div className='third-title'>工信部公示｜「城市管理」领域应用场景的优秀技术提供单位</div>
 
-              <div className='bg-img-blue'>
-                <img src={imgurl+'/sy-banner2.png'} alt="" />
-              </div>
+            
               <div
                 className="carousel-btn"
                 onClick={() => {
                   window.open(`/form?formType=1`);
                 }}>
                 预约体验
+              </div>
+              <div className='bg-img-blue'>
+                <img src={imgurl+'/sy-banner2.png'} alt="" />
               </div>
               </div>
             
@@ -458,15 +459,16 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
               <div className="main-title">逆势增长砥砺前行</div>
               <div className='sec-title' style={{marginBottom:'16px'}}>《百应科技2022年度报告》</div>
               <div className='third-title'>年营收增长40%，连续六年保持增长，复合增长率（CAGR）超100%</div>
-              <div className='bg-img-blue'>
-                <img src={imgurl+'/sy-banner3.png'} alt="" />
-              </div>
+              
               <div
                 className="carousel-btn"
                 onClick={() => {
                   window.open(`/form?formType=1`);
                 }}>
                 预约体验
+              </div>
+              <div className='bg-img-blue'>
+                <img src={imgurl+'/sy-banner3.png'} alt="" />
               </div>
               </div>
             
