@@ -23,11 +23,15 @@ const createImgUrlMatrix = (row: number, col: number, base: string, offset: numb
     }
     matrix.push(eveRow);
   }
+  // 第五行新增两个特殊的
+  matrix[4].push('51.png')
+  matrix[4].push('52.png')
   console.log(matrix);
+
   return matrix;
 };
 
-const matrix = createImgUrlMatrix(5, 10, '', -5);
+const matrix = createImgUrlMatrix(5, 10, '', 0);
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -58,7 +62,7 @@ const RawCustomerIconsBlock: FC<IProps> = ({ className }) => {
           {matrix.map((row, i) => (
             <ByScrollLine
               width="100%"
-              time={i % 2 === 1 ? 6 * row.length + 's' : 4 * row.length + 's'}
+              time={i % 2 === 1 ? 5 * row.length + 's' : 4 * row.length + 's'}
               delay={i % 2 === 1 ? '-2.1s' : '0s'}
               key={i}>
               <div className="customer-icon-row">

@@ -73,6 +73,8 @@ const Wrapper = styled.div`
     letter-spacing: 0px;
     line-height: 24px;
     color: rgba(43, 88, 249, 1);
+    display: flex;
+    align-items: center;
     }
     img {
         width: 16px;
@@ -172,8 +174,8 @@ const Platform: FC<IPlatformProps> = () => {
             </ListWrapper>
             <div className="more">
             <a href="https://crm.byai.com/login" target="_blank" rel="noreferrer">
-            查看更多
-                   <img src={imgurl+'/down.png'}></img>
+            了解更多
+                   <img src={imgurl+'/down.png'} style={{transform: 'rotate(-90deg)'}}></img>
                 </a>
                 </div>
         </Wrapper>

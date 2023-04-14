@@ -25,6 +25,9 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@indata/icon": "0.0.135",
+    "@indata/icon-byai": "0.0.18",
+    "@indata/regexp": "^1.1.4",
     "@atlaskit/icon": "^19.0.4",
     "@atlaskit/layer-manager": "^9.0.4",
     "@atlaskit/media-core": "^30.0.8",
