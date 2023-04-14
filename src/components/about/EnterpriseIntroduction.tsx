@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../constants/style';
 import { splitCssValue } from '../../lib/utils';
@@ -26,16 +26,27 @@ const BriefContainer = styled.div<{ maxWidthPc?: string; minWidthPC?: string }>`
   @media (max-width: 768px) {
     width: 100% !important;
   }
+  .BriefContainerWrap{
+    display: flex; 
+    flex-grow: 0; 
+    flex-shrink: 0; 
+    align-items: normal; 
+    justify-content: center; 
+    flex-flow: row wrap;
+    
+
+    transform: translateY(50%);
+    transition: all 0.4s;
+    opacity: 0;
+    &.appear{
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    
+  }
 `;
 
-const BriefContainerWrap = styled.div`
-  display: flex; 
-  flex-grow: 0; 
-  flex-shrink: 0; 
-  align-items: normal; 
-  justify-content: center; 
-  flex-flow: row wrap;
-`; 
 
 const BriefCover = styled.div<{ backgroundImage?: string }>`
   position: relative;
@@ -125,11 +136,30 @@ interface IBriefProps {
   cover?: string;
   minWidthPC?: string;
 }
+const AiTSXID = 'aitsx';
 
-const EnterpriseIntroduction: React.SFC<IBriefProps> = ({ minWidthPC,backgroundImage, cover }) => (
-  <BriefContainer maxWidthPc="1200px" minWidthPC={minWidthPC}>
+const EnterpriseIntroduction: FC<IBriefProps> = ({ minWidthPC,backgroundImage, cover }) => {
+
+  useEffect(() => {
+    const ScrollMagic = require('scrollmagic');
+    var controller = new ScrollMagic.Controller();
+    const videoContent = document.getElementById(AiTSXID);
+      new ScrollMagic.Scene({
+        triggerElement: videoContent, //触发元素
+        triggerHook: 'onEnter', //触发元素开始离开视口时触发
+        offset: 10, //从开始点滚动多少px触发（施法前摇）
+        duration: 400, //效果持续的距离（法术持续时间/距离）
+      })
+        .setClassToggle('.BriefContainerWrap', 'appear')
+        .addTo(controller)
+        .on('enter', () => {
+            controller.destroy();
+        });
+  }, []);
+  return (
+  <BriefContainer id={AiTSXID} maxWidthPc="1200px" minWidthPC={minWidthPC}>
     <Title>百应科技：智能用户运营平台和解决方案</Title>
-    <BriefContainerWrap>  
+    <div className="BriefContainerWrap">  
       <BriefCover cover={cover} backgroundImage={backgroundImage} />
       <BriefIntro>
         <div className='content'>
@@ -138,8 +168,9 @@ const EnterpriseIntroduction: React.SFC<IBriefProps> = ({ minWidthPC,backgroundI
           <p>自成立以来，百应科技连续六年保持增长，复合增长率（CAGR）超100%。连续三年被认证为杭州准独角兽企业，拥有中美双AI研究院，百余项AI及大数据领域相关专利和软件著作。</p>
         </div>
       </BriefIntro>
-    </BriefContainerWrap>  
+    </div>  
   </BriefContainer>
-);
+ );
+};
 
 export default EnterpriseIntroduction;
