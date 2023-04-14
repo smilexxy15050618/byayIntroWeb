@@ -1,6 +1,5 @@
 import React, { CSSProperties, FC, useEffect, useRef, useState } from 'react';
-import { Swiper, SwiperSlide} from 'swiper/react';
-import SwiperClass from 'swiper/types/swiper-class';
+import { Swiper, SwiperSlide } from "swiper/react";
 import { RightArrow, LefttArrow } from '@indata/icon-byai';
 import Pane from './Pane';
 import styled from 'styled-components';

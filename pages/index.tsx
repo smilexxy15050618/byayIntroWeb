@@ -13,7 +13,9 @@ import VideoList from '../src/components/videoList-2023';
 import VideoListMobile from '../src/components/videoList/VidelListMobile';
 import { Wrapper } from '../src/components/voice-robot/style';
 import { ScrollToPlugin } from 'gsap/all';
-const FOOTER_BG = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/bg/bottom.png';
+import imgurl from '../img.url.js'
+
+const FOOTER_BG = `${imgurl}/kqaizl.png`;
 const BASE_URL = 'https://cdn.byai.com/static/intro/img/index/version2021/banner';
 const TEMPORARY_BANNER_BG = `${BASE_URL}/temporary-bg.jpg`;
 const TEMPORARY_BANNER_BG_XS = `${BASE_URL}/temporary-bg-xs.jpg`;

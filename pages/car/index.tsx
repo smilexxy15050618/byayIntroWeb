@@ -10,11 +10,13 @@ import {CustomerStories} from './components/CustomerStories'
 import { HOST_ENUM } from '../../src/lib/utils';
 import { Wrapper } from '../../src/components/voice-robot/style';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
+import imgurl from '../../img.url.js'
 
+const FOOTER_BG = `${imgurl}/kqaizl.png`;
 interface IGameProps {
     
 }
-const FOOTER_BG = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/bg/bottom.png';
+// const FOOTER_BG = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/bg/bottom.png';
 const Game:NextFunctionComponent<IGameProps>=()=>{
     return (
         <Layout headPlaceholder={[false, false]} headFontStyle={['dark', 'dark']}>
