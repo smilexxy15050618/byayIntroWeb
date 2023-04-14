@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { Layout } from '../../src/components/Layout';
+import { LayoutNew } from '../../src/components/LayoutNew';
 import { Theme } from '../../src/constants/style';
 import { splitCssValue } from '../../src/lib/utils';
 import { Col, ColProps, Container, Hidden, Row, Visible, ScreenClassRender } from 'react-grid-system';
@@ -324,13 +324,13 @@ const DemandRight = styled.div`
       font-size: 18px;
       color: rgba(51, 51, 51, 1);
       &::before {
-        position: absolute;
         display: block;
-        content: '';
+        position: absolute;
         left: 0;
         top: 16px;
         width: 6px;
         height: 21px;
+        content: '';
         background: linear-gradient(180deg, rgba(139, 172, 255, 1) 0%, rgba(43, 88, 249, 1) 100%);
       }
       span{
@@ -343,6 +343,7 @@ const DemandRight = styled.div`
         color:rgba(43, 88, 249, 1);
         text-decoration: none;
       }
+    }  
   }
 `;
 
@@ -365,8 +366,7 @@ const IntroContent = styled.div`
     max-width: ${props => Theme.ContentWidth};
     min-width: ${props => 'unset'};
     width: calc(
-      100vw / ${splitCssValue(Theme.DesignDraftWidth).num} *
-        ${props => splitCssValue(props.maxWidthPc || Theme.ContentWidth).num}
+        100vw/${splitCssValue(Theme.DesignDraftWidth).num} *${splitCssValue(Theme.ContentWidth).num}
     );
     margin: 0 auto;
   }
@@ -428,15 +428,15 @@ const DemandItem = styled.div<{ normalBg: string; activeBg: string; active: bool
 
 
 const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
+  
   const [demandIndex, setDemandIndex] = React.useState(0);
 
   function handleDemandHover(index) {
     setDemandIndex(index);
   }
   return (
-  <Layout hostType={hostType} headPlaceholder={[false, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
+  <LayoutNew hostType={hostType} headPlaceholder={[false, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
     {(visible, setVisible) => (
-      <>
         <Wrapper>
           <BannerWhite
             background={[`url(${BANNER_BG}) right top ,#F6FCFF`, '#F6FCFF']}
@@ -567,9 +567,8 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
             }}
           />
         </Wrapper>
-      </>
     )}
-  </Layout>
+  </LayoutNew>
   );
 };
 
