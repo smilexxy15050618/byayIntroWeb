@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../constants/style';
 import { splitCssValue } from '../../lib/utils';
@@ -40,6 +40,15 @@ const SocietyDutyContainerWrap = styled.div<{ backgroundImage?: string; societyD
   align-items: normal; 
   justify-content: center; 
   flex-flow: row wrap;
+
+  transform: translateY(50%);
+  transition: all 0.4s;
+  opacity: 0;
+  &.appear{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
   &::before{
     position: absolute;
     left: -58px;
@@ -118,10 +127,33 @@ interface SocietyDutyProps {
   societyDuty2: string;
 }
 
-const SocietyDuty: React.SFC<SocietyDutyProps> = ({ minWidthPC, backgroundImage, societyDuty1, societyDuty2 }) => (
+const SocietyDuty: React.SFC<SocietyDutyProps> = ({ minWidthPC, backgroundImage, societyDuty1, societyDuty2 }) => {
+  const myRef = useRef(null);
+  useEffect(() => {
+    const timer =  setInterval(()=>{
+      if(myRef.current){
+        clearInterval(timer);
+        const ScrollMagic = require('scrollmagic');
+        var controller = new ScrollMagic.Controller();
+        const videoContent = myRef.current;
+          new ScrollMagic.Scene({
+            triggerElement: videoContent, //触发元素
+            triggerHook: 'onEnter', //触发元素开始离开视口时触发
+            offset: 0, //从开始点滚动多少px触发（施法前摇）
+            duration: 400, //效果持续的距离（法术持续时间/距离）
+          })
+            .addTo(controller)
+            .on('enter', () => {
+                videoContent.classList.add('appear')
+                controller.destroy();
+            });
+      }
+    })
+  }, [myRef]);
+  return (
   <SocietyDutyContainer id="SocietyDuty" maxWidthPc="1200px" minWidthPC={minWidthPC}>
     <Title>社会责任</Title>
-    <SocietyDutyContainerWrap backgroundImage={backgroundImage} societyDuty1={societyDuty1}>
+    <SocietyDutyContainerWrap backgroundImage={backgroundImage} societyDuty1={societyDuty1} ref={myRef}>
       <div className='title'>每一封感谢信，让我们坚定向前</div>
       <div className="intro-img"><img src={societyDuty1} /></div>
       <div className="intro-info">2020-2022年，百应在疫情爆发的第一时间上线了<span>「智能疫情通知回访系统」</span>，助力公安高效开展疫情流调和排查工作，减轻民警工作负荷。帮助了湖北、浙江、北京、辽宁、新疆等全国12个省市地区的公安，回访了数千万人次，筛查了5万多隔离人员，覆盖200多个政府部门、医院、学校和社区。</div>
@@ -132,6 +164,7 @@ const SocietyDuty: React.SFC<SocietyDutyProps> = ({ minWidthPC, backgroundImage,
       <div className="intro-info">400+公安机构通过百应Al解决电信网络诈骗问题，为超1亿+民众提供了反欺<br />诈知识，预警诈骗电话超5000万次，成功劝阻100余万名民众受骗。助力基<br />层派出所全年警情下降26.5%。诈骗案发数下降67.7%，案损金额下降<br /> 86.5%。</div>
     </SocietyDutyContainerWrap2>
   </SocietyDutyContainer>
-);
+  )
+};
 
 export default SocietyDuty;

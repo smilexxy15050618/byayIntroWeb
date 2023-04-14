@@ -31,7 +31,6 @@ const HoveUp = styled.div`
 `
 const Card = styled.div<{bg:number}>`
    margin:0 auto;
-    box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12); */
     img{
         width:100%;
         margin:0;

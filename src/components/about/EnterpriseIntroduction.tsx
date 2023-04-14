@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { FC, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../constants/style';
 import { splitCssValue } from '../../lib/utils';
@@ -140,10 +140,12 @@ const AiTSXID = 'aitsx';
 
 const EnterpriseIntroduction: FC<IBriefProps> = ({ minWidthPC,backgroundImage, cover }) => {
 
+  const myRef = useRef(null);
+
   useEffect(() => {
     const ScrollMagic = require('scrollmagic');
     var controller = new ScrollMagic.Controller();
-    const videoContent = document.getElementById(AiTSXID);
+    const videoContent = myRef.current;
       new ScrollMagic.Scene({
         triggerElement: videoContent, //触发元素
         triggerHook: 'onEnter', //触发元素开始离开视口时触发
@@ -157,7 +159,7 @@ const EnterpriseIntroduction: FC<IBriefProps> = ({ minWidthPC,backgroundImage, c
         });
   }, []);
   return (
-  <BriefContainer id={AiTSXID} maxWidthPc="1200px" minWidthPC={minWidthPC}>
+  <BriefContainer id={AiTSXID} ref={myRef} maxWidthPc="1200px" minWidthPC={minWidthPC}>
     <Title>百应科技：智能用户运营平台和解决方案</Title>
     <div className="BriefContainerWrap">  
       <BriefCover cover={cover} backgroundImage={backgroundImage} />

@@ -45,6 +45,12 @@ const Card = styled.div`
         font-size: 16px;
         line-height: 26px;
     }
+    .demo-go{
+        padding-left:24px;
+        padding-top: 24px;
+        font-size: 16px;
+        color: rgba(43, 88, 249, 1);
+    }
    }
 `
 
@@ -52,20 +58,24 @@ const Card = styled.div`
 const CustomerCaseList = [
     {
         title:'贷前、贷中、贷后全链路运营服务，助力小米信贷业务增长',
-        imgUrl: '/case-bg.png',
-        enterLogo: '/logo-1.png'
+        imgUrl: '/case-01.png',
+        enterLogo: '/case-logo-01.png',
+        pageUrl: 'http://baidu.com'
     },{
         title:'用AI和数据赋能业务增长，授信率、放款额等关键指标提升40%',
-        imgUrl: '/case-bg.png',
-        enterLogo: '/logo-1.png'
+        imgUrl: '/case-02.png',
+        enterLogo: '/case-logo-02.png',
+        pageUrl: 'http://baidu.com'
     },{
         title:'助力电销业务提质增效，实现效率效能双增长',
-        imgUrl: '/case-bg.png',
-        enterLogo: '/logo-1.png'
+        imgUrl: '/case-03.png',
+        enterLogo: '/case-logo-03.png',
+        pageUrl: 'http://baidu.com'
     },{
         title:'提供智能用户运营平台，推动招联消金私域业务人效提升100%',
-        imgUrl: '/case-bg.png',
-        enterLogo: '/logo-1.png'
+        imgUrl: '/case-04.png',
+        enterLogo: '/case-logo-04.png',
+        pageUrl: 'http://baidu.com'
     }
 ]
 const MainWrap = styled.div`
@@ -112,6 +122,7 @@ const CustomerCase: FC<SceneSolution> = ({}) => {
                                 <div className='textt_area'>
                                     {item.title}
                                 </div>
+                                <a className="demo-go">体验Demo →</a>
                             </div>
                         )}
                     </Card>

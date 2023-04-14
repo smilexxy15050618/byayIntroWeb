@@ -11,28 +11,18 @@ const SERVICE_DEMAND = [
     cover: `${imgurl}/year-2017.png`,
     list:[
       {
-        time: '2022.03',
-        title: '入选浙江省2021年度人工智能典型应用场景',
+        time: '2017.01',
+        title: '成为阿里云金牌合作伙伴',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.03',
-        title: '通过全球软件领域最高级别CMMI5认证',
+        time: '2017.06',
+        title: '成为阿里云ET城市大脑战略合作伙伴',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.06',
-        title: '获评腾讯智慧零售“千域计划年度认证合作伙伴”',
-        urlLink: 'http://baidu.com'
-      },
-      {
-        time: '2022.10',
-        title: '入选《国家人工智能创新应用先导区“智赋百景”》',
-        urlLink: 'http://baidu.com'
-      },
-      {
-        time: '2022.12',
-        title: '入选2022中国企业数智化创新TOP50',
+        time: '2017.08',
+        title: '发布只能联络中心（AICC）产品',
         urlLink: 'http://baidu.com'
       }
     ]
@@ -42,30 +32,25 @@ const SERVICE_DEMAND = [
     cover: `${imgurl}/year-2018.png`,
     list:[
       {
-        time: '2022.03',
-        title: '入选浙江省2021年度人工智能典型应用场景',
+        time: '2018.04',
+        title: '成为阿里云生态科技先锋ITP、今日头条独家AI语音供应商、腾讯头条AI语音供应商',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.03',
-        title: '通过全球软件领域最高级别CMMI5认证',
+        time: '2018.05',
+        title: '获阿米巴资本6000万Pre-A轮融资',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.06',
-        title: '获评腾讯智慧零售“千域计划年度认证合作伙伴”',
+        time: '2018.06',
+        title: '成为恒生电子智慧金融合作伙伴',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.10',
-        title: '入选《国家人工智能创新应用先导区“智赋百景”》',
+        time: '2018.08',
+        title: '成为信雅达战略合作伙伴',
         urlLink: 'http://baidu.com'
       },
-      {
-        time: '2022.12',
-        title: '入选2022中国企业数智化创新TOP50',
-        urlLink: 'http://baidu.com'
-      }
     ]
   },
   {
@@ -73,30 +58,35 @@ const SERVICE_DEMAND = [
     cover: `${imgurl}/year-2019.png`,
     list:[
       {
-        time: '2022.03',
-        title: '入选浙江省2021年度人工智能典型应用场景',
+        time: '2019.02',
+        title: '入企业客户突破25000家',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.03',
-        title: '通过全球软件领域最高级别CMMI5认证',
+        time: '2019.05',
+        title: '获光信资本领投1.2亿元A轮融资',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.06',
-        title: '获评腾讯智慧零售“千域计划年度认证合作伙伴”',
+        time: '2019.06',
+        title: '获恒生电子、信雅达亿元战略投资”',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.10',
-        title: '入选《国家人工智能创新应用先导区“智赋百景”》',
+        time: '2019.07',
+        title: '成为UCloud战略合作伙伴',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.12',
-        title: '入选2022中国企业数智化创新TOP50',
+        time: '2019.08',
+        title: '成为华为云生态战略合作伙伴',
         urlLink: 'http://baidu.com'
-      }
+      },
+      {
+        time: '2019.09',
+        title: '荣获“国家高新技术企业”认定',
+        urlLink: 'http://baidu.com'
+      },
     ]
   },
   {
@@ -104,30 +94,35 @@ const SERVICE_DEMAND = [
     cover: `${imgurl}/year-2020.png`,
     list:[
       {
-        time: '2022.03',
-        title: '入选浙江省2021年度人工智能典型应用场景',
+        time: '2020.04',
+        title: '发布「智能疫情通知回访」系统,支持全国复工复产',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.03',
-        title: '通过全球软件领域最高级别CMMI5认证',
+        time: '2020.05',
+        title: '打造杭州社保“易窗”智能服务平台上线',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.06',
-        title: '获评腾讯智慧零售“千域计划年度认证合作伙伴”',
+        time: '2020.06',
+        title: '获入选2020杭州准独角兽企业”',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.10',
-        title: '入选《国家人工智能创新应用先导区“智赋百景”》',
+        time: '2020.07',
+        title: '获中国信通院企业级SaaS可信云认证',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.12',
-        title: '入选2022中国企业数智化创新TOP50',
+        time: '2020.09',
+        title: '成立百应-杭州电子科技大学人工智能联合研发中心，入选腾讯SaaS加速器,生态共创驱动数字化升级',
         urlLink: 'http://baidu.com'
-      }
+      },
+      {
+        time: '2020.10',
+        title: '入选国际权威机构IDC《2020中国对话式人工智能厂商评估》报告,“Major Player-主要厂商”象限第一梯队',
+        urlLink: 'http://baidu.com'
+      },
     ]
   },
   {
@@ -135,28 +130,28 @@ const SERVICE_DEMAND = [
     cover: `${imgurl}/year-2021.png`,
     list:[
       {
-        time: '2022.03',
-        title: '入选浙江省2021年度人工智能典型应用场景',
+        time: '2021.01',
+        title: '与华为签约合作,聚力共建全场景智慧',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.03',
-        title: '通过全球软件领域最高级别CMMI5认证',
+        time: '2021.03',
+        title: '获余杭区首批准鲲鹏企业认定',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.06',
-        title: '获评腾讯智慧零售“千域计划年度认证合作伙伴”',
+        time: '2021.04',
+        title: '连续2年荣登杭州准独角兽榜单”',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.10',
-        title: '入选《国家人工智能创新应用先导区“智赋百景”》',
+        time: '2021.06',
+        title: '入选杭州重点建设人工智能应用场景',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.12',
-        title: '入选2022中国企业数智化创新TOP50',
+        time: '2021.12',
+        title: '获评浙江省高新技术企业研究开发中心 荣获2021年浙江省软件核心竞争力企业',
         urlLink: 'http://baidu.com'
       }
     ]
@@ -171,7 +166,7 @@ const SERVICE_DEMAND = [
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.03',
+        time: '2022.04',
         title: '通过全球软件领域最高级别CMMI5认证',
         urlLink: 'http://baidu.com'
       },
@@ -197,30 +192,21 @@ const SERVICE_DEMAND = [
     cover: `${imgurl}/year-2023.png`,
     list:[
       {
-        time: '2022.03',
-        title: '入选浙江省2021年度人工智能典型应用场景',
+        time: '2023.01',
+        title: '获评「AI中国」2022最佳人工智能企业TOP30',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.03',
-        title: '通过全球软件领域最高级别CMMI5认证',
+        time: '2023.03',
+        title: '成为“新华网元宇宙及AIGC创新联盟”成员',
         urlLink: 'http://baidu.com'
       },
       {
-        time: '2022.06',
-        title: '获评腾讯智慧零售“千域计划年度认证合作伙伴”',
+        time: '2023.04',
+        title: '发布“智慧用户运营平台”,对话式AI产品全线升级',
         urlLink: 'http://baidu.com'
       },
-      {
-        time: '2022.10',
-        title: '入选《国家人工智能创新应用先导区“智赋百景”》',
-        urlLink: 'http://baidu.com'
-      },
-      {
-        time: '2022.12',
-        title: '入选2022中国企业数智化创新TOP50',
-        urlLink: 'http://baidu.com'
-      }
+
     ]
   }
 ];
@@ -262,7 +248,7 @@ const Title = styled.div`
 
 
 
-const DemandItem = styled.div<{ ACTIVEBG: string; ACTIVEBG: string; active: boolean }>`
+const DemandItem = styled.div<{ ACTIVEBG: string; NORMALBG: string; active: boolean }>`
   position: relative;
   width: 212px;
   height: 80px;
@@ -279,7 +265,7 @@ const DemandItem = styled.div<{ ACTIVEBG: string; ACTIVEBG: string; active: bool
     top: ${props => (props.active ? '0' : '22px')};
     width: 223px;
     height: 80px;
-    background-image: ${props => (props.active ? `url(${props.activeBg})` : `url(${props.normalBg})`)};
+    background-image: ${props => (props.active ? `url(${props.ACTIVEBG})` : `url(${props.NORMALBG})`)};
     background-repeat: no-repeat;
     transition: all 0.3s ease;
   }

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import * as React from 'react';
+import React, { FC, useState, useEffect, useRef } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import CarouselItem from 'react-bootstrap/CarouselItem';
 import { Col, Container, Row } from 'react-grid-system';
@@ -211,6 +211,18 @@ const CERTIFICATE_LIST = [
   },
 ];
 
+const CertifWrap = styled.div`
+  display: flex;
+  justify-content: center;
+
+  transform: translateY(50%);
+  transition: all 0.4s;
+  opacity: 0;
+  &.appear{
+    transform: translateY(0);
+    opacity: 1;
+  }
+`
 const CertificateCol = styled(Col)`
   .certificate-item {
     padding: 23px 15px;
@@ -276,7 +288,31 @@ const CertificateNew: React.SFC<ICertificateProps> = ({ certificateList = CERTIF
     }
   }, []);
 
+  const myRef = useRef(null);
+  useEffect(() => {
+    const timer =  setInterval(()=>{
+      if(myRef.current){
+        clearInterval(timer);
+        const ScrollMagic = require('scrollmagic');
+        var controller = new ScrollMagic.Controller();
+        const videoContent = myRef.current;
+          new ScrollMagic.Scene({
+            triggerElement: videoContent, //触发元素
+            triggerHook: 'onEnter', //触发元素开始离开视口时触发
+            offset: 0, //从开始点滚动多少px触发（施法前摇）
+            duration: 400, //效果持续的距离（法术持续时间/距离）
+          })
+            .addTo(controller)
+            .on('enter', () => {
+                videoContent.classList.add('appear')
+                controller.destroy();
+            });
+      }
+    })
+  }, [myRef]);
+
   return (
+    <CertifWrap ref={myRef}>
     <Carousel interval={2500} style={{ width: '100%' }}>
       {computedList.map((item, index) => (
         <CarouselItem key={index}>
@@ -300,6 +336,7 @@ const CertificateNew: React.SFC<ICertificateProps> = ({ certificateList = CERTIF
         </CarouselItem>
       ))}
     </Carousel>
+    </CertifWrap>
   );
 };
 

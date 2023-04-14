@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { FC, useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../constants/style';
 import { splitCssValue } from '../../lib/utils';
@@ -55,6 +55,14 @@ const MissionVisionContainerWrap = styled.div<{ backgroundImage?: string }>`
   background-size: cover;
   background-position: center;
   
+  transform: translateY(50%);
+  transition: all 0.4s;
+  opacity: 0;
+  &.appear{
+    transform: translateY(0);
+    opacity: 1;
+  }
+
   .mission-tips{
     position: absolute;
     left: 140px;
@@ -82,33 +90,36 @@ const MissionVisionContainerWrap = styled.div<{ backgroundImage?: string }>`
 
 const AiTSXID = 'MissionVision';
 const MissionVision: FC<MissionVisionProps> = ({ minWidthPC, backgroundImage }) => {
-
+  const myRef = useRef(null);
   useEffect(() => {
+    const timer =  setInterval(()=>{
+      if(myRef.current){
+        clearInterval(timer);
         const ScrollMagic = require('scrollmagic');
         var controller = new ScrollMagic.Controller();
-        const videoContent = document.getElementById(AiTSXID);
+        const videoContent = myRef.current;
           new ScrollMagic.Scene({
             triggerElement: videoContent, //触发元素
             triggerHook: 'onEnter', //触发元素开始离开视口时触发
-            offset: 10, //从开始点滚动多少px触发（施法前摇）
+            offset: 0, //从开始点滚动多少px触发（施法前摇）
             duration: 400, //效果持续的距离（法术持续时间/距离）
           })
-            .setClassToggle('.aitxs', 'appear')
             .addTo(controller)
             .on('enter', () => {
+                videoContent.classList.add('appear')
                 controller.destroy();
             });
-      }, []);
+      }
+    })
+  }, [myRef]);
       
   return (
     <MissionVisionContainer id={AiTSXID} maxWidthPc="1200px" minWidthPC={minWidthPC}>
       <Title>使命和愿景</Title>
-      <div className='aitxs'>
-      <MissionVisionContainerWrap backgroundImage={backgroundImage}>
+      <MissionVisionContainerWrap backgroundImage={backgroundImage} ref={myRef}>
           <div className='mission-tips'><span>使命：</span>以AI赋能经济发展和社会生活</div>
           <div className='vision-tips'><span>愿景：</span>成为具有世界级竞争力的中国科技公司</div>
       </MissionVisionContainerWrap>
-      </div>
     </MissionVisionContainer>
   )
 };

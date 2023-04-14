@@ -6,17 +6,17 @@ const titleList = [
     {
         title: '全生命周期用户运营',
         subTitle: '用户旅程触达策略设计分层用户精细化运营业务节点数据实时采集用户画像实时分析',
-        url: '/yhgl.png'
+        url: '/run-01.png'
     },
     {
         title: '策略营销自动化',
         subTitle: '用户运营策略自动执行节点转化A/B测试自动化触达与分析数据自动回传',
-        url: '/jzyx.png'
+        url: '/run-02.png'
     },
     {
         title: 'ROI导向策略优化',
         subTitle: '运营数据分析触达策略调优用户分层方案优化ROI持续提升',
-        url: '/zncd.png'
+        url: '/run-03.png'
     },
 ]
 export type IAiProps = {};

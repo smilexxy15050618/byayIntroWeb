@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC, useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../constants/style';
 import { splitCssValue } from '../../lib/utils';
@@ -55,6 +55,15 @@ const FlairVoucherContainer = styled.div<{ maxWidthPc?: string; minWidthPC?: str
 const FlairVoucherSlide = styled.div`
   display: flex;
   justify-content: center;
+
+  transform: translateY(50%);
+  transition: all 0.4s;
+  opacity: 0;
+  &.appear{
+    transform: translateY(0);
+    opacity: 1;
+  }
+
   .FlairVoucherItem{
     width: 300px;
     height: 433px;
@@ -114,12 +123,37 @@ interface SocietyDutyProps {
   minWidthPC?: string;
 }
 
-const FlairVoucher: React.SFC<SocietyDutyProps> = ({ minWidthPC }) => (
+const FlairVoucher: FC<SocietyDutyProps> = ({ minWidthPC }) => {
+
+  const myRef = useRef(null);
+  useEffect(() => {
+    const timer =  setInterval(()=>{
+      if(myRef.current){
+        clearInterval(timer);
+        const ScrollMagic = require('scrollmagic');
+        var controller = new ScrollMagic.Controller();
+        const videoContent = myRef.current;
+          new ScrollMagic.Scene({
+            triggerElement: videoContent, //触发元素
+            triggerHook: 'onEnter', //触发元素开始离开视口时触发
+            offset: 0, //从开始点滚动多少px触发（施法前摇）
+            duration: 400, //效果持续的距离（法术持续时间/距离）
+          })
+            .addTo(controller)
+            .on('enter', () => {
+                videoContent.classList.add('appear')
+                controller.destroy();
+            });
+      }
+    })
+  }, [myRef]);
+  
+  return (
   <Wrapper id="FlairVoucher">
     <FlairVoucherContainer maxWidthPc="1200px" minWidthPC={minWidthPC}>
       <Title>资质凭证</Title>
       <SubTitle>从自身产品安全性到对外数据服务，为数据安全保驾护航</SubTitle>
-      <FlairVoucherSlide>
+      <FlairVoucherSlide ref={myRef}>
         {SERVICE_DEMAND.map((item, index) => (
           <div className='FlairVoucherItem'>
             <img src={item.img} />
@@ -130,6 +164,7 @@ const FlairVoucher: React.SFC<SocietyDutyProps> = ({ minWidthPC }) => (
       </FlairVoucherSlide>
     </FlairVoucherContainer>
   </Wrapper>
-);
+)
+};
 
 export default FlairVoucher;
