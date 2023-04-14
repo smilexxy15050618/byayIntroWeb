@@ -7,6 +7,7 @@ import {Ai} from './components/Ai';
 import {ApplicationIndustry} from './components/ApplicationIndustry'
 import {CoreValues} from './components/CoreValues'
 import {WhySelect} from './components/WhySelect'
+import {CustomerCase} from './components/CustomerCase'
 import { HOST_ENUM } from '../../src/lib/utils';
 import { Wrapper } from '../../src/components/voice-robot/style';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
@@ -27,7 +28,8 @@ const Game:NextFunctionComponent<IGameProps>=()=>{
                 <Ai></Ai>
                 <ApplicationIndustry></ApplicationIndustry>
                 <CoreValues></CoreValues>
-                {/* <WhySelect></WhySelect> */}
+                <WhySelect></WhySelect>
+                <CustomerCase></CustomerCase>
                 <ByVoiceFooter
             title="就现在，开启AI电话增长之旅"
             desc="留下联系方式，将有AI行业专家为您提供专属服务"
