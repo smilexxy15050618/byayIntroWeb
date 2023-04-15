@@ -4,19 +4,19 @@ import imgurl from '../../../img.url.js'
 
 const titleList = [
     {
-        title: '用户管理',
-        subTitle: '智能化打标，打造多维度标签体系智能分析意向，构建用户画像360用户精细化分层，精准营销触达赋能运营人员，有效管理用户资产',
-        url: '/yhgl.png'
+        title: '目前汽车行业面临的痛点',
+        subTitle: '线下体验成本持续攀升，线上体验水平待提高数字化转型被重视，提升回报仍是难点有效线索占比低，公域投放成本持续攀升',
+        url: '/qctd.png'
     },
     {
-        title: '精准营销',
-        subTitle: '智能化打标，打造多维度标签体系智能分析意向，构建用户画像360用户精细化分层，精准营销触达赋能运营人员，有效管理用户资产',
-        url: '/jzyx.png'
+        title: '公域+私域',
+        subTitle: '双驱”充分发挥数据效能，达成客户满意闭环，推动业绩增长',
+        url: '/gysy.png'
     },
     {
-        title: '智能触达',
-        subTitle: '智能化打标，打造多维度标签体系智能分析意向，构建用户画像360用户精细化分层，精准营销触达赋能运营人员，有效管理用户资产',
-        url: '/zncd.png'
+        title: '围绕汽车售前售后服务',
+        subTitle: '提升客户的购车、用车、养车、换车全流程体验',
+        url: '/shfw.png'
     },
 ]
 export interface IAiProps {};

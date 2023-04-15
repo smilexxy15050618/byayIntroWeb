@@ -37,8 +37,8 @@ background: rgba(43, 88, 249, 1);
         position: absolute;
         width: 181px;
         height: 112px;
-        left:22px;
-        bottom:22px;
+        left:24px;
+        top:92px;
         .title_area{
             font-size: 20px;
 font-weight: 600;
@@ -64,19 +64,19 @@ color: rgba(255, 255, 255, 1);
 const carouselDataList = [{
     title:'全渠道触点管理',
     content:'每个触点回流后导向下一次触点判断，提升再触达精准度和用户转化效率。',
-    url: '/icon1.png'
+    url: '/car_value1.png'
 },{
     title:'旅程自动化运营',
     content:'优化服务流程，有效降低人工时间成本和运营压力，助力企业营销提质增效。',
-    url: '/icon2.png'
+    url: '/car_value2.png'
 },{
     title:'数字化全景运营',
     content:'不断拓宽自动化SOP的全场景应用边界，为企业构建并持续迭代精细化运营体系。',
-    url: '/icon3.png'
+    url: '/car_value3.png'
 },{
     title:'私域联动多维触达',
     content:'为企业设计阶段性增长解决方案，优化沟通体验，提升用户的全生命周期价值。',
-    url: '/icon4.png'
+    url: '/car_value4.png'
 }]
 const MainWrap = styled.div`
     transform: translateY(50%);

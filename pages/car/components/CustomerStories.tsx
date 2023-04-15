@@ -4,23 +4,23 @@ import imgurl from '../../../img.url.js'
 
 const list = [
     {
-        img: 'https://img.js.design/assets/img/64362782e4c8a0975bc28157.png',
-        banner: '',
+        img: '/qczj_i.png',
+        banner: '/qczj.png',
         content: '陪跑中国领先的汽车消费者在线服务平台数字化进阶之路'
     },
     {
-        img: 'https://img.js.design/assets/img/64362782e4c8a0975bc28157.png',
-        banner: '',
+        img: '/lpqc_i.png',
+        banner: '/lpqc.png',
         content: '助力科技型智能电动汽车品牌实现营销服务数智化升级'
     },
     {
-        img: 'https://img.js.design/assets/img/64362782e4c8a0975bc28157.png',
-        banner: '',
+        img: '/gz_i.png',
+        banner: '/gz.png',
         content: '携手瓜子二手车，打造行业领军的汽车消费服务智能新体验'
     },
     {
-        img: 'https://img.js.design/assets/img/64362782e4c8a0975bc28157.png',
-        banner: '',
+        img: '/yc_i.png',
+        banner: '/yc.png',
         content: '中国领先的汽车互联网企业的营销服务数字化升级之旅'
     }
 ]
@@ -70,13 +70,30 @@ position: relative;
         height: 160px;
         border-radius: 8px 8px, 0px, 0px;
         background: #2B58F9;
+        opacity: 0.2;
     }
 }
 .detail {
     padding: 17px 24px 0 24px;
-    img {
-        width: 65.5px;
-        height: 29.05px;
+    &:first-child {
+        img {
+            width: 68px;
+        }
+    }
+    &:nth-child(2) {
+        img {
+            width: 95px;
+        }
+    }
+    &:nth-child(3) {
+        img {
+            width: 96px;
+        }
+    }
+    &:nth-child(4) {
+        img {
+            width: 74px;
+        }
     }
     div:nth-child(2) {
         font-size: 16px;
@@ -93,6 +110,11 @@ color: rgba(43, 88, 249, 1);
 position: absolute;
 bottom: 32px;
 cursor: pointer;
+&:hover {
+    span {
+        margin-left: 10px;
+    }
+}
     }
 }
 `
@@ -107,11 +129,11 @@ export const CustomerStories: FC = () => {
             list.map(({img,banner,content},index)=> {
                 return (
                     <ListItem>
-                        <div className='banner'></div>
+                        <div style={{background: `url(${imgurl}${banner})`,backgroundSize: '100% 100%'}} className='banner'></div>
                         <div className="detail">
-                            <img src={img} alt="" />
+                            <img src={imgurl+img} alt="" />
                             <div>{content}</div>
-                            <div>体验Demo →</div>
+                            <div>体验Demo <span>→</span></div>
                         </div>
                     </ListItem>
                 )

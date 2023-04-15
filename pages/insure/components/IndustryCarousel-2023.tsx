@@ -63,8 +63,11 @@ const BgContent = styled.div`
   .jumpbtn {
     display: inline-block;
     background: #2B58F9;
-    padding: 13px 34px;
-    font-size: 24px;
+    width: 132px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 16px;
     font-weight: 500;
     color: #ffffff;
     border-radius: 5.33px;

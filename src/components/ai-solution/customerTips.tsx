@@ -54,10 +54,19 @@ const ArrowClick = styled.div`
     align-items: center;
     color:#fff;
     z-index:22;
-    img{
+    .left_img{
       width:100%;
     cursor:pointer;
-
+    &:hover {
+        content: url(${imgurl}/left_blue.png)
+    }
+    }
+    .right_img {
+        width:100%;
+        cursor:pointer;
+        &:hover {
+            content: url(${imgurl}/right_blue.png)
+        }
     }
 `
 const dataList = [
@@ -91,7 +100,7 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
                 <ArrowClick onClick={e => {
                     const res = controlledSwiper.navigation.onPrevClick(e);
                 }} style={{ marginRight: 30 }}>
-                    <img src={`${imgurl}/arowl1.png`} />
+                    <img className="left_img" src={`${imgurl}/arowl1.png`} />
                 </ArrowClick>
 
                 <div className='wrap_hovres'>
@@ -126,7 +135,7 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
                 <ArrowClick onClick={e => {
                     controlledSwiper.navigation.onNextClick(e);
                 }} style={{ marginLeft: 30 }}>
-                    <img src={`${imgurl}/arowr1.png`} />
+                    <img className="right_img" src={`${imgurl}/arowr1.png`} />
                 </ArrowClick>
             </div>
         </HoveUp>

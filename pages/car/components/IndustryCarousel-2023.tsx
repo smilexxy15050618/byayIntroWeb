@@ -62,11 +62,15 @@ const BgContent = styled.div`
   position: relative;
   .jumpbtn {
     display: inline-block;
+    width: 132px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
     background: #2B58F9;
-    padding: 13px 34px;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 500;
-    color: #ffffff;
+    letter-spacing: 0px;
+    color: rgba(255, 255, 255, 1);
     border-radius: 5.33px;
     &:hover {
       background: rgba(84, 127, 255, 1);
@@ -76,11 +80,11 @@ const BgContent = styled.div`
     }
   }
   img {
-    width: 720px;
-    height: 496px;
+    width: 611px;
+    height: 510px;
     position: absolute;
     top: -72px;
-    right: -120px;
+    right: 0px;
   }
 `;
 const BgWrapper = styled.div<{ bg: string }>`
@@ -175,8 +179,8 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
             <BgContent>
               <Title>汽车行业<br></br>数智化解决方案</Title>
               <SubTitle>通过AI智能外呼机器人帮助车企建立用户营销触达策略和完善的用户画像体系，实现企业升级和营销转型，驱动业务持续增长</SubTitle>
-              <img src={imgurl+'/retail_carousel2.png'}></img>
-              <div className="jumpbtn" scale={0.8} onClick={() => setForm()}>
+              <img src={imgurl+'/car_banner.png'}></img>
+              <div className="jumpbtn" onClick={() => setForm()}>
                 预约体验
               </div>
             </BgContent>

@@ -6,19 +6,19 @@ const list = [
     {
         img: '/public_security.png',
         banner: '/security_icon1.png',
-        content: '打造全国反诈成效逆势上扬的“天津样板”。',
+        content: '保险为本，科技赋能，百应AI助力加快实施数字化战略',
         label: '中国人寿'
     },
     {
         img: '/public_security2.png',
         banner: '/security_icon2.png',
-        content: '高发诈骗类型精准圈定，实效助力反诈指标“双降”。',
+        content: 'AI赋能获客提效，开启业绩高效增长之旅。',
         label: '人民保险'
     },
     {
         img: '/public_security3.png',
         banner: '/security_icon3.png',
-        content: '宣传劝阻全量铺开，首创百万级居民反诈“新路径”。',
+        content: '对话式AI高效触达客户，用数智化谱写新篇章',
         label: '众安保险'
     }
 ]
@@ -83,8 +83,8 @@ position: relative;
 .detail {
     padding: 22px 24px 0 24px;
     img {
-        width: 48px;
-        height: 48px;
+        width: 24px;
+        height: 24px;
         margin-bottom: 0px;
     }
     div:first-child {
