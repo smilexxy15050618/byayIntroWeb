@@ -68,7 +68,7 @@ const carouselDataList = [{
 },{
     title:'筛选高价值玩家',
     content:'以行为反馈评估用户价值，持续调整触达运营策略，实现业务闭环',
-    url: '/value2_i.png'
+    url: '/02.png'
 },{
     title:'打造极致沟通体验',
     content:'连接品牌和玩家的沟通桥梁，提供丰富的玩家触达运营攻略',
