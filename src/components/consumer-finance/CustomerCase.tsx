@@ -34,12 +34,28 @@ const Card = styled.div`
             transition: transform 0.4s;
         }
     }
+    
     img.logo{
-        width: 100px;
-        height: 32px;
         margin-top: 12px;
         margin-left: 24px;
     }
+    &:nth-child(1) img.logo{
+        width: 137px;
+        height: 27px;
+    }
+    &:nth-child(2) img.logo{
+        width: 131px;
+        height: 24px;
+    }
+    &:nth-child(3) img.logo{
+        width: 47px;
+        height: 24px;
+    }
+    &:nth-child(4) img.logo{
+        width: 69px;
+        height: 24px;
+    }
+    
     .textt_area{
         padding: 16px 24px;
         font-size: 16px;
@@ -50,6 +66,9 @@ const Card = styled.div`
         padding-top: 24px;
         font-size: 16px;
         color: rgba(43, 88, 249, 1);
+        &:hover{
+            
+        }
     }
    }
 `
@@ -60,22 +79,22 @@ const CustomerCaseList = [
         title:'贷前、贷中、贷后全链路运营服务，助力小米信贷业务增长',
         imgUrl: '/case-01.png',
         enterLogo: '/case-logo-01.png',
-        pageUrl: 'http://baidu.com'
+        pageUrl: '/form?formType=1'
     },{
         title:'用AI和数据赋能业务增长，授信率、放款额等关键指标提升40%',
         imgUrl: '/case-02.png',
         enterLogo: '/case-logo-02.png',
-        pageUrl: 'http://baidu.com'
+        pageUrl: '/form?formType=1'
     },{
         title:'助力电销业务提质增效，实现效率效能双增长',
         imgUrl: '/case-03.png',
         enterLogo: '/case-logo-03.png',
-        pageUrl: 'http://baidu.com'
+        pageUrl: '/form?formType=1'
     },{
         title:'提供智能用户运营平台，推动招联消金私域业务人效提升100%',
         imgUrl: '/case-04.png',
         enterLogo: '/case-logo-04.png',
-        pageUrl: 'http://baidu.com'
+        pageUrl: '/form?formType=1'
     }
 ]
 const MainWrap = styled.div`
@@ -122,7 +141,7 @@ const CustomerCase: FC<SceneSolution> = ({}) => {
                                 <div className='textt_area'>
                                     {item.title}
                                 </div>
-                                <a className="demo-go">体验Demo →</a>
+                                <a href={item.pageUrl} className="demo-go">体验Demo →</a>
                             </div>
                         )}
                     </Card>
