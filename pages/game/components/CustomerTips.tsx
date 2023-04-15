@@ -64,24 +64,21 @@ const ArrowClick = styled.div`
 `
 const dataList = [
     {
-        url: '/cusino5.png'
+        url: '/tbyy.png',
+        bg: imgurl+'/game_case1.png'
     },
     {
-        url: '/cusino2.png'
-    },
-    {
-        url: '/cusino3.png'
-    },
-    {
-        url: '/cusino4.png'
+        url: '/zmla.png',
+        bg: imgurl+'/game_case2.png'
     }
 ]
 const Carousel: React.FC<ICarouselProps> = ({ style }) => {
     const [controlledSwiper, setControlledSwiper] = useState(null);
+    const [currIndex,setCurrIndex] = useState(0);
     return (
 
         <HoveUp>
-            <div className='coverimg'>
+            <div style={{background: `url(${dataList[currIndex].bg}) no-repeat`,backgroundSize: 'cover'}} className='coverimg'>
 
             </div>
             <div style={{ width: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
@@ -104,6 +101,7 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
                                 }}
                                 slidesPerView='auto'
                                 onSwiper={swiper => setControlledSwiper(swiper)}
+                                onSlideChange={swiper=>setCurrIndex(swiper.activeIndex)}
                                 loop={false}>
                                 {dataList.map(({url}) => (
                                     <SwiperSlide style={{}}>

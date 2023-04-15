@@ -63,11 +63,16 @@ const BgContent = styled.div`
   .jumpbtn {
     display: inline-block;
     background: #2B58F9;
-    padding: 13px 34px;
+    width: 132px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
     font-size: 24px;
     font-weight: 500;
     color: #ffffff;
     border-radius: 5.33px;
+    font-size: 16px;
+font-weight: 500;
     &:hover {
       background: rgba(84, 127, 255, 1);
     }
@@ -176,7 +181,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
               <Title>游戏用户<br></br>运营数智化解决方案</Title>
               <SubTitle>筛选高意向新玩家用户，唤醒沉睡玩家，吸引并激励高价值玩家持续互动，用有限的营销预算带来更高的ROI，同时提升用户体验 </SubTitle>
               <img src={imgurl+'/retail_carousel1.png'}></img>
-              <div className="jumpbtn" scale={0.8} onClick={() => setForm()}>
+              <div className="jumpbtn" onClick={() => setForm()}>
                 预约体验
               </div>
             </BgContent>

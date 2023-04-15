@@ -32,7 +32,7 @@ img {
 export const ApplicationIndustry: FC = () => {
     return (
         <MainWrap>
-            <div className="title">应用行业及场景</div>
+            <div className="title">应用场景</div>
             <div className="content">
                 <img src={imgurl+'/gafz_yycj.png'} alt="" />
             </div>

@@ -31,8 +31,8 @@ const Game:NextFunctionComponent<IGameProps>=()=>{
                 <CoreValues></CoreValues>
                 <CustomerStories></CustomerStories>
                 <ByVoiceFooter
-            title="就现在，开启AI电话增长之旅"
-            desc="留下联系方式，将有AI行业专家为您提供专属服务"
+            title="立即体验AI时代的新一代用户运营平台"
+            desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
             btnText="与我联系"
             background={`url(${FOOTER_BG})`}
             onClick={() => {

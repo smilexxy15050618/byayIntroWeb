@@ -37,7 +37,7 @@ background: rgba(43, 88, 249, 1);
         position: absolute;
         width: 236px;
         height: 112px;
-        left:22px;
+        left:24px;
         top:60px;
         .title_area{
             font-size: 20px;
