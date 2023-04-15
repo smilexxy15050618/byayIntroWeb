@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { Layout } from '../../src/components/Layout';
+import { LayoutNew } from '../../src/components/LayoutNew';
 import { Theme } from '../../src/constants/style';
 import { splitCssValue } from '../../src/lib/utils';
 import { Col, ColProps, Container, Hidden, Row, Visible, ScreenClassRender } from 'react-grid-system';
@@ -50,7 +50,7 @@ const Desc = styled.div`
 const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
   
   return (
-  <Layout hostType={hostType} headPlaceholder={[false, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
+  <LayoutNew hostType={hostType} headPlaceholder={[false, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
     {(visible, setVisible) => (
       <>
         <Wrapper>
@@ -89,7 +89,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
         </Wrapper>
       </>  
     )}
-  </Layout>
+  </LayoutNew>
   );
 };
 
