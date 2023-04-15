@@ -134,6 +134,9 @@ const VideoWrapper = styled.div`
     transform: translateY(50%);
     transition: all 0.4s;
     opacity: 0;
+    img{
+      cursor:pointer;
+    }
     div {
       width: 100%;
       height: 15px;

@@ -441,7 +441,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
               <div
                 className="carousel-btn"
                 onClick={() => {
-                  window.open(`/form?formType=1`);
+                  window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
                 }}>
                 预约体验
               </div>
@@ -463,9 +463,9 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
               <div
                 className="carousel-btn"
                 onClick={() => {
-                  window.open(`/form?formType=1`);
+                  window.open(`https://mp.weixin.qq.com/s/Ebu43ZcMV6ted0f55efIRg`);
                 }}>
-                预约体验
+                点击查看
               </div>
               <div className='bg-img-blue'>
                 <img src={imgurl+'/sy-banner3.png'} alt="" />
