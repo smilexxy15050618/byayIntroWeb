@@ -1,5 +1,7 @@
 import React, { FC, useState, useEffect, useRef, useCallback, useMemo ,ComponentLifecycle} from 'react';
 import { Visible } from 'react-grid-system';
+import classNames from 'classnames';
+
 import { HOST_ENUM } from '../../../lib/utils';
 import Accordion from '../../accordion';
 import AccordionForMobile from '../../accordion/AccordionForMobile';
@@ -36,6 +38,11 @@ letter-spacing: 0px;
 cursor:pointer;
 color: rgba(51, 51, 51, 1);
 &.active {
+    color: rgba(43, 88, 249, 1);
+    font-weight: 600;
+    border-bottom: 2px solid rgba(43, 88, 249, 1);  
+} 
+&.active2 {
     color: rgba(43, 88, 249, 1);
     font-weight: 600;
     border-bottom: 2px solid rgba(43, 88, 249, 1);  
@@ -83,6 +90,8 @@ const Solution: FC<ISolutionProps> = ({}) => {
 const myRef = useRef(null);
   // contentList: { color: string; title: string; maxDesc: string[]; minDesc: string[]; tagList: string[]  }[];
 const [currIndex,setCurrIndex] = useState(0);
+const [clickrIndex,setClickrIndex] = useState(0);
+
 useEffect(() => {
  
   const timer =  setInterval(()=>{
@@ -114,18 +123,29 @@ useEffect(() => {
         <LabelList>
             {labelInfo.map(({name},i)=> {
                 return (
-                    <LabelWrapper onMouseEnter={()=>{setCurrIndex(i)}} className={i==currIndex?'active':''}>
+                    <LabelWrapper onMouseEnter={()=>{setCurrIndex(i)}} 
+                    onMouseLeave={()=>{
+                      setCurrIndex(9)
+                    }}
+                      onClick={()=>{
+                        setClickrIndex(i)
+                      }}
+                     
+                    className={ classNames({
+                      active: i==currIndex,
+                      active2: i === clickrIndex
+                    })}>
                         {name}
                     </LabelWrapper>
                 )
             })}
         </LabelList>
-        {currIndex==0&&<ContentWrapper>
+        {clickrIndex==0&&<ContentWrapper>
           <div>B2C数智化用户运营解决方案</div>
           <div>助力品牌高效连接消费者，打造存量时代的会员运营服务，拉升会员LTV</div>
           <img src={`${imgurl}/solution_company.png`} alt="" />
         </ContentWrapper>}
-        {currIndex==1&&<ContentWrapper>
+        {clickrIndex==1&&<ContentWrapper>
           <div>G2C基层服务和治理自动化解决方案</div>
           <div>打造数字化连接平台，助力政府高效服务及治理，提升平安建设三率</div>
           <img src={`${imgurl}/solution_kol.png`} alt="" />
