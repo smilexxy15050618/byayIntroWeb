@@ -26,7 +26,7 @@ const contentList = [
         name: '政务服务',
         content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
         url: '/government.png'
-        ,href:''
+        ,href:'/technology-service/service'
     },
     {
         name: '互联网',

@@ -7,7 +7,7 @@ import HeightestAi from '../src/components/homepage/version2023/HeightestAi';
 import GlobaNumber from '../src/components/homepage/version2023/GlobaNumber';
 import CustomerWords from '../src/components/homepage/version2023/CustomerWords2023';
 import { IndustryCarousel } from '../src/components/IndustryCarousel-2023';
-import { Layout } from '../src/components/Layout';
+import { LayoutNew } from '../src/components/LayoutNew';
 import { FormType } from '../src/components/TryForm';
 import VideoList from '../src/components/videoList-2023';
 import VideoListMobile from '../src/components/videoList/VidelListMobile';
@@ -125,7 +125,7 @@ const videoInfoList = [
 
 export default props => {
   return (
-    <Layout initialOpacity={true} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
+    <LayoutNew initialOpacity={true} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
       {(visible, setFormVisible) => (
         <Wrapper>
           <IndustryCarousel />
@@ -152,6 +152,6 @@ export default props => {
           />
         </Wrapper>
       )}
-    </Layout>
+    </LayoutNew>
   );
 };
