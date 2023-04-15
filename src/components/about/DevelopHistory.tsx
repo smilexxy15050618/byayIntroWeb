@@ -300,6 +300,10 @@ const DemandRight = styled.div`
   flex: 1;
   padding-left: 120px;
   padding-top: 10px;
+  img{
+    width: 89px;
+    height: 21px;
+  }
   ul{
     list-style: none;
     li{
