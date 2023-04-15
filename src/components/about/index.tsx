@@ -4,3 +4,12 @@ export { default as CourseXS } from './course_xs';
 export { default as Team } from './team';
 export { default as Certificate } from './certificate';
 export { default as Banner } from './banner';
+export { default as TabNav } from './TabNav';
+export { default as EnterpriseIntroduction } from './EnterpriseIntroduction';
+export { default as MissionVision } from './MissionVision'
+export { default as SocietyDuty } from './SocietyDuty'
+export { default as FlairVoucher } from './FlairVoucher'
+export { default as InterCertificate } from './InterCertificate'
+export { default as CertificateNew } from './CertificateNew'
+export { default as JoinUs } from './JoinUs'
+export { default as DevelopHistory } from './DevelopHistory'

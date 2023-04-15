@@ -94,6 +94,10 @@ export const NAV_CONFIG = [
   //     },
   //   ],
   // },
+  // {
+  //   path: '/aboutByai/about-baiying',
+  //   name: '关于百应',
+  // },
   {
     path: '/about',
     name: '了解百应',
