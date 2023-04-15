@@ -106,7 +106,7 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
                 <div className='wrap_hovres'>
 
                     <Pane title=" 客户案例"
-                        titleStyle={{ marginBottom: '48px' }}
+                        titleStyle={{ marginBottom: '48px',position:'relative',zIndex:22 }}
                         style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
                         <Hidden xs sm>
                             <Swiper

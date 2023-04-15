@@ -39,7 +39,7 @@ const CardContent = styled.div`
     font-weight: 400;
     color: rgba(10, 15, 44, 0.55);
     line-height: 28px;
-    text-align:left;
+    text-align:justify;
     @media (max-width: 768px) {
       font-size: 13px;
       font-family: PingFangSC-Regular, PingFang SC;

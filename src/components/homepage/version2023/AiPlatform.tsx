@@ -6,49 +6,49 @@ import imgurl from '../../../../img.url.js'
 const contentList = [
     {
         name: '品牌零售',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        content: '通过对话式AI助力品牌实现「极致用户体验+极致ROI」的全域营销服务',
         url: '/ppls.png',
         href:'/retail'
     },
     {
         name: '银行',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        content: '全场景智能用户触达，助力银行实现数字化营销及服务转型',
         url: '/bank.png',
         href:''
     },
     {
         name: '公安反诈',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        content: '以AI能力为核心，强力提升公安反诈预防全业务效能，助力电诈“双降”',
         url: '/police.png'
         ,href:'/unfraud'
     },
     {
         name: '政务服务',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        content: '依托AI实现专业、智能、即时地响应居民业务办理需求，提高居民满意度',
         url: '/government.png'
         ,href:'/technology-service/service'
     },
     {
         name: '互联网',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        content: '构建高转化的用户AI触达模型，深度挖掘会员用户价值，拉升LTV',
         url: '/internet.png'
         ,href:''
     },
     {
         name: '保险',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        content: '“大数据+AI+人”三驱模式，助力保险行业提升营销效果和服务效率',
         url: '/insure.png'
         ,href:'insure'
     },
     {
         name: '教育',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        content: '助力教育企业实现自动化且高效的用户运营和服务，实现业务增长',
         url: '/education.png'
         ,href:''
     },
     {
         name: '汽车',
-        content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
+        content: '以数智化提升车企用户服务能力及转化效果，达成客户体验闭环',
         url: '/car.png'
         ,href:'/car'
     }
@@ -103,7 +103,7 @@ const ListWrapper = styled.div`
      opacity: 1;
    }
    .content {
-    width: 264px;
+    width: 273px;
     cursor:pointer;
     height: 266px;
     display: flex;
@@ -173,7 +173,7 @@ const Platform: FC<IPlatformProps> = () => {
                 {contentList.map(({ name, content, url, href }, index) => {
                     return (
                         <div className="content" onClick={()=>{
-                            window.location.href = href
+                            // window.location.href = href
                         }}>
                             <img src={`${imgurl}${url}`}></img>
                             <div>{name}</div>
@@ -183,7 +183,7 @@ const Platform: FC<IPlatformProps> = () => {
                 })}
             </ListWrapper>
             <div className="more">
-            <a href="https://crm.byai.com/login" target="_blank" rel="noreferrer">
+            <a href="/form?formType=1" target="_blank" rel="noreferrer">
             了解更多
                    <img src={imgurl+'/down.png'} style={{transform: 'rotate(-90deg)'}}></img>
                 </a>

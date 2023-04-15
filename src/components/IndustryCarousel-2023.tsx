@@ -124,7 +124,7 @@ const CarouselWrapper = styled.div`
   .carousel-indicators{
     > li{
       width:90px;
-      height:1px;
+      height:2px;
       background:rgba(65,70,79,.15);
       border:none;
     }
@@ -249,7 +249,7 @@ margin-bottom:56px;
       font-weight: 300;
       letter-spacing: 0px;
       line-height: 20px;
-      color: rgba(51, 51, 51, 1);
+      color: rgb(153, 153, 153);
     }
     .jump-group-item-desc {
       height: 22px;
@@ -265,7 +265,7 @@ margin-bottom:56px;
     font-size: 14px;
     font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
-    color: #333333;
+    color: rgb(153, 153, 153);
     line-height: 20px;
     // margin-bottom: 8px;
   }
@@ -395,7 +395,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
               <div  className="main-container">
                 
               <div className="main-title">百应智能用户运营平台</div>
-              <div className='sec-title'>用AI助力构建ToC长期信任关系</div>
+              <div className='sec-title'>用AI助力构建用户长期信任关系</div>
               <div className='bg-img-blue'>
                 <img src={imgurl+'/sy-banner1.png'} alt="" />
               </div>
@@ -443,7 +443,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
                 onClick={() => {
                   window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
                 }}>
-                预约体验
+                点击查看
               </div>
               <div className='bg-img-blue'>
                 <img src={imgurl+'/sy-banner2.png'} alt="" />

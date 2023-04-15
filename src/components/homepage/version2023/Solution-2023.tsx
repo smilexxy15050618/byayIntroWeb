@@ -35,7 +35,7 @@ text-align: center;
 font-size: 18px;
 font-weight: 400;
 letter-spacing: 0px;
-cursor:pointer;
+/* cursor:pointer; */
 color: rgba(51, 51, 51, 1);
 &.active {
     color: rgba(43, 88, 249, 1);
@@ -91,7 +91,19 @@ const myRef = useRef(null);
   // contentList: { color: string; title: string; maxDesc: string[]; minDesc: string[]; tagList: string[]  }[];
 const [currIndex,setCurrIndex] = useState(0);
 const [clickrIndex,setClickrIndex] = useState(0);
-
+  const togleImg =()=>{
+    const timer = setInterval(() => {
+      console.log(clickrIndex,'sss')
+      if(clickrIndex == 1){
+        setClickrIndex(0)
+      }else{
+        setClickrIndex(1)
+      }
+      clearTimeout(timer)
+    
+    }, 3000);
+  }
+  togleImg()
 useEffect(() => {
  
   const timer =  setInterval(()=>{
@@ -123,16 +135,12 @@ useEffect(() => {
         <LabelList>
             {labelInfo.map(({name},i)=> {
                 return (
-                    <LabelWrapper onMouseEnter={()=>{setCurrIndex(i)}} 
-                    onMouseLeave={()=>{
-                      setCurrIndex(9)
-                    }}
+                    <LabelWrapper 
                       onClick={()=>{
-                        setClickrIndex(i)
+                        // setClickrIndex(i)
                       }}
                      
                     className={ classNames({
-                      active: i==currIndex,
                       active2: i === clickrIndex
                     })}>
                         {name}
