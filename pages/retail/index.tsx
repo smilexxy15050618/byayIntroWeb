@@ -2,7 +2,7 @@ import axios from 'axios';
 import { NextFunctionComponent } from 'next';
 import { Visible } from 'react-grid-system';
 import styled from 'styled-components';
-import { LayoutNew } from '../../src/components/LayoutNew';
+import { Layout } from '../../src/components/Layout';
 import { FormType } from '../../src/components/TryForm';
 import CustomerIconsBlock from '../../src/components/common/CustomerIconsBlock';
 import Advantage from '../../src/components/homepage/version2023/advantage';
@@ -45,7 +45,7 @@ const BagLabel = styled.div`
 const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
   return (
     <>
-      <LayoutNew hostType={HOST_ENUM.DS_HOST} headPlaceholder={[false, false]} headFontStyle={['dark', 'dark']}>
+      <Layout hostType={HOST_ENUM.DS_HOST} headPlaceholder={[false, false]} headFontStyle={['dark', 'dark']}>
         {(visible, setFormVisible) => (
           <Wrapper>
             <Visible md lg xl xxl xxxl>
@@ -110,7 +110,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
             /> */}
           </Wrapper>
         )}
-      </LayoutNew>
+      </Layout>
     </>
   );
 };
