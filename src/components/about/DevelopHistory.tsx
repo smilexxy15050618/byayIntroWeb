@@ -1,10 +1,8 @@
-import * as React from 'react';
+import React, { CSSProperties, FC, useEffect, useRef, useState} from 'react';
 import styled, { css } from 'styled-components';
-import { Container, Row, Col } from 'react-grid-system';
-// import ByRatioBox from '../common/ByRatioBox';
 
 const ByRatioBox =  styled.div<{ backgroundImage?: string }>`;
-  margin-top: 140px;
+  margin-top: 139px;
   background-image: ${props => `url(${props.backgroundImage})`};
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,6 +19,16 @@ const ByRatioBox =  styled.div<{ backgroundImage?: string }>`;
 `;
 
 const CourseList = styled.div`;
+  width: 100%;
+  overflow: hidden;
+
+  // transform: translateY(50%);
+  // transition: all 0.4s;
+  // opacity: 0;
+  // &.appear{
+  //   transform: translateY(0);
+  //   opacity: 1;
+  // }
 `;
 
 const CourseListInner = styled.div<{ width: number; translateX: number }>`
@@ -45,7 +53,6 @@ const CourseItem = styled.div<{ width: number; active?: boolean }>`
     opacity: 0;
     border-radius: 3px;
     background: rgba(0, 200, 189, 1);
-    transition: all 0.3s ease-in-out;
   }
   .time {
     position: relative;
@@ -94,6 +101,7 @@ const HoverBox = styled.div<{ width: number; left: number }>`
     font-weight: 300;
     color: #ffffff;
     line-height: 50px;
+    transition: all 0.5s ease-in-out;
   }
   .desc {
     padding: 0 20px;
@@ -260,6 +268,7 @@ class DevelopHistory extends React.Component<ICourseProps, ICourseState> {
       translateX: translateX + clientWidth / 5,
     });
   };
+
   handleRight = () => {
     const { clientWidth, activeIndex, translateX } = this.state;
     const courseList = COURSE_TIME;
@@ -269,6 +278,7 @@ class DevelopHistory extends React.Component<ICourseProps, ICourseState> {
       translateX: translateX - clientWidth / 5,
     });
   };
+
   handleCourseItemHover = (e, index) => {
     if (e.type === 'mouseenter') {
       this.setState({
@@ -280,11 +290,37 @@ class DevelopHistory extends React.Component<ICourseProps, ICourseState> {
       });
     }
   };
+  
   handleCourseLeave = () => {
     this.setState({
-      hoverIndex: 1,
+      hoverIndex: -1,
     });
   };
+
+  // const myRef = useRef(null);
+  
+  // useEffect(() => {
+  //   const timer =  setInterval(()=>{
+  //     if(myRef.current){
+  //       clearInterval(timer);
+  //       const ScrollMagic = require('scrollmagic');
+  //       var controller = new ScrollMagic.Controller();
+  //       const videoContent = myRef.current;
+  //         new ScrollMagic.Scene({
+  //           triggerElement: videoContent, //触发元素
+  //           triggerHook: 'onEnter', //触发元素开始离开视口时触发
+  //           offset: 0, //从开始点滚动多少px触发（施法前摇）
+  //           duration: 400, //效果持续的距离（法术持续时间/距离）
+  //         })
+  //           .addTo(controller)
+  //           .on('enter', () => {
+  //               videoContent.classList.add('appear')
+  //               controller.destroy();
+  //           });
+  //     }
+  //   })
+  // }, [myRef]);
+
   render() {
     const { clientWidth, activeIndex, translateX, hoverIndex } = this.state;
     const courseList  = COURSE_TIME;
@@ -292,6 +328,7 @@ class DevelopHistory extends React.Component<ICourseProps, ICourseState> {
     if (!courseList.length) {
       return null;
     }
+
     return (
       <ByRatioBox id="DevelopHistory" width="100%" calcHeight={() => 'calc(60% - 293px)'} backgroundImage={backgroundImage}>
         <div className="title">发展历程</div>

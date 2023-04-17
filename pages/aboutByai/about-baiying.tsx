@@ -1,12 +1,10 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Layout } from '../../src/components/Layout';
-import { Theme } from '../../src/constants/style';
-import { splitCssValue } from '../../src/lib/utils';
-import { Col, ColProps, Container, Hidden, Row, Visible, ScreenClassRender } from 'react-grid-system';
+import {  Hidden } from 'react-grid-system';
 import { TextArea } from '../../src/components/common/BannerTextElements';
 import BannerWhite from '../../src/components/common/BannerWhite';
-import { TabNav, EnterpriseIntroduction, MissionVision, DevelopHistory, SocietyDuty, FlairVoucher, InterCertificate, CertificateNew, JoinUs } from '../../src/components/about';
+import { TabNav, EnterpriseIntroduction, MissionVision, DevelopHistory, SocietyDuty, FlairVoucher, CustomerWords, JoinUs } from '../../src/components/about';
 import ByVoiceFooterNew from '../../src/components/common/ByVoiceFooterNew';
 
 
@@ -18,11 +16,6 @@ const ABOUT_INTRO = `${imgurl}/about-intro.jpg`;
 const Mission_BG = `${imgurl}/mission-bg.png`;
 const Vision_BG = `${imgurl}/vision-bg.png`;
 const DEVELOPHIS_BG = `${imgurl}/develophis_bg.png`;
-const SOCIETYDUTY_BG = `${imgurl}/society-duty.png`;
-const SOCIETYDUTY_IMG1 = `${imgurl}/society-duty_1.png`;
-const SOCIETYDUTY_IMG2 = `${imgurl}/society-duty_2.png`;
-const INTERCERTIFICATE_BG = `${imgurl}/inter-cert_bg.png`;
-const CRDITMEDAL_BG = `${imgurl}/credit-medal-bg.png`;
 const JOINUS_BG = `${imgurl}/web-com.png`;
 const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
 
@@ -120,7 +113,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
                   onClick={() =>
                     window.open('/form?formType=1')
                   }>
-                  社会招聘
+                  预约体验
                 </BlueBtn>
               </Hidden>
             </TextArea>
@@ -165,38 +158,9 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
           <DevelopHistory
             backgroundImage={DEVELOPHIS_BG}
           />
-          <SocietyDuty
-            backgroundImage={SOCIETYDUTY_BG}
-            societyDuty1={SOCIETYDUTY_IMG1}
-            societyDuty2={SOCIETYDUTY_IMG2}
-          />
+          <SocietyDuty />
           <FlairVoucher />
-          <InterCertificate backgroundImage={INTERCERTIFICATE_BG} />
-          <CreditMedal backgroundImage={CRDITMEDAL_BG} id="CreditMedal">
-            <TitleCredit>荣誉奖项</TitleCredit>
-            <ScreenClassRender
-              render={screenClass => {
-                let limit;
-                switch (screenClass) {
-                  case 'lg':
-                    limit = 4;
-                    break;
-                  case 'md':
-                    limit = 3;
-                    break;
-                  case 'sm':
-                    limit = 2;
-                    break;
-                  case 'xs':
-                    limit = 1;
-                    break;
-                  default:
-                    limit = 5;
-                }
-                return <CertificateNew limit={limit} />;
-              }}
-            />
-          </CreditMedal>
+          <CustomerWords />
           <JoinUs backgroundImage={JOINUS_BG} />
           <ByVoiceFooterNew
             title="用AI助力构建To C长期信关系，一起创造未来"

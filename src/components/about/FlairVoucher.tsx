@@ -1,28 +1,31 @@
-import React, { FC, useState, useEffect, useRef } from 'react';
+import React, { CSSProperties, FC, useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../constants/style';
 import { splitCssValue } from '../../lib/utils';
+import { Hidden, Visible } from 'react-grid-system';
+import { Swiper, SwiperSlide} from 'swiper/react';
+import imgurl from '../../../img.url.js'
 
 const Title = styled.div`
   padding-top: 80px;
   padding-bottom: 16px;
   font-size: 40px;
-  line-height: 48px;
+  line-height: 44px;
   color:rgba(255, 255, 255, 1);
   text-align: center;
 `;
 
 const SubTitle = styled.div`
-padding-bottom: 44px;
+padding-bottom: 48px;
 font-size: 22px;
 line-height: 44x;
 color:rgba(255, 255, 255, 1);
 text-align: center;
 `;
 
-const Wrapper = styled.div`
+const WrapperContent = styled.div`
   position: relative;
-  margin-top: 105px;
+  margin-top: 34px;
   &::before {
     position: absolute;
     left: 0;
@@ -63,67 +66,123 @@ const FlairVoucherSlide = styled.div`
     transform: translateY(0);
     opacity: 1;
   }
-
-  .FlairVoucherItem{
-    width: 300px;
-    height: 433px;
-    border-radius: 9px;
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0px 2px 37px 0px rgba(0, 0, 0, 0.06);
-    text-align: center;
-    img{
-      transition: all 0.5s;
-    }
-    img:hover{
-      transform: scale(1.05);
-    }
-    h4{
-      font-size: 22px;
-      line-height: 30px;
-      color: rgba(51, 51, 51, 1);
-      font-weight: normal;
-      margin: 0;
-    }
-    p{
-      font-size: 16px;
-      color: rgba(51, 51, 51, 1);
-      line-height: 30px;
-    }
-  }
-  .FlairVoucherItem:nth-child(2){
-    width: 434px;
-    height: 433px;
-    margin: 0 18px;
-    img{
-      margin: 28px auto;
-    }
-  }
-  
 `;
 
-const SERVICE_DEMAND = [
+const HoveUp = styled.div`
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
+  z-index: 1;
+  .hoer_bg_more{
+    transition: all 0.3s ease-in-out;
+  }
+`
+const CardContent = styled.aside`
+  position:relative;
+  padding: 46px 71px;
+  .logo_area{
+    width: 100%;
+    height: 358px;
+  }
+`
+const Wrapper = styled.div`
+  display: flex;
+  width: 100vw;
+  margin: 0 auto;
+`;
+
+const carouselDataList = [
   {
-    img: 'https://img.js.design/assets/img/6432621387c0190b718c1e31.png',
-    title: '国际软件领域最高级别认证',
-    subtitle: '信息通过CMMI5认定'
+    imgSrc:'/flair-voucher-1.png',
   },
   {
-    img: 'https://img.js.design/assets/img/6432621302bdc4f1e054d1be.png',
-    title: '信息系统安全等级保护（第三级）',
-    subtitle: '非银行机构的最高登记保护认证'
-  },
-  {
-    img: 'https://img.js.design/assets/img/643262133d1ec540d034f56c.png',
-    title: '中国信通院“可信云”',
-    subtitle: '企业级SaaS安全评估认证'
+    imgSrc:'/flair-voucher-2.png',
   }
 ];
 
 interface SocietyDutyProps {
-  minWidthPC?: string;
+  dataList: { content: string; imgSrc: string; title: string }[];
+  style?: CSSProperties;
 }
 
-const FlairVoucher: FC<SocietyDutyProps> = ({ minWidthPC }) => {
+const Carousel: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
+  const [controlledSwiper, setControlledSwiper] = useState(null);
+  const [currIndex, setCurrIndex] = useState(0);
+  return (
+    <div style={{width:'1200px',margin:'0 auto',display:'flex',justifyContent:'center',position: 'relative'}}>
+      <HoveUp>
+        <Swiper
+          effect="slide"
+          autoplay={{
+            delay: 5000,
+          }}
+          slidesPerView={1}
+          onSwiper={swiper => setControlledSwiper(swiper)}
+          onSlideChange={swiper => {
+            setCurrIndex(swiper.activeIndex);
+          }}
+          style={{  }}>
+          {dataList.map(({ imgSrc, content, title }, i) => (
+            <SwiperSlide style={{ width: 'auto' }} className='hoer_bg_more'>
+              <CardContent>
+                <img className='logo_area' src={imgurl+imgSrc}/>
+              </CardContent>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </HoveUp>
+    </div>
+  );
+};
+
+const CarouselMobile: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
+  const [currIndex, setCurrIndex] = useState(0);
+  const [controlledSwiper, setControlledSwiper] = useState(null);
+  const length = dataList.length;
+  const currAnimateNumber = useRef(0);
+  const taskList = useRef<Array<() => void>>([]);
+  const taskFn = (index: number) => {
+    if (currAnimateNumber.current >= 1) {
+      taskList.current.push(() => taskFn(index));
+      return;
+    }
+    setCurrIndex(index);
+    currAnimateNumber.current++;
+    setTimeout(() => {
+      currAnimateNumber.current--;
+      if (taskList.current.length) {
+        const t = taskList.current.shift();
+        t();
+      }
+    }, 250);
+  };
+  return (
+    <>
+      <Wrapper>
+        <Swiper
+          autoplay={{
+            delay: 5000,
+          }}
+          slidesPerView="auto"
+          centeredSlides={true}
+          spaceBetween={24}
+          onSlideChange={swiper => {
+            setCurrIndex(swiper.activeIndex);
+          }}>
+          {dataList.map(({ imgSrc, content, title }, i) => (
+            <SwiperSlide style={{ width: '295px' }}>
+           
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Wrapper>
+    </>
+  );
+};
+
+const FlairVoucher: FC<SocietyDutyProps> = () => {
 
   const myRef = useRef(null);
   useEffect(() => {
@@ -149,21 +208,20 @@ const FlairVoucher: FC<SocietyDutyProps> = ({ minWidthPC }) => {
   }, [myRef]);
   
   return (
-  <Wrapper id="FlairVoucher">
-    <FlairVoucherContainer maxWidthPc="1200px" minWidthPC={minWidthPC}>
-      <Title>资质凭证</Title>
+  <WrapperContent id="FlairVoucher">
+    <FlairVoucherContainer maxWidthPc="1200px">
+      <Title>资质认证</Title>
       <SubTitle>从自身产品安全性到对外数据服务，为数据安全保驾护航</SubTitle>
       <FlairVoucherSlide ref={myRef}>
-        {SERVICE_DEMAND.map((item, index) => (
-          <div className='FlairVoucherItem'>
-            <img src={item.img} />
-            <h4>{item.title}</h4>
-            <p>{item.subtitle}</p>
-          </div>
-        ))}
+        <Hidden xs sm>
+          <Carousel dataList={carouselDataList}></Carousel>
+        </Hidden>
+        <Visible xs sm>
+          <CarouselMobile dataList={carouselDataList}></CarouselMobile>
+        </Visible>
       </FlairVoucherSlide>
     </FlairVoucherContainer>
-  </Wrapper>
+  </WrapperContent>
 )
 };
 

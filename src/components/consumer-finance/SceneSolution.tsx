@@ -6,7 +6,6 @@ interface  SceneSolution{
 
 }
 const Pane = styled.div`
-    padding: 80px 0;
     .title {
         font-size: 40px;
         font-weight: 500;

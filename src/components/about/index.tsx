@@ -9,7 +9,6 @@ export { default as EnterpriseIntroduction } from './EnterpriseIntroduction';
 export { default as MissionVision } from './MissionVision'
 export { default as SocietyDuty } from './SocietyDuty'
 export { default as FlairVoucher } from './FlairVoucher'
-export { default as InterCertificate } from './InterCertificate'
-export { default as CertificateNew } from './CertificateNew'
 export { default as JoinUs } from './JoinUs'
 export { default as DevelopHistory } from './DevelopHistory'
+export { default as CustomerWords } from './CustomerWords'

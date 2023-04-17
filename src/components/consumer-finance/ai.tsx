@@ -57,6 +57,7 @@ const ListWrapper = styled.div`
     img {
         width: 100%;
         height: 448px;
+        margin: 0;
     }
 `
 const ListItem = styled.div`

@@ -1,8 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Layout } from '../../src/components/Layout';
-import { Theme } from '../../src/constants/style';
-import { splitCssValue } from '../../src/lib/utils';
 import { Col, ColProps, Container, Hidden, Row, Visible, ScreenClassRender } from 'react-grid-system';
 import { TextArea } from '../../src/components/common/BannerTextElements';
 import BannerWhite from '../../src/components/common/BannerWhite';
@@ -45,6 +43,21 @@ const Desc = styled.div`
   color: rgba(51, 51, 51, 1);
 `;
 
+const BlueBtn = styled.div`
+  margin-top: 46px;
+  width: 132px;
+  height: 48px;
+  border-radius: 5.33px;
+  background: rgba(43, 88, 249, 1);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 48px;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  cursor: pointer;
+`;
+
 
 
 const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
@@ -59,7 +72,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
             pcImgs={[
               {
                 src: JOIN_US_IMG,
-                style: { width: 720, height:496, top: 0, right: '-120px' },
+                style: { width: 644, height:496, top: 0, right: 0 },
                 className: ['animate__fadeInRight', 'animate__ahead_300ms'],
               },
             ]}
@@ -70,6 +83,12 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
                   消费金融<br/>智能用户运营解决方案
                 </BigTitle>
                 <Desc>针对消费金融业务全链路提供智能化运营方案，用数据<br/>驱动精细化运营策略升级，用AI助力消费金融机构业务<br/>增长。</Desc>
+                <BlueBtn
+                  onClick={() =>
+                    window.open('/form?formType=1')
+                  }>
+                  预约体验
+                </BlueBtn>
               </Hidden>
             </TextArea>
           </BannerWhite>
