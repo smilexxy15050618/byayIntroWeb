@@ -18,7 +18,7 @@ const HoveUp = styled.div`
         position: relative;
     .coverimg{
         position: absolute;
-        height: 625px;
+        height: 860px;
         width:100%;
     }
    .wrap_hovres{
@@ -71,10 +71,6 @@ const ArrowClick = styled.div`
 `
 const dataList = [
     {
-        url: '/cusino5.png',
-        bg: '/syt.png'
-    },
-    {
         url: '/cusino2.png',
         bg: '/mz.png'
     },
@@ -85,6 +81,10 @@ const dataList = [
     {
         url: '/cusino4.png',
         bg: '/ry.png'
+    },
+    {
+        url: '/cusino5.png',
+        bg: '/syt.png'
     }
 ]
 const Carousel: React.FC<ICarouselProps> = ({ style }) => {
@@ -93,7 +93,7 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
     return (
 
         <HoveUp>
-            <div style={{'background': `url(${imgurl}${dataList[currIndex].bg}) no-repeat,100% 100%`}} className='coverimg'>
+            <div style={{'background': '#F6FCFF'}} className='coverimg'>
 
             </div>
             <div style={{ width: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
@@ -106,13 +106,13 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
                 <div className='wrap_hovres'>
 
                     <Pane title=" 客户案例"
-                        titleStyle={{ marginBottom: '48px' }}
+                        titleStyle={{ marginBottom: '48px',position:'relative',zIndex:22 }}
                         style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
                         <Hidden xs sm>
                             <Swiper
                                 className='swiperwrap'
                                 autoplay={{
-                                    delay: 5000,
+                                    delay: 1000,
                                 }}
                                 slidesPerView='auto'
                                 onSwiper={swiper => setControlledSwiper(swiper)}

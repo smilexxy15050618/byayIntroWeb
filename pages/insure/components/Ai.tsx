@@ -64,6 +64,7 @@ box-sizing: border-box;
 img {
     width: 100%;
     height: 528px;
+    margin-bottom:0;
 }
 `
 const ListItem = styled.div`

@@ -43,6 +43,7 @@ letter-spacing: 0.91px;
 line-height: 32px;
 color: rgba(51, 51, 51, 1);
 margin-bottom: 40px;
+text-align: justify;
 `;
 
 const Title = styled.div`

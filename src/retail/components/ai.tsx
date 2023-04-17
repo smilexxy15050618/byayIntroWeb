@@ -129,6 +129,7 @@ const MainWrap = styled.div`
 const AiTSXID = 'aitsx';
 const AI: FC<IAiProps> = ({ }) => {
     const [currIndex, setCurrIndex] = useState(0);
+   
     useEffect(() => {
         const ScrollMagic = require('scrollmagic');
         var controller = new ScrollMagic.Controller();
@@ -147,6 +148,18 @@ const AI: FC<IAiProps> = ({ }) => {
                 
                 controller.destroy();
             });
+
+            const length = titleList.length-1;
+            let index = 0;
+            setInterval(()=>{
+                if(index<length){
+                    index++;
+                }else{
+                    index = 0;
+                }
+                // console.log(index,length,'indexindex')
+                setCurrIndex(index);
+            },3000)
       }, []);
     return (
     <MainWrap id={AiTSXID} >

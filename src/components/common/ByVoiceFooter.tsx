@@ -14,7 +14,7 @@ const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText
   return (
     <div className={className}>
       <div className="title">立即体验AI时代的新一代用户运营平台</div>
-      <div className="desc">用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。</div>
+      <div className="desc">用“AI”构建你和用户的“亲密关系”，共建存量时代的增长引擎</div>
       <ByNormalBtn
         onClick={() => onClick()}
         width="200px"
@@ -67,13 +67,14 @@ const ByVoiceFooter = styled(RawByVoiceFooter)<IByVoiceFooterProps>`
     font-weight: 500;
     color: #ffffff;
     line-height: 48px;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     text-align: center;
   }
   .desc {
     margin: 16px 0px 24px;
     font-size: 18px;
     color: #ffffff;
+    letter-spacing: 1px;
     line-height: 26px;
     text-align: center;
   }

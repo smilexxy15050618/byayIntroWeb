@@ -56,7 +56,6 @@ const CarouselWrapper = styled.div`
   .carousel-body {
     height: 580px;
     min-height: 480px;
- 
     background:#F6FCFF;
     position: relative;
     overflow:hidden;
@@ -80,7 +79,22 @@ const CarouselWrapper = styled.div`
       filter: blur(100px);
     }
   }
+  .carouselbg2{
+    background: url(${imgurl}/sybanner2.png) no-repeat;
+    background-size:cover;
+    background-position:left bottom;
+  }
+  .carousel-control-prev{
+    display:none
+  }
+  .carousel-control-next{
+    display:none
+    
+  }
   .no_duration{
+  }
+  .Carouselindex2{
+    opacity: 0;
   }
   .main-container {
     width: 1200px;
@@ -124,7 +138,7 @@ const CarouselWrapper = styled.div`
   .carousel-indicators{
     > li{
       width:90px;
-      height:1px;
+      height:2px;
       background:rgba(65,70,79,.15);
       border:none;
     }
@@ -249,7 +263,7 @@ margin-bottom:56px;
       font-weight: 300;
       letter-spacing: 0px;
       line-height: 20px;
-      color: rgba(51, 51, 51, 1);
+      color: rgb(153, 153, 153);
     }
     .jump-group-item-desc {
       height: 22px;
@@ -265,7 +279,7 @@ margin-bottom:56px;
     font-size: 14px;
     font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
-    color: #333333;
+    color: rgb(153, 153, 153);
     line-height: 20px;
     // margin-bottom: 8px;
   }
@@ -381,10 +395,11 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
   return (
     <CarouselWrapper style={{ zIndex: 3, position: 'relative' }}>
       <Visible md lg xl xxl xxxl>
-        <div className="carousel-body">
-          <img className="carousel-bg-ball" src={BG_BALL} />
+        <div   className={classNames('carousel-body', {
+                        carouselbg2: index == 1,
+                      })}>
+          {index !=1?   <img className="carousel-bg-ball" src={BG_BALL} />:''}
           <div className="carousel-bg-right"  ></div>
-
           <Carousel  style={{ width: '100%' }} 
           interval={3000}
           fade
@@ -395,7 +410,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
               <div  className="main-container">
                 
               <div className="main-title">百应智能用户运营平台</div>
-              <div className='sec-title'>用AI助力构建ToC长期信任关系</div>
+              <div className='sec-title'>用AI助力构建用户长期信任关系</div>
               <div className='bg-img-blue'>
                 <img src={imgurl+'/sy-banner1.png'} alt="" />
               </div>
@@ -404,15 +419,15 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
                   return (
                     <div
                       onMouseEnter={() => {
-                        setCurrIndex(i);
+                        // setCurrIndex(i);
                       }}
                       className={classNames('jump-group-item', {
-                        hover: i === currIndex,
+                        // hover: i === currIndex,
                       })}
                       onClick={() => {
                         const node = document.querySelector(jumpTarget);
                         if (node) {
-                          node.scrollIntoView({ behavior: 'smooth' });
+                          // node.scrollIntoView({ behavior: 'smooth' });
                         }
                       }}>
                       <div className="jump-group-item-title">{title}</div>
@@ -430,8 +445,10 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
               </div>
             
             </Carousel.Item>
-            <Carousel.Item className='no_duration' key={2}>
-              <div  className="main-container">
+            <Carousel.Item className='no_duration Carouselindex2' key={2} onClick={() => {
+                  window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
+                }}>
+              {/* <div  className="main-container">
                 
               <div className="main-title">百应科技荣誉入选</div>
               <div className='sec-title'  style={{marginBottom:'16px'}}>《国家人工智能创新应用先导区“智赋百景”》</div>
@@ -443,12 +460,12 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
                 onClick={() => {
                   window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
                 }}>
-                预约体验
+                点击查看
               </div>
               <div className='bg-img-blue'>
                 <img src={imgurl+'/sy-banner2.png'} alt="" />
               </div>
-              </div>
+              </div> */}
             
             </Carousel.Item>
            

@@ -85,7 +85,7 @@ font-weight: 500;
     height: 525px;
     position: absolute;
     top: -100px;
-    right: -120px;
+    right: 0px;
   }
 `;
 const BgWrapper = styled.div<{ bg: string }>`
