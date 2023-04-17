@@ -4,8 +4,8 @@ import { Layout } from '../../src/components/Layout';
 import { NextFunctionComponent } from 'next';
 import { IndustryCarousel } from './components/IndustryCarousel-2023';
 import {Ai} from './components/Ai';
-import {ApplicationIndustry} from './components/ApplicationIndustry'
-import {CoreValues} from './components/CoreValues'
+// import {ApplicationIndustry} from './components/ApplicationIndustry'
+// import {CoreValues} from './components/CoreValues'
 import {WhySelect} from './components/WhySelect'
 import {CustomerCase} from './components/CustomerCase'
 import { HOST_ENUM } from '../../src/lib/utils';
@@ -28,8 +28,8 @@ const Game:NextFunctionComponent<IGameProps>=()=>{
             <Visible md lg xl xxl xxxl>
                 <IndustryCarousel></IndustryCarousel>
                 <Ai></Ai>
-                <ApplicationIndustry></ApplicationIndustry>
-                <CoreValues></CoreValues>
+                {/* <ApplicationIndustry></ApplicationIndustry> */}
+                {/* <CoreValues></CoreValues> */}
                 <WhySelect></WhySelect>
                 <CustomerCase></CustomerCase>
                 <ByVoiceFooter

@@ -82,8 +82,8 @@ const BgContent = styled.div`
     width: 534px;
     height: 525px;
     position: absolute;
-    top: -100px;
-    right: -120px;
+    top: -150px;
+    right: 0;
   }
 `;
 const BgWrapper = styled.div<{ bg: string }>`
