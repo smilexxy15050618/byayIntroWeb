@@ -121,12 +121,12 @@ const VideoWrapper = styled.div`
   
   .card {
     width: 1280px;
-    height: 738px;
+    height: 587px;
     background: url(${imgurl}/yypt1.png) no-repeat;
     background-size: 511px 361px;
-    background-position: center center;
+    background-position: center 20px;
     border: none;
-    margin: 0px 0 0 -40px;
+    margin: 60px 0 0 -40px;
     position: relative;
     perspective: 150;
     perspective-origin: 50% 35%;
@@ -139,9 +139,9 @@ const VideoWrapper = styled.div`
     }
     div {
       width: 100%;
-      height: 15px;
+      height: 1px;
       position: absolute;
-      bottom: 52px;
+      bottom: 63px;
       left: 0;
       background: #fff;
       z-index: 1000;
@@ -152,7 +152,7 @@ const VideoWrapper = styled.div`
     }
     video {
       width: 1280px;
-      height: 738px;
+      height: 575px;
       position: absolute;
       top: 0;
       left: 0;
@@ -161,7 +161,7 @@ const VideoWrapper = styled.div`
     img:first-child {
       width: 108px;
       position: absolute;
-      top: 290px;
+      top: 150px;
       left: 405px;
       z-index: 1;
       transform: translateZ(1px);
@@ -173,7 +173,7 @@ const VideoWrapper = styled.div`
     img:nth-child(2) {
       width: 140px;
       position: absolute;
-      top: 305px;
+      top: 165px;
       left: 500px;
       z-index: 1;
       transform: translateZ(1px);
@@ -185,7 +185,7 @@ const VideoWrapper = styled.div`
     img:nth-child(3) {
       width: 215px;
       position: absolute;
-      top: 275px;
+      top: 135px;
       left: 650px;
       z-index: 1;
       transform: translateZ(1px);
@@ -197,7 +197,7 @@ const VideoWrapper = styled.div`
     img:nth-child(4) {
       width: 130px;
       position: absolute;
-      top: 145px;
+      top: -30px;
       left: 440px;
       z-index: 2;
       transform: translateZ(-1px);
@@ -209,7 +209,7 @@ const VideoWrapper = styled.div`
     img:nth-child(5) {
       width: 165px;
       position: absolute;
-      top: 145px;
+      top: -30px;
       right: 440px;
       z-index: 2;
       transform: translateZ(-1px);
