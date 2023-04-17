@@ -63,7 +63,7 @@ export const Layout: React.FunctionComponent<{
     // setFormType(type);
     // setFormVisible(visible);
   };
-  console.log(isPC, 'isPC');
+  console.log(headFontStyle, 'isPC');
   const guessOpacity = headFontStyle[0] === 'dark';
   const guessOpacityMobile = headFontStyle[1] === 'dark';
   initialOpacity = typeof initialOpacity !== 'undefined' ? initialOpacity : guessOpacity;

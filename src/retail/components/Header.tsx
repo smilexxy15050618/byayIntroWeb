@@ -11,8 +11,11 @@ import { withOpenOriginLink } from '../../high-components/OpenOriginLink';
 import { calWidthAndHeight, retailUrl } from '../../lib/utils';
 import { NAV_CONFIG } from '../constants/page';
 const ByLink = withOpenOriginLink(Link);
+import imgurl from '../../../img.url.js'
 
-export const LOGO = '//cdn.byai.com/static/by-intro-2023/header-logo/black-logo1.png';
+// export const LOGO = '//cdn.byai.com/static/by-intro-2023/header-logo/black-logo1.png';
+export const LOGO = imgurl+'/black-logo1.png';
+
 export const LOGO_SM = '//cdn.byai.com/static/official-website/seo-logo-1222-sm.png';
 export const WHITE_LOGO = '//cdn.byai.com/static/by-intro-2023/header-logo/white-logo1.png';
 export const ENTERPRISE_WECHET_LOGO = '//cdn.byai.com/static/official-website/enterprise-weChat-logo.png';

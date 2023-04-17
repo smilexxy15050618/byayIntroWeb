@@ -17,6 +17,7 @@ export type ISceneSolutionProps = {
   infoList: (VideoInfo | ImgInfo)[];
   onJumpClick?: () => void;
   title: string;
+  desc: string;
 };
 
 const isVideoInfo = (info: any): info is VideoInfo => {
@@ -80,13 +81,24 @@ const HeaderPaddingBottom = '40px';
 const HeaderHeight = '44px';
 const Header = styled.div`
   text-align: center;
-  font-size: 36px;
+  font-size: 40px;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: #333333;
+  color: rgba(26, 26, 26, 1);
   line-height: ${HeaderHeight};
   background-color: white;
-  padding: ${HeaderPaddingTop} 0 ${HeaderPaddingBottom};
+  padding: 76px 0 16px;
+`;
+const Desc = styled.div`
+  text-align: center;
+  font-size: 22px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 32px;
+color: rgba(51, 51, 51, 1);
+  font-family: PingFangSC-Medium, PingFang SC;
+  background-color: white;
+  padding: 0 0 32px 0;
 `;
 const TabWrapperHeight = '80px';
 const TabGapHeight = '40px';
@@ -402,7 +414,7 @@ const DotWrapper = styled.div`
   flex-direction: column;
   gap: 24px;
 `;
-const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, onJumpClick }) => {
+const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, desc,onJumpClick }) => {
   const [currIndex, setCurrIndex] = useState(0);
   const [currSubIndex, setCurrSubIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -438,6 +450,7 @@ const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, onJumpClick }
   return (
     <>
       <Header>{title}</Header>
+      <Desc>{desc}</Desc>
       <Wrapper className="">
         <ScrollWrapper>
           <StickyWrapper>

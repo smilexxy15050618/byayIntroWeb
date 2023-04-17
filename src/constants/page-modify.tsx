@@ -2,6 +2,8 @@
  * @prop smallDropdown 标记是否是小展开项 (移动端)
  * @prop followExpand 是否跟随上级节点一起展开 (移动端)
  */
+import imgurl from '../../img.url.js'
+
 export const NAV_CONFIG = [
   {
     path: '/',
@@ -9,7 +11,7 @@ export const NAV_CONFIG = [
   },
   {
     path: '/product',
-    name: '产品服务',
+    name: '产品与服务',
     smallDropdown: true,
     expand: [
       {
@@ -38,17 +40,36 @@ export const NAV_CONFIG = [
     smallDropdown: true,
     expand: [
       {
-        title: '零售',
-        desc: '会员用户的全触点管理',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E7%94%B5%E5%95%86ai.svg',
+        title: '品牌零售',
+        desc: '会员用户全域运营管理',
+        icon:imgurl+'/pplsheadicon.png',
         path: '/retail',
       },
       {
-        title: '平台',
-        desc: '提高会员复购和转化，拉升会员LTV',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E5%B9%B3%E5%8F%B0ai.svg',
+        title: '互联网',
+        desc: '深度挖掘用户价值，拉升LTV',
+        icon:imgurl+'/hlwheadicon.png',
         path: '/plat',
       },
+      {
+        title: '保险',
+        desc: '“大数据+AI+人”三驱模式',
+        icon:imgurl+'/baoxianheadicon.png',
+        path: '/insure',
+      },
+      {
+        title: '公安反诈',
+        desc: '强力提升公安反诈预防全业务效能',
+        icon:imgurl+'/gafzheadicon.png',
+        path: '/unfraud',
+      },
+      {
+        title: '消费金融',
+        desc: '全自动、智能化营销服务',
+        icon:imgurl+'/xfjrheadicon.png',
+        path: '/customer-finance',
+      }
+      
       // {
       //   title: '教育',
       //   desc: '低成本高效率提升课程复购',
@@ -99,25 +120,25 @@ export const NAV_CONFIG = [
   //   name: '关于百应',
   // },
   {
-    path: '/about',
-    name: '了解百应',
-    smallDropdown: true,
-    expand: [
-      {
-        title: '关于百应',
-        desc: '以AI赋能经济发展和社会生活',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E5%85%B3%E4%BA%8E%E7%99%BE%E5%BA%94.svg',
-        path: '/about/about-baiying',
-        mobileTitle: '关于百应',
-      },
-      {
-        title: '加入我们',
-        desc: '期待与您共赴星辰大海',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E5%8A%A0%E5%85%A5%E6%88%91%E4%BB%AC.svg',
-        path: '/about/join',
-        mobileTitle: '加入我们',
-      },
-    ],
+    path: '/aboutByai/about-baiying',
+    name: '关于百应',
+    // smallDropdown: true,
+    // expand: [
+    //   {
+    //     title: '关于百应',
+    //     desc: '以AI赋能经济发展和社会生活',
+    //     icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E5%85%B3%E4%BA%8E%E7%99%BE%E5%BA%94.svg',
+    //     path: '/about/about-baiying',
+    //     mobileTitle: '关于百应',
+    //   },
+    //   {
+    //     title: '加入我们',
+    //     desc: '期待与您共赴星辰大海',
+    //     icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E5%8A%A0%E5%85%A5%E6%88%91%E4%BB%AC.svg',
+    //     path: '/about/join',
+    //     mobileTitle: '加入我们',
+    //   },
+    // ],
   },
 ];
 

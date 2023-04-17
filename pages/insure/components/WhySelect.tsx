@@ -10,9 +10,9 @@ const dataList = [
     {
         url: '/why1.png'
     },
-    {
-        url: '/why2.png'
-    }
+    // {
+    //     url: '/why2.png'
+    // }
 ]
 const Wrapper = styled.div`
 padding-top: 80px;
@@ -20,6 +20,7 @@ padding-bottom: 100px;
   .myswiper-container {
     width: 1200px;
     margin: 0 auto;
+    flex-wrap:wrap;
     display: flex;
     justify-content: center;
     .swiper-wrapper {
@@ -47,7 +48,6 @@ padding-bottom: 100px;
         height: 584px;
         opacity: 1;
         border-radius: 8px;
-        padding-top: 40px;
     }
   }
 `
@@ -80,28 +80,37 @@ export const WhySelect: FC = () => {
         <Wrapper>
             <Title>客户为什么选择百应</Title>
             <div className="myswiper-container">
-            <ArrowClick>
+            {/* <ArrowClick>
             <img src={`${imgurl}/arowl1.png`}  />
-            </ArrowClick>
+            </ArrowClick> */}
+            <Swiper effect="slide" autoplay={{delay: 1000}} 
+            centeredSlides={true}
+            spaceBetween={20}
+            onSlideChange={swiper=>{
+                setCurrIndex(swiper.activeIndex)
+            }} style={{marginBottom:'234px'}}>
+                <SwiperSlide>
+                    <div className='my-slide'>
+                    <img className='content' src={imgurl+'/why1.png'} alt="" />
+                    </div>
+                </SwiperSlide>
+            </Swiper>
+            {/* <ArrowClick>
+            <img src={`${imgurl}/arowr1.png`}  />
+            </ArrowClick> */}
+
             <Swiper effect="slide" autoplay={{delay: 1000}} 
             centeredSlides={true}
             spaceBetween={20}
             onSlideChange={swiper=>{
                 setCurrIndex(swiper.activeIndex)
             }}>
-            {dataList.map(({url,title})=> (
                 <SwiperSlide>
                     <div className='my-slide'>
-                    <img className='content' src={imgurl+url} alt="" />
+                    <img className='content' src={imgurl+'/why2.png'} alt="" />
                     </div>
                 </SwiperSlide>
-            )
-
-            )}
             </Swiper>
-            <ArrowClick>
-            <img src={`${imgurl}/arowr1.png`}  />
-            </ArrowClick>
             </div>
         </Wrapper>
     )

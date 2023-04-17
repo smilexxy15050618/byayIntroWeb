@@ -1,6 +1,6 @@
 import { Visible } from 'react-grid-system';
 import styled from 'styled-components';
-import { LayoutNew } from '../../src/components/LayoutNew';
+import { Layout } from '../../src/components/Layout';
 import { NextFunctionComponent } from 'next';
 import { IndustryCarousel } from './components/IndustryCarousel-2023';
 import {Ai} from './components/Ai';
@@ -19,7 +19,7 @@ interface IGameProps {
 // const FOOTER_BG = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/bg/bottom.png';
 const Game:NextFunctionComponent<IGameProps>=()=>{
     return (
-        <LayoutNew headPlaceholder={[false, false]} headFontStyle={['dark', 'dark']}>
+        <Layout headPlaceholder={[false, false]} headFontStyle={['dark', 'dark']}>
          {(visible,setVisible) => (
             <>
             <Wrapper>
@@ -44,7 +44,7 @@ const Game:NextFunctionComponent<IGameProps>=()=>{
             </Wrapper>
             </>
          )}
-        </LayoutNew>
+        </Layout>
     )
 }
 

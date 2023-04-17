@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { LayoutNew } from '../../src/components/LayoutNew';
+import { Layout } from '../../src/components/Layout';
 import { Theme } from '../../src/constants/style';
 import { splitCssValue } from '../../src/lib/utils';
 import { Col, ColProps, Container, Hidden, Row, Visible, ScreenClassRender } from 'react-grid-system';
@@ -90,7 +90,7 @@ const CreditMedal = styled.div<{ backgroundImage?: string }>`
 const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
   
   return (
-  <LayoutNew hostType={hostType} headPlaceholder={[false, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
+  <Layout hostType={hostType} headPlaceholder={[false, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
     {(visible, setVisible) => (
         <Wrapper>
           <BannerWhite
@@ -198,7 +198,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
           />
         </Wrapper>
     )}
-  </LayoutNew>
+  </Layout>
   );
 };
 
