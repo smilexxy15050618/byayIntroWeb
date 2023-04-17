@@ -67,6 +67,9 @@ position: relative;
 .banner {
     width: 100%;
     height: 160px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     &::after {
         display: block;
         content: "";
@@ -76,25 +79,29 @@ position: relative;
         width: 100%;
         height: 160px;
         border-radius: 8px 8px, 0px, 0px;
-        background: #2B58F9;
+        background: rgba(51, 51, 51, 0.6);
         opacity: 0.2;
+    }
+    img{
+        height:19px;
+        margin-bottom:0;
     }
 }
 .detail {
     padding: 22px 24px 0 24px;
-    img {
-        width: 24px;
-        height: 24px;
-        margin-bottom: 0px;
-    }
-    div:first-child {
-        font-size: 18px;
-font-weight: 500;
-letter-spacing: -0.19px;
-line-height: 26px;
-color: rgba(43, 88, 249, 1);
-    }
-    div:nth-child(2) {
+    // img {
+    //     width: 24px;
+    //     height: 24px;
+    //     margin-bottom: 0px;
+    // }
+//     div:first-child {
+//         font-size: 18px;
+// font-weight: 500;
+// letter-spacing: -0.19px;
+// line-height: 26px;
+// color: rgba(43, 88, 249, 1);
+//     }
+    div:nth-child(1) {
         font-size: 16px;
 font-weight: 400;
 letter-spacing: -0.17px;
@@ -125,14 +132,13 @@ export const CustomerCase: FC = () => {
           <Title>客户案例</Title>
           <ListWrapper>
           {
-            list.map(({img,banner,content,label},index)=> {
+            list.map(({img,banner,content,label,bg},index)=> {
                 return (
                     <ListItem>
                         <div style={{background: `url(${imgurl}${img}) no-repeat`,backgroundSize: '100% 100%'}} className='banner'>
-                            
                         </div>
                         <div className="detail">
-                            <div><img src={imgurl+banner} alt="" />{label}</div>
+                            {/* <div><img src={imgurl+banner} alt="" />{label}</div> */}
                             <div>{content}</div>
                             <div>体验Demo <span>→</span></div>
                         </div>
