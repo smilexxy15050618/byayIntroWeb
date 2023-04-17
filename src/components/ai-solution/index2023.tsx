@@ -116,7 +116,7 @@ useEffect(() => {
         });
   }, []);
     return (
-        <Pane title=" 全行业AI用户运营平台与解决方案"
+        <Pane title="核心价值"
         titleStyle={{marginBottom:'56px'}}
          paneBgColor="white" style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
           <Hidden xs sm>
