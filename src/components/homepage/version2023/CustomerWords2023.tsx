@@ -6,6 +6,7 @@ import Pane from './Pane';
 import styled from 'styled-components';
 import { Hidden, Visible } from 'react-grid-system';
 import ByProgressSwiper from '../../common/ByProgressSwiper';
+import imgurl from '../../../../img.url.js'
 
 export type ICustomerWordsProps = {};
 
@@ -23,8 +24,10 @@ const CardContent = styled.div`
   position: relative;
   .customer-words-icon {
     margin-bottom: 24px;
-    width: 120px;
-    height: 40px;
+    img{
+    height: 64px;
+      margin-bottom:0;
+    }
     background: #ffffff;
     @media (max-width: 768px) {
       margin-bottom: 20px;
@@ -71,7 +74,7 @@ const Card = styled.div<{ bg: string }>`
   display: flex;
   flex-direction: column;
   width: 385px;
-  height: 532px;
+  height: 357px;
   background: #ffffff;
   box-shadow: 0px 0px 32px 1px rgba(101, 115, 133, 0.1);
   border-radius: 8px;
@@ -213,12 +216,12 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
         {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
           <SwiperSlide style={{ width: 'auto' }} className='hoer_bg_more'>
             <Card bg={bg} >
-              <div className="customer-words-tag">
+              {/* <div className="customer-words-tag">
                 <img src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/earth.png" />
                 {tagName}
-              </div>
-              <div className="customer-words-bg"></div>
-              <div className="customer-words-bg-blue"></div>
+              </div> */}
+              {/* <div className="customer-words-bg"></div> */}
+              {/* <div className="customer-words-bg-blue"></div> */}
 
               <CardContent>
                 <div className="customer-words-icon">
@@ -253,8 +256,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
 const carouselDataList = [
   {
     bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE1.png',
-    avatarSrc:
-      'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/20230323-140507.jpeg',
+    avatarSrc:`${imgurl}/logoxxw.png`,
     content:
       '“我们已经合作有一段时间了，百应给我们提供了专业且全面的解决方案，整体跑下来结果一直都不错。密切的合作让我们成为并肩前行的伙伴，期待未来我们一起创造更好的用户体验。”',
     personName: '新希望华西乳业数字增长负责人',
@@ -262,7 +264,7 @@ const carouselDataList = [
   },
   {
     bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE2.png',
-    avatarSrc: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/logo2.png',
+    avatarSrc:`${imgurl}/logozz.png`,
     content:
       '百应的产品和团队都很给力，能够快速响应需求，通过百应的私域加粉模型，我们为后续增长找到了抓手，同时避免了过度打扰用户，推荐有相应需求的伙伴来体验“百应AI外呼”。',
     personName: '运营负责人',
@@ -270,7 +272,7 @@ const carouselDataList = [
   },
   {
     bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE3.png',
-    avatarSrc: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/logo3.png',
+    avatarSrc:`${imgurl}/logoryytn.png`,
     content:
       '百应一直服务于我们的私域加粉业务，不仅AI产品很成熟，服务态度也好。每版新话术都认真配合我们做迭代优化，数据也越来越好。希望23年合作更愉快，更好地达成我们的指标。',
     personName: '流量运营部负责人',
@@ -278,7 +280,8 @@ const carouselDataList = [
   },
   {
     bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE4.png',
-    avatarSrc: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/logo4.png',
+    avatarSrc:`${imgurl}/logohtbc.png`,
+
     content:
       '百应基于行业痛点构建的「AI智能辅助系统」帮我们降低了人工投入的成本项，也为我们的老师和学员带来了很好的使用体验。希望在未来百应可以在这个领域有更多的创新。',
     personName: '运营负责人 ',
@@ -286,7 +289,8 @@ const carouselDataList = [
   },
   {
     bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE5.png',
-    avatarSrc: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/logo5.png',
+    avatarSrc:`${imgurl}/logodn.png`,
+
     content:
       '从2021年合作至今，百应科技真正的做到了把客户的业务当作自己的业务来做，专业程度很高，并且还在持续不断的去创新运营的方法和思路，也希望在未来有更多更加深度的合作。',
     personName: '运营负责人',
@@ -294,7 +298,8 @@ const carouselDataList = [
   },
   {
     bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE6.png',
-    avatarSrc: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/logo6.png',
+    avatarSrc:`${imgurl}/logokyb.png`,
+
     content:
       '和百应的合作中，我们发现AI外呼的四点优势：能实现快速触达和高效转化；综合成本相对较低；已具备真实交互感和温度感；可智能识别精准客户，减少不必要打扰。',
     personName: '副总裁&CMO',

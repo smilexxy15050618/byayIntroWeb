@@ -9,7 +9,7 @@ import imgurl from '../../../../img.url.js'
 export type ICustomerWordsProps = {};
 
 interface ICarouselProps {
-  dataList: { bg: string; content: string; avatarSrc: string; personName: string; tagName: string }[];
+  dataList: {  content: string;img:string;span:string;p1:string;p2:string }[];
   style?: CSSProperties;
 }
 
@@ -32,12 +32,18 @@ const CardContent = styled.aside`
     .title_xxx{
       text-align: center;
       p{
+          span{
+             font-size: 20px;
+          font-weight: 500;
+          line-height: 24px;
+color: rgba(43, 88, 249, 1);
+          }
         &:nth-child(1){
           font-size: 20px;
           font-weight: 500;
           margin-bottom: 8px;
           line-height: 24px;
-color: rgba(43, 88, 249, 1);
+color: rgba(51, 51, 51, 1);
 
         }
         &:nth-child(2){
@@ -121,16 +127,28 @@ const Arrow = styled.div`
   font-size: 20px;
   cursor: pointer;
 `;
+let imglegt =`https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%B7%A6.png`
+let imgright =`https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%8F%B3.png`
 
 const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
   const [controlledSwiper, setControlledSwiper] = useState(null);
   const [currIndex, setCurrIndex] = useState(0);
+  const [arrowbg, setArrowbg] = useState(imglegt);
+  const [arrowbg2, setArrowbg2] = useState(imgright);
+
   return (
     <div style={{width:'1200px',margin:'0 auto',display:'flex',justifyContent:'center'}}>
         <ArrowClick onClick={e => {
             const res = controlledSwiper.navigation.onPrevClick(e);
-          }} style={{}}>
-           <img src={`https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%B7%A6.png`}  />
+          }} style={{}} 
+          onMouseEnter={()=>{
+            setArrowbg(`${imgurl}/xzleft.png`)
+          }}
+            onMouseLeave={()=>{
+            setArrowbg(imglegt)
+          }}
+          >
+           <img src={arrowbg}  />
         </ArrowClick>
       <HoveUp >
       <Swiper
@@ -144,17 +162,16 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
           setCurrIndex(swiper.activeIndex);
         }}
         style={{  }}>
-        {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
+        {dataList.map(({ content, img,span,p1,p2 }, i) => (
           <SwiperSlide style={{ width: 'auto',paddingTop:10 }} className='hoer_bg_more'>
             <CardContent>
                 <div className='title_xxx'>
-                      <p>企业｜B2C数智化用户运营解决方案</p>
-                      <p>  助力品牌高效连接消费者，打造存量时代的会员运营服务，拉升会员LTV</p>
-
+                      <p><span> {span}</span>{p1}</p>
+                      <p>  {p2}</p>
                 </div>
                 <div className='text_area' >
                    <img
-                    src={imgurl+'/cjjjfa'+(i+1)+'.png'} />
+                    src={img} />
                     
                 </div>
               
@@ -165,8 +182,14 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       </HoveUp>
       <ArrowClick onClick={e => {
             controlledSwiper.navigation.onNextClick(e);
-          }} style={{}}>
-         <img src={`https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%8F%B3.png`}  />
+          }} style={{}}
+           onMouseEnter={()=>{
+            setArrowbg2(`${imgurl}/xzright.png`)
+          }}
+            onMouseLeave={()=>{
+            setArrowbg2(imgright)
+          }}>
+         <img src={arrowbg2}  />
       </ArrowClick>
        
     </div>
@@ -175,10 +198,16 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
 
 const carouselDataList = [
   {
-  
+    span:'企业',
+    p1:'｜B2C数智化用户运营解决方案',
+    p2:'助力品牌高效连接消费者，打造存量时代的会员运营服务，拉升会员LTV',
+    img:imgurl+'/cjjjfa1.png'
   },
   {
- 
+     span:'政务',
+    p1:'｜G2C基层服务和治理自动化解决方案',
+    p2:'打造数字化连接平台，助力政府高效服务及治理，提升平安建设三率',
+   img:imgurl+'/cjjjfa2.png'
   },
 
 ];
@@ -402,7 +431,7 @@ const Solution: FC<ICustomerWordsProps> = ({}) => {
         <Carousel dataList={carouselDataList}></Carousel>
       </Hidden>
       <Visible xs sm>
-        <CarouselMobile dataList={carouselDataList}></CarouselMobile>
+        {/* <CarouselMobile dataList={carouselDataList}></CarouselMobile> */}
       </Visible>
     </Pane>
   );

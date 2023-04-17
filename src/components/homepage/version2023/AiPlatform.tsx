@@ -41,8 +41,8 @@ const contentList = [
         ,href:'insure'
     },
     {
-        name: '教育',
-        content: '助力教育企业实现自动化且高效的用户运营和服务，实现业务增长',
+        name: '消费金融',
+        content: '全自动、智能化运营，以转化效果为导向，赋能机构运营效率提升',
         url: '/education.png'
         ,href:''
     },

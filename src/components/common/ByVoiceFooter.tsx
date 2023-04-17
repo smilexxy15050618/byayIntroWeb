@@ -67,13 +67,14 @@ const ByVoiceFooter = styled(RawByVoiceFooter)<IByVoiceFooterProps>`
     font-weight: 500;
     color: #ffffff;
     line-height: 48px;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     text-align: center;
   }
   .desc {
     margin: 16px 0px 24px;
     font-size: 18px;
     color: #ffffff;
+    letter-spacing: 1px;
     line-height: 26px;
     text-align: center;
   }
