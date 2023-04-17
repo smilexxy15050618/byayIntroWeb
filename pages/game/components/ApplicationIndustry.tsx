@@ -21,8 +21,8 @@ background-size: 100% 100%;
 position: relative;
 margin-top: 58px;
 img {
-    width: 323px;
-    height: 338px;
+    width: 327px;
+    height: 337px;
     position: absolute;
     right: 0;
     top: 0;
@@ -32,9 +32,9 @@ img {
 export const ApplicationIndustry: FC = () => {
     return (
         <MainWrap>
-            <div class="title">应用行业及场景</div>
-            <div class="content">
-                <img src={imgurl+'/yyhy_right.png'} alt="" />
+            <div className="title">应用行业及场景</div>
+            <div className="content">
+                <img src={imgurl+'/game_solution.png'} alt="" />
             </div>
         </MainWrap>
     )

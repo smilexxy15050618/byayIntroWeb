@@ -4,25 +4,20 @@ import imgurl from '../../../img.url.js'
 
 const titleList = [
     {
-        title: '用户管理',
-        subTitle: '智能化打标，打造多维度标签体系智能分析意向，构建用户画像360用户精细化分层，精准营销触达赋能运营人员，有效管理用户资产',
-        url: '/yhgl.png'
+        title: '增量ROI达成',
+        subTitle: '洞察玩家需求，归纳意向类型定位玩家行为，确定精准人群挖掘玩家转化要素，迭代策略个性化对话，快速高效转化',
+        url: '/zl.png'
     },
     {
-        title: '精准营销',
-        subTitle: '智能化打标，打造多维度标签体系智能分析意向，构建用户画像360用户精细化分层，精准营销触达赋能运营人员，有效管理用户资产',
-        url: '/jzyx.png'
+        title: '高体验转化',
+        subTitle: '更智能，多轮交互挽回沉睡玩家创意策略，延伸用户生命周期“稀缺感”专属福利，提升亲密度智能对话引导，提升付费意愿',
+        url: '/gty.png'
     },
     {
-        title: '智能触达',
-        subTitle: '智能化打标，打造多维度标签体系智能分析意向，构建用户画像360用户精细化分层，精准营销触达赋能运营人员，有效管理用户资产',
-        url: '/zncd.png'
-    },
-    {
-        title: '数据化运营',
-        subTitle: '智能化打标，打造多维度标签体系智能分析意向，构建用户画像360用户精细化分层，精准营销触达赋能运营人员，有效管理用户资产',
-        url: '/sjyy.png'
-    },
+        title: '稳定模型验证',
+        subTitle: 'ROI导向，精细运营手段多变量测试，验证高转化模型把控变量节点，为结果负责数据对比，迭代运营策略',
+        url: '/mxyz.png'
+    }
 ]
 export interface IAiProps {};
 const Pane = styled.div`
@@ -46,16 +41,16 @@ justify-content: space-between;
 }
 .imgWrapper {
     width: 888px;
-height: 560px;
+height: 448px;
 opacity: 1;
 border-radius: 8px;
 background: rgba(246, 252, 255, 1);
-padding: 16px;
+padding: 14px 16px 0;
 box-sizing: border-box;
 }
 img {
     width: 100%;
-    height: 528px;
+    height: 416px;
 }
 `
 const ListItem = styled.div`
@@ -118,11 +113,11 @@ export const Ai: FC<IAiProps> = ({ }) => {
     return (
     <MainWrap>
         <Pane>
-            <div class="title">AI外呼助力游戏平台实现用户激活及体验转化</div>
+            <div className="title">AI外呼助力游戏平台实现用户激活及体验转化</div>
             <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
             <div className='aitxs'>
                 <ListWrapper>
-                    <div class="lists">
+                    <div className="lists">
                     {titleList.map(({ title, subTitle }, index) => {
                         return (
                                 <ListItem className={index==currIndex?'active':null} onClick={()=>setCurrIndex(index)}>
@@ -132,7 +127,7 @@ export const Ai: FC<IAiProps> = ({ }) => {
                         )
                     })}
                     </div>
-                    <div class="imgWrapper">
+                    <div className="imgWrapper">
                          <img src={`${imgurl}${titleList[currIndex].url}`} />
                     </div>
                 </ListWrapper>

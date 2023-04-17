@@ -7,13 +7,15 @@ import HeightestAi from '../src/components/homepage/version2023/HeightestAi';
 import GlobaNumber from '../src/components/homepage/version2023/GlobaNumber';
 import CustomerWords from '../src/components/homepage/version2023/CustomerWords2023';
 import { IndustryCarousel } from '../src/components/IndustryCarousel-2023';
-import { Layout } from '../src/components/Layout';
+import { LayoutNew } from '../src/components/LayoutNew';
 import { FormType } from '../src/components/TryForm';
 import VideoList from '../src/components/videoList-2023';
 import VideoListMobile from '../src/components/videoList/VidelListMobile';
 import { Wrapper } from '../src/components/voice-robot/style';
 import { ScrollToPlugin } from 'gsap/all';
-const FOOTER_BG = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/bg/bottom.png';
+import imgurl from '../img.url.js'
+
+const FOOTER_BG = `${imgurl}/kqaizl.png`;
 const BASE_URL = 'https://cdn.byai.com/static/intro/img/index/version2021/banner';
 const TEMPORARY_BANNER_BG = `${BASE_URL}/temporary-bg.jpg`;
 const TEMPORARY_BANNER_BG_XS = `${BASE_URL}/temporary-bg-xs.jpg`;
@@ -123,7 +125,7 @@ const videoInfoList = [
 
 export default props => {
   return (
-    <Layout initialOpacity={true} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
+    <LayoutNew initialOpacity={true} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
       {(visible, setFormVisible) => (
         <Wrapper>
           <IndustryCarousel />
@@ -150,6 +152,6 @@ export default props => {
           />
         </Wrapper>
       )}
-    </Layout>
+    </LayoutNew>
   );
 };

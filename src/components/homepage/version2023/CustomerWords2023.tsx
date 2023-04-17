@@ -39,6 +39,7 @@ const CardContent = styled.div`
     font-weight: 400;
     color: rgba(10, 15, 44, 0.55);
     line-height: 28px;
+    text-align:left;
     @media (max-width: 768px) {
       font-size: 13px;
       font-family: PingFangSC-Regular, PingFang SC;
@@ -100,10 +101,18 @@ const Card = styled.div<{ bg: string }>`
     background-image: url(${props => props.bg});
     background-size: auto 100%;
   }
-
+  .customer-words-bg-blue {
+    position:absolute;
+    top:0;
+    left:0;
+    width: 385px;
+    height: 220px;
+    background: rgba(43, 88, 249, 0.39);
+  }
   .customer-words-tag {
     display: flex;
     align-items: center;
+    z-index:22;
     img {
       height: 16px;
       line-height: 30px;
@@ -209,6 +218,8 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
                 {tagName}
               </div>
               <div className="customer-words-bg"></div>
+              <div className="customer-words-bg-blue"></div>
+
               <CardContent>
                 <div className="customer-words-icon">
                   <img src={avatarSrc} />
@@ -527,7 +538,7 @@ const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
   const myRef = useRef(null);
   useEffect(() => {
     const timer = setInterval(()=>{
-  console.log(myRef.current,'myRef.current');
+  // console.log(myRef.current,'myRef.current');
 
       if(myRef.current){
         clearInterval(timer)

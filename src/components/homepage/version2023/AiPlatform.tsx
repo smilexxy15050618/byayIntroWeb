@@ -7,42 +7,50 @@ const contentList = [
     {
         name: '品牌零售',
         content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
-        url: '/ppls.png'
+        url: '/ppls.png',
+        href:'/retail'
     },
     {
         name: '银行',
         content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
-        url: '/bank.png'
+        url: '/bank.png',
+        href:''
     },
     {
         name: '公安反诈',
         content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
         url: '/police.png'
+        ,href:'/unfraud'
     },
     {
         name: '政务服务',
         content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
         url: '/government.png'
+        ,href:'/technology-service/service'
     },
     {
         name: '互联网',
         content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
         url: '/internet.png'
+        ,href:''
     },
     {
         name: '保险',
         content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
         url: '/insure.png'
+        ,href:'insure'
     },
     {
         name: '教育',
         content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
         url: '/education.png'
+        ,href:''
     },
     {
         name: '汽车',
         content: '通过对话式AI助力品牌实现「极致体验+极致ROI」的全域营销服务',
         url: '/car.png'
+        ,href:'/car'
     }
 ]
 const Wrapper = styled.div`
@@ -73,6 +81,8 @@ const Wrapper = styled.div`
     letter-spacing: 0px;
     line-height: 24px;
     color: rgba(43, 88, 249, 1);
+    display: flex;
+    align-items: center;
     }
     img {
         width: 16px;
@@ -158,11 +168,13 @@ const Platform: FC<IPlatformProps> = () => {
       }, []);
     return (
         <Wrapper >
-            <div class="title">全行业AI用户运营平台与解决方案</div>
+            <div className="title">全行业AI用户运营平台与解决方案</div>
             <ListWrapper id={AIID}>
-                {contentList.map(({ name, content, url }, index) => {
+                {contentList.map(({ name, content, url, href }, index) => {
                     return (
-                        <div class="content">
+                        <div className="content" onClick={()=>{
+                            window.location.href = href
+                        }}>
                             <img src={`${imgurl}${url}`}></img>
                             <div>{name}</div>
                             <div>{content}</div>
@@ -170,10 +182,10 @@ const Platform: FC<IPlatformProps> = () => {
                     )
                 })}
             </ListWrapper>
-            <div class="more">
+            <div className="more">
             <a href="https://crm.byai.com/login" target="_blank" rel="noreferrer">
-            查看更多
-                   <img src={imgurl+'/down.png'}></img>
+            了解更多
+                   <img src={imgurl+'/down.png'} style={{transform: 'rotate(-90deg)'}}></img>
                 </a>
                 </div>
         </Wrapper>

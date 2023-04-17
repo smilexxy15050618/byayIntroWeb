@@ -16,12 +16,25 @@ const HoveUp = styled.div`
    margin:0 auto; 
 `
 const Card = styled.div<{bg:number}>`
+   width: 1200px;
+   height: 496px;
    margin:0 auto;
-    /* border-radius: 8px;
-    box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12); */
-    img{
-        width:100%;
+   position: relative;
+   border-radius: 8px;
+   background: rgba(255, 255, 255, 1);
+   box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
+   padding-left: 59px;
+   padding-top: 60px;
+    img:first-child{
+        width:814px;
         margin:0;
+    }
+    img:last-child{ 
+    width: 520px;
+    height: 496px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
     }
 `
 
@@ -73,8 +86,8 @@ const MainWrap = styled.div`
     }
 `
 
-const carouselDataList = [imgurl+'/proinfo1.png',imgurl+'/proinfo2.jpg',imgurl+'/proinfo3.jpg',imgurl+'/proinfo4.jpg']
-
+const carouselDataList = [imgurl+'/proinfo1.png',imgurl+'/proinfo2.png',imgurl+'/proinfo3.png',imgurl+'/proinfo4.png']
+const carouselRightDataList = [imgurl+'/proinfo1_right.png',imgurl+'/proinfo2_right.png',imgurl+'/proinfo3_right.png',imgurl+'/proinfo4_right.png']
 
 const SceneSolution: FC<SceneSolution> = ({}) => {
     const [tabList, setTabList]=  useState( [
@@ -134,6 +147,7 @@ useEffect(() => {
                 </Tab>
                 <Card bg={1}>
                     <img src={carouselDataList[wrapindex]} alt="" />
+                    <img src={carouselRightDataList[wrapindex]} alt="" />
                 </Card>
             </HoveUp>
             </MainWrap>

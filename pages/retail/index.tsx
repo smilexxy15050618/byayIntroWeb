@@ -2,7 +2,7 @@ import axios from 'axios';
 import { NextFunctionComponent } from 'next';
 import { Visible } from 'react-grid-system';
 import styled from 'styled-components';
-import { Layout } from '../../src/components/Layout';
+import { LayoutNew } from '../../src/components/LayoutNew';
 import { FormType } from '../../src/components/TryForm';
 import CustomerIconsBlock from '../../src/components/common/CustomerIconsBlock';
 import Advantage from '../../src/components/homepage/version2023/advantage';
@@ -45,7 +45,7 @@ const BagLabel = styled.div`
 const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
   return (
     <>
-      <Layout hostType={HOST_ENUM.DS_HOST} headPlaceholder={[false, false]} headFontStyle={['dark', 'dark']}>
+      <LayoutNew hostType={HOST_ENUM.DS_HOST} headPlaceholder={[false, false]} headFontStyle={['dark', 'dark']}>
         {(visible, setFormVisible) => (
           <Wrapper>
             <Visible md lg xl xxl xxxl>
@@ -77,8 +77,8 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
             {/* <Advantage></Advantage> */}
             {/* <CustomerIconsBlock padding="73px 0 83px" /> */}
             <ByVoiceFooter
-              title="就现在，开启AI电话增长之旅"
-              desc="留下联系方式，将有AI行业专家为您提供专属服务"
+              title="立即体验AI时代的新一代用户运营平台"
+              desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
               btnText="与我联系"
               background={`url(${FOOTER_BG})`}
               onClick={() => {
@@ -110,7 +110,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
             /> */}
           </Wrapper>
         )}
-      </Layout>
+      </LayoutNew>
     </>
   );
 };

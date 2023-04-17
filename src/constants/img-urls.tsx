@@ -1,3 +1,5 @@
 const PREFIX = 'https://cdn.byai.com/static/intro/img/common';
+import imgurl from '../../img.url.js'
 
-export const FOOTER_BG = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/bg/bottom.png';
+// const FOOTER_BG = `${imgurl}/kqaizl.png`;
+export const FOOTER_BG = `${imgurl}/kqaizl.png`;

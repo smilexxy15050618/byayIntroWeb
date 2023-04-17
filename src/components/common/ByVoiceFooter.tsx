@@ -13,8 +13,8 @@ interface IProps {
 const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText }) => {
   return (
     <div className={className}>
-      <div className="title">{title}</div>
-      <div className="desc">{desc}</div>
+      <div className="title">立即体验AI时代的新一代用户运营平台</div>
+      <div className="desc">用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。</div>
       <ByNormalBtn
         onClick={() => onClick()}
         width="200px"

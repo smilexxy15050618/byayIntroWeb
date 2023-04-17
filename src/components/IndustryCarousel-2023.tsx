@@ -80,34 +80,36 @@ const CarouselWrapper = styled.div`
       filter: blur(100px);
     }
   }
+  .no_duration{
+  }
   .main-container {
-    max-width: 1200px;
-    margin: 0 auto ;
+    width: 1200px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     padding-top:174px;
-    position:relative;
-    // padding-top:174px;
-    background: right -80px top 70px / 659px auto no-repeat url(${BG_BOTTLE});
-    /* .fix_img_area{
-      position:absolute;
-      width:659px;
-      height:533px;
-      border:1px solid red;
-    } */
-  }
+    position:absolute;
+   left:50%;
+   transform: translateX(-50%);
 
+  }
+  .bg-img-blue{
+    position:absolute;
+    right: -47px;
+    top: 80px;
+    img{
+      height:434px;
+    }
+  }
   .carousel,
   .carousel-inner,
   .carousel-item {
     height: 100%;
-  }
+    &.active{
+    transition: all 0.5s;
 
-  .carousel-item {
-    float: none;
+    }
   }
-
+  
   .carousel-indicators {
     bottom: ${calWidthAndHeight(18)};
   }
@@ -160,6 +162,13 @@ const CarouselWrapper = styled.div`
   line-height: 32px;
   color: rgba(51, 51, 51, 1);
   margin-bottom:24px;
+  }
+  .third-title{
+    font-size: 20px;
+font-weight: 400;
+line-height: 32px;
+color: rgba(51, 51, 51, 1);
+margin-bottom:56px;
   }
   .jump-group {
     display: flex;
@@ -363,6 +372,12 @@ const jumpData = [
 
 export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
   const [currIndex, setCurrIndex] = useState(0);
+  const [index, setIndex] = useState(0);
+  const handleSelect = (selectedIndex) => {
+    console.log(selectedIndex);
+    
+    setIndex(selectedIndex);
+  };
   return (
     <CarouselWrapper style={{ zIndex: 3, position: 'relative' }}>
       <Visible md lg xl xxl xxxl>
@@ -370,12 +385,20 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
           <img className="carousel-bg-ball" src={BG_BALL} />
           <div className="carousel-bg-right"  ></div>
 
-          <Carousel fade style={{ width: '100%' }} 
-          interval={4000}
+          <Carousel  style={{ width: '100%' }} 
+          interval={3000}
+          fade
+          activeIndex={index}
+           onSelect={handleSelect}
           >
-            <Carousel.Item className="main-container">
+            <Carousel.Item className='no_duration' key={1}>
+              <div  className="main-container">
+                
               <div className="main-title">百应智能用户运营平台</div>
               <div className='sec-title'>用AI助力构建ToC长期信任关系</div>
+              <div className='bg-img-blue'>
+                <img src={imgurl+'/sy-banner1.png'} alt="" />
+              </div>
               <div className="jump-group">
                 {jumpData.map(({ title, desc, jumpTarget }, i) => {
                   return (
@@ -393,7 +416,6 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
                         }
                       }}>
                       <div className="jump-group-item-title">{title}</div>
-                      {/* <div className="jump-group-item-desc">{desc}</div> */}
                     </div>
                   );
                 })}
@@ -405,11 +427,52 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
                 }}>
                 预约体验
               </div>
-              {/* <div className='fix_img_area'>
-
-              </div> */}
+              </div>
+            
             </Carousel.Item>
+            <Carousel.Item className='no_duration' key={2}>
+              <div  className="main-container">
+                
+              <div className="main-title">百应科技荣誉入选</div>
+              <div className='sec-title'  style={{marginBottom:'16px'}}>《国家人工智能创新应用先导区“智赋百景”》</div>
+              <div className='third-title'>工信部公示｜「城市管理」领域应用场景的优秀技术提供单位</div>
 
+            
+              <div
+                className="carousel-btn"
+                onClick={() => {
+                  window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
+                }}>
+                预约体验
+              </div>
+              <div className='bg-img-blue'>
+                <img src={imgurl+'/sy-banner2.png'} alt="" />
+              </div>
+              </div>
+            
+            </Carousel.Item>
+           
+                
+            <Carousel.Item className='no_duration' key={3}>
+              <div  className="main-container">
+                
+              <div className="main-title">逆势增长砥砺前行</div>
+              <div className='sec-title' style={{marginBottom:'16px'}}>《百应科技2022年度报告》</div>
+              <div className='third-title'>年营收增长40%，连续六年保持增长，复合增长率（CAGR）超100%</div>
+              
+              <div
+                className="carousel-btn"
+                onClick={() => {
+                  window.open(`https://mp.weixin.qq.com/s/Ebu43ZcMV6ted0f55efIRg`);
+                }}>
+                点击查看
+              </div>
+              <div className='bg-img-blue'>
+                <img src={imgurl+'/sy-banner3.png'} alt="" />
+              </div>
+              </div>
+            
+            </Carousel.Item>
           </Carousel>
         </div>
       </Visible>
@@ -437,12 +500,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
                 // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
                 <div
                   onClick={() => {
-                    setCurrIndex(i);
-                    scrollIntoOffset(jumpTarget, 50);
-                    // const node = document.querySelector(jumpTarget);
-                    // if (node) {
-                    //   node.scrollIntoView({ behavior: 'smooth' });
-                    // }
+                   
                   }}
                   className={classNames('jump-group-item')}>
                   <div className="jump-group-item-title">{title}</div>

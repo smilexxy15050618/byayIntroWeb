@@ -1,6 +1,5 @@
 import React, { CSSProperties, FC, useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide} from 'swiper/react';
-import SwiperClass from 'swiper/types/swiper-class';
 import { RightArrow, LefttArrow } from '@indata/icon-byai';
 import Pane from './Pane';
 import styled from 'styled-components';
@@ -40,7 +39,7 @@ const CardContent = styled.aside`
         }
     }
     .text_area{
-        width:520px;
+        width:100%;
         margin-top:65px;
         margin-left:80px;
         margin-right:86px;
@@ -128,7 +127,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
         {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
           <SwiperSlide style={{ width: 'auto',paddingTop:10 }} className='hoer_bg_more'>
             <CardContent>
-                <div className='text_area'>
+                <div className='text_area' style={{height:'360px'}}>
                    <img
                    style={{marginBottom:45}}
                     src="https://img.js.design/assets/img/642e7f5da6320a9cbd726401.png" width={127} className='logo_area'/>
@@ -142,9 +141,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
                     我们已经合作有一段时间了，百应给我们提供了专业且全面的解决方案，整体跑下来结果一直都不错。
                     </div>
                 </div>
-                <div className='img_area'>
-                    <img src="https://img.js.design/assets/img/642e7f5ed23919d9e828ea29.png" width={330} />
-                </div>
+              
             </CardContent>
           </SwiperSlide>
         ))}

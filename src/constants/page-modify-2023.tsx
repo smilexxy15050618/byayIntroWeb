@@ -61,11 +61,15 @@ export const NAV_CONFIG = [
         list: [
           {
             title: '品牌零售',
-            path: '/technology-service/service'
+            path: '/retail'
           },
           {
             title: '汽车行业',
-            path: '/technology-service/service'
+            path: '/car'
+          },
+          {
+            title: '游戏',
+            path: '/game'
           },
           {
             title: '电子商务',
@@ -95,7 +99,7 @@ export const NAV_CONFIG = [
           },
           {
             title: '公安反诈',
-            path: '/technology-service/service'
+            path: '/unfraud'
           },
           {
             title: '政府服务窗',
@@ -121,7 +125,7 @@ export const NAV_CONFIG = [
           },
           {
             title: '保险',
-            path: '/technology-service/service'
+            path: '/insure'
           },
         ]
       },

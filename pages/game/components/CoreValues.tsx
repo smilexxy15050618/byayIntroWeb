@@ -37,8 +37,8 @@ background: rgba(43, 88, 249, 1);
         position: absolute;
         width: 181px;
         height: 112px;
-        left:22px;
-        bottom:22px;
+        left:24px;
+        top:89px;
         .title_area{
             font-size: 20px;
 font-weight: 600;
@@ -64,19 +64,19 @@ color: rgba(255, 255, 255, 1);
 const carouselDataList = [{
     title:'精细化运营触达',
     content:'运营模型精细化程度升级，业务部署不断成熟，触达更精准',
-    url: '/icon1.png'
+    url: '/value1_i.png'
 },{
     title:'筛选高价值玩家',
     content:'以行为反馈评估用户价值，持续调整触达运营策略，实现业务闭环',
-    url: '/icon2.png'
+    url: '/02.png'
 },{
     title:'打造极致沟通体验',
     content:'连接品牌和玩家的沟通桥梁，提供丰富的玩家触达运营攻略',
-    url: '/icon3.png'
+    url: '/value3_i.png'
 },{
     title:'提高玩家活跃度',
     content:'投放更匹配的利益点，合理调整运营侧重，提升玩家参与活动的积极性',
-    url: '/icon4.png'
+    url: '/value4_i.png'
 }]
 const MainWrap = styled.div`
     transform: translateY(50%);

@@ -58,7 +58,8 @@ const Wrapper = styled.div`
     height: 448px;
     padding-top: 114px;
     background: url(${imgurl}/maps.png) no-repeat;
-    background-size: 100% 100%;
+    background-size: 80% 100%;
+    background-position: left;
     transform: translateY(50%);
     transition: all 0.4s;
 opacity: 0;
@@ -103,21 +104,24 @@ const Item = styled.div`
         letter-spacing: 0px;
         line-height: 40px;
         color: rgba(51, 51, 51, 1);
- span:last-child {
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 0px;
-    line-height: 32px;
-    color: rgba(51, 51, 51, 1);
- }
- div:last-child {
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 0px;
-    line-height: 24px;
-    color: rgba(51, 51, 51, 1);
- }
+        span:first-child {
+            font-family: DINAlternate;
+        }
+    span:last-child {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0px;
+      line-height: 32px;
+      color: rgba(51, 51, 51, 1);
     }
+    }
+    div:last-child {
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: 24px;
+        color: rgba(51, 51, 51, 1);
+     }
 `
 const GLOBAL_ID_WRAP = 'global_number_wrap';
 const GlobalNumber = ({ }) => {

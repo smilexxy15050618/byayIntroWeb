@@ -151,12 +151,12 @@ const AI: FC<IAiProps> = ({ }) => {
     return (
     <MainWrap id={AiTSXID} >
         <Pane>
-            <div class="title">AI赋能零售品牌全域增长，打造核心用户价值</div>
-            <div class="desc">助力品牌高效引流获客、营销增长、精细化运营，提升会员体验和业绩增量</div>
+            <div className="title">AI赋能零售品牌全域增长，打造核心用户价值</div>
+            <div className="desc">助力品牌高效引流获客、营销增长、精细化运营，提升会员体验和业绩增量</div>
             <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
             <div className='aitxs'>
                 <ListWrapper>
-                    <div class="lists">
+                    <div className="lists">
                     {titleList.map(({ title, subTitle }, index) => {
                         return (
                                 <ListItem className={index==currIndex?'active':null} onClick={()=>setCurrIndex(index)}>
@@ -166,7 +166,7 @@ const AI: FC<IAiProps> = ({ }) => {
                         )
                     })}
                     </div>
-                    <div class="imgWrapper">
+                    <div className="imgWrapper">
                          <img src={`${imgurl}${titleList[currIndex].url}`} />
                     </div>
                 </ListWrapper>

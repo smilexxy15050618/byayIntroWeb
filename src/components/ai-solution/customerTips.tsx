@@ -20,8 +20,6 @@ const HoveUp = styled.div`
         position: absolute;
         height: 625px;
         width:100%;
-        opacity: 0.3;
-        background: rgba(43, 88, 249, 1);
     }
    .wrap_hovres{
         width: 1080px;
@@ -56,46 +54,60 @@ const ArrowClick = styled.div`
     align-items: center;
     color:#fff;
     z-index:22;
-    img{
+    .left_img{
       width:100%;
     cursor:pointer;
-
+    &:hover {
+        content: url(${imgurl}/left_blue.png)
+    }
+    }
+    .right_img {
+        width:100%;
+        cursor:pointer;
+        &:hover {
+            content: url(${imgurl}/right_blue.png)
+        }
     }
 `
 const dataList = [
     {
-        url: '/cusino5.png'
+        url: '/cusino5.png',
+        bg: '/syt.png'
     },
     {
-        url: '/cusino2.png'
+        url: '/cusino2.png',
+        bg: '/mz.png'
     },
     {
-        url: '/cusino3.png'
+        url: '/cusino3.png',
+        bg: '/fs.png',
     },
     {
-        url: '/cusino4.png'
+        url: '/cusino4.png',
+        bg: '/ry.png'
     }
 ]
 const Carousel: React.FC<ICarouselProps> = ({ style }) => {
     const [controlledSwiper, setControlledSwiper] = useState(null);
+    const [currIndex,setCurrIndex] = useState(0);
     return (
 
         <HoveUp>
-            <div className='coverimg'>
+            <div style={{'background': `url(${imgurl}${dataList[currIndex].bg}) no-repeat,100% 100%`}} className='coverimg'>
 
             </div>
             <div style={{ width: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
                 <ArrowClick onClick={e => {
                     const res = controlledSwiper.navigation.onPrevClick(e);
                 }} style={{ marginRight: 30 }}>
-                    <img src={`${imgurl}/arowl1.png`} />
+                    <img className="left_img" src={`${imgurl}/arowl1.png`} />
                 </ArrowClick>
 
                 <div className='wrap_hovres'>
 
                     <Pane title=" 客户案例"
                         titleStyle={{ marginBottom: '48px' }}
-                        paneBgColor="white" style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
+                        style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
                         <Hidden xs sm>
                             <Swiper
                                 className='swiperwrap'
@@ -104,6 +116,7 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
                                 }}
                                 slidesPerView='auto'
                                 onSwiper={swiper => setControlledSwiper(swiper)}
+                                onSlideChange = {(e)=> {console.log(setCurrIndex(e.activeIndex))}}
                                 loop={false}>
                                 {dataList.map(({url}) => (
                                     <SwiperSlide style={{}}>
@@ -122,7 +135,7 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
                 <ArrowClick onClick={e => {
                     controlledSwiper.navigation.onNextClick(e);
                 }} style={{ marginLeft: 30 }}>
-                    <img src={`${imgurl}/arowr1.png`} />
+                    <img className="right_img" src={`${imgurl}/arowr1.png`} />
                 </ArrowClick>
             </div>
         </HoveUp>
