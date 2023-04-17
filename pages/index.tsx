@@ -125,7 +125,7 @@ const videoInfoList = [
 
 export default props => {
   return (
-    <Layout initialOpacity={false} headPlaceholder={[true, false]} headFontStyle={['dark', 'light']}>
+    <Layout initialOpacity={false} headPlaceholder={[false, false]} headFontStyle={['dark', 'light']}>
       {(visible, setFormVisible) => (
         <Wrapper>
           <IndustryCarousel />
