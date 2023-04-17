@@ -67,7 +67,7 @@ export const NAV_CONFIG = [
         title: '消费金融',
         desc: '全自动、智能化营销服务',
         icon:imgurl+'/xfjrheadicon.png',
-        path: '',
+        path: '/customer-finance',
       }
       
       // {
@@ -120,25 +120,25 @@ export const NAV_CONFIG = [
   //   name: '关于百应',
   // },
   {
-    path: '/about',
-    name: '了解百应',
-    smallDropdown: true,
-    expand: [
-      {
-        title: '关于百应',
-        desc: '以AI赋能经济发展和社会生活',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E5%85%B3%E4%BA%8E%E7%99%BE%E5%BA%94.svg',
-        path: '/about/about-baiying',
-        mobileTitle: '关于百应',
-      },
-      {
-        title: '加入我们',
-        desc: '期待与您共赴星辰大海',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E5%8A%A0%E5%85%A5%E6%88%91%E4%BB%AC.svg',
-        path: '/about/join',
-        mobileTitle: '加入我们',
-      },
-    ],
+    path: '/aboutByai/about-baiying',
+    name: '关于百应',
+    // smallDropdown: true,
+    // expand: [
+    //   {
+    //     title: '关于百应',
+    //     desc: '以AI赋能经济发展和社会生活',
+    //     icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E5%85%B3%E4%BA%8E%E7%99%BE%E5%BA%94.svg',
+    //     path: '/about/about-baiying',
+    //     mobileTitle: '关于百应',
+    //   },
+    //   {
+    //     title: '加入我们',
+    //     desc: '期待与您共赴星辰大海',
+    //     icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E5%8A%A0%E5%85%A5%E6%88%91%E4%BB%AC.svg',
+    //     path: '/about/join',
+    //     mobileTitle: '加入我们',
+    //   },
+    // ],
   },
 ];
 
