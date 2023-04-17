@@ -419,15 +419,15 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
                   return (
                     <div
                       onMouseEnter={() => {
-                        setCurrIndex(i);
+                        // setCurrIndex(i);
                       }}
                       className={classNames('jump-group-item', {
-                        hover: i === currIndex,
+                        // hover: i === currIndex,
                       })}
                       onClick={() => {
                         const node = document.querySelector(jumpTarget);
                         if (node) {
-                          node.scrollIntoView({ behavior: 'smooth' });
+                          // node.scrollIntoView({ behavior: 'smooth' });
                         }
                       }}>
                       <div className="jump-group-item-title">{title}</div>
