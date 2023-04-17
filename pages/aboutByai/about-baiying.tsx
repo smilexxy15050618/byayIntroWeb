@@ -14,10 +14,10 @@ import imgurl from '../../img.url.js'
 import { HOST_ENUM } from '../../src/lib/utils';
 const BANNER_BG = `${imgurl}/about_banner_bg.png`;
 const JOIN_US_IMG = `${imgurl}/about_banner_img.png`;
-const INTRODUCE_BG = `${imgurl}/about_introduce_bg.png`;
-const MissionVision_BG = `${imgurl}/mission-vision-bg.png`;
-const NORMAL_BG = `${imgurl}/course-normal.png`;
-const ACTIVE_BG = `${imgurl}/course-active.png`;
+const ABOUT_INTRO = `${imgurl}/about-intro.jpg`;
+const Mission_BG = `${imgurl}/mission-bg.png`;
+const Vision_BG = `${imgurl}/vision-bg.png`;
+const DEVELOPHIS_BG = `${imgurl}/develophis_bg.png`;
 const SOCIETYDUTY_BG = `${imgurl}/society-duty.png`;
 const SOCIETYDUTY_IMG1 = `${imgurl}/society-duty_1.png`;
 const SOCIETYDUTY_IMG2 = `${imgurl}/society-duty_2.png`;
@@ -42,22 +42,29 @@ const BigTitle = styled.div`
   margin-top: 20px;
   font-size:48px;
   line-height:80px;
-  color:rgb(51,51,51);
-`;
-
-const SubTitle = styled.div`
-  margin-top: 20px;
-  width: 685px;
-  font-size:58px;
-  line-height:54px;
-  color:rgb(51,51,51);
+  color:rgba(26, 26, 26, 1);
 `;
 
 const Desc = styled.div`
-  margin-top: 40px;
-  font-size:22px;
-  line-height:34px;
-  color:rgb(51,51,51);
+  margin-top: 10px;
+  font-size: 20px;
+  line-height:32px;
+  color: rgba(51, 51, 51, 1);
+`;
+
+const BlueBtn = styled.div`
+  margin-top: 46px;
+  width: 132px;
+  height: 48px;
+  border-radius: 5.33px;
+  background: rgba(43, 88, 249, 1);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 48px;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  cursor: pointer;
 `;
 
 const EnIntroductionWrap = styled.div`
@@ -98,7 +105,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
             pcImgs={[
               {
                 src: JOIN_US_IMG,
-                style: { width: 639, height:608, top: -50, right: 0 },
+                style: { width: 644, height:496, top: 0, right: 0 },
                 className: ['animate__fadeInRight', 'animate__ahead_300ms'],
               },
             ]}
@@ -108,8 +115,13 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
                 <BigTitle>
                   关于百应
                 </BigTitle>
-                <SubTitle>智能用户运营领域创领者</SubTitle>
                 <Desc>致力于通过前沿对话式AI能力<br />助力政府和企业高效连接C端用户</Desc>
+                <BlueBtn
+                  onClick={() =>
+                    window.open('/form?formType=1')
+                  }>
+                  社会招聘
+                </BlueBtn>
               </Hidden>
             </TextArea>
           </BannerWhite>
@@ -143,16 +155,15 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
               ]} 
             />
             <EnterpriseIntroduction
-              backgroundImage={INTRODUCE_BG}
-              cover="//cdn.byai.com/static/official-website/about/baiying-1222.png"
+              cover={ABOUT_INTRO}
             />
           </EnIntroductionWrap>
           <MissionVision
-            backgroundImage={MissionVision_BG}
+            MissionBG={Mission_BG}
+            VisionBG={Vision_BG}
           />
           <DevelopHistory
-            NORMALBG={NORMAL_BG}
-            ACTIVEBG={ACTIVE_BG}
+            backgroundImage={DEVELOPHIS_BG}
           />
           <SocietyDuty
             backgroundImage={SOCIETYDUTY_BG}
