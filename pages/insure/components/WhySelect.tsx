@@ -29,7 +29,6 @@ padding-bottom: 100px;
     }
     .swiper-container {
         background: rgba(255, 255, 255, 1);
-        box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
     }
     .title {
         display: block;

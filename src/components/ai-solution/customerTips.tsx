@@ -100,7 +100,7 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
                 <ArrowClick onClick={e => {
                     const res = controlledSwiper.navigation.onPrevClick(e);
                 }} style={{ marginRight: 30 }}>
-                    <img className="left_img" src={`${imgurl}/arowl1.png`} />
+                    <img className="left_img" src={`${imgurl}/arowl.png`} />
                 </ArrowClick>
 
                 <div className='wrap_hovres'>
