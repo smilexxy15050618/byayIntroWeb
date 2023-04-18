@@ -83,7 +83,7 @@ export const MOBILE_SCENE_SOLUTION_LIST = [
     detailList: [
       {
         title: '每个用户都满意的\n品牌AI管家',
-        desc: '从不出席用户需要品牌的重要时刻',
+        desc: '从不缺席用户需要品牌的重要时刻',
         btnName: '免费领取数智化提升方案',
       },
       {
@@ -163,7 +163,6 @@ export const NEW_BANNER = [
     tabName: '',
     bg: '',
     mobileBg: '',
-    title: '品牌零售智能用户运营解决方案',
     subTitle: ['针对零售行业会员增长需求，设计用户运营策略，通过对话式AI助力品牌实现「极致用户体验+极致ROI」的全域营销服务'],
     subTitleMobile: ['针对零售行业会员增长需求，设计用户运营策略，通过对话式AI助力品牌实现「极致用户体验+极致ROI」的全域营销服务'],
   }

@@ -1,8 +1,10 @@
 import classNames from 'classnames';
 import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { renderCss, screenHeightRules } from '../../lib/utils';
-import { AngleRight } from '../accordion/AngleRight';
+import { renderCss, screenHeightRules } from '../lib/utils';
+import { AngleRight } from './accordion/AngleRight';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperClass from 'swiper/types/swiper-class';
 
 interface Info {
   tabName: string;
@@ -199,6 +201,9 @@ const ContentListWrapper = styled.div`
   margin: 0 auto;
   margin-top: calc(${TabWrapperHeight} + ${TabGapHeight});
   ${renderCss(VIDEO_SIZE_MAPPER.VIDEO_WIDTH, screenHeightRules, v => `padding-left: calc(${v} + 32px + 63px);`)}
+  .swiper-container {
+    height: 608px;
+  }
 `;
 
 const Gap = styled.div`
@@ -430,17 +435,17 @@ const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, desc,onJumpCl
     const nodeList = [...videoContentList];
     // if (index === videoContentList.length - 1) {
     nodeList.forEach(ele => {
-      new ScrollMagic.Scene({
-        triggerElement: ele, //触发元素
-        triggerHook: 'onLeave', //触发元素开始离开视口时触发
-        offset: -500, //从开始点滚动多少px触发（施法前摇）
-        duration: 300, //效果持续的距离（法术持续时间/距离）
-      })
-        .addTo(controller)
-        .on('enter', () => {
-          const index = ele.getAttribute('data-index');
-          setCurrSubIndex(+index);
-        });
+    //   new ScrollMagic.Scene({
+    //     triggerElement: ele, //触发元素
+    //     triggerHook: 'onLeave', //触发元素开始离开视口时触发
+    //     offset: -500, //从开始点滚动多少px触发（施法前摇）
+    //     duration: 300, //效果持续的距离（法术持续时间/距离）
+    //   })
+    //     .addTo(controller)
+    //     .on('enter', () => {
+    //       const index = ele.getAttribute('data-index');
+    //       setCurrSubIndex(+index);
+    //     });
     });
   }, []);
   const jumpTargetNode = (i: number) => {
@@ -450,6 +455,7 @@ const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, desc,onJumpCl
     }
   };
   const [videoStatus, setVideoStatus] = useState(0);
+  const [controlledSwiper, setControlledSwiper] = useState(null);
   return (
     <>
       <Header>{title}</Header>
@@ -539,7 +545,7 @@ const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, desc,onJumpCl
                     return (
                       <Dot
                         onClick={() => {
-                          jumpTargetNode(i);
+                            controlledSwiper.slideTo(i);
                         }}
                         key={`${currIndex}${i}`}
                         className={classNames({ active: i === currSubIndex })}></Dot>
@@ -552,10 +558,11 @@ const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, desc,onJumpCl
         </ScrollWrapper>
 
         <ContentListWrapper>
-          {infoList[currIndex].content.map(({ title, content, specialBtnStr, hiddenBtn }, i) => {
+          <Swiper onSwiper={swiper => setControlledSwiper(swiper)} onSlideChange={e=> setCurrSubIndex(e.activeIndex)} autoplay direction="vertical" mousewheel="true">
+            {infoList[currIndex].content.map(({ title, content, specialBtnStr, hiddenBtn }, i) => {
             return (
-              <ContentWrapper data-index={`${i}`}>
-                <ScrollIntoNode className={SOLUTION_SCROLL_INTO_NODE_CLASS}></ScrollIntoNode>
+              <SwiperSlide>
+                <ContentWrapper data-index={`${i}`}>
                 <Content>
                   <div>
                     {title.map(str => {
@@ -571,6 +578,7 @@ const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, desc,onJumpCl
                   )}
                 </Content>
               </ContentWrapper>
+              </SwiperSlide>
             );
           })}
           {/* {
@@ -582,6 +590,7 @@ const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, desc,onJumpCl
               })}</div>;
             })
           } */}
+          </Swiper>
         </ContentListWrapper>
       </Wrapper>
     </>

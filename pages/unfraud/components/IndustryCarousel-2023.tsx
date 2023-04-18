@@ -45,8 +45,6 @@ margin-bottom: 40px;
 `;
 
 const Title = styled.div`
-width: 480px;
-height: 120px;
 font-size: 48px;
 font-weight: 600;
 letter-spacing: 0px;
