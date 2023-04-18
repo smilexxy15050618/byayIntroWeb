@@ -247,6 +247,7 @@ class DevelopHistory extends React.Component<ICourseProps, ICourseState> {
       clientWidth: document.documentElement.clientWidth || document.body.clientWidth,
     });
     window.addEventListener('resize', this.updateClientWidth);
+
   }
 
   componentWillUnmount() {

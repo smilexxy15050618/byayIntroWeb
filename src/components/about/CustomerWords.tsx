@@ -170,8 +170,6 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
   const [currIndex, setCurrIndex] = useState(0);
   return (
     <div style={style}>
-      {/* <RightArrow className="next-btn swiper-nav-btn" onClick={e => controlledSwiper.navigation.onNextClick(e)} /> */}
-      {/* <LefttArrow className="prev-btn swiper-nav-btn" onClick={e => controlledSwiper.navigation.onPrevClick(e)} /> */}
       <HoveUp >
       <Swiper
         autoplay={{
@@ -220,77 +218,82 @@ const carouselDataList = [
   {
     avatarSrc:`${imgurl}/honor-1.jpeg`,
     content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
-    linkUrl: '食品',
+    linkUrl: 'https://mp.weixin.qq.com/s/1yppgDXsWYBGhyeC14-sKg',
   },
   {
     avatarSrc:`${imgurl}/honor-2.jpg`,
-    content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
-    linkUrl: '食品',
+    content:'“引领对话式AI，百应科技入选艾瑞《2022中国人工智能产业研究报告》',
+    linkUrl: 'https://mp.weixin.qq.com/s/B5PsNbhgrzjIfoZyIFel6A',
   },
   {
     avatarSrc:`${imgurl}/honor-3.jpg`,
-    content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
-    linkUrl: '食品',
+    content:'“百应科技入选「AI中国」 2022 最佳人工智能企业TOP30',
+    linkUrl: 'https://mp.weixin.qq.com/s/sszrNGf_PgyrDjEnrJRTUw',
   },
   {
     avatarSrc:`${imgurl}/honor-4.jpg`,
-    content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
-    linkUrl: '食品',
+    content:'百应科技实力入选「2022中国企业数智化创新TOP50」榜单',
+    linkUrl: 'https://mp.weixin.qq.com/s/irAz2DFmGIZAenwn_YR4ug',
   },
   {
     avatarSrc:`${imgurl}/honor-5.jpeg`,
-    content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
-    linkUrl: '食品',
+    content:'领航数智创新｜百应科技荣获亿邦未来零售“2022数字化突出贡献奖”',
+    linkUrl: 'https://mp.weixin.qq.com/s/69l7_d5Cyfv-rclQp7aHgg',
   },
   {
     avatarSrc:`${imgurl}/honor-6.jpg`,
-    content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
-    linkUrl: '食品',
+    content:'百应科技项目入选2022年杭州市第三批重点建设人工智能应用场景',
+    linkUrl: 'https://mp.weixin.qq.com/s/R4FrsYO3tu8qaQlxYhfeJQ',
   },
   {
     avatarSrc:`${imgurl}/honor-7.jpeg`,
-    content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
-    linkUrl: '食品',
+    content:'工信部公示“智赋百景”，百应科技荣誉入选',
+    linkUrl: 'https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw',
   },
   {
     avatarSrc:`${imgurl}/honor-8.jpeg`,
-    content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
-    linkUrl: '食品',
+    content:'参编《2022浙江省人工智能产业发展报告》，百应硬核展现“再上分”',
+    linkUrl: 'https://mp.weixin.qq.com/s/ZIO9FaodpCTOaEV3-Akkyg',
   },
   {
     avatarSrc:`${imgurl}/honor-9.jpeg`,
-    content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
-    linkUrl: '食品',
+    content:'百应获得CMMI 5级国际权威认证，跻身全球软件业开发能力最高水平！',
+    linkUrl: 'https://mp.weixin.qq.com/s/MSDRE6jemrK3kYIsH9xHWA',
   },
   {
     avatarSrc:`${imgurl}/honor-10.jpeg`,
-    content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
-    linkUrl: '食品',
+    content:'百应科技获评腾讯智慧零售“千域计划年度认证合作伙伴”',
+    linkUrl: 'https://mp.weixin.qq.com/s/Lgb0LkS_jQ9Zs85hiMdAmA',
   },
   {
     avatarSrc:`${imgurl}/honor-11.jpg`,
-    content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
-    linkUrl: '食品',
+    content:'百应科技获评机器之心「最具商业价值解决方案」',
+    linkUrl: 'https://mp.weixin.qq.com/s/rak-d_8n-r3MhijE7-jeuA',
   },
   {
     avatarSrc:`${imgurl}/honor-12.jpeg`,
-    content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
-    linkUrl: '食品',
+    content:'再获认可！百应获评省高新技术企业研发中心',
+    linkUrl: 'https://mp.weixin.qq.com/s/2hkDciDqLt-MUj5rDWTKdw',
   },
   {
     avatarSrc:`${imgurl}/honor-13.jpg`,
-    content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
-    linkUrl: '食品',
+    content:'百应科技荣获2021年浙江软件核心竞争力企业',
+    linkUrl: 'https://mp.weixin.qq.com/s/BKdLbKibu4iA5MHZZqc-fg',
   },
   {
     avatarSrc:`${imgurl}/honor-14.jpeg`,
-    content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
-    linkUrl: '食品',
+    content:'致创新 见未来 | 百应获评「2021全球人工智能创新应用企业」',
+    linkUrl: 'https://mp.weixin.qq.com/s/A-RNY56pT6mg7fWrEFHkNA',
   },
   {
     avatarSrc:`${imgurl}/honor-15.jpeg`,
-    content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
-    linkUrl: '食品',
+    content:'百应实力获评WISE 2021新经济之王“年度硬核企业”',
+    linkUrl: 'https://mp.weixin.qq.com/s/jvj5cIfo90HHlfbqxVGt-Q',
+  },
+  {
+    avatarSrc:`${imgurl}/honor-16.jpeg`,
+    content:'百应科技连续2年荣登杭州准独角兽榜单，AI SaaS「未来独角兽」蓄势待发',
+    linkUrl: 'https://mp.weixin.qq.com/s/o8ZUSoftKHjagcfWP7f2Bw',
   },
 ];
 
@@ -557,9 +560,9 @@ const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
      paneBgColor="white" style={{ paddingBottom: 80 }} mobileStyle={{ paddingBottom: 40 }}>
       <Hidden xs sm>
       <MainWrap
-    id={CustomerIdwrap}
-    ref={myRef}
-    >
+        id={CustomerIdwrap}
+        ref={myRef}
+        >
         <Carousel dataList={carouselDataList}></Carousel>
     </MainWrap>
       </Hidden>
