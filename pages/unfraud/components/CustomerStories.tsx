@@ -42,6 +42,13 @@ margin-bottom: 56px;
 const ListWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  transform: translateY(50%);
+    transition: all 0.4s;
+    opacity: 0;
+    &.appear{
+      transform: translateY(0);
+      opacity: 1;
+    }
 `
 const ListItem = styled.div`
 width: 378px;
@@ -97,13 +104,32 @@ position: relative;
     }
 }
 `
-
+const UNFRAUD = 'unfraud_case'
 export const CustomerStories: FC = () => {
+    useEffect(() => {
+        const ScrollMagic = require('scrollmagic');
+        var controller = new ScrollMagic.Controller();
+        const videoContent = document.getElementById(UNFRAUD);
+          new ScrollMagic.Scene({
+            triggerElement: videoContent, //触发元素
+            triggerHook: 'onEnter', //触发元素开始离开视口时触发
+            offset: 10, //从开始点滚动多少px触发（施法前摇）
+            duration: 400, //效果持续的距离（法术持续时间/距离）
+          })
+            // .setClassToggle('.aitxs', 'appear')
+            .addTo(controller)
+            .on('enter', () => {
+                videoContent.classList.add('appear')
+                // console.log('进入');
+                
+                controller.destroy();
+            });
+      }, []);
     return (
         <Wrapper>
              <MainWrapper>
           <Title>客户案例</Title>
-          <ListWrapper>
+          <ListWrapper id={UNFRAUD}>
           {
             list.map(({img,banner,content},index)=> {
                 return (

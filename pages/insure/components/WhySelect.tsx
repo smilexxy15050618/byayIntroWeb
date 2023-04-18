@@ -24,7 +24,7 @@ padding-bottom: 100px;
     display: flex;
     justify-content: center;
     .swiper-wrapper {
-        width: 1080px !important;
+        width: 1100px !important;
         text-align: center;
     }
     .swiper-container {
@@ -44,8 +44,8 @@ padding-bottom: 100px;
         margin: 0 auto;
     }
     .my-slide {
-        width: 1080px;
-        height: 584px;
+        width: 1100px;
+        height: 640px;
         opacity: 1;
         border-radius: 8px;
     }
@@ -88,7 +88,7 @@ export const WhySelect: FC = () => {
             spaceBetween={20}
             onSlideChange={swiper=>{
                 setCurrIndex(swiper.activeIndex)
-            }} style={{marginBottom:'234px'}}>
+            }} style={{marginBottom:'42px'}}>
                 <SwiperSlide>
                     <div className='my-slide'>
                     <img className='content' src={imgurl+'/why1.png'} alt="" />
