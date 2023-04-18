@@ -28,6 +28,10 @@ opacity: 1;
 border-radius: 8px;
 background: rgba(43, 88, 249, 1);
     position: relative;
+    &:hover {
+      transform: translateY(-8px);
+      transition: all 1s;
+    }
     img{
         position: absolute;
         right: 0;

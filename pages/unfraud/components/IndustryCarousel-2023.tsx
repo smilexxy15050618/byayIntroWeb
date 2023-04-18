@@ -177,7 +177,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
           <BgWrapper>
             <BgContent>
               <Title>百应安盾<br></br>电信网络诈骗预防平台</Title>
-              <SubTitle>以AI能力为核心，全链条贯通反诈的宣传劝阻业务流程，打造具备“点面结合，长短并行”能力的AI虚拟民警，实现电诈案发案损 “双降” </SubTitle>
+              <SubTitle>全链条贯通反诈的宣传劝阻业务流程，打造具备“点面结合，长短并行”能力的AI虚拟民警 </SubTitle>
               <img src={imgurl+'/unfraud_carousel1.png'}></img>
               <div className="jumpbtn" onClick={() => setForm()}>
                 预约体验

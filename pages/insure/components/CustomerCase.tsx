@@ -12,7 +12,7 @@ const list = [
     {
         img: '/public_security2.png',
         banner: '/security_icon2.png',
-        content: 'AI赋能获客提效，开启业绩高效增长之旅。',
+        content: 'AI赋能获客提效，开启业绩高效增长之旅',
         label: '人民保险'
     },
     {
@@ -111,16 +111,17 @@ margin-top: 17px;
     }
     div:last-child {
         font-size: 16px;
-font-weight: 500;
-color: rgba(43, 88, 249, 1);
-position: absolute;
-bottom: 32px;
-cursor: pointer;
-&:hover {
-    span {
-        margin-left: 10px;
-    }
-}
+        font-weight: 500;
+        color: rgba(43, 88, 249, 1);
+        position: absolute;
+        bottom: 32px;
+        cursor: pointer;
+        &:hover {
+          &::after {
+            content: ' →';
+          }
+           text-decoration: underline;
+        }
     }
 }
 `
@@ -140,7 +141,7 @@ export const CustomerCase: FC = () => {
                         <div className="detail">
                             {/* <div><img src={imgurl+banner} alt="" />{label}</div> */}
                             <div>{content}</div>
-                            <div>了解详情 <span>→</span></div>
+                            <div>了解详情</div>
                         </div>
                     </ListItem>
                 )

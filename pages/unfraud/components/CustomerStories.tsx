@@ -89,10 +89,11 @@ position: relative;
         bottom: 32px;
         cursor: pointer;
         &:hover {
-          span {
-            margin-left: 10px;
+            &::after {
+              content: ' →';
+            }
+             text-decoration: underline;
           }
-        }
     }
 }
 `
@@ -111,7 +112,7 @@ export const CustomerStories: FC = () => {
                         <div className="detail">
                             <img src={imgurl+img} alt="" />
                             <div>{content}</div>
-                            <div>了解详情 <span>→</span></div>
+                            <div>了解详情</div>
                         </div>
                     </ListItem>
                 )
