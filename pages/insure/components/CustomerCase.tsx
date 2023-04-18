@@ -123,6 +123,9 @@ margin-top: 17px;
         position: absolute;
         bottom: 32px;
         cursor: pointer;
+        &::after {
+            content: ' →';
+          }
         &:hover {
           &::after {
             content: ' →';

@@ -174,7 +174,7 @@ const [navIndex,setNavIndex]= useState(0);
             btnText="与我联系"
             background={`url(${FOOTER_BG})`}
             onClick={() => {
-              setFormVisible(true, FormType.CUSTOMER);
+              window.open('/form?formType=1')
             }}
           />
         </Wrapper>

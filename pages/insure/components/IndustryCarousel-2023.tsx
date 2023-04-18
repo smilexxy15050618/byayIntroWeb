@@ -80,11 +80,8 @@ const BgContent = styled.div`
     }
   }
   img {
-    width: 534px;
-    height: 525px;
-    position: absolute;
-    top: -150px;
-    right: 0;
+    /* width: 534px; */
+   
   }
 `;
 const BgWrapper = styled.div<{ bg: string }>`
@@ -95,8 +92,21 @@ const BgWrapper = styled.div<{ bg: string }>`
   height: 100%;
   width: 100%;
   pointer-events: all;
-  padding: 152px 0 0 0px;
+  /* padding: 152px 0 0 0px; */
   background: rgba(246, 252, 255, 1);
+  .flexwrap{
+    display: flex;
+    width: 1200px;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    margin:0 auto;
+    margin-top: 60px;
+  }
+  .bgimg22{
+    height: 496px;
+    margin-bottom: 0;
+  }
 `;
 
 const BottomContent = styled.div`
@@ -133,7 +143,7 @@ const BottomMain = styled.div`
 
 const Wrapper = styled.div`
 width: 100%;
-  height: 576px;
+  height: 560px;
   position: relative;
   overflow: hidden;
   .carousel-bg-right{
@@ -176,14 +186,17 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
     <Wrapper>
        <div className="carousel-bg-right"></div>
           <BgWrapper>
-            <BgContent>
-              <Title>保险行业<br></br>BPO解决方案</Title>
-              <SubTitle>“大数据+AI+人”三驱模式，为保险客户提供从赠险到长险的全业务链条服务</SubTitle>
-              <img src={imgurl+'/bxjfbanner.png'}></img>
-              <div className="jumpbtn" scale={0.8} onClick={() => setForm()}>
-                预约体验
-              </div>
-            </BgContent>
+            <div className='flexwrap'>
+                <BgContent>
+                  <Title>保险行业<br></br>BPO解决方案</Title>
+                  <SubTitle>“大数据+AI+人”三驱模式，为保险客户提供从赠险到长险的全业务链条服务</SubTitle>
+                  <div className="jumpbtn" scale={0.8} onClick={() => setForm()}>
+                    预约体验
+                  </div>
+                </BgContent>
+                <img src={imgurl+'/bxjfbanner.png'} className='bgimg22'></img>
+            </div>
+           
           </BgWrapper>
     </Wrapper>
   );
