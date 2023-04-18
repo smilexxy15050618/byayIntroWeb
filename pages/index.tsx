@@ -128,15 +128,15 @@ export default props => {
   const [initialOpacity, setInitialOpacity] = useState(true);
 const [cauindex,setCauindex] = useState(0);
  const hadnleNav = (v) =>{
-  console.log(v);
-  
+  if((document.body.getBoundingClientRect().top > -10)){
+    // 完全到顶部
   if(v==1){
       setInitialOpacity(false)
   }else{
       setInitialOpacity(true)
   }
-
-  console.log(initialOpacity);
+  console.log(v);
+ }
   
   }
   return (

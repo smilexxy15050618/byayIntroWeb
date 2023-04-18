@@ -374,7 +374,7 @@ class Nav extends React.Component<
   }
 
   handleHeaderOpacity = () => {
-    console.log('触发wheel事件');
+    // console.log('触发wheel事件',document.documentElement.scrollTop ,this.props.initialOpacity);
     this.setState({
       // 大于-10说明 body没有上移，可视区域是页面最顶部
       opacity: document.body.getBoundingClientRect().top > -10 && this.props.initialOpacity !== false,
