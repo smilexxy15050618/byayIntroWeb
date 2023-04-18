@@ -154,8 +154,8 @@ const CarouselWrapper = styled.div`
     widht:100%;
     content:'';
     position:absolute;
-    top:-75%;
-    height:150%;
+    top:0%;
+    height:100%;
     left:0;
     background-color: rgba(43, 88, 249, 1);
     animation-name: mywidth;
