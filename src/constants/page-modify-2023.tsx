@@ -136,7 +136,7 @@ export const NAV_CONFIG = [
     name: '生态合作',
   },
   {
-    path: '/aboutBaiyi/about-baiying',
+    path: '/aboutByai/about-baiying',
     name: '关于百应',
   },
 ];

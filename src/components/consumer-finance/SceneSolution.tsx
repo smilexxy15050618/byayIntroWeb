@@ -6,7 +6,6 @@ interface  SceneSolution{
 
 }
 const Pane = styled.div`
-    padding: 80px 0;
     .title {
         font-size: 40px;
         font-weight: 500;
@@ -114,7 +113,7 @@ useEffect(() => {
     return (
         <Pane>
             <div class="title">应用场景</div>
-            <div class="desc">运营策略覆盖消费金融业务全链</div>
+            <div class="desc">运营策略覆盖消费金融业务全链路</div>
           <Hidden xs sm>
             <MainWrap id={HANGYE}>
             <HoveUp>

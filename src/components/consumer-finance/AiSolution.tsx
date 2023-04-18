@@ -67,23 +67,23 @@ const carouselDataList = [
     {
         title:'丰富的行业知识库',
         content:'覆盖各业务场景的丰富知识库，知识库覆盖率达90%，准确率达95%',
-        url: '/icon1.png'
+        url: '/use-bank-01.png'
     },{
         title:'优秀的行业运营经验',
         content:'专业运营服务团队，众多行业标杆客户服务案例，运营效果行业领先',
-        url: '/icon2.png'
+        url: '/use-bank-02.png'
     },{
         title:'精准的营销触达',
         content:'用户精准分层，过滤无效用户，避免无差别同质化营销，提高用户体验',
-        url: '/icon3.png'
+        url: '/use-bank-03.png'
     },{
         title:'数据安全保障',
         content:'隐私计算、数据加密等成熟技术方案，保障数据传输、存储及应用安全',
-        url: '/icon4.png'
+        url: '/use-bank-04.png'
     },{
         title:'开放平台支持',
         content:'开放的系统级数据导入、导出能力，便捷实现与业务系统打通',
-        url: '/icon5.png'
+        url: '/use-bank-05.png'
     }
 ]
 const MainWrap = styled.div`

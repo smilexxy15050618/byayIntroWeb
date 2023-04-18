@@ -26,7 +26,7 @@ const Card = styled.div`
         background: rgba(255, 255, 255, 1);
         box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
         overflow: hidden;
-    img.bg{
+    img.logo{
         height: 160px;
         border-radius: 8px 8px 0 0;
         &:hover{
@@ -34,22 +34,24 @@ const Card = styled.div`
             transition: transform 0.4s;
         }
     }
-    img.logo{
-        width: 100px;
-        height: 32px;
-        margin-top: 12px;
-        margin-left: 24px;
-    }
+    
     .textt_area{
-        padding: 16px 24px;
+        padding: 32px 24px;
         font-size: 16px;
         line-height: 26px;
+        font-size: 16px;
+        line-height: 26px;
+        color: rgba(0, 0, 0, 1);
     }
     .demo-go{
+        display: block;
         padding-left:24px;
-        padding-top: 24px;
+        padding-top: 26px;
         font-size: 16px;
         color: rgba(43, 88, 249, 1);
+        &:hover{
+            
+        }
     }
    }
 `
@@ -59,23 +61,19 @@ const CustomerCaseList = [
     {
         title:'贷前、贷中、贷后全链路运营服务，助力小米信贷业务增长',
         imgUrl: '/case-01.png',
-        enterLogo: '/case-logo-01.png',
-        pageUrl: 'http://baidu.com'
+        pageUrl: '/form?formType=1'
     },{
         title:'用AI和数据赋能业务增长，授信率、放款额等关键指标提升40%',
         imgUrl: '/case-02.png',
-        enterLogo: '/case-logo-02.png',
-        pageUrl: 'http://baidu.com'
+        pageUrl: '/form?formType=1'
     },{
         title:'助力电销业务提质增效，实现效率效能双增长',
         imgUrl: '/case-03.png',
-        enterLogo: '/case-logo-03.png',
-        pageUrl: 'http://baidu.com'
+        pageUrl: '/form?formType=1'
     },{
         title:'提供智能用户运营平台，推动招联消金私域业务人效提升100%',
         imgUrl: '/case-04.png',
-        enterLogo: '/case-logo-04.png',
-        pageUrl: 'http://baidu.com'
+        pageUrl: '/form?formType=1'
     }
 ]
 const MainWrap = styled.div`
@@ -117,12 +115,11 @@ const CustomerCase: FC<SceneSolution> = ({}) => {
                     <Card>
                         {CustomerCaseList.map(item => 
                             <div className='carditem'>
-                                <img  className="bg" src={imgurl+item.imgUrl} />
-                                <img className="logo" src={imgurl+item.enterLogo} />
+                                <img  className="logo" src={imgurl+item.imgUrl} />
                                 <div className='textt_area'>
                                     {item.title}
                                 </div>
-                                <a className="demo-go">体验Demo →</a>
+                                <a href={item.pageUrl} className="demo-go">了解详情 →</a>
                             </div>
                         )}
                     </Card>

@@ -23,6 +23,7 @@ const NavItemContainer = styled.div<{ maxWidthPc?: string; minWidthPC?: string }
     margin: 0 auto;
   }
   height: 100%;
+  padding-top: 16px;
   @media (max-width: 768px) {
     width: 100% !important;
   }
@@ -36,11 +37,11 @@ const NavItem = styled.div<{ active: boolean }>`
   align-items: center;
   width: 160px;
   height: 80px;
-  font-size: 24px;
+  font-size: 20px;
   color: ${props => (props.active ? 'rgba(43, 88, 249, 1)' : 'rgba(0, 0, 0, 1)')};
   line-height: 80px;
   cursor: pointer;
-  margin-left: 40px;
+  margin-right: 40px;
   &::after {
     position: absolute;
     left: 0;
@@ -53,27 +54,15 @@ const NavItem = styled.div<{ active: boolean }>`
     background: ${props => (props.active ? 'rgba(43, 88, 249, 1)' : 'transparent')};
   }
   &:last-child {
-    margin-left: 0;
+    margin-right: 0;
   }
 `;
 
-const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList }) => {
+const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) => {
   const [index, setIndex] = React.useState(0);
+  
   return (
     <NavItemContainer maxWidthPc="1200px" minWidthPC={minWidthPC}>
-      {/* {bannerList.map((item, navIndex) => (
-        <NavItem 
-          active={navIndex === index}
-          onClick={() => {
-            const node = document.querySelector(jumpTarget);
-            if (node) {
-              node.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}>
-        >
-          {item.name}
-        </NavItem>
-      ))} */}
       {bannerList.map(({ name, jumpTarget }, navIndex) => {
         return (
           <NavItem 
@@ -83,6 +72,7 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList }) => {
             if (node) {
               node.scrollIntoView({ behavior: 'smooth' });
             }
+            onCancel()
           }}>
           {name}
         </NavItem>

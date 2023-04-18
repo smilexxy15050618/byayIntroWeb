@@ -1,7 +1,23 @@
-import React, { FC, useRef, useEffect } from 'react';
+import React, { CSSProperties, FC, useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../constants/style';
-import { splitCssValue } from '../../lib/utils';
+import { Hidden, Visible } from 'react-grid-system';
+import { Swiper, SwiperSlide} from 'swiper/react';
+import imgurl from '../../../img.url.js'
+
+const SocietyDutyContainer = styled.div`
+  padding-bottom: 100px;
+  background: rgba(246, 252, 255, 1);
+`;
+
+const SocietyDutyContainerWrap = styled.div`
+  transform: translateY(50%);
+  transition: all 0.4s;
+  opacity: 0;
+  &.appear{
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
 
 const Title = styled.div`
   padding-top: 80px;
@@ -12,123 +28,213 @@ const Title = styled.div`
   text-align: center;
 `;
 
-const SocietyDutyContainer = styled.div<{ maxWidthPc?: string; minWidthPC?: string }>`
-  @media (min-width: 768px) {
-    max-width: ${props => props.maxWidthPc || Theme.ContentWidth};
-    min-width: ${props => props.minWidthPC || 'unset'};
-    width: calc(
-      100vw / ${splitCssValue(Theme.DesignDraftWidth).num} *
-        ${props => splitCssValue(props.maxWidthPc || Theme.ContentWidth).num}
-    );
-    margin: 0 auto;
-  }
-  height: 100%;
-  @media (max-width: 768px) {
-    width: 100% !important;
-  }
-`;
-
-const SocietyDutyContainerWrap = styled.div<{ backgroundImage?: string; societyDuty1?: string }>`
-  display: flex; 
+const HoveUp = styled.div`
   position: relative;
-  width: 1140px;
-  height: 439px;
-  margin-left: 60px;
-  background: rgba(246, 252, 255, 1);
-  flex-grow: 0; 
-  flex-shrink: 0; 
-  align-items: normal; 
-  justify-content: center; 
-  flex-flow: row wrap;
-
-  transform: translateY(50%);
-  transition: all 0.4s;
-  opacity: 0;
-  &.appear{
-    transform: translateY(0);
-    opacity: 1;
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+  .hoer_bg_more{
+    transition: all 0.3s ease-in-out;
   }
-  
-  &::before{
-    position: absolute;
-    left: -58px;
-    top: 40px;
-    display: block;
-    content: '';
-    width: 122px;
-    height: 394px;
-    background-image: ${props => `url(${props.backgroundImage})`};
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-  .title{
-    padding-top: 50px;
-    font-size: 24px;
-    color: rgba(43, 88, 249, 1);
-  }
-  .intro-img{
-    position: absolute;
-    left: 77px;
-    top: 116px;
-  }
-  .intro-info{
-    position: absolute;
-    left: 602px;
-    top: 136px;
-    width: 480px;
-    height: 150px;
-    line-height: 30px;
-    font-size: 16px;
-    color: rgba(43, 43, 43, 1);
-    span{
-      color: rgba(43, 88, 249, 1);
+`
+const CardContent = styled.aside`
+  background:#fff;
+  position:relative;
+  .text_area{
+    display:flex;
+    width:100%;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
+    .introduce_slide{
+      width:640px;
+      padding: 56px;
+      .title{
+        font-size: 24px;
+        line-height: 40px;
+        color: rgba(26, 26, 26, 1);
+      }
+      .content{
+        padding-top: 18px;
+        font-size: 18px;
+        line-height: 40px;
+        color: rgba(43, 43, 43, 1);
+      }
+    }
+    .logo_area{
+      width:560px;
+      height:400px;
+      margin: 0;
     }
   }
-  .intro-tips{
-    position: absolute;
-    left: 77px;
-    top: 350px;
-    font-size: 16px;
-    color: rgba(43, 88, 249, 1);
-    line-height: 22px;
+`
+const ArrowClickL = styled.div<{ normalBg?: string, activeBg?: string }>`
+  position: absolute;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  left: 56px;
+  bottom: 26px;
+  background-image: ${props => `url(${props.normalBg})`};
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  &:hover{
+    background-image: ${props => `url(${props.activeBg})`};
   }
-`; 
+`
+const ArrowClickR = styled.div<{ normalBg?: string, activeBg?: string }>`
+  position: absolute;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  left: 116px;
+  bottom: 26px;
+  background-image: ${props => `url(${props.normalBg})`};
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  &:hover{
+    background-image: ${props => `url(${props.activeBg})`};
+  }
+`
 
-const SocietyDutyContainerWrap2 = styled.div`
+const Wrapper = styled.div`
   display: flex;
-  align-items: end;
-  margin-top: 43px;
-  .intro-img{
-    position: relative;
-    width:490px;
-    height: 289px;
-    margin-left: 65px;
-    box-shadow: 0px 0px 16px 0px rgba(0, 6, 24, 0.15);
-  }
-  .intro-info{
-    flex: 1;
-    width: 646px;
-    height: 243px;
-    padding: 40px;
-    font-size: 16px;
-    letter-spacing: 0.13px;
-    color: rgba(43, 43, 43, 1);
-    line-height: 30px;
-    border-radius: 0 8px 8px 0;
-    background: rgba(246, 252, 255, 1);
-  }
+  width: 100vw;
+  margin: 0 auto;
 `;
 
+const carouselDataList = [
+  {
+    imgSrc:'/responsibility-1.png',
+    content: '400+公安机构通过百应Al解决电信网络诈骗问题，为超1亿+民众提供了反欺诈知识，预警诈骗电话超5000万次，成功劝阻100余万名民众受骗。助力基层派出所全年警情下降26.5%。诈骗案发数下降67.7%，案损金额下降 86.5%。',
+    title: '用AI宣防反诈知识，助力电诈“双降”',
+  },
+  {
+    imgSrc:'/responsibility-2.png',
+    content: '2020-2022年，百应在疫情爆发的第一时间上线了「智能疫情通知回访系统」，助力公安高效开展疫情流调和排查工作，减轻民警工作负荷。帮助了湖北、浙江、北京、辽宁、新疆等全国12个省市地区，回访了数千万人次，筛查了5万多隔离人员，覆盖200多个政府部门、医院、学校和社区。',
+    title: '智能AI系统，助力疫情高效流调和排查',
+  },
+  {
+    imgSrc:'/responsibility-3.png',
+    content: '百应易窗虚拟政务服务大厅，加速推进社保经办向数字化转型，全面落实社保办理“一次也不用跑”、“一网通办”。助力上百家社保、医保服务机构通过百应Al提升数字化服务能力，在线解答71%重复性咨询问题，累计服务量达1000万余次。',
+    title: '全面落实社保办理“一网通办”',
+  },
+  {
+    imgSrc:'/responsibility-4.png',
+    content: '百应积极践行企业社会公益责任，持续推出「翻书越岭」、「公益助农」等公益活动，帮助山区的小朋友们透过阅读感受外面的世界，通过助农项目帮扶贫困地区。收到公益组织的多封感谢信，并获得数央公益颁发的「2022年度科技责任先锋奖」。',
+    title: '「翻书越岭」、「公益助农」',
+  },
+];
+
+
 interface SocietyDutyProps {
-  minWidthPC?: string;
-  backgroundImage: string;
-  societyDuty1: string;
-  societyDuty2: string;
+  dataList: { content: string; imgSrc: string; title: string }[];
+  style?: CSSProperties;
 }
 
-const SocietyDuty: React.SFC<SocietyDutyProps> = ({ minWidthPC, backgroundImage, societyDuty1, societyDuty2 }) => {
+const Carousel: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
+  const [controlledSwiper, setControlledSwiper] = useState(null);
+  const [currIndex, setCurrIndex] = useState(0);
+  return (
+    <div style={{width:'1200px',margin:'0 auto',display:'flex',justifyContent:'center',position: 'relative'}}>
+        <ArrowClickL 
+          onClick={e => {
+            const res = controlledSwiper.navigation.onPrevClick(e);
+          }}
+          normalBg={`${imgurl}/slide-left-normal.png`}
+          activeBg={`${imgurl}/slide-left-active.png`}
+        >
+        </ArrowClickL>
+      <HoveUp>
+        <Swiper
+          effect="slide"
+          autoplay={{
+            delay: 5000,
+          }}
+          slidesPerView={1}
+          loop={true}
+          onSwiper={swiper => setControlledSwiper(swiper)}
+          onSlideChange={swiper => {
+            setCurrIndex(swiper.activeIndex);
+          }}
+          style={{  }}>
+          {dataList.map(({ imgSrc, content, title }, i) => (
+            <SwiperSlide style={{ width: 'auto' }} className='hoer_bg_more'>
+              <CardContent>
+                  <div className='text_area'>
+                      <div className='introduce_slide'>
+                        <div className='title'>{title}</div>
+                        <div className='content'>{content}</div>
+                      </div>
+                      <img className='logo_area' src={imgurl+imgSrc}/>
+                  </div>
+              </CardContent>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </HoveUp>
+      <ArrowClickR 
+        onClick={e => {
+          controlledSwiper.navigation.onNextClick(e);
+        }}
+        normalBg={`${imgurl}/slide-right-normal.png`}
+        activeBg={`${imgurl}/slide-right-active.png`}
+      >
+      </ArrowClickR>
+    </div>
+  );
+};
+
+const CarouselMobile: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
+  const [currIndex, setCurrIndex] = useState(0);
+  const [controlledSwiper, setControlledSwiper] = useState(null);
+  const length = dataList.length;
+  const currAnimateNumber = useRef(0);
+  const taskList = useRef<Array<() => void>>([]);
+  const taskFn = (index: number) => {
+    if (currAnimateNumber.current >= 1) {
+      taskList.current.push(() => taskFn(index));
+      return;
+    }
+    setCurrIndex(index);
+    currAnimateNumber.current++;
+    setTimeout(() => {
+      currAnimateNumber.current--;
+      if (taskList.current.length) {
+        const t = taskList.current.shift();
+        t();
+      }
+    }, 250);
+  };
+  return (
+    <>
+      <Wrapper>
+        <Swiper
+          autoplay={{
+            delay: 5000,
+          }}
+          slidesPerView="auto"
+          centeredSlides={true}
+          spaceBetween={24}
+          onSlideChange={swiper => {
+            setCurrIndex(swiper.activeIndex);
+          }}>
+          {dataList.map(({ imgSrc, content, title }, i) => (
+            <SwiperSlide style={{ width: '295px' }}>
+           
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Wrapper>
+    </>
+  );
+};
+
+const SocietyDuty: React.SFC<SocietyDutyProps> = () => {
   const myRef = useRef(null);
+  
   useEffect(() => {
     const timer =  setInterval(()=>{
       if(myRef.current){
@@ -150,19 +256,18 @@ const SocietyDuty: React.SFC<SocietyDutyProps> = ({ minWidthPC, backgroundImage,
       }
     })
   }, [myRef]);
+
   return (
-  <SocietyDutyContainer id="SocietyDuty" maxWidthPc="1200px" minWidthPC={minWidthPC}>
+  <SocietyDutyContainer id="SocietyDuty" maxWidthPc="1200px">
     <Title>社会责任</Title>
-    <SocietyDutyContainerWrap backgroundImage={backgroundImage} societyDuty1={societyDuty1} ref={myRef}>
-      <div className='title'>每一封感谢信，让我们坚定向前</div>
-      <div className="intro-img"><img src={societyDuty1} /></div>
-      <div className="intro-info">2020-2022年，百应在疫情爆发的第一时间上线了<span>「智能疫情通知回访系统」</span>，助力公安高效开展疫情流调和排查工作，减轻民警工作负荷。帮助了湖北、浙江、北京、辽宁、新疆等全国12个省市地区的公安，回访了数千万人次，筛查了5万多隔离人员，覆盖200多个政府部门、医院、学校和社区。</div>
-      <div className="intro-tips">抗疫期间，百应科技先后收到来自武汉、济南、杭州等地的感谢信。有一封信中提到，“对百应科<br />技的辛勤付出、专业服务和高度的社会责任感，我们深表感谢！</div>
+    <SocietyDutyContainerWrap ref={myRef}>
+      <Hidden xs sm>
+        <Carousel dataList={carouselDataList}></Carousel>
+      </Hidden>
+      <Visible xs sm>
+        <CarouselMobile dataList={carouselDataList}></CarouselMobile>
+      </Visible>
     </SocietyDutyContainerWrap>
-    <SocietyDutyContainerWrap2>
-      <div className="intro-img"><img src={societyDuty2} /></div>
-      <div className="intro-info">400+公安机构通过百应Al解决电信网络诈骗问题，为超1亿+民众提供了反欺<br />诈知识，预警诈骗电话超5000万次，成功劝阻100余万名民众受骗。助力基<br />层派出所全年警情下降26.5%。诈骗案发数下降67.7%，案损金额下降<br /> 86.5%。</div>
-    </SocietyDutyContainerWrap2>
   </SocietyDutyContainer>
   )
 };

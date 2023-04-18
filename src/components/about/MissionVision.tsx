@@ -6,23 +6,11 @@ import { splitCssValue } from '../../lib/utils';
 
 interface MissionVisionProps {
   minWidthPC?: string;
-  backgroundImage?: string;
+  MissionBG?: string;
+  VisionBG?: string;
 }
 
-const MissionVisionContainer = styled.div<{ maxWidthPc?: string; minWidthPC?: string }>`
-  @media (min-width: 768px) {
-    max-width: ${props => props.maxWidthPc || Theme.ContentWidth};
-    min-width: ${props => props.minWidthPC || 'unset'};
-    width: calc(
-      100vw / ${splitCssValue(Theme.DesignDraftWidth).num} *
-        ${props => splitCssValue(props.maxWidthPc || Theme.ContentWidth).num}
-    );
-    margin: 0 auto;
-  }
-  height: 100%;
-  @media (max-width: 768px) {
-    width: 100% !important;
-  }
+const MissionVisionContainer = styled.div`
 
   .aitxs{
     transform: translateY(50%);
@@ -33,7 +21,6 @@ const MissionVisionContainer = styled.div<{ maxWidthPc?: string; minWidthPC?: st
       opacity: 1;
     }
   }
-
 `;
 
 const Title = styled.div`
@@ -45,15 +32,15 @@ const Title = styled.div`
   text-align: center;
 `;
 
-const MissionVisionContainerWrap = styled.div<{ backgroundImage?: string }>`
+const MissionVisionContainerWrap = styled.div<{ MissionBG?: string, VisionBG?: string }>`
   position: relative;
-  width: 1034px;
-  height: 500px;
+  height: 480px;
   margin: 0 auto;
-  background-image: ${props => `url(${props.backgroundImage})`};
+  background-image: ${props => `url(${props.MissionBG})`};
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-size: 510px 77px;
+  background-position: center 112px;
+  background-color: rgba(43, 88, 249, 1);
   
   transform: translateY(50%);
   transition: all 0.4s;
@@ -64,32 +51,53 @@ const MissionVisionContainerWrap = styled.div<{ backgroundImage?: string }>`
   }
 
   .mission-tips{
-    position: absolute;
-    left: 140px;
-    top: 72px;
-    font-size: 36px;
-    color: rgba(43, 88, 249, 1);
-    letter-spacing: 4.06px;
-    span{
-      color:rgba(43, 43, 43, 1)
+    padding-top: 72px;
+    text-align: center;
+    .title{
+      font-size: 22px;
+      line-height: 40px;
+      color: rgba(255, 255, 255, 1);
+    }
+    .subtitle{
+      padding-top: 60px;
+      font-size: 36px;
+      line-height: 56px;
+      letter-spacing: 8px;
+      color: rgba(255, 255, 255, 1);
     }
   }
   .vision-tips{
-    position: absolute;
-    left: 72px;
-    top: 268px;
-    font-size: 36px;
-    color: rgba(43, 88, 249, 1);
-    letter-spacing: 4.06px;
-    span{
-      color:rgba(43, 43, 43, 1)
+    width: 1200px;
+    height: 310px;
+    margin: 72px auto 0;
+    padding-top: 72px;
+    text-align: center;
+    border-radius: 8px;
+    background-image: ${props => `url(${props.VisionBG})`};
+    background-repeat: no-repeat;
+    background-size: 510px 77px;
+    background-position: center 120px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
+    
+    .title{
+      font-size: 22px;
+      line-height: 40px;
+      color: rgba(90, 90, 90, 1);
+    }
+    .subtitle{
+      padding-top: 60px;
+      font-size: 36px;
+      line-height: 56px;
+      letter-spacing: 8px;
+      color: rgba(43, 88, 249, 1);
     }
   }
 `;
 
 
 const AiTSXID = 'MissionVision';
-const MissionVision: FC<MissionVisionProps> = ({ minWidthPC, backgroundImage }) => {
+const MissionVision: FC<MissionVisionProps> = ({ minWidthPC, MissionBG, VisionBG }) => {
   const myRef = useRef(null);
   useEffect(() => {
     const timer =  setInterval(()=>{
@@ -115,10 +123,9 @@ const MissionVision: FC<MissionVisionProps> = ({ minWidthPC, backgroundImage }) 
       
   return (
     <MissionVisionContainer id={AiTSXID} maxWidthPc="1200px" minWidthPC={minWidthPC}>
-      <Title>使命和愿景</Title>
-      <MissionVisionContainerWrap backgroundImage={backgroundImage} ref={myRef}>
-          <div className='mission-tips'><span>使命：</span>以AI赋能经济发展和社会生活</div>
-          <div className='vision-tips'><span>愿景：</span>成为具有世界级竞争力的中国科技公司</div>
+      <MissionVisionContainerWrap MissionBG={MissionBG} VisionBG={VisionBG} ref={myRef}>
+          <div className='mission-tips'><p className="title">使命</p><p className="subtitle">以AI赋能经济发展和社会生活</p></div>
+          <div className='vision-tips'><p className="title">愿景</p><p className="subtitle">成为具有世界级竞争力的中国科技公司</p></div>
       </MissionVisionContainerWrap>
     </MissionVisionContainer>
   )
