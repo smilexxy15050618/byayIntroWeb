@@ -11,6 +11,7 @@ import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 import imgurl from '../../img.url.js'
 import { HOST_ENUM } from '../../src/lib/utils';
 
+
 const BANNER_BG = `${imgurl}/about_banner_bg.png`;
 const JOIN_US_IMG = `${imgurl}/about_banner_img.png`;
 const ABOUT_INTRO = `${imgurl}/about-intro.jpg`;
@@ -95,7 +96,7 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
   
   return (
   <Layout hostType={hostType} headPlaceholder={[initial, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
-    {(visible ) => (
+    {(visible, setVisible ) => (
         <Wrapper>
           <BannerWhite
             background={[`url(${BANNER_BG}) right top ,#F6FCFF`, '#F6FCFF']}
