@@ -127,18 +127,30 @@ const videoInfoList = [
 export default props => {
   const [initialOpacity, setInitialOpacity] = useState(true);
 const [cauindex,setCauindex] = useState(0);
+const [navIndex,setNavIndex]= useState(0);
  const hadnleNav = (v) =>{
-  if((document.body.getBoundingClientRect().top > -10)){
+  setNavIndex(v)
+  if((document.body.getBoundingClientRect().top == 0)){
     // 完全到顶部
-  if(v==1){
-      setInitialOpacity(false)
-  }else{
-      setInitialOpacity(true)
+    if(v==1){
+        setInitialOpacity(false)
+    }else{
+        setInitialOpacity(true)
+    }
+    console.log(v);
   }
-  console.log(v);
- }
   
   }
+
+  const handleHeaderOpacity = () => {
+    document.body.getBoundingClientRect().top == 0 && navIndex==1 ? setInitialOpacity(true) : setInitialOpacity(false)
+  };
+
+
+  useEffect(() => { 
+    document.addEventListener('wheel', handleHeaderOpacity);
+  }, [])
+
   return (
     <Layout initialOpacity={initialOpacity}  headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
       {(visible, setFormVisible) => (
