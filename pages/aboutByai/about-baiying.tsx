@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import { Layout } from '../../src/components/Layout';
 import { FormType } from '../../src/components/TryForm';
@@ -81,9 +81,19 @@ const CreditMedal = styled.div<{ backgroundImage?: string }>`
 `;
 
 
-const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
-  const [initial, setInitial] = React.useState(false);
 
+
+const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
+  const [initial, setInitial] = useState(false);
+
+  const handleHeaderOpacity = () => {
+    document.body.getBoundingClientRect().top == 0 && setInitial(false)
+  };
+
+  useEffect(() => { 
+    document.addEventListener('wheel', handleHeaderOpacity);
+  }, [])
+  
   return (
   <Layout hostType={hostType} headPlaceholder={[initial, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
     {(visible, setFormVisible) => (

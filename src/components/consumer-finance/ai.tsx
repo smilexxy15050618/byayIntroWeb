@@ -46,6 +46,7 @@ const ListWrapper = styled.div`
     height: 448px;
     .lists {
         width: 296px;
+        
     }
     .imgWrapper {
         width: 888px;
@@ -69,19 +70,22 @@ const ListItem = styled.div`
     margin-bottom: 8px;
     border-radius: 8px;
     box-sizing:border-box;
+    &:hover{
+        cursor: pointer;
+        div:first-child{
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 0px;
+            line-height: 24px;
+            color: rgba(43, 88, 249, 1);
+        }
+    }
  div:first-child { 
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 0px;
     line-height: 24px;
     color: rgba(90, 90, 90, 1);
-&:hover {
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 0px;
-    line-height: 24px;
-    color: rgba(43, 88, 249, 1);
-}
  }
  &.active {
     width: 296px;

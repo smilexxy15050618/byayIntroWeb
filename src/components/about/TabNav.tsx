@@ -41,7 +41,7 @@ const NavItem = styled.div<{ active: boolean }>`
   color: ${props => (props.active ? 'rgba(43, 88, 249, 1)' : 'rgba(0, 0, 0, 1)')};
   line-height: 80px;
   cursor: pointer;
-  margin-left: 40px;
+  margin-right: 40px;
   &::after {
     position: absolute;
     left: 0;
@@ -54,7 +54,7 @@ const NavItem = styled.div<{ active: boolean }>`
     background: ${props => (props.active ? 'rgba(43, 88, 249, 1)' : 'transparent')};
   }
   &:last-child {
-    margin-left: 0;
+    margin-right: 0;
   }
 `;
 

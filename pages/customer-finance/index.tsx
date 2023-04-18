@@ -30,21 +30,23 @@ const Wrapper = styled.div`
 `;
 
 const BigTitle = styled.div`
-  margin-top: 20px;
+  margin-top: 17px;
   font-size:48px;
   line-height:60px;
   color:rgba(26, 26, 26, 1);
+  font-weight: 600;
 `;
 
 const Desc = styled.div`
-  margin-top: 14px;
+  margin-top: 16px;
   font-size: 20px;
   line-height:34px;
+  font-weight: 400;
   color: rgba(51, 51, 51, 1);
 `;
 
 const BlueBtn = styled.div`
-  margin-top: 46px;
+  margin-top: 40px;
   width: 132px;
   height: 48px;
   border-radius: 5.33px;
@@ -82,7 +84,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
                 <BigTitle>
                   消费金融<br/>智能用户运营解决方案
                 </BigTitle>
-                <Desc>针对消费金融业务全链路提供智能化运营方案，用数据<br/>驱动精细化运营策略升级，用AI助力消费金融机构业务<br/>增长。</Desc>
+                <Desc>针对消费金融业务全链路提供智能化运营方案，用数据<br/>驱动精细化运营策略升级，用AI助力消费金融机构业务<br/>增长</Desc>
                 <BlueBtn
                   onClick={() =>
                     window.open('/form?formType=1')
