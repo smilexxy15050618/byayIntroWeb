@@ -81,10 +81,9 @@ const HoveUp = styled.div`
 `
 const CardContent = styled.aside`
   position:relative;
-  padding: 46px 71px;
   .logo_area{
     width: 100%;
-    height: 358px;
+    height: 480px;
   }
 `
 const Wrapper = styled.div`
@@ -119,6 +118,7 @@ const Carousel: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
             delay: 5000,
           }}
           slidesPerView={1}
+          loop={true}
           onSwiper={swiper => setControlledSwiper(swiper)}
           onSlideChange={swiper => {
             setCurrIndex(swiper.activeIndex);
@@ -208,7 +208,7 @@ const FlairVoucher: FC<SocietyDutyProps> = () => {
   }, [myRef]);
   
   return (
-  <WrapperContent id="FlairVoucher">
+  <WrapperContent id="CreditMedal">
     <FlairVoucherContainer maxWidthPc="1200px">
       <Title>资质认证</Title>
       <SubTitle>从自身产品安全性到对外数据服务，为数据安全保驾护航</SubTitle>

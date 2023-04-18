@@ -7,6 +7,7 @@ const ByRatioBox =  styled.div<{ backgroundImage?: string }>`;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  padding-bottom: 80px;
   .title{
     padding-top: 80px;
     padding-bottom: 50px;
@@ -21,14 +22,6 @@ const ByRatioBox =  styled.div<{ backgroundImage?: string }>`;
 const CourseList = styled.div`;
   width: 100%;
   overflow: hidden;
-
-  // transform: translateY(50%);
-  // transition: all 0.4s;
-  // opacity: 0;
-  // &.appear{
-  //   transform: translateY(0);
-  //   opacity: 1;
-  // }
 `;
 
 const CourseListInner = styled.div<{ width: number; translateX: number }>`
@@ -46,6 +39,8 @@ const CourseItem = styled.div<{ width: number; active?: boolean }>`
   flex-direction: column;
   align-items: center;
   height: ${props => `${(props.width * 368) / 288 || 368}px`};
+  padding-left: 50px;
+  padding-right: 50px;
   transition: all 0.3s ease-in-out;
   .status {
     width: 40px;
@@ -130,59 +125,47 @@ const SwitchBtn = styled.i<{ disable: boolean }>`
 
 const COURSE_TIME = [
   {
-    time: '2016.10.01',
-    desc: '百应（杭州数心网络科技有限公司）成立',
+    time: '2016.09',
+    desc: '百应科技成立',
   },
   {
-    time: '2016.10.15',
-    desc: '入驻浙江省梦想小镇',
-  },
-  {
-    time: '2016.12.31',
-    desc: '荣获浙江省政府天使梦想基金',
-  },
-  {
-    time: '2017.01.06',
+    time: '2017.01',
     desc: '成为阿里云金牌合作伙伴',
   },
   {
-    time: '2017.01.15',
-    desc: '阿米巴数千万天使轮融资',
-  },
-  {
-    time: '2017.06.01',
+    time: '2017.06',
     desc: '成为阿里云ET城市大脑战略合作伙伴',
   },
   {
-    time: '2017.09.19',
-    desc: '入选2017年杭州市科技型初创企业培育工程名单（雏鹰计划）',
-  },
-  {
-    time: '2017.09.22',
-    desc: '荣获阿里巴巴诸神之战全球创客大赛优秀项目奖',
-  },
-  {
-    time: '2017.12.25',
-    desc: '获政府扶植入选为“杭州市高新技术企业”',
+    time: '2017.08',
+    desc: '发布智能联络中心（AICC）产品',
   },
   {
     time: '2018.04',
-    desc: '阿里云生态科技先锋ITP',
+    desc: '成为阿里云生态科技先锋ITP、今日头条独家AI语音供应商、腾讯头条AI语音供应商',
   },
   {
-    time: '2018.05.01',
-    desc: '阿米巴资本6000万Pre-A轮融资',
+    time: '2018.05',
+    desc: '获阿米巴资本6000万Pre-A轮融资',
+  },
+  {
+    time: '2018.06',
+    desc: '成为恒生电子智慧金融合作伙伴',
   },
   {
     time: '2018.08',
-    desc: '新四板挂牌上市',
+    desc: '成为信雅达战略合作伙伴',
   },
   {
-    time: '2019.05.05',
+    time: '2019.02',
+    desc: '企业客户突破25000家',
+  },
+  {
+    time: '2019.05',
     desc: '获光信资本领投1.2亿元A轮融资',
   },
   {
-    time: '2019.06.25',
+    time: '2019.06',
     desc: '获恒生电子、信雅达亿元级战略投资',
   },
   {
@@ -194,8 +177,16 @@ const COURSE_TIME = [
     desc: '成为华为云生态战略合作伙伴',
   },
   {
-    time: '2020.02',
-    desc: '智能疫情通知回访系统助力全民战“疫”',
+    time: '2019.12',
+    desc: '荣获“国家高新技术企业”认定',
+  },
+  {
+    time: '2020.04',
+    desc: '发布「智能疫情通知回访」系统，支持全国复工复产',
+  },
+  {
+    time: '2020.05',
+    desc: '打造杭州社保“易窗”智能服务平台上线',
   },
   {
     time: '2020.06',
@@ -203,19 +194,67 @@ const COURSE_TIME = [
   },
   {
     time: '2020.07',
-    desc: '获中国信通院  企业级SaaS可信云认证',
+    desc: '获中国信通院企业级SaaS可信云认证',
+  },
+  {
+    time: '2020.09',
+    desc: '成立百应-杭州电子科技大学人工智能联合研发中心入选腾讯SaaS加速器，生态共创驱动数字化升级',
   },
   {
     time: '2020.10',
-    desc: '入选腾讯SaaS加速器 共创数智未来生态',
+    desc: '入选国际权威机构IDC《2020中国对话式人工智能厂商评估》报告，“Major Player-主要厂商”象限第一梯队',
   },
   {
-    time: '2020.10',
-    desc: '斩获2020数字中国数字政务赛道亚军',
+    time: '2021.01',
+    desc: '与华为签约合作，聚力共建全场景智慧',
   },
   {
-    time: '2021.02',
-    desc: '获余杭区准鲲鹏企业认定',
+    time: '2021.03',
+    desc: '获余杭区首批准鲲鹏企业认定',
+  },
+  {
+    time: '2021.04',
+    desc: '连续2年荣登杭州准独角兽榜单',
+  },
+  {
+    time: '2021.06',
+    desc: '入选杭州市重点建设人工智能应用场景',
+  },
+  {
+    time: '2021.12',
+    desc: '获评浙江省高新技术企业研究开发中心<br />荣获2021年浙江省软件核心竞争力企业',
+  },
+  {
+    time: '2022.03',
+    desc: '入选浙江省2021年度人工智能典型应用场景',
+  },
+  {
+    time: '2022.04',
+    desc: '通过全球软件领域最高级别CMMI5认证',
+  },
+  {
+    time: '2022.06',
+    desc: '获评腾讯智慧零售“千域计划年度认证合作伙伴”',
+  },
+  {
+    time: '2022.10',
+    desc: '入选《国家人工智能创新应用先导区“智赋百景”》',
+  },
+  {
+    time: '2022.12',
+    desc: '入选2022中国企业数智化创新TOP50',
+  },
+  {
+    time: '2023.01',
+    desc: '获评「AI中国」2022最佳人工智能企业TOP30',
+  },
+  {
+    time: '2023.03',
+    desc: '成为“新华网元宇宙及AIGC创新联盟”成员',
+  },
+  {
+    time: '2023.04',
+    desc: '发布“智能用户运营平台”，对话式AI产品全线升级',
   },
 ];
 

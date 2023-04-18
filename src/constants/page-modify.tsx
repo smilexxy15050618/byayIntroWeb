@@ -165,7 +165,7 @@ export const FOOTER_CONFIG = [
   {
     title: '关于我们',
     list: [
-      { name: '关于百应', href: '/about' },
+      { name: '关于百应', href: '/aboutByai/about-baiying' },
       { name: '新闻中心', href: '/news' },
       { name: '招贤纳士', href: 'https://www.lagou.com/gongsi/154789.html' },
       { name: '', href: '' }, // 占位防止3项时居中问题

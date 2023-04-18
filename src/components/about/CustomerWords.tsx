@@ -49,7 +49,6 @@ const Card = styled.div<{ bg: string }>`
   border-radius: 8px;
   margin-left: 32px;
   transition: all 0.2s ease;
-  cursor:pointer;
   &:hover{
       box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12) !important;
   }

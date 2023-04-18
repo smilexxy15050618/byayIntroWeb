@@ -1,15 +1,17 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Layout } from '../../src/components/Layout';
+import { FormType } from '../../src/components/TryForm';
 import {  Hidden } from 'react-grid-system';
 import { TextArea } from '../../src/components/common/BannerTextElements';
 import BannerWhite from '../../src/components/common/BannerWhite';
 import { TabNav, EnterpriseIntroduction, MissionVision, DevelopHistory, SocietyDuty, FlairVoucher, CustomerWords, JoinUs } from '../../src/components/about';
-import ByVoiceFooterNew from '../../src/components/common/ByVoiceFooterNew';
+import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 
 
 import imgurl from '../../img.url.js'
 import { HOST_ENUM } from '../../src/lib/utils';
+
 const BANNER_BG = `${imgurl}/about_banner_bg.png`;
 const JOIN_US_IMG = `${imgurl}/about_banner_img.png`;
 const ABOUT_INTRO = `${imgurl}/about-intro.jpg`;
@@ -17,18 +19,10 @@ const Mission_BG = `${imgurl}/mission-bg.png`;
 const Vision_BG = `${imgurl}/vision-bg.png`;
 const DEVELOPHIS_BG = `${imgurl}/develophis_bg.png`;
 const JOINUS_BG = `${imgurl}/web-com.png`;
-const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
+const FOOTER_BG = `${imgurl}/kqaizl.png`;
 
 const Wrapper = styled.div`
-  background: #ffffff;
-  .blue-hight {
-    color: rgb(43, 88, 249);
-  }
-  @media (min-with: 769px) {
-    #big-title {
-      margin-top: -50px !important;
-    }
-  }
+  
 `;
 
 const BigTitle = styled.div`
@@ -88,10 +82,11 @@ const CreditMedal = styled.div<{ backgroundImage?: string }>`
 
 
 const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
-  
+  const [initial, setInitial] = React.useState(false);
+
   return (
-  <Layout hostType={hostType} headPlaceholder={[false, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
-    {(visible, setVisible) => (
+  <Layout hostType={hostType} headPlaceholder={[initial, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
+    {(visible, setFormVisible) => (
         <Wrapper>
           <BannerWhite
             background={[`url(${BANNER_BG}) right top ,#F6FCFF`, '#F6FCFF']}
@@ -145,7 +140,8 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
                   name: '加入我们',
                   jumpTarget: '#JoinUs'
                 }
-              ]} 
+              ]}
+              onCancel={() => {setInitial(true)}}
             />
             <EnterpriseIntroduction
               cover={ABOUT_INTRO}
@@ -162,13 +158,13 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
           <FlairVoucher />
           <CustomerWords />
           <JoinUs backgroundImage={JOINUS_BG} />
-          <ByVoiceFooterNew
-            title="用AI助力构建To C长期信关系，一起创造未来"
+          <ByVoiceFooter
+            title="就现在，开启AI电话增长之旅"
             desc="留下联系方式，将有AI行业专家为您提供专属服务"
-            btnText="预约演练"
+            btnText="与我联系"
             background={`url(${FOOTER_BG})`}
             onClick={() => {
-              window.open('/form?formType=1')
+              setFormVisible(true, FormType.CUSTOMER);
             }}
           />
         </Wrapper>

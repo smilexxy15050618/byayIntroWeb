@@ -58,8 +58,9 @@ const NavItem = styled.div<{ active: boolean }>`
   }
 `;
 
-const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList }) => {
+const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) => {
   const [index, setIndex] = React.useState(0);
+  
   return (
     <NavItemContainer maxWidthPc="1200px" minWidthPC={minWidthPC}>
       {bannerList.map(({ name, jumpTarget }, navIndex) => {
@@ -71,6 +72,7 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList }) => {
             if (node) {
               node.scrollIntoView({ behavior: 'smooth' });
             }
+            onCancel()
           }}>
           {name}
         </NavItem>

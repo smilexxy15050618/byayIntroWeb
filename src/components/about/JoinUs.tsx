@@ -25,6 +25,9 @@ const BlueBtn = styled.div`
   line-height: 048px;
   text-align: center;
   color: rgba(255, 255, 255, 1);
+  &:hover{
+      cursor:pointer;
+  }
 `;
 
 const WhiteBtn = styled.div`
@@ -38,6 +41,9 @@ const WhiteBtn = styled.div`
   line-height: 048px;
   text-align: center;
   color: rgba(43, 88, 249, 1);
+  &:hover{
+      cursor:pointer;
+  }
 `;
 
 const BriefContainer = styled.div<{ maxWidthPc?: string; minWidthPC?: string, backgroundImage?: string }>`
@@ -52,8 +58,8 @@ const BriefContainer = styled.div<{ maxWidthPc?: string; minWidthPC?: string, ba
   height: 431px;
   background-image: ${props => `url(${props.backgroundImage})`};
   background-repeat: no-repeat;
-  background-size: 434px 322px;
-  background-position: right 55px;
+  background-size: 579px 431px;
+  background-position: right top;
   margin: 0 auto;
   @media (max-width: 768px) {
     width: 100% !important;
@@ -68,9 +74,13 @@ const BriefContainer = styled.div<{ maxWidthPc?: string; minWidthPC?: string, ba
   .subtitle{
     padding: 12px 0 18px;
     font-size: 36px;
-    letter-spacing: 2.25px;
+    letter-spacing: 1px;
     line-height: 48px;
     color: rgba(43, 43, 43, 1);
+    font-weight: 500;
+    span{
+      color: rgb(43,88,249);
+    }
   }
   .
 `;
@@ -85,21 +95,15 @@ interface IBriefProps {
 const JoinUs: React.SFC<IBriefProps> = ({ minWidthPC,backgroundImage }) => (
   <JoinUsWrap id="JoinUs">
     <BriefContainer maxWidthPc="1200px" minWidthPC={minWidthPC} backgroundImage={backgroundImage}>
-      <div className='title'>加入我们</div>
-      <div className='subtitle'>Build Your dreams with us</div>
+      <div className='title'>极致工作 快乐生活</div>
+      <div className='subtitle'><span>B</span>uild <span>Y</span>our dreams with us</div>
       <AboutUsBtnWrap>
         <BlueBtn
           onClick={() =>
             window.open('https://www.zhipin.com/gongsir/1f1899216bf70b801HV53tu1FA~~.html?ka=company-jobs')
           }>
-          社会招聘
+          加入我们
         </BlueBtn>
-        <WhiteBtn
-          onClick={() =>
-            window.open('https://www.zhipin.com/gongsir/1f1899216bf70b801HV53tu1FA~~.html?ka=company-jobs')
-          }>
-          校园招聘
-        </WhiteBtn>
       </AboutUsBtnWrap>
     </BriefContainer>
   </JoinUsWrap>

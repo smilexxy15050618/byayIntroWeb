@@ -154,6 +154,7 @@ const Carousel: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
             delay: 5000,
           }}
           slidesPerView={1}
+          loop={true}
           onSwiper={swiper => setControlledSwiper(swiper)}
           onSlideChange={swiper => {
             setCurrIndex(swiper.activeIndex);
