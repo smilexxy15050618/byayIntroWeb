@@ -63,7 +63,6 @@ const HeaderWrapper = styled.div<{ needOpacity: boolean; fontStyle: 'dark' | 'li
     img {
       transition: all 0.3s ease-in-out;
       margin-bottom: 0;
-      width: 145px;
     }
   }
   .nav-list {
@@ -375,7 +374,7 @@ class Nav extends React.Component<
   }
 
   handleHeaderOpacity = () => {
-    console.log('触发wheel事件');
+    // console.log('触发wheel事件',document.documentElement.scrollTop ,this.props.initialOpacity);
     this.setState({
       // 大于-10说明 body没有上移，可视区域是页面最顶部
       opacity: document.body.getBoundingClientRect().top > -10 && this.props.initialOpacity !== false,
@@ -430,6 +429,10 @@ class Nav extends React.Component<
       this.setState({ expandVisible: '' });
     }
   };
+  handleClick = () => {
+    // 跳转后刷新页面
+    window.location.href='/';
+  };
 
   render() {
     const {
@@ -460,7 +463,9 @@ class Nav extends React.Component<
             <NavRow>
               <NavCol lg={3}>
                 <Link href="/">
-                  <div className="logo" style={{ width: '100%' }}>
+                  <div className="logo" onClick={()=>{
+                    this.handleClick()
+                  }} style={{ width: '100%' }}>
                     {/* <img src={headFontStyle === 'light' ? WHITE_LOGO : LOGO} /> */}
                     <img alt="logo" className="byai-logo" src={LOGO} />
                     {/* <img style={{
@@ -481,7 +486,11 @@ class Nav extends React.Component<
                     onMouseOver={e => this.handleNavItemHover(item, e)}
                     onMouseLeave={() => (item.smallDropdown ? this.hideNavBar() : undefined)}>
                     <LinkSwitch href={item.path} shouldBeLink={!item.expand}>
-                      <a>
+                      <a onClick={()=>{
+                        if(item.path ==='/'){
+                          window.location.href='/'
+                        }
+                      }}>
                         <div className="link">
                           {item.name}
                           {item.expand && (

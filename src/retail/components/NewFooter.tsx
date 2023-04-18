@@ -487,8 +487,9 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
         <FriendLink>
           <div style={{ width: 'max-content' }}>
             <span>友情链接: </span>
-            {FriendLinkList.map(item => (
+            {FriendLinkList.map((item,i) => (
               <span
+              key={i}
                 className="friend-item"
                 onClick={() => {
                   window.open(item.link, '_blank');

@@ -80,7 +80,6 @@ const Card = styled.div<{ bg: string }>`
   border-radius: 8px;
   margin-left: 32px;
   transition: all 0.2s ease;
-  cursor:pointer;
   &:hover{
       box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12) !important;
   }
@@ -194,10 +193,14 @@ const Arrow = styled.div`
   font-size: 20px;
   cursor: pointer;
 `;
+let imglegt =`https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%B7%A6.png`
+let imgright =`https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%8F%B3.png`
 
 const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
   const [controlledSwiper, setControlledSwiper] = useState(null);
   const [currIndex, setCurrIndex] = useState(0);
+  const [arrowbg, setArrowbg] = useState(imglegt);
+  const [arrowbg2, setArrowbg2] = useState(imgright);
   return (
     <div style={style}>
       {/* <RightArrow className="next-btn swiper-nav-btn" onClick={e => controlledSwiper.navigation.onNextClick(e)} /> */}
@@ -212,9 +215,10 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
         onSlideChange={swiper => {
           setCurrIndex(swiper.activeIndex);
         }}
+        loop={true}
         style={{ paddingRight: 32, overflow: 'hidden', paddingBottom: 30, marginBottom: -30, paddingTop:20 }}>
         {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
-          <SwiperSlide style={{ width: 'auto' }} className='hoer_bg_more'>
+          <SwiperSlide style={{ width: 'auto' }} className='hoer_bg_more' key={i}>
             <Card bg={bg} >
               {/* <div className="customer-words-tag">
                 <img src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/earth.png" />
@@ -237,13 +241,29 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       </HoveUp>
       <ArrowGroup>
         <img
-          src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%B7%A6.png"
+          src={arrowbg}
           onClick={e => {
             const res = controlledSwiper.navigation.onPrevClick(e);
           }}
+          onMouseEnter={()=>{
+            // if(currIndex != 0){
+              setArrowbg(`${imgurl}/xzleft.png`)
+            // }
+          }}
+            onMouseLeave={()=>{
+            setArrowbg(imglegt)
+          }}
         />
         <img
-          src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%8F%B3.png"
+          src={arrowbg2}
+          onMouseEnter={()=>{
+            // if(currIndex !=1){
+              setArrowbg2(`${imgurl}/xzright.png`)
+            // }
+          }}
+            onMouseLeave={()=>{
+            setArrowbg2(imgright)
+          }}
           onClick={e => {
             controlledSwiper.navigation.onNextClick(e);
           }}
@@ -506,7 +526,7 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
             setCurrIndex(swiper.activeIndex);
           }}>
           {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
-            <SwiperSlide style={{ width: '295px' }}>
+            <SwiperSlide style={{ width: '295px' }} key={i}>
               <Card bg={bg}>
                 <div className="customer-words-tag">
                   <img src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/earth.png" />

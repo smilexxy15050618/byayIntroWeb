@@ -47,8 +47,6 @@ text-align: justify;
 `;
 
 const Title = styled.div`
-width: 480px;
-height: 120px;
 font-size: 48px;
 font-weight: 600;
 letter-spacing: 0px;
@@ -73,6 +71,7 @@ const BgContent = styled.div`
     font-weight: 500;
     color: #ffffff;
     border-radius: 5.33px;
+    cursor: pointer;
     &:hover {
       background: rgba(84, 127, 255, 1);
     }
@@ -276,27 +275,9 @@ export const CarouselWrapper = styled.div`
 `;
 
 export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
-  const [phone, setPhone] = useState<string>('');
-  const [valid, setValid] = useState<string>('');
-
-  const setFormByPhone = () => {
-    if (isPc()) {
-      if (!phone) {
-        setValid('请输入您的手机号');
-        return;
-      }
-      if (!/^(?:(?:\+|00)86)?1\d{10}$/.test(phone)) {
-        setValid('请输入正确的手机号');
-        return;
-      }
-    }
-    const url = retailUrl(!isPc() ? `/form` : `/form?phone=${phone}`);
-    window.open(url);
-  };
 
   const setForm = () => {
-    const url = retailUrl(`/form?formType=1`);
-    window.open(url);
+    window.open('/form?formType=1')
   };
 
   const [currIndex, setCurrIndex] = useState(0);
@@ -320,7 +301,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
         return (
           <BgWrapper className={classNames({ active: i === currIndex })} bg={bg}>
             <BgContent>
-              <Title>{title}</Title>
+              <Title>品牌零售<br></br>智能用户运营解决方案</Title>
               {subTitle.map(str => {
                 return <SubTitle>{str}</SubTitle>;
               })}

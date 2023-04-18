@@ -17,18 +17,21 @@ interface ICarouselProps {
 
 const HoveUp = styled.div`
            width: 1080px;
-           height: 440px;
     .hoer_bg_more{
         opacity: 1;
         border-radius: 8px;
       
-        box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
+        // box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
     }
 `
 const CardContent = styled.aside`
     background:#fff;
     display:flex;
     position:relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height:496px;
     .img_area{
         right:0;
        
@@ -39,10 +42,11 @@ const CardContent = styled.aside`
         }
     }
     .text_area{
-        width:100%;
-        margin-top:65px;
-        margin-left:80px;
-        margin-right:86px;
+        
+        width:80%;
+        // margin-top:65px;
+        // margin-left:80px;
+        // margin-right:86px;
     }
     .info_area{
       font-size: 20px;
@@ -58,9 +62,8 @@ const CardContent = styled.aside`
       color: rgba(90, 90, 90, 1);
       text-align:right;
       margin-top:16px;
-      margin-bottom:16px;
       padding-bottom:16px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);     
+      // border-bottom: 1px solid rgba(0, 0, 0, 0.08);     
       span{
         font-size: 20px;
         font-weight: 500;
@@ -101,16 +104,29 @@ const Arrow = styled.div`
   font-size: 20px;
   cursor: pointer;
 `;
+let imglegt =`${imgurl}/arowl1.png`;
+let imgright =`${imgurl}/arowl2.png`;
+
 
 const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
   const [controlledSwiper, setControlledSwiper] = useState(null);
   const [currIndex, setCurrIndex] = useState(0);
+  const [arrowbg, setArrowbg] = useState(imglegt);
+  const [arrowbg2, setArrowbg2] = useState(imgright);
   return (
     <div style={{width:'1200px',margin:'0 auto',display:'flex',justifyContent:'center'}}>
         <ArrowClick onClick={e => {
             const res = controlledSwiper.navigation.onPrevClick(e);
-          }} style={{marginRight:30}}>
-           <img src={`${imgurl}/arowl1.png`}  />
+          }} style={{marginRight:30}}
+          onMouseEnter={()=>{
+            // if(currIndex != 0){
+              setArrowbg(`${imgurl}/arowl1hover.png`)
+            // }
+          }}
+            onMouseLeave={()=>{
+            setArrowbg(imglegt)
+          }}>
+           <img src={arrowbg}  />
         </ArrowClick>
       <HoveUp >
       <Swiper
@@ -123,23 +139,24 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
         onSlideChange={swiper => {
           setCurrIndex(swiper.activeIndex);
         }}
+        loop={true}
         style={{  }}>
         {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
-          <SwiperSlide style={{ width: 'auto',paddingTop:10 }} className='hoer_bg_more'>
+          <SwiperSlide style={{ width: 'auto',paddingTop:10 }} key={i} className='hoer_bg_more'>
             <CardContent>
-                <div className='text_area' style={{height:'360px'}}>
+                <div className='text_area' style={{}}>
                    <img
                    style={{marginBottom:45}}
-                    src="https://img.js.design/assets/img/642e7f5da6320a9cbd726401.png" width={127} className='logo_area'/>
+                    src={avatarSrc} width={250} className='logo_area'/>
                     <div className='info_area'>
-                     我们已经合作有一段时间了，百应给我们提供了专业且全面的解决方案，整体跑下来结果一直都不错。密切的合作一直都不错。密切的合作一直都不错。密切的合作。
+                     {content}
                     </div>
-                    <p className='name_area'>XXX创始人 &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span>代用名</span>
+                    <p className='name_area'>{tagName} &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>{personName}</span>
                     </p>
-                    <div className='introduce_area'>
+                    {/* <div className='introduce_area'>
                     我们已经合作有一段时间了，百应给我们提供了专业且全面的解决方案，整体跑下来结果一直都不错。
-                    </div>
+                    </div> */}
                 </div>
               
             </CardContent>
@@ -149,8 +166,16 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       </HoveUp>
       <ArrowClick onClick={e => {
             controlledSwiper.navigation.onNextClick(e);
-          }} style={{marginLeft:30}}>
-         <img src={`${imgurl}/arowr1.png`}  />
+          }} style={{marginLeft:30}}
+          onMouseEnter={()=>{
+            // if(currIndex != 0){
+              setArrowbg2(`${imgurl}/arowl2hover.png`)
+            // }
+          }}
+            onMouseLeave={()=>{
+            setArrowbg2(imgright)
+          }}>
+         <img src={arrowbg2}  />
       </ArrowClick>
        
     </div>
@@ -159,54 +184,33 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
 
 const carouselDataList = [
   {
-    bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE1.png',
-    avatarSrc:
-      'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/20230323-140507.jpeg',
+    avatarSrc:`${imgurl}/sxydkj.png`,
     content:
-      '“我们已经合作有一段时间了，百应给我们提供了专业且全面的解决方案，整体跑下来结果一直都不错。密切的合作让我们成为并肩前行的伙伴，期待未来我们一起创造更好的用户体验。”',
-    personName: '新希望华西乳业数字增长负责人',
-    tagName: '食品',
+      '作为百应科技的股东，我非常欣慰地看到公司快速发展壮大的过程。自公司成立以来，百应科技紧紧抓住行业发展变化的机会，加大自身的研发投入，不断提升技术水平和创新能力，不断扩大市场份额。特别是近年来，随着AI技术的发展成熟，百应科技在这个领域的成长速度更是迅猛，始终保持着高速增长态势，在行业内具有较高的知名度和影响力。非常高兴能够参与到百应科技的成长历程中。',
+    personName: '耿俊岭',
+    tagName: '食信雅达科技股份有限公司（600571）董事长',
   },
   {
-    bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE2.png',
-    avatarSrc: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/logo2.png',
+    avatarSrc:`${imgurl}/hengsheng.png`,
     content:
-      '百应的产品和团队都很给力，能够快速响应需求，通过百应的私域加粉模型，我们为后续增长找到了抓手，同时避免了过度打扰用户，推荐有相应需求的伙伴来体验“百应AI外呼”。',
-    personName: '运营负责人',
-    tagName: '平台',
+      '恒生电子作为百应科技的合作伙伴和股东，我非常欣赏和赞赏这家公司。百应科技在AI和大数据领域具有先进的技术和专业的人才，能够为客户提供优质的产品和服务；其次，百应科技拥有高效的管理团队和科学的管理体系，能够将公司的资源和创新能力最大化地发挥出来，为公司的长期发展打下了坚实的基础；最重要的是，百应科技始终以客户需求为导向，不断探索和创新，提高服务质量和客户满意度，赢得了良好的口碑和信誉。百应科技是一家优秀的科技企业，值得信赖，值得合作。',
+    personName: '刘曙峰',
+    tagName: '恒生电子股份有限公司（600570）董事长',
   },
   {
-    bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE3.png',
-    avatarSrc: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/logo3.png',
+    avatarSrc:`${imgurl}/amiba.png`,
     content:
-      '百应一直服务于我们的私域加粉业务，不仅AI产品很成熟，服务态度也好。每版新话术都认真配合我们做迭代优化，数据也越来越好。希望23年合作更愉快，更好地达成我们的指标。',
-    personName: '流量运营部负责人',
-    tagName: '食品',
+      '作为公司最早的股东，我们看到公司从成立到不断发展壮大，客户数量和合作伙伴都在不断增长，产品线也在不断扩充，领域涉及面也在逐渐拓展。很高兴能够见证公司的成长历程，同时也为公司在发展路上持续推进而感到鼓舞。我相信百应科技将继续发扬所长，在行业内发挥更大的作用。',
+    personName: 'Kevin Wang',
+    tagName: '阿米巴资本 创始及执行合伙人',
   },
   {
-    bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE4.png',
-    avatarSrc: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/logo4.png',
+    avatarSrc:`${imgurl}/gxin.png`,
     content:
-      '百应基于行业痛点构建的「AI智能辅助系统」帮我们降低了人工投入的成本项，也为我们的老师和学员带来了很好的使用体验。希望在未来百应可以在这个领域有更多的创新。',
-    personName: '运营负责人 ',
-    tagName: '教育',
-  },
-  {
-    bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE5.png',
-    avatarSrc: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/logo5.png',
-    content:
-      '从2021年合作至今，百应科技真正的做到了把客户的业务当作自己的业务来做，专业程度很高，并且还在持续不断的去创新运营的方法和思路，也希望在未来有更多更加深度的合作。',
-    personName: '运营负责人',
-    tagName: '教育',
-  },
-  {
-    bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE6.png',
-    avatarSrc: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/logo6.png',
-    content:
-      '和百应的合作中，我们发现AI外呼的四点优势：能实现快速触达和高效转化；综合成本相对较低；已具备真实交互感和温度感；可智能识别精准客户，减少不必要打扰。',
-    personName: '副总裁&CMO',
-    tagName: '平台',
-  },
+      '百应科技是一家高素质的AI和大数据技术公司，拥有强大的技术能力和专业的团队，一直秉持以客户需求为导向的理念，不断创新和改善服务，赢得了客户的信任和支持。作为股东，我对百应科技充满信心，相信公司将会在未来的发展中迎来更加辉煌的成绩。',
+    personName: '叶雨明',
+    tagName: '光信资本合伙人',
+  }
 ];
 
 const MaxContent = styled.div<{ jumpStrColor: string }>`
@@ -400,7 +404,7 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
             setCurrIndex(swiper.activeIndex);
           }}>
           {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
-            <SwiperSlide style={{ width: '295px' }}>
+            <SwiperSlide style={{ width: '295px' }} key={i}>
            
             </SwiperSlide>
           ))}

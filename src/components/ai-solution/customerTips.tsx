@@ -105,19 +105,20 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
 
                 <div className='wrap_hovres'>
 
-                    <Pane title=" 客户案例"
+                    <Pane title="客户案例"
                         titleStyle={{ marginBottom: '48px',position:'relative',zIndex:22 }}
                         style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
                         <Hidden xs sm>
                             <Swiper
                                 className='swiperwrap'
                                 autoplay={{
-                                    delay: 1000,
+                                    delay: 3000,
                                 }}
+                                loop={true}
                                 slidesPerView='auto'
                                 onSwiper={swiper => setControlledSwiper(swiper)}
                                 onSlideChange = {(e)=> {console.log(setCurrIndex(e.activeIndex))}}
-                                loop={false}>
+                                >
                                 {dataList.map(({url}) => (
                                     <SwiperSlide style={{}}>
                                         <div className='card'>

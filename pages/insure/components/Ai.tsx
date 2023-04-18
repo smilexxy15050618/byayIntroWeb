@@ -127,7 +127,7 @@ export const Ai: FC<IAiProps> = ({ }) => {
     return (
     <MainWrap>
         <Pane>
-            <div className="title">聚焦六大场景，助力保险行业提升营销效果和服务效率</div>
+            <div className="title">聚焦四大场景，助力保险行业提升营销效果和服务效率</div>
             {/* <div className="sec-title">强力提升公安反诈预防全业务效能，助力电诈“双降”，持续保障居民生命财产安全</div> */}
 
             <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>

@@ -104,7 +104,7 @@ const ListWrapper = styled.div`
    }
    .content {
     width: 273px;
-    cursor:pointer;
+    // cursor:pointer;
     height: 266px;
     display: flex;
     flex-direction: column;
@@ -172,7 +172,7 @@ const Platform: FC<IPlatformProps> = () => {
             <ListWrapper id={AIID}>
                 {contentList.map(({ name, content, url, href }, index) => {
                     return (
-                        <div className="content" onClick={()=>{
+                        <div className="content" key={index} onClick={()=>{
                             // window.location.href = href
                         }}>
                             <img src={`${imgurl}${url}`}></img>

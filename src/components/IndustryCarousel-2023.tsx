@@ -14,6 +14,7 @@ import { CustomerId  } from './homepage/version2023/CustomerWords2023';
 
 export interface ICarousel {
   onChange?: (index) => void;
+  hadnleNav?: (v:any)=> void;
 }
 
 const BASE_URL = [
@@ -83,6 +84,7 @@ const CarouselWrapper = styled.div`
     background: url(${imgurl}/sybanner2.png) no-repeat;
     background-size:cover;
     background-position:left bottom;
+    // height:521px;
   }
   .carousel-control-prev{
     display:none
@@ -95,6 +97,8 @@ const CarouselWrapper = styled.div`
   }
   .Carouselindex2{
     opacity: 0;
+    cursor:pointer;
+
   }
   .main-container {
     width: 1200px;
@@ -138,7 +142,7 @@ const CarouselWrapper = styled.div`
   .carousel-indicators{
     > li{
       width:90px;
-      height:2px;
+      height:4px;
       background:rgba(65,70,79,.15);
       border:none;
     }
@@ -150,8 +154,8 @@ const CarouselWrapper = styled.div`
     widht:100%;
     content:'';
     position:absolute;
-    top:-100%;
-    height:200%;
+    top:-75%;
+    height:150%;
     left:0;
     background-color: rgba(43, 88, 249, 1);
     animation-name: mywidth;
@@ -263,7 +267,8 @@ margin-bottom:56px;
       font-weight: 300;
       letter-spacing: 0px;
       line-height: 20px;
-      color: rgb(153, 153, 153);
+      color: #333333;
+
     }
     .jump-group-item-desc {
       height: 22px;
@@ -279,7 +284,7 @@ margin-bottom:56px;
     font-size: 14px;
     font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
-    color: rgb(153, 153, 153);
+    color: #333333;
     line-height: 20px;
     // margin-bottom: 8px;
   }
@@ -384,13 +389,12 @@ const jumpData = [
   { title: '长期服务企业和政府头部品牌和机构', desc: '定义先进AI', jumpTarget: '#' + CustomerId },
 ];
 
-export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
+export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
   const [currIndex, setCurrIndex] = useState(0);
   const [index, setIndex] = useState(0);
   const handleSelect = (selectedIndex) => {
-    console.log(selectedIndex);
-    
     setIndex(selectedIndex);
+    hadnleNav(selectedIndex)
   };
   return (
     <CarouselWrapper style={{ zIndex: 3, position: 'relative' }}>
@@ -418,11 +422,12 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
                 {jumpData.map(({ title, desc, jumpTarget }, i) => {
                   return (
                     <div
+                    key={i}
                       onMouseEnter={() => {
-                        // setCurrIndex(i);
+                        setCurrIndex(i);
                       }}
                       className={classNames('jump-group-item', {
-                        // hover: i === currIndex,
+                        hover: i === currIndex,
                       })}
                       onClick={() => {
                         const node = document.querySelector(jumpTarget);
@@ -445,7 +450,9 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange }) => {
               </div>
             
             </Carousel.Item>
-            <Carousel.Item className='no_duration Carouselindex2' key={2} onClick={() => {
+            <Carousel.Item className='no_duration Carouselindex2' 
+            
+            key={2} onClick={() => {
                   window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
                 }}>
               {/* <div  className="main-container">
