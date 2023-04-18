@@ -119,7 +119,7 @@ const CustomerCase: FC<SceneSolution> = ({}) => {
                                 <div className='textt_area'>
                                     {item.title}
                                 </div>
-                                <a href={item.pageUrl} className="demo-go">体验Demo →</a>
+                                <a href={item.pageUrl} className="demo-go">了解详情 →</a>
                             </div>
                         )}
                     </Card>
