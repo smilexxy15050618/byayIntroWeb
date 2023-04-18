@@ -8,7 +8,7 @@ import AI from '../../src/components/consumer-finance/ai';
 import SceneSolution from '../../src/components/consumer-finance/SceneSolution';
 import AiSolution from '../../src/components/consumer-finance/AiSolution';
 import CustomerCase from '../../src/components/consumer-finance/CustomerCase';
-import ByVoiceFooterNew from '../../src/components/common/ByVoiceFooterNew';
+import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 
 import imgurl from '../../img.url.js'
 import { HOST_ENUM } from '../../src/lib/utils';
@@ -98,14 +98,14 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
           <SceneSolution></SceneSolution>
           <AiSolution></AiSolution>
           <CustomerCase></CustomerCase>
-          <ByVoiceFooterNew
-            title="用AI助力构建To C长期信关系，一起创造未来"
-            desc="留下联系方式，将有AI行业专家为您提供专属服务"
-            btnText="预约演练"
+          <ByVoiceFooter
+            title="立即体验AI时代的新一代用户运营平台"
+            desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
+            btnText="与我联系"
             background={`url(${FOOTER_BG})`}
-            onClick={() => {
+            onClick={() =>
               window.open('/form?formType=1')
-            }}
+            }
           />
         </Wrapper>
       </>  

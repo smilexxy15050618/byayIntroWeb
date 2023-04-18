@@ -8,7 +8,6 @@ import BannerWhite from '../../src/components/common/BannerWhite';
 import { TabNav, EnterpriseIntroduction, MissionVision, DevelopHistory, SocietyDuty, FlairVoucher, CustomerWords, JoinUs } from '../../src/components/about';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 
-
 import imgurl from '../../img.url.js'
 import { HOST_ENUM } from '../../src/lib/utils';
 
@@ -87,7 +86,7 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
   const [initial, setInitial] = useState(false);
 
   const handleHeaderOpacity = () => {
-    document.body.getBoundingClientRect().top == 0 && setInitial(false)
+    document.body.getBoundingClientRect().top == 0 ? setInitial(false) : setInitial(true)
   };
 
   useEffect(() => { 
@@ -169,8 +168,8 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
           <CustomerWords />
           <JoinUs backgroundImage={JOINUS_BG} />
           <ByVoiceFooter
-            title="就现在，开启AI电话增长之旅"
-            desc="留下联系方式，将有AI行业专家为您提供专属服务"
+            title="立即体验AI时代的新一代用户运营平台"
+            desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
             btnText="与我联系"
             background={`url(${FOOTER_BG})`}
             onClick={() =>
