@@ -45,7 +45,7 @@ const HoveUp = styled.div`
 `
 
 const ArrowClick = styled.div`
-    width: 40px;
+width: 18px;
     height: 40px;
     opacity: 1;
     align-self:center;
@@ -54,19 +54,27 @@ const ArrowClick = styled.div`
     align-items: center;
     color:#fff;
     z-index:22;
+    cursor: pointer;
     .left_img{
-      width:100%;
+        width: 18px;
+
+        height: 40px;
     cursor:pointer;
     &:hover {
         content: url(${imgurl}/left_blue.png)
     }
     }
     .right_img {
-        width:100%;
+        width: 18px;
+
+        height: 40px;
         cursor:pointer;
         &:hover {
             content: url(${imgurl}/right_blue.png)
         }
+    }
+    img{
+        margin-bottom: 0;
     }
 `
 const dataList = [
@@ -87,9 +95,13 @@ const dataList = [
         bg: '/syt.png'
     }
 ]
+let imglegt =`${imgurl}/arowl1.png`;
+let imgright =`${imgurl}/arowl2.png`;
 const Carousel: React.FC<ICarouselProps> = ({ style }) => {
     const [controlledSwiper, setControlledSwiper] = useState(null);
     const [currIndex,setCurrIndex] = useState(0);
+    const [arrowbg, setArrowbg] = useState(imglegt);
+    const [arrowbg2, setArrowbg2] = useState(imgright);
     return (
 
         <HoveUp>
@@ -99,8 +111,15 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
             <div style={{ width: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
                 <ArrowClick onClick={e => {
                     const res = controlledSwiper.navigation.onPrevClick(e);
-                }} style={{ marginRight: 30 }}>
-                    <img className="left_img" src={`${imgurl}/arowl1.png`} />
+                }} style={{ marginRight: 30 }}  onMouseEnter={()=>{
+                    // if(currIndex != 0){
+                      setArrowbg(`${imgurl}/arowl1hover.png`)
+                    // }
+                  }}
+                    onMouseLeave={()=>{
+                    setArrowbg(imglegt)
+                  }}>
+                     <img src={arrowbg}  />
                 </ArrowClick>
 
                 <div className='wrap_hovres'>
@@ -135,8 +154,15 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
                 </div>
                 <ArrowClick onClick={e => {
                     controlledSwiper.navigation.onNextClick(e);
-                }} style={{ marginLeft: 30 }}>
-                    <img className="right_img" src={`${imgurl}/arowr1.png`} />
+                }} style={{ marginLeft: 30 }}   onMouseEnter={()=>{
+                    // if(currIndex != 0){
+                      setArrowbg2(`${imgurl}/arowl2hover.png`)
+                    // }
+                  }}
+                    onMouseLeave={()=>{
+                    setArrowbg2(imgright)
+                  }}>
+                  <img src={arrowbg2}  />
                 </ArrowClick>
             </div>
         </HoveUp>

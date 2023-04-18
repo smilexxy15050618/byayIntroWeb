@@ -96,8 +96,21 @@ const BgWrapper = styled.div<{ bg: string }>`
   width: 100%;
   opacity: 0;
   transition: opacity 0.3s ease-in;
-  padding: 152px 0 0 0px;
+  /* padding: 152px 0 0 0px; */
   pointer-events: none;
+  .flexwrap{
+    display: flex;
+    width: 1200px;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    margin:0 auto;
+    margin-top: 60px;
+  }
+  .bgimg22{
+    height: 496px;
+    margin-bottom: 0;
+  }
   &::after {
     z-index: -1;
     pointer-events: none;
@@ -300,16 +313,22 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
       {dataList.map(({ bg, title, subTitle }, i) => {
         return (
           <BgWrapper className={classNames({ active: i === currIndex })} bg={bg}>
+            
+            <div className='flexwrap'>
             <BgContent>
               <Title>品牌零售<br></br>智能用户运营解决方案</Title>
               {subTitle.map(str => {
                 return <SubTitle>{str}</SubTitle>;
               })}
-              <img src={imgurl+'/retail_carousel.png'}></img>
               <div className="jumpbtn" onClick={() => setForm()}>
                 预约体验
               </div>
+
+             
             </BgContent>
+            <img src={imgurl+'/retail_carousel.png'} className='bgimg22'/>  
+             
+            </div>
           </BgWrapper>
         );
       })}
