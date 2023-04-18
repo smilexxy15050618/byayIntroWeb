@@ -16,7 +16,7 @@ import { HOST_ENUM } from '../../src/lib/utils';
 import { IndustryCarousel } from '../../src/retail/components/IndustryCarousel-2023';
 import { IndustryCarouselMobile } from '../../src/retail/components/IndustryCarouselMobile';
 import StrategyMobile from '../../src/retail/components/StrategyMobile';
-import SceneSolution from '../../src/components/scene-solution';
+import SceneSolution from '../../src/components/scene-solution-2023';
 import Play from './play';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 import AI from '../../src/retail/components/ai';
@@ -138,7 +138,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                     content: [
                       {
                         title: ['每个用户都满意的', '品牌AI管家'],
-                        content: <div>从不出席用户需要品牌的重要时刻</div>,
+                        content: <div>从不缺席用户需要品牌的重要时刻</div>,
                       },
                       {
                         title: ['90%品牌都会遇到的', '用户服务痛点'],

@@ -20,11 +20,17 @@ width: 18px;
         width:100%;
       cursor:pointer;
       margin-bottom: 0;
+      &:hover {
+        content: url(${imgurl}/hover_left1.png);
+      }
       }
       .right_img {
           width:100%;
           cursor:pointer;
           margin-bottom: 0;
+          &:hover {
+            content: url(${imgurl}/hover_right1.png);
+          }
       }
 `
 const Wrapper = styled.div`
@@ -41,6 +47,7 @@ justifyContent: center;
 
 const Strategy: FC<IStrategyProps> = ({ }) => {
     const [controlledSwiper, setControlledSwiper] = useState(null);
+    const [controlledSwiper1, setControlledSwiper1] = useState(null);
     return (
        <>
         <Pane title="百应策略: 被TOP品牌验证的会员运营策略">
@@ -49,7 +56,7 @@ const Strategy: FC<IStrategyProps> = ({ }) => {
                 <ArrowClick onClick={e => { controlledSwiper.navigation.onPrevClick(e) }}>
                 <img className="left_img" src={`${imgurl}/left1.png`} />
                 </ArrowClick>
-                <Swiper loop={true} autoplay={{delay: 1000}} onSwiper={swiper => setControlledSwiper(swiper)}>
+                <Swiper loop={true} autoplay={{delay: 3000}} onSwiper={swiper => setControlledSwiper(swiper)}>
                     <SwiperSlide style={{width: '1100px'}} className='my-slide'>
                         <img
                             style={{ textAlign: 'center', maxWidth: '100%' }}
@@ -70,10 +77,10 @@ const Strategy: FC<IStrategyProps> = ({ }) => {
         <Pane title="百应玩法: 行业领先的“单次AI电话”运营方法论">
         <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
             <Wrapper>
-            <ArrowClick onClick={e => { controlledSwiper.navigation.onPrevClick(e) }}>
+            <ArrowClick onClick={e => { controlledSwiper1.navigation.onPrevClick(e) }}>
             <img className="left_img" src={`${imgurl}/left1.png`} />
             </ArrowClick>
-            <Swiper loop={true} autoplay={{delay: 1000}} onSwiper={swiper => setControlledSwiper(swiper)}>
+            <Swiper loop={true} autoplay={{delay: 3000}} onSwiper={swiper => setControlledSwiper1(swiper)}>
                 <SwiperSlide style={{width: '1100px'}} className='my-slide'>
                     <img
                         style={{ textAlign: 'center', maxWidth: '100%' }}
@@ -85,7 +92,7 @@ const Strategy: FC<IStrategyProps> = ({ }) => {
                         src={imgurl+'/play2.png'}></img>
                 </SwiperSlide>
             </Swiper>
-            <ArrowClick onClick={e => { controlledSwiper.navigation.onNextClick(e) }}>
+            <ArrowClick onClick={e => { controlledSwiper1.navigation.onNextClick(e) }}>
             <img className="right_img" src={`${imgurl}/right1.png`} />
             </ArrowClick>
             </Wrapper>
