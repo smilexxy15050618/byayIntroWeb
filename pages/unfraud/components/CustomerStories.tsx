@@ -111,7 +111,7 @@ export const CustomerStories: FC = () => {
                         <div className="detail">
                             <img src={imgurl+img} alt="" />
                             <div>{content}</div>
-                            <div>体验Demo <span>→</span></div>
+                            <div>了解详情 <span>→</span></div>
                         </div>
                     </ListItem>
                 )

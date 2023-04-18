@@ -140,7 +140,7 @@ export const CustomerCase: FC = () => {
                         <div className="detail">
                             {/* <div><img src={imgurl+banner} alt="" />{label}</div> */}
                             <div>{content}</div>
-                            <div>体验Demo <span>→</span></div>
+                            <div>了解详情 <span>→</span></div>
                         </div>
                     </ListItem>
                 )

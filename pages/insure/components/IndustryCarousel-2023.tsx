@@ -71,6 +71,7 @@ const BgContent = styled.div`
     font-weight: 500;
     color: #ffffff;
     border-radius: 5.33px;
+    cursor: pointer;
     &:hover {
       background: rgba(84, 127, 255, 1);
     }
