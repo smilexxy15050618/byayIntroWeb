@@ -1,4 +1,4 @@
-import { Visible } from 'react-grid-system';
+import { Visible,Hidden } from 'react-grid-system';
 import styled from 'styled-components';
 import { Layout } from '../../src/components/Layout';
 import { NextFunctionComponent } from 'next';
@@ -10,8 +10,40 @@ import {CustomerStories} from './components/CustomerStories'
 import { HOST_ENUM } from '../../src/lib/utils';
 import { Wrapper } from '../../src/components/voice-robot/style';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
+// import imgurl from '../../img.url.js'
+import BannerWhite from '../../src/components/common/BannerWhite';
+import { TextArea } from '../../src/components/common/BannerTextElements';
 import imgurl from '../../img.url.js'
-
+const BANNER_BG = `${imgurl}/about_banner_bg.png`;
+const JOIN_US_IMG = `${imgurl}/unfraud_carousel1.png`;
+const BigTitle = styled.div`
+  margin-top: 17px;
+  font-size:48px;
+  line-height:60px;
+  color:rgba(26, 26, 26, 1);
+  font-weight: 600;
+`;
+const Desc = styled.div`
+  margin-top: 16px;
+  font-size: 20px;
+  line-height:34px;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+`;
+const BlueBtn = styled.div`
+  margin-top: 40px;
+  width: 132px;
+  height: 48px;
+  border-radius: 5.33px;
+  background: rgba(43, 88, 249, 1);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 48px;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  cursor: pointer;
+`;
 const FOOTER_BG = `${imgurl}/kqaizl.png`;
 interface IGameProps {
     
@@ -25,7 +57,31 @@ const Game:NextFunctionComponent<IGameProps>=()=>{
             <Wrapper>
               
             <Visible md lg xl xxl xxxl>
-                <IndustryCarousel></IndustryCarousel>
+                <BannerWhite
+                background={[`url(${BANNER_BG}) right top ,rgba(246, 252, 255, 1)`, 'rgba(246, 252, 255, 1)']}
+                pcImgs={[
+                  {
+                    src: JOIN_US_IMG,
+                    style: { width: 644, height: 496, top: 0, right: 0 },
+                    className: ['animate__fadeInRight', 'animate__ahead_300ms'],
+                  },
+                ]}
+                mobileImg={JOIN_US_IMG}>
+                <TextArea spaces={['', '']}>
+                  <Hidden xs sm>
+                    <BigTitle>
+                    百应安盾<br />电信网络诈骗预防平台
+                    </BigTitle>
+                    <Desc>全链条贯通反诈的宣传劝阻业务流程，打造具备“点面<br/>结合，长短并行”能力的AI虚拟民警</Desc>
+                    <BlueBtn
+                      onClick={() =>
+                        window.open('/form?formType=1')
+                      }>
+                      预约体验
+                    </BlueBtn>
+                  </Hidden>
+                </TextArea>
+              </BannerWhite>
                 <Ai></Ai>
                 <ApplicationIndustry></ApplicationIndustry>
                 <CoreValues></CoreValues>
