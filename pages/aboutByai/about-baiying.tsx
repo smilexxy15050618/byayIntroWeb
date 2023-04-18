@@ -96,7 +96,7 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
   
   return (
   <Layout hostType={hostType} headPlaceholder={[initial, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
-    {(visible, setFormVisible) => (
+    {(visible ) => (
         <Wrapper>
           <BannerWhite
             background={[`url(${BANNER_BG}) right top ,#F6FCFF`, '#F6FCFF']}
@@ -173,9 +173,9 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
             desc="留下联系方式，将有AI行业专家为您提供专属服务"
             btnText="与我联系"
             background={`url(${FOOTER_BG})`}
-            onClick={() => {
-              setFormVisible(true, FormType.CUSTOMER);
-            }}
+            onClick={() =>
+              window.open('/form?formType=1')
+            }
           />
         </Wrapper>
     )}
