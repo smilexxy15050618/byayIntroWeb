@@ -138,44 +138,46 @@ export const CustomerCase: FC = () => {
         const ScrollMagic = require('scrollmagic');
         var controller = new ScrollMagic.Controller();
         const videoContent = document.getElementById(INSURE);
-          new ScrollMagic.Scene({
+        new ScrollMagic.Scene({
             triggerElement: videoContent, //触发元素
             triggerHook: 'onEnter', //触发元素开始离开视口时触发
             offset: 10, //从开始点滚动多少px触发（施法前摇）
             duration: 400, //效果持续的距离（法术持续时间/距离）
-          })
+        })
             // .setClassToggle('.aitxs', 'appear')
             .addTo(controller)
             .on('enter', () => {
                 videoContent.classList.add('appear')
                 // console.log('进入');
-                
+
                 controller.destroy();
             });
-      }, []);
+    }, []);
     return (
         <Wrapper>
-             <MainWrapper>
-          <Title>客户案例</Title>
-          <ListWrapper id={INSURE}>
-          {
-            list.map(({img,banner,content,label,bg},index)=> {
-                return (
-                    <ListItem>
-                        <div style={{background: `url(${imgurl}${img}) no-repeat`,backgroundSize: '100% 100%'}} className='banner'>
-                        </div>
-                        <div className="detail">
-                            {/* <div><img src={imgurl+banner} alt="" />{label}</div> */}
-                            <div>{content}</div>
-                            <div>了解详情</div>
-                        </div>
-                    </ListItem>
-                )
-            })
-          }
-          </ListWrapper>
-        </MainWrapper>
+            <MainWrapper>
+                <Title>客户案例</Title>
+                <ListWrapper id={INSURE}>
+                    {
+                        list.map(({ img, banner, content, label, bg }, index) => {
+                            return (
+                                <ListItem>
+                                    <div style={{ background: `url(${imgurl}${img}) no-repeat`, backgroundSize: '100% 100%' }} className='banner'>
+                                    </div>
+                                    <div className="detail">
+                                        {/* <div><img src={imgurl+banner} alt="" />{label}</div> */}
+                                        <div>{content}</div>
+                                        <div onClick={() =>
+                                            window.open('/form?formType=1')
+                                        }>了解详情</div>
+                                    </div>
+                                </ListItem>
+                            )
+                        })
+                    }
+                </ListWrapper>
+            </MainWrapper>
         </Wrapper>
-       
+
     )
 }
