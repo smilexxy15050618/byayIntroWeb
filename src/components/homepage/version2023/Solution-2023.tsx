@@ -109,10 +109,13 @@ const ArrowClick = styled.div`
     justify-content: center;
     align-items: center;
     color:#fff;
+    
     img{
       width:100%;
     cursor:pointer;
-
+    &.nodrop{
+      cursor:no-drop;
+    }
     }
 `
 
@@ -140,15 +143,20 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
     <div style={{width:'1200px',margin:'0 auto',display:'flex',justifyContent:'center'}}>
         <ArrowClick onClick={e => {
             const res = controlledSwiper.navigation.onPrevClick(e);
-          }} style={{}} 
+          }}
           onMouseEnter={()=>{
-            setArrowbg(`${imgurl}/xzleft.png`)
+            // if(currIndex != 0){
+              setArrowbg(`${imgurl}/xzleft.png`)
+            // }
           }}
             onMouseLeave={()=>{
             setArrowbg(imglegt)
           }}
+          
           >
-           <img src={arrowbg}  />
+           <img src={arrowbg}  
+          //  className={currIndex == 0? 'nodrop': ''}
+           />
         </ArrowClick>
       <HoveUp >
       <Swiper
@@ -156,14 +164,21 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
         autoplay={{
           delay: 5000,
         }}
+        loop={true}
         slidesPerView={1}
         onSwiper={swiper => setControlledSwiper(swiper)}
         onSlideChange={swiper => {
           setCurrIndex(swiper.activeIndex);
+          // if( swiper.activeIndex == 0){
+          //   setArrowbg(imglegt)
+          // }else if(swiper.activeIndex == 1){
+          //   setArrowbg2(imgright)
+
+          // }
         }}
         style={{  }}>
         {dataList.map(({ content, img,span,p1,p2 }, i) => (
-          <SwiperSlide style={{ width: 'auto',paddingTop:10 }} className='hoer_bg_more'>
+          <SwiperSlide style={{ width: 'auto',paddingTop:10 }} key={i} className='hoer_bg_more'>
             <CardContent>
                 <div className='title_xxx'>
                       <p><span> {span}</span>{p1}</p>
@@ -184,13 +199,17 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
             controlledSwiper.navigation.onNextClick(e);
           }} style={{}}
            onMouseEnter={()=>{
-            setArrowbg2(`${imgurl}/xzright.png`)
+            // if(currIndex !=1){
+              setArrowbg2(`${imgurl}/xzright.png`)
+            // }
           }}
             onMouseLeave={()=>{
             setArrowbg2(imgright)
           }}>
-         <img src={arrowbg2}  />
-      </ArrowClick>
+         <img src={arrowbg2} 
+          //  className={currIndex == 1? 'nodrop': ''}
+          />
+      </ArrowClick >
        
     </div>
   );
@@ -403,7 +422,7 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
             setCurrIndex(swiper.activeIndex);
           }}>
           {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
-            <SwiperSlide style={{ width: '295px' }}>
+            <SwiperSlide style={{ width: '295px' }} key={i}>
            
             </SwiperSlide>
           ))}

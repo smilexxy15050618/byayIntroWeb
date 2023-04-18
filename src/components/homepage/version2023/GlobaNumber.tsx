@@ -149,7 +149,7 @@ const GlobalNumber = ({ }) => {
             <Content>
             {list.map(({ title, content, sub, unit }, index) => {
                 return (
-                    <Item>
+                    <Item key={index}>
                         <div>
                         {showNumber&&<Number number={title}/>}<span>{unit}</span><span>{sub}</span>
                         </div>

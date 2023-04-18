@@ -82,7 +82,7 @@ export default class extends App<
             }
           }
         }
-        // console.log(tdk, "tdk")
+        console.log(tdk, "23222222")
         return { ...initialProps, ...tdk, isPC: !userAgentIsMobile, styles };
       }
     }
