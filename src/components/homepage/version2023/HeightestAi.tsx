@@ -147,7 +147,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
                 <div className='text_area' style={{}}>
                    <img
                    style={{marginBottom:45}}
-                    src="https://img.js.design/assets/img/642e7f5da6320a9cbd726401.png" width={127} className='logo_area'/>
+                    src={avatarSrc} width={250} className='logo_area'/>
                     <div className='info_area'>
                      {content}
                     </div>
@@ -184,28 +184,28 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
 
 const carouselDataList = [
   {
-    avatarSrc:'',
+    avatarSrc:`${imgurl}/sxydkj.png`,
     content:
       '作为百应科技的股东，我非常欣慰地看到公司快速发展壮大的过程。自公司成立以来，百应科技紧紧抓住行业发展变化的机会，加大自身的研发投入，不断提升技术水平和创新能力，不断扩大市场份额。特别是近年来，随着AI技术的发展成熟，百应科技在这个领域的成长速度更是迅猛，始终保持着高速增长态势，在行业内具有较高的知名度和影响力。非常高兴能够参与到百应科技的成长历程中。',
     personName: '耿俊岭',
     tagName: '食信雅达科技股份有限公司（600571）董事长',
   },
   {
-    avatarSrc:'',
+    avatarSrc:`${imgurl}/hengsheng.png`,
     content:
       '恒生电子作为百应科技的合作伙伴和股东，我非常欣赏和赞赏这家公司。百应科技在AI和大数据领域具有先进的技术和专业的人才，能够为客户提供优质的产品和服务；其次，百应科技拥有高效的管理团队和科学的管理体系，能够将公司的资源和创新能力最大化地发挥出来，为公司的长期发展打下了坚实的基础；最重要的是，百应科技始终以客户需求为导向，不断探索和创新，提高服务质量和客户满意度，赢得了良好的口碑和信誉。百应科技是一家优秀的科技企业，值得信赖，值得合作。',
     personName: '刘曙峰',
     tagName: '恒生电子股份有限公司（600570）董事长',
   },
   {
-    avatarSrc:'',
+    avatarSrc:`${imgurl}/amiba.png`,
     content:
       '作为公司最早的股东，我们看到公司从成立到不断发展壮大，客户数量和合作伙伴都在不断增长，产品线也在不断扩充，领域涉及面也在逐渐拓展。很高兴能够见证公司的成长历程，同时也为公司在发展路上持续推进而感到鼓舞。我相信百应科技将继续发扬所长，在行业内发挥更大的作用。',
     personName: 'Kevin Wang',
     tagName: '阿米巴资本 创始及执行合伙人',
   },
   {
-    avatarSrc:'',
+    avatarSrc:`${imgurl}/gxin.png`,
     content:
       '百应科技是一家高素质的AI和大数据技术公司，拥有强大的技术能力和专业的团队，一直秉持以客户需求为导向的理念，不断创新和改善服务，赢得了客户的信任和支持。作为股东，我对百应科技充满信心，相信公司将会在未来的发展中迎来更加辉煌的成绩。',
     personName: '叶雨明',
