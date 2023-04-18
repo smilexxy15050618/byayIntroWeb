@@ -282,7 +282,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList, interval, style }) =
         <div className="carousel-header">
           <ul>
             {dataList.map((data, index) => (
-              <li className={activeKey === index && 'active'} onClick={() => switchCarousel(index)}>
+              <li key={index} className={activeKey === index && 'active'} onClick={() => switchCarousel(index)}>
                 <div>
                   {/* <span className="icon">{data.icon}</span> */}
                   <i className={`iconfont ${data.icon} icon`} />
@@ -295,16 +295,16 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList, interval, style }) =
         </div>
         <div className="carousel-body">
           <Carousel style={{ width: '100%' }} indicators={false} controls={false} activeIndex={activeKey}>
-            {dataList.map(data => (
-              <CarouselItem>
+            {dataList.map((data,i) => (
+              <CarouselItem key={i}>
                 <div className="carousel-card">
                   <img src={data.pcSrc} title={data.title} />
                   <ul className="carousel-desc">
-                    {data.descContent.map(desc => (
-                      <li>
+                    {data.descContent.map((desc,s) => (
+                      <li key={s}>
                         <p className="desc-title">{desc.title}</p>
-                        {desc.textList.map(text => (
-                          <p className="desc-text">{text}</p>
+                        {desc.textList.map((text,is) => (
+                          <p className="desc-text" key={is}>{text}</p>
                         ))}
                       </li>
                     ))}
@@ -316,18 +316,18 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList, interval, style }) =
         </div>
       </Visible>
       <Visible sm xs>
-        {dataList.map(item => (
-          <div className="industry-card">
+        {dataList.map((item,i) => (
+          <div key={i} className="industry-card">
             <h3>{item.title}</h3>
             <div className="industry-content">
               <img src={item.mobileSrc} alt={item.title} />
               <div className="industry-desc">
-                {item.descContent.map(desc => (
-                  <div className="desc-content">
+                {item.descContent.map((desc,is) => (
+                  <div key={is} className="desc-content">
                     <div className="desc-title">{desc.title}</div>
                     <div className="desc-text">
-                      {desc.textList.map(text => (
-                        <p>{text}</p>
+                      {desc.textList.map((text,l) => (
+                        <p  key={l}>{text}</p>
                       ))}
                     </div>
                   </div>

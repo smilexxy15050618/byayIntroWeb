@@ -1,4 +1,5 @@
 import { Visible } from 'react-grid-system';
+import React, { FC, useState, useEffect, useRef, useCallback, useMemo, ReactNode } from 'react';
 import ByVoiceFooter from '../src/components/common/ByVoiceFooter';
 import CustomerIconsBlock from '../src/components/common/CustomerIconsBlock';
 import Advantage from '../src/components/homepage/version2023/AiPlatform';
@@ -124,11 +125,25 @@ const videoInfoList = [
 ];
 
 export default props => {
+  const [initialOpacity, setInitialOpacity] = useState(true);
+const [cauindex,setCauindex] = useState(0);
+ const hadnleNav = (v) =>{
+  if((document.body.getBoundingClientRect().top > -10)){
+    // 完全到顶部
+  if(v==1){
+      setInitialOpacity(false)
+  }else{
+      setInitialOpacity(true)
+  }
+  console.log(v);
+ }
+  
+  }
   return (
-    <Layout initialOpacity={false} headPlaceholder={[false, false]} headFontStyle={['dark', 'light']}>
+    <Layout initialOpacity={initialOpacity}  headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
       {(visible, setFormVisible) => (
         <Wrapper>
-          <IndustryCarousel />
+          <IndustryCarousel hadnleNav={hadnleNav} />
           <Visible md lg xl xxl xxxl>
             <VideoList contentList={videoInfoList} />
           </Visible>

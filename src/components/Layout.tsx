@@ -47,6 +47,11 @@ export const Layout: React.FunctionComponent<{
   const [formVisible, setFormVisible] = React.useState(false);
   const [formType, setFormType] = React.useState(FormType.CUSTOMER);
   const [placeholder, placeholderXs] = headPlaceholder;
+  const [key,setKey] = React.useState(0)
+  React.useEffect(()=>{
+    console.log(document.body.getBoundingClientRect().top ,'ddd');
+      setKey(Date.now())
+  },[headPlaceholder,initialOpacity])
   const [headFont, headFontXs] = headFontStyle;
   const setForm = (visible: boolean, type: FormType = FormType.CUSTOMER) => {
     const hostname = window.location.hostname;
@@ -70,7 +75,7 @@ export const Layout: React.FunctionComponent<{
   const initialOpacityMobile = typeof initialOpacity !== 'undefined' ? initialOpacity : guessOpacityMobile;
   return (
     <ScreenClassProvider fallbackScreenClass={isPC ? 'lg' : 'xs'}>
-      <div id="layout">
+      <div id="layout" >
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         </Head>
@@ -87,6 +92,7 @@ export const Layout: React.FunctionComponent<{
           <>
             <Hidden sm xs>
               <Header
+                key={key}
                 hostType={hostType}
                 initialOpacity={initialOpacity}
                 headPlaceholder={placeholder}
@@ -98,6 +104,7 @@ export const Layout: React.FunctionComponent<{
             <Visible sm xs>
               <SuspenMobileNew setForm={setForm} />
               <HeaderMobileNew
+                key={key}
                 initialOpacity={initialOpacityMobile}
                 headPlaceholder={placeholderXs}
                 headFontStyle={headFontXs}
