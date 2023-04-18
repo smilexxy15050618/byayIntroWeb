@@ -1,10 +1,13 @@
 import classNames from 'classnames';
 import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from 'react';
+import SwiperCore, { Navigation, Scrollbar, Mousewheel } from 'swiper';
 import styled from 'styled-components';
 import { renderCss, screenHeightRules } from '../lib/utils';
 import { AngleRight } from './accordion/AngleRight';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperClass from 'swiper/types/swiper-class';
+SwiperCore.use([Navigation, Scrollbar, Mousewheel]);
+
 
 interface Info {
   tabName: string;
@@ -34,6 +37,7 @@ const StickyTopMap = {
 };
 const Wrapper = styled.div`
   position: relative;
+  overflow:hidden;
   border-top: 1px solid transparent;
   margin-top: -1px;
   pointer-events: none;
@@ -411,7 +415,7 @@ const BgFade = styled.div<{ position: 'top' | 'bottom' }>`
 `;
 
 const VideoWidthGap = styled.div`
-  ${renderCss(VIDEO_SIZE_MAPPER.VIDEO_WIDTH, screenHeightRules, v => `width:calc(${v} + 32px);`)}
+  // ${renderCss(VIDEO_SIZE_MAPPER.VIDEO_WIDTH, screenHeightRules, v => `width:calc(${v} + 32px);`)}
 `;
 const DotWrapper = styled.div`
   position: absolute;
@@ -422,6 +426,11 @@ const DotWrapper = styled.div`
   flex-direction: column;
   gap: 24px;
 `;
+const handleScroll = (event) => {
+  console.log('滚动事件：', event);
+};
+
+
 const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, desc,onJumpClick }) => {
   const [currIndex, setCurrIndex] = useState(0);
   const [currSubIndex, setCurrSubIndex] = useState(0);
@@ -558,7 +567,15 @@ const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, desc,onJumpCl
         </ScrollWrapper>
 
         <ContentListWrapper>
-          <Swiper onSwiper={swiper => setControlledSwiper(swiper)} onSlideChange={e=> setCurrSubIndex(e.activeIndex)} autoplay direction="vertical" mousewheel="true">
+          <Swiper  
+          autoplay={false}
+          //  allowTouchMove={false}
+          // scrollbar={{ draggable: true }}
+          mousewheel={{ forceToAxis: true }}
+          onScroll={handleScroll}
+          onSwiper={swiper => {
+            setControlledSwiper(swiper)
+            }} onSlideChange={e=> setCurrSubIndex(e.activeIndex)}  direction='vertical'>
             {infoList[currIndex].content.map(({ title, content, specialBtnStr, hiddenBtn }, i) => {
             return (
               <SwiperSlide>
