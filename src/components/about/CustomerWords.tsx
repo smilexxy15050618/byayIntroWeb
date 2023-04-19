@@ -145,24 +145,33 @@ const ArrowGroup = styled.div`
   justify-content: center;
   gap: 16px;
   margin-top: 62px;
-  > * {
-    height: 48px;
-    margin: 0;
-  }
-  cursor: pointer;
 `;
+const ArrowClickL = styled.div<{ normalBg?: string, activeBg?: string }>`
 
-const Arrow = styled.div`
   width: 48px;
   height: 48px;
-  border-radius: 50%;
-  background: #ffffff;
-  border: 1px solid #979797;
-  text-align: center;
-  line-height: 42px;
-  font-size: 20px;
+
+  background-image: ${props => `url(${props.normalBg})`};
+  background-repeat: no-repeat;
+  background-size: cover;
   cursor: pointer;
-`;
+  &:hover{
+    background-image: ${props => `url(${props.activeBg})`};
+  }
+`
+const ArrowClickR = styled.div<{ normalBg?: string, activeBg?: string }>`
+
+  width: 48px;
+  height: 48px;
+
+  background-image: ${props => `url(${props.normalBg})`};
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  &:hover{
+    background-image: ${props => `url(${props.activeBg})`};
+  }
+`
 
 const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
   const [controlledSwiper, setControlledSwiper] = useState(null);
@@ -174,6 +183,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
         autoplay={{
           delay: 5000,
         }}
+        loop={true}
         slidesPerView="auto"
         onSwiper={swiper => setControlledSwiper(swiper)}
         onSlideChange={swiper => {
@@ -196,19 +206,23 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       </Swiper>
       </HoveUp>
       <ArrowGroup>
-        <img
-          src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%B7%A6.png"
+        <ArrowClickL 
           onClick={e => {
             const res = controlledSwiper.navigation.onPrevClick(e);
           }}
-        />
-        <img
-          src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%8F%B3.png"
+          normalBg={`${imgurl}/slide-left-normal.png`}
+          activeBg={`${imgurl}/slide-left-active.png`}
+        >
+        </ArrowClickL>
+        <ArrowClickR 
           onClick={e => {
             controlledSwiper.navigation.onNextClick(e);
           }}
-        />
-      </ArrowGroup>
+          normalBg={`${imgurl}/slide-right-normal.png`}
+          activeBg={`${imgurl}/slide-right-active.png`}
+        >
+        </ArrowClickR>
+      </ArrowGroup>  
     </div>
   );
 };

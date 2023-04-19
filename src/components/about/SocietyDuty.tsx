@@ -24,8 +24,10 @@ const Title = styled.div`
   padding-bottom:44px;
   font-size: 40px;
   line-height: 48px;
-  color:rgba(43, 43, 43, 1);
+  color:rgba(26,26,26,1);
   text-align: center;
+  font-weight: 500;
+
 `;
 
 const HoveUp = styled.div`
@@ -151,7 +153,7 @@ const Carousel: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
         <Swiper
           effect="slide"
           autoplay={{
-            delay: 5000,
+            delay: 3000,
           }}
           slidesPerView={1}
           loop={true}
@@ -213,7 +215,7 @@ const CarouselMobile: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
       <Wrapper>
         <Swiper
           autoplay={{
-            delay: 5000,
+            delay: 3000,
           }}
           slidesPerView="auto"
           centeredSlides={true}
