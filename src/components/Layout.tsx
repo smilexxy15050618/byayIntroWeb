@@ -49,8 +49,8 @@ export const Layout: React.FunctionComponent<{
   const [placeholder, placeholderXs] = headPlaceholder;
   const [key,setKey] = React.useState(0)
   React.useEffect(()=>{
-    console.log(document.body.getBoundingClientRect().top ,'ddd');
-      setKey(Date.now())
+    // console.log(document.body.getBoundingClientRect().top ,'ddd');
+    //   setKey(Date.now())
   },[headPlaceholder,initialOpacity])
   const [headFont, headFontXs] = headFontStyle;
   const setForm = (visible: boolean, type: FormType = FormType.CUSTOMER) => {
