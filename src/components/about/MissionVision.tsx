@@ -125,7 +125,7 @@ const MissionVision: FC<MissionVisionProps> = ({ minWidthPC, MissionBG, VisionBG
     <MissionVisionContainer id={AiTSXID} maxWidthPc="1200px" minWidthPC={minWidthPC}>
       <MissionVisionContainerWrap MissionBG={MissionBG} VisionBG={VisionBG} ref={myRef}>
           <div className='mission-tips'><p className="title">使命</p><p className="subtitle">以AI赋能经济发展和社会生活</p></div>
-          <div className='vision-tips'><p className="title">愿景</p><p className="subtitle">成为具有世界级竞争力的中国科技公司</p></div>
+          <div className='vision-tips'><p className="title">愿景</p><p className="subtitle">成为智能用户运营领域创领者</p></div>
       </MissionVisionContainerWrap>
     </MissionVisionContainer>
   )

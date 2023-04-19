@@ -116,6 +116,8 @@ const Carousel: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
           effect="slide"
           autoplay={{
             delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
           slidesPerView={1}
           loop={true}
@@ -163,7 +165,9 @@ const CarouselMobile: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
       <Wrapper>
         <Swiper
           autoplay={{
-            delay: 3000,
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
           slidesPerView="auto"
           centeredSlides={true}

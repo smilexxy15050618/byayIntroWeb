@@ -372,8 +372,8 @@ class DevelopHistory extends React.Component<ICourseProps, ICourseState> {
     }
 
     return (
-      <ByRatioBox id="DevelopHistory" width="100%" calcHeight={() => 'calc(60% - 293px)'} backgroundImage={backgroundImage}>
-        <div className="title">发展历程</div>
+      <ByRatioBox width="100%" calcHeight={() => 'calc(60% - 293px)'} backgroundImage={backgroundImage}>
+        <div className="title" id="DevelopHistory">发展历程</div>
         <CourseList onMouseLeave={this.handleCourseLeave}>
           <CourseListInner width={(clientWidth / 5) * courseList.length} translateX={translateX}>
             {courseList.map((item, index) => (
