@@ -113,7 +113,7 @@ const CarouselWrapper = styled.div`
   .bg-img-blue{
     position:absolute;
     right: -47px;
-    top: 65px;
+    top: 80px;
     img{
       height:434px;
     }

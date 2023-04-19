@@ -159,6 +159,8 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
                                 className='swiperwrap'
                                 autoplay={{
                                     delay: 3000,
+                                    disableOnInteraction: false,
+                                    pauseOnMouseEnter: true
                                 }}
                                 loop={true}
                                 slidesPerView='auto'

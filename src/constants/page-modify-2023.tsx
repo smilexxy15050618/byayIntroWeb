@@ -43,7 +43,7 @@ export const NAV_CONFIG = [
         path: '/technology-service/technology',
       },
       {
-        title: '专业服务',
+        title: '咨询服务',
         desc: '为客户业务持续增长负责',
         icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E4%B8%93%E4%B8%9A%E6%9C%8D%E5%8A%A1.svg',
         path: '/technology-service/service',

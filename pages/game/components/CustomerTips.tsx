@@ -97,7 +97,9 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
                             <Swiper
                                 className='swiperwrap'
                                 autoplay={{
-                                    delay: 5000,
+                                    delay: 3000,
+                                    disableOnInteraction: false,
+                                    pauseOnMouseEnter: true,
                                 }}
                                 slidesPerView='auto'
                                 onSwiper={swiper => setControlledSwiper(swiper)}

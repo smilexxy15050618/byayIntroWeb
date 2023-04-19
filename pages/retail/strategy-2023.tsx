@@ -100,7 +100,9 @@ const Strategy: FC<IStrategyProps> = ({ }) => {
                 <ArrowClick onClick={e => { controlledSwiper.navigation.onPrevClick(e) }}>
                 <img className="left_img" src={`${imgurl}/left1.png`} />
                 </ArrowClick>
-                <Swiper loop={true} autoplay={{delay: 3000}} onSwiper={swiper => setControlledSwiper(swiper)}>
+                <Swiper loop={true} autoplay={{delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true}} onSwiper={swiper => setControlledSwiper(swiper)}>
                     <SwiperSlide style={{width: '1100px'}} className='my-slide'>
                         <img
                             style={{ textAlign: 'center', maxWidth: '100%' }}
@@ -124,7 +126,9 @@ const Strategy: FC<IStrategyProps> = ({ }) => {
             <ArrowClick onClick={e => { controlledSwiper1.navigation.onPrevClick(e) }}>
             <img className="left_img" src={`${imgurl}/left1.png`} />
             </ArrowClick>
-            <Swiper loop={true} autoplay={{delay: 3000}} onSwiper={swiper => setControlledSwiper1(swiper)}>
+            <Swiper loop={true} autoplay={{delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true}} onSwiper={swiper => setControlledSwiper1(swiper)}>
                 <SwiperSlide style={{width: '1100px'}} className='my-slide'>
                     <img
                         style={{ textAlign: 'center', maxWidth: '100%' }}

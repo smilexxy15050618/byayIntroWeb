@@ -109,7 +109,9 @@ export const WhySelect: FC = () => {
             {/* <ArrowClick>
             <img src={`${imgurl}/arowl1.png`}  />
             </ArrowClick> */}
-            <Swiper effect="slide" autoplay={{delay: 1000}} 
+            <Swiper effect="slide" autoplay={{delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,}} 
             centeredSlides={true}
             spaceBetween={20}
             onSlideChange={swiper=>{
@@ -125,7 +127,9 @@ export const WhySelect: FC = () => {
             <img src={`${imgurl}/arowr1.png`}  />
             </ArrowClick> */}
 
-            <Swiper effect="slide" autoplay={{delay: 1000}} 
+            <Swiper effect="slide" autoplay={{delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,}} 
             centeredSlides={true}
             spaceBetween={20}
             onSlideChange={swiper=>{

@@ -162,7 +162,9 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       <Swiper
         effect="slide"
         autoplay={{
-          delay: 5000,
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
         }}
         loop={true}
         slidesPerView={1}
@@ -471,7 +473,9 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
       <Wrapper>
         <Swiper
           autoplay={{
-            delay: 5000,
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
           }}
           slidesPerView="auto"
           centeredSlides={true}

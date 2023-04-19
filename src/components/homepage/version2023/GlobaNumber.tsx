@@ -123,6 +123,14 @@ const Item = styled.div`
         color: rgba(51, 51, 51, 1);
      }
 `
+const Title = styled.div`
+  font-size: 40px;
+  font-weight: 500;
+  color: rgba(26,26,26,1);
+  line-height: 40px;
+  margin-bottom: 60px;
+  text-align: center;
+`;
 const GLOBAL_ID_WRAP = 'global_number_wrap';
 const GlobalNumber = ({ }) => {
     const [showNumber,setShowNumber] = useState(false);
@@ -146,6 +154,7 @@ const GlobalNumber = ({ }) => {
       }, []);
     return (
         <Wrapper id={GLOBAL_ID_WRAP}>
+            <Title>全栈自研，行业前沿技术水平</Title>
             <Content>
             {list.map(({ title, content, sub, unit }, index) => {
                 return (
