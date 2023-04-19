@@ -16,22 +16,37 @@ interface ICarouselProps {
 
 
 const HoveUp = styled.div`
-           width: 1080px;
+           width: 100%;
     .hoer_bg_more{
         opacity: 1;
         border-radius: 8px;
       
         // box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
     }
+    .swiper-container {
+      width: 100%;
+      .swiper-slide {
+        width: 100%;
+        .text_area {
+          width: 100%;
+          .info_area,.name_area {
+            padding: 40px 21px 0;
+          }
+          .name_area {
+            padding-bottom: 20px;
+          }
+        }
+      }
+    }
 `
 const CardContent = styled.aside`
     background:#fff;
-    display:flex;
+    /* display:flex;
     position:relative;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height:496px;
+    flex-direction: column; */
+    /* height:496px; */
     .img_area{
         right:0;
        
@@ -43,7 +58,7 @@ const CardContent = styled.aside`
     }
     .text_area{
         
-        width:80%;
+       
         // margin-top:65px;
         // margin-left:80px;
         // margin-right:86px;
@@ -89,7 +104,6 @@ const ArrowClick = styled.div`
     img{
       width:100%;
     cursor:pointer;
-
     }
 `
 
@@ -114,8 +128,8 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
   const [arrowbg, setArrowbg] = useState(imglegt);
   const [arrowbg2, setArrowbg2] = useState(imgright);
   return (
-    <div style={{width:'1200px',margin:'0 auto',display:'flex',justifyContent:'center'}}>
-        <ArrowClick onClick={e => {
+    <div style={{width:'1200px',margin:'0 auto',display:'flex',justifyContent:'center',background: 'white',padding: '0 116px'}}>
+        {/* <ArrowClick onClick={e => {
             const res = controlledSwiper.navigation.onPrevClick(e);
           }} style={{marginRight:30}}
           onMouseEnter={()=>{
@@ -127,29 +141,33 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
             setArrowbg(imglegt)
           }}>
            <img src={arrowbg}  />
-        </ArrowClick>
+        </ArrowClick> */}
       <HoveUp >
+      <LabelList>
+             {carouselDataList.map(({avatarSrc},index)=> {
+              return (
+                <div className={index==currIndex?'active':''} onClick={()=> {setCurrIndex(index);controlledSwiper.slideTo(index)}}>
+                  <img src={avatarSrc} alt="" />
+                </div>
+              )
+             })}
+        </LabelList>
       <Swiper
         effect="slide"
         autoplay={{
-          delay: 3000,
+          delay: 1000000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
-        slidesPerView={1}
         onSwiper={swiper => setControlledSwiper(swiper)}
         onSlideChange={swiper => {
           setCurrIndex(swiper.activeIndex);
         }}
-        loop={true}
         style={{  }}>
         {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
           <SwiperSlide style={{ width: 'auto',paddingTop:10 }} key={i} className='hoer_bg_more'>
             <CardContent>
                 <div className='text_area' style={{}}>
-                   <img
-                   style={{marginBottom:45}}
-                    src={avatarSrc} width={250} className='logo_area'/>
                     <div className='info_area'>
                      {content}
                     </div>
@@ -166,7 +184,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
         ))}
       </Swiper>
       </HoveUp>
-      <ArrowClick onClick={e => {
+      {/* <ArrowClick onClick={e => {
             controlledSwiper.navigation.onNextClick(e);
           }} style={{marginLeft:30}}
           onMouseEnter={()=>{
@@ -178,7 +196,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
             setArrowbg2(imgright)
           }}>
          <img src={arrowbg2}  />
-      </ArrowClick>
+      </ArrowClick> */}
        
     </div>
   );
@@ -186,28 +204,28 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
 
 const carouselDataList = [
   {
-    avatarSrc:`${imgurl}/sxydkj.png`,
+    avatarSrc:`${imgurl}/sxydkj1.png`,
     content:
       '百应是一个技术能力和产品能力都极强的一家人工智能公司，很难见到一家AI公司产品在金融等多个行业实现高度产品化，并能同时实现合作方开箱即用的极致用户体验和合作方用户的极致应用体验。',
     personName: '耿俊岭',
     tagName: '信雅达科技股份有限公司（600571）董事长',
   },
   {
-    avatarSrc:`${imgurl}/hengsheng.png`,
+    avatarSrc:`${imgurl}/hengsheng1.png`,
     content:
       '恒生电子作为百应科技的合作伙伴和股东，我非常欣赏和赞赏这家公司。百应科技在AI和大数据领域具有先进的技术和专业的人才，能够为客户提供优质的产品和服务；其次，百应科技拥有高效的管理团队和科学的管理体系，能够将公司的资源和创新能力最大化地发挥出来，为公司的长期发展打下了坚实的基础；最重要的是，百应科技始终以客户需求为导向，不断探索和创新，提高服务质量和客户满意度，赢得了良好的口碑和信誉。百应科技是一家优秀的科技企业，值得信赖，值得合作。',
     personName: '刘曙峰',
     tagName: '恒生电子股份有限公司（600570）董事长',
   },
   {
-    avatarSrc:`${imgurl}/amiba.png`,
+    avatarSrc:`${imgurl}/amiba1.png`,
     content:
       '作为公司最早的股东，我们看到公司从成立到不断发展壮大，客户数量和合作伙伴都在不断增长，产品线也在不断扩充，领域涉及面也在逐渐拓展。很高兴能够见证公司的成长历程，同时也为公司在发展路上持续推进而感到鼓舞。我相信百应科技将继续发扬所长，在行业内发挥更大的作用。',
     personName: 'Kevin Wang',
     tagName: '阿米巴资本 创始及执行合伙人',
   },
   {
-    avatarSrc:`${imgurl}/gxin.png`,
+    avatarSrc:`${imgurl}/gxin1.png`,
     content:
       '百应科技是一家高素质的AI和大数据技术公司，拥有强大的技术能力和专业的团队，一直秉持以客户需求为导向的理念，不断创新和改善服务，赢得了客户的信任和支持。作为股东，我对百应科技充满信心，相信公司将会在未来的发展中迎来更加辉煌的成绩。',
     personName: '叶雨明',
@@ -370,61 +388,79 @@ const Wrapper = styled.div<{ wrapperWidth?: number }>`
   margin: 0 auto;
 `;
 
-const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
-  const [currIndex, setCurrIndex] = useState(0);
-  const [controlledSwiper, setControlledSwiper] = useState(null);
-  const length = dataList.length;
-  const currAnimateNumber = useRef(0);
-  const taskList = useRef<Array<() => void>>([]);
-  const taskFn = (index: number) => {
-    if (currAnimateNumber.current >= 1) {
-      taskList.current.push(() => taskFn(index));
-      return;
+const LabelList = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  div {
+    width: 200px;
+    height: 80px;
+    &.active {
+      border-bottom: 1px solid #2B58F9;
     }
-    setCurrIndex(index);
-    currAnimateNumber.current++;
-    setTimeout(() => {
-      currAnimateNumber.current--;
-      if (taskList.current.length) {
-        const t = taskList.current.shift();
-        t();
-      }
-    }, 250);
-  };
-  return (
-    <>
-      <Wrapper>
-        <Swiper
-          autoplay={{
-            delay: 3000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true
-          }}
-          slidesPerView="auto"
-          centeredSlides={true}
-          spaceBetween={24}
-          // onSwiper={swiper => setControlledSwiper(swiper)}
-          onSlideChange={swiper => {
-            setCurrIndex(swiper.activeIndex);
-          }}>
-          {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
-            <SwiperSlide style={{ width: '295px' }} key={i}>
+  }
+  img {
+    width: 200px;
+    height: 80px;
+    margin-bottom: 0;
+  }
+`
+// const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
+//   const [currIndex, setCurrIndex] = useState(0);
+//   const [controlledSwiper, setControlledSwiper] = useState(null);
+//   const length = dataList.length;
+//   const currAnimateNumber = useRef(0);
+//   const taskList = useRef<Array<() => void>>([]);
+//   const taskFn = (index: number) => {
+//     if (currAnimateNumber.current >= 1) {
+//       taskList.current.push(() => taskFn(index));
+//       return;
+//     }
+//     setCurrIndex(index);
+//     currAnimateNumber.current++;
+//     setTimeout(() => {
+//       currAnimateNumber.current--;
+//       if (taskList.current.length) {
+//         const t = taskList.current.shift();
+//         t();
+//       }
+//     }, 250);
+//   };
+//   return (
+//     <>
+//       <Wrapper>
+//         <Swiper
+//           autoplay={{
+//             delay: 1000000,
+//           disableOnInteraction: false,
+//           pauseOnMouseEnter: true
+//           }}
+//           slidesPerView="auto"
+//           centeredSlides={true}
+//           spaceBetween={24}
+//           // onSwiper={swiper => setControlledSwiper(swiper)}
+//           onSlideChange={swiper => {
+//             setCurrIndex(swiper.activeIndex);
+//           }}>
+//           {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
+//             <SwiperSlide style={{ width: '295px' }} key={i}>
            
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </Wrapper>
-      <div>
-        <ProgressWrapper>
-          <ProgressContent style={{ width: `${((currIndex + 1) * 100) / dataList.length}%` }}></ProgressContent>
-        </ProgressWrapper>
-        <SwiperCounter>
-          {currIndex + 1}/{dataList.length}
-        </SwiperCounter>
-      </div>
-    </>
-  );
-};
+//             </SwiperSlide>
+//           ))}
+//         </Swiper>
+//       </Wrapper>
+//       <div>
+//         <ProgressWrapper>
+//           <ProgressContent style={{ width: `${((currIndex + 1) * 100) / dataList.length}%` }}></ProgressContent>
+//         </ProgressWrapper>
+//         <SwiperCounter>
+//           {currIndex + 1}/{dataList.length}
+//         </SwiperCounter>
+//       </div>
+//     </>
+//   );
+// };
 
 const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
   return (
@@ -436,7 +472,7 @@ const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
         <Carousel dataList={carouselDataList}></Carousel>
       </Hidden>
       <Visible xs sm>
-        <CarouselMobile dataList={carouselDataList}></CarouselMobile>
+        {/* <CarouselMobile dataList={carouselDataList}></CarouselMobile> */}
       </Visible>
     </Pane>
   );
