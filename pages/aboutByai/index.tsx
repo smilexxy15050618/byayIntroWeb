@@ -84,18 +84,22 @@ const CreditMedal = styled.div<{ backgroundImage?: string }>`
 
 
 const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
-  const [initial, setInitial] = useState(false);
+  const [initial, setInitial] = useState(true);
 
   const handleHeaderOpacity = () => {
-    document.body.getBoundingClientRect().top == 0 ? setInitial(false) : setInitial(true)
+    document.body.getBoundingClientRect().top > -10 ? setInitial(true) : setInitial(false)
   };
+
+  const hadnleNav = () => {
+    setInitial(false)
+  }
 
   useEffect(() => { 
     document.addEventListener('wheel', handleHeaderOpacity);
   }, [])
   
   return (
-  <Layout hostType={hostType} headPlaceholder={[initial, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
+  <Layout initialOpacity={initial}  headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
     {(visible, setVisible ) => (
         <Wrapper>
           <BannerWhite
@@ -151,7 +155,7 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
                   jumpTarget: '#JoinUs'
                 }
               ]}
-              onCancel={() => {setInitial(true)}}
+              onCancel={hadnleNav}
             />
             <EnterpriseIntroduction
               cover={ABOUT_INTRO}
