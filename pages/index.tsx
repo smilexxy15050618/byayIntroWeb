@@ -143,7 +143,8 @@ const [navIndex,setNavIndex]= useState(0);
   }
 
   const handleHeaderOpacity = () => {
-    document.body.getBoundingClientRect().top == 0 && navIndex==1 ? setInitialOpacity(true) : setInitialOpacity(false)
+    // document.body.getBoundingClientRect().top == 0 && navIndex==1 ? setInitialOpacity(true) : setInitialOpacity(false)
+    document.body.getBoundingClientRect().top == 0 ? setInitialOpacity(true) : setInitialOpacity(false)
   };
 
 

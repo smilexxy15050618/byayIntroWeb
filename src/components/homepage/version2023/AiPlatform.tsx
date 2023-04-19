@@ -168,7 +168,7 @@ const Platform: FC<IPlatformProps> = () => {
       }, []);
     return (
         <Wrapper >
-            <div className="title">全行业AI用户运营平台与解决方案</div>
+            <div className="title">全行业智能用户运营平台与解决方案</div>
             <ListWrapper id={AIID}>
                 {contentList.map(({ name, content, url, href }, index) => {
                     return (

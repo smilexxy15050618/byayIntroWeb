@@ -81,9 +81,9 @@ const CarouselWrapper = styled.div`
     }
   }
   .carouselbg2{
-    background: url(${imgurl}/sybanner2.png) no-repeat;
-    background-size:cover;
-    background-position:left bottom;
+    // background: url(${imgurl}/sybanner2.png) no-repeat;
+    // background-size:cover;
+    // background-position:left bottom;
     // height:521px;
   }
   .carousel-control-prev{
@@ -385,7 +385,7 @@ margin-bottom:56px;
 
 const jumpData = [
   { title: '数据智能赋能用户运营策略', desc: 'ROI导向', jumpTarget: '#' + VIDEO_LIST_ID },
-  { title: '以构建2C长期信任关系为运营导向', desc: '最佳应用实践', jumpTarget: '#' + SOLUTION_ID },
+  { title: '以构建长期信任关系为运营导向', desc: '最佳应用实践', jumpTarget: '#' + SOLUTION_ID },
   { title: '长期服务企业和政府头部品牌和机构', desc: '定义先进AI', jumpTarget: '#' + CustomerId },
 ];
 
@@ -402,7 +402,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
         <div   className={classNames('carousel-body', {
                         carouselbg2: index == 1,
                       })}>
-          {index !=1?   <img className="carousel-bg-ball" src={BG_BALL} />:''}
+          {<img className="carousel-bg-ball" src={BG_BALL} />}
           <div className="carousel-bg-right"  ></div>
           <Carousel  style={{ width: '100%' }} 
           interval={3000}
@@ -413,7 +413,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
             <Carousel.Item className='no_duration' key={1}>
               <div  className="main-container">
                 
-              <div className="main-title">百应智能用户运营平台</div>
+              <div className="main-title">智能用户运营领域创领者</div>
               <div className='sec-title'>用AI助力构建用户长期信任关系</div>
               <div className='bg-img-blue'>
                 <img src={imgurl+'/sy-banner1.png'} alt="" />
@@ -455,12 +455,11 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
             key={2} onClick={() => {
                   window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
                 }}>
-              {/* <div  className="main-container">
+              <div  className="main-container">
                 
               <div className="main-title">百应科技荣誉入选</div>
               <div className='sec-title'  style={{marginBottom:'16px'}}>《国家人工智能创新应用先导区“智赋百景”》</div>
               <div className='third-title'>工信部公示｜「城市管理」领域应用场景的优秀技术提供单位</div>
-
             
               <div
                 className="carousel-btn"
@@ -469,10 +468,10 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
                 }}>
                 点击查看
               </div>
-              <div className='bg-img-blue'>
-                <img src={imgurl+'/sy-banner2.png'} alt="" />
+              <div style={{top: '80px',right: '0'}} className='bg-img-blue'>
+                <img style={{width: '610px'}} src={imgurl+'/sy-banner2.png'} alt="" />
               </div>
-              </div> */}
+              </div>
             
             </Carousel.Item>
            

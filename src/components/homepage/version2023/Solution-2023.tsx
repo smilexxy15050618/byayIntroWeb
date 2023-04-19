@@ -218,13 +218,13 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
 const carouselDataList = [
   {
     span:'企业',
-    p1:'｜B2C数智化用户运营解决方案',
+    p1:'B2C数智化用户运营解决方案',
     p2:'助力品牌高效连接消费者，打造存量时代的会员运营服务，拉升会员LTV',
     img:imgurl+'/cjjjfa1.png'
   },
   {
      span:'政务',
-    p1:'｜G2C基层服务和治理自动化解决方案',
+    p1:'G2C基层服务和治理自动化解决方案',
     p2:'打造数字化连接平台，助力政府高效服务及治理，提升平安建设三率',
    img:imgurl+'/cjjjfa2.png'
   },
@@ -385,7 +385,66 @@ const Wrapper = styled.div<{ wrapperWidth?: number }>`
   width: 100vw;
   margin: 0 auto;
 `;
+const LabelList = styled.div`
+width: 300px;
+height: 56px;
+display: flex;
+justify-content: center;
+width: 100%;
+border-bottom: 2px solid rgba(0, 0, 0, 0.04);
+`
+const LabelWrapper = styled.div`
+width: 300px;
+height: 56px;
+line-height: 54px;
+text-align: center;
+font-size: 18px;
+font-weight: 400;
+letter-spacing: 0px;
+color: rgba(51, 51, 51, 1);
+cursor: pointer;
+&.active {
+    color: rgba(43, 88, 249, 1);
+    font-weight: 600;
+    border-bottom: 2px solid rgba(43, 88, 249, 1);  
+} 
+`
+const ContentWrapper = styled.div`
+div:first-child {
+    font-family: PingFangSC;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 24px;
+    color: rgba(51, 51, 51, 1);
+    text-align: center;
+    margin-top: 39.95px;
+}
+div:nth-child(2) {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.73px;
+    line-height: 24px;
+    color: rgba(51, 51, 51, 1);
+    text-align: center;
+    margin-top: 8px;
+}
+img {
+  width: 1057px;
+  height: 497px;
+  display: block;
+  margin: 35px auto 0;
+}
+`
 
+const labelInfo = [
+  {
+      name: '企业'
+  },
+  {
+      name: '政务'
+  }
+]
 const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
   const [currIndex, setCurrIndex] = useState(0);
   const [controlledSwiper, setControlledSwiper] = useState(null);
@@ -441,13 +500,28 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
 };
 
 const Solution: FC<ICustomerWordsProps> = ({}) => {
+  const [currIndex,setCurrIndex] = useState(0);
   return (
     <Pane title="场景解决方案" paneBgColor="grey" 
     style={{ paddingBottom: 80,background:'rgba(246, 252, 255, 1)'}} 
     titleStyle={{marginBottom:'24px'}}
     mobileStyle={{ paddingBottom: 40 }}>
       <Hidden xs sm>
-        <Carousel dataList={carouselDataList}></Carousel>
+      <LabelList>
+            {labelInfo.map(({name},i)=> {
+                return (
+                    <LabelWrapper onClick={()=>{setCurrIndex(i)}} className={i==currIndex?'active':''}>
+                        {name}
+                    </LabelWrapper>
+                    
+                )
+            })}
+        </LabelList>
+        <ContentWrapper>
+                    <div>{carouselDataList[currIndex].p1}</div>
+                    <div>{carouselDataList[currIndex].p2}</div>
+                    <img src={carouselDataList[currIndex].img} alt="" />
+                  </ContentWrapper>
       </Hidden>
       <Visible xs sm>
         {/* <CarouselMobile dataList={carouselDataList}></CarouselMobile> */}
