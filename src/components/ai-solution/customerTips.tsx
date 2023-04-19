@@ -28,7 +28,13 @@ const HoveUp = styled.div`
    .swiperwrap{
     box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
     border-radius: 8px;
-
+    transform: translateY(50%);
+    transition: all 0.4s;
+    opacity: 0;
+    &.appear{
+      transform: translateY(0);
+      opacity: 1;
+    }
    }
 
    .card{
@@ -97,11 +103,31 @@ const dataList = [
 ]
 let imglegt =`${imgurl}/arowl1.png`;
 let imgright =`${imgurl}/arowl2.png`;
+const CUSTOMERTIPS = 'CUSTOMERTIPS'
 const Carousel: React.FC<ICarouselProps> = ({ style }) => {
     const [controlledSwiper, setControlledSwiper] = useState(null);
     const [currIndex,setCurrIndex] = useState(0);
     const [arrowbg, setArrowbg] = useState(imglegt);
     const [arrowbg2, setArrowbg2] = useState(imgright);
+    useEffect(() => {
+        const ScrollMagic = require('scrollmagic');
+        var controller = new ScrollMagic.Controller();
+        const videoContent = document.getElementById(CUSTOMERTIPS);
+        new ScrollMagic.Scene({
+            triggerElement: videoContent, //触发元素
+            triggerHook: 'onEnter', //触发元素开始离开视口时触发
+            offset: 10, //从开始点滚动多少px触发（施法前摇）
+            duration: 400, //效果持续的距离（法术持续时间/距离）
+        })
+            // .setClassToggle('.aitxs', 'appear')
+            .addTo(controller)
+            .on('enter', () => {
+                videoContent.classList.add('appear')
+                // console.log('进入');
+
+                controller.destroy();
+            });
+    }, []);
     return (
 
         <HoveUp>
@@ -128,7 +154,8 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
                         titleStyle={{ marginBottom: '48px',position:'relative',zIndex:22 }}
                         style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
                         <Hidden xs sm>
-                            <Swiper
+                            <Swiper 
+                                id={CUSTOMERTIPS}
                                 className='swiperwrap'
                                 autoplay={{
                                     delay: 3000,

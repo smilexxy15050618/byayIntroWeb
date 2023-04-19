@@ -117,13 +117,38 @@ text-align: left;
 `
 const MainWrap = styled.div`
 .aitxs{
-    
+    transform: translateY(50%);
+    transition: all 0.4s;
+    opacity: 0;
+    &.appear{
+      transform: translateY(0);
+      opacity: 1;
+    }
 }
 
 `
-
+const AI = 'AI'
 export const Ai: FC<IAiProps> = ({ }) => {
     const [currIndex, setCurrIndex] = useState(0);
+    useEffect(() => {
+        const ScrollMagic = require('scrollmagic');
+        var controller = new ScrollMagic.Controller();
+        const videoContent = document.getElementById(AI);
+        new ScrollMagic.Scene({
+            triggerElement: videoContent, //触发元素
+            triggerHook: 'onEnter', //触发元素开始离开视口时触发
+            offset: 10, //从开始点滚动多少px触发（施法前摇）
+            duration: 400, //效果持续的距离（法术持续时间/距离）
+        })
+            // .setClassToggle('.aitxs', 'appear')
+            .addTo(controller)
+            .on('enter', () => {
+                videoContent.classList.add('appear')
+                // console.log('进入');
+
+                controller.destroy();
+            });
+    }, []);
     return (
     <MainWrap>
         <Pane>
@@ -131,7 +156,7 @@ export const Ai: FC<IAiProps> = ({ }) => {
             {/* <div className="sec-title">强力提升公安反诈预防全业务效能，助力电诈“双降”，持续保障居民生命财产安全</div> */}
 
             <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
-            <div className='aitxs'>
+            <div id={AI} className='aitxs'>
                 <ListWrapper>
                     <div className="lists">
                     {titleList.map(({ title, subTitle }, index) => {

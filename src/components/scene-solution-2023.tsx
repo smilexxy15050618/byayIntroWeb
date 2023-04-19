@@ -41,6 +41,13 @@ const Wrapper = styled.div`
   border-top: 1px solid transparent;
   margin-top: -1px;
   pointer-events: none;
+  transform: translateY(50%);
+    transition: all 0.4s;
+    opacity: 0;
+    &.appear{
+      transform: translateY(0);
+      opacity: 1;
+    }
 `;
 // ${renderCss(
 //   mergeObj([
@@ -436,27 +443,27 @@ const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, desc,onJumpCl
   const [currSubIndex, setCurrSubIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
   const currInfo = infoList[currIndex];
+  const SCENESOLUTION = 'SCENESOLUTION'
   console.log(currInfo, 'currInfo');
   useEffect(() => {
     const ScrollMagic = require('scrollmagic');
     var controller = new ScrollMagic.Controller();
-    const videoContentList = document.getElementsByClassName(ContentWrapper.styledComponentId);
-    const nodeList = [...videoContentList];
-    // if (index === videoContentList.length - 1) {
-    nodeList.forEach(ele => {
-    //   new ScrollMagic.Scene({
-    //     triggerElement: ele, //触发元素
-    //     triggerHook: 'onLeave', //触发元素开始离开视口时触发
-    //     offset: -500, //从开始点滚动多少px触发（施法前摇）
-    //     duration: 300, //效果持续的距离（法术持续时间/距离）
-    //   })
-    //     .addTo(controller)
-    //     .on('enter', () => {
-    //       const index = ele.getAttribute('data-index');
-    //       setCurrSubIndex(+index);
-    //     });
-    });
-  }, []);
+    const videoContent = document.getElementById(SCENESOLUTION);
+    new ScrollMagic.Scene({
+        triggerElement: videoContent, //触发元素
+        triggerHook: 'onEnter', //触发元素开始离开视口时触发
+        offset: 10, //从开始点滚动多少px触发（施法前摇）
+        duration: 400, //效果持续的距离（法术持续时间/距离）
+    })
+        // .setClassToggle('.aitxs', 'appear')
+        .addTo(controller)
+        .on('enter', () => {
+            videoContent.classList.add('appear')
+            // console.log('进入');
+
+            controller.destroy();
+        });
+}, []);
   const jumpTargetNode = (i: number) => {
     const node = document.querySelector(`[data-index="${i}"] > .${SOLUTION_SCROLL_INTO_NODE_CLASS}`);
     if (node) {
@@ -469,7 +476,7 @@ const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, desc,onJumpCl
     <>
       <Header>{title}</Header>
       <Desc>{desc}</Desc>
-      <Wrapper className="">
+      <Wrapper id={SCENESOLUTION} className="">
         <ScrollWrapper>
           <StickyWrapper>
             <TabWrapper>
