@@ -56,10 +56,7 @@ const list = [
 const Wrapper = styled.div`
     width: 100%;
     height: 448px;
-    padding-top: 114px;
-    background: url(${imgurl}/maps.png) no-repeat;
-    background-size: 80% 100%;
-    background-position: left;
+    padding-top: 80px;
     transform: translateY(50%);
     transition: all 0.4s;
 opacity: 0;
@@ -72,6 +69,9 @@ const Content = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background: url(${imgurl}/maps.png) no-repeat;
+    background-size: 90% 90%;
+    background-position: -100px top;
     width: 1200px;
     margin: 0 auto;
 `
