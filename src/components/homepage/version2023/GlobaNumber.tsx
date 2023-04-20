@@ -55,7 +55,6 @@ const list = [
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 448px;
     padding-top: 80px;
     transform: translateY(50%);
     transition: all 0.4s;
@@ -70,10 +69,11 @@ const Content = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     background: url(${imgurl}/maps.png) no-repeat;
-    background-size: 90% 90%;
-    background-position: -100px top;
+    background-size: 923px 447px;
+    background-position: center top;
     width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 24px;
+    padding-top: 114px;
 `
 const Item = styled.div`
     width: 298px;
@@ -128,7 +128,6 @@ const Title = styled.div`
   font-weight: 500;
   color: rgba(26,26,26,1);
   line-height: 40px;
-  margin-bottom: 60px;
   text-align: center;
 `;
 const GLOBAL_ID_WRAP = 'global_number_wrap';

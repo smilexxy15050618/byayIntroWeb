@@ -95,7 +95,7 @@ const CustomerIconsBlock = styled(RawCustomerIconsBlock)<ICustomerIconsBlockProp
   }
   width: 100%;
   // 由于每一个商标块是有margin 17px 的所以 和默认padding83px 构成了整个模块上下边距100px，这里边距可以自己定义，但要注意计算
-  ${props => cssSwitch(props.padding, 'padding', ['83px 0', '50px 0'], false)}
+  ${props => cssSwitch(props.padding, 'padding', ['83px 0', '88px 0'], false)}
   .customer-icon-row {
     display: flex;
     align-items: center;
@@ -130,25 +130,17 @@ const CustomerIconsBlock = styled(RawCustomerIconsBlock)<ICustomerIconsBlockProp
     position: absolute;
     z-index: 2;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 40px;
+    top: 154px;
+    transform: translate(-50%, 0);
+    font-size: 32px;
     font-weight: 500;
-    color: #2b58f9;
-    line-height: 56px;
-    letter-spacing: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 860px;
-    height: 134px;
-    background: linear-gradient(
-      88deg,
-      rgba(255, 255, 255, 0) 0%,
-      #ffffff 20%,
-      #ffffff 80%,
-      rgba(255, 255, 255, 0) 100%
-    );
+    color: #5A5A5A;
+    letter-spacing: 2.4px;
+    width: 902px;
+    height: 86px;
+    line-height: 100px;
+    text-align: center;
+    background: linear-gradient(270deg, #FFFFFF 0%, #FFFFFF 22.17%, #FFFFFF 76.04%, #FFFFFF 100%);
     span {
       margin-left: 10px;
       color: #000;

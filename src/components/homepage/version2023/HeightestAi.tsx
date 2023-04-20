@@ -47,6 +47,13 @@ const CardContent = styled.aside`
     align-items: center;
     flex-direction: column; */
     /* height:496px; */
+    .diwen {
+      width: 160px;
+      height: 160px;
+      position: absolute;
+      top: 4px;
+      left: 0;
+    }
     .img_area{
         right:0;
        
@@ -167,6 +174,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
         {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
           <SwiperSlide style={{ width: 'auto',paddingTop:10 }} key={i} className='hoer_bg_more'>
             <CardContent>
+              <img className='diwen' src={imgurl+'/tzdwen.png'} alt="" />
                 <div className='text_area' style={{}}>
                     <div className='info_area'>
                      {content}
