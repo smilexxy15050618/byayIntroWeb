@@ -19,6 +19,7 @@ import { ServerStyleSheet } from 'styled-components';
 // import ScrollToPlugin from "gsap/ScrollToPlugin.js";
 // import './gray.css';
 // gsap.registerPlugin(ScrollToPlugin);
+import './font.css'
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 setConfiguration({ gridColumns: 24, gutterWidth: 0 });
 toast.configure({
