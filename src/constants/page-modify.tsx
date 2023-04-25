@@ -16,13 +16,31 @@ export const NAV_CONFIG = [
     expand: [
       {
         title: 'AI电话机器人',
-        desc: 'AI电话营销的第一选择',
+        desc: 'AI电话营销的优质选择',
         icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/AI%E7%94%B5%E8%AF%9D%E6%9C%BA%E5%99%A8%E4%BA%BA.svg',
         path: '/product/voice-robot',
       },
       {
+        title: '文本机器人',
+        desc: '更聪明、更善解人意的AI对话',
+        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/文本机器人.svg',
+        path: '/product/text-robot',
+      },
+      {
+        title: '分析机器人',
+        desc: '高效助力企业实现业绩增长',
+        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/分析机器人.svg',
+        path: '/product/quality-test-robot',
+      },
+      {
+        title: '虚拟数字人',
+        desc: '能听能说能理解的虚拟形象',
+        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/虚拟数字人.svg',
+        path: '/product/virtual-robot',
+      },
+      {
         title: '领先技术',
-        desc: '7年深耕 技术水平行业领先',
+        desc: '七年深耕，行业前沿技术水平',
         icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E6%8A%80%E6%9C%AF%E9%A2%86%E5%85%88.svg',
         path: '/technology-service/technology',
       },
@@ -147,9 +165,20 @@ export const FOOTER_CONFIG = [
     title: 'AI产品服务',
     list: [
       { name: '电话机器人', href: '/product/voice-robot' },
+      {
+        name: '文本机器人',
+        href: '/product/text-robot',
+      },
+      {
+        name: '分析机器人',
+        href: '/product/quality-test-robot',
+      },
+      {
+        name: '虚拟数字人',
+        href: '/product/virtual-robot',
+      },
       { name: '领先技术', href: '/technology-service/technology' },
       { name: '专业服务', href: '/technology-service/service' },
-      { name: '', href: '' }, // 占位防止3项时居中问题
     ],
   },
   {

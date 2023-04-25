@@ -280,7 +280,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
                 return <SubTitle>{str}</SubTitle>;
               })}
               <JumpBtn scale={0.8} onClick={() => setForm()} style={{ marginTop: 64, transform: 'scale(0.8)' }}>
-                立即了解增长案例1
+                立即了解增长案例
               </JumpBtn>
             </BgContent>
           </BgWrapper>

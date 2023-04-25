@@ -2,8 +2,9 @@ import { Visible } from 'react-grid-system';
 import React, { FC, useState, useEffect, useRef, useCallback, useMemo, ReactNode } from 'react';
 import ByVoiceFooter from '../src/components/common/ByVoiceFooter';
 import CustomerIconsBlock from '../src/components/common/CustomerIconsBlock';
-import Advantage from '../src/components/homepage/version2023/AiPlatform';
+import AiPlatform from '../src/components/homepage/version2023/AiPlatform';
 import Solution from '../src/components/homepage/version2023/Solution-2023';
+import SolutionOld from '../src/components/homepage/version2023/Solution';
 import HeightestAi from '../src/components/homepage/version2023/HeightestAi';
 import GlobaNumber from '../src/components/homepage/version2023/GlobaNumber';
 import CustomerWords from '../src/components/homepage/version2023/CustomerWords2023';
@@ -14,7 +15,8 @@ import VideoList from '../src/components/videoList-2023';
 import VideoListMobile from '../src/components/videoList/VidelListMobile';
 import { Wrapper } from '../src/components/voice-robot/style';
 import { ScrollToPlugin } from 'gsap/all';
-import imgurl from '../img.url.js'
+import imgurl from '../img.url.js';
+import Advantage from '../src/components/homepage/version2023/advantage';
 
 const FOOTER_BG = `${imgurl}/kqaizl.png`;
 const BASE_URL = 'https://cdn.byai.com/static/intro/img/index/version2021/banner';
@@ -126,48 +128,48 @@ const videoInfoList = [
 
 export default props => {
   const [initialOpacity, setInitialOpacity] = useState(true);
-const [cauindex,setCauindex] = useState(0);
-const [navIndex,setNavIndex]= useState(0);
- const hadnleNav = (v) =>{
-  setNavIndex(v)
-  if((document.body.getBoundingClientRect().top == 0)){
-    // 完全到顶部
-    if(v==1){
-        setInitialOpacity(false)
-    }else{
-        setInitialOpacity(true)
+  const [cauindex, setCauindex] = useState(0);
+  const [navIndex, setNavIndex] = useState(0);
+  const hadnleNav = v => {
+    setNavIndex(v);
+    if (document.body.getBoundingClientRect().top == 0) {
+      // 完全到顶部
+      if (v == 1) {
+        setInitialOpacity(false);
+      } else {
+        setInitialOpacity(true);
+      }
+      console.log(v);
     }
-    console.log(v);
-  }
-  
-  }
+  };
 
   const handleHeaderOpacity = () => {
     // document.body.getBoundingClientRect().top == 0 && navIndex==1 ? setInitialOpacity(true) : setInitialOpacity(false)
-    document.body.getBoundingClientRect().top == 0 ? setInitialOpacity(true) : setInitialOpacity(false)
+    document.body.getBoundingClientRect().top == 0 ? setInitialOpacity(true) : setInitialOpacity(false);
   };
 
-
-  useEffect(() => { 
+  useEffect(() => {
     document.addEventListener('wheel', handleHeaderOpacity);
-  }, [])
+  }, []);
 
   return (
-    <Layout initialOpacity={initialOpacity}  headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
+    <Layout initialOpacity={initialOpacity} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
       {(visible, setFormVisible) => (
         <Wrapper>
           <IndustryCarousel hadnleNav={hadnleNav} />
           <Visible md lg xl xxl xxxl>
             <VideoList contentList={videoInfoList} />
+            <Solution />
+            <AiPlatform></AiPlatform>
+            <GlobaNumber></GlobaNumber>
+            <CustomerWords></CustomerWords>
+            <HeightestAi />
           </Visible>
           <Visible xs sm>
             <VideoListMobile contentList={videoInfoList}></VideoListMobile>
+            <SolutionOld />
+            <Advantage></Advantage>
           </Visible>
-          <Solution />
-          <Advantage></Advantage>
-          <GlobaNumber></GlobaNumber>
-          <CustomerWords></CustomerWords>
-          <HeightestAi />
           <CustomerIconsBlock padding="50px 0 80px" />
           <ByVoiceFooter
             title="就现在，开启AI电话增长之旅"
@@ -175,7 +177,7 @@ const [navIndex,setNavIndex]= useState(0);
             btnText="与我联系"
             background={`url(${FOOTER_BG})`}
             onClick={() => {
-              window.open('/form?formType=1')
+              window.open('/form?formType=1');
             }}
           />
         </Wrapper>

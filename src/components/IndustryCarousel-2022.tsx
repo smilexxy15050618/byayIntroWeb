@@ -51,6 +51,7 @@ const CarouselWrapper = styled.div`
     }
   }
   .carousel-body {
+    overflow: hidden;
     height: 560px;
     min-height: 480px;
     max-height: calc(100vh - 144px);
@@ -99,7 +100,6 @@ const CarouselWrapper = styled.div`
   }
   .jump-group {
     display: flex;
-    gap: 16px;
     margin-bottom: 40px;
   }
   .jump-group-item {
@@ -109,11 +109,13 @@ const CarouselWrapper = styled.div`
     background: #E7F9FC;
     padding: 24px;
     border: 1px solid rgba(255, 255, 255, 1);
+    margin-right: 16px;
     border-radius: 8px;
     &.hover {
       border: 1px solid #00c8bd;
     }
     @media (max-width: 768px) {
+      margin-right: 0;
       border-color: transparent;
     }
   }

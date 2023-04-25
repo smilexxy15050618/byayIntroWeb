@@ -148,7 +148,10 @@ export const retailUrl = (url: string) => {
       return 'http://' + window.location.host + `/retail${url === '/' ? '' : url}`;
     } else {
       // 线上环境
-      return 'https://' + window.location.host + url;
+      if (url === '/') {
+        url = '';
+      }
+      return 'https://' + window.location.host + '/retail' + url;
     }
   } else {
     console.log('node 环境');

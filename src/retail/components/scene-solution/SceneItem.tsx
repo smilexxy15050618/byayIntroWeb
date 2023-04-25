@@ -71,7 +71,7 @@ export const SceneItem: FC<SceneItemProps> = ({ data, tabIndex, onJumpClick }) =
           interval={null}
           activeIndex={activeIndex}
           onSelect={handleCarouselChange}>
-          {(detailList || []).map(({ title, desc, descDirection, btnName }) => {
+          {(detailList || []).map(({ title, desc, descDirection, btnName, bigDescFlag }) => {
             const isVer = descDirection === 'ver';
             return (
               <Carousel.Item>
@@ -91,7 +91,12 @@ export const SceneItem: FC<SceneItemProps> = ({ data, tabIndex, onJumpClick }) =
                     ))}
                   </div>
                 ) : (
-                  <div className="text-desc">{desc}</div>
+                  <div
+                    className={classNames('text-desc', {
+                      ['large-text']: bigDescFlag,
+                    })}>
+                    {desc}
+                  </div>
                 )}
                 <div className={classNames('text-btn', { hidden: !btnName })} onClick={onJumpClick}>
                   {btnName}

@@ -65,7 +65,7 @@ const CRM_FOOTER_CONFIG = [
 const FooterWrapper = styled.footer`
   width: 100%;
   position: relative;
-  min-height: 524px;
+  min-height: 547px;
   background: #0d1727;
   padding-top: 14px;
   /* max-width: 1200px; */
@@ -74,6 +74,7 @@ const FooterWrapper = styled.footer`
     margin: 0 auto;
   }
   ${media.phone`
+    min-height: 524px;
     /* margin-bottom: 60px; */
     padding-left: 32px;
     .col-item {

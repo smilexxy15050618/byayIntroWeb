@@ -45,7 +45,7 @@
     "@types/react-transition-group": "^4.4.5",
     "@types/throttle-debounce": "^1.1.1",
     "@types/yup": "^0.26.13",
-    "animejs": "^3.2.1",
+    "animejs": "3.2.1",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",

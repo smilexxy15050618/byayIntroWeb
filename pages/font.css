@@ -1,24 +1,24 @@
 @font-face {
     font-family: 'PingFangSC';
-    src: url('https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/PingFang-SC-Regular.otf');
+    src: url('/static/img2023/PingFang-SC-Regular.otf');
     font-style: normal;
     font-weight: 400;
   }
   @font-face {
     font-family: 'PingFangSC';
-    src: url('https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/PingFang-MediumBold.ttf');
+    src: url('/static/img2023/PingFang-MediumBold.ttf');
     font-style: normal;
     font-weight: 500;
   }
   @font-face {
     font-family: 'PingFangSC';
-    src: url('https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/PingFang-SC-Semibold.ttf');
+    src: url('/static/img2023/PingFang-SC-Semibold.ttf');
     font-style: normal;
     font-weight: 600;
   }
   @font-face {
     font-family: 'DINAlternate';
-    src: url('https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/DINAlternate\ Bold.ttf');
+    src: url('/static/img2023/DINAlternate\ Bold.ttf');
     font-style: normal;
     font-weight: normal;
   }

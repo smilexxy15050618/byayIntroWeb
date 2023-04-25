@@ -7,6 +7,8 @@ export const MOBILE_SCENE_SOLUTION_LIST = [
       {
         title: '当平台上用户活跃度\n持续降低怎么办？',
         desc: '拉新成本高\n沉睡用户多\n用户流失不断',
+        bigDescFlag: true,
+        btnName: '免费领取激活方案',
       },
       {
         title: '沉睡用户激活\n提升平台MAU',
@@ -26,6 +28,8 @@ export const MOBILE_SCENE_SOLUTION_LIST = [
     detailList: [
       {
         title: '订阅类平台如何提升\n会员付费转化？',
+        btnName: '免费领取续费增长方案',
+        bigDescFlag: true,
         desc: '会员续费率低\n非会员用户转化难\n用户体验后流失高',
       },
       {
@@ -46,6 +50,8 @@ export const MOBILE_SCENE_SOLUTION_LIST = [
     detailList: [
       {
         title: '购物类平台业绩提升难\n用户下单率低怎么办？',
+        bigDescFlag: true,
+        btnName: '免费领取大促增长方案',
         desc: '消费欲望下降\n平台竞争压力大\n触达手段低效',
       },
       {
@@ -66,6 +72,8 @@ export const MOBILE_SCENE_SOLUTION_LIST = [
     detailList: [
       {
         title: '私域引流效率低、成本高\n如何实现高效加粉？',
+        bigDescFlag: true,
+        btnName: '免费领取私域加微解决方案',
         desc: '加粉效率低\n运营效果不佳\n粉产难以覆盖加粉成本',
       },
       {

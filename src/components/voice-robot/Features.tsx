@@ -13,7 +13,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
       '此外，百应自助式集成平台保持了高度易用性，用户通过可视化流程轻松搭建场景话术，还可以使用在线工具实时进行训练，不断完善黄金话术。',
     pcImgs: [
       {
-        src: `${PREFIX}/feature1/first.png`,
+        src: `${PREFIX}/feature1/new-first.png`,
         style: { width: '550px', top: '20px', right: '0px' },
       },
       {

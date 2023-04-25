@@ -1,12 +1,12 @@
 // 策略玩法列表
 export const STRATEGY_LIST = [
   {
-    title: ['百应策略: 被TOP品牌验证的', '会员运营策略'],
+    title: ['百应策略', '会员运营策略被TOP品牌验证的'],
     desc: '提升超级会员占比 拉升会员LTV',
     imgSrc: 'https://cdn.byai.com/static/by-intro-2023/retail/m-%E7%99%BE%E5%BA%94%E7%AD%96%E7%95%A5.png',
   },
   {
-    title: ['百应玩法: 行业领先的“单次', 'AI电话”运营方法论'],
+    title: ['百应玩法', '行业领先的“单次AI电话”运营方法论'],
     desc: '一式 × 三率 × 七变量',
     imgSrc: 'https://cdn.byai.com/static/by-intro-2023/retail/m-%E7%99%BE%E5%BA%94%E7%8E%A9%E6%B3%95.png',
     colorBg: '#F3F6FA',
@@ -79,7 +79,7 @@ export const MOBILE_SCENE_SOLUTION_LIST = [
     tabName: '用户服务',
     videoName: '百应「用户调研」录音demo',
     videoSrc:
-      'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/retail/%E7%94%A8%E6%88%B7%E6%9C%8D%E5%8A%A1%E8%A7%86%E9%A2%91.mp4',
+      'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/retail/%E7%94%A8%E6%88%B7%E8%B0%83%E7%A0%94%E5%BD%95%E9%9F%B3demo%E8%84%B1%E6%95%8F%E7%89%88.mp3',
     detailList: [
       {
         title: '每个用户都满意的\n品牌AI管家',

@@ -213,8 +213,11 @@ const AdvantageMobile = () => {
   const [currIndex, setCurrIndex] = useState(0);
   const [ser, setSer] = useState(null);
   const [delay, setDelay] = useState(0);
-  console.log(ser);
   useEffect(() => {
+    if (!ser) {
+      return;
+    }
+    console.log('runnn');
     const ScrollMagic = require('scrollmagic');
     var controller = new ScrollMagic.Controller();
     const node = document.getElementById(WRAPPER_ID);
@@ -226,11 +229,11 @@ const AdvantageMobile = () => {
       .addTo(controller)
       .on('enter', () => {
         setDelay(5000);
-        if (ser) {
+        if (ser && ser.autoplay && ser.autoplay.start) {
           ser.autoplay.start();
         }
       });
-  }, []);
+  }, [ser]);
   return (
     <MobileWrapper id={WRAPPER_ID}>
       <MenuBox>

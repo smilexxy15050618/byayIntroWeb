@@ -6,7 +6,7 @@
 
 #### Q2: 如何新建一个带导航栏、侧边、底部布局的页面？
 
-#### A2: 在 pages 中创建对应 url 路径的文件夹与 tsx 文件，使用\<Layout>组件来初始化页面，示例如下：
+#### A2: 在 pages 中创建对应 url 路径的文件夹与 tsx 文件，使用\<Layout>组件来初始化页面， 示例如下：
 
 ```tsx
 import * as React from 'react';
