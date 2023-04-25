@@ -38,16 +38,16 @@ const ImgArea = styled.div<{ imgFirst?: boolean }>`
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 50%;
+  width: 680px;
   ${props =>
     props.imgFirst &&
     css`
-      right: 50%;
+      right: 520px;
     `}
   ${props =>
     !props.imgFirst &&
     css`
-      left: 50%;
+      left: 520px;
     `}
   img {
     position: absolute;
@@ -60,7 +60,7 @@ const TextArea = styled.div`
   flex-direction: column;
   justify-content: center;
   flex: none;
-  width: 45%;
+  width: 520px;
   height: 100%;
   > div:nth-child(n + 2):nth-last-child(2) {
     margin-bottom: 28px;
@@ -112,10 +112,10 @@ const RawFeatureIntroduce: FC<IProps> = ({
         <ByContainer
           height={height}
           padding={padding || ['142px 0px', '']}
-          maxWidthPc="1120px"
+          maxWidthPc="1200px"
           background={background}
           className={className}>
-          <Horizon reverse={imgFirst} justify="space-between">
+          <Horizon reverse={imgFirst} justify="space-between" style={{ position: 'relative' }}>
             <TextArea>
               <Title>{title}</Title>
               <Text>{textOne}</Text>

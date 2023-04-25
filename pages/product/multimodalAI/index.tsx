@@ -7,8 +7,7 @@ import { TextArea } from '../../../src/components/common/BannerTextElements';
 import ByVoiceFooter from '../../../src/components/common/ByVoiceFooter';
 import BannerWhite from './BannerWhite';
 import Features from './Features';
-
-
+import FabricValue from './FabricValue';
 
 import { Wrapper } from '../../../src/components/voice-robot/style';
 import { FOOTER_BG } from '../../../src/constants/img-urls';
@@ -105,6 +104,7 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
           </BannerWhite>
           
           <Features />
+          <FabricValue />
           <ByVoiceFooter
             title="立即体验AI时代的新一代用户运营平台"
             desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"

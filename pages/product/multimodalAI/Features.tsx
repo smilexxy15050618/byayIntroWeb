@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, useState } from 'react';
 import styled from 'styled-components';
 import FeatureIntroduce, { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduce';
 
@@ -30,96 +30,43 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
 
 const FEATURE_INFO: IFeatureIntroduceProps[] = [
   {
-    title: '媲美真人的顺畅沟通体验',
-    textOne:
-      '通过AI对话管理模块，让百应语音机器人具备准确理解用户意图的能力，支持多轮对话、智能打断、静默音识别、上下文关联、知识库查询等方式，还原自然流畅的真人对话场景。',
-    textTwo:
-      '此外，百应自助式集成平台保持了高度易用性，用户通过可视化流程轻松搭建场景话术，还可以使用在线工具实时进行训练，不断完善黄金话术。',
+    title: '语音交互',
+    textOne: '打造极致的对话体验',
+    textTwo: '基于自然语言处理（NLP）、语音识别（ASR）和语音合成（TTS）技术，实现自动语音应答，用自然逼真的对话与客户沟通。通过语音机器人完成营销、宣传、回访、催收等外呼和接待场景语音对话。',
     pcImgs: [
       {
-        src: `${PREFIX}/feature1/new-first.png`,
-        style: { width: '550px', top: '20px', right: '0px' },
-      },
-      {
-        src: `${PREFIX}/feature1/p2.png`,
-        style: { width: '485px', top: '96px', right: '3px' },
-      },
-      {
-        src: `${PREFIX}/feature1/p3.png`,
-        style: { width: '331px', top: '319px', right: '29px' },
-        className: ['animate__fadeInUp'],
-      },
-      {
-        src: `${PREFIX}/feature1/p4.png`,
-        style: { width: '125px', top: '84px', right: '380px' },
-        className: ['animate__bounceIn', 'animate__delay_500ms'],
-      },
-    ],
-    mobileImg: `${PREFIX}/feature1/xs.png`,
-  },
-  {
-    title: '持续高效的智能外呼策略',
-    textOne:
-      '单个百应语音机器人平均每天可处理800-1200通外呼任务，实现不间断持续高效触达客户，效率超过人工1.5倍以上，帮助企业完成客户精准筛选，快速进行市场覆盖及线索清洗。',
-    textTwo:
-      '基于专业的行业话术模板配置各业务场景专属话术，利用大数据AI技术准确收集分析客户意向，一旦发现重要商机第一时间转接人工坐席跟进转化。同时支持设置反骚扰措施，避免企业因盲目拨打电话而造成资源浪费和糟糕的品牌体验。',
-    pcImgs: [
-      {
-        src: `${PREFIX}/feature2/p1.png`,
-        style: { width: '551px', top: '20px', left: '35px' },
-        className: ['animate__fadeInUp'],
-      },
-      {
-        src: `${PREFIX}/feature2/p2.png`,
-        style: { width: '207px', top: '52px', left: '79px' },
-        className: ['animate__fadeInLeft'],
-      },
-      {
-        src: `${PREFIX}/feature2/p3.png`,
-        style: { width: '163px', top: '113px', left: '393px' },
+        src: `${PREFIX}/capacity-1.png`,
+        style: { width: '680px', height: '573px', top: '100px', left: '0' },
         className: ['animate__fadeInRight'],
       },
-      {
-        src: `${PREFIX}/feature2/p4.png`,
-        style: { width: '226px', top: '383px', left: '265px' },
-        className: ['animate__fadeInRight'],
-      },
-      {
-        src: `${PREFIX}/feature2/p5.png`,
-        style: { width: '163px', top: '307px', left: '34px' },
-        className: ['animate__fadeInLeft'],
-      },
     ],
-    mobileImg: `${PREFIX}/feature2/xs.png`,
+    boxheight: '773px',
   },
   {
-    title: '更出色的智能接待服务',
-    textOne:
-      '打破工作时长限制，百应语音机器人能够7*24小时无间断在线接听客户来电，并从海量数据中快速学习并归纳要点，不断迭代服务，第一时间满足客户的各类即时需求，尤其适用投诉接待、业务咨询等场景。',
-    textTwo:
-      '搭配智能IVR功能，引导客户通过菜单按键导航，即可享受专业的智能咨询服务及基础的自助式业务办理，帮助呼叫中心分流至少10%以上的话务量，让人工坐席组有更多时间接待重要客户',
+    title: '文本交互',
+    textOne: '更聪明、更自然、更善解人意',
+    textTwo: '提供文本对话交互功能，能替代人工客服解决大部分咨询问题。支持官网、企业微信、APP等线上全渠道接入，24小时全天候在线，用户在各个入口都能体验智能、便捷的咨询服务。',
     pcImgs: [
       {
-        src: `${PREFIX}/feature3/p1.png`,
-        style: { width: '550px', top: '20px', right: '0px' },
-      },
-      {
-        src: `${PREFIX}/feature3/p2.png`,
-        style: { width: '315px', top: '116px', right: '117px' },
-        className: ['animate__fadeInDown'],
-      },
-      {
-        src: `${PREFIX}/feature3/p3.png`,
-        style: { width: '419px', top: '175px', right: '0px' },
-        className: ['animate__fadeInUp'],
-      },
-      {
-        src: `${PREFIX}/feature3/p4.png`,
-        style: { width: '138px', top: '256px', right: '62px' },
-        className: ['animate__bounceIn', 'animate__delay_500ms'],
-      },
+        src: `${PREFIX}/capacity-2.png`,
+        style: { width: '680px', height: '619px', top: '100px', left: '0' },
+        className: ['animate__fadeInLeft'],
+      }
     ],
-    mobileImg: `${PREFIX}/feature3/xs.png`,
+    boxheight: '819px',
+  },
+  {
+    title: '视觉交互/虚拟数字人',
+    textOne: '多样形象、智慧大脑、实时交互',
+    textTwo: '将计算机视觉、语音识别、自然语言处理等AI技术深度融合，充分模拟人与人之间真实可感的对话交互方式，达到“听得懂，看得见，说得出“的效果，所见即所得。',
+    pcImgs: [
+      {
+        src: `${PREFIX}/capacity-3.png`,
+        style: { width: '680px', height: '518px', top: '100px', right: '0' },
+        className: ['animate__fadeInRight'],
+      }
+    ],
+    boxheight: '718px',
   },
 ];
 
@@ -135,14 +82,35 @@ const FeatureWrap = styled.div`
     color: rgba(26, 26, 26, 1);
   }
   .capacity-tab{
-    height: 171px;
+    height: 170px;
     display: flex;
     justify-content: center;
+    border-bottom: 4px solid #F4F8FE;
     .capacity-item{
+      position: relative;
+      padding-top: 28px;
       width: 190px;
-      .title{
+      height: 170px;
+      margin-right: 90px;
+      text-align: center;
+      box-sizing: border-box;
+      &::before {
+        display: none;
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 190px;
+        height: 4px;
+        background: rgba(43, 88, 249, 1);
+      }
+      img{
+        width: 36px;
+        height: 36px;
+      }
+      .title-tab{
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 500;
         letter-spacing: 0px;
         line-height: 28px;
         color: rgba(26, 26, 26, 1);
@@ -155,6 +123,14 @@ const FeatureWrap = styled.div`
         color: rgba(90, 90, 90, 1);
       }
     }
+    .capacity-item:nth-child(3){
+      margin-right: 0;
+    }
+    .active{
+      &::before {
+        display: block;
+      }
+    }
   }
 `;
 
@@ -164,14 +140,16 @@ interface IProps {
 }
 
 const RawFeatures: FC<IProps> = ({ className }) => {
+  const [currIndex, setCurrIndex] = useState(0);
+
   return (
     <FeatureWrap>
       <div className="title">产品能力</div>
       <div className="capacity-tab">
         {FEATURE_TITLE.map((item, i) => (
-          <div className="capacity-item">
-            <img src={item.iconnormal} />
-            <div className="title">{item.title}</div>
+          <div className={i==currIndex?'capacity-item active':'capacity-item'}>
+            <img src={i==currIndex ? item.iconnormal : item.iconactive} />
+            <div className="title-tab">{item.title}</div>
             <div className="subtitle">{item.title}</div>
           </div>
         ))}
@@ -181,9 +159,9 @@ const RawFeatures: FC<IProps> = ({ className }) => {
           <FeatureIntroduce
             {...item}
             key={i}
-            imgFirst={i % 2 === 0}
+            imgFirst={i % 2 === 1}
             background={i == 2 ? 'rgba(244, 248, 254, 1)' : '#FFFFFF'}
-            height="520px"
+            height={item.boxheight}
             padding="0 0"
             className="relative-position"
           />

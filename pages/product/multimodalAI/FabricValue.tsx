@@ -44,7 +44,7 @@ interface IProps {
 }
 
 const commonClassName = ['animate__animated', 'wow'];
-const RawBannerWhite: FC<IProps> = ({
+const RawFabricValue: FC<IProps> = ({
   className,
   pcImgs,
   mobileImg,
@@ -54,33 +54,12 @@ const RawBannerWhite: FC<IProps> = ({
   children,
 }) => {
   return (
-    <ByContainer
-      background={background}
-      height={['1586px', 'calc(100vh - 116px)']}
-      className={className}
-      padding={[, '50px 8.6% 0px']}>
-      {/* 头部空白占位，以便中间中间部分对齐 */}
-      <Hidden xs sm>
-        <Placeholder />
-      </Hidden>
-      <Linear>
-        <TextArea className="linear animate__animated animate__fadeInDown animate__ahead_300ms">{children}</TextArea>
-        <Hidden xs sm>
-          <ImgArea>
-            {pcImgs.map(({ className = [], ...rest }, index) => {
-              const cls = [...commonClassName, ...className].join(' ');
-              return <Box key={index} as="img" {...rest} className={cls} minWidth={rest.style.width} />;
-            })}
-          </ImgArea>
-        </Hidden>
-       
-      </Linear>
-    </ByContainer>
+    <div>1111</div>
   );
 };
 
-export type IBannerWhiteProps = IProps;
-const BannerWhite = styled(RawBannerWhite) <IBannerWhiteProps>`
+export type RawFabricValueProps = IProps;
+const FabricValue = styled(RawFabricValue) <RawFabricValueProps>`
   overflow: hidden;
   @media (max-height: 666px) and (max-width: 768px) {
     padding-top: 10px;
@@ -91,4 +70,4 @@ const BannerWhite = styled(RawBannerWhite) <IBannerWhiteProps>`
     }
   }
 `;
-export default BannerWhite;
+export default FabricValue;
