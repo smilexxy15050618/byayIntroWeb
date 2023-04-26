@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, useState } from 'react';
 import styled from 'styled-components';
-import FeatureIntroduce, { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduce';
+import FeatureIntroduce, { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
 
 const PREFIX = '/static/img2023';
 const FEATURE_TITLE: IFeatureIntroduceProps[] = [
@@ -40,6 +40,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
         className: ['animate__fadeInRight'],
       },
     ],
+    id:'voice',
     boxheight: '773px',
   },
   {
@@ -53,6 +54,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
         className: ['animate__fadeInLeft'],
       }
     ],
+    id:'version',
     boxheight: '819px',
   },
   {
@@ -66,6 +68,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
         className: ['animate__fadeInRight'],
       }
     ],
+    id:'digit',
     boxheight: '718px',
   },
 ];
@@ -139,7 +142,7 @@ interface IProps {
   children?: ReactNode;
 }
 
-const RawFeatures: FC<IProps> = ({ className }) => {
+const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
   const [currIndex, setCurrIndex] = useState(0);
 
   return (
@@ -147,23 +150,32 @@ const RawFeatures: FC<IProps> = ({ className }) => {
       <div className="title">产品能力</div>
       <div className="capacity-tab">
         {FEATURE_TITLE.map((item, i) => (
-          <div className={i==currIndex?'capacity-item active':'capacity-item'}>
+          <div 
+            className={i==currIndex?'capacity-item active':'capacity-item'}
+            onClick={() => {
+              const node = document.querySelector(`.FeatureIntroduceWrap > .${item.id}`);
+              if (node) {
+                node.scrollIntoView({ behavior: 'smooth' });
+              }
+              onCancel()
+            }}>
             <img src={i==currIndex ? item.iconnormal : item.iconactive} />
             <div className="title-tab">{item.title}</div>
-            <div className="subtitle">{item.title}</div>
+            <div className="subtitle">{item.subtitle}</div>
           </div>
         ))}
       </div>
-      <div className={className}>
+      <div className='FeatureIntroduceWrap'>
         {FEATURE_INFO.map((item, i) => (
           <FeatureIntroduce
             {...item}
             key={i}
+            id={item.id}
             imgFirst={i % 2 === 1}
             background={i == 2 ? 'rgba(244, 248, 254, 1)' : '#FFFFFF'}
             height={item.boxheight}
             padding="0 0"
-            className="relative-position"
+            className={'relative-position ' + item.id}
           />
         ))}
       </div>

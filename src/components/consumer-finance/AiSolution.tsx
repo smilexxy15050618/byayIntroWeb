@@ -27,9 +27,9 @@ const Card = styled.div<{bg:number}>`
     border-radius: 8px;
     background: rgba(43, 88, 249, 1);
     position: relative;
+    transition: all 0.3s ease-in;
     &:hover{
         transform: translateY(-8px);
-        transition: transform 1s;
     }
     img{
         position: absolute;

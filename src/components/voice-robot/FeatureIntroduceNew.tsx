@@ -38,16 +38,16 @@ const ImgArea = styled.div<{ imgFirst?: boolean }>`
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 50%;
+  width: 680px;
   ${props =>
     props.imgFirst &&
     css`
-      right: 50%;
+      right: 520px;
     `}
   ${props =>
     !props.imgFirst &&
     css`
-      left: 50%;
+      left: 520px;
     `}
   img {
     position: absolute;
@@ -60,31 +60,35 @@ const TextArea = styled.div`
   flex-direction: column;
   justify-content: center;
   flex: none;
-  width: 45%;
+  width: 480px;
   height: 100%;
   > div:nth-child(n + 2):nth-last-child(2) {
-    margin-bottom: 28px;
+    margin-top: 22px;
+    margin-bottom: 6px;
   }
 `;
 
 const Title = styled.div`
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 500;
-  color: #000000;
+  letter-spacing: 0px;
   line-height: 56px;
-  margin-bottom: 40px;
+  color: rgba(0, 0, 0, 0.8);
 `;
 const Text = styled.div`
-  font-size: 18px;
-  font-weight: 300;
-  color: #262626;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0px;
   line-height: 28px;
-  width: 100%;
-  @media (max-width: 768px) {
-    font-size: 14px;
-    line-height: 24px;
-    padding: 24px 12.5% 0;
-  }
+  color: rgba(0, 0, 0, 0.8);
+`;
+
+const TextTwo = styled.div`
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.65);
 `;
 
 const ImgXs = styled.img`
@@ -108,18 +112,17 @@ const RawFeatureIntroduce: FC<IProps> = ({
 }) => {
   return (
     <>
-      <Hidden xs sm>
         <ByContainer
           height={height}
           padding={padding || ['142px 0px', '']}
-          maxWidthPc="1120px"
+          maxWidthPc="1200px"
           background={background}
           className={className}>
-          <Horizon reverse={imgFirst} justify="space-between">
+          <Horizon reverse={imgFirst} justify="space-between" style={{ position: 'relative' }}>
             <TextArea>
               <Title>{title}</Title>
               <Text>{textOne}</Text>
-              {textTwo && <Text>{textTwo}</Text>}
+              {textTwo && <TextTwo>{textTwo}</TextTwo>}
             </TextArea>
             <ImgArea imgFirst={imgFirst}>
               {pcImgs.map(({ className = [], ...rest }, i) => {
@@ -129,19 +132,6 @@ const RawFeatureIntroduce: FC<IProps> = ({
             </ImgArea>
           </Horizon>
         </ByContainer>
-      </Hidden>
-      <Visible xs sm>
-        <ByDesc
-          title={title}
-          padding={[, '40px 0 0']}
-          background={background}
-          needDecoration={false}
-          className={className}>
-          <Text className="text-one-xs">{textOne}</Text>
-          {textTwo && <Text>{textTwo}</Text>}
-          <ImgXs src={mobileImg} />
-        </ByDesc>
-      </Visible>
     </>
   );
 };
