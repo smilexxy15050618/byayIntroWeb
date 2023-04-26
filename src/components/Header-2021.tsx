@@ -460,7 +460,7 @@ class Nav extends React.Component<
         )}
         <HeaderWrapper fontStyle={headFontStyle} needOpacity={opacity} onMouseLeave={this.hideNavBar}>
           <Container className="content-wrapper">
-            <NavRow>
+            <NavRow style={{justifyContent: 'space-between'}}>
               <NavCol lg={3}>
                 <Link href="/">
                   <div className="logo" onClick={()=>{

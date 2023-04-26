@@ -74,25 +74,26 @@ const BlueBtn = styled.div`
 export default ({ hostType = HOST_ENUM.HOST }) => {
   const [initial, setInitial] = useState(true);
 
+  const handleHeaderOpacity = () => {
+    document.body.getBoundingClientRect().top > -10 ? setInitial(true) : setInitial(false);
+  };
+
+  const hadnleNav = () => {
+    setInitial(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener('wheel', handleHeaderOpacity);
+  }, []);
+
   return (
     <Layout initialOpacity={initial} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
       {(visible, setVisible) => (
       <Wrapper>  
       <Visible md lg xl xxl xxxl>
         
-          {/*<Banner
-            title="电话机器人"
-            subTitle="充分释放传统呼叫中心效能"
-            desc="支持智能化语音交互，利用语义识别及合成、自然语言处理、大数据分析等AI技术代替人工进行呼入呼出全自动化处理。"
-            btnText="免费体验"
-            pcImgs={PC_BANNER_IMGS}
-            mobileImg={BANNER}
-            minWidthPC="1127px"
-            background={[
-              `url(${BANNER_BG}) no-repeat center left/cover,#2B58F9`,
-            ]}
-          />*/}
           <BannerWhite
+            id="#voice"
             background={[`url(${BANNER_BG}) center, linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);`, 'linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);']}
             pcImgs={PC_BANNER_IMGS}
           >
@@ -103,7 +104,7 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
             </TextArea>
           </BannerWhite>
           
-          <Features />
+          <Features onCancel={hadnleNav} />
           <FabricValue />
           <ByVoiceFooter
             title="立即体验AI时代的新一代用户运营平台"
