@@ -176,7 +176,7 @@ export const ProductCapability = () => {
                 </div>
                 <div id="ProductCapContent2">
                     <div>
-                        <img style={{ width: '480px', height: '438px' }} src={imgurl + '/zstp_text.png'} alt="" />
+                        <img style={{ width: '480px', height: '438px' }} src={imgurl + '/zstp_text.svg'} alt="" />
                         <img style={{ width: '680px' }} src={imgurl + '/zstp.svg'} alt="" />
                     </div>
                 </div>

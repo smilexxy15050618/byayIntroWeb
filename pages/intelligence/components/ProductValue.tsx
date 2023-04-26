@@ -24,7 +24,7 @@ const list = [
 ]
 const Wrapper = styled.div`
 padding-top: 100px;
-padding-bottom:90px;
+padding-bottom: 100px;
   .title {
     font-size: 40px;
     font-weight: 500;
@@ -45,6 +45,15 @@ padding-bottom:90px;
         padding: 69px 50px 0;
         &:hover {
             background: #F9FDFF;
+            div {
+                img:first-child {
+                    transform: translate(5px,-5px);
+                }
+                img:last-child {
+                    transform: translate(-5px,5px);
+                }
+            }
+            
         }
         div:first-child {
             position: relative;
@@ -75,27 +84,49 @@ padding-bottom:90px;
                     right: 7px;
                 }
             }
+        &:nth-child(2) {
+            &:hover {
+                div {
+                    img:first-child {
+                        transform: translateY(5px);
+                    }
+                    img:last-child {
+                        transform: translateY(-5px);
+                    }
+                }
+                
+            }
+            img {
+                position: absolute;
+                &:first-child {
+                    width: 35px;
+                    height: 47px;
+                    top: 27px;
+                    right: 22px;
+                }
+            }
+        }
     }
   }
 `
 export const ProductValue = () => {
     return (
         <Wrapper>
-           <div className='title'>产品价值</div>
-           <div className='content'>
-            {list.map((item,index)=> {
-                return (
-                    <div className='list-item'>
-                        <div>
-                             <img src={item.img1} alt="" />
-                             <img src={item.img2} alt="" />
+            <div className='title'>产品价值</div>
+            <div className='content'>
+                {list.map((item, index) => {
+                    return (
+                        <div className='list-item'>
+                            <div>
+                                <img src={item.img1} alt="" />
+                                <img src={item.img2} alt="" />
+                            </div>
+                            <div>{item.text1}</div>
+                            <div>{item.text2}</div>
                         </div>
-                       <div>{item.text1}</div>
-                       <div>{item.text2}</div>
-                    </div>
-                )
-            })}
-           </div>
+                    )
+                })}
+            </div>
         </Wrapper>
     )
 }
