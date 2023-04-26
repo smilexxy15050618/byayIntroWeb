@@ -4,27 +4,27 @@ import imgurl from '../../../img.url.js'
 
 const list = [
     {
-        img1: `${imgurl}/1-1.png`,
-        img2: `${imgurl}/1-2.svg`,
+        img1: `${imgurl}/yhhx1-1.svg`,
+        img2: `${imgurl}/yhhx1-2.svg`,
         text1: '用户画像',
         text2: '清晰精准地了解客户的行为和特征'
     },
     {
-        img1: `${imgurl}/2-1.png`,
-        img2: `${imgurl}/2-2.svg`,
+        img1: `${imgurl}/jzyx2-1.svg`,
+        img2: `${imgurl}/jzyx2-2.svg`,
         text1: '精准营销',
         text2: '有效支持千人千面的个性化精准营销'
     },
     {
-        img1: `${imgurl}/3-1.png`,
-        img2: `${imgurl}/3-2.svg`,
+        img1: `${imgurl}/oneid3-2.svg`,
+        img2: `${imgurl}/oneid3-1.svg`,
         text1: 'One ID',
         text2: '多渠道重复客户归并，避免重复营销触达'
     }
     ,
     {
-        img1: `${imgurl}/3-1.png`,
-        img2: `${imgurl}/3-2.svg`,
+        img1: `${imgurl}/ycsclsc1-1.svg`,
+        img2: `${imgurl}/ycsclsc1-2.svg`,
         text1: '预测式策略生成',
         text2: '预测式生成运营策略'
     }
@@ -76,10 +76,10 @@ padding-bottom:90px;
             img {
                 position: absolute;
                 &:first-child {
-                    width: 48px;
-                    height: 48px;
-                    top: 9px;
-                    right: 7px;
+                    width: 80px;
+                    top: -1px;
+                    right: 0px;
+                    transform:scale(0.9)
                 }
             }
     }
