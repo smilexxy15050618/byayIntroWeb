@@ -38,11 +38,21 @@ padding-bottom: 100px;
     width: 1200px;
     margin: 80px auto 0;
     justify-content: space-between;
+    opacity: 0;
+    transform: translateY(50%);
+    transition: all 0.4s;
+    &.appear {
+        opacity: 1;
+        transform: translateY(0);
+    }
     .list-item {
         width: 400px;
         height: 349px;
         background: #F3F8FF;
         padding: 69px 50px 0;
+        img {
+            transition: all 0.3s;
+        }
         &:hover {
             background: #F9FDFF;
             div {
@@ -98,6 +108,7 @@ padding-bottom: 100px;
             }
             img {
                 position: absolute;
+                margin-bottom: 0;
                 &:first-child {
                     width: 35px;
                     height: 47px;
@@ -110,6 +121,22 @@ padding-bottom: 100px;
   }
 `
 export const ProductValue = () => {
+    useEffect(() => {
+        const ScrollMagic = require('scrollmagic');
+        const controller = new ScrollMagic.Controller();
+        const scrollContent = document.getElementsByClassName('content')[0];
+        var scene = new ScrollMagic.Scene({
+            triggerElement: scrollContent,
+            triggerHook: 'onEnter', //触发元素开始离开视口时触发
+            offset: 10, //从开始点滚动多少px触发（施法前摇）
+            duration: 400, //效果持续的距离（法术持续时间/距离）
+        })
+            .addTo(controller)
+            .on('enter', (e) => {
+                scrollContent.classList.add('appear')
+                // controller.destroy();
+            })
+    })
     return (
         <Wrapper>
             <div className='title'>产品价值</div>

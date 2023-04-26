@@ -45,13 +45,57 @@ padding-bottom:90px;
     width: 1200px;
     margin: 80px auto 0;
     justify-content: space-between;
+    opacity: 0;
+    transform: translateY(50%);
+    transition: transform 0.4s;
+    &.appear {
+        opacity: 1;
+        transform: translateY(0);
+    }
     .list-item {
         width: 400px;
         height: 349px;
         background: #F3F8FF;
         padding: 69px 50px 0;
+        img {
+            transition: all 0.3s;
+        }
         &:hover {
             background: #F9FDFF;
+            div {
+                img:first-child {
+                    transform: translate(5px,-5px);
+                }
+                img:last-child {
+                    transform: translate(-5px,5px);
+                }
+            }
+        }
+        &:nth-child(3) {
+            &:hover {
+                background: #F9FDFF;
+                div {
+                    img:last-child {
+                        transform: translate(5px,-5px);
+                    }
+                    img:first-child {
+                        transform: translate(-5px,5px);
+                    }
+                }
+            }
+        }
+        &:nth-child(4) {
+            &:hover {
+                background: #F9FDFF;
+                div {
+                    img:last-child {
+                        transform: translateY(5px);
+                    }
+                    img:first-child {
+                        transform: translateY(-5px);
+                    }
+                }
+            }
         }
         div:first-child {
             position: relative;
@@ -73,19 +117,35 @@ padding-bottom:90px;
             color: rgba(26, 26, 26, 0.65);
             text-align: left;
         }
-            img {
-                position: absolute;
-                &:first-child {
-                    width: 80px;
-                    top: -1px;
-                    right: 0px;
-                    transform:scale(0.9)
-                }
+        img {
+            position: absolute;
+            margin-bottom: 0;
+            &:first-child {
+                width: 80px;
+                top: -1px;
+                right: 0px;
             }
+        }
     }
   }
 `
 export const ProductValue = () => {
+    useEffect(() => {
+        const ScrollMagic = require('scrollmagic');
+        const controller = new ScrollMagic.Controller();
+        const scrollContent = document.getElementsByClassName('content')[0];
+        var scene = new ScrollMagic.Scene({
+            triggerElement: scrollContent,
+            triggerHook: 'onEnter', //触发元素开始离开视口时触发
+            offset: 10, //从开始点滚动多少px触发（施法前摇）
+            duration: 400, //效果持续的距离（法术持续时间/距离）
+        })
+            .addTo(controller)
+            .on('enter', (e) => {
+                scrollContent.classList.add('appear')
+                // controller.destroy();
+            })
+    })
     return (
         <Wrapper>
            <div className='title'>产品价值</div>

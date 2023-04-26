@@ -81,6 +81,13 @@ color: rgba(90, 90, 90, 1);
   }
 `
 const Content = styled.div`
+    opacity: 0;
+    transform: translateY(20%);
+    transition: all 0.4s;
+    &.appear {
+        opacity: 1;
+        transform: translateY(0);
+    }
   img {
     margin-bottom: 0px;
   }
@@ -107,37 +114,18 @@ export const ProductCapability = () => {
     useEffect(() => {
         const ScrollMagic = require('scrollmagic');
         const controller = new ScrollMagic.Controller();
-        const scrollcContent = document.getElementById('ProductCapContent');
-        const scrollcContent1 = document.getElementById('ProductCapContent1');
-        const scrollcContent2 = document.getElementById('ProductCapContent2');
+        const scrollContent = document.getElementById('ProductCapContent');
         var scene = new ScrollMagic.Scene({
-            triggerElement: scrollcContent,
+            triggerElement: scrollContent,
+            triggerHook: 'onEnter', //触发元素开始离开视口时触发
             offset: 10, //从开始点滚动多少px触发（施法前摇）
             duration: 400, //效果持续的距离（法术持续时间/距离）
         })
+            .addTo(controller)
             .on('enter', (e) => {
-            //    setActiveIndex(0)
+                scrollContent.classList.add('appear')
                 // controller.destroy();
-            });
-        var scene1 = new ScrollMagic.Scene({
-            triggerElement: scrollcContent1,
-            offset: 10, //从开始点滚动多少px触发（施法前摇）
-            duration: 400, //效果持续的距离（法术持续时间/距离）
-        })
-            .on('enter', (e) => {
-                // setActiveIndex(1)
-                // controller.destroy();
-            });
-        var scene2 = new ScrollMagic.Scene({
-            triggerElement: scrollcContent2,
-            offset: 10, //从开始点滚动多少px触发（施法前摇）
-            duration: 400, //效果持续的距离（法术持续时间/距离）
-        })
-            .on('enter', (e) => {
-                // setActiveIndex(2)
-                // controller.destroy();
-            });
-        controller.addScene([scene, scene1, scene2]);
+            })
     })
     const scrollTo = (index) => {
         setActiveIndex(index);
@@ -152,7 +140,7 @@ export const ProductCapability = () => {
                 {
                     labelList.map((({ img, activeImg, text, english_text }, index) => {
                         return (
-                            <LabelItem onClick={()=>scrollTo(index)} className={activeIndex == index ? 'active' : ''}>
+                            <LabelItem onClick={() => scrollTo(index)} className={activeIndex == index ? 'active' : ''}>
                                 <img src={activeIndex == index ? activeImg : img} alt="" />
                                 <span>{text}</span>
                                 <span>{english_text}</span>
@@ -161,20 +149,20 @@ export const ProductCapability = () => {
                     }))
                 }
             </Label>
-            <Content className='contents'>
-                <div id="ProductCapContent">
+            <Content id="ProductCapContent" className='contents'>
+                <div>
                     <div>
                         <img style={{ width: '450px', height: '474px' }} src={imgurl + '/yxhb_text.png'} alt="" />
                         <img style={{ width: '680px' }} src={imgurl + '/yxhb.svg'} alt="" />
                     </div>
                 </div>
-                <div id="ProductCapContent1">
+                <div>
                     <div>
                         <img style={{ width: '680px' }} src={imgurl + '/ywlc.svg'} alt="" />
                         <img style={{ width: '450px', height: '408px' }} src={imgurl + '/ywlc_text.png'} alt="" />
                     </div>
                 </div>
-                <div id="ProductCapContent2">
+                <div>
                     <div>
                         <img style={{ width: '480px', height: '438px' }} src={imgurl + '/zstp_text.svg'} alt="" />
                         <img style={{ width: '680px' }} src={imgurl + '/zstp.svg'} alt="" />
