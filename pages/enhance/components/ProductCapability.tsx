@@ -5,22 +5,28 @@ import imgurl from '../../../img.url.js'
 
 const labelList = [
     {
-        img: `${imgurl}/MarketingCanvas1.png`,
-        activeImg: `${imgurl}/MarketingCanvas.png`,
-        text: '营销画布',
-        english_text: 'Marketing Canvas'
+        img: `${imgurl}/DataAcquisition1.svg`,
+        activeImg: `${imgurl}/DataAcquisition.svg`,
+        text: '数据采集',
+        english_text: 'Data Acquisition'
     },
     {
-        img: `${imgurl}/OperationFlow1.png`,
-        activeImg: `${imgurl}/OperationFlow.png`,
-        text: '业务流程',
-        english_text: 'Operation Flow'
+        img: `${imgurl}/UserIdentification1.svg`,
+        activeImg: `${imgurl}/UserIdentification.svg`,
+        text: '用户识别',
+        english_text: 'User Identification'
     },
     {
-        img: `${imgurl}/KnowledgeGraph1.png`,
-        activeImg: `${imgurl}/KnowledgeGraph.png`,
-        text: '知识图谱',
-        english_text: 'Knowledge Graph'
+        img: `${imgurl}/DataMining1.svg`,
+        activeImg: `${imgurl}/DataMining.svg`,
+        text: '数据挖掘',
+        english_text: 'Data Mining'
+    },
+    {
+        img: `${imgurl}/PortraitInsight1.svg`,
+        activeImg: `${imgurl}/PortraitInsight.svg`,
+        text: '画像洞察',
+        english_text: 'Portrait Insight'
     }
 ]
 const Wrapper = styled.div`
@@ -47,10 +53,10 @@ const Label = styled.div`
 const LabelItem = styled.div`
   width: 190px;
   height: 170px;
-  position: relative;
-  top: 4px;
   display: flex;
   flex-direction: column;
+  position: relative;
+    top: 4px;
   align-items: center;
   margin-right: 90px;
   padding-top: 40px;
@@ -164,20 +170,26 @@ export const ProductCapability = () => {
             <Content className='contents'>
                 <div id="ProductCapContent">
                     <div>
-                        <img style={{ width: '450px', height: '474px' }} src={imgurl + '/yxhb_text.png'} alt="" />
-                        <img style={{ width: '680px' }} src={imgurl + '/yxhb.svg'} alt="" />
+                        <img style={{ width: '450px', height: '474px' }} src={imgurl + '/qdsjcj_text.svg'} alt="" />
+                        <img style={{ width: '680px' }} src={imgurl + '/qdsjcj.svg'} alt="" />
                     </div>
                 </div>
                 <div id="ProductCapContent1">
                     <div>
-                        <img style={{ width: '680px' }} src={imgurl + '/ywlc.svg'} alt="" />
-                        <img style={{ width: '450px', height: '408px' }} src={imgurl + '/ywlc_text.png'} alt="" />
+                        <img style={{ width: '680px' }} src={imgurl + '/oneidsb.svg'} alt="" />
+                        <img style={{ width: '450px', height: '408px' }} src={imgurl + '/oneidsb_text.svg'} alt="" />
                     </div>
                 </div>
                 <div id="ProductCapContent2">
                     <div>
-                        <img style={{ width: '480px', height: '438px' }} src={imgurl + '/zstp_text.png'} alt="" />
-                        <img style={{ width: '680px' }} src={imgurl + '/zstp.svg'} alt="" />
+                        <img style={{ width: '480px', height: '438px' }} src={imgurl + '/fjghsjwj_text.svg'} alt="" />
+                        <img style={{ width: '680px' }} src={imgurl + '/fjghsjwj.svg'} alt="" />
+                    </div>
+                </div>
+                <div id="ProductCapContent4">
+                    <div>
+                        <img style={{ width: '680px' }} src={imgurl + '/yhhxdc.svg'} alt="" />
+                        <img style={{ width: '450px', height: '408px' }} src={imgurl + '/yhhxdc_text.svg'} alt="" />
                     </div>
                 </div>
             </Content>
