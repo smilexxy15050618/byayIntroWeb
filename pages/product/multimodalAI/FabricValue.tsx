@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, ReactNode, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import FeatureIntroduce, { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
 
@@ -40,6 +40,15 @@ const FeatureValueWrap = styled.div`
     width: 1200px;
     margin: 0 auto;
     display: flex;
+
+    transform: translateY(50%);
+    transition: all 0.4s;
+    opacity: 0;
+    &.appear{
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
     .FeatureValue-item{
       width: 400px;
       height: 350px;
@@ -84,13 +93,35 @@ interface IProps {
   children?: ReactNode;
 }
 
+const AISOLUTION = 'ai_jiejue_2940'
+
 const RawFabricValue: FC<IProps> = ({ className }) => {
   const [currIndex, setCurrIndex] = useState(0);
+
+  useEffect(() => {
+    const ScrollMagic = require('scrollmagic');
+    var controller = new ScrollMagic.Controller();
+    const videoContent = document.getElementById(AISOLUTION);
+      new ScrollMagic.Scene({
+        triggerElement: videoContent, //触发元素
+        triggerHook: 'onEnter', //触发元素开始离开视口时触发
+        offset: 10, //从开始点滚动多少px触发（施法前摇）
+        duration: 400, //效果持续的距离（法术持续时间/距离）
+      })
+        // .setClassToggle('.aitxs', 'appear')
+        .addTo(controller)
+        .on('enter', () => {
+            videoContent.classList.add('appear')
+            // console.log('进入');
+            
+            controller.destroy();
+        });
+  }, []);
 
   return (
     <FeatureValueWrap id="#aaa">
       <div className="title">产品价值</div>
-      <div className="FeatureValue-tab">
+      <div className="FeatureValue-tab" id={AISOLUTION}>
         {FEATURE_TITLE.map((item, i) => (
           <div className="FeatureValue-item">
             <img src={item.iconnormal} />
