@@ -1,6 +1,8 @@
 import { ChannelCooperation, Consult, FreeFile, PhoneCall, PhoneNumber } from '@indata/icon-byai';
 import * as React from 'react';
 import { CALL_NUMBER_400 } from '../../constants';
+import imgurl from '../../../img.url.js'
+
 import {
   CodeCard,
   FreeCard,
@@ -30,9 +32,9 @@ const SuspensionListMap = [
   },
 ];
 
-export const AVATAR = 'https://cdn.byai.com/by-fe-cdn/static/pmp/77b1d84c-a3ad-42a7-bae6-89b45e3a7716.png';
+export const AVATAR =imgurl+'/弹弹头.svg';
 export const AVATAR_FRAME = 'https://cdn.byai.com/by-fe-cdn/static/pmp/8f2b9215-34d3-49f7-af3c-114c29b29122.png';
-export const QR_CODE_1 = 'https://cdn.byai.com/static/intro/img/%E5%85%8D%E8%B4%B9%E9%A2%86%E5%8F%96.png';
+export const QR_CODE_1 = imgurl+'/我是小应.svg';
 export const QR_CODE_2 = 'https://cdn.byai.com/static/intro/img/%E5%94%AE%E5%89%8D.png';
 
 interface ISuspensionState {
