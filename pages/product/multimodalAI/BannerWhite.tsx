@@ -1,7 +1,7 @@
 import React, { CSSProperties, FC, ReactNode } from 'react';
 import { Hidden, Visible } from 'react-grid-system';
 import styled from 'styled-components';
-import ByContainer from '../../../src/components/common/ByContainer';
+import ByContainer from '../../../src/components/common/ByContainerNew';
 import Box from '../../../src/components/Box';
 
 const Linear = styled.div`
@@ -56,7 +56,7 @@ const RawBannerWhite: FC<IProps> = ({
   return (
     <ByContainer
       background={background}
-      st
+      style={{backgroundSize: 'cover'}}
       height={['1586px', 'calc(100vh - 116px)']}
       className={className}
       padding={[, '50px 8.6% 0px']}>
@@ -74,7 +74,6 @@ const RawBannerWhite: FC<IProps> = ({
             })}
           </ImgArea>
         </Hidden>
-       
       </Linear>
     </ByContainer>
   );
