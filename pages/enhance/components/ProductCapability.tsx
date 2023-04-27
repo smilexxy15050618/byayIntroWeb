@@ -212,26 +212,26 @@ export const ProductCapability = () => {
                     }))
                 }
             </Label>
-            <Content id="ProductCapContent" className='contents'>
-                <div>
+            <Content  className='contents'>
+                <div id='ProductCapContent'>
                     <div>
                         <img style={{ width: '450px', height: '474px' }} src={imgurl + '/qdsjcj_text.svg'} alt="" />
                         <img id='img1'  style={{ width: '680px', transform: 'translateX(20%)' }} src={imgurl + '/qdsjcj.svg'} alt="" />
                     </div>
                 </div>
-                <div>
+                <div id='ProductCapContent1'>
                     <div>
                         <img id='img2'  style={{ width: '680px', transform: 'translateX(-20%)' }} src={imgurl + '/oneidsb.svg'} alt="" />
                         <img style={{ width: '450px', height: '408px' }} src={imgurl + '/oneidsb_text.svg'} alt="" />
                     </div>
                 </div>
-                <div>
+                <div id='ProductCapContent2'>
                     <div>
                         <img  style={{ width: '480px', height: '438px' }} src={imgurl + '/fjghsjwj_text.svg'} alt="" />
                         <img id='img3' style={{ width: '680px', transform: 'translateX(20%)' }} src={imgurl + '/fjghsjwj.svg'} alt="" />
                     </div>
                 </div>
-                <div>
+                <div id='ProductCapContent4'>
                     <div>
                         <img id='img4' style={{ width: '680px', transform: 'translateX(-20%)' }} src={imgurl + '/yhhxdc.svg'} alt="" />
                         <img style={{ width: '450px', height: '408px' }} src={imgurl + '/yhhxdc_text.svg'} alt="" />
