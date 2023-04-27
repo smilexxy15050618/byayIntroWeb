@@ -60,7 +60,7 @@ export const NAV_CONFIG = [
         title: '咨询服务',
         desc: '策略智能与自动化',
         icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/分析机器人.svg',
-        path: '/enhance',
+        path: '/intelligence',
       },
       {
         title: '咨询服务',
