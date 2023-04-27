@@ -11,10 +11,9 @@ import { media } from '../constants/style';
 import { withOpenOriginLink } from '../high-components/OpenOriginLink';
 import { HOST_ENUM, jumpUrl } from '../lib/utils';
 const ByLink = withOpenOriginLink(Link);
-import imgurl from '../../img.url.js'
 
 // export const LOGO = '//cdn.byai.com/static/by-intro-2023/header-logo/black-logo1.png';
-export const LOGO = imgurl+'/black-logo1.png';
+export const LOGO = '//by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/black-logo1.png';
 
 export const LOGO_SM = '//cdn.byai.com/static/official-website/seo-logo-1222-sm.png';
 export const WHITE_LOGO = '//cdn.byai.com/static/by-intro-2023/header-logo/white-logo1.png';

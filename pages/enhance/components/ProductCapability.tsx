@@ -1,4 +1,6 @@
 import { FC, useEffect, useRef, useState } from 'react';
+import classNames from 'classnames';
+
 import { Controller } from 'scrollmagic';
 import styled from 'styled-components';
 import imgurl from '../../../img.url.js'
@@ -87,13 +89,13 @@ color: rgba(90, 90, 90, 1);
   }
 `
 const Content = styled.div`
-    opacity: 0;
-    transform: translateY(10%);
-    transition: all 0.4s;
-    &.appear {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    opacity: 1;
+    // transform: translateY(10%);
+    // transition: all 0.4s;
+    // &.appear {
+    //     opacity: 1;
+    //     transform: translateY(0);
+    // }
   img {
     margin-bottom: 0px;
   }
@@ -114,22 +116,77 @@ const Content = styled.div`
         background: #F4F8FE;
     }
   }
+ 
+  #img4,#img3,#img2,#img1{
+    opacity:0;
+  
+    transition: all 0.4s;
+  }
+  .animate__fadeInRight,.animate__fadeInLeft{
+    transform: translateX(0) !important;
+    opacity:1 !important;
+  }
+  .animate__fadeInLeft{
+    opacity:1;
+  }
 `
 export const ProductCapability = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     useEffect(() => {
         const ScrollMagic = require('scrollmagic');
+        const controller1 = new ScrollMagic.Controller();
+        const scrollContent1 = document.getElementById('ProductCapContent');
+        var scene = new ScrollMagic.Scene({
+            triggerElement: scrollContent1,
+            offset: 0, //从开始点滚动多少px触发（施法前摇）
+            duration: 400, //效果持续的距离（法术持续时间/距离）
+        })
+            .addTo(controller1)
+            .on('enter', (e) => {
+                scrollContent1.querySelector('#img1').classList.add('animate__fadeInRight');
+                controller1.destroy();
+            });
+
+
+            const controller2 = new ScrollMagic.Controller();
+        const scrollContent2 = document.getElementById('ProductCapContent1');
+        var scene = new ScrollMagic.Scene({
+            triggerElement: scrollContent2,
+            offset: 0, //从开始点滚动多少px触发（施法前摇）
+            duration: 400, //效果持续的距离（法术持续时间/距离）
+        })
+            .addTo(controller2)
+            .on('enter', (e) => {
+                scrollContent2.querySelector('#img2').classList.add('animate__fadeInLeft');
+                controller2.destroy();
+            });
+
+
+            const controller3 = new ScrollMagic.Controller();
+        const scrollContent3 = document.getElementById('ProductCapContent2');
+        var scene = new ScrollMagic.Scene({
+            triggerElement: scrollContent3,
+            offset: 0, //从开始点滚动多少px触发（施法前摇）
+            duration: 400, //效果持续的距离（法术持续时间/距离）
+        })
+            .addTo(controller3)
+            .on('enter', (e) => {
+                scrollContent3.querySelector('#img3').classList.add('animate__fadeInRight');
+                controller3.destroy();
+            });
+
+
         const controller = new ScrollMagic.Controller();
-        const scrollContent = document.getElementById('ProductCapContent');
+        const scrollContent = document.getElementById('ProductCapContent4');
         var scene = new ScrollMagic.Scene({
             triggerElement: scrollContent,
-            offset: 10, //从开始点滚动多少px触发（施法前摇）
+            offset: 0, //从开始点滚动多少px触发（施法前摇）
             duration: 400, //效果持续的距离（法术持续时间/距离）
         })
             .addTo(controller)
             .on('enter', (e) => {
-                scrollContent.classList.add('appear');
-                // controller.destroy();
+                scrollContent.querySelector('#img4').classList.add('animate__fadeInLeft');
+                controller.destroy();
             });
     })
     const scrollTo = (index) => {
@@ -155,28 +212,28 @@ export const ProductCapability = () => {
                     }))
                 }
             </Label>
-            <Content id="ProductCapContent" className='contents'>
-                <div>
+            <Content  className='contents'>
+                <div id='ProductCapContent'>
                     <div>
                         <img style={{ width: '450px', height: '474px' }} src={imgurl + '/qdsjcj_text.svg'} alt="" />
-                        <img style={{ width: '680px' }} src={imgurl + '/qdsjcj.svg'} alt="" />
+                        <img id='img1'  style={{ width: '680px', transform: 'translateX(20%)' }} src={imgurl + '/qdsjcj.svg'} alt="" />
                     </div>
                 </div>
-                <div>
+                <div id='ProductCapContent1'>
                     <div>
-                        <img style={{ width: '680px' }} src={imgurl + '/oneidsb.svg'} alt="" />
+                        <img id='img2'  style={{ width: '680px', transform: 'translateX(-20%)' }} src={imgurl + '/oneidsb.svg'} alt="" />
                         <img style={{ width: '450px', height: '408px' }} src={imgurl + '/oneidsb_text.svg'} alt="" />
                     </div>
                 </div>
-                <div>
+                <div id='ProductCapContent2'>
                     <div>
-                        <img style={{ width: '480px', height: '438px' }} src={imgurl + '/fjghsjwj_text.svg'} alt="" />
-                        <img style={{ width: '680px' }} src={imgurl + '/fjghsjwj.svg'} alt="" />
+                        <img  style={{ width: '480px', height: '438px' }} src={imgurl + '/fjghsjwj_text.svg'} alt="" />
+                        <img id='img3' style={{ width: '680px', transform: 'translateX(20%)' }} src={imgurl + '/fjghsjwj.svg'} alt="" />
                     </div>
                 </div>
-                <div>
+                <div id='ProductCapContent4'>
                     <div>
-                        <img style={{ width: '680px' }} src={imgurl + '/yhhxdc.svg'} alt="" />
+                        <img id='img4' style={{ width: '680px', transform: 'translateX(-20%)' }} src={imgurl + '/yhhxdc.svg'} alt="" />
                         <img style={{ width: '450px', height: '408px' }} src={imgurl + '/yhhxdc_text.svg'} alt="" />
                     </div>
                 </div>

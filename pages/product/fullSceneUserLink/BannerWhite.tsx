@@ -56,8 +56,7 @@ const RawBannerWhite: FC<IProps> = ({
   return (
     <ByContainer
       background={background}
-      st
-      height={['1586px', 'calc(100vh - 116px)']}
+      height={['1184px', 'calc(100vh - 116px)']}
       className={className}
       padding={[, '50px 8.6% 0px']}>
       {/* 头部空白占位，以便中间中间部分对齐 */}
