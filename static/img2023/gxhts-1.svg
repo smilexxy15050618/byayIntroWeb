@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 9</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="97.5683252%" id="linearGradient-1">
+            <stop stop-color="#C4DAFF" offset="0%"></stop>
+            <stop stop-color="#C4DAFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="12.8145779%" x2="100%" y2="87.1854221%" id="linearGradient-2">
+            <stop stop-color="#74BBFF" stop-opacity="0.06" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.206192977" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" transform="translate(-439.000000, -245.000000)">
+            <g id="编组-9" transform="translate(439.500000, 245.151149)">
+                <rect id="矩形" x="0" y="0" width="80" height="80"></rect>
+                <g id="编组-114" transform="translate(9.923066, 16.764983)">
+                    <path d="M49.7369995,0 L5.32284377,0 C2.38305509,0 0,2.60027722 0,5.80792983 L0,41.6754881 C0,44.883203 2.38305509,47.4832933 5.32284377,47.4832933 L49.7369995,47.4832933 C52.6770738,47.4832933 55.0604145,44.883203 55.0604145,41.6754881 L55.0604145,5.80792983 C55.0604145,2.60021489 52.6770738,0 49.7369995,0 Z" id="路径" stroke="url(#linearGradient-2)" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+                    <polyline id="路径-11" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="9.39336194 11.4749167 27.6468338 30.1051173 45.6670526 11.4749167"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

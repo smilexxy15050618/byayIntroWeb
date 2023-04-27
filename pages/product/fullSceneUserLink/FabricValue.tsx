@@ -5,23 +5,29 @@ import FeatureIntroduce, { IFeatureIntroduceProps } from '../../../src/component
 const PREFIX = '/static/img2023';
 const FEATURE_TITLE: IFeatureIntroduceProps[] = [
   {
-    img1:`${PREFIX}/multimodal-value-1-1.svg`,
-    img2:`${PREFIX}/multimodal-value-1-2.svg`,
-    title:  '情感化',
-    subtitle: '高度拟人，情感感知与情感交互。在营销和宣传过程中，调动对方情感是关键所在，有助于提升用户体验和传递信息的效果。',
+    img1:`${PREFIX}/tswr-2.svg`,
+    img2:`${PREFIX}/tswr-1.svg`,
+    title:  '推送勿扰',
+    subtitle: ' ',
   },
   {
-    img1:`${PREFIX}/multimodal-value-2-1.svg`,
-    img2:`${PREFIX}/multimodal-value-2-2.svg`,
-    title:  '主动式',
-    subtitle: '具备主动销售能力和宣传能力。根据预设目标，主动推进对话和沟通，而不仅限于被动响应和回答问题，从而实现更高效的销售和宣传效果。',
+    img1:`${PREFIX}/tdlj-2.svg`,
+    img2:`${PREFIX}/tdlj-1.svg`,
+    title:  '天盾拦截',
+    subtitle: '实现用户触达频次控制，确保不过度打扰用户，保证用户体验及舒适度。',
   },
   {
-    img1:`${PREFIX}/multimodal-value-3-1.svg`,
-    img2:`${PREFIX}/multimodal-value-3-2.svg`,
-    title:  '全双工',
-    subtitle: '在语音和数字人场景中，听说状态的实时切换，适应各种场景，确保轮对话能力得到有效处理，使人机对话更加贴近真实的人际沟通。',
+    img1:`${PREFIX}/gxhts-2.svg`,
+    img2:`${PREFIX}/gxhts-1.svg`,
+    title:  '个性化内容推送',
+    subtitle: '通过采集和分析用户数据，个性化内容推送可以更好地了解用户的需求，提供符合用户兴趣的内容，提高用户体验和满意度，促进产品或服务的销售推广。',
   },
+  {
+    img1:`${PREFIX}/abtest-2.svg`,
+    img2:`${PREFIX}/abtest-1.svg`,
+    title:  'A/B Test',
+    subtitle: '通过AB测试来不断优化自己的触达策略，提高用户体验和市场竞争力，实现更加持续和稳定的发展。',
+  }
 ];
 
 
@@ -52,7 +58,7 @@ const FeatureValueWrap = styled.div`
     }
     
     .FeatureValue-item{
-      width: 400px;
+      width: 300px;
       height: 349px;
       background: #F3F8FF;
       padding: 69px 50px 0;
@@ -79,6 +85,19 @@ const FeatureValueWrap = styled.div`
                   }
                   img:first-child {
                       transform: translate(-5px,5px);
+                  }
+              }
+          }
+      }
+      &:nth-child(4) {
+          &:hover {
+              background: #F9FDFF;
+              div {
+                  img:last-child {
+                      transform: translateY(5px);
+                  }
+                  img:first-child {
+                      transform: translateY(-5px);
                   }
               }
           }
@@ -113,7 +132,7 @@ const FeatureValueWrap = styled.div`
           }
       }
     }
-    .FeatureValue-item:nth-child(2){
+    .FeatureValue-item:nth-child(2),.FeatureValue-item:nth-child(4){
       background: rgba(249, 253, 255, 1);
     }
     .active{
