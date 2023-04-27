@@ -69,7 +69,7 @@ const carouselDataList = [
         content:'覆盖各业务场景的丰富知识库，知识库覆盖率达90%，准确率达95%',
         url: '/use-bank-01.png'
     },{
-        title:'优秀的行业运营经验',
+        title:'资深行业运营经验',
         content:'专业运营服务团队，众多行业标杆客户服务案例，运营效果行业领先',
         url: '/use-bank-02.png'
     },{
@@ -121,7 +121,7 @@ useEffect(() => {
         });
   }, []);
     return (
-        <Pane title=" 全行业AI用户运营平台与解决方案"
+        <Pane title="核心价值"
         titleStyle={{marginBottom:'56px'}}
          paneBgColor="white" style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
           <Hidden xs sm>

@@ -192,14 +192,14 @@ export const ProductCapability = () => {
             <Content  className='contents'>
                 <div id="ProductCapContent1">
                     <div>
-                        <img style={{ width: '450px', height: '474px' }} src={imgurl + '/yxhb_text.png'} alt="" />
+                        <img style={{ width: '450px', height: '474px' }} src={imgurl + '/yxhb_text.svg'} alt="" />
                         <img id='img1'  style={{ width: '680px',  transform: 'translateX(20%)' }} src={imgurl + '/yxhb.svg'} alt="" />
                     </div>
                 </div>
                 <div id="ProductCapContent2">
                     <div>
                         <img id='img2'  style={{ width: '680px',  transform:' translateX(-20%)' }} src={imgurl + '/ywlc.svg'} alt="" />
-                        <img style={{ width: '450px', height: '408px' }} src={imgurl + '/ywlc_text.png'} alt="" />
+                        <img style={{ width: '450px', height: '408px' }} src={imgurl + '/ywlc_text.svg'} alt="" />
                     </div>
                 </div>
                 <div id="ProductCapContent3">
