@@ -151,7 +151,7 @@ export const ProductValue = () => {
             .addTo(controller)
             .on('enter', (e) => {
                 scrollContent.classList.add('appear')
-                // controller.destroy();
+                controller.destroy();
             })
     })
     return (

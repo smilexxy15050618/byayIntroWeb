@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import imgurl from '../../../img.url.js';
 
 const Wrapper = styled.div`
-padding-top: 100px;
+padding-top: 180px;
 padding-bottom: 100px;
 background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);
   .title {
