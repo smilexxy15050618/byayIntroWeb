@@ -96,7 +96,6 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
       <Visible md lg xl xxl xxxl>
         
           <BannerWhite
-            id="#voice"
             background={[`url(${BANNER_BG}) center, linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);`, 'linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);']}
             pcImgs={PC_BANNER_IMGS}
           >
