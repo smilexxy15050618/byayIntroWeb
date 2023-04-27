@@ -8,6 +8,7 @@ import { ProductValue } from './components/ProductValue';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 import imgurl from '../../img.url.js'
 import styled from 'styled-components';
+import { FormType } from '../../src/components/TryForm';
 
 const FOOTER_BG = `${imgurl}/kqaizl.png`;
 const Wrapper = styled.div``
@@ -16,7 +17,7 @@ const Intelligence: NextFunctionComponent = () => {
     return (
         <Layout headPlaceholder={[false, false]} headFontStyle={['light', 'light']} initialOpacity={true}>  
             {
-                () => (
+                (visible, setFormVisible) => (
                     <Wrapper>
                         <Visible md lg xl xxl xxxl>
                             <IndustryCarousel></IndustryCarousel>

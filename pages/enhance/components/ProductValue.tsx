@@ -7,26 +7,30 @@ const list = [
         img1: `${imgurl}/yhhx1-1.svg`,
         img2: `${imgurl}/yhhx1-2.svg`,
         text1: '用户画像',
-        text2: '清晰精准地了解客户的行为和特征'
+        text2: '清晰精准地了解客户的行为和特征',
+        style: {width: '58px',height: '64px'}
     },
     {
         img1: `${imgurl}/jzyx2-1.svg`,
         img2: `${imgurl}/jzyx2-2.svg`,
         text1: '精准营销',
-        text2: '有效支持千人千面的个性化精准营销'
+        text2: '有效支持千人千面的个性化精准营销',
+        style: {width: '55px',height: '62px'}
     },
     {
         img1: `${imgurl}/oneid3-2.svg`,
         img2: `${imgurl}/oneid3-1.svg`,
         text1: 'One ID',
-        text2: '多渠道重复客户归并，避免重复营销触达'
+        text2: '多渠道重复客户归并，避免重复营销触达',
+        style: {width: '60px',height: '57px'}
     }
     ,
     {
         img1: `${imgurl}/ycsclsc1-1.svg`,
         img2: `${imgurl}/ycsclsc1-2.svg`,
         text1: '预测式策略生成',
-        text2: '预测式生成运营策略'
+        text2: '预测式生成运营策略',
+        style: {width: '67px',height: '49px'}
     }
 ]
 const Wrapper = styled.div`
