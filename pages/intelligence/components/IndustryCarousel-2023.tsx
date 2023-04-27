@@ -1,5 +1,6 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import imgurl from '../../../img.url.js'
 
 const Wrapper = styled.div`
 padding-top: 100px;
@@ -47,24 +48,32 @@ background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 25
     display: block;
     width: 1200px;
     height: 651px;
+    margin: 0 auto;
   }
 `
 
 export const IndustryCarousel = () => {
-    const setForm = () => {
-        const url = retailUrl(`/form`);
-        window.open(url);
-      };
+    useEffect(()=> {
+      setTimeout(() => {
+        var video = document.querySelector('video');
+        video.play();
+      }, 5000);
+    })
     return (
         <Wrapper>
             <div className='title'>
             策略智能与自动化
             </div>
             <div className='desc'>策略自动生成、数据验证、自动化运行,实现目标人群的精准触达,提升关键指标和运营效率</div>
-            <div className="jumpbtn" onClick={() => setForm()}>
+            <div className="jumpbtn" onClick={() => window.open('/form?formType=1')}>
                 预约体验
             </div>
-            <video></video>
+            <video
+            muted
+            controls
+            src={imgurl+'/20230427-103948.mp4'}
+            poster={imgurl+'/intelligence_banner.png'}
+          />
         </Wrapper>
     )
 }

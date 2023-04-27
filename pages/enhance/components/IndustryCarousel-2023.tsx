@@ -1,5 +1,6 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import imgurl from '../../../img.url.js';
 
 const Wrapper = styled.div`
 padding-top: 100px;
@@ -43,28 +44,27 @@ background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 25
       background: rgba(25, 60, 212, 1);
     }
   }
-  video {
+  .banner {
     display: block;
     width: 1200px;
     height: 651px;
+    margin: 0 auto;
+    background: url(${imgurl}/enhance_banner.png);
+    background-size: 100% 100%;
   }
 `
 
 export const IndustryCarousel = () => {
-    const setForm = () => {
-        const url = retailUrl(`/form`);
-        window.open(url);
-      };
     return (
         <Wrapper>
             <div className='title'>
             增强型用户画像洞察
             </div>
             <div className='desc'>利用人工智能和自然语言处理，感知客户意向及情绪，构建完善、动态、非结构化数据感知生成的用户标签体系</div>
-            <div className="jumpbtn" onClick={() => setForm()}>
+            <div className="jumpbtn" onClick={() => window.open('/form?formType=1')}>
                 预约体验
             </div>
-            <video></video>
+            <div className='banner'></div>
         </Wrapper>
     )
 }
