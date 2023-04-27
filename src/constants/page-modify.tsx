@@ -67,6 +67,12 @@ export const NAV_CONFIG = [
         desc: '多模态感化对话式AI',
         icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/分析机器人.svg',
         path: '/product/multimodalAI',
+      },
+      {
+        title: '咨询服务',
+        desc: '全场景用户互动触达',
+        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/分析机器人.svg',
+        path: '/product/fullSceneUserLink',
       }
     ],
   },

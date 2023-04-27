@@ -56,5 +56,6 @@ const ByContainer = styled(RawByContainer)<IByContainerProps>`
   ${props => cssSwitch(props.background, 'background', ['#FFFFFF', '#FFFFFF'], true)}
   ${props => cssSwitch(props.padding, 'padding', ['0 0', '40px 20px'], true)}
   background-repeat: no-repeat;
+  background-size: cover;
 `;
 export default ByContainer;

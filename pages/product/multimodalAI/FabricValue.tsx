@@ -56,11 +56,12 @@ const FeatureValueWrap = styled.div`
       height: 349px;
       background: #F3F8FF;
       padding: 69px 50px 0;
+      transition: all 0.3s ease-in;
       img {
           transition: all 0.3s;
       }
       &:hover {
-          background: #F9FDFF;
+        transform: translateY(-8px);
           div {
               img:first-child {
                   transform: translate(5px,-5px);
@@ -72,7 +73,6 @@ const FeatureValueWrap = styled.div`
       }
       &:nth-child(3) {
           &:hover {
-              background: #F9FDFF;
               div {
                   img:last-child {
                       transform: translate(5px,-5px);

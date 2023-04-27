@@ -41,15 +41,18 @@ const PC_BANNER_IMGS = [
 const BigTitle = styled.div`
   margin-top: 100px;
   font-size: 48px;
-  line-height: 80px;
+  line-height: 60px;
+  font-weight: 600;
   color: rgba(26, 26, 26, 1);
   text-align: center;
+  margin-bottom: 16px;
 `;
 
 const Desc = styled.div`
   margin-top: 10px;
   font-size: 20px;
   line-height: 32px;
+  font-weight: 400;
   color: rgba(51, 51, 51, 1);
   text-align: center;
 `;
