@@ -14,14 +14,6 @@ import { FOOTER_BG } from '../../../src/constants/img-urls';
 import { HOST_ENUM } from '../../../src/lib/utils';
 const PREFIX = '/static/img2023';
 const BANNER_BG = `${PREFIX}/multimodal-banner-bg.svg`;
-const PC_BANNER_IMGS = [
-  {
-    src: `${PREFIX}/fullSceneUserLink-banner.svg`,
-    style: { width: '1200px', left: 0, top: 50 },
-    className: ['animate__fadeInUp', 'animate__ahead_300ms'],
-  },
-];
-
 
 const BigTitle = styled.div`
   margin-top: 100px;
@@ -81,9 +73,14 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
       <Visible md lg xl xxl xxxl>
         
           <BannerWhite
-            id="#voice"
             background={[`url(${BANNER_BG}) center, linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);`, 'linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);']}
-            pcImgs={PC_BANNER_IMGS}
+            pcImgs={[
+              {
+                src: `${PREFIX}/fullSceneUserLink-banner.svg`,
+                style: { width: '1200px', left: 0, top: 50 },
+                className: ['animate__fadeInUp', 'animate__ahead_300ms'],
+              },
+            ]}
           >
             <TextArea spaces={['', '']}>
               <BigTitle>全场景用户互动触达</BigTitle>
