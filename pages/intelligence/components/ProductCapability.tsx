@@ -168,9 +168,10 @@ export const ProductCapability = () => {
     })
     const scrollTo = (index) => {
         setActiveIndex(index);
-        var dom = document.querySelectorAll('.contents>div');
-        console.log(dom[index])
-        dom[index].scrollIntoView({ behavior: "smooth" });
+        var dom = document.querySelectorAll('.contents>div')[index];
+        if(dom) {
+            dom.scrollIntoView({ behavior: "smooth" });
+        }  
     }
     return (
         <Wrapper>

@@ -16,24 +16,9 @@ const PREFIX = '/static/img2023';
 const BANNER_BG = `${PREFIX}/multimodal-banner-bg.svg`;
 const PC_BANNER_IMGS = [
   {
-    src: `${PREFIX}/multimodal-banner-content.png`,
-    style: { width: '1200px', top: 70, left: 0 },
-    className: [],
-  },
-  {
-    src: `${PREFIX}/multimodal-banner-left.png`,
-    style: { width: '260px', top: 70, left: 32 },
-    className: ['animate__fadeInLeft','animate__delay_700ms'],
-  },
-  {
-    src: `${PREFIX}/multimodal-banner-right.png`,
-    style: { width: '260px', top: 70, right: 32 },
-    className: ['animate__fadeInRight','animate__delay_700ms'],
-  },
-  {
-    src: `${PREFIX}/multimodal-banner-bottom.png`,
-    style: { width: '1130px', left: 32, top: 723 },
-    className: ['animate__fadeInUp', 'animate__delay_700ms'],
+    src: `${PREFIX}/fullSceneUserLink-banner.svg`,
+    style: { width: '1200px', left: 0, top: 50 },
+    className: ['animate__fadeInUp', 'animate__ahead_300ms'],
   },
 ];
 
@@ -51,8 +36,8 @@ const BigTitle = styled.div`
 const Desc = styled.div`
   margin-top: 10px;
   font-size: 20px;
-  line-height: 32px;
   font-weight: 400;
+  line-height: 32px;
   color: rgba(51, 51, 51, 1);
   text-align: center;
 `;
@@ -101,8 +86,8 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
             pcImgs={PC_BANNER_IMGS}
           >
             <TextArea spaces={['', '']}>
-              <BigTitle>多模态情感化对话式AI</BigTitle>
-              <Desc>将AI交互的深度推进到多模态交互领域，丰富交互场景与内容</Desc>
+              <BigTitle>全场景用户互动触达</BigTitle>
+              <Desc>从文字、语音、数字人表情动作的多模态角度，用对话和与语境相关的动作完成跨渠道交互<br />再通过“语义+语音+视觉”，构建支持多种场景的数字机器人形象</Desc>
               <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
             </TextArea>
           </BannerWhite>

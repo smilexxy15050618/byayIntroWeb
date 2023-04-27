@@ -5,71 +5,87 @@ import FeatureIntroduce, { IFeatureIntroduceProps } from '../../../src/component
 const PREFIX = '/static/img2023';
 const FEATURE_TITLE: IFeatureIntroduceProps[] = [
   {
-    iconnormal:`${PREFIX}/capacity-1-1.svg`,
-    iconactive:`${PREFIX}/capacity-1-2.svg`,
-    title:  '语音交互',
-    subtitle: 'Voice Interaction',
-    id: 'voice'
+    iconnormal:`${PREFIX}/wechat-2.svg`,
+    iconactive:`${PREFIX}/wechat-1.svg`,
+    title:  '微信',
+    subtitle: 'WeChat',
+    id: 'WeChat'
   },
   {
-    iconnormal:`${PREFIX}/capacity-2-1.svg`,
-    iconactive:`${PREFIX}/capacity-2-2.svg`,
-    title:  '文本交互',
-    subtitle: 'Text Interaction',
-    id: 'version'
+    iconnormal:`${PREFIX}/communicate-2.svg`,
+    iconactive:`${PREFIX}/communicate-1.svg`,
+    title:  '通讯',
+    subtitle: 'Communicate',
+    id: 'Communicate'
   },
   {
-    iconnormal: `${PREFIX}/capacity-3-1.svg`,
-    iconactive: `${PREFIX}/capacity-3-2.svg`,
-    title:  '虚拟数字人',
-    subtitle: 'Virtual Digital Human',
-    id: 'digit'
+    iconnormal: `${PREFIX}/onlinecommun-2.svg`,
+    iconactive: `${PREFIX}/onlinecommun-1.svg`,
+    title:  '在线沟通',
+    subtitle: 'Online Communication',
+    id: 'OnlineCommunication'
   },
-  
+  {
+    iconnormal: `${PREFIX}/intelligentter-2.svg`,
+    iconactive: `${PREFIX}/intelligentter-1.svg`,
+    title:  '智能终端',
+    subtitle: 'Intelligent Terminal',
+    id: 'IntelligentTerminal'
+  },
 ];
 
 const FEATURE_INFO: IFeatureIntroduceProps[] = [
   {
-    title: '语音交互',
-    textOne: '打造极致的对话体验',
-    textTwo: '基于自然语言处理（NLP）、语音识别（ASR）和语音合成（TTS）技术，实现自动语音应答，用自然逼真的对话与客户沟通。通过语音机器人完成营销、宣传、回访、催收等外呼和接待场景语音对话。',
+    title: '微信生态流量触达',
+    textTwo: '加微/单聊/群/朋友圈/视频号/公众号/小程序集成微信生态触达渠道，低成本高效率触达客户',
     pcImgs: [
       {
-        src: `${PREFIX}/capacity-1.svg`,
+        src: `${PREFIX}/wechat-banner.svg`,
         style: { width: '680px', height: '573px', top: '100px', left: '0' },
         className: ['animate__fadeInRight'],
       },
     ],
-    id:'voice',
-    boxheight: '773px',
+    id:'WeChat',
+    boxheight: '718px',
   },
   {
-    title: '文本交互',
-    textOne: '更聪明、更自然、更善解人意',
-    textTwo: '提供文本对话交互功能，能替代人工客服解决大部分咨询问题。支持官网、企业微信、APP等线上全渠道接入，24小时全天候在线，用户在各个入口都能体验智能、便捷的咨询服务。',
+    title: '电话 / 短信 / 5G消息',
+    textTwo: '支持超大并发预测式呼叫、短信和5G消息，保障畅通无阻的沟通',
     pcImgs: [
       {
-        src: `${PREFIX}/capacity-2.svg`,
+        src: `${PREFIX}/communicate-banner.svg`,
         style: { width: '680px', height: '619px', top: '100px', left: '0' },
         className: ['animate__fadeInLeft'],
       }
     ],
-    id:'version',
-    boxheight: '819px',
+    id:'Communicate',
+    boxheight: '784px',
   },
   {
-    title: '视觉交互/虚拟数字人',
-    textOne: '多样形象、智慧大脑、实时交互',
-    textTwo: '将计算机视觉、语音识别、自然语言处理等AI技术深度融合，充分模拟人与人之间真实可感的对话交互方式，达到“听得懂，看得见，说得出“的效果，所见即所得。',
+    title: '在线沟通',
+    textTwo: '提供网站/小程序/APP内的音视频在线沟通，方便实时交流',
     pcImgs: [
       {
-        src: `${PREFIX}/capacity-3.svg`,
+        src: `${PREFIX}/onlinecommun-banner.svg`,
         style: { width: '680px', height: '518px', top: '100px', right: '0' },
         className: ['animate__fadeInRight'],
       }
     ],
-    id:'digit',
+    id:'OnlineCommunication',
     boxheight: '718px',
+  },
+  {
+    title: '线下智能终端',
+    textTwo: '兼容智能终端设备，实现线上线下无缝连接与触达',
+    pcImgs: [
+      {
+        src: `${PREFIX}/intelligentter-banner.svg`,
+        style: { width: '680px', height: '518px', top: '100px', right: '0' },
+        className: ['animate__fadeInLeft'],
+      }
+    ],
+    id:'IntelligentTerminal',
+    boxheight: '750px',
   },
 ];
 
@@ -173,7 +189,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
             key={i}
             id={item.id}
             imgFirst={i % 2 === 1}
-            background={i == 2 ? 'rgba(244, 248, 254, 1)' : '#FFFFFF'}
+            background={i % 2 === 1 ? 'rgba(244, 248, 254, 1)' : '#FFFFFF'}
             height={item.boxheight}
             padding="0 0"
             className={'relative-position ' + item.id}
