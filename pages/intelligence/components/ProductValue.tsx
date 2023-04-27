@@ -50,11 +50,12 @@ padding-bottom: 100px;
         height: 349px;
         background: #F3F8FF;
         padding: 69px 50px 0;
+        transition: all 0.3s;
         img {
             transition: all 0.3s;
         }
         &:hover {
-            background: #F9FDFF;
+            transform: translateY(-8px);
             div {
                 img:first-child {
                     transform: translate(5px,-5px);
@@ -84,6 +85,7 @@ padding-bottom: 100px;
             letter-spacing: 0px;
             color: rgba(26, 26, 26, 0.65);
             text-align: left;
+            margin-top: 18px;
         }
             img {
                 position: absolute;
@@ -95,6 +97,7 @@ padding-bottom: 100px;
                 }
             }
         &:nth-child(2) {
+            background: #F9FDFF;
             &:hover {
                 div {
                     img:first-child {

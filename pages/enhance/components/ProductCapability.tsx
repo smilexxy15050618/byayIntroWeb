@@ -134,9 +134,10 @@ export const ProductCapability = () => {
     })
     const scrollTo = (index) => {
         setActiveIndex(index);
-        var dom = document.querySelectorAll('.contents>div');
-        console.log(dom[index])
-        dom[index].scrollIntoView({ behavior: "smooth" });
+        var dom = document.querySelectorAll('.contents>div')[index];
+        if(dom) {
+            dom.scrollIntoView({ behavior: "smooth" });
+        }
     }
     return (
         <Wrapper>
@@ -161,19 +162,19 @@ export const ProductCapability = () => {
                         <img style={{ width: '680px' }} src={imgurl + '/qdsjcj.svg'} alt="" />
                     </div>
                 </div>
-                <div id="ProductCapContent1">
+                <div>
                     <div>
                         <img style={{ width: '680px' }} src={imgurl + '/oneidsb.svg'} alt="" />
                         <img style={{ width: '450px', height: '408px' }} src={imgurl + '/oneidsb_text.svg'} alt="" />
                     </div>
                 </div>
-                <div id="ProductCapContent2">
+                <div>
                     <div>
                         <img style={{ width: '480px', height: '438px' }} src={imgurl + '/fjghsjwj_text.svg'} alt="" />
                         <img style={{ width: '680px' }} src={imgurl + '/fjghsjwj.svg'} alt="" />
                     </div>
                 </div>
-                <div id="ProductCapContent4">
+                <div>
                     <div>
                         <img style={{ width: '680px' }} src={imgurl + '/yhhxdc.svg'} alt="" />
                         <img style={{ width: '450px', height: '408px' }} src={imgurl + '/yhhxdc_text.svg'} alt="" />
