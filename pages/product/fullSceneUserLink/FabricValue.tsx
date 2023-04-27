@@ -94,10 +94,10 @@ const FeatureValueWrap = styled.div`
               background: #F9FDFF;
               div {
                   img:last-child {
-                      transform: translateY(5px);
+                      transform: translate(5px,-5px);
                   }
                   img:first-child {
-                      transform: translateY(-5px);
+                      transform: translate(-5px,5px);
                   }
               }
           }
