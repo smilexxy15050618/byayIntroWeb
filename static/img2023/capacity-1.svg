@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="684px" height="577px" viewBox="0 0 684 577" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 87</title>
+    <defs>
+        <linearGradient x1="22.81041%" y1="30.8426788%" x2="100%" y2="69.5555497%" id="linearGradient-1">
+            <stop stop-color="#3C76FE" offset="0%"></stop>
+            <stop stop-color="#4DCCFF" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="680" height="573" rx="24"></rect>
+        <filter x="-24.8%" y="-25.4%" width="149.6%" height="150.8%" filterUnits="objectBoundingBox" id="filter-4">
+            <feGaussianBlur stdDeviation="50" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-6.9%" y="-8.4%" width="113.9%" height="116.8%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.17254902   0 0 0 0 0.407843137   0 0 0 0 0.662745098  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <text id="text-6" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#FFFFFF">
+            <tspan x="127" y="37">媲美真人的流畅沟通体验，使企业营销和服务更高效</tspan>
+        </text>
+        <filter x="-1.9%" y="-22.7%" width="103.8%" height="163.6%" filterUnits="objectBoundingBox" id="filter-7">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.244062036   0 0 0 0 0.580086997   0 0 0 0 0.809337671  0 0 0 0.456181026 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-8">
+            <stop stop-color="#699AFF" offset="0%"></stop>
+            <stop stop-color="#0051FF" offset="100%"></stop>
+        </linearGradient>
+        <text id="text-9" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#FFFFFF">
+            <tspan x="49" y="37">业界领先行业知识图谱，基于百应	No-Code AI 理念的先进算法能力平台</tspan>
+        </text>
+        <filter x="-1.3%" y="-22.7%" width="102.7%" height="163.6%" filterUnits="objectBoundingBox" id="filter-10">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.244062036   0 0 0 0 0.580086997   0 0 0 0 0.809337671  0 0 0 0.456181026 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="产品官网" transform="translate(-638.000000, -2043.000000)">
+            <g id="编组-22" transform="translate(0.000000, 1945.000000)">
+                <g id="编组-87" transform="translate(640.000000, 100.000000)">
+                    <g id="编组-16">
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <use id="矩形" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                        <ellipse id="椭圆形" fill="#5F72FF" opacity="0.517264957" filter="url(#filter-4)" mask="url(#mask-3)" cx="0.512048193" cy="334.5" rx="302.620482" ry="295.5"></ellipse>
+                    </g>
+                    <g id="编组-77" filter="url(#filter-5)" transform="translate(30.000000, 30.000000)">
+                        <g id="编组-47">
+                            <rect id="矩形" fill-opacity="0.26" fill="#FFFFFF" x="0" y="0" width="620" height="124" rx="8"></rect>
+                            <g id="编组-35" transform="translate(30.000000, 58.000000)">
+                                <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="170" height="46" rx="6"></rect>
+                                <rect id="矩形" fill="#00CFFF" x="0" y="0" width="46" height="46" rx="6"></rect>
+                                <text id="音色仿真" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="72" y="28">音色仿真</tspan>
+                                </text>
+                                <g id="声音" transform="translate(14.000000, 14.000000)" fill-rule="nonzero">
+                                    <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="18" height="18"></rect>
+                                    <path d="M8.1,0.9 L9.9,0.9 L9.9,17.1 L8.1,17.1 L8.1,0.9 Z M16.2,6.3 L18,6.3 L18,11.7 L16.2,11.7 L16.2,6.3 Z M0,6.3 L1.8,6.3 L1.8,11.7 L0,11.7 L0,6.3 Z M12.6,3.6 L14.4,3.6 L14.4,14.4 L12.6,14.4 L12.6,3.6 Z M3.6,3.6 L5.4,3.6 L5.4,14.4 L3.6,14.4 L3.6,3.6 Z" id="形状" fill="#FFFFFF"></path>
+                                </g>
+                            </g>
+                            <g id="编组-36" transform="translate(225.000000, 58.000000)">
+                                <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="170" height="46" rx="6"></rect>
+                                <rect id="矩形" fill="#247DFF" x="0" y="0" width="46" height="46" rx="6"></rect>
+                                <text id="话术知识图谱" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="62" y="28">话术知识图谱</tspan>
+                                </text>
+                                <g id="未打卡的文件夹" transform="translate(13.000000, 13.000000)" fill-rule="nonzero">
+                                    <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="21" height="21"></rect>
+                                    <path d="M19.698,9.093 C19.698,9.205 19.7015,9.471 19.7085,9.891 C19.7155,10.311 19.719,10.7975 19.719,11.3505 C19.719,11.9035 19.7225,12.488 19.7295,13.104 C19.7365,13.72 19.74,14.28 19.74,14.784 C19.74,15.05 19.6805,15.316 19.5615,15.582 C19.4425,15.848 19.2675,16.0895 19.0365,16.3065 C18.8055,16.5235 18.529,16.6985 18.207,16.8315 C17.885,16.9645 17.521,17.031 17.115,17.031 L4.032,17.031 C3.738,17.031 3.4335,16.968 3.1185,16.842 C2.8035,16.716 2.513,16.5375 2.247,16.3065 C1.981,16.0755 1.764,15.7955 1.596,15.4665 C1.428,15.1375 1.344,14.77 1.344,14.364 L1.344,5.355 C1.344,4.501 1.5785,3.8325 2.0475,3.3495 C2.5165,2.8665 3.164,2.625 3.99,2.625 L7.224,2.625 C8.064,2.625 8.96,2.6215 9.912,2.6145 C10.864,2.6075 11.753,2.604 12.579,2.604 L15.624,2.604 C15.946,2.604 16.2715,2.667 16.6005,2.793 C16.9295,2.919 17.2235,3.087 17.4825,3.297 C17.7415,3.507 17.955,3.752 18.123,4.032 C18.291,4.312 18.375,4.613 18.375,4.935 L18.375,5.166 C17.983,5.166 17.4685,5.1695 16.8315,5.1765 C16.1945,5.1835 15.491,5.1905 14.721,5.1975 C13.951,5.2045 13.1355,5.2115 12.2745,5.2185 C11.4135,5.2255 10.563,5.2325 9.723,5.2395 C8.883,5.2465 8.078,5.25 7.308,5.25 L5.271,5.25 C4.921,5.25 4.6165,5.3585 4.3575,5.5755 C4.0985,5.7925 3.969,6.104 3.969,6.51 C3.969,6.916 3.9655,7.3535 3.9585,7.8225 C3.9515,8.2915 3.948,8.722 3.948,9.114 L3.948,10.479 L3.969,10.479 L3.969,11.109 C3.969,11.291 4.032,11.445 4.158,11.571 C4.284,11.697 4.438,11.76 4.62,11.76 C4.802,11.76 4.956,11.697 5.082,11.571 C5.208,11.445 5.271,11.291 5.271,11.109 L5.271,10.437 L5.313,10.437 L5.271,6.51 L17.64,6.531 C17.906,6.559 18.1615,6.629 18.4065,6.741 C18.6515,6.853 18.8685,7.0105 19.0575,7.2135 C19.2465,7.4165 19.4005,7.672 19.5195,7.98 C19.6385,8.288 19.698,8.659 19.698,9.093 Z" id="路径" fill="#FFFFFF"></path>
+                                </g>
+                            </g>
+                            <g id="编组-38" transform="translate(420.000000, 58.000000)">
+                                <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="170" height="46" rx="6"></rect>
+                                <rect id="矩形" fill="#00EDE3" x="0" y="0" width="46" height="46" rx="6"></rect>
+                                <text id="外呼策略" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="72" y="28">外呼策略</tspan>
+                                </text>
+                                <g id="电话" transform="translate(12.000000, 12.000000)" fill-rule="nonzero">
+                                    <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="22" height="22"></rect>
+                                    <path d="M7.02324219,15.8339844 L7.02109375,15.8339844 C5.71054687,14.6330078 5.21425781,12.9121094 5.21425781,11.0021484 C5.21425781,9.10078125 5.37753906,7.38632813 6.67734375,6.18535156 L8.41328125,6.18535156 C9.13085937,6.18535156 9.71308594,5.59667969 9.71308594,4.87265625 L9.71308594,2.59316406 C9.71308594,1.86914063 9.13085937,1.28046875 8.41328125,1.28046875 L4.94785156,1.28046875 C4.228125,1.28046875 3.56640625,1.68007813 3.22910156,2.32246094 C2.00664062,4.64707031 1.26757812,7.67851563 1.26757812,10.9935547 C1.26757812,14.3257813 2.01523437,17.3722656 3.2484375,19.7011719 C3.58789062,20.3414063 4.24746094,20.7388672 4.96503906,20.7388672 L8.41113281,20.7388672 C9.12871094,20.7388672 9.7109375,20.1501953 9.7109375,19.4261719 L9.7109375,17.1466797 C9.7109375,16.4226563 9.12871094,15.8339844 8.41113281,15.8339844 L7.02324219,15.8339844 Z M11.2041016,6.90722656 C11.2041016,7.5005012 11.6850457,7.98144531 12.2783203,7.98144531 C12.8715949,7.98144531 13.3525391,7.5005012 13.3525391,6.90722656 C13.3525391,6.31395193 12.8715949,5.83300781 12.2783203,5.83300781 C11.6850457,5.83300781 11.2041016,6.31395193 11.2041016,6.90722656 Z M14.8779297,6.90722656 C14.8779297,7.5005012 15.3588738,7.98144531 15.9521484,7.98144531 C16.5454231,7.98144531 17.0263672,7.5005012 17.0263672,6.90722656 C17.0263672,6.31395193 16.5454231,5.83300781 15.9521484,5.83300781 C15.3588738,5.83300781 14.8779297,6.31395193 14.8779297,6.90722656 Z M18.5517578,6.90722656 C18.5517578,7.5005012 19.0327019,7.98144531 19.6259766,7.98144531 C20.2192512,7.98144531 20.7001953,7.5005012 20.7001953,6.90722656 C20.7001953,6.31395193 20.2192512,5.83300781 19.6259766,5.83300781 C19.0327019,5.83300781 18.5517578,6.31395193 18.5517578,6.90722656 Z M11.2041016,11.0107422 C11.2041016,11.6040168 11.6850457,12.0849609 12.2783203,12.0849609 C12.8715949,12.0849609 13.3525391,11.6040168 13.3525391,11.0107422 C13.3525391,10.4174676 12.8715949,9.93652344 12.2783203,9.93652344 C11.6850457,9.93652344 11.2041016,10.4174676 11.2041016,11.0107422 Z M14.8779297,11.0107422 C14.8779297,11.6040168 15.3588738,12.0849609 15.9521484,12.0849609 C16.5454231,12.0849609 17.0263672,11.6040168 17.0263672,11.0107422 C17.0263672,10.4174676 16.5454231,9.93652344 15.9521484,9.93652344 C15.3588738,9.93652344 14.8779297,10.4174676 14.8779297,11.0107422 Z M18.5517578,11.0107422 C18.5517578,11.6040168 19.0327019,12.0849609 19.6259766,12.0849609 C20.2192512,12.0849609 20.7001953,11.6040168 20.7001953,11.0107422 C20.7001953,10.4174676 20.2192512,9.93652344 19.6259766,9.93652344 C19.0327019,9.93652344 18.5517578,10.4174676 18.5517578,11.0107422 Z M11.2041016,15.1142578 C11.2041016,15.7075324 11.6850457,16.1884766 12.2783203,16.1884766 C12.8715949,16.1884766 13.3525391,15.7075324 13.3525391,15.1142578 C13.3525391,14.5209832 12.8715949,14.0400391 12.2783203,14.0400391 C11.6850457,14.0400391 11.2041016,14.5209832 11.2041016,15.1142578 Z M14.8779297,15.1142578 C14.8779297,15.7075324 15.3588738,16.1884766 15.9521484,16.1884766 C16.5454231,16.1884766 17.0263672,15.7075324 17.0263672,15.1142578 C17.0263672,14.5209832 16.5454231,14.0400391 15.9521484,14.0400391 C15.3588738,14.0400391 14.8779297,14.5209832 14.8779297,15.1142578 Z M18.5517578,15.1142578 C18.5517578,15.7075324 19.0327019,16.1884766 19.6259766,16.1884766 C20.2192512,16.1884766 20.7001953,15.7075324 20.7001953,15.1142578 C20.7001953,14.5209832 20.2192512,14.0400391 19.6259766,14.0400391 C19.0327019,14.0400391 18.5517578,14.5209832 18.5517578,15.1142578 Z" id="形状" fill="#FFFFFF"></path>
+                                </g>
+                            </g>
+                            <g id="媲美真人的流畅沟通体验，使企业营销和服务" fill="#FFFFFF" fill-opacity="1">
+                                <use filter="url(#filter-7)" xlink:href="#text-6"></use>
+                                <use xlink:href="#text-6"></use>
+                            </g>
+                        </g>
+                        <g id="编组-67" transform="translate(0.000000, 144.000000)">
+                            <rect id="矩形" fill-opacity="0.26" fill="#FFFFFF" x="0" y="0" width="620" height="369" rx="8"></rect>
+                            <g id="编组-45" transform="translate(30.000000, 58.000000)">
+                                <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="114" height="138" rx="6"></rect>
+                                <rect id="矩形" fill="#F1F6FF" x="12" y="12" width="90" height="114" rx="6"></rect>
+                                <text id="知识库" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="39" y="33">知识库</tspan>
+                                </text>
+                                <text id="话术" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="45" y="60">话术</tspan>
+                                </text>
+                                <text id="未识别问题" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="27" y="87">未识别问题</tspan>
+                                </text>
+                                <text id="意向纠错" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="33" y="114">意向纠错</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-44" transform="translate(30.000000, 206.000000)">
+                                <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="114" height="138" rx="6"></rect>
+                                <rect id="矩形" fill="#F1F6FF" x="12" y="12" width="90" height="114" rx="6"></rect>
+                                <text id="维基百科" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="33" y="33">维基百科</tspan>
+                                </text>
+                                <text id="百度百科" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="33" y="60">百度百科</tspan>
+                                </text>
+                                <text id="行业新闻" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="33" y="87">行业新闻</tspan>
+                                </text>
+                                <text id="三方知识库" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="27" y="114">三方知识库</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-58" transform="translate(350.000000, 58.000000)">
+                                <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="99" height="286" rx="6"></rect>
+                                <rect id="矩形" fill="#F1F6FF" x="11" y="44" width="77" height="230" rx="4"></rect>
+                                <text id="数据整合" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="26" y="92">数据整合</tspan>
+                                </text>
+                                <text id="实体对齐" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="26" y="125">实体对齐</tspan>
+                                </text>
+                                <text id="本体构建" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="26" y="158">本体构建</tspan>
+                                </text>
+                                <text id="知识推理" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="26" y="191">知识推理</tspan>
+                                </text>
+                                <text id="知识库更新" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="20" y="224">知识库更新</tspan>
+                                </text>
+                                <text id="知识融合" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="22" y="27">知识融合</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-64" transform="translate(457.000000, 137.000000)">
+                                <rect id="矩形" fill="#FFFFFF" x="0" y="3" width="137" height="204" rx="6"></rect>
+                                <rect id="矩形" fill="#FFFBE6" x="12" y="54" width="113" height="141" rx="4"></rect>
+                                <text id="图数据库" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="45" y="112">图数据库</tspan>
+                                </text>
+                                <text id="知识图谱存储" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="33" y="145">知识图谱存储</tspan>
+                                </text>
+                                <rect id="矩形" fill="#FFC53D" x="0" y="0" width="137" height="42" rx="6"></rect>
+                                <text id="知识图谱服务" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" fill="#FFFFFF">
+                                    <tspan x="27" y="26">知识图谱服务</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-66" transform="translate(457.000000, 58.000000)">
+                                <rect id="矩形" fill="#247DFF" x="0" y="0" width="137" height="42" rx="6"></rect>
+                                <text id="机器人-知识检索" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" fill="#FFFFFF">
+                                    <tspan x="15" y="27">机器人-知识检索</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-42" transform="translate(152.000000, 58.000000)">
+                                <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="190" height="138" rx="6"></rect>
+                                <g id="编组-39" transform="translate(12.000000, 42.000000)">
+                                    <rect id="矩形" fill="#EDF9FF" x="0" y="0" width="77" height="26" rx="4"></rect>
+                                    <text id="结构化提取" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0089BA">
+                                        <tspan x="9" y="18">结构化提取</tspan>
+                                    </text>
+                                </g>
+                                <g id="编组-39" transform="translate(101.000000, 42.000000)">
+                                    <rect id="矩形" fill="#E9FBFA" x="0" y="0" width="77" height="86" rx="4"></rect>
+                                    <text id="内部系统" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#00927B">
+                                        <tspan x="15" y="34">内部系统</tspan>
+                                    </text>
+                                    <text id="结构化数据" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#00927B">
+                                        <tspan x="9" y="61">结构化数据</tspan>
+                                    </text>
+                                </g>
+                                <g id="编组-39" transform="translate(12.000000, 72.000000)">
+                                    <rect id="矩形" fill="#F1F6FF" x="0" y="0" width="77" height="26" rx="4"></rect>
+                                    <text id="大数据分析" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0054C9">
+                                        <tspan x="9" y="18">大数据分析</tspan>
+                                    </text>
+                                </g>
+                                <g id="编组-39" transform="translate(12.000000, 102.000000)">
+                                    <rect id="矩形" fill="#F0FCF0" x="0" y="0" width="77" height="26" rx="4"></rect>
+                                    <text id="机器人学习" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#028802">
+                                        <tspan x="9" y="18">机器人学习</tspan>
+                                    </text>
+                                </g>
+                                <text id="挖掘+分析" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="63" y="27">挖掘+分析</tspan>
+                                </text>
+                            </g>
+                            <polygon id="路径-4" fill="url(#linearGradient-8)" points="141 121.696755 152.844968 121.696755 152.844968 118 162.484596 127.621493 152.844968 137 152.844968 133.498672 141 133.498672"></polygon>
+                            <g id="编组-41" transform="translate(152.000000, 206.000000)">
+                                <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="190" height="138" rx="6"></rect>
+                                <text id="知识抽取" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="63" y="27">知识抽取</tspan>
+                                </text>
+                                <g id="编组-39" transform="translate(12.000000, 42.000000)">
+                                    <rect id="矩形" fill="#EDF9FF" x="0" y="0" width="166" height="26" rx="4"></rect>
+                                    <text id="实体抽取" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0089BA">
+                                        <tspan x="59" y="18">实体抽取</tspan>
+                                    </text>
+                                </g>
+                                <g id="编组-39" transform="translate(12.000000, 72.000000)">
+                                    <rect id="矩形" fill="#F1F6FF" x="0" y="0" width="166" height="26" rx="4"></rect>
+                                    <text id="关系抽取" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#0054C9">
+                                        <tspan x="59" y="18">关系抽取</tspan>
+                                    </text>
+                                </g>
+                                <g id="编组-39" transform="translate(12.000000, 102.000000)">
+                                    <rect id="矩形" fill="#F0FCF0" x="0" y="0" width="166" height="26" rx="4"></rect>
+                                    <text id="属性抽取" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#028802">
+                                        <tspan x="59" y="18">属性抽取</tspan>
+                                    </text>
+                                </g>
+                            </g>
+                            <polygon id="路径-4" fill="url(#linearGradient-8)" points="339 121.696755 350.844968 121.696755 350.844968 118 360.484596 127.621493 350.844968 137 350.844968 133.498672 339 133.498672"></polygon>
+                            <polygon id="路径-4" fill="url(#linearGradient-8)" transform="translate(525.742298, 120.500000) rotate(90.000000) translate(-525.742298, -120.500000) " points="515 114.696755 526.844968 114.696755 526.844968 111 536.484596 120.621493 526.844968 130 526.844968 126.498672 515 126.498672"></polygon>
+                            <polygon id="路径-4" fill="url(#linearGradient-8)" points="339 269.696755 350.844968 269.696755 350.844968 266 360.484596 275.621493 350.844968 285 350.844968 281.498672 339 281.498672"></polygon>
+                            <polygon id="路径-4" fill="url(#linearGradient-8)" points="446 269.696755 457.844968 269.696755 457.844968 266 467.484596 275.621493 457.844968 285 457.844968 281.498672 446 281.498672"></polygon>
+                            <polygon id="路径-4" fill="url(#linearGradient-8)" points="141 269.696755 152.844968 269.696755 152.844968 266 162.484596 275.621493 152.844968 285 152.844968 281.498672 141 281.498672"></polygon>
+                            <g id="业界领先行业知识图谱，基于百应-No-C" fill="#FFFFFF" fill-opacity="1">
+                                <use filter="url(#filter-10)" xlink:href="#text-9"></use>
+                                <use xlink:href="#text-9"></use>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
