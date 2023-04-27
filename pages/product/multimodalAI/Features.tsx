@@ -35,7 +35,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
     textTwo: '基于自然语言处理（NLP）、语音识别（ASR）和语音合成（TTS）技术，实现自动语音应答，用自然逼真的对话与客户沟通。通过语音机器人完成营销、宣传、回访、催收等外呼和接待场景语音对话。',
     pcImgs: [
       {
-        src: `${PREFIX}/capacity-1.png`,
+        src: `${PREFIX}/capacity-1.svg`,
         style: { width: '680px', height: '573px', top: '100px', left: '0' },
         className: ['animate__fadeInRight'],
       },
@@ -49,7 +49,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
     textTwo: '提供文本对话交互功能，能替代人工客服解决大部分咨询问题。支持官网、企业微信、APP等线上全渠道接入，24小时全天候在线，用户在各个入口都能体验智能、便捷的咨询服务。',
     pcImgs: [
       {
-        src: `${PREFIX}/capacity-2.png`,
+        src: `${PREFIX}/capacity-2.svg`,
         style: { width: '680px', height: '619px', top: '100px', left: '0' },
         className: ['animate__fadeInLeft'],
       }
@@ -63,7 +63,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
     textTwo: '将计算机视觉、语音识别、自然语言处理等AI技术深度融合，充分模拟人与人之间真实可感的对话交互方式，达到“听得懂，看得见，说得出“的效果，所见即所得。',
     pcImgs: [
       {
-        src: `${PREFIX}/capacity-3.png`,
+        src: `${PREFIX}/capacity-3.svg`,
         style: { width: '680px', height: '518px', top: '100px', right: '0' },
         className: ['animate__fadeInRight'],
       }
