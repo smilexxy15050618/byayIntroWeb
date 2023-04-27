@@ -80,7 +80,7 @@ export const SuspensionAvatar = styled.div`
     top: calc(100vh - 522px);
     right: 28px;
     width: 64px;
-    height: 64px;
+    /* height: 64px; */
     margin-bottom: 0;
     animation: avatarScaling 3s ease-in-out infinite;
     @keyframes avatarScaling {

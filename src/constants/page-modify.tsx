@@ -15,6 +15,32 @@ export const NAV_CONFIG = [
     smallDropdown: true,
     expand: [
       {
+        title: '多模态情感化对话AI',
+        desc: '情感化、主动式、全双工',
+        icon: imgurl+'/多模态情感化对话AI.svg',
+        path: '/product/multimodalAI',
+      },
+      {
+        title: '增强型用户画像洞察（CDP+）',
+        desc: '千人千面的精准营销',
+        icon: imgurl+'/增强型用户画像洞察（CDP+）.svg',
+        path: '/enhance',
+      },
+      {
+        title: '全场景用户连接与对话（AICC+ ）',
+        desc: '跨平台、多形式交互',
+        icon: imgurl+'/全场景用户连接与对话（AICC+ ）.svg',
+        path: '/product/fullSceneUserLink',
+      },
+      {
+        title: '策略智能与自动化（OSA）',
+        desc: '自动化策略生成与执行',
+        icon: imgurl+'/策略智能与自动化（OSA）.svg',
+        path: '/intelligence',
+      },
+     
+     
+      {
         title: 'AI电话机器人',
         desc: 'AI电话营销的优质选择',
         icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/AI%E7%94%B5%E8%AF%9D%E6%9C%BA%E5%99%A8%E4%BA%BA.svg',
@@ -38,47 +64,24 @@ export const NAV_CONFIG = [
         icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/虚拟数字人.svg',
         path: '/product/virtual-robot',
       },
-      {
-        title: '领先技术',
-        desc: '七年深耕，行业前沿技术水平',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E6%8A%80%E6%9C%AF%E9%A2%86%E5%85%88.svg',
-        path: '/technology-service/technology',
-      },
-      {
-        title: '咨询服务',
-        desc: '为客户业务持续增长负责',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E4%B8%93%E4%B8%9A%E6%9C%8D%E5%8A%A1.svg',
-        path: '/technology-service/service',
-      },
-      {
-        title: '咨询服务',
-        desc: '增强型用户画像洞察',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/分析机器人.svg',
-        path: '/enhance',
-      },
-      {
-        title: '咨询服务',
-        desc: '策略智能与自动化',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/分析机器人.svg',
-        path: '/intelligence',
-      },
-      {
-        title: '咨询服务',
-        desc: '多模态感化对话式AI',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/分析机器人.svg',
-        path: '/product/multimodalAI',
-      },
-      {
-        title: '咨询服务',
-        desc: '全场景用户互动触达',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/分析机器人.svg',
-        path: '/product/fullSceneUserLink',
-      }
+      // {
+      //   title: '领先技术',
+      //   desc: '七年深耕，行业前沿技术水平',
+      //   icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E6%8A%80%E6%9C%AF%E9%A2%86%E5%85%88.svg',
+      //   path: '/technology-service/technology',
+      // },
+      // {
+      //   title: '咨询服务',
+      //   desc: '为客户业务持续增长负责',
+      //   icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E4%B8%93%E4%B8%9A%E6%9C%8D%E5%8A%A1.svg',
+      //   path: '/technology-service/service',
+      // },
+   
     ],
   },
   {
     path: '/solutions',
-    name: '行业解决方案',
+    name: '解决方案',
     smallDropdown: true,
     expand: [
       {

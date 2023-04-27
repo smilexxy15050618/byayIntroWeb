@@ -8,25 +8,25 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
     img1:`${PREFIX}/tswr-2.svg`,
     img2:`${PREFIX}/tswr-1.svg`,
     title:  '推送勿扰',
-    subtitle: ' ',
+    subtitle: '勿扰能力让您可以在特定的时间段，无论如何都不打扰到用户，让互动“刚刚好” ',
   },
   {
     img1:`${PREFIX}/tdlj-2.svg`,
     img2:`${PREFIX}/tdlj-1.svg`,
     title:  '天盾拦截',
-    subtitle: '实现用户触达频次控制，确保不过度打扰用户，保证用户体验及舒适度。',
+    subtitle: '实现用户触达频次控制，确保不过度打扰用户，保证用户体验及舒适度',
   },
   {
     img1:`${PREFIX}/gxhts-2.svg`,
     img2:`${PREFIX}/gxhts-1.svg`,
     title:  '个性化内容推送',
-    subtitle: '通过采集和分析用户数据，个性化内容推送可以更好地了解用户的需求，提供符合用户兴趣的内容，提高用户体验和满意度，促进产品或服务的销售推广。',
+    subtitle: '通过采集和分析用户数据，可以更好地提供符合用户兴趣的内容，促进产品的销售和推广',
   },
   {
     img1:`${PREFIX}/abtest-2.svg`,
     img2:`${PREFIX}/abtest-1.svg`,
     title:  'A/B Test',
-    subtitle: '通过AB测试来不断优化自己的触达策略，提高用户体验和市场竞争力，实现更加持续和稳定的发展。',
+    subtitle: '通过AB测试不断优化自己的触达策略，提高用户体验和市场竞争力，实现持续稳定的增长',
   }
 ];
 

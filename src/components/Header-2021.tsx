@@ -249,7 +249,7 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
   .small-dropdown-content {
     border-radius: 8px;
     border: 1px solid #dbdbe0;
-    min-width: 300px;
+    min-width: 360px;
     padding: 12px;
     box-shadow: 0px 12px 24px 0px rgba(3, 43, 183, 0.08);
     /* border-radius: 0px 0px 8px 8px; */
