@@ -3,25 +3,24 @@ import styled from 'styled-components';
 import imgurl from '../../../img.url.js'
 
 const Wrapper = styled.div`
-padding-top: 180px;
+padding-top: 60px;
 padding-bottom: 100px;
 background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);
   .title {
-    font-family: 'PingFangSC';
+    margin-top: 100px;
     font-size: 48px;
-    font-weight: 600;
-    letter-spacing: 0px;
     line-height: 60px;
-    color: rgba(26, 26, 26, 1);
+    font-weight: 600;
+    color: rgba(26,26,26,1);
     text-align: center;
     margin-bottom: 16px;
   }
   .desc {
+    margin-top: 10px;
     font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 0.91px;
     line-height: 32px;
-    color: rgba(51, 51, 51, 1);
+    font-weight: 400;
+    color: rgba(51,51,51,1);
     text-align: center;
   }
   .jumpbtn {

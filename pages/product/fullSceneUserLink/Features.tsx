@@ -114,6 +114,14 @@ const FeatureWrap = styled.div`
       text-align: center;
       box-sizing: border-box;
       cursor: pointer;
+      &:hover{
+        img:nth-child(1){
+          display: none;
+        }
+        img:nth-child(2){
+          display: inline-block;
+        }
+      }
       &::before {
         display: none;
         content: '';
@@ -127,6 +135,12 @@ const FeatureWrap = styled.div`
       img{
         width: 36px;
         height: 36px;
+      }
+      img:nth-child(1){
+        display: inline-block;
+      }
+      img:nth-child(2){
+        display: none;
       }
       .title-tab{
         font-size: 20px;
@@ -177,6 +191,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
               onCancel()
             }}>
             <img src={i==currIndex ? item.iconnormal : item.iconactive} />
+            <img src={item.iconnormal} />
             <div className="title-tab">{item.title}</div>
             <div className="subtitle">{item.subtitle}</div>
           </div>

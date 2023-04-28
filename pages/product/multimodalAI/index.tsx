@@ -99,7 +99,7 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
             pcImgs={PC_BANNER_IMGS}
           >
             <TextArea spaces={['', '']}>
-              <BigTitle>多模态情感化对话式AI</BigTitle>
+              <BigTitle>多模态情感化AI</BigTitle>
               <Desc>将AI交互的深度推进到多模态交互领域，丰富交互场景与内容</Desc>
               <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
             </TextArea>

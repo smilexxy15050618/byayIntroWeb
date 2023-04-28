@@ -62,6 +62,14 @@ const LabelItem = styled.div`
   align-items: center;
   margin-right: 90px;
   padding-top: 40px;
+  &:hover{
+    img:nth-child(1){
+        display: none;
+    }
+    img:nth-child(2){
+        display: inline-block;
+    }
+  }
   &:last-child {
     margin-right: 0;
   }
@@ -70,19 +78,26 @@ const LabelItem = styled.div`
     height: 36px;
     margin-bottom: 16px;
   }
+  img:nth-child(1){
+    display: inline-block;
+  }
+  img:nth-child(2){
+    display: none;
+  }
+
   span:nth-child(2) {
     font-size: 20px;
-font-weight: 600;
-letter-spacing: 1.43px;
-line-height: 28px;
-color: rgba(26, 26, 26, 1);
+    font-weight: 600;
+    letter-spacing: 1.43px;
+    line-height: 28px;
+    color: rgba(26, 26, 26, 1);
   }
   span:last-child {
     font-size: 14px;
-font-weight: 500;
-letter-spacing: 0px;
-line-height: 24px;
-color: rgba(90, 90, 90, 1);
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 24px;
+    color: rgba(90, 90, 90, 1);
   }
   &.active {
     border-bottom: 4px solid #2B58F9;
@@ -113,6 +128,9 @@ const Content = styled.div`
   >div {
     width: 100%;
     &:last-child {
+        background: #F4F8FE;
+    }
+    &:nth-child(2) {
         background: #F4F8FE;
     }
   }
@@ -205,6 +223,7 @@ export const ProductCapability = () => {
                         return (
                             <LabelItem onClick={()=>scrollTo(index)} className={activeIndex == index ? 'active' : ''}>
                                 <img src={activeIndex == index ? activeImg : img} alt="" />
+                                <img src={activeImg} alt="" />
                                 <span>{text}</span>
                                 <span>{english_text}</span>
                             </LabelItem>

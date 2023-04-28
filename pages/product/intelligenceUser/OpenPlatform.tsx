@@ -122,7 +122,7 @@ const RawOpenPlatform: FC<IProps> = ({ className }) => {
   return (
     <CapacityOverWrap>
       <div className="title">百应开放平台</div>
-      <div className="subtitle">丰富的可扩展和企业级能力</div>
+      <div className="subtitle">丰富的可拓展和企业级能力，帮助企业快速搭建起智能化应用</div>
       <div className="CapacityOve-tab" id={AISOLUTION}>
         {list.map((item, index) => {
             return (

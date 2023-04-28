@@ -16,17 +16,17 @@ const PREFIX = '/static/img2023';
 const BANNER_BG = `${PREFIX}/multimodal-banner-bg.svg`;
 const PC_BANNER_IMGS = [
   {
-    src: `${PREFIX}/intelligenceUser-banner-1.svg`,
+    src: `${PREFIX}/intelligenceUser-banner-1.png`,
     style: { width: '1200px', top: 50, left: 0 },
     className: ['animate__fadeInUp','animate__delay_300ms'],
   },
   {
-    src: `${PREFIX}/intelligenceUser-banner-2.svg`,
+    src: `${PREFIX}/intelligenceUser-banner-2.png`,
     style: { width: '1200px', top: 50, left: 0 },
     className: ['animate__fadeInUp','animate__delay_500ms'],
   },
   {
-    src: `${PREFIX}/intelligenceUser-banner-3.svg`,
+    src: `${PREFIX}/intelligenceUser-banner-3.png`,
     style: { width: '1200px', top: 50, left: 0 },
     className: ['animate__fadeInUp','animate__delay_700ms'],
   }

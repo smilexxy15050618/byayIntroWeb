@@ -22,7 +22,7 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
       }
     ],
     title:  '用户画像洞察',
-    subtitle: '综合客户数据建立多維标签,构建金景客户画像，获得深入洞察,为精细化运营提供策略基础。',
+    subtitle: '综合客户数据建立多维标签，构建全景客户画像，获得深入洞察，为精细化运营提供策略基础。',
   },
   {
     img1:`${PREFIX}/intel-nl-2.png`,
@@ -41,7 +41,7 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
       }
     ],
     title:  '策略智能与自动化',
-    subtitle: '充分收集井洞察客户行为、属性、标签，井针对性制定触达与沟通第略，实现目标人群精准自动化触达，提升关键指标和运营效率。',
+    subtitle: '充分收集并洞察客户行为、属性、标签，并针对性制定触达与沟通策略，实现目标人群精准自动化触达，提升关键指标和运营效率。',
   },
   {
     img1:`${PREFIX}/intel-nl-3.png`,
@@ -91,7 +91,7 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
       },
     ],
     title:  '全场景连接触达',
-    subtitle: '充分洞紧用户，井针对性制定触达与沟通策略，使用合适的内容，在合适的时间触达合适的客户。',
+    subtitle: '充分洞察用户，并针对性制定触达与沟通策略，使用合适的内容，在合适的时间触达合适的客户。',
   },
   {
     img1:`${PREFIX}/intel-nl-5.png`,
@@ -191,7 +191,7 @@ const FeatureValueWrap = styled.div<{ backImg?: string }>`
       border: 1px solid #fff;
       cursor: pointer;
       &:hover{
-        border: 1px solid rgba(36, 91, 219, 0.12);
+        border: 1px solid #2b58F9;
         .item-title{
           color: rgba(43, 88, 249, 1);
         }

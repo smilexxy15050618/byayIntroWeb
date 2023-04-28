@@ -46,30 +46,30 @@ export const NAV_CONFIG = [
       },
      
      
-      {
-        title: 'AI电话机器人',
-        desc: 'AI电话营销的优质选择',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/AI%E7%94%B5%E8%AF%9D%E6%9C%BA%E5%99%A8%E4%BA%BA.svg',
-        path: '/product/voice-robot',
-      },
-      {
-        title: '文本机器人',
-        desc: '更聪明、更善解人意的AI对话',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/文本机器人.svg',
-        path: '/product/text-robot',
-      },
-      {
-        title: '分析机器人',
-        desc: '高效助力企业实现业绩增长',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/分析机器人.svg',
-        path: '/product/quality-test-robot',
-      },
-      {
-        title: '虚拟数字人',
-        desc: '能听能说能理解的虚拟形象',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/虚拟数字人.svg',
-        path: '/product/virtual-robot',
-      },
+      // {
+      //   title: 'AI电话机器人',
+      //   desc: 'AI电话营销的优质选择',
+      //   icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/AI%E7%94%B5%E8%AF%9D%E6%9C%BA%E5%99%A8%E4%BA%BA.svg',
+      //   path: '/product/voice-robot',
+      // },
+      // {
+      //   title: '文本机器人',
+      //   desc: '更聪明、更善解人意的AI对话',
+      //   icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/文本机器人.svg',
+      //   path: '/product/text-robot',
+      // },
+      // {
+      //   title: '分析机器人',
+      //   desc: '高效助力企业实现业绩增长',
+      //   icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/分析机器人.svg',
+      //   path: '/product/quality-test-robot',
+      // },
+      // {
+      //   title: '虚拟数字人',
+      //   desc: '能听能说能理解的虚拟形象',
+      //   icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/虚拟数字人.svg',
+      //   path: '/product/virtual-robot',
+      // },
       // {
       //   title: '领先技术',
       //   desc: '七年深耕，行业前沿技术水平',

@@ -56,6 +56,14 @@ const LabelItem = styled.div`
   align-items: center;
   margin-right: 90px;
   padding-top: 40px;
+  &:hover{
+    img:nth-child(1){
+      display: none;
+    }
+    img:nth-child(2){
+      display: inline-block;
+    }
+  }
   &:last-child {
     margin-right: 0;
   }
@@ -63,6 +71,12 @@ const LabelItem = styled.div`
     width: 36px;
     height: 36px;
     margin-bottom: 16px;
+  }
+  img:nth-child(1){
+    display: inline-block;
+  }
+  img:nth-child(2){
+    display: none;
   }
   span:nth-child(2) {
     font-size: 20px;
@@ -182,6 +196,7 @@ export const ProductCapability = () => {
                         return (
                             <LabelItem onClick={() => scrollTo(index)} className={activeIndex == index ? 'active' : ''}>
                                 <img src={activeIndex == index ? activeImg : img} alt="" />
+                                <img src={activeImg} alt="" />
                                 <span>{text}</span>
                                 <span>{english_text}</span>
                             </LabelItem>
