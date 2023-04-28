@@ -15,6 +15,12 @@ export const NAV_CONFIG = [
     smallDropdown: true,
     expand: [
       {
+        title: '百应智能（用户）运营平台',
+        desc: '高效连接C端用户',
+        icon: imgurl+'/百应智能（用户）运营平台.svg',
+        path: '/product/intelligenceUser',
+      },
+      {
         title: '多模态情感化对话AI',
         desc: '情感化、主动式、全双工',
         icon: imgurl+'/多模态情感化对话AI.svg',
