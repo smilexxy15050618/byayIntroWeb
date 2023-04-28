@@ -253,7 +253,7 @@ export const ProductCapability = () => {
                 <div id='ProductCapContent4'>
                     <div>
                         <img id='img4' style={{ width: '680px', transform: 'translateX(-20%)' }} src={imgurl + '/yhhxdc.svg'} alt="" />
-                        <img style={{ width: '450px', height: '408px' }} src={imgurl + '/yhhxdc_text.svg'} alt="" />
+                        <img style={{ width: '450px', height: '465px' }} src={imgurl + '/yhhxdc_texts.svg'} alt="" />
                     </div>
                 </div>
             </Content>

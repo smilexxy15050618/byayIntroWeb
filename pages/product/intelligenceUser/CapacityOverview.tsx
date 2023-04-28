@@ -8,12 +8,12 @@ const PREFIXBG = `${PREFIX}/CapOver-bg5.svg`
 const list = [
   {
     bgImg: `${PREFIX}/CapOver-bg1.png`,
-    sub: '多模态情感化AI',
+    sub: '增强型用户画像洞察',
     content: '构建全景客户画像',
     tag:[
       {
         title: '标签体系',
-        number: 10,
+        number: 4,
         unit: '级',
       },
       {
@@ -30,7 +30,7 @@ const list = [
   },
   {
     bgImg: `${PREFIX}/CapOver-bg2.png`,
-    sub: '增强型用户画像洞察',
+    sub: '策略智能与自动化',
     content: '实现目标人群精准自动化触达',
     tag:[
       {
@@ -46,13 +46,13 @@ const list = [
       {
         title: '日均用户触达',
         number: 5000,
-        unit: '+',
+        unit: 'W+',
       }
     ]
   },
   {
     bgImg: `${PREFIX}/CapOver-bg3.png`,
-    sub: '全场景用户连接与对话',
+    sub: '多模态情感化AI',
     content: '多模态Al形情感化沟通感知',
     tag:[
       {
@@ -74,7 +74,7 @@ const list = [
   },
   {
     bgImg: `${PREFIX}/CapOver-bg4.png`,
-    sub: '策略智能与自动化',
+    sub: '全场景用户连接与对话',
     content: '个性化触达与沟通策略',
     tag:[
       {

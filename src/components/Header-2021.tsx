@@ -262,6 +262,9 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
     cursor: ${props => (props.visible ? 'pointer' : 'auto')};
     overflow: hidden;
     gap: 3px;
+    .borderStyle{
+      border-bottom: 1px solid #eee;
+    }
     .link-btn-wrapper {
       height: 64px;
       border-radius: 6px;
@@ -508,7 +511,9 @@ class Nav extends React.Component<
                           {item.expand.map(menuItem => (
                             <a
                               href={isOpenOrigin ? `https://www.byai.com${menuItem.path}` : menuItem.path}
-                              key={menuItem.path}>
+                              key={menuItem.path}
+                              className={menuItem.path == '/product/intelligenceUser' ? 'borderStyle' : ''}
+                              >
                               <div className="link-btn-wrapper" onClick={() => this.handleOpenNewPage}>
                                 <div className="link-btn-icon">
                                   <img src={menuItem.icon} />
