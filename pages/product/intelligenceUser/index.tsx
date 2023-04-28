@@ -1,34 +1,34 @@
-import React, { FC, useEffect, useState } from 'react';
-import { Layout } from '../../../src/components/Layout';
+import React, { useEffect, useState } from 'react';
+import { Visible } from 'react-grid-system';
 import styled from 'styled-components';
-import { Hidden, Visible } from 'react-grid-system';
 import { TextArea } from '../../../src/components/common/BannerTextElements';
 import ByVoiceFooter from '../../../src/components/common/ByVoiceFooter';
-import BannerWhite from './BannerWhite';
-import FabricValue from './FabricValue';
-import CapacityOverview from './CapacityOverview';
-import OpenPlatform from './OpenPlatform';
-
+import { Layout } from '../../../src/components/Layout';
 import { Wrapper } from '../../../src/components/voice-robot/style';
 import { FOOTER_BG } from '../../../src/constants/img-urls';
 import { HOST_ENUM } from '../../../src/lib/utils';
-const PREFIX = '/static/img2023';
+import BannerWhite from './BannerWhite';
+import CapacityOverview from './CapacityOverview';
+import FabricValue from './FabricValue';
+import OpenPlatform from './OpenPlatform';
+
+const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
 const BANNER_BG = `${PREFIX}/multimodal-banner-bg.svg`;
 const PC_BANNER_IMGS = [
   {
     src: `${PREFIX}/intelligenceUser-banner-1.png`,
     style: { width: '1200px', top: 50, left: 0 },
-    className: ['animate__fadeInUp','animate__delay_300ms'],
+    className: ['animate__fadeInUp', 'animate__delay_300ms'],
   },
   {
     src: `${PREFIX}/intelligenceUser-banner-2.png`,
     style: { width: '1200px', top: 50, left: 0 },
-    className: ['animate__fadeInUp','animate__delay_500ms'],
+    className: ['animate__fadeInUp', 'animate__delay_500ms'],
   },
   {
     src: `${PREFIX}/intelligenceUser-banner-3.png`,
     style: { width: '1200px', top: 50, left: 0 },
-    className: ['animate__fadeInUp','animate__delay_700ms'],
+    className: ['animate__fadeInUp', 'animate__delay_700ms'],
   }
 ];
 
@@ -87,35 +87,35 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
   return (
     <Layout initialOpacity={initial} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
       {(visible, setVisible) => (
-      <Wrapper>  
-      <Visible md lg xl xxl xxxl>
-          <BannerWhite
-            background={[`url(${BANNER_BG}) center, linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);`, 'linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);']}
-            pcImgs={PC_BANNER_IMGS}
-          >
-            <TextArea spaces={['', '']}>
-              <BigTitle>智能用户运营平台</BigTitle>
-              <Desc>基于百应用户运营方法论，以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台</Desc>
-              <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
-            </TextArea>
-          </BannerWhite>
-          <FabricValue />
-          <CapacityOverview />
-          <OpenPlatform />
-          <ByVoiceFooter
-            title="立即体验AI时代的新一代用户运营平台"
-            desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
-            btnText="与我联系"
-            background={`url(${FOOTER_BG})`}
-            onClick={() => window.open('/form?formType=1')}
-          />
-       </Visible>
+        <Wrapper>
+          <Visible md lg xl xxl xxxl>
+            <BannerWhite
+              background={[`url(${BANNER_BG}) center, linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);`, 'linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);']}
+              pcImgs={PC_BANNER_IMGS}
+            >
+              <TextArea spaces={['', '']}>
+                <BigTitle>智能用户运营平台</BigTitle>
+                <Desc>基于百应用户运营方法论，以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台</Desc>
+                <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+              </TextArea>
+            </BannerWhite>
+            <FabricValue />
+            <CapacityOverview />
+            <OpenPlatform />
+            <ByVoiceFooter
+              title="立即体验AI时代的新一代用户运营平台"
+              desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
+              btnText="与我联系"
+              background={`url(${FOOTER_BG})`}
+              onClick={() => window.open('/form?formType=1')}
+            />
+          </Visible>
 
-      <Visible xs sm>
-        移动端
+          <Visible xs sm>
+            移动端
       </Visible>
-      </Wrapper>
-    )}  
+        </Wrapper>
+      )}
     </Layout>
   );
 };

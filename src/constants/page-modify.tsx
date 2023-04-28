@@ -29,13 +29,13 @@ export const NAV_CONFIG = [
       {
         title: '增强型用户画像洞察（CDP+）',
         desc: '非结构化数据感知',
-        icon: imgurl+'/增强型用户画像洞察（CDP+）.svg',
+        icon: imgurl+'/增强型用户画像洞察.svg',
         path: '/enhance',
       },
       {
         title: '全场景用户连接与对话（AICC+ ）',
         desc: '跨平台、多形式的用户触达',
-        icon: imgurl+'/全场景用户连接与对话（AICC+ ）.svg',
+        icon: imgurl+'/全场景用户连接与对话.svg',
         path: '/product/fullSceneUserLink',
       },
       {

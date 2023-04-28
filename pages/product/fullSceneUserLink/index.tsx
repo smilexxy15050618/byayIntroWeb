@@ -1,18 +1,17 @@
-import React, { FC, useEffect, useState } from 'react';
-import { Layout } from '../../../src/components/Layout';
+import React, { useEffect, useState } from 'react';
+import { Visible } from 'react-grid-system';
 import styled from 'styled-components';
-import { Hidden, Visible } from 'react-grid-system';
-import { FormType } from '../../../src/components/TryForm';
 import { TextArea } from '../../../src/components/common/BannerTextElements';
 import ByVoiceFooter from '../../../src/components/common/ByVoiceFooter';
-import BannerWhite from './BannerWhite';
-import Features from './Features';
-import FabricValue from './FabricValue';
-
+import { Layout } from '../../../src/components/Layout';
 import { Wrapper } from '../../../src/components/voice-robot/style';
 import { FOOTER_BG } from '../../../src/constants/img-urls';
 import { HOST_ENUM } from '../../../src/lib/utils';
-const PREFIX = '/static/img2023';
+import BannerWhite from './BannerWhite';
+import FabricValue from './FabricValue';
+import Features from './Features';
+
+const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
 const BANNER_BG = `${PREFIX}/multimodal-banner-bg.svg`;
 
 const BigTitle = styled.div`
@@ -69,42 +68,42 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
   return (
     <Layout initialOpacity={initial} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
       {(visible, setVisible) => (
-      <Wrapper>  
-      <Visible md lg xl xxl xxxl>
-        
-          <BannerWhite
-            background={[`url(${BANNER_BG}) center, linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);`, 'linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);']}
-            pcImgs={[
-              {
-                src: `${PREFIX}/fullSceneUserLink-banner.svg`,
-                style: { width: '1200px', left: 0, top: 50 },
-                className: ['animate__fadeInUp', 'animate__ahead_300ms'],
-              },
-            ]}
-          >
-            <TextArea spaces={['', '']}>
-              <BigTitle>全场景用户互动触达</BigTitle>
-              <Desc>从文字、语音、数字人表情动作的多模态角度，用对话和与语境相关的动作完成跨渠道交互<br />再通过“语义+语音+视觉”，构建支持多种场景的数字机器人形象</Desc>
-              <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
-            </TextArea>
-          </BannerWhite>
-          
-          <Features onCancel={hadnleNav} />
-          <FabricValue />
-          <ByVoiceFooter
-            title="立即体验AI时代的新一代用户运营平台"
-            desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
-            btnText="与我联系"
-            background={`url(${FOOTER_BG})`}
-            onClick={() => window.open('/form?formType=1')}
-          />
-       </Visible>
+        <Wrapper>
+          <Visible md lg xl xxl xxxl>
 
-      <Visible xs sm>
-        移动端
+            <BannerWhite
+              background={[`url(${BANNER_BG}) center, linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);`, 'linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);']}
+              pcImgs={[
+                {
+                  src: `${PREFIX}/fullSceneUserLink-banner.svg`,
+                  style: { width: '1200px', left: 0, top: 50 },
+                  className: ['animate__fadeInUp', 'animate__ahead_300ms'],
+                },
+              ]}
+            >
+              <TextArea spaces={['', '']}>
+                <BigTitle>全场景用户互动触达</BigTitle>
+                <Desc>从文字、语音、数字人表情动作的多模态角度，用对话和与语境相关的动作完成跨渠道交互<br />再通过“语义+语音+视觉”，构建支持多种场景的数字机器人形象</Desc>
+                <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+              </TextArea>
+            </BannerWhite>
+
+            <Features onCancel={hadnleNav} />
+            <FabricValue />
+            <ByVoiceFooter
+              title="立即体验AI时代的新一代用户运营平台"
+              desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
+              btnText="与我联系"
+              background={`url(${FOOTER_BG})`}
+              onClick={() => window.open('/form?formType=1')}
+            />
+          </Visible>
+
+          <Visible xs sm>
+            移动端
       </Visible>
-      </Wrapper>
-    )}  
+        </Wrapper>
+      )}
     </Layout>
   );
 };

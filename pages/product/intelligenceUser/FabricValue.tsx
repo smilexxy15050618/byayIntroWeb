@@ -1,13 +1,13 @@
-import React, { FC, ReactNode, useState, useEffect } from 'react';
+import React, { FC, ReactNode, useEffect } from 'react';
 import styled from 'styled-components';
-import FeatureIntroduce, { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
+import { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
 
-const PREFIX = '/static/img2023';
+const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
 const PREFIXBG = `${PREFIX}/intel-nl-bg.svg`
 const FEATURE_TITLE: IFeatureIntroduceProps[] = [
   {
-    img1:`${PREFIX}/intel-nl-1.png`,
-    tag:[
+    img1: `${PREFIX}/intel-nl-1.png`,
+    tag: [
       {
         name: '体系化标签管理',
       },
@@ -21,12 +21,12 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
         name: '行业算法模型标签',
       }
     ],
-    title:  '增强型用户画像洞察',
+    title: '增强型用户画像洞察',
     subtitle: '综合客户数据建立多维标签，构建全景客户画像，获得深入洞察，为精细化运营提供策略基础。',
   },
   {
-    img1:`${PREFIX}/intel-nl-2.png`,
-    tag:[
+    img1: `${PREFIX}/intel-nl-2.png`,
+    tag: [
       {
         name: '智能化生成运营策略',
       },
@@ -40,12 +40,12 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
         name: '实时性增强客户洞察',
       }
     ],
-    title:  '策略智能与自动化',
+    title: '策略智能与自动化',
     subtitle: '充分收集并洞察客户行为、属性、标签，并针对性制定触达与沟通策略，实现目标人群精准自动化触达，提升关键指标和运营效率。',
   },
   {
-    img1:`${PREFIX}/intel-nl-3.png`,
-    tag:[
+    img1: `${PREFIX}/intel-nl-3.png`,
+    tag: [
       {
         name: '文本交互',
       },
@@ -71,12 +71,12 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
         name: '主动式',
       }
     ],
-    title:  '多模态情感化AI',
+    title: '多模态情感化AI',
     subtitle: '在不同的渠道和场景中使用多模态Al形式沟通，情感化沟通感知，跨端能力共享，为用户提供个性化服务和推荐，提高用户体验。',
   },
   {
-    img1:`${PREFIX}/intel-nl-4.png`,
-    tag:[
+    img1: `${PREFIX}/intel-nl-4.png`,
+    tag: [
       {
         name: '通信：AI智能电话｜短信｜5G消息',
       },
@@ -90,12 +90,12 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
         name: '线下：智能终端',
       },
     ],
-    title:  '全场景用户连接与对话',
+    title: '全场景用户连接与对话',
     subtitle: '充分洞察用户，并针对性制定触达与沟通策略，使用合适的内容，在合适的时间触达合适的客户。',
   },
   {
-    img1:`${PREFIX}/intel-nl-5.png`,
-    tag:[
+    img1: `${PREFIX}/intel-nl-5.png`,
+    tag: [
       {
         name: '非结构化数据感知',
       },
@@ -118,12 +118,12 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
         name: '可信策略生成'
       }
     ],
-    title:  '认知智能能力平台',
+    title: '认知智能能力平台',
     subtitle: '通过A辅助，提供敏捷智能的科学运营，实现运营的数字化转型',
   },
   {
-    img1:`${PREFIX}/intel-nl-6.png`,
-    tag:[
+    img1: `${PREFIX}/intel-nl-6.png`,
+    tag: [
       {
         name: '结构化数据感知',
       },
@@ -143,7 +143,7 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
         name: '安全计算引擎'
       },
     ],
-    title:  '',
+    title: '数据智能能力平台',
     subtitle: '连接全局客户数据，构建第一方用户池，专为保障企业在数据共享和流通过程中的隐私安全性而设计',
   },
 ];
@@ -347,19 +347,19 @@ const RawFabricValue: FC<IProps> = ({ className }) => {
     const ScrollMagic = require('scrollmagic');
     var controller = new ScrollMagic.Controller();
     const videoContent = document.getElementById(AISOLUTION);
-      new ScrollMagic.Scene({
-        triggerElement: videoContent, //触发元素
-        triggerHook: 'onEnter', //触发元素开始离开视口时触发
-        offset: -100, //从开始点滚动多少px触发（施法前摇）
-        duration: 100, //效果持续的距离（法术持续时间/距离）
-      })
-        // .setClassToggle('.aitxs', 'appear')
-        .addTo(controller)
-        .on('enter', () => {
-            videoContent.classList.add('appear')
-            // console.log('进入');
-            controller.destroy();
-        });
+    new ScrollMagic.Scene({
+      triggerElement: videoContent, //触发元素
+      triggerHook: 'onEnter', //触发元素开始离开视口时触发
+      offset: -100, //从开始点滚动多少px触发（施法前摇）
+      duration: 100, //效果持续的距离（法术持续时间/距离）
+    })
+      // .setClassToggle('.aitxs', 'appear')
+      .addTo(controller)
+      .on('enter', () => {
+        videoContent.classList.add('appear')
+        // console.log('进入');
+        controller.destroy();
+      });
   }, []);
 
   return (
@@ -367,7 +367,7 @@ const RawFabricValue: FC<IProps> = ({ className }) => {
       <div className="title">产品能力体系全景</div>
       <div className="FeatureValue-tab" id={AISOLUTION}>
         {FEATURE_TITLE.map((item, index) => (
-          <div className={index==4||index==5?'FeatureValue-item-two':'FeatureValue-item'}>
+          <div className={index == 4 || index == 5 ? 'FeatureValue-item-two' : 'FeatureValue-item'}>
             <div className='item-title'>{item.title}</div>
             <div className='item-subtitle'>{item.subtitle}</div>
             <div className="item-tag">
@@ -385,5 +385,5 @@ const RawFabricValue: FC<IProps> = ({ className }) => {
 };
 
 export type IFeaturesProps = IProps;
-const FabricValue = styled(RawFabricValue)<IFeaturesProps>``;
+const FabricValue = styled(RawFabricValue) <IFeaturesProps>``;
 export default FabricValue;

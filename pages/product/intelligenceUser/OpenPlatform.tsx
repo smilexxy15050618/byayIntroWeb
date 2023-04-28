@@ -1,8 +1,7 @@
-import React, { FC, ReactNode, useState, useEffect } from 'react';
+import React, { FC, ReactNode, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Number from '../../../src/components/homepage/version2023/Number'
 
-const PREFIX = '/static/img2023';
+const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
 
 const list = [
   {
@@ -98,25 +97,25 @@ const AISOLUTION = 'ai_jiejue_3008'
 
 const RawOpenPlatform: FC<IProps> = ({ className }) => {
 
-  const [showNumber,setShowNumber] = useState(false);
+  const [showNumber, setShowNumber] = useState(false);
 
   useEffect(() => {
     const ScrollMagic = require('scrollmagic');
     var controller = new ScrollMagic.Controller();
     const videoContent = document.getElementById(AISOLUTION);
-      new ScrollMagic.Scene({
-        triggerElement: videoContent, //触发元素
-        triggerHook: 'onEnter', //触发元素开始离开视口时触发
-        offset: -100, //从开始点滚动多少px触发（施法前摇）
-        duration: 400, //效果持续的距离（法术持续时间/距离）
-      })
-        // .setClassToggle('.aitxs', 'appear')
-        .addTo(controller)
-        .on('enter', () => {
-            videoContent.classList.add('appear')
-            setShowNumber(true);
-            controller.destroy();
-        });
+    new ScrollMagic.Scene({
+      triggerElement: videoContent, //触发元素
+      triggerHook: 'onEnter', //触发元素开始离开视口时触发
+      offset: -100, //从开始点滚动多少px触发（施法前摇）
+      duration: 400, //效果持续的距离（法术持续时间/距离）
+    })
+      // .setClassToggle('.aitxs', 'appear')
+      .addTo(controller)
+      .on('enter', () => {
+        videoContent.classList.add('appear')
+        setShowNumber(true);
+        controller.destroy();
+      });
   }, []);
 
   return (
@@ -125,12 +124,12 @@ const RawOpenPlatform: FC<IProps> = ({ className }) => {
       <div className="subtitle">丰富的可拓展和企业级能力，帮助合作伙伴快速搭建起智能化应用</div>
       <div className="CapacityOve-tab" id={AISOLUTION}>
         {list.map((item, index) => {
-            return (
-              <CapacityOverItem>
-                <img src={item.bgImg} />
-                <div>{item.title}</div>
+          return (
+            <CapacityOverItem>
+              <img src={item.bgImg} />
+              <div>{item.title}</div>
             </CapacityOverItem>
-            )
+          )
         })}
       </div>
     </CapacityOverWrap>
@@ -138,5 +137,5 @@ const RawOpenPlatform: FC<IProps> = ({ className }) => {
 };
 
 export type IFeaturesProps = IProps;
-const OpenPlatform = styled(RawOpenPlatform)<IFeaturesProps>``;
+const OpenPlatform = styled(RawOpenPlatform) <IFeaturesProps>``;
 export default OpenPlatform;

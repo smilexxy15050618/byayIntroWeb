@@ -1,8 +1,8 @@
-import React, { FC, ReactNode, useState, useEffect } from 'react';
+import React, { FC, ReactNode, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Number from '../../../src/components/homepage/version2023/Number'
+import Number from '../../../src/components/homepage/version2023/Number';
 
-const PREFIX = '/static/img2023';
+const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
 const PREFIXBG = `${PREFIX}/CapOver-bg5.svg`
 
 const list = [
@@ -10,7 +10,7 @@ const list = [
     bgImg: `${PREFIX}/CapOver-bg1.png`,
     sub: '增强型用户画像洞察',
     content: '构建全景客户画像',
-    tag:[
+    tag: [
       {
         title: '标签体系',
         number: 4,
@@ -32,7 +32,7 @@ const list = [
     bgImg: `${PREFIX}/CapOver-bg2.png`,
     sub: '策略智能与自动化',
     content: '实现目标人群精准自动化触达',
-    tag:[
+    tag: [
       {
         title: '自动化运营场景',
         number: 30,
@@ -54,7 +54,7 @@ const list = [
     bgImg: `${PREFIX}/CapOver-bg3.png`,
     sub: '多模态情感化AI',
     content: '多模态Al形情感化沟通感知',
-    tag:[
+    tag: [
       {
         title: 'AI情感模态',
         number: 3,
@@ -76,7 +76,7 @@ const list = [
     bgImg: `${PREFIX}/CapOver-bg4.png`,
     sub: '全场景用户连接与对话',
     content: '个性化触达与沟通策略',
-    tag:[
+    tag: [
       {
         title: '全场景覆盖',
         number: 4,
@@ -213,25 +213,25 @@ const AISOLUTION = 'ai_jiejue_3000'
 
 const RawCapacityOverview: FC<IProps> = ({ className }) => {
 
-  const [showNumber,setShowNumber] = useState(false);
+  const [showNumber, setShowNumber] = useState(false);
 
   useEffect(() => {
     const ScrollMagic = require('scrollmagic');
     var controller = new ScrollMagic.Controller();
     const videoContent = document.getElementById(AISOLUTION);
-      new ScrollMagic.Scene({
-        triggerElement: videoContent, //触发元素
-        triggerHook: 'onEnter', //触发元素开始离开视口时触发
-        offset: -100, //从开始点滚动多少px触发（施法前摇）
-        duration: 400, //效果持续的距离（法术持续时间/距离）
-      })
-        // .setClassToggle('.aitxs', 'appear')
-        .addTo(controller)
-        .on('enter', () => {
-            videoContent.classList.add('appear')
-            setShowNumber(true);
-            controller.destroy();
-        });
+    new ScrollMagic.Scene({
+      triggerElement: videoContent, //触发元素
+      triggerHook: 'onEnter', //触发元素开始离开视口时触发
+      offset: -100, //从开始点滚动多少px触发（施法前摇）
+      duration: 400, //效果持续的距离（法术持续时间/距离）
+    })
+      // .setClassToggle('.aitxs', 'appear')
+      .addTo(controller)
+      .on('enter', () => {
+        videoContent.classList.add('appear')
+        setShowNumber(true);
+        controller.destroy();
+      });
   }, []);
 
   return (
@@ -239,22 +239,22 @@ const RawCapacityOverview: FC<IProps> = ({ className }) => {
       <div className="title">能力总览</div>
       <div className="FeatureValue-tab" id={AISOLUTION}>
         {list.map((item, index) => {
-            return (
-              <FeatureValueItem backImg={item.bgImg} activeImg={PREFIXBG}>
-                <div className='item-title'>{item.sub}</div>
-                <div className='item-subtitle'>{item.content}</div>
-                <div className='item-tag'>
+          return (
+            <FeatureValueItem backImg={item.bgImg} activeImg={PREFIXBG}>
+              <div className='item-title'>{item.sub}</div>
+              <div className='item-subtitle'>{item.content}</div>
+              <div className='item-tag'>
                 {item.tag.map((items, indexs) => {
-                    return (
-                      <TagItem>
-                        <div className='tag-item-t'>{items.title}</div>
-                        <div className='tag-item-sub'><span className='number-tips'><Number number={items.number} /></span><span className='number-font'>{items.unit}</span></div>
-                      </TagItem>
-                    )
+                  return (
+                    <TagItem>
+                      <div className='tag-item-t'>{items.title}</div>
+                      <div className='tag-item-sub'><span className='number-tips'><Number number={items.number} /></span><span className='number-font'>{items.unit}</span></div>
+                    </TagItem>
+                  )
                 })}
-                </div>
+              </div>
             </FeatureValueItem>
-            )
+          )
         })}
       </div>
     </CapacityOverWrap>
@@ -262,5 +262,5 @@ const RawCapacityOverview: FC<IProps> = ({ className }) => {
 };
 
 export type IFeaturesProps = IProps;
-const CapacityOverview = styled(RawCapacityOverview)<IFeaturesProps>``;
+const CapacityOverview = styled(RawCapacityOverview) <IFeaturesProps>``;
 export default CapacityOverview;

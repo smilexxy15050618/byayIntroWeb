@@ -2,33 +2,33 @@ import React, { FC, ReactNode, useState } from 'react';
 import styled from 'styled-components';
 import FeatureIntroduce, { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
 
-const PREFIX = '/static/img2023';
+const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
 const FEATURE_TITLE: IFeatureIntroduceProps[] = [
   {
-    iconnormal:`${PREFIX}/wechat-2.svg`,
-    iconactive:`${PREFIX}/wechat-1.svg`,
-    title:  '微信',
+    iconnormal: `${PREFIX}/wechat-2.svg`,
+    iconactive: `${PREFIX}/wechat-1.svg`,
+    title: '微信',
     subtitle: 'WeChat',
     id: 'WeChat'
   },
   {
-    iconnormal:`${PREFIX}/communicate-2.svg`,
-    iconactive:`${PREFIX}/communicate-1.svg`,
-    title:  '通讯',
+    iconnormal: `${PREFIX}/communicate-2.svg`,
+    iconactive: `${PREFIX}/communicate-1.svg`,
+    title: '通讯',
     subtitle: 'Communicate',
     id: 'Communicate'
   },
   {
     iconnormal: `${PREFIX}/onlinecommun-2.svg`,
     iconactive: `${PREFIX}/onlinecommun-1.svg`,
-    title:  '在线沟通',
+    title: '在线沟通',
     subtitle: 'Online Communication',
     id: 'OnlineCommunication'
   },
   {
     iconnormal: `${PREFIX}/intelligentter-2.svg`,
     iconactive: `${PREFIX}/intelligentter-1.svg`,
-    title:  '智能终端',
+    title: '智能终端',
     subtitle: 'Intelligent Terminal',
     id: 'IntelligentTerminal'
   },
@@ -45,7 +45,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
         className: ['animate__fadeInRight'],
       },
     ],
-    id:'WeChat',
+    id: 'WeChat',
     boxheight: '718px',
   },
   {
@@ -58,7 +58,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
         className: ['animate__fadeInLeft'],
       }
     ],
-    id:'Communicate',
+    id: 'Communicate',
     boxheight: '784px',
   },
   {
@@ -71,7 +71,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
         className: ['animate__fadeInRight'],
       }
     ],
-    id:'OnlineCommunication',
+    id: 'OnlineCommunication',
     boxheight: '718px',
   },
   {
@@ -84,7 +84,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
         className: ['animate__fadeInLeft'],
       }
     ],
-    id:'IntelligentTerminal',
+    id: 'IntelligentTerminal',
     boxheight: '750px',
   },
 ];
@@ -181,8 +181,8 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
       <div className="title">产品能力</div>
       <div className="capacity-tab">
         {FEATURE_TITLE.map((item, i) => (
-          <div 
-            className={i==currIndex?'capacity-item active':'capacity-item'}
+          <div
+            className={i == currIndex ? 'capacity-item active' : 'capacity-item'}
             onClick={() => {
               const node = document.querySelector(`.FeatureIntroduceWrap > .${item.id}`);
               if (node) {
@@ -190,7 +190,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
               }
               onCancel()
             }}>
-            <img src={i==currIndex ? item.iconnormal : item.iconactive} />
+            <img src={i == currIndex ? item.iconnormal : item.iconactive} />
             <img src={item.iconnormal} />
             <div className="title-tab">{item.title}</div>
             <div className="subtitle">{item.subtitle}</div>
@@ -216,5 +216,5 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
 };
 
 export type IFeaturesProps = IProps;
-const Features = styled(RawFeatures)<IFeaturesProps>``;
+const Features = styled(RawFeatures) <IFeaturesProps>``;
 export default Features;

@@ -1,25 +1,25 @@
-import React, { FC, ReactNode, useState, useEffect } from 'react';
+import React, { FC, ReactNode, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import FeatureIntroduce, { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
+import { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
 
-const PREFIX = '/static/img2023';
+const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
 const FEATURE_TITLE: IFeatureIntroduceProps[] = [
   {
-    img1:`${PREFIX}/multimodal-value-1-1.svg`,
-    img2:`${PREFIX}/multimodal-value-1-2.svg`,
-    title:  '情感化',
+    img1: `${PREFIX}/multimodal-value-1-1.svg`,
+    img2: `${PREFIX}/multimodal-value-1-2.svg`,
+    title: '情感化',
     subtitle: '高度拟人，情感感知与情感交互。在营销和宣传过程中，调动对方情感是关键所在，有助于提升用户体验和传递信息的效果。',
   },
   {
-    img1:`${PREFIX}/multimodal-value-2-1.svg`,
-    img2:`${PREFIX}/multimodal-value-2-2.svg`,
-    title:  '主动式',
+    img1: `${PREFIX}/multimodal-value-2-1.svg`,
+    img2: `${PREFIX}/multimodal-value-2-2.svg`,
+    title: '主动式',
     subtitle: '具备主动销售能力和宣传能力。根据预设目标，主动推进对话和沟通，而不仅限于被动响应和回答问题，从而实现更高效的销售和宣传效果。',
   },
   {
-    img1:`${PREFIX}/multimodal-value-3-1.svg`,
-    img2:`${PREFIX}/multimodal-value-3-2.svg`,
-    title:  '全双工',
+    img1: `${PREFIX}/multimodal-value-3-1.svg`,
+    img2: `${PREFIX}/multimodal-value-3-2.svg`,
+    title: '全双工',
     subtitle: '在语音和数字人场景中，听说状态的实时切换，适应各种场景，确保轮对话能力得到有效处理，使人机对话更加贴近真实的人际沟通。',
   },
 ];
@@ -138,20 +138,20 @@ const RawFabricValue: FC<IProps> = ({ className }) => {
     const ScrollMagic = require('scrollmagic');
     var controller = new ScrollMagic.Controller();
     const videoContent = document.getElementById(AISOLUTION);
-      new ScrollMagic.Scene({
-        triggerElement: videoContent, //触发元素
-        triggerHook: 'onEnter', //触发元素开始离开视口时触发
-        offset: 10, //从开始点滚动多少px触发（施法前摇）
-        duration: 400, //效果持续的距离（法术持续时间/距离）
-      })
-        // .setClassToggle('.aitxs', 'appear')
-        .addTo(controller)
-        .on('enter', () => {
-            videoContent.classList.add('appear')
-            // console.log('进入');
-            
-            controller.destroy();
-        });
+    new ScrollMagic.Scene({
+      triggerElement: videoContent, //触发元素
+      triggerHook: 'onEnter', //触发元素开始离开视口时触发
+      offset: 10, //从开始点滚动多少px触发（施法前摇）
+      duration: 400, //效果持续的距离（法术持续时间/距离）
+    })
+      // .setClassToggle('.aitxs', 'appear')
+      .addTo(controller)
+      .on('enter', () => {
+        videoContent.classList.add('appear')
+        // console.log('进入');
+
+        controller.destroy();
+      });
   }, []);
 
   return (
@@ -174,5 +174,5 @@ const RawFabricValue: FC<IProps> = ({ className }) => {
 };
 
 export type IFeaturesProps = IProps;
-const FabricValue = styled(RawFabricValue)<IFeaturesProps>``;
+const FabricValue = styled(RawFabricValue) <IFeaturesProps>``;
 export default FabricValue;

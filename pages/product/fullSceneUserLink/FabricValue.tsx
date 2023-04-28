@@ -1,31 +1,31 @@
-import React, { FC, ReactNode, useState, useEffect } from 'react';
+import React, { FC, ReactNode, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import FeatureIntroduce, { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
+import { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
 
-const PREFIX = '/static/img2023';
+const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
 const FEATURE_TITLE: IFeatureIntroduceProps[] = [
   {
-    img1:`${PREFIX}/tswr-2.svg`,
-    img2:`${PREFIX}/tswr-1.svg`,
-    title:  '推送勿扰',
+    img1: `${PREFIX}/tswr-2.svg`,
+    img2: `${PREFIX}/tswr-1.svg`,
+    title: '推送勿扰',
     subtitle: '勿扰能力让您可以在特定的时间段，无论如何都不打扰到用户，让互动“刚刚好” ',
   },
   {
-    img1:`${PREFIX}/tdlj-2.svg`,
-    img2:`${PREFIX}/tdlj-1.svg`,
-    title:  '天盾拦截',
+    img1: `${PREFIX}/tdlj-2.svg`,
+    img2: `${PREFIX}/tdlj-1.svg`,
+    title: '天盾拦截',
     subtitle: '实现用户触达频次控制，确保不过度打扰用户，保证用户体验及舒适度',
   },
   {
-    img1:`${PREFIX}/gxhts-2.svg`,
-    img2:`${PREFIX}/gxhts-1.svg`,
-    title:  '个性化内容推送',
+    img1: `${PREFIX}/gxhts-2.svg`,
+    img2: `${PREFIX}/gxhts-1.svg`,
+    title: '个性化内容推送',
     subtitle: '通过采集和分析用户数据，可以更好地提供符合用户兴趣的内容，促进产品的销售和推广',
   },
   {
-    img1:`${PREFIX}/abtest-2.svg`,
-    img2:`${PREFIX}/abtest-1.svg`,
-    title:  'A/B Test',
+    img1: `${PREFIX}/abtest-2.svg`,
+    img2: `${PREFIX}/abtest-1.svg`,
+    title: 'A/B Test',
     subtitle: '通过AB测试不断优化自己的触达策略，提高用户体验和市场竞争力，实现持续稳定的增长',
   }
 ];
@@ -157,20 +157,20 @@ const RawFabricValue: FC<IProps> = ({ className }) => {
     const ScrollMagic = require('scrollmagic');
     var controller = new ScrollMagic.Controller();
     const videoContent = document.getElementById(AISOLUTION);
-      new ScrollMagic.Scene({
-        triggerElement: videoContent, //触发元素
-        triggerHook: 'onEnter', //触发元素开始离开视口时触发
-        offset: 10, //从开始点滚动多少px触发（施法前摇）
-        duration: 400, //效果持续的距离（法术持续时间/距离）
-      })
-        // .setClassToggle('.aitxs', 'appear')
-        .addTo(controller)
-        .on('enter', () => {
-            videoContent.classList.add('appear')
-            // console.log('进入');
-            
-            controller.destroy();
-        });
+    new ScrollMagic.Scene({
+      triggerElement: videoContent, //触发元素
+      triggerHook: 'onEnter', //触发元素开始离开视口时触发
+      offset: 10, //从开始点滚动多少px触发（施法前摇）
+      duration: 400, //效果持续的距离（法术持续时间/距离）
+    })
+      // .setClassToggle('.aitxs', 'appear')
+      .addTo(controller)
+      .on('enter', () => {
+        videoContent.classList.add('appear')
+        // console.log('进入');
+
+        controller.destroy();
+      });
   }, []);
 
   return (
@@ -193,5 +193,5 @@ const RawFabricValue: FC<IProps> = ({ className }) => {
 };
 
 export type IFeaturesProps = IProps;
-const FabricValue = styled(RawFabricValue)<IFeaturesProps>``;
+const FabricValue = styled(RawFabricValue) <IFeaturesProps>``;
 export default FabricValue;

@@ -2,30 +2,30 @@ import React, { FC, ReactNode, useState } from 'react';
 import styled from 'styled-components';
 import FeatureIntroduce, { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
 
-const PREFIX = '/static/img2023';
+const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
 const FEATURE_TITLE: IFeatureIntroduceProps[] = [
   {
-    iconnormal:`${PREFIX}/capacity-1-1.svg`,
-    iconactive:`${PREFIX}/capacity-1-2.svg`,
-    title:  '语音交互',
+    iconnormal: `${PREFIX}/capacity-1-1.svg`,
+    iconactive: `${PREFIX}/capacity-1-2.svg`,
+    title: '语音交互',
     subtitle: 'Voice Interaction',
     id: 'voice'
   },
   {
-    iconnormal:`${PREFIX}/capacity-2-1.svg`,
-    iconactive:`${PREFIX}/capacity-2-2.svg`,
-    title:  '文本交互',
+    iconnormal: `${PREFIX}/capacity-2-1.svg`,
+    iconactive: `${PREFIX}/capacity-2-2.svg`,
+    title: '文本交互',
     subtitle: 'Text Interaction',
     id: 'version'
   },
   {
     iconnormal: `${PREFIX}/capacity-3-1.svg`,
     iconactive: `${PREFIX}/capacity-3-2.svg`,
-    title:  '虚拟数字人',
+    title: '虚拟数字人',
     subtitle: 'Virtual Digital Human',
     id: 'digit'
   },
-  
+
 ];
 
 const FEATURE_INFO: IFeatureIntroduceProps[] = [
@@ -40,7 +40,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
         className: ['animate__fadeInRight'],
       },
     ],
-    id:'voice',
+    id: 'voice',
     boxheight: '773px',
   },
   {
@@ -54,7 +54,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
         className: ['animate__fadeInLeft'],
       }
     ],
-    id:'version',
+    id: 'version',
     boxheight: '819px',
   },
   {
@@ -68,7 +68,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
         className: ['animate__fadeInRight'],
       }
     ],
-    id:'digit',
+    id: 'digit',
     boxheight: '718px',
   },
 ];
@@ -165,8 +165,8 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
       <div className="title">产品能力</div>
       <div className="capacity-tab">
         {FEATURE_TITLE.map((item, i) => (
-          <div 
-            className={i==currIndex?'capacity-item active':'capacity-item'}
+          <div
+            className={i == currIndex ? 'capacity-item active' : 'capacity-item'}
             onClick={() => {
               const node = document.querySelector(`.FeatureIntroduceWrap > .${item.id}`);
               if (node) {
@@ -174,7 +174,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
               }
               onCancel()
             }}>
-            <img src={i==currIndex ? item.iconnormal : item.iconactive} />
+            <img src={i == currIndex ? item.iconnormal : item.iconactive} />
             <img src={item.iconnormal} />
             <div className="title-tab">{item.title}</div>
             <div className="subtitle">{item.subtitle}</div>
@@ -200,5 +200,5 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
 };
 
 export type IFeaturesProps = IProps;
-const Features = styled(RawFeatures)<IFeaturesProps>``;
+const Features = styled(RawFeatures) <IFeaturesProps>``;
 export default Features;
