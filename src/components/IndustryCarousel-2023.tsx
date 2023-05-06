@@ -55,11 +55,11 @@ const CarouselWrapper = styled.div`
     }
   }
   .carousel-body {
-    height: 580px;
+    height: 680px;
     min-height: 480px;
     background:#F6FCFF;
     position: relative;
-    overflow:hidden;
+    // overflow:hidden;
     .carousel-bg-ball {
       position: absolute;
       top: 0;
@@ -72,12 +72,10 @@ const CarouselWrapper = styled.div`
       position: absolute;
       top: 0;
       right: 0;
-      transform: translate(47%,-74%);
-      width: 977px;
-      height: 977px;
+      width: 582px;
+      height: 435px;
       opacity: 1;
-      background: radial-gradient(50% 50%, rgba(43, 88, 249, 0.3) 0%, rgba(43, 88, 249, 0) 100%);
-      filter: blur(100px);
+      background: url(${imgurl}/carousel_right_new.png) no-repeat;
     }
   }
   .carouselbg2{
@@ -112,8 +110,8 @@ const CarouselWrapper = styled.div`
   }
   .bg-img-blue{
     position:absolute;
-    right: -47px;
-    top: 80px;
+    right: 0px;
+    top: 117px;
     img{
       height:434px;
     }
@@ -129,7 +127,7 @@ const CarouselWrapper = styled.div`
   }
   
   .carousel-indicators {
-    bottom: ${calWidthAndHeight(18)};
+    bottom: ${calWidthAndHeight(134)};
   }
   @keyframes mywidth{
     from{
@@ -140,11 +138,16 @@ const CarouselWrapper = styled.div`
     }
   }
   .carousel-indicators{
+    justify-content: flex-start;
+    margin-left: 8%;
     > li{
-      width:90px;
+      width:57px;
       height:4px;
       background:rgba(65,70,79,.15);
       border:none;
+      &::after {
+        border-radius: 2px;
+      }
     }
     .active{
     position:relative;
@@ -383,11 +386,57 @@ margin-bottom:56px;
   }
 `;
 
+const QuickArea = styled.div`
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  margin-top: -31px;
+  >div {
+    display: flex;
+    justify-content: center;
+    img {
+      margin-top: -6px;
+      width: 60px;
+      height: 60px;
+    }
+    .content {
+      margin-left: 8px;
+      width: 170px;
+      div:first-child {
+        font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 24px;
+  color: #333333;
+  text-align: left;
+  vertical-align: top;
+      }
+      div:last-child {
+        font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 16px;
+  color: #5A5A5A;
+  text-align: left;
+  vertical-align: top;
+      }
+    }
+  }
+`
+
 const jumpData = [
   { title: '数据智能赋能用户运营策略', desc: 'ROI导向', jumpTarget: '#' + VIDEO_LIST_ID },
   { title: '以构建长期信任关系为运营导向', desc: '最佳应用实践', jumpTarget: '#' + SOLUTION_ID },
   { title: '长期服务企业和政府头部品牌和机构', desc: '定义先进AI', jumpTarget: '#' + CustomerId },
 ];
+
+const bannerList = [
+  {img: `${imgurl}/banner1_icon1.svg`, title: '数据智能赋能用户运营', desc: '国内领先的数智化用户运营解决方案服务商'},
+  {img: `${imgurl}/banner1_icon2.svg`, title: '助力构建用户信任关系', desc: '赋能企业业务增长及政府基层服务治理'},
+  {img: `${imgurl}/banner1_icon3.svg`, title: '政府认定准独角兽企业', desc: '连续获评杭州市准独角兽、未来独角兽企业'},
+  {img: `${imgurl}/banner1_icon4.svg`, title: '各行业头部机构合作者', desc: '七年深耕，帮助全行业TOP机构数智化转型'},
+]
 
 export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
   const [currIndex, setCurrIndex] = useState(0);
@@ -414,11 +463,11 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
               <div  className="main-container">
                 
               <div className="main-title">智能用户运营领域创领者</div>
-              <div className='sec-title'>用AI助力构建用户长期信任关系</div>
-              <div className='bg-img-blue'>
-                <img src={imgurl+'/sy-banner1.png'} alt="" />
+              <div style={{marginBottom: '56px'}} className='sec-title'>用AI助力构建ToC长期信任关系</div>
+              <div style={{width: '644px',height: '496px'}} className='bg-img-blue'>
+                <img style={{height: '100%'}} src={imgurl+'/sy-banner1.png'} alt="" />
               </div>
-              <div className="jump-group">
+              {/* <div className="jump-group">
                 {jumpData.map(({ title, desc, jumpTarget }, i) => {
                   return (
                     <div
@@ -439,7 +488,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
                     </div>
                   );
                 })}
-              </div>
+              </div> */}
               <div
                 className="carousel-btn"
                 onClick={() => {
@@ -468,7 +517,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
                 }}>
                 点击查看
               </div>
-              <div style={{top: '80px',right: '0'}} className='bg-img-blue'>
+              <div className='bg-img-blue'>
                 <img style={{width: '610px'}} src={imgurl+'/sy-banner2.png'} alt="" />
               </div>
               </div>
@@ -497,6 +546,19 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
             
             </Carousel.Item>
           </Carousel>
+          <QuickArea>
+            {bannerList.map((item,index)=> {
+              return (
+                <div>
+                  <img src={item.img} alt="" />
+                  <div className='content'>
+                    <div>{item.title}</div>
+                    <div>{item.desc}</div>
+                  </div>
+                </div>
+              )
+            })}
+          </QuickArea>
         </div>
       </Visible>
       <Visible xs sm>

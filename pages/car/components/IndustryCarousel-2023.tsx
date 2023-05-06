@@ -140,12 +140,10 @@ width: 100%;
       position: absolute;
       top: 0;
       right: 0;
-      transform: translate(47%,-74%);
-      width: 977px;
-      height: 977px;
+      width: 582px;
+      height: 435px;
       opacity: 1;
-      background: radial-gradient(50% 50%, rgba(43, 88, 249, 0.3) 0%, rgba(43, 88, 249, 0) 100%);
-      filter: blur(100px);
+      background: url(${imgurl}/carousel_right_new.png) no-repeat;
     }
 `;
 

@@ -35,7 +35,7 @@ const HeaderWrapper = styled.div<{ needOpacity: boolean; fontStyle: 'dark' | 'li
   top: 0;
   z-index: 99;
   width: 100%;
-  height: 60px;
+  height: 80px;
   background: ${props => (props.needOpacity ? 'transparent' : 'rgba(255,255,255,1)')};
   border-bottom: ${props => (props.needOpacity ? 'none' : '1px solid #eeeeee')};
   // backdrop-filter: blur(5px);

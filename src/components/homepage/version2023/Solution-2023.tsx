@@ -388,7 +388,7 @@ const Wrapper = styled.div<{ wrapperWidth?: number }>`
   margin: 0 auto;
 `;
 const LabelList = styled.div`
-width: 300px;
+width: 600px;
 height: 56px;
 display: flex;
 justify-content: center;
@@ -396,7 +396,7 @@ width: 100%;
 border-bottom: 2px solid rgba(0, 0, 0, 0.04);
 `
 const LabelWrapper = styled.div`
-width: 300px;
+width: 600px;
 height: 56px;
 line-height: 54px;
 text-align: center;
@@ -412,40 +412,68 @@ cursor: pointer;
 } 
 `
 const ContentWrapper = styled.div`
-div:first-child {
-    font-family: PingFangSC;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 0px;
-    line-height: 24px;
-    color: rgba(51, 51, 51, 1);
-    text-align: center;
-    margin-top: 39.95px;
-}
-div:nth-child(2) {
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 0.73px;
-    line-height: 24px;
-    color: rgba(51, 51, 51, 1);
-    text-align: center;
-    margin-top: 8px;
-}
-img {
-  width: 1057px;
-  height: 497px;
-  display: block;
-  margin: 35px auto 0;
+width: 1200px;
+margin: 0 auto;
+.left {
+  width: 200px;
+  height: 361px;
+  background: #F6FCFF;
+  border-radius: 4px;
+  div {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    cursor: pointer;
+    padding-left: 24px;
+    span {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #5A5A5A;
+    }
+    img {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+  }
 }
 `
 
 const labelInfo = [
   {
-      name: '企业'
+      name: '企业数智化用户运营解决方案'
   },
   {
-      name: '政务'
+      name: '政府基层服务和治理自动化解决方案'
   }
+]
+const leftMenuList = [
+  {
+    icon: '/ppls_icon1.svg',
+    label: '品牌零售'
+  },
+  {
+    icon: '/internet_icon1.svg',
+    label: '互联网'
+  },
+  {
+    icon: '/car_icon1.svg',
+    label: '汽车'
+  },
+  {
+    icon: '/insure_icon1.svg',
+    label: '保险'
+  },
+  {
+    icon: '/xj_icon1.svg',
+    label: '消费金融'
+  },
+  {
+    icon: '/bank_icon1.svg',
+    label: '银行'
+  },
 ]
 const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
   const [currIndex, setCurrIndex] = useState(0);
@@ -506,8 +534,8 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
 const Solution: FC<ICustomerWordsProps> = ({}) => {
   const [currIndex,setCurrIndex] = useState(0);
   return (
-    <Pane title="场景解决方案" paneBgColor="grey" 
-    style={{ paddingBottom: 80,background:'rgba(246, 252, 255, 1)'}} 
+    <Pane title="全场景解决方案"
+    style={{ paddingBottom: 80}} 
     titleStyle={{marginBottom:'24px'}}
     mobileStyle={{ paddingBottom: 40 }}>
       <Hidden xs sm>
@@ -522,9 +550,15 @@ const Solution: FC<ICustomerWordsProps> = ({}) => {
             })}
         </LabelList>
         <ContentWrapper>
-                    <div>{carouselDataList[currIndex].p1}</div>
-                    <div>{carouselDataList[currIndex].p2}</div>
-                    <img src={carouselDataList[currIndex].img} alt="" />
+                   <div className='left'>
+                     {leftMenuList.map((item)=> {
+                      return(<div>
+                        <img src={imgurl+item.icon} alt="" />
+                        <span>{item.label}</span>
+                      </div>)
+                     })}
+                   </div>
+                   <div className='right'></div>
                   </ContentWrapper>
       </Hidden>
       <Visible xs sm>

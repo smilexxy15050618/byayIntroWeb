@@ -53,12 +53,32 @@ const list = [
     }
 ]
 
+const menuList = [
+    {
+        title: '知识图谱',
+        subTitle: '机器人大脑（知识体系）'
+    },
+    {
+        title: '百应星球',
+        subTitle: 'CSM工作台（精细化运营）'
+    },
+    {
+        title: '百应神舟',
+        subTitle: '知识生产+模型生产'
+    },
+    {
+        title: '机器人工厂',
+        subTitle: 'No-Code AI'
+    }
+]
 const Wrapper = styled.div`
     width: 100%;
     padding-top: 80px;
     transform: translateY(50%);
     transition: all 0.4s;
-opacity: 0;
+    opacity: 0;
+    background: url(${imgurl}/qzzy_bg.png) no-repeat;
+    background-size: 100% 100%;
 &.appear{
   transform: translateY(0);
   opacity: 1;
@@ -130,6 +150,90 @@ const Title = styled.div`
   line-height: 40px;
   text-align: center;
 `;
+
+const Menu = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  padding-left: 65px;
+  box-sizing: border-box;
+  margin: 62px auto 0;
+  .left-menu {
+    width: 545px;
+    height: 353px;
+    position: relative;
+    .menu-item {
+        cursor: pointer;
+        &:hover {
+            div:first-child {
+                color: #2B58F9;
+            }
+        }
+        div:first-child {
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 0px;
+            line-height: 32px;
+            color: #333333;
+            text-align: left;
+            vertical-align: top;
+        }
+        div:last-child {
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0px;
+            line-height: 24px;
+            color: #5A5A5A;
+            text-align: left;
+            vertical-align: top;
+        }
+    }
+    .menu-item:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .menu-item:nth-child(2) {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .menu-item:nth-child(3) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .menu-item:nth-child(4) {
+        position: absolute;
+        right: 72px;
+        bottom: 0;
+    }
+  }
+  .right-menu {
+    width: 528px;
+height: 378px;
+opacity: 1;
+border-radius: 10px;
+border: 1px solid #FFFFFF;
+padding-top: 69px;
+padding-left: 65px;
+box-shadow: 0px 20px -17px 0px #072C59;
+// backdrop-filter: blur(6px);
+.title {
+    font-size: 18px;
+font-weight: 500;
+line-height: 32px;
+color: #333333;
+span {
+    font-size: 14px;
+font-weight: 400;
+line-height: 28px;
+color: #5A5A5A;
+margin-left: 8px;
+}
+}
+  }
+`
 const GLOBAL_ID_WRAP = 'global_number_wrap';
 const GlobalNumber = ({ }) => {
     const [showNumber,setShowNumber] = useState(false);
@@ -154,6 +258,21 @@ const GlobalNumber = ({ }) => {
     return (
         <Wrapper id={GLOBAL_ID_WRAP}>
             <Title>全栈自研，行业前沿技术水平</Title>
+            <Menu>
+                <div className='left-menu'>
+                   {menuList.map((item)=> {
+                    return (<div className='menu-item'>
+                        <div>{item.title}</div>
+                        <div>{item.subTitle}</div>
+                    </div>)
+                   })}
+                </div>
+                <div className='right-menu'>
+                    <div className='title'>
+                    知识图谱<span>机器人大脑（知识体系）</span>
+                    </div>
+                </div>
+            </Menu>
             <Content>
             {list.map(({ title, content, sub, unit }, index) => {
                 return (
