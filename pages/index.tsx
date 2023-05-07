@@ -17,6 +17,8 @@ import { Wrapper } from '../src/components/voice-robot/style';
 import { ScrollToPlugin } from 'gsap/all';
 import imgurl from '../img.url.js';
 import Advantage from '../src/components/homepage/version2023/advantage';
+import {NewVideo} from '../src/components/NewVideo';
+import {News} from '../src/components/homepage/version2023/News'
 
 const FOOTER_BG = `${imgurl}/kqaizl.png`;
 const BASE_URL = 'https://cdn.byai.com/static/intro/img/index/version2021/banner';
@@ -158,12 +160,14 @@ export default props => {
         <Wrapper>
           <IndustryCarousel hadnleNav={hadnleNav} />
           <Visible md lg xl xxl xxxl>
-            <VideoList contentList={videoInfoList} />
+            <NewVideo></NewVideo>
+            {/* <VideoList contentList={videoInfoList} /> */}
             <Solution />
             <AiPlatform></AiPlatform>
             <GlobaNumber></GlobaNumber>
             <CustomerWords></CustomerWords>
             <HeightestAi />
+            <News></News>
           </Visible>
           <Visible xs sm>
             <VideoListMobile contentList={videoInfoList}></VideoListMobile>

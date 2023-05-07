@@ -24,13 +24,18 @@ const HoveUp = styled.div`
         // box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
     }
     .swiper-container {
-      width: 100%;
+      width: 1072px;
+      height: 376px;
+      background: white;
+      margin: 0 auto;
       .swiper-slide {
+        padding-top: 0px !important;
         width: 100%;
         .text_area {
-          width: 100%;
+          width: 600px;
+          height: 176px;
           .info_area,.name_area {
-            padding: 40px 21px 0;
+            padding: 42px 0px 0 56px;
           }
           .name_area {
             padding-bottom: 20px;
@@ -71,25 +76,29 @@ const CardContent = styled.aside`
         // margin-right:86px;
     }
     .info_area{
-      font-size: 20px;
-      font-weight: 500;
-      letter-spacing: 0px;
-      line-height: 40px;
-      color: rgba(90, 90, 90, 1);
+      font-size: 16px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 40px;
+color: rgba(90, 90, 90, 1);
+text-align: left;
     }
     .name_area{
       font-size: 14px;
-      font-weight: 400;
-      line-height: 20px;
-      color: rgba(90, 90, 90, 1);
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 20px;
+color: rgba(90, 90, 90, 1);
       text-align:right;
       margin-top:16px;
       padding-bottom:16px;
       // border-bottom: 1px solid rgba(0, 0, 0, 0.08);     
       span{
         font-size: 20px;
-        font-weight: 500;
-        line-height: 24px;
+font-weight: 500;
+letter-spacing: 0px;
+line-height: 24px;
+color: rgba(90, 90, 90, 1);
       }
     }
     .introduce_area{
@@ -135,7 +144,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
   const [arrowbg, setArrowbg] = useState(imglegt);
   const [arrowbg2, setArrowbg2] = useState(imgright);
   return (
-    <div style={{width:'1200px',margin:'0 auto',display:'flex',justifyContent:'center',background: 'white',padding: '0 116px'}}>
+    <div style={{width:'1200px',margin:'0 auto',display:'flex',justifyContent:'center'}}>
         {/* <ArrowClick onClick={e => {
             const res = controlledSwiper.navigation.onPrevClick(e);
           }} style={{marginRight:30}}
@@ -150,19 +159,10 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
            <img src={arrowbg}  />
         </ArrowClick> */}
       <HoveUp >
-      <LabelList>
-             {carouselDataList.map(({avatarSrc},index)=> {
-              return (
-                <div className={index==currIndex?'active':''} onClick={()=> {setCurrIndex(index);controlledSwiper.slideTo(index)}}>
-                  <img src={avatarSrc} alt="" />
-                </div>
-              )
-             })}
-        </LabelList>
       <Swiper
         effect="slide"
         autoplay={{
-          delay: 1000000,
+          delay: 1000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
@@ -191,6 +191,15 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <LabelList>
+             {carouselDataList.map(({avatarSrc},index)=> {
+              return (
+                <div className={index==currIndex?'active':''} onClick={()=> {setCurrIndex(index);controlledSwiper.slideTo(index)}}>
+                  <img src={avatarSrc} alt="" />
+                </div>
+              )
+             })}
+        </LabelList>
       </HoveUp>
       {/* <ArrowClick onClick={e => {
             controlledSwiper.navigation.onNextClick(e);
@@ -397,20 +406,23 @@ const Wrapper = styled.div<{ wrapperWidth?: number }>`
 `;
 
 const LabelList = styled.div`
-  width: 100%;
+  width: 1072px;
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
+  margin: 40px auto 0;
   div {
-    width: 200px;
-    height: 80px;
+    width: 256px;
+    height: 64px;
+    border-radius: 4px;
+background: rgba(255, 255, 255, 1);
+box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
     &.active {
       border-bottom: 1px solid #2B58F9;
     }
   }
   img {
-    width: 200px;
-    height: 80px;
+    width: 256px;
+    height: 64px;
     margin-bottom: 0;
   }
 `

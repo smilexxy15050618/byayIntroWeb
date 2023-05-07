@@ -127,6 +127,8 @@ const CarouselWrapper = styled.div`
   }
   
   .carousel-indicators {
+    width: 1200px;
+    margin: 0 auto;
     bottom: ${calWidthAndHeight(134)};
   }
   @keyframes mywidth{
@@ -139,7 +141,6 @@ const CarouselWrapper = styled.div`
   }
   .carousel-indicators{
     justify-content: flex-start;
-    margin-left: 8%;
     > li{
       width:57px;
       height:4px;
