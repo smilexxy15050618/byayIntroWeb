@@ -93,11 +93,7 @@ const CarouselWrapper = styled.div`
   }
   .no_duration{
   }
-  .Carouselindex2{
-    opacity: 0;
-    cursor:pointer;
-
-  }
+ 
   .main-container {
     width: 1200px;
     display: flex;
@@ -468,28 +464,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
               <div style={{width: '644px',height: '496px'}} className='bg-img-blue'>
                 <img style={{height: '100%'}} src={imgurl+'/sy-banner1.png'} alt="" />
               </div>
-              {/* <div className="jump-group">
-                {jumpData.map(({ title, desc, jumpTarget }, i) => {
-                  return (
-                    <div
-                    key={i}
-                      onMouseEnter={() => {
-                        setCurrIndex(i);
-                      }}
-                      className={classNames('jump-group-item', {
-                        hover: i === currIndex,
-                      })}
-                      onClick={() => {
-                        const node = document.querySelector(jumpTarget);
-                        if (node) {
-                          // node.scrollIntoView({ behavior: 'smooth' });
-                        }
-                      }}>
-                      <div className="jump-group-item-title">{title}</div>
-                    </div>
-                  );
-                })}
-              </div> */}
+             
               <div
                 className="carousel-btn"
                 onClick={() => {
@@ -500,9 +475,30 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
               </div>
             
             </Carousel.Item>
-            <Carousel.Item className='no_duration Carouselindex2' 
+
+            <Carousel.Item className='no_duration' key={2}>
+              <div  className="main-container">
+                
+              <div className="main-title">逆势增长砥砺前行</div>
+              <div className='sec-title' style={{marginBottom:'16px'}}>《百应科技2022年度报告》</div>
+              <div className='third-title'>年营收增长40%，连续六年保持增长，<br /> 复合增长率（CAGR）超100%</div>
+              
+              <div
+                className="carousel-btn"
+                onClick={() => {
+                  window.open(`https://mp.weixin.qq.com/s/Ebu43ZcMV6ted0f55efIRg`);
+                }}>
+                点击查看
+              </div>
+              <div className='bg-img-blue'>
+                <img src={imgurl+'/sy-banner3.png'} alt="" />
+              </div>
+              </div>
             
-            key={2} onClick={() => {
+            </Carousel.Item>
+            <Carousel.Item className='no_duration ' 
+            
+            key={3} onClick={() => {
                   window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
                 }}>
               <div  className="main-container">
@@ -524,28 +520,32 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
               </div>
             
             </Carousel.Item>
-           
-                
-            <Carousel.Item className='no_duration' key={3}>
+            <Carousel.Item className='no_duration ' 
+            
+            key={3} onClick={() => {
+                  window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
+                }}>
               <div  className="main-container">
                 
-              <div className="main-title">逆势增长砥砺前行</div>
-              <div className='sec-title' style={{marginBottom:'16px'}}>《百应科技2022年度报告》</div>
-              <div className='third-title'>年营收增长40%，连续六年保持增长，复合增长率（CAGR）超100%</div>
-              
+              <div className="main-title">参与制定行业标准</div>
+              <div className='sec-title'  style={{marginBottom:'16px'}}></div>
+              <div className='third-title'>大规模训练技术模型和应用评估方法<br />智能对话平台开发及服务能力要求及评估方法<br /> 智能客服系统服务等级评估方法</div>
+            
               <div
                 className="carousel-btn"
                 onClick={() => {
-                  window.open(`https://mp.weixin.qq.com/s/Ebu43ZcMV6ted0f55efIRg`);
+                  window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
                 }}>
                 点击查看
               </div>
               <div className='bg-img-blue'>
-                <img src={imgurl+'/sy-banner3.png'} alt="" />
+                <img style={{width: '610px'}} src={imgurl+'/sy-banner4.png'} alt="" />
               </div>
               </div>
             
             </Carousel.Item>
+                
+            
           </Carousel>
           <QuickArea>
             {bannerList.map((item,index)=> {

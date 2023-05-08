@@ -414,23 +414,30 @@ cursor: pointer;
 const ContentWrapper = styled.div`
 width: 1200px;
 margin: 0 auto;
+margin-top: 30px;
+display: flex;
 .left {
   width: 200px;
-  height: 361px;
+  /* height: 361px; */
   background: #F6FCFF;
   border-radius: 4px;
+  color: #5A5A5A;
+  .active{
+    background: rgba(43, 88, 249, 1);
+    color: #fff;
+  }
   div {
     display: flex;
     align-items: center;
     width: 200px;
-    height: 60px;
+    height: 72px;
     cursor: pointer;
     padding-left: 24px;
     span {
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
-      color: #5A5A5A;
+      
     }
     img {
       width: 24px;
@@ -438,6 +445,75 @@ margin: 0 auto;
       margin-right: 8px;
     }
   }
+}
+.right{
+  position: relative;
+  flex: 1;
+  background: linear-gradient(154.05deg, rgba(43, 88, 249, 0) 0%, rgba(43, 88, 249, 0.13) 100%), rgba(246, 252, 255, 1);
+background-blend-mode: normalnormal;
+padding:40px 64px ;
+img{
+  margin-bottom: 0;
+}
+.posationbg{
+  width: 288px;
+  position: absolute;
+  right: 0;
+  
+  bottom: 0;
+}
+.title{
+  font-size: 28px;
+font-weight: 500;
+line-height: 32px;
+color: rgba(26, 26, 26, 1);
+margin-bottom: 16px;
+}
+.desc{
+  font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+color: rgba(90, 90, 90, 1);
+margin-bottom: 18px;
+width: 700px;
+}
+.log_arrow{
+  height: 32px;
+  margin-bottom: 24px;
+}
+.bottomLogo{
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 30px;
+  width: 604px;
+  display: flex;
+  justify-content: space-between;
+}
+.logo_bottom{
+  height: 29px;
+  margin-bottom: 0;
+}
+.btnGroup{
+  display: flex;
+}
+.btnGroup>div{
+  width: 120px;
+  margin-top: 60px;
+height: 36px;
+border-radius: 4px;
+text-align: center;
+line-height: 36px;
+cursor: pointer;
+}
+.ljzx{
+  color: #fff;
+  background: rgba(43, 88, 249, 1);
+}
+.ljgd{
+  color: rgba(43, 88, 249, 1);
+  border: 1px solid rgba(43, 88, 249, 1);
+  box-sizing: border-box;
+  margin-left: 16px;
+}
 }
 `
 
@@ -452,25 +528,38 @@ const labelInfo = [
 const leftMenuList = [
   {
     icon: '/ppls_icon1.svg',
+    icon2:'/ppls_icon1lght.png',
     label: '品牌零售'
   },
   {
+
+    icon2:'/ppls_icon2lght.png',
+
     icon: '/internet_icon1.svg',
     label: '互联网'
+    
   },
   {
+    icon2:'/ppls_icon3lght.png',
+
     icon: '/car_icon1.svg',
     label: '汽车'
   },
   {
+    icon2:'/ppls_icon4lght.png',
+
     icon: '/insure_icon1.svg',
     label: '保险'
   },
   {
+    icon2:'/ppls_icon5lght.png',
+
     icon: '/xj_icon1.svg',
     label: '消费金融'
   },
   {
+    icon2:'/ppls_icon6lght.png',
+
     icon: '/bank_icon1.svg',
     label: '银行'
   },
@@ -533,6 +622,7 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
 
 const Solution: FC<ICustomerWordsProps> = ({}) => {
   const [currIndex,setCurrIndex] = useState(0);
+  const [currIndexicon,setCurrIndexicon] = useState(0);
   return (
     <Pane title="全场景解决方案"
     style={{ paddingBottom: 80}} 
@@ -551,14 +641,35 @@ const Solution: FC<ICustomerWordsProps> = ({}) => {
         </LabelList>
         <ContentWrapper>
                    <div className='left'>
-                     {leftMenuList.map((item)=> {
-                      return(<div>
-                        <img src={imgurl+item.icon} alt="" />
+                     {leftMenuList.map((item,i)=> {
+                      return(<div onClick={()=>{
+                        setCurrIndexicon(i)
+                      }} className={i == currIndexicon?'active':''}>
+                        <img src={i == currIndexicon?imgurl+item.icon2 : imgurl+item.icon} alt="" />
                         <span>{item.label}</span>
                       </div>)
                      })}
                    </div>
-                   <div className='right'></div>
+                   <div className='right'>
+                    <img className='posationbg' src={imgurl+'/sybane12.png'} />
+                      <div className='title'>品牌零售解决方案</div>
+                      <div className='desc'>通过对话式AI实现对用户全生命周期的多触点精细化管理，助力品牌实现「极致用户体验+极致ROI」的全域增长服务</div>
+                      <img className='log_arrow' src={imgurl+'/syppls23.png'} alt="" />
+                      <div className='bottomLogo'>
+                            <img src={imgurl+'/logo_allselec1.png'} className='logo_bottom' alt="" />
+                            <img src={imgurl+'/logo_allselec2.png'} className='logo_bottom' alt="" />
+                            <img src={imgurl+'/logo_allselec3.png'} className='logo_bottom' alt="" />
+                            <img src={imgurl+'/logo_allselec4.png'} className='logo_bottom' alt="" />
+                            <img src={imgurl+'/logo_allselec5.png'} className='logo_bottom' alt="" />
+                      </div>
+                      <div className='btnGroup'>
+                          <div className='ljzx'>立即咨询</div>
+                          <div className='ljgd'>了解更多</div>
+                      </div>
+                   </div>
+
+                 
+                   
                   </ContentWrapper>
       </Hidden>
       <Visible xs sm>
