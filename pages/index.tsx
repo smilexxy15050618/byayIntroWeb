@@ -19,7 +19,7 @@ import imgurl from '../img.url.js';
 import Advantage from '../src/components/homepage/version2023/advantage';
 import {NewVideo} from '../src/components/NewVideo';
 import {News} from '../src/components/homepage/version2023/News'
-
+import {LastPng} from './lastPng'
 const FOOTER_BG = `${imgurl}/kqaizl.png`;
 const BASE_URL = 'https://cdn.byai.com/static/intro/img/index/version2021/banner';
 const TEMPORARY_BANNER_BG = `${BASE_URL}/temporary-bg.jpg`;

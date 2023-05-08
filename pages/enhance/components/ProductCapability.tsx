@@ -84,7 +84,20 @@ const LabelItem = styled.div`
   img:nth-child(2){
     display: none;
   }
-
+  .title-tab{
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 28px;
+    color: rgba(26, 26, 26, 1);
+  }
+  .subtitle{
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 24px;
+    color: rgba(90, 90, 90, 1);
+  }
   span:nth-child(2) {
     font-size: 20px;
     font-weight: 600;
@@ -224,8 +237,8 @@ export const ProductCapability = () => {
                             <LabelItem onClick={()=>scrollTo(index)} className={activeIndex == index ? 'active' : ''}>
                                 <img src={activeIndex == index ? activeImg : img} alt="" />
                                 <img src={activeImg} alt="" />
-                                <span>{text}</span>
-                                <span>{english_text}</span>
+                                <div className="title-tab">{text}</div>
+                                <div className="subtitle">{english_text}</div>
                             </LabelItem>
                         )
                     }))
