@@ -11,7 +11,8 @@ import BannerWhite from './BannerWhite';
 import FabricValue from './FabricValue';
 import Features from './Features';
 
-const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
+// const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
+const PREFIX = '/static/img2023'
 const BANNER_BG = `${PREFIX}/multimodal-banner-bg.svg`;
 const PC_BANNER_IMGS = [
   {
@@ -35,6 +36,7 @@ const PC_BANNER_IMGS = [
     className: ['animate__fadeInUp', 'animate__delay_700ms'],
   },
 ];
+const WAP_BANNER_IMGS = `${PREFIX}/multimodalAI-wp-banner.png`
 
 
 const BigTitle = styled.div`
@@ -45,6 +47,11 @@ const BigTitle = styled.div`
   color: rgba(26, 26, 26, 1);
   text-align: center;
   margin-bottom: 16px;
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 32px;
+    line-height: 40px;
+  }
 `;
 
 const Desc = styled.div`
@@ -54,6 +61,13 @@ const Desc = styled.div`
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
   text-align: center;
+  @media (max-width: 768px) {
+    padding-bottom: 30px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 26px;
+  }
 `;
 
 const BlueBtn = styled.div`
@@ -92,32 +106,27 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
     <Layout initialOpacity={initial} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
       {(visible, setVisible) => (
         <Wrapper>
-          <Visible md lg xl xxl xxxl>
-            <BannerWhite
-              background={[`url(${BANNER_BG}) center, linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);`, 'linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);']}
-              pcImgs={PC_BANNER_IMGS}
-            >
-              <TextArea spaces={['', '']}>
-                <BigTitle>多模态情感化AI</BigTitle>
-                <Desc>将AI交互的深度推进到多模态交互领域，丰富交互场景与内容</Desc>
-                <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
-              </TextArea>
-            </BannerWhite>
+          <BannerWhite
+            background={[`url(${BANNER_BG}) center, linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);`, 'linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);']}
+            pcImgs={PC_BANNER_IMGS}
+            mobileImg={WAP_BANNER_IMGS}
+          >
+            <TextArea spaces={['', '']}>
+              <BigTitle>多模态情感化AI</BigTitle>
+              <Desc>将AI交互的深度推进到多模态交互领域，丰富<br />交互场景与内容</Desc>
+              <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+            </TextArea>
+          </BannerWhite>
+          <Features onCancel={hadnleNav} />
+          <FabricValue />
+          <ByVoiceFooter
+            title="立即体验AI时代的新一代用户运营平台"
+            desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
+            btnText="与我联系"
+            background={`url(${FOOTER_BG})`}
+            onClick={() => window.open('/form?formType=1')}
+          />
 
-            <Features onCancel={hadnleNav} />
-            <FabricValue />
-            <ByVoiceFooter
-              title="立即体验AI时代的新一代用户运营平台"
-              desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
-              btnText="与我联系"
-              background={`url(${FOOTER_BG})`}
-              onClick={() => window.open('/form?formType=1')}
-            />
-          </Visible>
-
-          <Visible xs sm>
-            移动端
-      </Visible>
         </Wrapper>
       )}
     </Layout>
