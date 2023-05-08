@@ -526,43 +526,64 @@ const labelInfo = [
   }
 ]
 const leftMenuList = [
+  [
+    {
+      icon: '/ppls_icon1.svg',
+      icon2:'/ppls_icon1lght.png',
+      label: '品牌零售'
+    },
+    {
+  
+      icon2:'/ppls_icon2lght.png',
+  
+      icon: '/internet_icon1.svg',
+      label: '互联网'
+      
+    },
+    {
+      icon2:'/ppls_icon3lght.png',
+  
+      icon: '/car_icon1.svg',
+      label: '汽车'
+    },
+    {
+      icon2:'/ppls_icon4lght.png',
+  
+      icon: '/insure_icon1.svg',
+      label: '保险'
+    },
+    {
+      icon2:'/ppls_icon5lght.png',
+  
+      icon: '/xj_icon1.svg',
+      label: '消费金融'
+    },
+    {
+      icon2:'/ppls_icon6lght.png',
+  
+      icon: '/bank_icon1.svg',
+      label: '银行'
+    },
+  ],
+  [
   {
     icon: '/ppls_icon1.svg',
     icon2:'/ppls_icon1lght.png',
-    label: '品牌零售'
+    label: '公安反诈'
   },
   {
 
     icon2:'/ppls_icon2lght.png',
-
     icon: '/internet_icon1.svg',
-    label: '互联网'
+    label: '政务服务'
     
   },
   {
     icon2:'/ppls_icon3lght.png',
-
     icon: '/car_icon1.svg',
-    label: '汽车'
+    label: '公安综治'
   },
-  {
-    icon2:'/ppls_icon4lght.png',
-
-    icon: '/insure_icon1.svg',
-    label: '保险'
-  },
-  {
-    icon2:'/ppls_icon5lght.png',
-
-    icon: '/xj_icon1.svg',
-    label: '消费金融'
-  },
-  {
-    icon2:'/ppls_icon6lght.png',
-
-    icon: '/bank_icon1.svg',
-    label: '银行'
-  },
+  ]
 ]
 const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
   const [currIndex, setCurrIndex] = useState(0);
@@ -641,7 +662,7 @@ const Solution: FC<ICustomerWordsProps> = ({}) => {
         </LabelList>
         <ContentWrapper>
                    <div className='left'>
-                     {leftMenuList.map((item,i)=> {
+                     {leftMenuList[currIndex].map((item,i)=> {
                       return(<div onClick={()=>{
                         setCurrIndexicon(i)
                       }} className={i == currIndexicon?'active':''}>
@@ -670,7 +691,7 @@ const Solution: FC<ICustomerWordsProps> = ({}) => {
 
                  
                    
-                  </ContentWrapper>
+        </ContentWrapper>
       </Hidden>
       <Visible xs sm>
         {/* <CarouselMobile dataList={carouselDataList}></CarouselMobile> */}

@@ -156,7 +156,7 @@ export const News = () => {
             <Title>新闻动态  持续引领</Title>
         <Wrapper>
             <Swiper effect="slide"  autoplay={{
-             delay: 100000,
+             delay: 3000,
              disableOnInteraction: false,
              pauseOnMouseEnter: true
         }}
