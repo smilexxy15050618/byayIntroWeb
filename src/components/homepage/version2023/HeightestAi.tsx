@@ -32,7 +32,7 @@ const HoveUp = styled.div`
         padding-top: 0px !important;
         width: 100%;
         .text_area {
-          width: 600px;
+          width: 621px;
           height: 176px;
           .info_area,.name_area {
             padding: 42px 0px 0 56px;
@@ -162,7 +162,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       <Swiper
         effect="slide"
         autoplay={{
-          delay: 1000,
+          delay: 100000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
