@@ -53,6 +53,10 @@ const list = [
     }
 ]
 
+const contentImg = [
+    `${imgurl}/zstp_content.png`
+]
+
 const menuList = [
     {
         title: '知识图谱',
@@ -232,10 +236,20 @@ color: #5A5A5A;
 margin-left: 8px;
 }
 }
+.contentImg {
+    width: 416px;
+    height: 152px;
+    margin-top: 24px;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
   }
 `
 const GLOBAL_ID_WRAP = 'global_number_wrap';
 const GlobalNumber = ({ }) => {
+    const [current,setCurrent] = useState(0);
     const [showNumber,setShowNumber] = useState(false);
     useEffect(() => {
         const ScrollMagic = require('scrollmagic');
@@ -260,8 +274,8 @@ const GlobalNumber = ({ }) => {
             <Title>全栈自研，行业前沿技术水平</Title>
             <Menu>
                 <div className='left-menu'>
-                   {menuList.map((item)=> {
-                    return (<div className='menu-item'>
+                   {menuList.map((item,index)=> {
+                    return (<div onClick={()=>{setCurrent(index)}} className='menu-item'>
                         <div>{item.title}</div>
                         <div>{item.subTitle}</div>
                     </div>)
@@ -269,7 +283,10 @@ const GlobalNumber = ({ }) => {
                 </div>
                 <div className='right-menu'>
                     <div className='title'>
-                    知识图谱<span>机器人大脑（知识体系）</span>
+                    {menuList[current].title}<span>{menuList[current].subTitle}</span>
+                    </div>
+                    <div className='contentImg'>
+                        <img src={contentImg[current]} alt="" />
                     </div>
                 </div>
             </Menu>

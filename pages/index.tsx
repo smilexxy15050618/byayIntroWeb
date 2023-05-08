@@ -162,10 +162,11 @@ export default props => {
           <Visible md lg xl xxl xxxl>
             <NewVideo></NewVideo>
             {/* <VideoList contentList={videoInfoList} /> */}
-            <Solution />
-            <AiPlatform></AiPlatform>
             <GlobaNumber></GlobaNumber>
+            <Solution />
+            {/* <AiPlatform></AiPlatform> */}
             <CustomerWords></CustomerWords>
+            <CustomerIconsBlock padding="50px 0 80px" />
             <HeightestAi />
             <News></News>
           </Visible>
@@ -174,7 +175,6 @@ export default props => {
             <SolutionOld />
             <Advantage></Advantage>
           </Visible>
-          <CustomerIconsBlock padding="50px 0 80px" />
           <ByVoiceFooter
             title="就现在，开启AI电话增长之旅"
             desc="留下联系方式，将有AI行业专家为您提供专属服务"

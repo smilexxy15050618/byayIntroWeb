@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { Hidden, Visible } from 'react-grid-system';
 import ByProgressSwiper from '../../common/ByProgressSwiper';
 import imgurl from '../../../../img.url.js'
+import { NavItem } from 'react-bootstrap';
 export type ICustomerWordsProps = {};
 
 interface ICarouselProps {
@@ -35,7 +36,7 @@ const HoveUp = styled.div`
           width: 621px;
           height: 176px;
           .info_area,.name_area {
-            padding: 42px 0px 0 56px;
+            padding: 0px 0px 0 56px;
           }
           .name_area {
             padding-bottom: 20px;
@@ -52,6 +53,17 @@ const CardContent = styled.aside`
     align-items: center;
     flex-direction: column; */
     /* height:496px; */
+    .logo {
+      height: 28px;
+      margin: 53px 0 53px 56px;
+    }
+    .bigLogo {
+      width: 374px;
+      height: 376px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
     .diwen {
       width: 160px;
       height: 160px;
@@ -89,7 +101,7 @@ font-weight: 400;
 letter-spacing: 0px;
 line-height: 20px;
 color: rgba(90, 90, 90, 1);
-      text-align:right;
+      text-align:left;
       margin-top:16px;
       padding-bottom:16px;
       // border-bottom: 1px solid rgba(0, 0, 0, 0.08);     
@@ -162,7 +174,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       <Swiper
         effect="slide"
         autoplay={{
-          delay: 100000,
+          delay: 3000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
@@ -171,9 +183,11 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
           setCurrIndex(swiper.activeIndex);
         }}
         style={{  }}>
-        {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
+        {dataList.map(({ bg, avatarSrc, logoSrc, bigSrc, content, personName, tagName }, i) => (
           <SwiperSlide style={{ width: 'auto',paddingTop:10 }} key={i} className='hoer_bg_more'>
             <CardContent>
+              <img className='logo' src={logoSrc} alt="" />
+              <img className='bigLogo' src={bigSrc} alt="" />
               <img className='diwen' src={imgurl+'/tzdwen.png'} alt="" />
                 <div className='text_area' style={{}}>
                     <div className='info_area'>
@@ -221,28 +235,36 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
 
 const carouselDataList = [
   {
-    avatarSrc:`${imgurl}/sxydkj1.png`,
+    avatarSrc:`${imgurl}/sxydkj1.svg`,
+    logoSrc: `${imgurl}/xyd1.png`,
+    bigSrc: `${imgurl}/xyd2.png`,
     content:
       '百应是一个技术能力和产品能力都极强的一家人工智能公司，很难见到一家AI公司产品在金融等多个行业实现高度产品化，并能同时实现合作方开箱即用的极致用户体验和合作方用户的极致应用体验。',
     personName: '耿俊岭',
     tagName: '信雅达科技股份有限公司（600571）董事长',
   },
   {
-    avatarSrc:`${imgurl}/hengsheng1.png`,
+    avatarSrc:`${imgurl}/hengsheng1.svg`,
+    logoSrc: `${imgurl}/xyd1.png`,
+    bigSrc: `${imgurl}/xyd2.png`,
     content:
-      '恒生电子作为百应科技的合作伙伴和股东，我非常欣赏和赞赏这家公司。百应科技在AI和大数据领域具有先进的技术和专业的人才，能够为客户提供优质的产品和服务；其次，百应科技拥有高效的管理团队和科学的管理体系，能够将公司的资源和创新能力最大化地发挥出来，为公司的长期发展打下了坚实的基础；最重要的是，百应科技始终以客户需求为导向，不断探索和创新，提高服务质量和客户满意度，赢得了良好的口碑和信誉。百应科技是一家优秀的科技企业，值得信赖，值得合作。',
+      '恒生电子作为百应科技的合作伙伴和股东，我非常欣赏和赞赏这家公司。百应科技在AI和大数据领域具有先进的技术和专业的人才，同时拥有高效的管理团队和科学的管理体系，为客户提供优质的产品和服务。百应科技不断探索和创新，是一家优秀的科技企业，值得信赖与合作。',
     personName: '刘曙峰',
     tagName: '恒生电子股份有限公司（600570）董事长',
   },
   {
-    avatarSrc:`${imgurl}/amiba1.png`,
+    avatarSrc:`${imgurl}/amiba1.svg`,
+    logoSrc: `${imgurl}/xyd1.png`,
+    bigSrc: `${imgurl}/xyd2.png`,
     content:
       '作为公司最早的股东，我们看到公司从成立到不断发展壮大，客户数量和合作伙伴都在不断增长，产品线也在不断扩充，领域涉及面也在逐渐拓展。很高兴能够见证公司的成长历程，同时也为公司在发展路上持续推进而感到鼓舞。我相信百应科技将继续发扬所长，在行业内发挥更大的作用。',
     personName: 'Kevin Wang',
     tagName: '阿米巴资本 创始及执行合伙人',
   },
   {
-    avatarSrc:`${imgurl}/gxin1.png`,
+    avatarSrc:`${imgurl}/gxin1.svg`,
+    logoSrc: `${imgurl}/xyd1.png`,
+    bigSrc: `${imgurl}/xyd2.png`,
     content:
       '百应科技是一家高素质的AI和大数据技术公司，拥有强大的技术能力和专业的团队，一直秉持以客户需求为导向的理念，不断创新和改善服务，赢得了客户的信任和支持。作为股东，我对百应科技充满信心，相信公司将会在未来的发展中迎来更加辉煌的成绩。',
     personName: '叶雨明',
@@ -409,7 +431,7 @@ const LabelList = styled.div`
   width: 1072px;
   display: flex;
   justify-content: space-between;
-  margin: 40px auto 0;
+  margin: 16px auto 0;
   div {
     width: 256px;
     height: 64px;
@@ -417,7 +439,8 @@ const LabelList = styled.div`
 background: rgba(255, 255, 255, 1);
 box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
     &.active {
-      border-bottom: 1px solid #2B58F9;
+      border-bottom: 2px solid #2B58F9;
+      border-shadow: 0px 0px 12px 1px #245BDB;
     }
   }
   img {
@@ -485,8 +508,8 @@ box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
 const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
   return (
     <Pane title="顶尖资本支持，智领未来AI沟通新方式" paneBgColor="grey" 
-    style={{ paddingBottom: 152,background:`url(${imgurl}/bgblue.png)`}} 
-    titleStyle={{marginBottom:'40px'}}
+    style={{ paddingBottom: '90px',background:`url(${imgurl}/zbbg.png)`}} 
+    titleStyle={{marginBottom:'48px'}}
     mobileStyle={{ paddingBottom: 40 }}>
       <Hidden xs sm>
         <Carousel dataList={carouselDataList}></Carousel>

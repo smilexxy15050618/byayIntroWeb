@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Visible } from 'react-grid-system';
 import styled from 'styled-components';
+import imgurl from '../../img.url.js';
 
+const AITime = styled.div`
+ background: url(${imgurl}/aisd.png) no-repeat;
+ background-size: 100% 100%;
+`
 const Title = styled.div`
 font-size: 40px;
 font-weight: 500;
@@ -9,7 +14,7 @@ letter-spacing: 0px;
 line-height: 48px;
 color: rgba(26, 26, 26, 1);
 text-align: center;
-margin-top: 143px;
+padding-top: 143px;
 `
 const SubTitle = styled.div`
 font-size: 16px;
@@ -21,8 +26,8 @@ text-align: center;
 margin-top: 24px;
 `
 export const NewVideo = () => {
-    return (<>
+    return (<AITime>
       <Title>AI时代的新一代智能用户运营平台</Title>
       <SubTitle>以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台</SubTitle>
-    </>)
+    </AITime>)
 }

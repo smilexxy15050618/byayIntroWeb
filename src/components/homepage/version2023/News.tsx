@@ -19,18 +19,62 @@ padding-bottom: 67px;
 .swiper-container {
     width: 704px;
     height: 408px;
-    background: rgb(209, 221, 252);
+    background: url(${imgurl}/hybg.png) no-repeat;
+    background-size: 981px 428px;
+    background-position: -271px 0;
+    border-radius: 8px;
     margin: 0;
+    .swiper-pagination {
+        text-align: left;
+        padding-left: 32px;
+    }
     .swiper-pagination-bullet {
         width: 14px;
         height: 14px;
         border: none;
         background: url(${imgurl}/bullets.png);
         background-size: 100% 100%;
+        margin-right: 11px;
     }
     .swiper-pagination-bullet-active {
         background: url(${imgurl}/bullets-active.png);
         background-size: 100% 100%;
+    }
+    .swiper-slide {
+        padding: 22px 0px 0 32px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        div:first-child {
+            font-size: 20px;
+font-weight: 500;
+letter-spacing: 0px;
+line-height: 32px;
+color: #1A1A1A;
+margin-bottom: 24px;
+        }
+        div:nth-child(2) {
+            font-size: 24px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 40px;
+color: #1A1A1A;
+margin-bottom: 38px;
+        }
+        button {
+            width: 120px;
+height: 36px;
+opacity: 1;
+border-radius: 4px;
+
+border: 1px solid #1A1A1A;
+font-size: 16px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 34px;
+color: #1A1A1A;
+text-align: center;
+background: none;
+        }
     }
 }
 `
@@ -68,9 +112,11 @@ color: rgba(26, 26, 26, 1);
         justify-content: space-between;
         margin-bottom: 24px;
         img {
-            width: 128px;
-            height: 56px;
+            width: 134px;
+            height: 57px;
             margin-bottom: 0px;
+            margin-right: 12px;
+            border-radius: 4px;
         }
         span {
             font-size: 14px;
@@ -88,31 +134,39 @@ cursor: pointer;
 `
 const list = [
     {
+        img: `${imgurl}/dongtai1.png`,
         text: '打造数字政务发展新标杆，百应发布国内首个政务行业专有大模型“万机”'
     },
     {
+        img: `${imgurl}/dongtai2.png`,
         text: '创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》'
     },
     {
+        img: `${imgurl}/dongtai1.png`,
         text: '百应科技“AI警官”亮相第二十二届中国国际安博会'
     },
     {
+        img: `${imgurl}/dongtai2.png`,
         text: '百应科技实力入选「2022中国企业数智化创新TOP50」榜单'
     }
 ]
 export const News = () => {
     return (
         <div style={{paddingTop: '80px'}}>
-            <Title>新闻动态</Title>
+            <Title>新闻动态  持续引领</Title>
         <Wrapper>
             <Swiper effect="slide"  autoplay={{
-             delay: 1000,
+             delay: 100000,
              disableOnInteraction: false,
              pauseOnMouseEnter: true
         }}
         pagination={{ clickable: true }}
         >
-        <SwiperSlide></SwiperSlide>
+        <SwiperSlide>
+            <div>行业报告</div>
+            <div>引领对话式AI，百应科技入选<br></br>艾瑞《2022中国人工智能产业研究报告》</div>
+            <button>查看详情</button>
+        </SwiperSlide>
         <SwiperSlide></SwiperSlide>
         <SwiperSlide></SwiperSlide>
 
@@ -125,7 +179,7 @@ export const News = () => {
              <div className='center'>
                 {list.map((item)=> {
                     return(<div>
-                    <img src="" alt="" />
+                    <img src={item.img} alt="" />
                     <span>{item.text}</span>
                     </div>)
                 })}
