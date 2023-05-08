@@ -54,7 +54,7 @@ const ByContainer = styled(RawByContainer)<IByContainerProps>`
   justify-content: center;
   ${props => cssSwitch(props.height, 'height', ['auto', 'auto'], true)}
   ${props => cssSwitch(props.background, 'background', ['#FFFFFF', '#FFFFFF'], true)}
-  ${props => cssSwitch(props.padding, 'padding', ['0 0', '40px 20px'], true)}
+  ${props => cssSwitch(props.padding, 'padding', ['0 0', '0 0'], true)}
   background-repeat: no-repeat;
   background-size: cover;
 `;

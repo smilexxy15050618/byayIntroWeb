@@ -1,5 +1,6 @@
 import React, { FC, ReactNode, useState } from 'react';
 import styled from 'styled-components';
+import { Visible } from 'react-grid-system';
 import FeatureIntroduce, { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
 
 const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
@@ -74,7 +75,6 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
 ];
 
 const FeatureWrap = styled.div`
-  
   .title{
     display: flex;
     justify-content: center;
@@ -83,12 +83,22 @@ const FeatureWrap = styled.div`
     font-weight: 500;
     line-height: 48px;
     color: rgba(26, 26, 26, 1);
+    @media (max-width: 768px) {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 40px;
+      padding: 34px 15px;
+    }
   }
   .capacity-tab{
     height: 170px;
     display: flex;
     justify-content: center;
     border-bottom: 4px solid #F4F8FE;
+    @media (max-width: 768px) {
+      height: 86px;
+      border-bottom: 1px solid #F4F8FE;
+    }
     .capacity-item{
       position: relative;
       padding-top: 28px;
@@ -98,6 +108,12 @@ const FeatureWrap = styled.div`
       text-align: center;
       box-sizing: border-box;
       cursor: pointer;
+      @media (max-width: 768px) {
+        flex: 1;
+        margin-right: 0;
+        height: 86px;
+        padding-top: 14px;
+      }
       &:hover{
         img:nth-child(1){
           display: none;
@@ -115,10 +131,19 @@ const FeatureWrap = styled.div`
         width: 190px;
         height: 4px;
         background: rgba(43, 88, 249, 1);
+        @media (max-width: 768px) {
+          width: 95px;
+          height: 2px;
+          left: 15px;
+        }
       }
       img{
         width: 36px;
         height: 36px;
+        @media (max-width: 768px) {
+          width: 18px;
+          height: 18px;
+        }
       }
       img:nth-child(1){
         display: inline-block;
@@ -132,6 +157,10 @@ const FeatureWrap = styled.div`
         letter-spacing: 0px;
         line-height: 28px;
         color: rgba(26, 26, 26, 1);
+        @media (max-width: 768px) {
+          font-size: 10px;
+          line-height: 14px;
+        }
       }
       .subtitle{
         font-size: 14px;
@@ -139,6 +168,11 @@ const FeatureWrap = styled.div`
         letter-spacing: 0px;
         line-height: 24px;
         color: rgba(90, 90, 90, 1);
+        @media (max-width: 768px) {
+          font-size: 7px;
+          letter-spacing: -1px;
+          line-height: 12px;
+        }
       }
     }
     .capacity-item:last-child{
@@ -147,6 +181,54 @@ const FeatureWrap = styled.div`
     .active{
       &::before {
         display: block;
+      }
+    }
+  }
+  .FeatureWap{
+    .relative-position{
+      text-align: center;
+      padding-top: 36px;
+      padding-bottom: 34px;
+      background: rgba(255, 255, 255, 1);
+      &:nth-child(2) {
+        background: rgba(244, 248, 254, 1);
+        img{
+          width: 343px;
+          height: 312px;
+        }
+        }
+      }
+      &:nth-child(3) {
+        background: rgba(244, 248, 254, 1);
+        img{
+          width: 343px;
+          height: 261px;
+        }
+        }
+      }
+      img{
+        width: 343px;
+        height: 289px;
+      }
+      .title1{
+        padding-top: 24px;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 30px;
+      }
+      .title2{
+        padding-top: 20px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.8);
+      }
+      .title3{
+        padding: 0 30px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 20px;
+        color: rgba(0, 0, 0, 0.65);
       }
     }
   }
@@ -181,20 +263,35 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
           </div>
         ))}
       </div>
-      <div className='FeatureIntroduceWrap'>
-        {FEATURE_INFO.map((item, i) => (
-          <FeatureIntroduce
-            {...item}
-            key={i}
-            id={item.id}
-            imgFirst={i % 2 === 1}
-            background={i == 2 ? 'rgba(244, 248, 254, 1)' : '#FFFFFF'}
-            height={item.boxheight}
-            padding="0 0"
-            className={'relative-position ' + item.id}
-          />
-        ))}
-      </div>
+      <Visible md lg xl xxl xxxl>
+        <div className='FeatureIntroduceWrap'>
+          {FEATURE_INFO.map((item, i) => (
+            <FeatureIntroduce
+              {...item}
+              key={i}
+              id={item.id}
+              imgFirst={i % 2 === 1}
+              background={i == 2 ? 'rgba(244, 248, 254, 1)' : '#FFFFFF'}
+              height={item.boxheight}
+              padding="0 0"
+              className={'relative-position ' + item.id}
+            />
+          ))}
+        </div>
+      </Visible>
+      <Visible xs sm>
+        <div className='FeatureIntroduceWrap FeatureWap'>
+          {FEATURE_INFO.map((item, i) => (
+            <div className={'relative-position ' + item.id}>
+              <img src={item.pcImgs[0].src} />
+              <div className='title1'>{item.title}</div>
+              <div className='title2'>{item.textOne}</div>
+              <div className='title3'>{item.textTwo}</div>
+            </div>
+          ))}
+        </div>
+      </Visible>
+      
     </FeatureWrap>
   );
 };
