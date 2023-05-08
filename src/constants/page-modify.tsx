@@ -17,31 +17,31 @@ export const NAV_CONFIG = [
       {
         title: '智能用户运营平台（AICOS）',
         desc: 'AI时代的新一代用户运营平台',
-        icon: imgurl+'/百应智能（用户）运营平台.svg',
+        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/百应智能（用户）运营平台.svg',
         path: '/product/intelligenceUser',
       },
       {
         title: '多模态情感化AI（MEAI）',
         desc: '真实可感的多模态对话AI',
-        icon: imgurl+'/多模态情感化对话AI.svg',
+        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/多模态情感化对话AI.svg',
         path: '/product/multimodalAI',
       },
       {
         title: '增强型用户画像洞察（CDP+）',
         desc: '非结构化数据感知',
-        icon: imgurl+'/增强型用户画像洞察.svg',
+        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/增强型用户画像洞察.svg',
         path: '/enhance',
       },
       {
         title: '全场景用户连接与对话（AICC+ ）',
         desc: '跨平台、多形式的用户触达',
-        icon: imgurl+'/全场景用户连接与对话.svg',
+        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/全场景用户连接与对话.svg',
         path: '/product/fullSceneUserLink',
       },
       {
         title: '策略智能与自动化（OSA）',
         desc: '构建个性化用户自动运营策略',
-        icon: imgurl+'/策略智能与自动化（OSA）.svg',
+        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/策略智能与自动化（OSA）.svg',
         path: '/intelligence',
       },
      
@@ -93,31 +93,31 @@ export const NAV_CONFIG = [
       {
         title: '品牌零售',
         desc: '会员用户全域运营管理',
-        icon:imgurl+'/pplsheadicon.png',
+        icon:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/pplsheadicon.png',
         path: '/retail',
       },
       {
         title: '互联网',
         desc: '深度挖掘用户价值，拉升LTV',
-        icon:imgurl+'/hlwheadicon.png',
-        path: '/plat',
+        icon:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/hlwheadicon.png',
+        path: '/internet-solution',
       },
       {
         title: '保险',
         desc: '“大数据+AI+人”三驱模式',
-        icon:imgurl+'/baoxianheadicon.png',
+        icon:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/baoxianheadicon.png',
         path: '/insure',
       },
       {
         title: '公安反诈',
         desc: '强力提升公安反诈预防全业务效能',
-        icon:imgurl+'/gafzheadicon.png',
+        icon:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/gafzheadicon.png',
         path: '/unfraud',
       },
       {
         title: '消费金融',
         desc: '全自动、智能化营销服务',
-        icon:imgurl+'/xfjrheadicon.png',
+        icon:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/xfjrheadicon.png',
         path: '/customer-finance',
       }
       
