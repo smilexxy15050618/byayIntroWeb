@@ -120,12 +120,12 @@ export const NAV_CONFIG = [
         icon:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/xfjrheadicon.png',
         path: '/customer-finance',
       },
-      {
-        title: '汽车',
-        desc: '全自动、智能化营销服务',
-        icon:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/xfjrheadicon.png',
-        path: '/newcar',
-      }
+      // {
+      //   title: '汽车',
+      //   desc: '全自动、智能化营销服务',
+      //   icon:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/xfjrheadicon.png',
+      //   path: '/newcar',
+      // }
       
       // {
       //   title: '教育',
@@ -201,41 +201,48 @@ export const NAV_CONFIG = [
 
 export const FOOTER_CONFIG = [
   {
-    title: 'AI产品服务',
+    title: '百应产品',
     list: [
-      { name: '电话机器人', href: '/product/voice-robot' },
+      { name: '多模态情感化AI（MEAI）', href: '/product/multimodalAI' },
       {
-        name: '文本机器人',
-        href: '/product/text-robot',
+        name: '文本机增强型用户画像洞察（CDP+）器人',
+        href: '/enhance',
       },
       {
-        name: '分析机器人',
-        href: '/product/quality-test-robot',
+        name: '全场景用户连接与对话（AICC+ ）',
+        href: '/product/fullSceneUserLink',
       },
       {
-        name: '虚拟数字人',
-        href: '/product/virtual-robot',
+        name: '策略智能与自动化（OSA）',
+        href: '/intelligence',
       },
-      { name: '领先技术', href: '/technology-service/technology' },
-      { name: '专业服务', href: '/technology-service/service' },
+      // { name: '领先技术', href: '/technology-service/technology' },
+      // { name: '专业服务', href: '/technology-service/service' },
     ],
   },
   {
-    title: '快速通道',
+    title: '解决方案',
     list: [
-      { name: '客户登录', href: 'https://crm.byai.com/login' },
-      { name: '服务商登录', href: 'https://boss.byai.com/login' },
-      { name: '生态合作', href: '/partner/ecology' },
-      { name: '渠道合作', href: '/form?formType=3' },
+      { name: '品牌零售', href: '/retail' },
+      { name: '公安反诈', href: '/unfraud' },
+      { name: '互联网', href: '/internet-solution' },
+      { name: '保险', href: '/insure' },
+      // { name: '政务服务', href: '/form?formType=3' },
+      { name: '消费金融', href: '/customer-finance' },
       { name: '', href: '' }, // 占位防止3项时居中问题
     ],
   },
   {
-    title: '关于我们',
+    title: '探索百应',
     list: [
       { name: '关于百应', href: '/aboutByai' },
-      { name: '新闻中心', href: '/news' },
       { name: '招贤纳士', href: 'https://www.lagou.com/gongsi/154789.html' },
+      { name: '生态合作', href: '/partner/ecology' },
+      { name: '渠道合作', href: '/form?formType=3' },
+      { name: '客户登录', href: 'https://crm.byai.com/login' },
+      { name: '服务商登陆', href: '/form?formType=3' },
+      // { name: '新闻中心', href: '/news' },
+      
       { name: '', href: '' }, // 占位防止3项时居中问题
     ],
   },

@@ -49,6 +49,39 @@ margin-top: 16px;
 .right{
     flex: 1;
     text-align: right;
+    .right_box{
+        display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    width: 100%;
+    flex-wrap: wrap;
+        .list{
+            display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+            margin-bottom: 24px;
+    width: 33%;
+            cursor: pointer;
+            img{
+                margin-bottom: 8px;
+                width: 56px;
+                height: 56px;
+                box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
+                border-radius: 50%;
+            }
+            &:hover img{
+                box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
+            }
+            p{
+                font-size: 12px;
+                font-weight: 400;
+                letter-spacing: 0px;
+                line-height: 16px;
+                color: rgba(90, 90, 90, 1);
+            }
+        }
+    }
     img{
         height: 288px;
     }
@@ -67,7 +100,34 @@ width: 100%;
 background: rgba(246, 252, 255, 1);
 
 `
-
+const database= [{
+    img:'/img_localiocn1.png',
+    title:'ISO27001'
+},{
+    img:'/img_localiocn2.png',
+    title:'CMMI 5 认证'
+},{
+    img:'/img_localiocn3.png',
+    title:'等保三级'
+},{
+    img:'/img_localiocn4.png',
+    title:'CS等级证书'
+},{
+    img:'/img_localiocn5.png',
+    title:'ITSS 三级'
+},{
+    img:'/img_localiocn6.png',
+    title:'信用等级三A'
+},{
+    img:'/img_localiocn7.png',
+    title:'CSEE+CSIA双证'
+},{
+    img:'/img_localiocn8.png',
+    title:'信息安全管理体系认证'
+},{
+    img:'/img_localiocn9.png',
+    title:'信息技术服务体系认证'
+},]
 export const LastPng: FC<IAiProps> = ({ }) => {
     return (
     <MainWrap>
@@ -82,7 +142,20 @@ export const LastPng: FC<IAiProps> = ({ }) => {
                         <img src={imgurl+'/botlas82.png'}  />
                     </div>
                     <div className='right'>
-                    <img src={imgurl+'/botlsjka2.png'} alt="" />
+                        <div className='right_box'>
+                            {
+                                database.map(ele=>{
+                                    return (
+                                        <div className="list">
+                                                <img src={imgurl+ele.img}  />
+                                            <p>{ele.title}</p>
+                                            </div>
+                                    )
+                                })
+                            }
+                           
+                        </div>
+                        {/* <img src={imgurl+'/botlsjka2.png'} alt="" /> */}
                     </div>
             </div>
         </Pane>

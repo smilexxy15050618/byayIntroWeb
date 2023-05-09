@@ -62,15 +62,15 @@ class Suspension extends React.Component<ISuspensionState> {
               <div className="hover-head">
                 <img src={AVATAR} />
                 <div>
-                  <div className="hover-head-title">我是小应，您的专属增长顾问</div>
-                  <div className="hover-head-desc">免费1v1服务 AI助力商家轻松营销</div>
+                  <div className="hover-head-title">我是小应，您的专属运营顾问</div>
+                  <div className="hover-head-desc">免费1v1服务 AI开启用户运营新体验</div>
                 </div>
               </div>
               <div className="hover-content">
                 <img src={QR_CODE_1} alt="" className="hover-content-code" />
               </div>
               <div className="hover-content-tips">
-                <div>扫码添加 | 了解新鲜私域动态</div>
+                <div>扫码添加 | 了解头部客户案例</div>
               </div>
               <div className="hover-footer">
                 <PhoneNumber style={{ fontSize: 24 }} />

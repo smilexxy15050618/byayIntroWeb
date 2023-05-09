@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { TextArea } from '../../../src/components/common/BannerTextElements';
 import ByVoiceFooter from '../../../src/components/common/ByVoiceFooter';
 import { Layout } from '../../../src/components/Layout';
-import { Wrapper } from '../../../src/components/voice-robot/style';
+// import { Wrapper } from '../../../src/components/voice-robot/style';
 import { FOOTER_BG } from '../../../src/constants/img-urls';
 import { HOST_ENUM } from '../../../src/lib/utils';
 import BannerWhite from './BannerWhite';
@@ -12,8 +12,11 @@ import FabricValue from './FabricValue';
 import Features from './Features';
 
 const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
+// const PREFIX = '/static/img2023'
 const BANNER_BG = `${PREFIX}/multimodal-banner-bg.svg`;
+const WAP_BANNER_IMGS = `${PREFIX}/fullSceneUserLink-banner-wap.png`
 
+const Wrapper = styled.div``
 const BigTitle = styled.div`
   margin-top: 100px;
   font-size: 48px;
@@ -22,6 +25,11 @@ const BigTitle = styled.div`
   color: rgba(26, 26, 26, 1);
   text-align: center;
   margin-bottom: 16px;
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 32px;
+    line-height: 40px;
+  }
 `;
 
 const Desc = styled.div`
@@ -31,6 +39,13 @@ const Desc = styled.div`
   line-height: 32px;
   color: rgba(51, 51, 51, 1);
   text-align: center;
+  @media (max-width: 768px) {
+    padding-bottom: 30px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 26px;
+  }
 `;
 
 const BlueBtn = styled.div`
@@ -69,7 +84,6 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
     <Layout initialOpacity={initial} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
       {(visible, setVisible) => (
         <Wrapper>
-          <Visible md lg xl xxl xxxl>
 
             <BannerWhite
               background={[`url(${BANNER_BG}) center, linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);`, 'linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);']}
@@ -80,6 +94,7 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
                   className: ['animate__fadeInUp', 'animate__ahead_300ms'],
                 },
               ]}
+              mobileImg={WAP_BANNER_IMGS}
             >
               <TextArea spaces={['', '']}>
                 <BigTitle>全场景用户互动触达</BigTitle>
@@ -97,11 +112,6 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
               background={`url(${FOOTER_BG})`}
               onClick={() => window.open('/form?formType=1')}
             />
-          </Visible>
-
-          <Visible xs sm>
-            移动端
-      </Visible>
         </Wrapper>
       )}
     </Layout>

@@ -400,7 +400,7 @@ width: 600px;
 height: 56px;
 line-height: 54px;
 text-align: center;
-font-size: 18px;
+font-size: 20px;
 font-weight: 400;
 letter-spacing: 0px;
 color: rgba(51, 51, 51, 1);
