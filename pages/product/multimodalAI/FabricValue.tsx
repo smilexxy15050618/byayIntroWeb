@@ -177,7 +177,7 @@ const RawFabricValue: FC<IProps> = ({ className }) => {
   }, []);
 
   return (
-    <FeatureValueWrap id="#aaa">
+    <FeatureValueWrap>
       <div className="title">产品价值</div>
       <Visible md lg xl xxl xxxl>
         <div className="FeatureValue-tab" id={AISOLUTION}>
