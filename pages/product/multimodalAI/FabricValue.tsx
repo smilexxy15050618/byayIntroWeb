@@ -4,8 +4,8 @@ import { Visible } from 'react-grid-system';
 import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 import { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
 
-// const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
-const PREFIX = '/static/img2023';
+const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
+// const PREFIX = '/static/img2023';
 const FEATURE_TITLE: IFeatureIntroduceProps[] = [
   {
     img1: `${PREFIX}/multimodal-value-1-1.svg`,
@@ -177,7 +177,7 @@ const RawFabricValue: FC<IProps> = ({ className }) => {
   }, []);
 
   return (
-    <FeatureValueWrap id="#aaa">
+    <FeatureValueWrap>
       <div className="title">产品价值</div>
       <Visible md lg xl xxl xxxl>
         <div className="FeatureValue-tab" id={AISOLUTION}>

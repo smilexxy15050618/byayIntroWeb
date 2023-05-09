@@ -189,7 +189,7 @@ const FeatureWrap = styled.div`
     }
   }
   .fixedTop{
-    z-index: 99;
+    z-index: 9;
     position: fixed;
     top: 64px;
     width: 100vw;
@@ -274,17 +274,16 @@ interface IProps {
 
 const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
   const [currIndex, setCurrIndex] = useState(0);
-  const [clickNav, setClickNav] = useState(false);
   const [is_fixed, set_is_fixed] = useState(false);
   const navRef = useRef(null);
 
   useEffect(() => {
     const fixedTop = navRef.current.offsetTop;
-        window.onscroll = () => {
-          let scrollTop = document.documentElement.scrollTop;
-          const isFixed = scrollTop >= fixedTop;
-          set_is_fixed(isFixed);
-        }
+    window.onscroll = () => {
+      let scrollTop = document.documentElement.scrollTop;
+      const isFixed = scrollTop >= fixedTop;
+      set_is_fixed(isFixed);
+    }
   }, []);
 
   return (
