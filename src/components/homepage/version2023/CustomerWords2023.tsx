@@ -17,15 +17,16 @@ interface ICarouselProps {
 
 const CardContent = styled.div`
   flex: 1;
-  padding: 40px 24px 0;
+  padding: 17px 24px 0;
   @media (max-width: 768px) {
-    padding: 30px 18px 0;
+    padding: 12px 18px 0;
   }
   position: relative;
+  
   .customer-words-icon {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     img{
-    height: 64px;
+    height: 40px;
       margin-bottom:0;
     }
     background: #ffffff;
@@ -36,7 +37,7 @@ const CardContent = styled.div`
     }
   }
   .customer-words-desc {
-    height: 112px;
+    height: 80px;
     font-size: 16px;
     font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
@@ -51,15 +52,51 @@ const CardContent = styled.div`
     }
   }
   .customer-words-name {
-    position: absolute;
-    bottom: 48px;
-    left: 24px;
-    height: 24px;
-    font-size: 18px;
+    border-top: 1px solid rgba(90, 90, 90, 0.3);
+    padding-top: 24px;
+    /* font-size: 18px; */
     font-family: PingFangSC-Regular, PingFang SC;
-    font-weight: 400;
     color: #000000;
-    line-height: 24px;
+    display: flex;
+    margin-bottom: 32px;
+    .leftPskjak{
+     width: 50%;
+     position: relative;
+     display: flex;
+     justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .line_sks{
+        position: absolute;
+        width: 0;
+        height: 23px;
+        right: 0;
+        opacity: 1;
+        border-left: 1px solid rgba(90, 90, 90, 0.3);
+      }
+    }
+    .rightPskjak{
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .tiels{
+        font-size: 24px;
+        font-weight: 500;
+        letter-spacing: 0px;
+        line-height: 32px;
+        color: rgba(51, 51, 51, 1);
+      }
+      .yiksdp{
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: 24px;
+        color: rgba(90, 90, 90, 1);
+        margin-bottom: unset;
+      }
     @media (max-width: 768px) {
       bottom: 32px;
       left: 18px;
@@ -74,12 +111,34 @@ const Card = styled.div<{ bg: string }>`
   display: flex;
   flex-direction: column;
   width: 385px;
-  height: 357px;
+  min-height: 357px;
   background: #ffffff;
   box-shadow: 0px 0px 32px 1px rgba(101, 115, 133, 0.1);
   border-radius: 8px;
   margin-left: 32px;
   transition: all 0.2s ease;
+  .customerbner{
+    width: 100%;
+    position: relative;
+    img{
+      margin-bottom: unset;
+    }
+    .icon23{
+      width: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+    }
+    .mengbanm{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left:0;
+      top:0;
+      background:  rgba(20, 20, 20, 0.39);;
+    }
+  }
   &:hover{
       box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12) !important;
   }
@@ -209,15 +268,17 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       <Swiper
         autoplay={{
           delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
         }}
         slidesPerView="auto"
         onSwiper={swiper => setControlledSwiper(swiper)}
         onSlideChange={swiper => {
           setCurrIndex(swiper.activeIndex);
         }}
-        loop={true}
+        loop={false}
         style={{ paddingRight: 32, overflow: 'hidden', paddingBottom: 30, marginBottom: -30, paddingTop:20 }}>
-        {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
+        {dataList.map(({ bg, avatarSrc, content, personName, tagName,icon,left_title,left_title2,right_title,right_title2 }, i) => (
           <SwiperSlide style={{ width: 'auto' }} className='hoer_bg_more' key={i}>
             <Card bg={bg} >
               {/* <div className="customer-words-tag">
@@ -226,13 +287,28 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
               </div> */}
               {/* <div className="customer-words-bg"></div> */}
               {/* <div className="customer-words-bg-blue"></div> */}
-
-              <CardContent>
+              <div className="customerbner">
+                  <img src={bg} alt="" />
+                  <img src={icon} className='icon23' />
+                  <div className='mengbanm'></div>
+                </div>
+              <CardContent >
+             
                 <div className="customer-words-icon">
                   <img src={avatarSrc} />
                 </div>
                 <div className="customer-words-desc">{content}</div>
-                <div className="customer-words-name">{personName}</div>
+                <div className="customer-words-name">
+                  <div className='leftPskjak'>
+                    <div className='tiels'>{left_title2}</div>
+                    <p className='yiksdp'>{left_title}</p>
+                    <div className='line_sks'></div>
+                  </div>
+                  <div className='rightPskjak'>
+                    <div className='tiels'>{right_title2}</div>
+                    <p className='yiksdp'>{right_title}</p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </SwiperSlide>
@@ -275,56 +351,172 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
 
 const carouselDataList = [
   {
-    bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE1.png',
-    avatarSrc:`${imgurl}/logoxxw.png`,
+    bg:`${imgurl}/新希望-图.png`,
+    avatarSrc:`${imgurl}/新希望logo.png`,
     content:
-      '“我们已经合作有一段时间了，百应给我们提供了专业且全面的解决方案，整体跑下来结果一直都不错。密切的合作让我们成为并肩前行的伙伴，期待未来我们一起创造更好的用户体验。”',
-    personName: '新希望华西乳业数字增长负责人',
-    tagName: '食品',
+      '百应给我们提供了专业且全面的解决方案，一起创造更好的用户体验',
+    personName: '单场活动触达用户百万级；会员召回率提升15%；',
+    left_title:'单场活动触达用户',
+    left_title2:'百万级',
+    right_title:'会员召回率提升',
+    right_title2:'15%',
+    tagName: '新希望集团'
+    ,icon:`${imgurl}/lscion11.png`
   },
   {
-    bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE2.png',
-    avatarSrc:`${imgurl}/logozz.png`,
+    bg: `${imgurl}/可优比-图.png`,
+    avatarSrc:`${imgurl}/可优比logo.png`,
     content:
-      '百应的产品和团队都很给力，能够快速响应需求，通过百应的私域加粉模型，我们为后续增长找到了抓手，同时避免了过度打扰用户，推荐有相应需求的伙伴来体验“百应AI外呼”。',
-    personName: '运营负责人',
-    tagName: '平台',
+      'AI外呼已具备真实的交互感和温度感，能实现快速触达和高效转化',
+    personName: '会员关怀度提升10%，接通意向率超40%',
+    tagName: '可优比',
+    icon:`${imgurl}/lscion11.png`,
+    left_title:'会员关怀度提升',
+    left_title2:'10%',
+    right_title:'接通意向率',
+    right_title2:'超40%',
   },
   {
-    bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE3.png',
-    avatarSrc:`${imgurl}/logoryytn.png`,
+    bg:`${imgurl}/特步-图.png`,
+    avatarSrc:`${imgurl}/特步logo.png`,
     content:
-      '百应一直服务于我们的私域加粉业务，不仅AI产品很成熟，服务态度也好。每版新话术都认真配合我们做迭代优化，数据也越来越好。希望23年合作更愉快，更好地达成我们的指标。',
-    personName: '流量运营部负责人',
-    tagName: '食品',
+      '百应科技真的做到了把客户的业务当做自己的业务来做',
+    personName: '线下到店率增量40%，ROI100+',
+    tagName: '特步'
+    ,icon:`${imgurl}/lscion11.png`,
+    left_title:'线下到店率增量',
+    left_title2:'40%',
+    right_title:'ROI',
+    right_title2:'100+',
   },
   {
-    bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE4.png',
-    avatarSrc:`${imgurl}/logohtbc.png`,
+    bg: `${imgurl}/樊登读书-图.png`,
+    avatarSrc:`${imgurl}/樊登读书logo.png`,
 
     content:
-      '百应基于行业痛点构建的「AI智能辅助系统」帮我们降低了人工投入的成本项，也为我们的老师和学员带来了很好的使用体验。希望在未来百应可以在这个领域有更多的创新。',
-    personName: '运营负责人 ',
-    tagName: '教育',
+      '百应AI降低了人工投入的成本项，带来了很好的用户体验',
+    personName: '触达成本降低35%；会员续费转化增长2倍 ',
+    tagName: '樊登读书'
+    ,icon:`${imgurl}/lscion12.png`,
+    left_title:'触达成本降低',
+    left_title2:'35%',
+    right_title:'会员续费转化增长',
+    right_title2:'2倍',
   },
   {
-    bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE5.png',
-    avatarSrc:`${imgurl}/logodn.png`,
+    bg: `${imgurl}/转转-图.png`,
+    avatarSrc:`${imgurl}/转转logo.png`,
 
     content:
-      '从2021年合作至今，百应科技真正的做到了把客户的业务当作自己的业务来做，专业程度很高，并且还在持续不断的去创新运营的方法和思路，也希望在未来有更多更加深度的合作。',
-    personName: '运营负责人',
-    tagName: '教育',
+      '百应的产品和团队都很给力，推荐有相应需求的伙伴来体验',
+    personName: '回收率提升至40%+，用户黏性有效提升',
+    tagName: '转转'
+    ,icon:`${imgurl}/lscion12.png`,
+    left_title:'回收率提升至',
+    left_title2:'40%+',
+    right_title:'用户黏性',
+    right_title2:'有效提升',
   },
   {
-    bg: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%9B%BE6.png',
-    avatarSrc:`${imgurl}/logokyb.png`,
+    bg: `${imgurl}/农行-图.png`,
+    avatarSrc:`${imgurl}/农行logo.png`,
 
     content:
-      '和百应的合作中，我们发现AI外呼的四点优势：能实现快速触达和高效转化；综合成本相对较低；已具备真实交互感和温度感；可智能识别精准客户，减少不必要打扰。',
-    personName: '副总裁&CMO',
-    tagName: '平台',
+      '用AI和数据赋能银行业务，实现了效率效能双增长',
+    personName: '有效沟通时长>60s ，客户转化率提高了5%',
+    tagName: '中国农业银行'
+    ,icon:`${imgurl}/lscion13.png`,
+    left_title:'有效沟通时长',
+    left_title2:'>60s',
+    right_title:'客户转化率提高了',
+    right_title2:'5%',
   },
+  ,
+  {
+    bg: `${imgurl}/天津公安-图.png`,
+    avatarSrc:`${imgurl}/天津公安logo.png`,
+
+    content:
+      '用AI的力量助力政府数字化转型',
+    personName: '立案率下降27.8%，案损率下降14.8%',
+    tagName: '天津市公安局'
+    ,icon:`${imgurl}/lscion14.png`,
+    left_title:'立案率下降',
+    left_title2:'27.8%',
+    right_title:'案损率下降',
+    right_title2:'14.8%',
+  },
+  {
+    bg: `${imgurl}/临平公安-图.png`,
+    avatarSrc:`${imgurl}/临平logo.png`,
+    
+
+    content:
+      '24小时在线的警察朋友',
+    personName: '累计加民人数106w+，有效解答咨询次数4w+',
+    tagName: '临平区公安局'
+    ,icon:`${imgurl}/lscion14.png`,
+    left_title:'累计加民人数',
+    left_title2:'106w+',
+    right_title:'有效解答咨询次数',
+    right_title2:'4w+',
+  },{
+    bg: `${imgurl}/杭州舍保-图.png`,
+    avatarSrc:`${imgurl}/杭州社保logo.png`,
+
+    content:
+      '让数字化服务走到群众身边',
+    personName: '日均服务人次800+；综合满意度90%',
+    tagName: '杭州市人社局'
+    ,icon:`${imgurl}/lscion15.png`,
+    left_title:'日均服务人次',
+    left_title2:'800+',
+    right_title:'综合满意度',
+    right_title2:'90%',
+  },
+  {
+    bg: `${imgurl}/人寿-图.png`,
+    avatarSrc:`${imgurl}/人寿logo.png`,
+
+    content:
+      '用科技赋能，百应AI助力加快实施数字化战略',
+    personName: '线索转化率提升200%；赠险转化率15%+',
+    tagName: '中国人寿'
+    ,icon:`${imgurl}/lscion16.png`,
+    left_title:'线索转化率提升',
+    left_title2:'200%',
+    right_title:'赠险转化率',
+    right_title2:'15%+',
+  },
+  {
+    bg: `${imgurl}/招联-图.png`,
+    avatarSrc:`${imgurl}/招联logo.png`,
+
+    content:
+      '百应助力我们私域业务人效提升，期待更深入的合作',
+    personName: '业务人效提升100%；转化效果提升60%',
+    tagName: '招联金融'
+    ,icon:`${imgurl}/lscion17.png`,
+    left_title:'业务人效提升',
+    left_title2:'100%',
+    right_title:'转化效果提升',
+    right_title2:'60%',
+  },
+  {
+    bg: `${imgurl}/瓜子-图.png`,
+    avatarSrc:`${imgurl}/瓜子logo.png`,
+
+    content:
+      '用户运营效果很好，为后续增长找到了抓手',
+    personName: 'AI标记准确率97%；触达人效提升3倍',
+    tagName: '瓜子二手车'
+    ,icon:`${imgurl}/lscion18.png`,
+    left_title:'AI标记准确率',
+    left_title2:'97%',
+    right_title:'触达人效提升',
+    right_title2:'3倍',
+  }
+
 ];
 
 const MaxContent = styled.div<{ jumpStrColor: string }>`
