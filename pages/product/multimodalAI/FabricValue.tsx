@@ -1,24 +1,30 @@
 import React, { FC, ReactNode, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { Visible } from 'react-grid-system';
+import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 import { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
 
-const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
+// const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
+const PREFIX = '/static/img2023';
 const FEATURE_TITLE: IFeatureIntroduceProps[] = [
   {
     img1: `${PREFIX}/multimodal-value-1-1.svg`,
     img2: `${PREFIX}/multimodal-value-1-2.svg`,
+    img3: `${PREFIX}/multimodal-value-1-3.png`,
     title: '情感化',
     subtitle: '高度拟人，情感感知与情感交互。在营销和宣传过程中，调动对方情感是关键所在，有助于提升用户体验和传递信息的效果。',
   },
   {
     img1: `${PREFIX}/multimodal-value-2-1.svg`,
     img2: `${PREFIX}/multimodal-value-2-2.svg`,
+    img3: `${PREFIX}/multimodal-value-2-3.png`,
     title: '主动式',
     subtitle: '具备主动销售能力和宣传能力。根据预设目标，主动推进对话和沟通，而不仅限于被动响应和回答问题，从而实现更高效的销售和宣传效果。',
   },
   {
     img1: `${PREFIX}/multimodal-value-3-1.svg`,
     img2: `${PREFIX}/multimodal-value-3-2.svg`,
+    img3: `${PREFIX}/multimodal-value-3-3.png`,
     title: '全双工',
     subtitle: '在语音和数字人场景中，听说状态的实时切换，适应各种场景，确保轮对话能力得到有效处理，使人机对话更加贴近真实的人际沟通。',
   },
@@ -27,6 +33,9 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
 
 const FeatureValueWrap = styled.div`
   margin-bottom: 100px;
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
   .title{
     display: flex;
     justify-content: center;
@@ -42,10 +51,12 @@ const FeatureValueWrap = styled.div`
     width: 1200px;
     margin: 0 auto;
     display: flex;
-
     transform: translateY(50%);
     transition: all 0.4s;
     opacity: 0;
+    @media (max-width: 768px) {
+      width: 100vw;
+    }
     &.appear{
       transform: translateY(0);
       opacity: 1;
@@ -57,8 +68,15 @@ const FeatureValueWrap = styled.div`
       background: #F3F8FF;
       padding: 69px 50px 0;
       transition: all 0.3s ease-in;
+      @media (max-width: 768px) {
+        width: 240px;
+        height: 250px;
+        margin-right: 16px;
+        padding: 30px;
+      }
       img {
           transition: all 0.3s;
+          
       }
       &:hover {
         transform: translateY(-8px);
@@ -102,6 +120,9 @@ const FeatureValueWrap = styled.div`
           letter-spacing: 0px;
           color: rgba(26, 26, 26, 0.65);
           text-align: left;
+          @media (max-width: 768px) {
+            padding-top: 20px;
+          }
       }
       img {
           position: absolute;
@@ -110,6 +131,7 @@ const FeatureValueWrap = styled.div`
               width: 80px;
               top: -1px;
               right: 0px;
+              
           }
       }
     }
@@ -157,18 +179,41 @@ const RawFabricValue: FC<IProps> = ({ className }) => {
   return (
     <FeatureValueWrap id="#aaa">
       <div className="title">产品价值</div>
-      <div className="FeatureValue-tab" id={AISOLUTION}>
-        {FEATURE_TITLE.map((item, i) => (
-          <div className="FeatureValue-item">
-            <div>
-              <img src={item.img1} alt="" />
-              <img src={item.img2} alt="" />
+      <Visible md lg xl xxl xxxl>
+        <div className="FeatureValue-tab" id={AISOLUTION}>
+          {FEATURE_TITLE.map((item, i) => (
+            <div className="FeatureValue-item">
+              <div>
+                <img src={item.img1} alt="" />
+                <img src={item.img2} alt="" />
+              </div>
+              <div>{item.title}</div>
+              <div>{item.subtitle}</div>
             </div>
-            <div>{item.title}</div>
-            <div>{item.subtitle}</div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </Visible>
+      <Visible xs sm>
+        <div className="FeatureValue-tab" id={AISOLUTION}>
+          <ByProgressSwiper
+            newProgress={true}
+            initialSlide={0}
+            contentPadding="32px"
+            progressPadding="0px"
+            previewWidth="70px">
+            {FEATURE_TITLE.map((item, i) => (
+              // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
+              <div className="FeatureValue-item">
+                <div>
+                  <img src={item.img3} alt="" />
+                </div>
+                <div>{item.title}</div>
+                <div>{item.subtitle}</div>
+              </div>
+            ))}
+          </ByProgressSwiper>
+        </div>
+      </Visible>
     </FeatureValueWrap>
   );
 };

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { TextArea } from '../../../src/components/common/BannerTextElements';
 import ByVoiceFooter from '../../../src/components/common/ByVoiceFooter';
 import { Layout } from '../../../src/components/Layout';
-import { Wrapper } from '../../../src/components/voice-robot/style';
+// import { Wrapper } from '../../../src/components/voice-robot/style';
 import { FOOTER_BG } from '../../../src/constants/img-urls';
 import { HOST_ENUM } from '../../../src/lib/utils';
 import BannerWhite from './BannerWhite';
@@ -38,6 +38,7 @@ const PC_BANNER_IMGS = [
 ];
 const WAP_BANNER_IMGS = `${PREFIX}/multimodalAI-wp-banner.png`
 
+const Wrapper = styled.div``
 
 const BigTitle = styled.div`
   margin-top: 100px;

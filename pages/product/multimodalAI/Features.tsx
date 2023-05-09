@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, ReactNode, useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { Visible } from 'react-grid-system';
 import FeatureIntroduce, { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
@@ -90,6 +90,9 @@ const FeatureWrap = styled.div`
       padding: 34px 15px;
     }
   }
+  .placeholderDom{
+    padding-top: 150px;
+  }
   .capacity-tab{
     height: 170px;
     display: flex;
@@ -169,6 +172,7 @@ const FeatureWrap = styled.div`
         line-height: 24px;
         color: rgba(90, 90, 90, 1);
         @media (max-width: 768px) {
+          padding-top: 6px;
           font-size: 7px;
           letter-spacing: -1px;
           line-height: 12px;
@@ -184,12 +188,41 @@ const FeatureWrap = styled.div`
       }
     }
   }
+  .fixedTop{
+    z-index: 99;
+    position: fixed;
+    top: 64px;
+    width: 100vw;
+    background:#fff;
+  }
   .FeatureWap{
     .relative-position{
+      position: relative;
       text-align: center;
       padding-top: 36px;
       padding-bottom: 34px;
       background: rgba(255, 255, 255, 1);
+      .relative-position-wap0{
+        position: absolute;
+        top: -230px;
+        left: 0;
+        width: 100vw;
+        background:#fff;
+      }
+      .relative-position-wap1{
+        position: absolute;
+        top: -230px;
+        left: 0;
+        width: 100vw;
+        background:#fff;
+      }
+      .relative-position-wap2{
+        position: absolute;
+        top: -150px;
+        left: 0;
+        width: 100vw;
+        background:#fff;
+      }
       &:nth-child(2) {
         background: rgba(244, 248, 254, 1);
         img{
@@ -241,29 +274,42 @@ interface IProps {
 
 const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
   const [currIndex, setCurrIndex] = useState(0);
+  const [clickNav, setClickNav] = useState(false);
+  const [is_fixed, set_is_fixed] = useState(false);
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    const fixedTop = navRef.current.offsetTop;
+        window.onscroll = () => {
+          let scrollTop = document.documentElement.scrollTop;
+          const isFixed = scrollTop >= fixedTop;
+          set_is_fixed(isFixed);
+        }
+  }, []);
 
   return (
     <FeatureWrap>
       <div className="title">产品能力</div>
-      <div className="capacity-tab">
-        {FEATURE_TITLE.map((item, i) => (
-          <div
-            className={i == currIndex ? 'capacity-item active' : 'capacity-item'}
-            onClick={() => {
-              const node = document.querySelector(`.FeatureIntroduceWrap > .${item.id}`);
-              if (node) {
-                node.scrollIntoView({ behavior: 'smooth' });
-              }
-              onCancel()
-            }}>
-            <img src={i == currIndex ? item.iconnormal : item.iconactive} />
-            <img src={item.iconnormal} />
-            <div className="title-tab">{item.title}</div>
-            <div className="subtitle">{item.subtitle}</div>
-          </div>
-        ))}
-      </div>
       <Visible md lg xl xxl xxxl>
+        <div className="capacity-tab" ref={navRef}>
+          {FEATURE_TITLE.map((item, i) => (
+            <div
+              className={i == currIndex ? 'capacity-item active' : 'capacity-item'}
+              onClick={() => {
+                const node = document.querySelector(`.FeatureIntroduceWrap > .${item.id}`);
+                if (node) {
+                  node.scrollIntoView({ behavior: 'smooth' });
+                }
+                onCancel()
+                setCurrIndex(i)
+              }}>
+              <img src={i == currIndex ? item.iconnormal : item.iconactive} />
+              <img src={item.iconnormal} />
+              <div className="title-tab">{item.title}</div>
+              <div className="subtitle">{item.subtitle}</div>
+            </div>
+          ))}
+        </div>
         <div className='FeatureIntroduceWrap'>
           {FEATURE_INFO.map((item, i) => (
             <FeatureIntroduce
@@ -280,9 +326,30 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
         </div>
       </Visible>
       <Visible xs sm>
+        <div className={`capacity-tab ${is_fixed ? 'fixedTop' : ''}`} ref={navRef}>
+          {FEATURE_TITLE.map((item, i) => (
+            <div
+              className={i == currIndex ? 'capacity-item active' : 'capacity-item'}
+              onClick={() => {
+                const node = document.querySelector(`.FeatureIntroduceWrap > .relative-position > .${item.id}`);
+                if (node) {
+                  node.scrollIntoView({ behavior: 'smooth' });
+                }
+                onCancel()
+                setCurrIndex(i)
+              }}>
+              <img src={i == currIndex ? item.iconnormal : item.iconactive} />
+              <img src={item.iconnormal} />
+              <div className="title-tab">{item.title}</div>
+              <div className="subtitle">{item.subtitle}</div>
+            </div>
+          ))}
+        </div>
         <div className='FeatureIntroduceWrap FeatureWap'>
           {FEATURE_INFO.map((item, i) => (
-            <div className={'relative-position ' + item.id}>
+            <div className='relative-position'>
+              {/*占位div,吸定后脱离文档流，dom高度发生变化了*/}
+              <div className={`relative-position-wap${i} ${item.id}`}></div>
               <img src={item.pcImgs[0].src} />
               <div className='title1'>{item.title}</div>
               <div className='title2'>{item.textOne}</div>

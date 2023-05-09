@@ -79,18 +79,19 @@ const ByVoiceFooter = styled(RawByVoiceFooter)<IByVoiceFooterProps>`
     text-align: center;
   }
   @media (max-width: 768px) {
-    padding: 32px 28px;
+    padding: 46px 0;
     .title {
       font-size: 20px;
       color: #ffffff;
       line-height: 32px;
-      letter-spacing: 1px;
+      letter-spacing: 0 !important;
     }
     .desc {
       font-size: 14px;
       line-height: 22px;
       margin: 12px 0px 16px;
       color: #ffffff;
+      letter-spacing: 0 !important;
     }
   }
 `;
