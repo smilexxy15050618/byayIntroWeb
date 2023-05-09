@@ -5,17 +5,17 @@ import imgurl from '../../../img.url.js'
 const titleList = [
     {
         title: '全生命周期用户运营',
-        subTitle: '用户旅程触达策略设计分层用户精细化运营业务节点数据实时采集用户画像实时分析',
+        subTitle: '用户旅程触达策略设计<br/>分层用户精细化运营<br/>业务节点数据实时采集<br/>用户画像实时分析',
         url: '/run-01.png'
     },
     {
         title: '策略营销自动化',
-        subTitle: '用户运营策略自动执行节点转化A/B测试自动化触达与分析数据自动回传',
+        subTitle: '用户运营策略自动执行<br/>节点转化A/B测试<br/>自动化触达与分析<br/>数据自动回传',
         url: '/run-02.png'
     },
     {
         title: 'ROI导向策略优化',
-        subTitle: '运营数据分析触达策略调优用户分层方案优化ROI持续提升',
+        subTitle: '运营数据分析<br/>触达策略调优<br/>用户分层方案优化<br/>ROI持续提升',
         url: '/run-03.png'
     },
 ]
@@ -162,7 +162,7 @@ const AI: FC<IAiProps> = ({ }) => {
                                     onClick={()=>setCurrIndex(index)}
                                 >
                                     <div>{title}</div>
-                                    {index==currIndex&&<div>{subTitle}</div>}
+                                    {index==currIndex&&<div dangerouslySetInnerHTML={{ __html: subTitle }}></div>}
                                 </ListItem>
                         )
                     })}
