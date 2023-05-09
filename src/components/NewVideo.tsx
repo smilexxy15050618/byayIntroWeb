@@ -38,6 +38,7 @@ const ListWrapper = styled.div`
 }
 width: 1200px;
 margin: 56px auto 0;
+padding-bottom: 50px;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
