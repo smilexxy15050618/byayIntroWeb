@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { media } from '../../constants/style';
+import { media } from '../../../src/constants/style';
 
 export const BigTitleWrapper = styled.div`
   margin-top: 60px;

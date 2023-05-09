@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { media } from '../../constants/style';
+import { media } from '../../../src/constants/style';
+
 
 const Wrap = styled.div`
   .voice-footer-wrap {

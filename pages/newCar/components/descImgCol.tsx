@@ -1,4 +1,5 @@
-import { media } from '../../constants/style';
+import { media } from '../../../src/constants/style';
+
 import styled from 'styled-components';
 import { Col } from 'react-grid-system';
 
