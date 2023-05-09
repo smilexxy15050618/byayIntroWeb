@@ -59,20 +59,40 @@ const contentImg = [
 
 const menuList = [
     {
+        title: '语音技术',
+        subTitle: 'Speech tech',
+        subTitle1: 'Speech technology',
+        content: ['ASR：字准率97%、句准率92%，具备语言模型、声学模型高度可定制；','TTS：采用双向LSTM+Attention，研发端到端的语音合成模型，发声人相似度超过90%']
+    },
+    {
         title: '知识图谱',
-        subTitle: '机器人大脑（知识体系）'
+        subTitle: 'Knowledge Graph',
+        subTitle1: 'Knowledge Graph',
+        content: ['丰富的行业知识图谱：行业知识库、金牌话术库、会话策略库、画像标签库、闲聊库、常识库...','构建机器人大脑知识体系，不断优化和升级AI模型，为各个垂直行业提供智能化服务。']
     },
     {
-        title: '百应星球',
-        subTitle: 'CSM工作台（精细化运营）'
+        title: '自然语言处理',
+        subTitle: 'NLP',
+        subTitle1: 'Natural Language Processing',
+        content: ['拥有实体识别、意图分类、句法分析、关系抽取等NLU相关算法能力；自研基于深度学习的NLG技术，在26个行业中积累了大量生成语料','意图准确率：在10+行业，50+场景平均识别准确率95%','问答准确率：每亿次真实场景对话轮次准确率92%']
     },
     {
-        title: '百应神舟',
-        subTitle: '知识生产+模型生产'
+        title: '大规模预训练模型',
+        subTitle: 'LPTM',
+        subTitle1: 'Pre-trained Language Model',
+        content: ['基于深度学习技术，具备大规模预训练、微调（Fine-tuning）能力，能够对海量数据进行学习和训练，从而实现在多种NLP任务中的优异表现；在自研大模型上引入了人工反馈强化学习（RLHF），提高对话式AI系统的准确率和响应速度']
     },
     {
-        title: '机器人工厂',
-        subTitle: 'No-Code AI'
+        title: '多模态情感技术',
+        subTitle: 'MER',
+        subTitle1: 'Multimodal Emotion Recognition Technology',
+        content: ['拥有情感特征提取、情感信息融合、情感表达等多模态情感技术，通过计算机识别人类语言中的情感成分，进而能够对话机器人的回应进行情感调节，提高对话的亲和力，实现情感化交互，提升用户体验']
+    },
+    {
+        title: '全双工连续对话',
+        subTitle: 'FDCC',
+        subTitle1: 'Full-duplex continuous conversation',
+        content: ['基于语音识别、自然语言理解、对话管理、语音合成、语音增强、连续对话等技术；在语音和数字人场景中，实现听说状态的实时切换，并自适应不同领域的对话场景，使人机对话更加贴近真实的人际沟通']
     }
 ]
 const Wrapper = styled.div`
@@ -157,15 +177,16 @@ const Title = styled.div`
 
 const Menu = styled.div`
   display: flex;
-  justify-content: space-between;
-  width: 1200px;
-  padding-left: 65px;
+  justify-content: center;
   box-sizing: border-box;
   margin: 92px auto 0;
   .left-menu {
-    width: 545px;
-    height: 353px;
+    width: 688px;
+    height: 378px;
     position: relative;
+    background: url(${imgurl}/qzzy_video.png) no-repeat;
+    background-size: 216px 221px;
+    background-position: center;
     .menu-item {
         cursor: pointer;
         &:hover {
@@ -194,23 +215,45 @@ const Menu = styled.div`
     }
     .menu-item:first-child {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 12px;
+        left: 303px;
     }
     .menu-item:nth-child(2) {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 104px;
+        left: 103px;
+        div {
+            text-align: right;
+        }
     }
     .menu-item:nth-child(3) {
         position: absolute;
-        bottom: 0;
-        left: 0;
+        right: 113px;
+        top: 104px;
+        div {
+            text-align: left;
+        }
     }
     .menu-item:nth-child(4) {
         position: absolute;
-        right: 72px;
-        bottom: 0;
+        top: 212px;
+        left: 75px;
+        div {
+            text-align: right;
+        }
+    }
+    .menu-item:nth-child(5) {
+        position: absolute;
+        right: 95px;
+        bottom: 116px;
+    }
+    .menu-item:nth-child(6) {
+        position: absolute;
+        bottom: 17px;
+        left: 280px;
+        div {
+            text-align: center;
+        }
     }
   }
   .right-menu {
@@ -219,31 +262,45 @@ height: 378px;
 opacity: 1;
 border-radius: 10px;
 border: 1px solid #FFFFFF;
-padding-top: 69px;
-padding-left: 65px;
+padding-top: 45px;
+padding-left: 59px;
 box-shadow: 0px 20px -17px 0px #072C59;
 // backdrop-filter: blur(6px);
 .title {
-    font-size: 18px;
+    font-size: 20px;
 font-weight: 500;
+letter-spacing: 0px;
 line-height: 32px;
-color: #333333;
-span {
+color: rgba(43, 88, 249, 1);
+&::after {
+    display: block;
+    content: "";
+    width: 24px;
+height: 2px;
+opacity: 1;
+border-radius: 20px;
+background: rgba(0, 200, 189, 1);
+}
+}
+.sub {
     font-size: 14px;
 font-weight: 400;
+letter-spacing: 0px;
 line-height: 28px;
-color: #5A5A5A;
-margin-left: 8px;
-}
+color: rgba(90, 90, 90, 1);
 }
 .contentImg {
     width: 416px;
     height: 152px;
     margin-top: 24px;
-    img {
-        width: 100%;
-        height: 100%;
-    }
+     p {
+        font-size: 14px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 32px;
+color: rgba(51, 51, 51, 1);
+text-align: justify;
+     }
 }
   }
 `
@@ -283,10 +340,15 @@ const GlobalNumber = ({ }) => {
                 </div>
                 <div className='right-menu'>
                     <div className='title'>
-                    {menuList[current].title}<span>{menuList[current].subTitle}</span>
+                    {menuList[current].title}
+                    </div>
+                    <div className='sub'>
+                    {menuList[current].subTitle1}
                     </div>
                     <div className='contentImg'>
-                        <img src={contentImg[current]} alt="" />
+                        {menuList[current].content.map((item,index)=> {
+                            return <p>{item}</p>
+                        })}
                     </div>
                 </div>
             </Menu>

@@ -54,8 +54,9 @@ const CardContent = styled.aside`
     flex-direction: column; */
     /* height:496px; */
     .logo {
-      height: 28px;
-      margin: 53px 0 53px 56px;
+      width: 200px;
+      height: 50px;
+      margin: 42px 0 42px 56px;
     }
     .bigLogo {
       width: 374px;
@@ -235,8 +236,8 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
 
 const carouselDataList = [
   {
-    avatarSrc:`${imgurl}/sxydkj1.svg`,
-    logoSrc: `${imgurl}/xyd1.png`,
+    avatarSrc:`${imgurl}/sxydkj1.png`,
+    logoSrc: `${imgurl}/xyd3.png`,
     bigSrc: `${imgurl}/xyd2.png`,
     content:
       '百应是一个技术能力和产品能力都极强的一家人工智能公司，很难见到一家AI公司产品在金融等多个行业实现高度产品化，并能同时实现合作方开箱即用的极致用户体验和合作方用户的极致应用体验。',
@@ -244,27 +245,27 @@ const carouselDataList = [
     tagName: '信雅达科技股份有限公司（600571）董事长',
   },
   {
-    avatarSrc:`${imgurl}/hengsheng1.svg`,
-    logoSrc: `${imgurl}/xyd1.png`,
-    bigSrc: `${imgurl}/xyd2.png`,
+    avatarSrc:`${imgurl}/hengsheng1.png`,
+    logoSrc: `${imgurl}/hengsheng3.png`,
+    bigSrc: `${imgurl}/hengsheng2.png`,
     content:
       '恒生电子作为百应科技的合作伙伴和股东，我非常欣赏和赞赏这家公司。百应科技在AI和大数据领域具有先进的技术和专业的人才，同时拥有高效的管理团队和科学的管理体系，为客户提供优质的产品和服务。百应科技不断探索和创新，是一家优秀的科技企业，值得信赖与合作。',
     personName: '刘曙峰',
     tagName: '恒生电子股份有限公司（600570）董事长',
   },
   {
-    avatarSrc:`${imgurl}/amiba1.svg`,
-    logoSrc: `${imgurl}/xyd1.png`,
-    bigSrc: `${imgurl}/xyd2.png`,
+    avatarSrc:`${imgurl}/amiba1.png`,
+    logoSrc: `${imgurl}/amiba3.png`,
+    bigSrc: `${imgurl}/amiba2.png`,
     content:
       '作为公司最早的股东，我们看到公司从成立到不断发展壮大，客户数量和合作伙伴都在不断增长，产品线也在不断扩充，领域涉及面也在逐渐拓展。很高兴能够见证公司的成长历程，同时也为公司在发展路上持续推进而感到鼓舞。我相信百应科技将继续发扬所长，在行业内发挥更大的作用。',
     personName: 'Kevin Wang',
     tagName: '阿米巴资本 创始及执行合伙人',
   },
   {
-    avatarSrc:`${imgurl}/gxin1.svg`,
-    logoSrc: `${imgurl}/xyd1.png`,
-    bigSrc: `${imgurl}/xyd2.png`,
+    avatarSrc:`${imgurl}/gxin1.png`,
+    logoSrc: `${imgurl}/gxin3.png`,
+    bigSrc: `${imgurl}/gxin2.png`,
     content:
       '百应科技是一家高素质的AI和大数据技术公司，拥有强大的技术能力和专业的团队，一直秉持以客户需求为导向的理念，不断创新和改善服务，赢得了客户的信任和支持。作为股东，我对百应科技充满信心，相信公司将会在未来的发展中迎来更加辉煌的成绩。',
     personName: '叶雨明',

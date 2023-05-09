@@ -455,6 +455,26 @@ img {
   background: linear-gradient(154.05deg, rgba(43, 88, 249, 0) 0%, rgba(43, 88, 249, 0.13) 100%), rgba(246, 252, 255, 1);
 background-blend-mode: normalnormal;
 padding:40px 64px ;
+.labels {
+  display: flex;
+  font-size: 22px;
+font-weight: 600;
+letter-spacing: 0px;
+line-height: 28px;
+color: rgba(43, 88, 249, 1);
+padding-bottom: 24px;
+div {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+  img {
+    width: 32px;
+    height: 32px;
+    margin-left: 4px;
+    margin-bottom: 0;
+  }
+}
 img{
   margin-bottom: 0;
 }
@@ -522,10 +542,41 @@ cursor: pointer;
 
 const labelInfo = [
   {
-      name: '企业数智化用户运营解决方案'
+      name: '企业数智化用户运营解决方案',
+      labels: [
+        ['会员召回','复购转化', '会员关怀','私域引流'],
+        ['用户激活','会员订阅', '活动通知',  '用户分析'],
+        ['线索筛选',  '运营转化',  '私域引流',  '售后服务'],
+        ['赠险营销', '赠险转短险', '合规质检',  '意向筛选'],
+        ['用户分层', '贷款营销', '客户服务', '催收管理'],
+        ['信用卡贷款',  '个性化营销',  '客户服务', '风险控制'],
+      
+      ],
+      urls: ['/retail','/internet-solution','/newcar','/insure','/customer-finance',''],
+      imgs: [
+        ['lslogo1.png','lslogo2.png','lslogo3.png','lslogo4.png','lslogo5.png'],
+        ['hlwlogo1.png','hlwlogo2.png','hlwlogo3.png','hlwlogo4.png','hlwlogo5.png'],
+        ['qclogo1.png','qclogo2.png','qclogo3.png','qclogo4.png','qclogo5.png'],
+        ['bxlogo1.png','bxlogo2.png','bxlogo3.png','bxlogo4.png','bxlogo5.png'],
+        ['xjlogo1.png','xjlogo2.png','xjlogo3.png','xjlogo4.png','xjlogo5.png'],
+        ['yhlogo1.jpg','yhlogo2.jpg','yhlogo3.jpg','yhlogo4.jpg','yhlogo5.jpg'],
+      ],
+      banner: ['/001ls.png','/002hlw.png','/003qc.png','/004bx.png','/005xj.png','/005xj.png']
   },
   {
-      name: '政府基层服务和治理自动化解决方案'
+      name: '政府基层服务和治理自动化解决方案',
+      labels: [
+        ['高效劝阻', '有效宣传', '智能交互', '分类管理'],
+      ['线上服务大厅',  '智能AI客服', '社保帮办', '医保服务'],
+      ['居民咨询服务', '群众业务导办', '工作宣传', '民意回访']
+    ],
+    urls: ['/unfraud','',''],
+    banner: ['/007fz.png','/007fz.png','/007fz.png'],
+      imgs: [
+        ['fzlogo1.png','fzlogo2.png','fzlogo3.png','fzlogo4.png','fzlogo5.png'],
+        ['zwlogo1.png','zwlogo2.png','zwlogo3.png','zwlogo4.png','zwlogo5.png'],
+        ['zzlogo1.png','zzlogo2.png','zzlogo3.png','zzlogo4.png','zzlogo5.png']
+      ]
   }
 ]
 const leftMenuList = [
@@ -570,20 +621,20 @@ const leftMenuList = [
   ],
   [
   {
-    icon: '/ppls_icon1.svg',
-    icon2:'/ppls_icon1lght.png',
+    icon: '/gafz_icon1.svg',
+    icon2:'/gafz_icon1lght.svg',
     label: '公安反诈'
   },
   {
 
-    icon2:'/ppls_icon2lght.png',
-    icon: '/internet_icon1.svg',
+    icon2:'/zwfw_icon1lght.svg',
+    icon: '/zwfw_icon1.svg',
     label: '政务服务'
     
   },
   {
-    icon2:'/ppls_icon3lght.png',
-    icon: '/car_icon1.svg',
+    icon2:'/zz_icon1lght.svg',
+    icon: '/zz_icon1.svg',
     label: '公安综治'
   },
   ]
@@ -656,7 +707,7 @@ const Solution: FC<ICustomerWordsProps> = ({}) => {
       <LabelList>
             {labelInfo.map(({name},i)=> {
                 return (
-                    <LabelWrapper onClick={()=>{setCurrIndex(i)}} className={i==currIndex?'active':''}>
+                    <LabelWrapper onClick={()=>{setCurrIndex(i);if(i==1){setCurrIndexicon(0)}}} className={i==currIndex?'active':''}>
                         {name}
                     </LabelWrapper>
                     
@@ -675,20 +726,27 @@ const Solution: FC<ICustomerWordsProps> = ({}) => {
                      })}
                    </div>
                    <div className='right'>
-                    <img className='posationbg' src={imgurl+'/sybane12.png'} />
+                    <img className='posationbg' src={imgurl+labelInfo[currIndex].banner[currIndexicon]} />
                       <div className='title'>品牌零售解决方案</div>
                       <div className='desc'>通过对话式AI实现对用户全生命周期的多触点精细化管理，助力品牌实现「极致用户体验+极致ROI」的全域增长服务</div>
-                      <img className='log_arrow' src={imgurl+'/syppls23.png'} alt="" />
+                      <div className='labels'>
+                        {labelInfo[currIndex].labels&&labelInfo[currIndex].labels[currIndexicon].map((items,index)=> {
+                          return (<div>
+                            <img src={imgurl+'/solu_icon.png'} alt="" />
+                            {items}
+                          </div>)
+                        })}
+                      </div>
                       <div className='bottomLogo'>
-                            <img src={imgurl+'/logo_allselec1.png'} className='logo_bottom' alt="" />
-                            <img src={imgurl+'/logo_allselec2.png'} className='logo_bottom' alt="" />
-                            <img src={imgurl+'/logo_allselec3.png'} className='logo_bottom' alt="" />
-                            <img src={imgurl+'/logo_allselec4.png'} className='logo_bottom' alt="" />
-                            <img src={imgurl+'/logo_allselec5.png'} className='logo_bottom' alt="" />
+                            {labelInfo[currIndex].imgs&&labelInfo[currIndex].imgs[currIndexicon].map((item,index)=> {
+                              return <img src={imgurl+'/'+item} className='logo_bottom' alt="" />
+                            })}
                       </div>
                       <div className='btnGroup'>
-                          <div className='ljzx'>立即咨询</div>
-                          <div className='ljgd'>了解更多</div>
+                          <div onClick={() =>
+                        window.open('/form?formType=1')
+                      } className='ljzx'>立即咨询</div>
+                          <div onClick={()=> window.open(labelInfo[currIndex].urls[currIndexicon])} className='ljgd'>了解更多</div>
                       </div>
                    </div>
 

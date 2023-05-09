@@ -389,13 +389,22 @@ const QuickArea = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: -31px;
+  position: relative;
+  z-index: 1;
   >div {
     display: flex;
+    cursor: pointer;
     justify-content: center;
+    &:hover {
+      img {
+        margin-top: -14px;
+      }
+    }
     img {
       margin-top: -6px;
       width: 60px;
       height: 60px;
+      transition: all 0.3s;
     }
     .content {
       margin-left: 8px;
