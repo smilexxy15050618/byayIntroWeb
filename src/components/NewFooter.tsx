@@ -232,7 +232,7 @@ const CompanyInfoCol = styled.span`
   }
 `;
 // 联系我们
-const CompanyDescCol = styled(Col)`
+const CompanyDescCol = styled(Col) `
   @media (max-width: 980px) {
     display: flex;
     align-items: center;
@@ -338,7 +338,7 @@ const CompanyDescCol = styled(Col)`
     }
   `}
 `;
-const LinkCol = styled(Col)`
+const LinkCol = styled(Col) `
   display: flex;
   flex-direction: column;
   > div > div {
@@ -521,13 +521,13 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
                       {item.name === CALL_NUMBER_400 ? (
                         <a href="tel:4000235100">{CALL_NUMBER_400}</a>
                       ) : (
-                        <ByLink
-                          key={item.name}
-                          href={!disableLink ? item.href : ''}
-                          scroll={!disableLink && !!item.href}>
-                          <a className="the-btn">{item.icon ? <img src={item.icon} alt="" /> : item.name}</a>
-                        </ByLink>
-                      )}
+                          <ByLink
+                            key={item.name}
+                            href={!disableLink ? item.href : ''}
+                            scroll={!disableLink && !!item.href}>
+                            <a className="the-btn">{item.icon ? <img src={item.icon} alt="" /> : item.name}</a>
+                          </ByLink>
+                        )}
                     </Col>
                   ))}
                 </Row>
@@ -655,8 +655,7 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
       <CompanyInfoCol>
         <FriendLink>
           <div style={{ width: '100%', display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-            {/* <span>友情链接: </span> */}
-            {FriendLinkList.flatMap((item, i) => {
+            {FriendLinkList.map((item, i) => {
               const ret = (
                 <span
                   className="friend-item"
