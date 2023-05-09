@@ -169,6 +169,7 @@ export default props => {
             <CustomerIconsBlock padding="50px 0 80px" />
             <HeightestAi />
             <News></News>
+            <LastPng></LastPng>
           </Visible>
           <Visible xs sm>
             <VideoListMobile contentList={videoInfoList}></VideoListMobile>

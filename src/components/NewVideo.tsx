@@ -56,6 +56,8 @@ margin-bottom: 20px;
   width: 100%;
 }
 .title {
+  display: flex;
+    align-items: center;
   font-size: 20px;
 font-weight: 600;
 letter-spacing: 0px;
@@ -100,6 +102,7 @@ padding: 0 8px;
   right: 0;
   img {
     width: 100%;
+    margin-bottom: 0;
   }
 }
 
@@ -137,7 +140,6 @@ margin-bottom: 32px;
   display: block;
   cursor: pointer;
   .title{
-    /* position: relative; */
     img{
       /* position: absolute; */
       width: 22px;
@@ -180,16 +182,17 @@ color: rgba(255, 255, 255, 1);
 }
 }
 .showBluearrow{
-  display: none;
+  // display: none;
+  width: 24px;
+  margin-left: 16px;
+  margin-bottom: 0px;
 }
 .chosevhoer2{
   cursor: pointer;
   .title{
     color: rgba(43, 88, 249, 1);
-    display: flex;
-    align-items: center;
     .showBluearrow{
-    display: block;
+    content: url(${imgurl}/arrowsy3322.png);
     width: 22px;
     margin-bottom: 0;
     margin-left: 7px;
@@ -207,149 +210,152 @@ const lists = [
   {
     title: '用户画像洞察',
     subTitle: '综合客户数据建立多維标签,构建金景客户画像，获得深入洞察,为精细化运营提供策略基础。',
-    hovSubtitle:'构建全景客户画像',
-    contents: ['体系化标签管理','个性化用户分群','360°深度洞察','行业算法模型标签'],
+    hovSubtitle: '构建全景客户画像',
+    contents: ['体系化标签管理', '个性化用户分群', '360°深度洞察', '行业算法模型标签'],
     url: `${imgurl}/aiimg1.png`,
-    chose:false,
+    chose: false,
+    width: '330px',
     contentArr: [{
-      number_h1:'标签体系',
-      number_content:'4级'
-    },{
-      number_h1:'行业标签模型',
-      number_content:'10+'
-    },{
-      number_h1:'业务标签',
-      number_content:'300+'
+      number_h1: '标签体系',
+      number_content: '4级'
+    }, {
+      number_h1: '行业标签模型',
+      number_content: '10+'
+    }, {
+      number_h1: '业务标签',
+      number_content: '300+'
     },]
   },
   {
-    chose:false,
-
+    chose: false,
+    width: '300px',
     title: '策略智能与自动化',
-    hovSubtitle:'实现目标人群精准自动化触达',
+    hovSubtitle: '实现目标人群精准自动化触达',
     subTitle: '充分收集井洞察客户行为、属性、标签，井针对性制定触达与沟通第略，实现目标人群精准自动化触达，提升关键指标和运营效率。',
-    contents: ['智能化生成运营策略','自动化完成策略触达','科学性验证效果数据','实时性增强客户洞察'],
+    contents: ['智能化生成运营策略', '自动化完成策略触达', '科学性验证效果数据', '实时性增强客户洞察'],
     url: `${imgurl}/aiimg2.png`,
     contentArr: [{
-      number_h1:'自动化运营场景',
-      number_content:'30+'
-    },{
-      number_h1:'自动化策略流程',
-      number_content:'2000+'
-    },{
-      number_h1:'日均用户触达',
-      number_content:'5000W'
+      number_h1: '自动化运营场景',
+      number_content: '30+'
+    }, {
+      number_h1: '自动化策略流程',
+      number_content: '2000+'
+    }, {
+      number_h1: '日均用户触达',
+      number_content: '5000W'
     },]
   },
   {
-    chose:false,
-
+    chose: false,
+    width: '320px',
     title: '多模态情感化对话式AI',
-    hovSubtitle:'多模态Al形情感化沟通感知',
+    hovSubtitle: '多模态Al形情感化沟通感知',
     subTitle: '在不同的渠道和场景中使用多模态Al形式沟通，情感化沟通感知，跨端能力共享，为用户提供个性化服务和推荐，提高用户体验。',
-    contents: ['文本交互','语音交互','视觉交互','虚拟数字人','情感化','拟人化','全双工','主动式'],
+    contents: ['文本交互', '语音交互', '视觉交互', '虚拟数字人', '情感化', '拟人化', '全双工', '主动式'],
     url: `${imgurl}/aiimg3.png`,
     contentArr: [{
-      number_h1:'AI情感模态',
-      number_content:'3种'
-    },{
-      number_h1:'行业对话场景包模型',
-      number_content:'30+'
-    },{
-      number_h1:'各行业优质的对话话术库',
-      number_content:'20W'
+      number_h1: 'AI情感模态',
+      number_content: '3种'
+    }, {
+      number_h1: '行业对话场景包模型',
+      number_content: '30+'
+    }, {
+      number_h1: '各行业优质的对话话术库',
+      number_content: '20W'
     },]
   },
   {
-    chose:false,
-
+    chose: false,
+    width: '380px',
     title: '全场景连接触达',
-    hovSubtitle:'个性化触达与沟通策略',
+    hovSubtitle: '个性化触达与沟通策略',
     subTitle: '充分洞紧用户，井针对性制定触达与沟通策略，使用合适的内容，在合适的时间触达合适的客户。',
-    contents: ['通信：AI智能电话｜短信｜5G消息','在线：音视频｜直播交互','微信：加微｜单聊｜群聊｜视频号｜公众号','线下：智能终端'],
+    contents: ['通信：AI智能电话｜短信｜5G消息', '在线：音视频｜直播交互', '微信：加微｜单聊｜群聊｜视频号｜公众号', '线下：智能终端'],
     url: `${imgurl}/aiimg4.png`,
     contentArr: [{
-      number_h1:'全场景覆盖',
-      number_content:'4端'
-    },{
-      number_h1:'不间断用户洞察',
-      number_content:'24小时'
-    },{
-      number_h1:'实时并发量支持',
-      number_content:'10W+'
+      number_h1: '全场景覆盖',
+      number_content: '4端'
+    }, {
+      number_h1: '不间断用户洞察',
+      number_content: '24小时'
+    }, {
+      number_h1: '实时并发量支持',
+      number_content: '10W+'
     },]
   },
   {
     title: '认知智能能力平台',
     subTitle: '认知智能能力平台',
-    contents: ['非结构化数据感知','文本智能（NLP）','语音识别（ASR）','智能对话技术','人机互动','多模态情绪识别','可信策略生成'],
+    contents: ['非结构化数据感知', '文本智能（NLP）', '语音识别（ASR）', '智能对话技术', '人机互动', '多模态情绪识别', '可信策略生成'],
     url: `${imgurl}/aiimg5.png`,
-    contentArr: []
+    contentArr: [],
+    width: '100%'
   },
   {
     title: '数据智能能力平台',
     subTitle: '连接全局客户数据，构建第一方用户池，专为保障企业在数据共享和流通过程中的隐私安全性而设计',
-    contents: ['结构化数据感知','大规模模型训练','特征提取和选择','多方安全计算','联邦学习','安全计算引擎'],
+    contents: ['结构化数据感知', '大规模模型训练', '特征提取和选择', '多方安全计算', '联邦学习', '安全计算引擎'],
     url: `${imgurl}/aiimg6.png`,
-    contentArr: []
+    contentArr: [],
+    width: '100%'
   }
 ]
 export const NewVideo = () => {
-    let [listArr, setListArr] = useState(lists);
-    return (<AITime>
-      <Title>AI时代的新一代智能用户运营平台</Title>
-      <SubTitle>以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台</SubTitle>
-      <ListWrapper>
-        {listArr.map((item,index)=> {
-          return (<div 
+  let [listArr, setListArr] = useState(lists);
+  return (<AITime>
+    <Title>AI时代的新一代智能用户运营平台</Title>
+    <SubTitle>以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台</SubTitle>
+    <ListWrapper>
+      {listArr.map((item, index) => {
+        return (<div
           className={classNames('listItem', {
-            chosevhoer: item.chose&&index<4,
-            chosevhoer2: item.chose&&index>3,
-          })} onMouseEnter={()=>{
+            chosevhoer: item.chose && index < 4,
+            chosevhoer2: item.chose && index > 3,
+          })} onMouseEnter={() => {
             item.chose = true;
-            setListArr(Object.assign([],listArr));
-          }} onMouseLeave={()=>{
+            setListArr(Object.assign([], listArr));
+          }} onMouseLeave={() => {
             item.chose = false;
-            setListArr(Object.assign([],listArr));
+            setListArr(Object.assign([], listArr));
           }}>
-             <aside className='nobg_hover'>
-                <div className='title'>{item.title} 
-                <img className='showBluearrow' src={imgurl+'/arrowsy3322.png'}  /></div>
-                <div className='subTitle'>{item.subTitle}</div>
-                <div className='button-group'>
-                {item.contents.map((item,index)=> {
-                      return (
-                        <div>{item}</div>
-                      )
-                })}
-                </div>
-                <div  className={classNames('bottomImg')} >
-                  <img src={item.url} alt="" />
-                </div>
-            </aside>
+          <aside className='nobg_hover'>
+            <div className='title'>{item.title}
+              <img className='showBluearrow' src={imgurl + '/aitime_arrow.png'} /></div>
+            <div className='subTitle'>{item.subTitle}</div>
+            <div style={{width: item.width}} className='button-group'>
+              {item.contents.map((item, index) => {
+                return (
+                  <div>{item}</div>
+                )
+              })}
+            </div>
+            <div className={classNames('bottomImg')} >
+              <img src={item.url} alt="" />
+            </div>
+          </aside>
 
 
-              <aside className={classNames('havebg_hover', {
-                })} >
-                   <div className='title'>{item.title}
-                    <img src={imgurl+'/arrowwsy2.png'}  />
-                   </div>
-                  <div className='subTitle'>{item.hovSubtitle}</div>
-                <div className='bg_number_show'>
-                  {
-                    item.contentArr.map((ele,index)=>{
-                      return (  <div className='number_block'>
-                          <p className='number_h1'>{ele.number_h1}</p>
-                          <p className='number_content'>{ele.number_content}</p>
-                      </div>)
-                    })
-                  }
-                    
-                </div>
-              </aside>
-            <img className='planet' src={imgurl+'/planet.svg'}  />
-          </div>)
-        })}
-      </ListWrapper>
-    </AITime>)
+          <aside className={classNames('havebg_hover', {
+          })} >
+            <div className='title'>{item.title}
+              <img src={index<4?imgurl + '/arrowwsy2.png':imgurl + '/arrowsy3322.png'} />
+            </div>
+            <div className='subTitle'>{item.hovSubtitle}</div>
+            <div className='bg_number_show'>
+              {
+                item.contentArr.map((ele, index) => {
+                  return (<div className='number_block'>
+                    <p className='number_h1'>{ele.number_h1}</p>
+                    <p className='number_content'>{ele.number_content}</p>
+                  </div>)
+                })
+              }
+
+            </div>
+          </aside>
+          <img className='planet' src={imgurl + '/planet.svg'} />
+        </div>)
+      })}
+    </ListWrapper>
+  </AITime>)
 }

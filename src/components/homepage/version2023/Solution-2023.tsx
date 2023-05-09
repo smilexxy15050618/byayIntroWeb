@@ -416,6 +416,9 @@ width: 1200px;
 margin: 0 auto;
 margin-top: 30px;
 display: flex;
+img {
+  margin-bottom: 0;
+}
 .left {
   width: 200px;
   /* height: 361px; */

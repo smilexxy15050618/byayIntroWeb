@@ -119,6 +119,12 @@ export const NAV_CONFIG = [
         desc: '全自动、智能化营销服务',
         icon:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/xfjrheadicon.png',
         path: '/customer-finance',
+      },
+      {
+        title: '汽车',
+        desc: '全自动、智能化营销服务',
+        icon:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/xfjrheadicon.png',
+        path: '/newcar',
       }
       
       // {
