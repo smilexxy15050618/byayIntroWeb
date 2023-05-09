@@ -67,7 +67,7 @@ img {
 }
 `
 const ListItem = styled.div`
- width: 296px;
+ width: 300px;
 height: 104px;
 padding-top: 38px;
 padding-left: 40px;
@@ -90,7 +90,7 @@ color: rgba(43, 88, 249, 1);
 }
  }
  &.active {
-    width: 296px;
+    // width: 296px;
     height: 224px;
     background: rgba(43, 88, 249, 1);
     color: rgba(255, 255, 255, 1);

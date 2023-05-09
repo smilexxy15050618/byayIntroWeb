@@ -26,7 +26,7 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
     img2: `${PREFIX}/multimodal-value-3-2.svg`,
     img3: `${PREFIX}/multimodal-value-3-3.png`,
     title: '全双工',
-    subtitle: '在语音和数字人场景中，听说状态的实时切换，适应各种场景，确保轮对话能力得到有效处理，使人机对话更加贴近真实的人际沟通。',
+    subtitle: '在语音和数字人场景中，听说状态的实时切换，适应各种场景，确保多轮对话能力得到有效处理，使人机对话更加贴近真实的人际沟通。',
   },
 ];
 

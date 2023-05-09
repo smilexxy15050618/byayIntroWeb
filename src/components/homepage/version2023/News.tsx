@@ -135,19 +135,23 @@ cursor: pointer;
 const list = [
     {
         img: `${imgurl}/dongtai1.png`,
-        text: '打造数字政务发展新标杆，百应发布国内首个政务行业专有大模型“万机”'
+        text: '打造数字政务发展新标杆，百应发布国内首个政务行业专有大模型“万机”',
+        path:'https://mp.weixin.qq.com/s/WQ0NuKNJbSuIwsRNaC5qcw'
     },
     {
         img: `${imgurl}/dongtai2.png`,
         text: '创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》'
+        ,path:'https://mp.weixin.qq.com/s/1yppgDXsWYBGhyeC14-sKg'
     },
     {
         img: `${imgurl}/dongtai1.png`,
-        text: '百应科技“AI警官”亮相第二十二届中国国际安博会'
+        text: '百应科技“AI警官”亮相第二十二届中国国际安博会',
+        path:'https://mp.weixin.qq.com/s/VzW7r4vKjkaHcFco4gaPyg'
     },
     {
         img: `${imgurl}/dongtai2.png`,
-        text: '百应科技实力入选「2022中国企业数智化创新TOP50」榜单'
+        text: '百应科技实力入选「2022中国企业数智化创新TOP50」榜单',
+        path:'https://mp.weixin.qq.com/s/irAz2DFmGIZAenwn_YR4ug'
     }
 ]
 export const News = () => {
@@ -165,10 +169,24 @@ export const News = () => {
         <SwiperSlide>
             <div>行业报告</div>
             <div>引领对话式AI，百应科技入选<br></br>艾瑞《2022中国人工智能产业研究报告》</div>
-            <button>查看详情</button>
+            <button onClick={()=>{
+                window.open('https://mp.weixin.qq.com/s/B5PsNbhgrzjIfoZyIFel6A')
+            }}>查看详情</button>
         </SwiperSlide>
-        <SwiperSlide></SwiperSlide>
-        <SwiperSlide></SwiperSlide>
+        <SwiperSlide>
+        <div>xxx</div>
+            <div>xxx<br></br>xxx</div>
+            <button onClick={()=>{
+                window.open('https://mp.weixin.qq.com/s/-ASpK_Yjmi50cGTGnAOb8g')
+            }}>查看详情</button>
+        </SwiperSlide>
+        <SwiperSlide>
+        <div>xxx</div>
+            <div>xxx<br></br>xx</div>
+            <button onClick={()=>{
+                window.open('https://mp.weixin.qq.com/s/ZIO9FaodpCTOaEV3-Akkyg')
+            }}>查看详情</button>
+        </SwiperSlide>
 
             </Swiper>
            <RightNews>
@@ -178,7 +196,11 @@ export const News = () => {
              </div>
              <div className='center'>
                 {list.map((item)=> {
-                    return(<div>
+                    return(<div onClick={()=>{
+                        if(item.path ){
+                            window.open(item.path);
+                        }
+                    }}>
                     <img src={item.img} alt="" />
                     <span>{item.text}</span>
                     </div>)

@@ -208,8 +208,8 @@ color: rgba(255, 255, 255, 1);
 `
 const lists = [
   {
-    title: '用户画像洞察',
-    subTitle: '综合客户数据建立多維标签,构建金景客户画像，获得深入洞察,为精细化运营提供策略基础。',
+    title: '增强型用户画像洞察',
+    subTitle: '综合客户数据建立多维标签，构建全景客户画像，获得深入洞察，为精细化运营提供策略基础。',
     hovSubtitle: '构建全景客户画像',
     contents: ['体系化标签管理', '个性化用户分群', '360°深度洞察', '行业算法模型标签'],
     url: `${imgurl}/aiimg1.png`,
@@ -224,14 +224,15 @@ const lists = [
     }, {
       number_h1: '业务标签',
       number_content: '300+'
-    },]
+    },],
+    path:'/enhance'
   },
   {
     chose: false,
     width: '300px',
     title: '策略智能与自动化',
     hovSubtitle: '实现目标人群精准自动化触达',
-    subTitle: '充分收集井洞察客户行为、属性、标签，井针对性制定触达与沟通第略，实现目标人群精准自动化触达，提升关键指标和运营效率。',
+    subTitle: '充分收集并洞察客户行为、属性、标签，并针对性制定触达与沟通策略，实现目标人群精准自动化触达，提升关键指标和运营效率。',
     contents: ['智能化生成运营策略', '自动化完成策略触达', '科学性验证效果数据', '实时性增强客户洞察'],
     url: `${imgurl}/aiimg2.png`,
     contentArr: [{
@@ -243,12 +244,13 @@ const lists = [
     }, {
       number_h1: '日均用户触达',
       number_content: '5000W'
-    },]
+    },],
+    path:'/intelligence'
   },
   {
     chose: false,
     width: '320px',
-    title: '多模态情感化对话式AI',
+    title: '多模态情感化AI',
     hovSubtitle: '多模态Al形情感化沟通感知',
     subTitle: '在不同的渠道和场景中使用多模态Al形式沟通，情感化沟通感知，跨端能力共享，为用户提供个性化服务和推荐，提高用户体验。',
     contents: ['文本交互', '语音交互', '视觉交互', '虚拟数字人', '情感化', '拟人化', '全双工', '主动式'],
@@ -262,14 +264,15 @@ const lists = [
     }, {
       number_h1: '各行业优质的对话话术库',
       number_content: '20W'
-    },]
+    },],
+    path:'/product/multimodalAI'
   },
   {
     chose: false,
     width: '380px',
-    title: '全场景连接触达',
+    title: '全场景用户连接与对话',
     hovSubtitle: '个性化触达与沟通策略',
-    subTitle: '充分洞紧用户，井针对性制定触达与沟通策略，使用合适的内容，在合适的时间触达合适的客户。',
+    subTitle: '充分洞察用户，并针对性制定触达与沟通策略，使用合适的内容，在合适的时间触达合适的客户。',
     contents: ['通信：AI智能电话｜短信｜5G消息', '在线：音视频｜直播交互', '微信：加微｜单聊｜群聊｜视频号｜公众号', '线下：智能终端'],
     url: `${imgurl}/aiimg4.png`,
     contentArr: [{
@@ -281,15 +284,17 @@ const lists = [
     }, {
       number_h1: '实时并发量支持',
       number_content: '10W+'
-    },]
+    },],
+    path:'/product/fullSceneUserLink'
   },
   {
     title: '认知智能能力平台',
-    subTitle: '认知智能能力平台',
+    subTitle: '通过AI辅助，提供敏捷智能的科学运营，实现运营的数字化转型',
     contents: ['非结构化数据感知', '文本智能（NLP）', '语音识别（ASR）', '智能对话技术', '人机互动', '多模态情绪识别', '可信策略生成'],
     url: `${imgurl}/aiimg5.png`,
     contentArr: [],
-    width: '100%'
+    width: '100%',
+    path:''
   },
   {
     title: '数据智能能力平台',
@@ -297,7 +302,8 @@ const lists = [
     contents: ['结构化数据感知', '大规模模型训练', '特征提取和选择', '多方安全计算', '联邦学习', '安全计算引擎'],
     url: `${imgurl}/aiimg6.png`,
     contentArr: [],
-    width: '100%'
+    width: '100%',
+    path:''
   }
 ]
 export const NewVideo = () => {
@@ -308,6 +314,11 @@ export const NewVideo = () => {
     <ListWrapper>
       {listArr.map((item, index) => {
         return (<div
+          onClick={()=>{
+            if(item.path){
+              window.location.href = item.path;
+            }
+          }}
           className={classNames('listItem', {
             chosevhoer: item.chose && index < 4,
             chosevhoer2: item.chose && index > 3,

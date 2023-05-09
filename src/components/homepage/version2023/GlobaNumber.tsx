@@ -4,7 +4,7 @@ import imgurl from '../../../../img.url.js'
 import Number from '../../../components/homepage/version2023/Number'
 const list = [
     {
-        title: 10,
+        title: 300,
         unit: '',
         sub: '亿规模',
         content: '任务模型参数量'
@@ -161,7 +161,7 @@ const Menu = styled.div`
   width: 1200px;
   padding-left: 65px;
   box-sizing: border-box;
-  margin: 62px auto 0;
+  margin: 92px auto 0;
   .left-menu {
     width: 545px;
     height: 353px;

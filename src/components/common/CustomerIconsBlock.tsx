@@ -56,9 +56,9 @@ const RawCustomerIconsBlock: FC<IProps> = ({ className }) => {
       <div className={className}>
         <Model />
         <div className="content-wrap">
-          <div className="center-title">
+          {/* <div className="center-title">
             <span>更受客户信任的战略伙伴</span>
-          </div>
+          </div> */}
           {matrix.map((row, i) => (
             <ByScrollLine
               width="100%"

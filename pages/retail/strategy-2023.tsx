@@ -120,7 +120,7 @@ const Strategy: FC<IStrategyProps> = ({ }) => {
                 </Wrapper>
             </div>
         </Pane>
-        <Pane title="百应玩法: 行业领先的“单次AI电话”运营方法论">
+        <Pane title="百应玩法：行业领先的AI触达运营方法论">
         <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
             <Wrapper id={STRATEGY1}>
             <ArrowClick onClick={e => { controlledSwiper1.navigation.onPrevClick(e) }}>

@@ -591,7 +591,7 @@ const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
   
     <Pane id={CustomerId} title="众多政府机构及头部企业的信赖之选"
     titleStyle={{marginBottom:'53px'}}
-     paneBgColor="white" style={{ paddingBottom: 152 }} mobileStyle={{ paddingBottom: 40 }}>
+     paneBgColor="white" style={{ paddingBottom: 70 }} mobileStyle={{ paddingBottom: 40 }}>
       <Hidden xs sm>
       <MainWrap
     id={CustomerIdwrap}
