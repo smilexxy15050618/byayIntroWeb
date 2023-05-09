@@ -276,7 +276,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
         onSlideChange={swiper => {
           setCurrIndex(swiper.activeIndex);
         }}
-        loop={false}
+        loop={true}
         style={{ paddingRight: 32, overflow: 'hidden', paddingBottom: 30, marginBottom: -30, paddingTop:20 }}>
         {dataList.map(({ bg, avatarSrc, content, personName, tagName,icon,left_title,left_title2,right_title,right_title2 }, i) => (
           <SwiperSlide style={{ width: 'auto' }} className='hoer_bg_more' key={i}>
