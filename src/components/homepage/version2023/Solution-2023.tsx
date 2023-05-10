@@ -711,7 +711,7 @@ const Solution: FC<ICustomerWordsProps> = ({}) => {
       <LabelList>
             {labelInfo.map(({name},i)=> {
                 return (
-                    <LabelWrapper onClick={()=>{setCurrIndex(i);if(i==1){setCurrIndexicon(0)}}} className={i==currIndex?'active':''}>
+                    <LabelWrapper onClick={()=>{setCurrIndex(i);if(i!=currIndex){setCurrIndexicon(0)}}} className={i==currIndex?'active':''}>
                         {name}
                     </LabelWrapper>
                     
@@ -750,7 +750,7 @@ const Solution: FC<ICustomerWordsProps> = ({}) => {
                           <div onClick={() =>
                         window.open('/form?formType=1')
                       } className='ljzx'>立即咨询</div>
-                          <div onClick={()=> window.open(labelInfo[currIndex].urls[currIndexicon])} className='ljgd'>了解更多</div>
+                          <div onClick={()=> {if(labelInfo[currIndex].urls[currIndexicon]){window.open(labelInfo[currIndex].urls[currIndexicon])}}} className='ljgd'>了解更多</div>
                       </div>
                    </div>
 
