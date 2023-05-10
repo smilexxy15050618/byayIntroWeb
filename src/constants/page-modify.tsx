@@ -206,7 +206,7 @@ export const FOOTER_CONFIG = [
     list: [
       { name: '多模态情感化AI（MEAI）', href: '/product/multimodalAI' },
       {
-        name: '文本机增强型用户画像洞察（CDP+）器人',
+        name: '文本机增强型用户画像洞察（CDP+）',
         href: '/enhance',
       },
       {

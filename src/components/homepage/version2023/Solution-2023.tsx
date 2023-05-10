@@ -413,6 +413,7 @@ cursor: pointer;
 `
 const ContentWrapper = styled.div`
 width: 1200px;
+height: 432px;
 margin: 0 auto;
 margin-top: 30px;
 display: flex;
@@ -466,7 +467,7 @@ padding-bottom: 24px;
 div {
   display: flex;
   align-items: center;
-  margin-right: 16px;
+  margin-right: 26px;
 }
   img {
     width: 32px;
@@ -512,8 +513,10 @@ width: 700px;
   justify-content: space-between;
 }
 .logo_bottom{
-  height: 29px;
+  width: 120px;
+  height: 40px;
   margin-bottom: 0;
+  margin-right: 10px;
 }
 .btnGroup{
   display: flex;

@@ -37,6 +37,12 @@ padding-bottom: 67px;
             background: url(${imgurl}/hybg2.png) no-repeat;
         background-size: 100% 100%;
         }
+        button {
+            &:hover {
+                color: rgba(43, 88, 249, 1);
+                border-color: rgba(43, 88, 249, 1);
+            }
+        }
     }
     .swiper-pagination-bullet {
         width: 14px;
@@ -172,22 +178,22 @@ cursor: pointer;
 `
 const list = [
     {
-        img: `${imgurl}/dongtai1.png`,
+        img: `${imgurl}/dongtai1.jpeg`,
         text: '打造数字政务发展新标杆，百应发布国内首个政务行业专有大模型“万机”',
         path:'https://mp.weixin.qq.com/s/WQ0NuKNJbSuIwsRNaC5qcw'
     },
     {
-        img: `${imgurl}/dongtai2.png`,
+        img: `${imgurl}/dongtai2.jpeg`,
         text: '创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》'
         ,path:'https://mp.weixin.qq.com/s/1yppgDXsWYBGhyeC14-sKg'
     },
     {
-        img: `${imgurl}/dongtai3.png`,
+        img: `${imgurl}/dongtai3.jpeg`,
         text: '百应科技“AI警官”亮相第二十二届中国国际安博会',
         path:'https://mp.weixin.qq.com/s/VzW7r4vKjkaHcFco4gaPyg'
     },
     {
-        img: `${imgurl}/dongtai4.png`,
+        img: `${imgurl}/dongtai4.jpg`,
         text: '百应科技实力入选「2022中国企业数智化创新TOP50」榜单',
         path:'https://mp.weixin.qq.com/s/irAz2DFmGIZAenwn_YR4ug'
     }

@@ -318,20 +318,23 @@ const Menu = styled.div`
 }
   .right-menu {
     width: 528px;
-height: 378px;
-opacity: 1;
-border-radius: 10px;
-border: 1px solid #FFFFFF;
-padding-top: 45px;
-padding-left: 59px;
-box-shadow: 0px 20px -17px 0px #072C59;
-// backdrop-filter: blur(6px);
+height: 418px;
+padding-left: 58px;
+padding-right: 108px;
+
+box-sizing: border-box;
+background: url(${imgurl}/rotatebg.png) no-repeat;
+background-size: 100% 100%;
 .title {
+    width: 100%;
     font-size: 20px;
 font-weight: 500;
 letter-spacing: 0px;
 line-height: 32px;
 color: rgba(43, 88, 249, 1);
+margin-top: 85px;
+margin-bottom: 4px;
+
 &::after {
     display: block;
     content: "";
@@ -343,6 +346,7 @@ background: rgba(0, 200, 189, 1);
 }
 }
 .sub {
+    width: 100%;
     font-size: 14px;
 font-weight: 400;
 letter-spacing: 0px;
@@ -350,8 +354,7 @@ line-height: 28px;
 color: rgba(90, 90, 90, 1);
 }
 .contentImg {
-    width: 416px;
-    height: 152px;
+    width: 100%;
     margin-top: 24px;
      p {
         font-size: 14px;

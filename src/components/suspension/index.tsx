@@ -98,15 +98,15 @@ class Suspension extends React.Component<ISuspensionState> {
                   <div className="hover-head">
                     <img src={AVATAR} />
                     <div>
-                      <div className="hover-head-title">我是小应，您的专属增长顾问</div>
-                      <div className="hover-head-desc">免费1v1服务 AI助力商家轻松营销</div>
+                      <div className="hover-head-title">我是小应，您的专属运营顾问</div>
+                      <div className="hover-head-desc">免费1v1服务 AI开启用户运营新体验</div>
                     </div>
                   </div>
                   <div className="hover-content">
                     <img src={QR_CODE_1} alt="" className="hover-content-code" />
                   </div>
                   <div className="hover-content-tips">
-                    <div>扫码添加 | 了解新鲜私域动态</div>
+                    <div>扫码添加 | 了解头部客户案例</div>
                   </div>
                   <div className="hover-footer">
                     <PhoneNumber style={{ fontSize: 24 }} />
@@ -116,15 +116,15 @@ class Suspension extends React.Component<ISuspensionState> {
               )}
               {activeIndex === 2 && (
                 <PhoneCard isMove={true}>
-                  <div className="hover-head">咨询渠道合作 共享万亿市场</div>
+                  <div className="hover-head">咨询渠道合作 共建增长引擎</div>
                   <div className="hover-content">131 8508 3001</div>
                 </PhoneCard>
               )}
               {activeIndex === 3 && (
                 <FreeCard>
                   <div className="hover-head">
-                    <div>免费领取私域运营资料包</div>
-                    <div>抢先开启私域增长</div>
+                    <div>免费领取用户运营资料包</div>
+                    <div>抢先开启业务增长</div>
                   </div>
                   <div className="hover-content">
                     <img src={QR_CODE_2} alt="" className="hover-content-code" />
@@ -138,12 +138,12 @@ class Suspension extends React.Component<ISuspensionState> {
                   </div>
                   <div className="hover-footer">
                     <div>
-                      <span>私域加粉白皮书</span>
-                      <span>细分行业私域打法</span>
+                      <span>会员运营白皮书</span>
+                      <span>细分行业运营打法</span>
                     </div>
                     <div>
-                      <span>私域标杆案例</span>
-                      <span>1v1私域顾问服务</span>
+                      <span>行业标杆案例</span>
+                      <span>1v1专属顾问服务</span>
                     </div>
                   </div>
                 </FreeCard>
