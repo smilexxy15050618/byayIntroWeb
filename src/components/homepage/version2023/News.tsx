@@ -211,21 +211,21 @@ export const News = () => {
         pagination={{ clickable: true }}
         >
         <SwiperSlide>
-            <div>行业报告</div>
+            <div>行业报告 &raquo;</div>
             <div>引领对话式AI，百应科技入选<br></br>艾瑞《2022中国人工智能产业研究报告》</div>
             <button onClick={()=>{
                 window.open('https://mp.weixin.qq.com/s/B5PsNbhgrzjIfoZyIFel6A')
             }}>查看详情</button>
         </SwiperSlide>
         <SwiperSlide>
-        <div>行业报告</div>
+        <div>行业报告 &raquo;</div>
             <div>人人都想要的超级用户，<br></br>《私域2.0-会员全域增长白皮书》正式发布！</div>
             <button onClick={()=>{
                 window.open('https://mp.weixin.qq.com/s/-ASpK_Yjmi50cGTGnAOb8g')
             }}>查看详情</button>
         </SwiperSlide>
         <SwiperSlide>
-        <div>行业报告</div>
+        <div>行业报告 &raquo;</div>
             <div>参编《2022浙江省人工智能产业发展报告<br></br>百应硬核展现“再上分”</div>
             <button onClick={()=>{
                 window.open('https://mp.weixin.qq.com/s/ZIO9FaodpCTOaEV3-Akkyg')
