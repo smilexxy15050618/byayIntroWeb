@@ -286,7 +286,7 @@ const Menu = styled.div`
     }
   
     50% {
-      transform: scale(1.15) translate(-47%, -50%);
+      transform: scale(1.1) translate(-47%, -50%);
   
     }
     100%{
@@ -301,9 +301,10 @@ const Menu = styled.div`
     height:211px;
     top: 50%;
     transform: translate(-50%, -50%);
+    animation: fangda 3s infinite alternate ease-in-out;
     img{
         margin-bottom:0;
-        transition: all 0.5s;
+        // transition: all 0.5s;
     }
     .fangkuan{
         position: absolute;
@@ -406,7 +407,7 @@ const GlobalNumber = ({ }) => {
                    })}
                     <div className='pakksl'>
                         <img  src={menuList[current].squire} style={{transform: `rotate(${(menuList[current].a)*60}deg)`}} className='fangkuan' />
-                        <img key={current} src={imgurl+'/skxmxn.svg'}  className={classNames('squire',{
+                        <img src={imgurl+'/skxmxn.svg'}  className={classNames('squire',{
                         })} />
                      </div>
                 </div>

@@ -458,7 +458,7 @@ background-blend-mode: normalnormal;
 padding:40px 64px ;
 .labels {
   display: flex;
-  font-size: 22px;
+  font-size: 20px;
 font-weight: 600;
 letter-spacing: 0px;
 line-height: 28px;
@@ -526,6 +526,7 @@ width: 700px;
   margin-top: 60px;
 height: 36px;
 border-radius: 4px;
+font-size: 16px;
 text-align: center;
 line-height: 36px;
 cursor: pointer;
@@ -555,7 +556,7 @@ const labelInfo = [
         ['信用卡贷款',  '个性化营销',  '客户服务', '风险控制'],
       
       ],
-      urls: ['/retail','/internet-solution','/newcar','/insure','/customer-finance',''],
+      urls: ['/retail','/internet-solution','','/insure','/customer-finance',''],
       imgs: [
         ['lslogo1.png','lslogo2.png','lslogo3.png','lslogo4.png','lslogo5.png'],
         ['hlwlogo1.png','hlwlogo2.png','hlwlogo3.png','hlwlogo4.png','hlwlogo5.png'],
@@ -564,7 +565,7 @@ const labelInfo = [
         ['xjlogo1.png','xjlogo2.png','xjlogo3.png','xjlogo4.png','xjlogo5.png'],
         ['yhlogo1.jpg','yhlogo2.jpg','yhlogo3.jpg','yhlogo4.jpg','yhlogo5.jpg'],
       ],
-      banner: ['/001ls.png','/002hlw.png','/003qc.png','/004bx.png','/005xj.png','/005xj.png']
+      banner: ['/001ls.png','/002hlw.png','/003qc.png','/004bx.png','/005xj.png','/006yh.png']
   },
   {
       name: '政府基层服务和治理自动化解决方案',
@@ -574,7 +575,7 @@ const labelInfo = [
       ['居民咨询服务', '群众业务导办', '工作宣传', '民意回访']
     ],
     urls: ['/unfraud','',''],
-    banner: ['/007fz.png','/007fz.png','/007fz.png'],
+    banner: ['/007fz.png','/zwfw008.png','/zz009.png'],
       imgs: [
         ['fzlogo1.png','fzlogo2.png','fzlogo3.png','fzlogo4.png','fzlogo5.png'],
         ['zwlogo1.png','zwlogo2.png','zwlogo3.png','zwlogo4.png','zwlogo5.png'],

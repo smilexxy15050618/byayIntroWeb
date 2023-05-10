@@ -8,6 +8,7 @@ import classNames from 'classnames';
 const AITime = styled.div`
  background: url(${imgurl}/aisd.png) no-repeat;
  background-size: 100% 100%;
+ padding-bottom: 60px;
 `
 const Title = styled.div`
 font-size: 40px;

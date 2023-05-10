@@ -385,10 +385,15 @@ margin-bottom:56px;
 
 const QuickArea = styled.div`
   width: 1200px;
+  height: 128px;
+  border-radius: 8px;
+background: rgba(255, 255, 255, 1);
+box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
-  margin-top: -31px;
+  align-items: center;
+  margin-top: -64px;
   position: relative;
   z-index: 1;
   >div {
@@ -530,10 +535,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
             
             </Carousel.Item>
             <Carousel.Item className='no_duration ' 
-            
-            key={3} onClick={() => {
-                  window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
-                }}>
+            key={3}>
               <div  className="main-container">
                 
               <div className="main-title">参与制定行业标准</div>
