@@ -262,9 +262,7 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
     cursor: ${props => (props.visible ? 'pointer' : 'auto')};
     overflow: hidden;
     gap: 3px;
-    .borderStyle{
-      border-bottom: 1px solid #eee;
-    }
+    
     .link-btn-wrapper {
       height: 64px;
       border-radius: 6px;
@@ -273,6 +271,16 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
       &:hover {
         background: #f5f6f8;
       }
+    }
+    .borderStyle{
+      border-bottom: 1px solid #eee;
+      .link-btn-wrapper{
+        cursor: text;
+        &:hover{
+            background: transparent;
+         }
+      }
+     
     }
     .link-btn-icon {
       width: 48px;

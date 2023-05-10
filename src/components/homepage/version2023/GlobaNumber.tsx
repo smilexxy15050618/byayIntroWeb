@@ -281,11 +281,15 @@ const Menu = styled.div`
   }
   @keyframes fangda {
     0% {
-      transform: translate(-47%, -50%) scale(0.75);
-
+      transform: scale(0.93);
+    }
+  
+    50% {
+      transform: scale(0.8);
+  
     }
     100%{
-        transform: translate(-47%, -50%) scale(1); 
+        transform: scale(0.93); 
       
     }
   }
@@ -298,17 +302,18 @@ const Menu = styled.div`
     transform: translate(-50%, -50%);
     img{
         margin-bottom:0;
-        // transition: all 0.5s;
     }
     .fangkuan{
         position: absolute;
     }
     .squire{
         position: absolute;
-        transform: translate(-47%, -50%);
-        animation: fangda 3s infinite alternate ease-in-out;
+        animation: fangda 3s ease-in-out infinite alternate;
         left: 50%;
         top: 50%;
+        margin-left: -80px;
+        margin-top: -91px;
+        transform-origin: center;
     }
 }
   .right-menu {
