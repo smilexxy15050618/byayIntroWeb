@@ -451,10 +451,10 @@ const LabelList = styled.div`
   div {
     width: 256px;
     height: 64px;
-    border-radius: 4px;
     position: relative;
-    // box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
-    border-shadow: 0px 0px 12px 1px #245BDB;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
     &.active {
       &::after {
         display: block;
@@ -464,7 +464,9 @@ const LabelList = styled.div`
         left: 0;
         width: 0;
         height: 2px;
-        background: #2B58F9;
+        border-radius: 4px;
+background: rgba(43, 88, 249, 1);
+box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
         animation: loading 3s linear;
       }
     }
