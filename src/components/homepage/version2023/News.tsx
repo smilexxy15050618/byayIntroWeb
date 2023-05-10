@@ -153,12 +153,12 @@ const list = [
         ,path:'https://mp.weixin.qq.com/s/1yppgDXsWYBGhyeC14-sKg'
     },
     {
-        img: `${imgurl}/dongtai1.png`,
+        img: `${imgurl}/dongtai3.png`,
         text: '百应科技“AI警官”亮相第二十二届中国国际安博会',
         path:'https://mp.weixin.qq.com/s/VzW7r4vKjkaHcFco4gaPyg'
     },
     {
-        img: `${imgurl}/dongtai2.png`,
+        img: `${imgurl}/dongtai4.png`,
         text: '百应科技实力入选「2022中国企业数智化创新TOP50」榜单',
         path:'https://mp.weixin.qq.com/s/irAz2DFmGIZAenwn_YR4ug'
     }
