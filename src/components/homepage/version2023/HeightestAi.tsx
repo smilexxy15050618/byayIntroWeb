@@ -29,6 +29,7 @@ const HoveUp = styled.div`
       height: 376px;
       background: white;
       margin: 0 auto;
+      cursor: pointer;
       .swiper-slide {
         padding-top: 0px !important;
         width: 100%;
@@ -175,7 +176,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       <Swiper
         effect="slide"
         autoplay={{
-          delay: 3000,
+          duration: 3000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
@@ -429,6 +430,20 @@ const Wrapper = styled.div<{ wrapperWidth?: number }>`
 `;
 
 const LabelList = styled.div`
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  33% {
+    width: 33%;
+  }
+  66% {
+    width: 66%;
+  }
+  100% {
+    width: 100%;
+  }
+}
   width: 1072px;
   display: flex;
   justify-content: space-between;
@@ -437,11 +452,21 @@ const LabelList = styled.div`
     width: 256px;
     height: 64px;
     border-radius: 4px;
-background: rgba(255, 255, 255, 1);
-box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
+    position: relative;
+    // box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
+    border-shadow: 0px 0px 12px 1px #245BDB;
     &.active {
-      border-bottom: 2px solid #2B58F9;
-      border-shadow: 0px 0px 12px 1px #245BDB;
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #2B58F9;
+        animation: loading 3s linear;
+      }
     }
   }
   img {
@@ -509,7 +534,7 @@ box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
 const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
   return (
     <Pane title="顶尖资本支持，智领未来AI沟通新方式" paneBgColor="grey" 
-    style={{ paddingBottom: '90px',background:`url(${imgurl}/zbbg.png)`}} 
+    style={{ paddingBottom: '90px',background:`url(${imgurl}/zbbg.png)`,backgroundSize: '100% 100%'}} 
     titleStyle={{marginBottom:'48px'}}
     mobileStyle={{ paddingBottom: 40 }}>
       <Hidden xs sm>

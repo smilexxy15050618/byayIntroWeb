@@ -72,7 +72,7 @@ const CardContent = styled.div`
         height: 23px;
         right: 0;
         opacity: 1;
-        border-left: 1px solid rgba(90, 90, 90, 0.3);
+        border-left: 0.5px solid rgba(90, 90, 90, 0.3);
       }
     }
     .rightPskjak{
@@ -267,7 +267,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       <HoveUp >
       <Swiper
         autoplay={{
-          delay: 5000,
+          delay: 3000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
@@ -315,7 +315,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
         ))}
       </Swiper>
       </HoveUp>
-      <ArrowGroup>
+      {/* <ArrowGroup>
         <img
           src={arrowbg}
           onClick={e => {
@@ -344,7 +344,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
             controlledSwiper.navigation.onNextClick(e);
           }}
         />
-      </ArrowGroup>
+      </ArrowGroup> */}
     </div>
   );
 };
