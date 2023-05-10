@@ -204,9 +204,12 @@ export const FOOTER_CONFIG = [
   {
     title: '百应产品',
     list: [
-      { name: '多模态情感化AI（MEAI）', href: '/product/multimodalAI' },
+      { 
+        name: '多模态情感化AI（MEAI）', 
+        href: '/product/multimodalAI' 
+      },
       {
-        name: '文本机增强型用户画像洞察（CDP+）',
+        name: '增强型用户画像洞察（CDP+）',
         href: '/enhance',
       },
       {
