@@ -966,7 +966,7 @@ export default class TryForm extends React.Component<TryFormProps, TryFormState>
           <div className="content">
             <div className="left-wrapper">
               <div className="left-content">
-                <div className="title">就现在，开启AI电话增长之旅</div>
+                <div className="title">就现在，开启智能用户运营之旅</div>
                 <div className="divider"></div>
                 <div className="partners">
                   <IconList
