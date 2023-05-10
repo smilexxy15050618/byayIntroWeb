@@ -223,6 +223,10 @@ const Card = styled.div<{ bg: string }>`
   }
 `;
 const HoveUp = styled.div`
+.swiper-wrapper{
+  transition-duration: 3000ms !important;
+  transition-timing-function:linear !important;
+}
   .hoer_bg_more{
     transition:all 0.3s;
     &:hover{
@@ -267,11 +271,12 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       <HoveUp >
       <Swiper
         autoplay={{
-          delay: 3000,
+          delay: 0,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
         slidesPerView="auto"
+          centeredSlides={false}
         onSwiper={swiper => setControlledSwiper(swiper)}
         onSlideChange={swiper => {
           setCurrIndex(swiper.activeIndex);
@@ -708,10 +713,12 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
       <Wrapper>
         <Swiper
           autoplay={{
-            delay: 5000,
+            delay: 0, //自动切换的时间间隔
+            disableOnInteraction: false,
+          pauseOnMouseEnter: true
           }}
           slidesPerView="auto"
-          centeredSlides={true}
+          centeredSlides={false}
           spaceBetween={24}
           // onSwiper={swiper => setControlledSwiper(swiper)}
           onSlideChange={swiper => {

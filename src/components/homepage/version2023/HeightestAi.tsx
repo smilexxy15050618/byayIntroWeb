@@ -71,7 +71,7 @@ const CardContent = styled.aside`
       height: 160px;
       position: absolute;
       top: 92px;
-      left: 42px;
+      left: -42px;
     }
     .img_area{
         right:0;
