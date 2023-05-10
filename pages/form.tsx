@@ -161,7 +161,7 @@ const LOGO = '//cdn.byai.com/static/official-website/form/logo-white-1222.png';
 const CRM_LOGO =
   '//cdn.byai.com/static/official-website/crm/%E7%99%BE%E5%BA%94%E6%98%93%E5%AE%A2%E6%B7%B1%E8%89%B2%E8%83%8C%E6%99%AFlogo.png';
 const IMG_BG = 'https://cdn.byai.com/by-fe-cdn/static/pmp/c5175ec6-804c-4cb6-b611-39e90fe67eeb.png';
-const LOGO_PC = 'https://cdn.byai.com/by-fe-cdn/static/pmp/8113e891-2256-47f8-a40a-6c78d508977a.png';
+const LOGO_PC = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/左上角-百应logo.svg';
 // 公众号默认图
 const PUBLIC_DEFAULT_IMG = 'https://cdn.byai.com/by-fe-cdn/static/pmp/4c7f4da2-03aa-4545-93ba-4927b8955d73.png';
 // 视频号默认图
