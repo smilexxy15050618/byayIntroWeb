@@ -438,10 +438,10 @@ const jumpData = [
 ];
 
 const bannerList = [
-  {img: `${imgurl}/banner1_icon1.svg`, title: 'AI驱动用户运营', desc: '国内领先的数智化用户运营解决方案服务商'},
-  {img: `${imgurl}/banner1_icon2.svg`, title: '助力构建用户信任关系', desc: '赋能企业业务增长及政府基层服务治理'},
-  {img: `${imgurl}/banner1_icon3.svg`, title: '政府认定准独角兽企业', desc: '连续获评杭州市准独角兽、未来独角兽企业'},
-  {img: `${imgurl}/banner1_icon4.svg`, title: '各行业头部机构合作者', desc: '七年深耕，帮助全行业TOP机构数智化转型'},
+  {img: `${imgurl}/banner1_icon1.png`, title: 'AI驱动用户运营', desc: '国内领先的数智化用户运营解决方案服务商'},
+  {img: `${imgurl}/banner1_icon2.png`, title: '助力构建用户信任关系', desc: '赋能企业业务增长及政府基层服务治理'},
+  {img: `${imgurl}/banner1_icon3.png`, title: '政府认定准独角兽企业', desc: '连续获评杭州市准独角兽、未来独角兽企业'},
+  {img: `${imgurl}/banner1_icon4.png`, title: '各行业头部机构合作者', desc: '七年深耕，帮助全行业TOP机构数智化转型'},
 ]
 
 export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
@@ -508,7 +508,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
             <Carousel.Item className='no_duration ' 
             
             key={3} onClick={() => {
-                  window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
+                  // window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
                 }}>
               <div  className="main-container">
                 

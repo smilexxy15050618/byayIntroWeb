@@ -18,7 +18,8 @@ export const NAV_CONFIG = [
         title: '智能用户运营平台（AICOS）',
         desc: 'AI时代的新一代用户运营平台',
         icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/百应智能（用户）运营平台.svg',
-        // path: '/product/intelligenceUser',
+        path: '',
+        // path:'/product/intelligenceUser'
       },
       {
         title: '多模态情感化AI（MEAI）',

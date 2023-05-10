@@ -512,7 +512,7 @@ class Nav extends React.Component<
                             <a
                               href={isOpenOrigin ? `https://www.byai.com${menuItem.path}` : menuItem.path}
                               key={menuItem.path}
-                              className={menuItem.path == '/product/intelligenceUser' ? 'borderStyle' : ''}
+                              className={menuItem.title == '智能用户运营平台（AICOS）' ? 'borderStyle' : ''}
                               >
                               <div className="link-btn-wrapper" onClick={() => this.handleOpenNewPage}>
                                 <div className="link-btn-icon">

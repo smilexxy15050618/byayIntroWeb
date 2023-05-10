@@ -21,12 +21,12 @@ overflow: hidden;
 }
 .left{
     width: 577px;
-    img{
-        width: 100%;
-        margin-top: 73px;
-    }
+    // img{
+    //     width: 100%;
+    //     margin-top: 73px;
+    // }
     .text{
-        padding-left: 20px;
+        // padding-left: 20px;
         font-size: 16px;
 font-weight: 400;
 letter-spacing: 0px;
@@ -39,8 +39,33 @@ color: rgba(51, 51, 51, 1);
 height: 2px;
 opacity: 1;
 background: rgba(0, 200, 189, 1);
-margin-left: 20px;
+// margin-left: 20px;
 margin-top: 16px;
+}
+.hengtiaoxiafang{
+    margin-top:123px;
+    display:flex;
+    flex-wrap:wrap;
+    .hengtiaoxiafang_list{
+        height:30px;
+        width:50%;
+        box-sizing:border-box;
+        display:flex;
+        .iconself{
+            width:26px;
+            margin-right:25px;
+            img{
+                width:100%;
+            }
+        }
+        .text_self{
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0px;
+            line-height: 24px;
+            color: rgba(90, 90, 90, 1);
+        }
+    }
 }
 .content{
     margin-bottom:99px;
@@ -139,7 +164,33 @@ export const LastPng: FC<IAiProps> = ({ }) => {
                         以完成客户目标为价值导向<br />制定以助力客户成功为目标的服务体系
                         </div>
                         <div className='hengtiao' ></div>
-                        <img src={imgurl+'/botlas82.png'}  />
+                        <div className='hengtiaoxiafang'>
+                            <div className='hengtiaoxiafang_list' style={{marginBottom:'55px'}}>
+                                    <div className="iconself">
+                                        <img src={imgurl+'/aqhg1.png'} alt="" />
+                                    </div>
+                                    <div className='text_self'>4v1专属团队服务</div>
+                            </div>
+                            <div className='hengtiaoxiafang_list'  style={{marginBottom:'55px'}}>
+                                    <div className="iconself">
+                                    <img src={imgurl+'/aqhg2.png'} alt="" />
+                                    </div>
+                                    <div className='text_self'>7*24小时应急响应</div>
+                            </div>
+                            <div className='hengtiaoxiafang_list'>
+                                    <div className="iconself">
+                                    <img src={imgurl+'/aqhg3.png'} alt="" />
+                                    </div>
+                                    <div className='text_self'>服务中断赔偿机制</div>
+                            </div>
+                            <div className='hengtiaoxiafang_list'>
+                                    <div className="iconself">
+                                    <img src={imgurl+'/aqhg4.png'} alt="" />
+                                    </div>
+                                    <div className='text_self'>全员联动追踪落地</div>
+                            </div>
+                        </div>
+                        {/* <img src={imgurl+'/botlas82.png'}  /> */}
                     </div>
                     <div className='right'>
                         <div className='right_box'>

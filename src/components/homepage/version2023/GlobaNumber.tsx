@@ -2,6 +2,7 @@ import { FC, ReactNode, useEffect, useState } from 'react';
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import imgurl from '../../../../img.url.js'
 import Number from '../../../components/homepage/version2023/Number'
+import classNames from 'classnames';
 const list = [
     {
         title: 300,
@@ -60,36 +61,49 @@ const contentImg = [
 const menuList = [
     {
         title: '语音技术',
+        squire:imgurl+'/pakksl1.svg',
         subTitle: 'Speech tech',
         subTitle1: 'Speech technology',
+        a:0,
         content: ['ASR：字准率97%、句准率92%，具备语言模型、声学模型高度可定制；','TTS：采用双向LSTM+Attention，研发端到端的语音合成模型，发声人相似度超过90%']
     },
     {
         title: '知识图谱',
+        squire:imgurl+'/pakksl1.svg',
+        a:5,
         subTitle: 'Knowledge Graph',
         subTitle1: 'Knowledge Graph',
         content: ['丰富的行业知识图谱：行业知识库、金牌话术库、会话策略库、画像标签库、闲聊库、常识库...','构建机器人大脑知识体系，不断优化和升级AI模型，为各个垂直行业提供智能化服务。']
     },
     {
+        a:1,
         title: '自然语言处理',
+        squire:imgurl+'/pakksl1.svg',
+
         subTitle: 'NLP',
         subTitle1: 'Natural Language Processing',
         content: ['拥有实体识别、意图分类、句法分析、关系抽取等NLU相关算法能力；自研基于深度学习的NLG技术，在26个行业中积累了大量生成语料','意图准确率：在10+行业，50+场景平均识别准确率95%','问答准确率：每亿次真实场景对话轮次准确率92%']
     },
     {
         title: '大规模预训练模型',
+        squire:imgurl+'/pakksl1.svg',
+        a:4,
         subTitle: 'LPTM',
         subTitle1: 'Pre-trained Language Model',
         content: ['基于深度学习技术，具备大规模预训练、微调（Fine-tuning）能力，能够对海量数据进行学习和训练，从而实现在多种NLP任务中的优异表现；在自研大模型上引入了人工反馈强化学习（RLHF），提高对话式AI系统的准确率和响应速度']
     },
     {
         title: '多模态情感技术',
+        squire:imgurl+'/pakksl1.svg',
+        a:2,
         subTitle: 'MER',
         subTitle1: 'Multimodal Emotion Recognition Technology',
         content: ['拥有情感特征提取、情感信息融合、情感表达等多模态情感技术，通过计算机识别人类语言中的情感成分，进而能够对话机器人的回应进行情感调节，提高对话的亲和力，实现情感化交互，提升用户体验']
     },
     {
         title: '全双工连续对话',
+        squire:imgurl+'/pakksl1.svg',
+        a:3,
         subTitle: 'FDCC',
         subTitle1: 'Full-duplex continuous conversation',
         content: ['基于语音识别、自然语言理解、对话管理、语音合成、语音增强、连续对话等技术；在语音和数字人场景中，实现听说状态的实时切换，并自适应不同领域的对话场景，使人机对话更加贴近真实的人际沟通']
@@ -180,13 +194,17 @@ const Menu = styled.div`
   justify-content: center;
   box-sizing: border-box;
   margin: 92px auto 0;
+  position: relative;
+  
   .left-menu {
     width: 688px;
     height: 378px;
     position: relative;
-    background: url(${imgurl}/qzzy_video.png) no-repeat;
+    // background: url(${imgurl}/qzzy_video.png) no-repeat;
     background-size: 216px 221px;
     background-position: center;
+
+    
     .menu-item {
         cursor: pointer;
         &:hover {
@@ -194,6 +212,7 @@ const Menu = styled.div`
                 color: #2B58F9;
             }
         }
+      
         div:first-child {
             font-size: 20px;
             font-weight: 500;
@@ -255,7 +274,48 @@ const Menu = styled.div`
             text-align: center;
         }
     }
+    .activeTitle{
+        color: #2B58F9 !important;
+    }
+   
   }
+  @keyframes fangda {
+    0% {
+      transform: scale(1) translate(-47%, -50%);
+
+    }
+  
+    50% {
+      transform: scale(1.15) translate(-47%, -50%);
+  
+    }
+    100%{
+        transform: scale(1) translate(-47%, -50%); 
+      
+    }
+  }
+  .pakksl{
+    width:30%;
+    position: absolute;
+    left: 50%;
+    height:211px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    img{
+        margin-bottom:0;
+        transition: all 0.5s;
+    }
+    .fangkuan{
+        position: absolute;
+    }
+    .squire{
+        position: absolute;
+        animation: fangda 0.3s ;
+        left: 50%;
+        top: 50%;
+        transform: translate(-47%, -50%);
+    }
+}
   .right-menu {
     width: 528px;
 height: 378px;
@@ -330,13 +390,22 @@ const GlobalNumber = ({ }) => {
         <Wrapper id={GLOBAL_ID_WRAP}>
             <Title>全栈自研，行业前沿技术水平</Title>
             <Menu>
+            
                 <div className='left-menu'>
+                   
                    {menuList.map((item,index)=> {
                     return (<div onClick={()=>{setCurrent(index)}} className='menu-item'>
-                        <div>{item.title}</div>
+                        <div className={classNames({
+                            activeTitle:index == current
+                        })}>{item.title}</div>
                         <div>{item.subTitle}</div>
                     </div>)
                    })}
+                    <div className='pakksl'>
+                        <img  src={menuList[current].squire} style={{transform: `rotate(${(menuList[current].a)*60}deg)`}} className='fangkuan' />
+                        <img key={current} src={imgurl+'/skxmxn.svg'}  className={classNames('squire',{
+                        })} />
+                     </div>
                 </div>
                 <div className='right-menu'>
                     <div className='title'>

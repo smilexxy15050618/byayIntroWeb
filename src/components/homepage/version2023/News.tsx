@@ -2,6 +2,7 @@ import React, { FC, useState, useEffect, useRef, useCallback, useMemo } from 're
 import styled from 'styled-components';
 import imgurl from '../../../../img.url.js'
 import { Swiper, SwiperSlide, Pagination} from 'swiper/react';
+const VIDEO_CODE = 'https://cdn.byai.com/by-fe-cdn/static/pmp/77229f52-63fc-45b3-a901-4e54192c540a.png';
 
 const Title = styled.div`
 font-size: 40px;
@@ -103,6 +104,7 @@ font-weight: 500;
 letter-spacing: 0px;
 line-height: 32px;
 color: rgba(26, 26, 26, 1);
+
     }
     span:last-child {
         cursor: pointer;
@@ -112,6 +114,33 @@ color: rgba(26, 26, 26, 1);
         line-height: 32px;
         color: rgba(43, 88, 249, 1);
     }
+}
+.hoverCode{
+    position: relative;
+    display:inline-block;
+    width:140px;
+    text-align:right;
+    .bgsks{
+    display:none;
+
+        border-radius: 4px;
+        background-color: white;
+        width: 140px;
+        height:140px;
+        line-height:140px;
+        text-align:center;
+    position: absolute;
+        top: 0;
+    transform: translateY(-100%) translateX(25%);
+    }
+    .qrcode{
+            width:140px
+       margin:0;
+    }
+
+}
+.hoverCode:hover .bgsks{
+    display:block;
 }
 .center {
     margin-top: 28px;
@@ -201,7 +230,12 @@ export const News = () => {
            <RightNews>
              <div className='top'>
                 <span>百应动态</span>
-                <span>查看更多</span>
+                <span className='hoverCode'>
+                    查看更多
+                    <div className='bgsks'>
+                    <img src="https://cdn.byai.com/by-fe-cdn/static/pmp/77229f52-63fc-45b3-a901-4e54192c540a.png" className='qrcode' />
+                    </div>
+                </span>
              </div>
              <div className='center'>
                 {list.map((item)=> {
