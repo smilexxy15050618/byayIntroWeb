@@ -225,7 +225,7 @@ const Card = styled.div<{ bg: string }>`
 const HoveUp = styled.div`
 .swiper-wrapper{
   // transition-duration: 3000ms !important;
-  // transition-timing-function:linear !important;
+  transition-timing-function:linear !important;
 }
   .hoer_bg_more{
     transition:all 0.3s;
@@ -271,19 +271,19 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       <HoveUp >
       <Swiper
         effect="slide"
+        loop={true}
         autoplay={{
-          delay: 1000,
+          delay: 0,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
-        infinite
         slidesPerView="auto"
-          centeredSlides={false}
+        speed={3000}
+        centeredSlides={false}
         onSwiper={swiper => setControlledSwiper(swiper)}
         onSlideChange={swiper => {
           setCurrIndex(swiper.activeIndex);
         }}
-        loop={true}
         style={{ paddingRight: 32, overflow: 'hidden', paddingBottom: 30, marginBottom: -30, paddingTop:20 }}>
         {dataList.map(({ bg, avatarSrc, content, personName, tagName,icon,left_title,left_title2,right_title,right_title2 }, i) => (
           <SwiperSlide style={{ width: 'auto' }} className='hoer_bg_more' key={i}>
@@ -715,9 +715,9 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
       <Wrapper>
         <Swiper
           autoplay={{
-            delay: 0, //自动切换的时间间隔
+            delay: 1000, //自动切换的时间间隔
             disableOnInteraction: false,
-          pauseOnMouseEnter: true
+            pauseOnMouseEnter: true
           }}
           slidesPerView="auto"
           centeredSlides={false}
