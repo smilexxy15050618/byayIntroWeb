@@ -1,6 +1,8 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import imgurl from '../../../img.url.js'
+import { Visible } from 'react-grid-system';
+import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 
 const list = [
     {
@@ -8,21 +10,21 @@ const list = [
         img2: `${imgurl}/yhhx1-2.svg`,
         text1: '用户画像',
         text2: '清晰精准地了解客户的行为和特征',
-        style: {width: '58px',height: '64px'}
+        style: { width: '58px', height: '64px' }
     },
     {
         img1: `${imgurl}/jzyx2-1.svg`,
         img2: `${imgurl}/jzyx2-2.svg`,
         text1: '精准营销',
         text2: '有效支持千人千面的个性化精准营销',
-        style: {width: '55px',height: '62px'}
+        style: { width: '55px', height: '62px' }
     },
     {
         img1: `${imgurl}/oneid3-2.svg`,
         img2: `${imgurl}/oneid3-1.svg`,
         text1: 'One ID',
         text2: '多渠道重复客户归并，避免重复营销触达',
-        style: {width: '60px',height: '57px'}
+        style: { width: '60px', height: '57px' }
     }
     ,
     {
@@ -30,12 +32,15 @@ const list = [
         img2: `${imgurl}/ycsclsc1-2.svg`,
         text1: '预测式策略生成',
         text2: '预测式生成运营策略',
-        style: {width: '67px',height: '49px'}
+        style: { width: '67px', height: '49px' }
     }
 ]
 const Wrapper = styled.div`
 padding-top: 100px;
 padding-bottom:90px;
+@media (max-width: 768px) {
+    padding-top: 40px;
+    }
   .title {
     font-size: 40px;
     font-weight: 500;
@@ -43,6 +48,10 @@ padding-bottom:90px;
     line-height: 48px;
     color: rgba(26, 26, 26, 1);
     text-align: center;
+    @media (max-width: 768px) {
+        font-size: 24px;
+        font-weight: 500;
+    }
   }
   .content {
     display: flex;
@@ -52,6 +61,13 @@ padding-bottom:90px;
     opacity: 0;
     transform: translateY(50%);
     transition: transform 0.4s;
+    @media (max-width: 768px) {
+        width: 100vw;
+        margin-top: 24px;
+        .custom-bar-wrapper{
+            width: 300px;
+        }
+      }
     &.appear {
         opacity: 1;
         transform: translateY(0);
@@ -62,6 +78,12 @@ padding-bottom:90px;
         background: #F3F8FF;
         padding: 69px 0px 0;
         transition: all 0.3s;
+        @media (max-width: 768px) {
+        width: 240px;
+        height: 195px;
+            box-sizing: border-box;
+            padding: 40px 0px 0;
+      }
         img {
             transition: all 0.3s;
         }
@@ -108,6 +130,10 @@ padding-bottom:90px;
             position: relative;
             width: 80px;
             height: 80px;
+            @media (max-width: 768px) {
+                    width: 40px;
+                    height: 40px;
+                    }
             margin: 0 auto 24px;
         }
         div:nth-child(2) {
@@ -116,6 +142,10 @@ padding-bottom:90px;
             letter-spacing: 0px;
             color: rgba(26, 26, 26, 1);
             text-align: center;
+            @media (max-width: 768px) {
+                font-size: 14px;
+
+                    }
         }
         div:last-child {
             font-size: 14px;
@@ -124,6 +154,10 @@ padding-bottom:90px;
             color: rgba(26, 26, 26, 0.65);
             text-align: center;
             margin-top: 18px;
+            @media (max-width: 768px) {
+                font-size: 12px;
+
+                    }
         }
         img {
             position: absolute;
@@ -132,7 +166,13 @@ padding-bottom:90px;
                 width: 80px;
                 top: -1px;
                 right: 0px;
+                @media (max-width: 768px) {
+                    width: 40px;
+                    }
             }
+            @media (max-width: 768px) {
+                    width: 40px;
+                    }
         }
     }
   }
@@ -156,21 +196,47 @@ export const ProductValue = () => {
     })
     return (
         <Wrapper>
-           <div className='title'>产品价值</div>
-           <div className='content'>
-            {list.map((item,index)=> {
-                return (
-                    <div className='list-item'>
-                        <div>
-                             <img src={item.img1} alt="" />
-                             <img src={item.img2} alt="" />
-                        </div>
-                       <div>{item.text1}</div>
-                       <div>{item.text2}</div>
-                    </div>
-                )
-            })}
-           </div>
+            <div className='title'>产品价值</div>
+            <Visible md lg xl xxl xxxl>
+                <div className='content'>
+                    {list.map((item, index) => {
+                        return (
+                            <div className='list-item'>
+                                <div>
+                                    <img src={item.img1} alt="" />
+                                    <img src={item.img2} alt="" />
+                                </div>
+                                <div>{item.text1}</div>
+                                <div>{item.text2}</div>
+                            </div>
+                        )
+                    })}
+                </div>
+            </Visible>
+            <Visible xs sm>
+                <div className='content'>
+                    <ByProgressSwiper
+                        newProgress={true}
+                        initialSlide={0}
+                        contentPadding="20px" progressPadding="0px"
+                        previewWidth="36%"
+                      >
+                        {list.map((item, index) => {
+                            return (
+                                <div className='list-item'>
+                                    <div>
+                                        <img src={item.img1} alt="" />
+                                        <img src={item.img2} alt="" />
+                                    </div>
+                                    <div>{item.text1}</div>
+                                    <div>{item.text2}</div>
+                                </div>
+                            )
+                        })}
+                    </ByProgressSwiper>
+
+                </div>
+            </Visible>
         </Wrapper>
     )
 }

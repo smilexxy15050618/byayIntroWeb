@@ -19,7 +19,6 @@ const Intelligence: NextFunctionComponent = () => {
             {
                 (visible, setFormVisible) => (
                     <Wrapper>
-                        <Visible md lg xl xxl xxxl>
                             <IndustryCarousel></IndustryCarousel>
                             <ProductCapability></ProductCapability>
                             <ProductValue></ProductValue>
@@ -32,10 +31,6 @@ const Intelligence: NextFunctionComponent = () => {
                                     setFormVisible(true, FormType.CUSTOMER);
                                 }}
                             />
-                        </Visible>
-                        <Visible xs sm>
-                            <IndustryCarousel></IndustryCarousel>
-                        </Visible>
                     </Wrapper>
                 )
             }

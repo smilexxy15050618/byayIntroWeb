@@ -7,7 +7,10 @@ const Wrapper = styled.div`
 padding-top: 60px;
 padding-bottom: 100px;
 background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);
-  .title {
+@media (max-width: 768px) {
+  padding-bottom: 40px;
+}  
+.title {
     margin-top: 100px;
     font-size: 48px;
     line-height: 60px;
@@ -18,6 +21,7 @@ background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 25
     @media (max-width: 768px) {
       font-size: 32px;
       font-weight: 500;
+      margin-top: 71px;
     }
   }
   .desc {
@@ -30,7 +34,8 @@ background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 25
     @media (max-width: 768px) {
       width:328px;
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 400;
+      line-height: 26px;
     }
   }
   .jumpbtn {
@@ -51,6 +56,12 @@ background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 25
     }
     &:active {
       background: rgba(25, 60, 212, 1);
+    }
+    @media (max-width: 768px) {
+      width: 122px;
+      height: 40px;
+      line-height: 40px;
+      margin: 24px auto 40px;
     }
   }
   video {

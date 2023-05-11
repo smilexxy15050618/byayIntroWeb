@@ -28,9 +28,16 @@ const labelList = [
 ]
 const Wrapper = styled.div`
   padding-top: 100px;
+  @media (max-width: 768px) {
+    padding-top: 40px; 
+   }
   .bottom_border{
     position: relative;
     border-bottom:4px solid #f5f5f5; 
+    @media (max-width: 768px) {
+    padding: 0 4%;
+    border-bottom:2px solid #f5f5f5; 
+   }
   }
 `
 const Title = styled.div`
@@ -41,6 +48,11 @@ line-height: 48px;
 color: rgba(26, 26, 26, 1);
 text-align: center;
 margin-bottom: 40px;
+@media (max-width: 768px) {
+  font-size: 24px;
+font-weight: 500;
+margin-bottom: 33px;
+}
 `
 const Label = styled.div`
   width: 100%;
@@ -48,8 +60,15 @@ const Label = styled.div`
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  &.fixedTop{
+    z-index: 9;
+    position: fixed;
+    top: 64px;
+    width: 100vw;
+    background:#fff;
+  }
   @media (max-width: 768px) {
-    padding: 0 4%;
+    padding: 0;
   }
 `
 const LabelItem = styled.div`
@@ -60,6 +79,15 @@ const LabelItem = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 40px;
+  @media (max-width: 768px) {
+      font-size: 10px;
+      font-weight: 600;
+      width: 195px;
+      height: 116px;
+      padding-top: 15px;
+      top: 2px;
+      /* height: 85px; */
+    }
   &:hover{
     img:nth-child(1){
       display: none;
@@ -78,6 +106,7 @@ const LabelItem = styled.div`
     @media (max-width: 768px) {
       width: 18px;
       height: 18px;
+      margin-bottom: 8px;
     }
   }
   img:nth-child(1){
@@ -116,6 +145,9 @@ color: rgba(90, 90, 90, 1);
   }
   &.active {
     border-bottom: 4px solid #2B58F9;
+    @media (max-width: 768px) {
+      border-bottom: 2px solid #2B58F9;
+    }
   }
 `
 const Content = styled.div`
@@ -133,6 +165,11 @@ const Content = styled.div`
     opacity:0;
     transition: all 0.4s;
   }
+  #img4,#img3,#img2,#img1{
+    @media (max-width: 768px) { 
+     margin-bottom: 32px;
+    }
+  }
   .animate__fadeInRight,.animate__fadeInLeft{
     transform: translateX(0) !important;
     opacity: 1 !important;
@@ -147,10 +184,17 @@ const Content = styled.div`
     align-items: center;
     @media (max-width: 768px) { 
       padding: 24px 0;
+      justify-content: center;
+      img {
+        transform: translateX(0) !important;
+      }
     }
   }
   >div:last-child div {
         padding-bottom: 116px;
+        @media (max-width: 768px) { 
+          padding-bottom: 59px;
+    }
   }
   >div {
     width: 100%;
@@ -158,10 +202,28 @@ const Content = styled.div`
         background: #F4F8FE;
     }
   }
+  #ProductCapContent3,#ProductCapContent2,#ProductCapContent1 {
+    width: 100%;
+    >div {
+      width: 100%;
+      @media (max-width: 768px) { 
+      padding-top: 36px;
+      /* padding-bottom: 0; */
+    }
+    }
+  }
 `
 export const ProductCapability = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [is_fixed, set_is_fixed] = useState(false);
+  const navRef = useRef(null);
   useEffect(() => {
+    const fixedTop = navRef.current.offsetTop;
+    window.onscroll = () => {
+      let scrollTop = document.documentElement.scrollTop;
+      const isFixed = scrollTop >= fixedTop;
+      set_is_fixed(isFixed);
+    }
     const ScrollMagic = require('scrollmagic');
     const controller1 = new ScrollMagic.Controller();
     const scrollContent1 = document.getElementById('ProductCapContent1');
@@ -216,7 +278,7 @@ export const ProductCapability = () => {
     <Wrapper>
       <Title>产品能力</Title>
       <Visible md lg xl xxl xxxl>
-        <Label className='bottom_border'>
+        <Label ref={navRef} className='bottom_border'>
           {
             labelList.map((({ img, activeImg, text, english_text }, index) => {
               return (
@@ -252,7 +314,7 @@ export const ProductCapability = () => {
         </Content>
       </Visible>
       <Visible xs sm>
-        <Label className='bottom_border'>
+        <Label ref={navRef} className={`bottom_border ${is_fixed ? 'fixedTop' : ''}`}>
           {
             labelList.map((({ img, activeImg, text, english_text }, index) => {
               return (
@@ -269,20 +331,20 @@ export const ProductCapability = () => {
         <Content className='contents'>
           <div id="ProductCapContent1">
             <div>
-              <img style={{ width: '450px', height: '474px' }} src={imgurl + '/yxhb_text.svg'} alt="" />
-              <img id='img1' style={{ width: '680px', transform: 'translateX(20%)' }} src={imgurl + '/yxhb.svg'} alt="" />
+              <img id='img1' style={{ width: '343px',  }} src={imgurl + '/yxhbm.png'} alt="" />
+              <img style={{ width: '335px', height: '350px' }} src={imgurl + '/yxhb_text.svg'} alt="" />
             </div>
           </div>
           <div id="ProductCapContent2">
             <div>
-              <img id='img2' style={{ width: '680px', transform: ' translateX(-20%)' }} src={imgurl + '/ywlc.svg'} alt="" />
-              <img style={{ width: '450px', height: '408px' }} src={imgurl + '/ywlc_text.svg'} alt="" />
+              <img id='img2' style={{ width: '343px',  }} src={imgurl + '/ywlcm.png'} alt="" />
+              <img style={{ width: '335px', height: '302px' }} src={imgurl + '/ywlc_text.svg'} alt="" />
             </div>
           </div>
           <div id="ProductCapContent3">
             <div>
-              <img style={{ width: '480px', height: '438px' }} src={imgurl + '/zstp_text.svg'} alt="" />
-              <img id='img3' style={{ width: '680px', transform: ' translateX(20%)' }} src={imgurl + '/zstp.svg'} alt="" />
+            <img id='img3' style={{ width: '343px', }} src={imgurl + '/zstpm.png'} alt="" />
+              <img style={{ width: '335px', height: '322px' }} src={imgurl + '/zstp_text.svg'} alt="" />
             </div>
           </div>
         </Content>

@@ -27,6 +27,9 @@ const list = [
 const Wrapper = styled.div`
 padding-top: 100px;
 padding-bottom: 100px;
+@media (max-width: 768px) {
+    padding-top: 40px;
+    }
   .title {
     font-size: 40px;
     font-weight: 500;
@@ -34,6 +37,10 @@ padding-bottom: 100px;
     line-height: 48px;
     color: rgba(26, 26, 26, 1);
     text-align: center;
+    @media (max-width: 768px) {
+        font-size: 24px;
+        font-weight: 500;
+    }
   }
   #celue {
     display: flex;
@@ -45,6 +52,10 @@ padding-bottom: 100px;
     transition: all 0.4s;
     @media (max-width: 768px) {
         width: 100vw;
+        margin: 24px auto 0;
+        .custom-bar-wrapper{
+            width: 300px;
+        }
       }
     &.appear {
         opacity: 1;
@@ -59,7 +70,8 @@ padding-bottom: 100px;
         @media (max-width: 768px) {
             width: 240px;
             height: 250px;
-            margin-right: 16px;
+            margin-right: 0px;
+            box-sizing: border-box;
             padding: 30px;
           }
         img {
@@ -82,6 +94,10 @@ padding-bottom: 100px;
             width: 80px;
             height: 80px;
             margin: 0 auto 24px;
+            @media (max-width: 768px) {
+                width: 40px;
+                height: 40px;
+          }
         }
         div:nth-child(2) {
             font-size: 18px;
@@ -89,6 +105,9 @@ padding-bottom: 100px;
             letter-spacing: 0px;
             color: rgba(26, 26, 26, 1);
             text-align: center;
+            @media (max-width: 768px) {
+               font-size: 12px;
+          }
         }
         div:last-child {
             font-size: 14px;
@@ -97,6 +116,10 @@ padding-bottom: 100px;
             color: rgba(26, 26, 26, 0.65);
             text-align: left;
             margin-top: 18px;
+            @media (max-width: 768px) {
+                margin-top: 10px;
+                font-size: 10px;
+          }
         }
             img {
                 position: absolute;
@@ -105,6 +128,10 @@ padding-bottom: 100px;
                     height: 48px;
                     top: 9px;
                     right: 7px;
+                    @media (max-width: 768px) {
+                width: 24px;
+                height: 24px;
+          }
                 }
             }
         &:nth-child(2) {
@@ -177,7 +204,8 @@ export const ProductValue = () => {
                         newProgress={true}
                         initialSlide={0}
                         contentPadding="32px" progressPadding="0px"
-                        previewWidth="70px">
+                        previewWidth="36%"
+                        >
                         {list.map((item, index) => (
                             <div className='list-item'>
                                 <div>
