@@ -176,13 +176,14 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       <Swiper
         effect="slide"
         autoplay={{
-          duration: 3000,
+          delay: 3000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
+        loop={true}
         onSwiper={swiper => setControlledSwiper(swiper)}
         onSlideChange={swiper => {
-          setCurrIndex(swiper.activeIndex);
+          setCurrIndex(swiper.realIndex);
         }}
         style={{  }}>
         {dataList.map(({ bg, avatarSrc, logoSrc, bigSrc, content, personName, tagName }, i) => (

@@ -113,7 +113,7 @@ const Wrapper = styled.div`
     width: 100%;
     padding-top: 80px;
     transform: translateY(50%);
-    transition: all 0.4s;
+    transition: all 0.2s;
     opacity: 0;
     background: url(${imgurl}/qzzy_bg.png) no-repeat;
     background-size: 100% 100%;
@@ -379,7 +379,7 @@ const GlobalNumber = ({ }) => {
             triggerElement: videoContent, //触发元素
             triggerHook: 'onEnter', //触发元素开始离开视口时触发
             offset: 0, //从开始点滚动多少px触发（施法前摇）
-            duration: 400, //效果持续的距离（法术持续时间/距离）
+            duration: 1000, //效果持续的距离（法术持续时间/距离）
           })
             // .setClassToggle('.video-wrapper-sticky', 'appear')
             .addTo(controller)
@@ -393,9 +393,7 @@ const GlobalNumber = ({ }) => {
         <Wrapper id={GLOBAL_ID_WRAP}>
             <Title>全栈自研，行业前沿技术水平</Title>
             <Menu>
-            
                 <div className='left-menu'>
-                   
                    {menuList.map((item,index)=> {
                     return (<div onClick={()=>{setCurrent(index)}} className='menu-item'>
                         <div className={classNames({
