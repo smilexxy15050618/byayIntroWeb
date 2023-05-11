@@ -13,29 +13,24 @@ import { FormType } from '../../src/components/TryForm';
 const FOOTER_BG = `${imgurl}/kqaizl.png`;
 const Wrapper = styled.div``
 
-const Intelligence: NextFunctionComponent = () => {
+const Intelligence = () => {
     return (
-        <Layout headPlaceholder={[false, false]} headFontStyle={['light', 'light']} initialOpacity={true}>  
+        <Layout initialOpacity={true} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
             {
                 (visible, setFormVisible) => (
                     <Wrapper>
-                        <Visible md lg xl xxl xxxl>
-                            <IndustryCarousel></IndustryCarousel>
-                            <ProductCapability></ProductCapability>
-                            <ProductValue></ProductValue>
-                            <ByVoiceFooter
-                                title="就现在，开启AI电话增长之旅"
-                                desc="留下联系方式，将有AI行业专家为您提供专属服务"
-                                btnText="与我联系"
-                                background={`url(${FOOTER_BG})`}
-                                onClick={() => {
-                                    setFormVisible(true, FormType.CUSTOMER);
-                                }}
-                            />
-                        </Visible>
-                        <Visible xs sm>
-                            <IndustryCarousel></IndustryCarousel>
-                        </Visible>
+                        <IndustryCarousel></IndustryCarousel>
+                        <ProductCapability></ProductCapability>
+                        <ProductValue></ProductValue>
+                        <ByVoiceFooter
+                            title="就现在，开启AI电话增长之旅"
+                            desc="留下联系方式，将有AI行业专家为您提供专属服务"
+                            btnText="与我联系"
+                            background={`url(${FOOTER_BG})`}
+                            onClick={() => {
+                                setFormVisible(true, FormType.CUSTOMER);
+                            }}
+                        />
                     </Wrapper>
                 )
             }
