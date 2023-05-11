@@ -547,6 +547,8 @@ cursor: pointer;
 const labelInfo = [
   {
       name: '企业数智化用户运营解决方案',
+      fontTitle: ['品牌零售行业解决方案','互联网行业解决方案','汽车行业解决方案','保险行业解决方案','消费金融行业解决方案'],
+      fontSubTitle: ['通过对话式AI实现对用户全生命周期的多触点精细化管理，助力品牌实现「极致用户体验+极致ROI」的全域增长服务','通过AI技术和大数据分析，助力互联网企业提高用户运营的效率和质量，降低成本，提高用户留存率和转化率，实现用户增长和商业价值的提升','建立用户运营触达策略、完善用户画像体系，以数智化提升车企用户服务能力及转化效果，达成客户体验闭环，驱动业务持续增长','基于“大数据+AI+人”三驱模式，制定精准AI触达策略，深度挖掘客户意向，为保险行业提供智能化的营销和服务方案，提升服务效率和客户粘性','针对消费金融业务全链路提供智能化用户运营方案，以转化效果为导向，驱动AI精细化触达策略升级，赋能机构转化效率提升'],
       labels: [
         ['会员召回','复购转化', '会员关怀','私域引流'],
         ['用户激活','会员订阅', '活动通知',  '用户分析'],
@@ -569,6 +571,8 @@ const labelInfo = [
   },
   {
       name: '政府基层服务和治理自动化解决方案',
+      fontTitle: ['银行行业解决方案','百应安盾电信网络诈骗预防平台','公安综治智能化解决方案'],
+      fontSubTitle: ['以AI能力为核心，全链条贯通反诈的宣传劝阻业务流程，助力电诈“双降”，打造具备“点面结合，长短并行”能力的AI虚拟民警','创新性打造以AI客服为核心的智慧型、一体化、可持续政务服务窗口，实现专业、智能、即时地响应居民业务办理需求，提升居民办事满意度','率先推出具备咨询、服务、宣传、分享功能的虚拟IP民警，帮助公安树立统一对外的“警察朋友”形象，开辟基层治理服务新路径'],
       labels: [
         ['高效劝阻', '有效宣传', '智能交互', '分类管理'],
       ['线上服务大厅',  '智能AI客服', '社保帮办', '医保服务'],
@@ -731,8 +735,8 @@ const Solution: FC<ICustomerWordsProps> = ({}) => {
                    </div>
                    <div className='right'>
                     <img className='posationbg' src={imgurl+labelInfo[currIndex].banner[currIndexicon]} />
-                      <div className='title'>品牌零售解决方案</div>
-                      <div className='desc'>通过对话式AI实现对用户全生命周期的多触点精细化管理，助力品牌实现「极致用户体验+极致ROI」的全域增长服务</div>
+                      <div className='title'>{labelInfo[currIndex].fontTitle[currIndexicon]}</div>
+                      <div className='desc'>{labelInfo[currIndex].fontSubTitle[currIndexicon]}</div>
                       <div className='labels'>
                         {labelInfo[currIndex].labels&&labelInfo[currIndex].labels[currIndexicon].map((items,index)=> {
                           return (<div>

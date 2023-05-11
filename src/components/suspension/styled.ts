@@ -8,6 +8,7 @@ export const SuspensionWrapper = styled.div`
   right: 20px;
   height: 100vh;
   position: fixed;
+  background:url('https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/我是小应.svg') no-repeat -9999px -9999px;
   ${media.phone`
       display: none;
     `}

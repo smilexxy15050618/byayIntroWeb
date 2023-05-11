@@ -499,9 +499,8 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
               
               <div
                 className="carousel-btn"
-                onClick={() => {
-                  window.open(`https://mp.weixin.qq.com/s/Ebu43ZcMV6ted0f55efIRg`);
-                }}>
+                onClick={() => window.open('/form?formType=1')}
+              >
                 点击查看
               </div>
               <div className='bg-img-blue'>
