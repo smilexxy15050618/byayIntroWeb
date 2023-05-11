@@ -224,8 +224,8 @@ const Card = styled.div<{ bg: string }>`
 `;
 const HoveUp = styled.div`
 .swiper-wrapper{
-  transition-duration: 3000ms !important;
-  transition-timing-function:linear !important;
+  // transition-duration: 3000ms !important;
+  // transition-timing-function:linear !important;
 }
   .hoer_bg_more{
     transition:all 0.3s;
@@ -270,11 +270,13 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       {/* <LefttArrow className="prev-btn swiper-nav-btn" onClick={e => controlledSwiper.navigation.onPrevClick(e)} /> */}
       <HoveUp >
       <Swiper
+        effect="slide"
         autoplay={{
-          delay: 0,
+          delay: 1000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
+        infinite
         slidesPerView="auto"
           centeredSlides={false}
         onSwiper={swiper => setControlledSwiper(swiper)}
