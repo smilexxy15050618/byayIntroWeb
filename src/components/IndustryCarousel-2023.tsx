@@ -474,7 +474,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
               <div  className="main-container">
                 
               <div className="main-title">智能用户运营领域创领者</div>
-              <div style={{marginBottom: '56px'}} className='sec-title'>用AI助力构建ToC长期信任关系</div>
+              <div style={{marginBottom: '56px'}} className='sec-title'>用AI助力构建用户长期信任关系</div>
               <div style={{width: '644px',height: '496px'}} className='bg-img-blue'>
                 <img style={{height: '100%'}} src={imgurl+'/sy-banner1.png'} alt="" />
               </div>
