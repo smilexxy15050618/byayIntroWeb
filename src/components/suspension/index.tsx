@@ -52,6 +52,8 @@ class Suspension extends React.Component<ISuspensionState> {
     const { activeIndex } = this.state;
     return (
       <SuspensionWrapper>
+        <img src={QR_CODE_1} style={{opacity:'0'}} />
+        <img src={QR_CODE_2} style={{opacity:'0'}} />
         <SuspensionAvatar
           onMouseEnter={() => this.setState({ welcomeVisible: true })}
           onMouseLeave={() => this.setState({ welcomeVisible: false })}>
