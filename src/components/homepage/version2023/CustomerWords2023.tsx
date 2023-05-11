@@ -72,7 +72,7 @@ const CardContent = styled.div`
         height: 23px;
         right: 0;
         opacity: 1;
-        border-left: 1px solid rgba(90, 90, 90, 0.3);
+        border-left: 0.5px solid rgba(90, 90, 90, 0.3);
       }
     }
     .rightPskjak{
@@ -223,6 +223,10 @@ const Card = styled.div<{ bg: string }>`
   }
 `;
 const HoveUp = styled.div`
+.swiper-wrapper{
+  // transition-duration: 3000ms !important;
+  transition-timing-function:linear !important;
+}
   .hoer_bg_more{
     transition:all 0.3s;
     &:hover{
@@ -266,17 +270,20 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
       {/* <LefttArrow className="prev-btn swiper-nav-btn" onClick={e => controlledSwiper.navigation.onPrevClick(e)} /> */}
       <HoveUp >
       <Swiper
+        effect="slide"
+        loop={true}
         autoplay={{
-          delay: 5000,
+          delay: 0,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
         slidesPerView="auto"
+        speed={3000}
+        centeredSlides={false}
         onSwiper={swiper => setControlledSwiper(swiper)}
         onSlideChange={swiper => {
           setCurrIndex(swiper.activeIndex);
         }}
-        loop={true}
         style={{ paddingRight: 32, overflow: 'hidden', paddingBottom: 30, marginBottom: -30, paddingTop:20 }}>
         {dataList.map(({ bg, avatarSrc, content, personName, tagName,icon,left_title,left_title2,right_title,right_title2 }, i) => (
           <SwiperSlide style={{ width: 'auto' }} className='hoer_bg_more' key={i}>
@@ -315,7 +322,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
         ))}
       </Swiper>
       </HoveUp>
-      <ArrowGroup>
+      {/* <ArrowGroup>
         <img
           src={arrowbg}
           onClick={e => {
@@ -344,7 +351,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
             controlledSwiper.navigation.onNextClick(e);
           }}
         />
-      </ArrowGroup>
+      </ArrowGroup> */}
     </div>
   );
 };
@@ -708,10 +715,12 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
       <Wrapper>
         <Swiper
           autoplay={{
-            delay: 5000,
+            delay: 1000, //自动切换的时间间隔
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
           }}
           slidesPerView="auto"
-          centeredSlides={true}
+          centeredSlides={false}
           spaceBetween={24}
           // onSwiper={swiper => setControlledSwiper(swiper)}
           onSlideChange={swiper => {

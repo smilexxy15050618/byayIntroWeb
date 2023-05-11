@@ -12,7 +12,8 @@ import { FOOTER_CONFIG } from '../constants/page-modify';
 import classNames from 'classnames';
 const ByLink = withOpenOriginLink(Link);
 
-const CMMI_SRC = '//cdn.byai.com/static/official-website/crm/CMMI.png';
+const CMMI_SRC = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/底部隐私政策.png';
+// const CMMI_SRC = '/static/img2023/底部隐私政策.png';
 const XIN_SRC = '//cdn.byai.com/static/official-website/crm/xin.png';
 const PREFIX = 'https://cdn.byai.com/static/intro/img/footer';
 const IMG_HOVER_INFO = `${PREFIX}/get-news.png`;
@@ -121,7 +122,7 @@ const FooterWrapper = styled.footer`
     color: rgba(255, 255, 255, 0.65);
     cursor: pointer;
     &:hover {
-      opacity: 1;
+      color: #00C8BD;
     }
     img {
       height: 32px;
@@ -479,28 +480,32 @@ const FriendLink = styled.div`
 
 const FriendLinkList = [
   {
-    name: '企业微信',
+    name: '飞书',
+    link: 'https://www.feishu.cn',
+  },
+  {
+    name: 'WPS',
+    link: 'https://www.wps.cn',
+  },
+  {
+    name: '樊登读书',
+    link: 'https://www.dushu365.com',
+  },
+  {
+    name: '杭州社保',
+    link: 'http://hrss.hangzhou.gov.cn',
+  },
+  {
+    name: '亿邦动力',
+    link: 'https://www.ebrun.com',
+  },
+  {
+    name: '企业微信SCRM',
     link: 'https://www.xlbscrm.com/scrm.html',
   },
   {
-    name: 'SCRM亿邦动力',
-    link: 'https://www.ebrun.com/',
-  },
-  {
-    name: '数据分析SCRM',
-    link: ' https://www.guandata.com/',
-  },
-  // {
-  //   name: 'SCRM',
-  //   link: 'http://www.scrmcn.com/',
-  // },
-  {
-    name: '万里牛ERP',
-    link: 'https://www.hupun.com',
-  },
-  {
-    name: '星耀裂变',
-    link: 'https://www.xyookj.com',
+    name: '数据分析',
+    link: 'https://www.guandata.com',
   },
 ];
 
@@ -705,7 +710,7 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
           <PrivacyPolicy href="/privacy-policy" target="_blank">
             隐私政策
           </PrivacyPolicy>
-          <img src={CMMI_SRC} />
+          <img src={CMMI_SRC} style={{width: '54px'}} />
           <img src={XIN_SRC} />
         </CrmImg>
       </CompanyInfoCol>

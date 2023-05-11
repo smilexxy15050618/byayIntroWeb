@@ -1,6 +1,8 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import imgurl from '../../../img.url.js'
+import { Visible } from 'react-grid-system';
+import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 
 const list = [
     {
@@ -33,7 +35,7 @@ padding-bottom: 100px;
     color: rgba(26, 26, 26, 1);
     text-align: center;
   }
-  .content {
+  #celue {
     display: flex;
     width: 1200px;
     margin: 80px auto 0;
@@ -41,6 +43,9 @@ padding-bottom: 100px;
     opacity: 0;
     transform: translateY(50%);
     transition: all 0.4s;
+    @media (max-width: 768px) {
+        width: 100vw;
+      }
     &.appear {
         opacity: 1;
         transform: translateY(0);
@@ -51,6 +56,12 @@ padding-bottom: 100px;
         background: #F3F8FF;
         padding: 69px 50px 0;
         transition: all 0.3s;
+        @media (max-width: 768px) {
+            width: 240px;
+            height: 250px;
+            margin-right: 16px;
+            padding: 30px;
+          }
         img {
             transition: all 0.3s;
         }
@@ -123,11 +134,12 @@ padding-bottom: 100px;
     }
   }
 `
+const celue = 'celue'
 export const ProductValue = () => {
     useEffect(() => {
         const ScrollMagic = require('scrollmagic');
         const controller = new ScrollMagic.Controller();
-        const scrollContent = document.getElementsByClassName('content')[0];
+        const scrollContent = document.getElementById(celue);
         var scene = new ScrollMagic.Scene({
             triggerElement: scrollContent,
             triggerHook: 'onEnter', //触发元素开始离开视口时触发
@@ -143,20 +155,42 @@ export const ProductValue = () => {
     return (
         <Wrapper>
             <div className='title'>产品价值</div>
-            <div className='content'>
-                {list.map((item, index) => {
-                    return (
-                        <div className='list-item'>
-                            <div>
-                                <img src={item.img1} alt="" />
-                                <img src={item.img2} alt="" />
+            <Visible md lg xl xxl xxxl>
+                <div id='celue'>
+                    {list.map((item, index) => {
+                        return (
+                            <div className='list-item'>
+                                <div>
+                                    <img src={item.img1} alt="" />
+                                    <img src={item.img2} alt="" />
+                                </div>
+                                <div>{item.text1}</div>
+                                <div>{item.text2}</div>
                             </div>
-                            <div>{item.text1}</div>
-                            <div>{item.text2}</div>
-                        </div>
-                    )
-                })}
-            </div>
+                        )
+                    })}
+                </div>
+            </Visible>
+            <Visible xs sm>
+                <div id={celue}>
+                    <ByProgressSwiper
+                        newProgress={true}
+                        initialSlide={0}
+                        contentPadding="32px" progressPadding="0px"
+                        previewWidth="70px">
+                        {list.map((item, index) => (
+                            <div className='list-item'>
+                                <div>
+                                    <img src={item.img1} alt="" />
+                                    <img src={item.img2} alt="" />
+                                </div>
+                                <div>{item.text1}</div>
+                                <div>{item.text2}</div>
+                            </div>
+                        ))}
+                    </ByProgressSwiper>
+                </div>
+            </Visible>
         </Wrapper>
     )
 }

@@ -269,6 +269,9 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
       border-radius: 6px;
       padding: 8px;
       display: flex;
+      &:nth-child(1):hover{
+        background: transparent;
+      }
       &:hover {
         background: #f5f6f8;
       }

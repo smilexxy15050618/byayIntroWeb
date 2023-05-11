@@ -1,6 +1,7 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import imgurl from '../../../img.url.js'
+import { Visible } from 'react-grid-system';
 
 const Wrapper = styled.div`
 padding-top: 60px;
@@ -14,14 +15,23 @@ background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 25
     color: rgba(26,26,26,1);
     text-align: center;
     margin-bottom: 16px;
+    @media (max-width: 768px) {
+      font-size: 32px;
+      font-weight: 500;
+    }
   }
   .desc {
-    margin-top: 10px;
+    margin: 10px auto 0;
     font-size: 20px;
     line-height: 32px;
     font-weight: 400;
     color: rgba(51,51,51,1);
     text-align: center;
+    @media (max-width: 768px) {
+      width:328px;
+      font-size: 16px;
+      font-weight: 500;
+    }
   }
   .jumpbtn {
     display: block;
@@ -45,34 +55,48 @@ background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 25
   }
   video {
     display: block;
-    width: 1200px;
-    height: 651px;
+    width: 83.33%;
+    // height: 651px;
     margin: 0 auto;
   }
 `
 
 export const IndustryCarousel = () => {
-    useEffect(()=> {
-      setTimeout(() => {
-        var video = document.querySelector('video');
-        video.play();
-      }, 5000);
-    })
-    return (
-        <Wrapper>
-            <div className='title'>
-            策略智能与自动化
-            </div>
-            <div className='desc'>策略自动生成、数据验证、自动化运行,实现目标人群的精准触达,提升关键指标和运营效率</div>
-            <div className="jumpbtn" onClick={() => window.open('/form?formType=1')}>
-                预约体验
-            </div>
-            <video
-            muted
-            controls
-            src={imgurl+'/20230427-103948.mp4'}
-            poster={imgurl+'/intelligence_banner.png'}
-          />
-        </Wrapper>
-    )
+  useEffect(() => {
+    setTimeout(() => {
+      var video = document.querySelector('video');
+      video.play();
+    }, 5000);
+  })
+  return (
+    <Wrapper>
+      <div className='title'>
+        策略智能与自动化
+      </div>
+      <Visible md lg xl xxl xxxl>
+        <div className='desc'>策略自动生成、数据验证、自动化运行,实现目标人群的精准触达,提升关键指标和运营效率</div>
+        <div className="jumpbtn" onClick={() => window.open('/form?formType=1')}>
+          预约体验
+        </div>
+        <video
+          muted
+          controls
+          src={imgurl + '/20230427-103948.mp4'}
+          poster={imgurl + '/intelligence_banner.png'}
+        />
+      </Visible>
+      <Visible xs sm>
+      <div className='desc'>策略自动生成、数据验证、自动化运行,实现目标人群的精准触达,提升关键指标和运营效率</div>
+        <div className="jumpbtn" onClick={() => window.open('/form?formType=1')}>
+          预约体验
+        </div>
+        <video
+          muted
+          controls
+          src={imgurl + '/20230427-103948.mp4'}
+          poster={imgurl + '/intelligence_banner.png'}
+        />
+      </Visible>
+    </Wrapper>
+  )
 }

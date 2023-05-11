@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="217px" height="222px" viewBox="0 0 217 222" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 4</title>
+    <g id="2023Q2-品牌官网2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="-" transform="translate(-116.000000, -316.000000)">
+            <g id="编组-4" transform="translate(116.148608, 316.004955)">
+                <g id="编组-121" transform="translate(0.000000, 1.000000)">
+                    <polygon id="多边形" stroke-opacity="0.151131583" stroke="#2B58F9" points="108 2.49740422 201.530744 56.4974042 201.530744 164.497404 108 218.497404 14.4692564 164.497404 14.4692564 56.4974042"></polygon>
+                    <g id="编组-120" transform="translate(11.580935, 0.000000)" fill="#D0E1FE">
+                        <circle id="椭圆形备份-21" cx="190" cy="56.6112997" r="3"></circle>
+                        <circle id="椭圆形备份-25" cx="3" cy="56.6112997" r="3"></circle>
+                        <circle id="椭圆形备份-26" cx="3" cy="164.307656" r="3"></circle>
+                        <circle id="椭圆形备份-22" cx="190" cy="164.307656" r="3"></circle>
+                        <circle id="椭圆形备份-24" cx="96.4190654" cy="3" r="3"></circle>
+                        <circle id="椭圆形备份-27" cx="96.4190654" cy="218" r="3"></circle>
+                    </g>
+                </g>
+                <circle id="椭圆形备份-24" fill="#2B58F9" cx="108" cy="4" r="4"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

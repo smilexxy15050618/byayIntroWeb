@@ -385,17 +385,31 @@ margin-bottom:56px;
 
 const QuickArea = styled.div`
   width: 1200px;
+  height: 128px;
+  border-radius: 8px;
+background: rgba(255, 255, 255, 1);
+box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
-  margin-top: -31px;
+  align-items: center;
+  margin-top: -64px;
+  position: relative;
+  z-index: 1;
   >div {
     display: flex;
+    cursor: pointer;
     justify-content: center;
+    &:hover {
+      img {
+        margin-top: -14px;
+      }
+    }
     img {
       margin-top: -6px;
       width: 60px;
       height: 60px;
+      transition: all 0.3s;
     }
     .content {
       margin-left: 8px;
@@ -429,10 +443,10 @@ const jumpData = [
 ];
 
 const bannerList = [
-  {img: `${imgurl}/banner1_icon1.svg`, title: 'AI驱动用户运营', desc: '国内领先的数智化用户运营解决方案服务商'},
-  {img: `${imgurl}/banner1_icon2.svg`, title: '助力构建用户信任关系', desc: '赋能企业业务增长及政府基层服务治理'},
-  {img: `${imgurl}/banner1_icon3.svg`, title: '政府认定准独角兽企业', desc: '连续获评杭州市准独角兽、未来独角兽企业'},
-  {img: `${imgurl}/banner1_icon4.svg`, title: '各行业头部机构合作者', desc: '七年深耕，帮助全行业TOP机构数智化转型'},
+  {img: `${imgurl}/banner1_icon1.png`, title: 'AI驱动用户运营', desc: '国内领先的数智化用户运营解决方案服务商'},
+  {img: `${imgurl}/banner1_icon2.png`, title: '助力构建用户信任关系', desc: '赋能企业业务增长及政府基层服务治理'},
+  {img: `${imgurl}/banner1_icon3.png`, title: '政府认定准独角兽企业', desc: '连续获评杭州市准独角兽、未来独角兽企业'},
+  {img: `${imgurl}/banner1_icon4.png`, title: '各行业头部机构合作者', desc: '七年深耕，帮助全行业TOP机构数智化转型'},
 ]
 
 export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
@@ -460,7 +474,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
               <div  className="main-container">
                 
               <div className="main-title">智能用户运营领域创领者</div>
-              <div style={{marginBottom: '56px'}} className='sec-title'>用AI助力构建ToC长期信任关系</div>
+              <div style={{marginBottom: '56px'}} className='sec-title'>用AI助力构建用户长期信任关系</div>
               <div style={{width: '644px',height: '496px'}} className='bg-img-blue'>
                 <img style={{height: '100%'}} src={imgurl+'/sy-banner1.png'} alt="" />
               </div>
@@ -485,9 +499,8 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
               
               <div
                 className="carousel-btn"
-                onClick={() => {
-                  window.open(`https://mp.weixin.qq.com/s/Ebu43ZcMV6ted0f55efIRg`);
-                }}>
+                onClick={() => window.open('/form?formType=1')}
+              >
                 点击查看
               </div>
               <div className='bg-img-blue'>
@@ -499,7 +512,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
             <Carousel.Item className='no_duration ' 
             
             key={3} onClick={() => {
-                  window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
+                  // window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
                 }}>
               <div  className="main-container">
                 
@@ -521,10 +534,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange,hadnleNav }) => {
             
             </Carousel.Item>
             <Carousel.Item className='no_duration ' 
-            
-            key={3} onClick={() => {
-                  window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
-                }}>
+            key={3}>
               <div  className="main-container">
                 
               <div className="main-title">参与制定行业标准</div>

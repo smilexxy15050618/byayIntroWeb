@@ -3,27 +3,28 @@ import { Controller } from 'scrollmagic';
 import styled from 'styled-components';
 import imgurl from '../../../img.url.js'
 import classNames from 'classnames';
+import { Visible } from 'react-grid-system';
 
 
 const labelList = [
-    {
-        img: `${imgurl}/MarketingCanvas1.png`,
-        activeImg: `${imgurl}/MarketingCanvas.png`,
-        text: '营销画布',
-        english_text: 'Marketing Canvas'
-    },
-    {
-        img: `${imgurl}/OperationFlow1.png`,
-        activeImg: `${imgurl}/OperationFlow.png`,
-        text: '业务流程',
-        english_text: 'Operation Flow'
-    },
-    {
-        img: `${imgurl}/KnowledgeGraph1.png`,
-        activeImg: `${imgurl}/KnowledgeGraph.png`,
-        text: '知识图谱',
-        english_text: 'Knowledge Graph'
-    }
+  {
+    img: `${imgurl}/MarketingCanvas1.png`,
+    activeImg: `${imgurl}/MarketingCanvas.png`,
+    text: '营销画布',
+    english_text: 'Marketing Canvas'
+  },
+  {
+    img: `${imgurl}/OperationFlow1.png`,
+    activeImg: `${imgurl}/OperationFlow.png`,
+    text: '业务流程',
+    english_text: 'Operation Flow'
+  },
+  {
+    img: `${imgurl}/KnowledgeGraph1.png`,
+    activeImg: `${imgurl}/KnowledgeGraph.png`,
+    text: '知识图谱',
+    english_text: 'Knowledge Graph'
+  }
 ]
 const Wrapper = styled.div`
   padding-top: 100px;
@@ -42,19 +43,22 @@ text-align: center;
 margin-bottom: 40px;
 `
 const Label = styled.div`
+  width: 100%;
+  padding: 0 24%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   cursor: pointer;
+  @media (max-width: 768px) {
+    padding: 0 4%;
+  }
 `
 const LabelItem = styled.div`
-  width: 190px;
   height: 170px;
   position: relative;
   top: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 90px;
   padding-top: 40px;
   &:hover{
     img:nth-child(1){
@@ -71,6 +75,10 @@ const LabelItem = styled.div`
     width: 36px;
     height: 36px;
     margin-bottom: 16px;
+    @media (max-width: 768px) {
+      width: 18px;
+      height: 18px;
+    }
   }
   img:nth-child(1){
     display: inline-block;
@@ -84,6 +92,10 @@ const LabelItem = styled.div`
     letter-spacing: 0px;
     line-height: 28px;
     color: rgba(26, 26, 26, 1);
+    @media (max-width: 768px) {
+      font-size: 10px;
+      font-weight: 600;
+    }
   }
   .subtitle{
     font-size: 14px;
@@ -91,6 +103,9 @@ const LabelItem = styled.div`
     letter-spacing: 0px;
     line-height: 24px;
     color: rgba(90, 90, 90, 1);
+    @media (max-width: 768px) {
+      font-size: 7px;
+    }
   }
   span:last-child {
     font-size: 14px;
@@ -104,7 +119,7 @@ color: rgba(90, 90, 90, 1);
   }
 `
 const Content = styled.div`
-opacity: 1;
+  opacity: 1;
     // transform: translateY(20%);
     // transition: all 0.4s;
     // &.appear {
@@ -116,20 +131,23 @@ opacity: 1;
   }
   #img4,#img3,#img2,#img1{
     opacity:0;
-  
     transition: all 0.4s;
   }
   .animate__fadeInRight,.animate__fadeInLeft{
     transform: translateX(0) !important;
-    opacity:1 !important;
+    opacity: 1 !important;
   }
   div div {
-    width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 83.33%;
     margin: 0 auto;
     padding: 100px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 768px) { 
+      padding: 24px 0;
+    }
   }
   >div:last-child div {
         padding-bottom: 116px;
@@ -142,95 +160,133 @@ opacity: 1;
   }
 `
 export const ProductCapability = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
-    useEffect(() => {
-        const ScrollMagic = require('scrollmagic');
-        const controller1 = new ScrollMagic.Controller();
-        const scrollContent1 = document.getElementById('ProductCapContent1');
-        var scene = new ScrollMagic.Scene({
-            triggerElement: scrollContent1,
-            offset: 0, //从开始点滚动多少px触发（施法前摇）
-            duration: 400, //效果持续的距离（法术持续时间/距离）
-        })
-            .addTo(controller1)
-            .on('enter', (e) => {
-                scrollContent1.querySelector('#img1').classList.add('animate__fadeInRight');
-                controller1.destroy();
-            });
-
-
-            const controller2 = new ScrollMagic.Controller();
-        const scrollContent2 = document.getElementById('ProductCapContent2');
-        var scene = new ScrollMagic.Scene({
-            triggerElement: scrollContent2,
-            offset: 0, //从开始点滚动多少px触发（施法前摇）
-            duration: 400, //效果持续的距离（法术持续时间/距离）
-        })
-            .addTo(controller2)
-            .on('enter', (e) => {
-                scrollContent2.querySelector('#img2').classList.add('animate__fadeInLeft');
-                controller2.destroy();
-            });
-
-
-            const controller3 = new ScrollMagic.Controller();
-        const scrollContent3 = document.getElementById('ProductCapContent3');
-        var scene = new ScrollMagic.Scene({
-            triggerElement: scrollContent3,
-            offset: 0, //从开始点滚动多少px触发（施法前摇）
-            duration: 200, //效果持续的距离（法术持续时间/距离）
-        })
-            .addTo(controller3)
-            .on('enter', (e) => {
-                scrollContent3.querySelector('#img3').classList.add('animate__fadeInRight');
-                controller3.destroy();
-            });
-
+  const [activeIndex, setActiveIndex] = useState(0);
+  useEffect(() => {
+    const ScrollMagic = require('scrollmagic');
+    const controller1 = new ScrollMagic.Controller();
+    const scrollContent1 = document.getElementById('ProductCapContent1');
+    var scene = new ScrollMagic.Scene({
+      triggerElement: scrollContent1,
+      offset: 0, //从开始点滚动多少px触发（施法前摇）
+      duration: 400, //效果持续的距离（法术持续时间/距离）
     })
-    const scrollTo = (index) => {
-        setActiveIndex(index);
-        var dom = document.querySelectorAll('.contents>div')[index];
-        if(dom) {
-            dom.scrollIntoView({ behavior: "smooth" });
-        }  
+      .addTo(controller1)
+      .on('enter', (e) => {
+        scrollContent1.querySelector('#img1').classList.add('animate__fadeInRight');
+        controller1.destroy();
+      });
+
+
+    const controller2 = new ScrollMagic.Controller();
+    const scrollContent2 = document.getElementById('ProductCapContent2');
+    var scene = new ScrollMagic.Scene({
+      triggerElement: scrollContent2,
+      offset: 0, //从开始点滚动多少px触发（施法前摇）
+      duration: 400, //效果持续的距离（法术持续时间/距离）
+    })
+      .addTo(controller2)
+      .on('enter', (e) => {
+        scrollContent2.querySelector('#img2').classList.add('animate__fadeInLeft');
+        controller2.destroy();
+      });
+
+
+    const controller3 = new ScrollMagic.Controller();
+    const scrollContent3 = document.getElementById('ProductCapContent3');
+    var scene = new ScrollMagic.Scene({
+      triggerElement: scrollContent3,
+      offset: 0, //从开始点滚动多少px触发（施法前摇）
+      duration: 200, //效果持续的距离（法术持续时间/距离）
+    })
+      .addTo(controller3)
+      .on('enter', (e) => {
+        scrollContent3.querySelector('#img3').classList.add('animate__fadeInRight');
+        controller3.destroy();
+      });
+
+  })
+  const scrollTo = (index) => {
+    setActiveIndex(index);
+    var dom = document.querySelectorAll('.contents>div')[index];
+    if (dom) {
+      dom.scrollIntoView({ behavior: "smooth" });
     }
-    return (
-        <Wrapper>
-            <Title>产品能力</Title>
-            <Label className='bottom_border'>
-                {
-                    labelList.map((({ img, activeImg, text, english_text }, index) => {
-                        return (
-                            <LabelItem onClick={() => scrollTo(index)} className={activeIndex == index ? 'active' : ''}>
-                                <img src={activeIndex == index ? activeImg : img} alt="" />
-                                <img src={activeImg} alt="" />
-                                <div className="title-tab">{text}</div>
-                                <div className="subtitle">{english_text}</div>
-                            </LabelItem>
-                        )
-                    }))
-                }
-            </Label>
-            <Content  className='contents'>
-                <div id="ProductCapContent1">
-                    <div>
-                        <img style={{ width: '450px', height: '474px' }} src={imgurl + '/yxhb_text.svg'} alt="" />
-                        <img id='img1'  style={{ width: '680px',  transform: 'translateX(20%)' }} src={imgurl + '/yxhb.svg'} alt="" />
-                    </div>
-                </div>
-                <div id="ProductCapContent2">
-                    <div>
-                        <img id='img2'  style={{ width: '680px',  transform:' translateX(-20%)' }} src={imgurl + '/ywlc.svg'} alt="" />
-                        <img style={{ width: '450px', height: '408px' }} src={imgurl + '/ywlc_text.svg'} alt="" />
-                    </div>
-                </div>
-                <div id="ProductCapContent3">
-                    <div>
-                        <img  style={{ width: '480px', height: '438px' }} src={imgurl + '/zstp_text.svg'} alt="" />
-                        <img id='img3'  style={{ width: '680px', transform:' translateX(20%)'  }} src={imgurl + '/zstp.svg'} alt="" />
-                    </div>
-                </div>
-            </Content>
-        </Wrapper>
-    )
+  }
+  return (
+    <Wrapper>
+      <Title>产品能力</Title>
+      <Visible md lg xl xxl xxxl>
+        <Label className='bottom_border'>
+          {
+            labelList.map((({ img, activeImg, text, english_text }, index) => {
+              return (
+                <LabelItem onClick={() => scrollTo(index)} className={activeIndex == index ? 'active' : ''}>
+                  <img src={activeIndex == index ? activeImg : img} alt="" />
+                  <img src={activeImg} alt="" />
+                  <div className="title-tab">{text}</div>
+                  <div className="subtitle">{english_text}</div>
+                </LabelItem>
+              )
+            }))
+          }
+        </Label>
+        <Content className='contents'>
+          <div id="ProductCapContent1">
+            <div>
+              <img style={{ width: '450px', height: '474px' }} src={imgurl + '/yxhb_text.svg'} alt="" />
+              <img id='img1' style={{ width: '680px', transform: 'translateX(20%)' }} src={imgurl + '/yxhb.svg'} alt="" />
+            </div>
+          </div>
+          <div id="ProductCapContent2">
+            <div>
+              <img id='img2' style={{ width: '680px', transform: ' translateX(-20%)' }} src={imgurl + '/ywlc.svg'} alt="" />
+              <img style={{ width: '450px', height: '408px' }} src={imgurl + '/ywlc_text.svg'} alt="" />
+            </div>
+          </div>
+          <div id="ProductCapContent3">
+            <div>
+              <img style={{ width: '480px', height: '438px' }} src={imgurl + '/zstp_text.svg'} alt="" />
+              <img id='img3' style={{ width: '680px', transform: ' translateX(20%)' }} src={imgurl + '/zstp.svg'} alt="" />
+            </div>
+          </div>
+        </Content>
+      </Visible>
+      <Visible xs sm>
+        <Label className='bottom_border'>
+          {
+            labelList.map((({ img, activeImg, text, english_text }, index) => {
+              return (
+                <LabelItem onClick={() => scrollTo(index)} className={activeIndex == index ? 'active' : ''}>
+                  <img src={activeIndex == index ? activeImg : img} alt="" />
+                  <img src={activeImg} alt="" />
+                  <div className="title-tab">{text}</div>
+                  <div className="subtitle">{english_text}</div>
+                </LabelItem>
+              )
+            }))
+          }
+        </Label>
+        <Content className='contents'>
+          <div id="ProductCapContent1">
+            <div>
+              <img style={{ width: '450px', height: '474px' }} src={imgurl + '/yxhb_text.svg'} alt="" />
+              <img id='img1' style={{ width: '680px', transform: 'translateX(20%)' }} src={imgurl + '/yxhb.svg'} alt="" />
+            </div>
+          </div>
+          <div id="ProductCapContent2">
+            <div>
+              <img id='img2' style={{ width: '680px', transform: ' translateX(-20%)' }} src={imgurl + '/ywlc.svg'} alt="" />
+              <img style={{ width: '450px', height: '408px' }} src={imgurl + '/ywlc_text.svg'} alt="" />
+            </div>
+          </div>
+          <div id="ProductCapContent3">
+            <div>
+              <img style={{ width: '480px', height: '438px' }} src={imgurl + '/zstp_text.svg'} alt="" />
+              <img id='img3' style={{ width: '680px', transform: ' translateX(20%)' }} src={imgurl + '/zstp.svg'} alt="" />
+            </div>
+          </div>
+        </Content>
+      </Visible>
+    </Wrapper>
+  )
 }

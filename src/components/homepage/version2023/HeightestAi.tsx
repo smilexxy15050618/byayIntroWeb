@@ -29,6 +29,7 @@ const HoveUp = styled.div`
       height: 376px;
       background: white;
       margin: 0 auto;
+      cursor: pointer;
       .swiper-slide {
         padding-top: 0px !important;
         width: 100%;
@@ -54,8 +55,9 @@ const CardContent = styled.aside`
     flex-direction: column; */
     /* height:496px; */
     .logo {
-      height: 28px;
-      margin: 53px 0 53px 56px;
+      width: 200px;
+      height: 50px;
+      margin: 42px 0 42px 56px;
     }
     .bigLogo {
       width: 374px;
@@ -68,8 +70,8 @@ const CardContent = styled.aside`
       width: 160px;
       height: 160px;
       position: absolute;
-      top: 4px;
-      left: 0;
+      top: 92px;
+      left: -42px;
     }
     .img_area{
         right:0;
@@ -178,9 +180,10 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
+        loop={true}
         onSwiper={swiper => setControlledSwiper(swiper)}
         onSlideChange={swiper => {
-          setCurrIndex(swiper.activeIndex);
+          setCurrIndex(swiper.realIndex);
         }}
         style={{  }}>
         {dataList.map(({ bg, avatarSrc, logoSrc, bigSrc, content, personName, tagName }, i) => (
@@ -235,8 +238,8 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
 
 const carouselDataList = [
   {
-    avatarSrc:`${imgurl}/sxydkj1.svg`,
-    logoSrc: `${imgurl}/xyd1.png`,
+    avatarSrc:`${imgurl}/sxydkj1.png`,
+    logoSrc: `${imgurl}/xyd3.png`,
     bigSrc: `${imgurl}/xyd2.png`,
     content:
       '百应是一个技术能力和产品能力都极强的一家人工智能公司，很难见到一家AI公司产品在金融等多个行业实现高度产品化，并能同时实现合作方开箱即用的极致用户体验和合作方用户的极致应用体验。',
@@ -244,27 +247,27 @@ const carouselDataList = [
     tagName: '信雅达科技股份有限公司（600571）董事长',
   },
   {
-    avatarSrc:`${imgurl}/hengsheng1.svg`,
-    logoSrc: `${imgurl}/xyd1.png`,
-    bigSrc: `${imgurl}/xyd2.png`,
+    avatarSrc:`${imgurl}/hengsheng1.png`,
+    logoSrc: `${imgurl}/hengsheng3.png`,
+    bigSrc: `${imgurl}/hengsheng2.png`,
     content:
       '恒生电子作为百应科技的合作伙伴和股东，我非常欣赏和赞赏这家公司。百应科技在AI和大数据领域具有先进的技术和专业的人才，同时拥有高效的管理团队和科学的管理体系，为客户提供优质的产品和服务。百应科技不断探索和创新，是一家优秀的科技企业，值得信赖与合作。',
     personName: '刘曙峰',
     tagName: '恒生电子股份有限公司（600570）董事长',
   },
   {
-    avatarSrc:`${imgurl}/amiba1.svg`,
-    logoSrc: `${imgurl}/xyd1.png`,
-    bigSrc: `${imgurl}/xyd2.png`,
+    avatarSrc:`${imgurl}/amiba1.png`,
+    logoSrc: `${imgurl}/amiba3.png`,
+    bigSrc: `${imgurl}/amiba2.png`,
     content:
       '作为公司最早的股东，我们看到公司从成立到不断发展壮大，客户数量和合作伙伴都在不断增长，产品线也在不断扩充，领域涉及面也在逐渐拓展。很高兴能够见证公司的成长历程，同时也为公司在发展路上持续推进而感到鼓舞。我相信百应科技将继续发扬所长，在行业内发挥更大的作用。',
     personName: 'Kevin Wang',
     tagName: '阿米巴资本 创始及执行合伙人',
   },
   {
-    avatarSrc:`${imgurl}/gxin1.svg`,
-    logoSrc: `${imgurl}/xyd1.png`,
-    bigSrc: `${imgurl}/xyd2.png`,
+    avatarSrc:`${imgurl}/gxin1.png`,
+    logoSrc: `${imgurl}/gxin3.png`,
+    bigSrc: `${imgurl}/gxin2.png`,
     content:
       '百应科技是一家高素质的AI和大数据技术公司，拥有强大的技术能力和专业的团队，一直秉持以客户需求为导向的理念，不断创新和改善服务，赢得了客户的信任和支持。作为股东，我对百应科技充满信心，相信公司将会在未来的发展中迎来更加辉煌的成绩。',
     personName: '叶雨明',
@@ -428,6 +431,20 @@ const Wrapper = styled.div<{ wrapperWidth?: number }>`
 `;
 
 const LabelList = styled.div`
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  33% {
+    width: 33%;
+  }
+  66% {
+    width: 66%;
+  }
+  100% {
+    width: 100%;
+  }
+}
   width: 1072px;
   display: flex;
   justify-content: space-between;
@@ -435,12 +452,24 @@ const LabelList = styled.div`
   div {
     width: 256px;
     height: 64px;
+    position: relative;
     border-radius: 4px;
-background: rgba(255, 255, 255, 1);
-box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
     &.active {
-      border-bottom: 2px solid #2B58F9;
-      border-shadow: 0px 0px 12px 1px #245BDB;
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        border-radius: 4px;
+background: rgba(43, 88, 249, 1);
+box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
+        animation: loading 3s linear;
+      }
     }
   }
   img {
@@ -508,7 +537,7 @@ box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
 const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
   return (
     <Pane title="顶尖资本支持，智领未来AI沟通新方式" paneBgColor="grey" 
-    style={{ paddingBottom: '90px',background:`url(${imgurl}/zbbg.png)`}} 
+    style={{ paddingBottom: '90px',background:`url(${imgurl}/zbbg.png)`,backgroundSize: '100% 100%'}} 
     titleStyle={{marginBottom:'48px'}}
     mobileStyle={{ paddingBottom: 40 }}>
       <Hidden xs sm>

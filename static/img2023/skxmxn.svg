@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="170px" height="185px" viewBox="0 0 170 185" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 105备份 2</title>
+    <defs>
+        <linearGradient x1="94.80624%" y1="50%" x2="11.6377507%" y2="56.0007544%" id="linearGradient-1">
+            <stop stop-color="#0A24F7" offset="0%"></stop>
+            <stop stop-color="#0B81F5" offset="41.6304582%"></stop>
+            <stop stop-color="#0BA2F5" offset="57.568108%"></stop>
+            <stop stop-color="#85D6FF" offset="77.978569%"></stop>
+            <stop stop-color="#0AE6FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="26.2771647%" x2="33.933786%" y2="76.9177606%" id="linearGradient-2">
+            <stop stop-color="#2699EF" stop-opacity="0.357116272" offset="0%"></stop>
+            <stop stop-color="#0B62FF" stop-opacity="0.406511213" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-29.3%" y="-16.6%" width="158.6%" height="133.2%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="6.35474235" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="60.4015086%" y1="0%" x2="33.5170746%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#006BFF" offset="0%"></stop>
+            <stop stop-color="#01A6FF" offset="68.6278363%"></stop>
+            <stop stop-color="#01B7FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="64.921134%" y1="4.27016017%" x2="37.4469425%" y2="92.7302949%" id="linearGradient-5">
+            <stop stop-color="#30F6FF" offset="0%"></stop>
+            <stop stop-color="#93D0FF" offset="68.342473%"></stop>
+            <stop stop-color="#5BB8FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="94.6283781%" y1="50%" x2="17.2894196%" y2="44.053569%" id="linearGradient-6">
+            <stop stop-color="#2D96FC" stop-opacity="0.627137511" offset="0%"></stop>
+            <stop stop-color="#528FFA" stop-opacity="0.42010399" offset="33.0124602%"></stop>
+            <stop stop-color="#7BF1FF" stop-opacity="0.269466373" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="33.933786%" y1="29.7705461%" x2="64.187423%" y2="63.9292856%" id="linearGradient-7">
+            <stop stop-color="#00ECFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#A2EFFF" stop-opacity="0.521088287" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="33.933786%" y1="30.2099349%" x2="46.1462942%" y2="40.1099375%" id="linearGradient-8">
+            <stop stop-color="#F2FBFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="65.8275656%" y1="41.0969343%" x2="34.1724344%" y2="96.1248401%" id="linearGradient-9">
+            <stop stop-color="#3199FE" stop-opacity="0.747830051" offset="0%"></stop>
+            <stop stop-color="#2C92FB" stop-opacity="0.700912513" offset="5.79378279%"></stop>
+            <stop stop-color="#048CDD" stop-opacity="0.295508785" offset="55.8565367%"></stop>
+            <stop stop-color="#34F4FF" stop-opacity="0.426278068" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="34.1724344%" y1="30.2652849%" x2="46.6221244%" y2="44.0368638%" id="linearGradient-10">
+            <stop stop-color="#F3FBFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="2023Q2-品牌官网2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="-" transform="translate(-145.000000, -911.000000)">
+            <g id="编组-27" transform="translate(146.788902, 914.502359)">
+                <polygon id="路径-3" fill="url(#linearGradient-1)" points="79.6998717 37.0928896 32.382323 60.7366314 79.6998717 85.496128 126.474328 61.2945088"></polygon>
+                <polygon id="路径-4备份-10" fill="url(#linearGradient-2)" filter="url(#filter-3)" transform="translate(115.778269, 72.961228) scale(-1, 1) translate(-115.778269, -72.961228) " points="83.2588179 49.9804387 83.2588179 130.329456 148.29772 90.1549473 148.29772 15.5929994"></polygon>
+                <polygon id="路径-4" fill="url(#linearGradient-4)" points="79.7873206 85.2185841 79.7873206 142.606626 126.474328 114.547611 126.474328 61.2928937"></polygon>
+                <polygon id="路径-4备份" fill="url(#linearGradient-5)" transform="translate(56.084822, 101.632257) scale(-1, 1) translate(-56.084822, -101.632257) " points="32.382323 85.2185841 32.382323 142.606626 79.7873206 113.912605 79.7873206 60.6578878"></polygon>
+                <polygon id="路径-3备份-3" fill="url(#linearGradient-6)" points="78.8119917 0 1.45246746e-13 40.1879967 78.8119917 82.2724765 156.719411 41.1362383"></polygon>
+                <polygon id="路径-4备份-7" stroke="url(#linearGradient-8)" stroke-width="2.11824745" fill="url(#linearGradient-7)" transform="translate(39.478823, 109.702298) scale(-1, 1) translate(-39.478823, -109.702298) " points="0 81.8034718 0 179.347696 78.9576464 130.575584 78.9576464 40.0568992"></polygon>
+                <polygon id="路径-4备份-6" fill="url(#linearGradient-9)" points="77.9157227 82.4557758 77.9157227 180 155.677487 132.307227 155.677487 41.7885422"></polygon>
+                <polygon id="路径-4备份-13" stroke="url(#linearGradient-10)" stroke-width="2.11824745" points="78.9576464 81.8034718 78.9576464 179.347696 156.719411 131.654923 156.719411 41.1362383"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

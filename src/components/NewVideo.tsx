@@ -8,6 +8,7 @@ import classNames from 'classnames';
 const AITime = styled.div`
  background: url(${imgurl}/aisd.png) no-repeat;
  background-size: 100% 100%;
+ padding-bottom: 60px;
 `
 const Title = styled.div`
 font-size: 40px;
@@ -55,6 +56,8 @@ margin-bottom: 20px;
 
 &:nth-child(5),&:nth-child(6) {
   width: 100%;
+  height: 182px;
+  overflow: hidden;
 }
 .title {
   display: flex;
@@ -152,10 +155,12 @@ margin-bottom: 32px;
     margin-bottom: 0;
   }
   .bg_number_show{
- display: flex;
- .number_block{
-  flex: 1;
- }
+     display: flex;
+     position: relative;
+     z-index: 1;
+     .number_block{
+       flex: 1;
+      }
 .number_h1{
   font-size: 14px;
 font-weight: 400;
@@ -164,11 +169,17 @@ line-height: 24px;
 color: rgba(255, 255, 255, 1);
 }
 .number_content{
-  font-size: 32px;
+  font-family: DINAlternate;
+  font-size: 48px;
 font-weight: 700;
-letter-spacing: 1px;
+letter-spacing: 0.86px;
 line-height: 64px;
 color: rgba(255, 255, 255, 1);
+span {
+  font-size: 32px;
+  font-weight: 700;
+letter-spacing: 0.57px;
+}
 }
   }
 }
@@ -218,13 +229,16 @@ const lists = [
     width: '330px',
     contentArr: [{
       number_h1: '标签体系',
-      number_content: '4级'
+      number_content: '4',
+      number_content1: '级'
     }, {
       number_h1: '行业标签模型',
-      number_content: '10+'
+      number_content: '10',
+      number_content1: '+'
     }, {
       number_h1: '业务标签',
-      number_content: '300+'
+      number_content: '300',
+      number_content1: '+'
     },],
     path:'/enhance'
   },
@@ -238,13 +252,16 @@ const lists = [
     url: `${imgurl}/aiimg2.png`,
     contentArr: [{
       number_h1: '自动化运营场景',
-      number_content: '30+'
+      number_content: '30',
+      number_content1: '+'
     }, {
       number_h1: '自动化策略流程',
-      number_content: '2000+'
+      number_content: '2000',
+      number_content1: '+'
     }, {
       number_h1: '日均用户触达',
-      number_content: '5000W'
+      number_content: '5000',
+      number_content1: 'W'
     },],
     path:'/intelligence'
   },
@@ -258,13 +275,16 @@ const lists = [
     url: `${imgurl}/aiimg3.png`,
     contentArr: [{
       number_h1: 'AI情感模态',
-      number_content: '3种'
+      number_content: '3',
+      number_content1: '种'
     }, {
       number_h1: '行业对话场景包模型',
-      number_content: '30+'
+      number_content: '30',
+      number_content1: '+'
     }, {
       number_h1: '各行业优质的对话话术库',
-      number_content: '20W'
+      number_content: '20',
+      number_content1: 'W'
     },],
     path:'/product/multimodalAI'
   },
@@ -278,13 +298,16 @@ const lists = [
     url: `${imgurl}/aiimg4.png`,
     contentArr: [{
       number_h1: '全场景覆盖',
-      number_content: '4端'
+      number_content: '4',
+      number_content1: '端'
     }, {
       number_h1: '不间断用户洞察',
-      number_content: '24小时'
+      number_content: '24',
+      number_content1: '小时'
     }, {
       number_h1: '实时并发量支持',
-      number_content: '10W+'
+      number_content: '10',
+      number_content1: 'W+'
     },],
     path:'/product/fullSceneUserLink'
   },
@@ -358,7 +381,7 @@ export const NewVideo = () => {
                 item.contentArr.map((ele, index) => {
                   return (<div className='number_block'>
                     <p className='number_h1'>{ele.number_h1}</p>
-                    <p className='number_content'>{ele.number_content}</p>
+                    <p className='number_content'>{ele.number_content}<span>{ele.number_content1}</span></p>
                   </div>)
                 })
               }
