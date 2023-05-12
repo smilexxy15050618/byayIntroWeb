@@ -14,7 +14,7 @@ interface IProps {
   setForm: (visible: boolean, type?: FormType) => void;
 }
 
-const HoverIcon = styled(Conversation) `
+const HoverIcon = styled(Conversation)`
   font-size: 32px;
   color: white;
   background: #2b58f9;
@@ -33,13 +33,13 @@ const HoverIcon = styled(Conversation) `
   }
 `;
 
-const Close = styled(Fork) `
+const Close = styled(Fork)`
   position: absolute;
   right: 16px;
   top: 12px;
 `;
 
-const ModalBody = styled(Modal.Body) `
+const ModalBody = styled(Modal.Body)`
   display: flex;
   align-items: center;
   flex-direction: column;
