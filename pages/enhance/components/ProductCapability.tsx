@@ -130,7 +130,7 @@ const LabelItem = styled.div`
     @media (max-width: 768px) {
       font-size: 10px;
       font-weight: 600;
-      transform: scale(0.8);
+      /* transform: scale(0.8); */
       line-height: 14px;
     }
   }
@@ -370,7 +370,7 @@ export const ProductCapability = () => {
                   <img src={activeIndex == index ? activeImg : img} alt="" />
                   <img src={activeImg} alt="" />
                   <div className="title-tab">{text}</div>
-                  <div className="subtitle">{english_text}</div>
+                  {/* <div className="subtitle">{english_text}</div> */}
                 </LabelItem>
               )
             }))
