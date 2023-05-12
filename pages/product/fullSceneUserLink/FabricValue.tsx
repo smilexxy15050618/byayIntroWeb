@@ -49,8 +49,12 @@ const FeatureValueWrap = styled.div`
     font-size: 40px;
     font-weight: 500;
     letter-spacing: 0px;
-    line-height: 228px;
     color: rgba(26, 26, 26, 1);
+    @media (max-width: 768px) {
+      font-size: 24px;
+      height: 105px;
+      line-height: 105px;
+    }
   }
   .FeatureValue-tab {
     width: 1200px;
@@ -222,5 +226,5 @@ const RawFabricValue: FC<IProps> = ({ className }) => {
 };
 
 export type IFeaturesProps = IProps;
-const FabricValue = styled(RawFabricValue)<IFeaturesProps>``;
+const FabricValue = styled(RawFabricValue) < IFeaturesProps > ``;
 export default FabricValue;

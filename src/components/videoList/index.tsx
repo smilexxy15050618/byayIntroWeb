@@ -189,13 +189,13 @@ const Wrapper = styled.div`
   ${renderCss(OFFSET_MAPPER, screenHeightRules, v => `margin-top: -${v}`)}
   > :nth-child(2) {
     ${renderCss(
-      mergeObj([
-        { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
-        { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-      ]),
-      screenHeightRules,
-      v => `padding-top: calc(${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)});`,
-    )}
+    mergeObj([
+      { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
+      { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
+    ]),
+    screenHeightRules,
+    v => `padding-top: calc(${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)});`,
+  )}
     ${ScrollNode} {
       top: 0;
       @media screen and (min-height: 1281px) {
@@ -210,17 +210,17 @@ const Wrapper = styled.div`
   }
   > :last-child {
     ${renderCss(
-      mergeObj([
-        { keyName: 'VIDEO_HEIGHT', obj: VIDEO_SIZE_MAPPER.VIDEO_HEIGHT },
-        { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
-        { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
-      ]),
-      screenHeightRules,
-      v =>
-        `margin-bottom: calc(100vh - (${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)}) - ${
-          v.VIDEO_HEIGHT
-        } + ${v.DISAPPEAR_OFFSET});`,
-    )}
+    mergeObj([
+      { keyName: 'VIDEO_HEIGHT', obj: VIDEO_SIZE_MAPPER.VIDEO_HEIGHT },
+      { keyName: 'OFFSET_MAPPER', obj: OFFSET_MAPPER },
+      { keyName: 'DISAPPEAR_OFFSET', obj: DISAPPEAR_OFFSET_MAPPER },
+    ]),
+    screenHeightRules,
+    v =>
+      `margin-bottom: calc(100vh - (${getContentPaddingTopCalcStr(v.OFFSET_MAPPER, v.DISAPPEAR_OFFSET)}) - ${
+      v.VIDEO_HEIGHT
+      } + ${v.DISAPPEAR_OFFSET});`,
+  )}
   }
 `;
 

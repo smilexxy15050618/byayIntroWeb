@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { TextArea } from '../../../src/components/common/BannerTextElements';
 import ByVoiceFooter from '../../../src/components/common/ByVoiceFooter';
 import { Layout } from '../../../src/components/Layout';
-// import { Wrapper } from '../../../src/components/voice-robot/style';
 import { FOOTER_BG } from '../../../src/constants/img-urls';
 import { HOST_ENUM } from '../../../src/lib/utils';
 import BannerWhite from './BannerWhite';
@@ -63,7 +62,7 @@ const Desc = styled.div`
   color: rgba(51, 51, 51, 1);
   text-align: center;
   @media (max-width: 768px) {
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     padding-top: 20px;
     text-align: center;
     font-size: 16px;
@@ -84,6 +83,7 @@ const BlueBtn = styled.div`
   color: rgba(255, 255, 255, 1);
   text-align: center;
   cursor: pointer;
+  
 `;
 
 export default ({ hostType = HOST_ENUM.HOST }) => {
@@ -106,13 +106,14 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
       {(visible, setVisible) => (
         <Wrapper>
           <BannerWhite
+            minWidthPC="1586px"
             background={[
               `url(${BANNER_BG}) center, linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);`,
               'linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);',
             ]}
             pcImgs={PC_BANNER_IMGS}
             mobileImg={WAP_BANNER_IMGS}>
-            <TextArea spaces={['', '']}>
+            <TextArea margin="-50px 0 0" spaces={['20px 48px', '8px 32px']}>
               <BigTitle>多模态情感化AI</BigTitle>
               <Desc>
                 将AI交互的深度推进到多模态交互领域，丰富

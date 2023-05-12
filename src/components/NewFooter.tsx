@@ -141,7 +141,8 @@ const FooterWrapper = styled.footer`
         line-height: 24px;
       }
       img {
-        margin: 0;
+        margin: 0 auto;
+        width: 32px;
       }
     }
   }
@@ -237,7 +238,7 @@ const CompanyInfoCol = styled.span`
   }
 `;
 // 联系我们
-const CompanyDescCol = styled(Col)`
+const CompanyDescCol = styled(Col) `
   @media (max-width: 980px) {
     display: flex;
     align-items: center;
@@ -343,7 +344,7 @@ const CompanyDescCol = styled(Col)`
     }
   `}
 `;
-const LinkCol = styled(Col)`
+const LinkCol = styled(Col) `
   display: flex;
   flex-direction: column;
   > div > div {
@@ -542,13 +543,13 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
                       {item.name === CALL_NUMBER_400 ? (
                         <a href="tel:4000235100">{CALL_NUMBER_400}</a>
                       ) : (
-                        <ByLink
-                          key={item.name}
-                          href={!disableLink ? item.href : ''}
-                          scroll={!disableLink && !!item.href}>
-                          <a className="the-btn">{item.icon ? <img src={item.icon} alt="" /> : item.name}</a>
-                        </ByLink>
-                      )}
+                          <ByLink
+                            key={item.name}
+                            href={!disableLink ? item.href : ''}
+                            scroll={!disableLink && !!item.href}>
+                            <a className="the-btn">{item.icon ? <img src={item.icon} alt="" /> : item.name}</a>
+                          </ByLink>
+                        )}
                     </Col>
                   ))}
                 </Row>
@@ -567,7 +568,7 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
             </div>
             <Visible sm xs>
               <Box
-                mb="130px"
+                mb="80px"
                 flexDirection="column"
                 width="calc(100vw - 64px)"
                 height="396px"

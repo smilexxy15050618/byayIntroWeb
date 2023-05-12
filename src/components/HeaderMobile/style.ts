@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
 // 导航栏头部分样式
 
-export const NavBarToggler = styled.div<{
+export const NavBarToggler = styled.div < {
   whiteCase: boolean;
   hasBottom: boolean;
   fontStyle: 'dark' | 'light';
   menuIconColor?: string;
-}>`
+} > `
   height: 64px;
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@ export const NavBarToggler = styled.div<{
   }
 `;
 // 导航栏主体
-export const NavBar = styled.div<{ collapse: boolean }>`
+export const NavBar = styled.div < { collapse: boolean } > `
   height: ${props => (props.collapse ? 'calc(100vh - 64px)' : '0px')};
   transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   background: white;
@@ -44,7 +44,7 @@ interface INodeProps {
   nodeTrain: any[];
 }
 // 每个树节点的样式(共同点)
-export const TreeNode = styled.div<INodeProps>`
+export const TreeNode = styled.div < INodeProps > `
   width: 100%;
   background: white;
   cursor: pointer;
@@ -53,6 +53,18 @@ export const TreeNode = styled.div<INodeProps>`
     border-radius: 6px;
     padding: 8px;
     display: flex;
+  }
+  .borderStyle{
+    position: relative;
+    &::before{
+      content: '';
+      width: 100%;
+      height: 1px;
+      bottom: 0;
+      left: -12px;
+      position: absolute;
+      background: #eee;
+    }
   }
   .link-btn-icon {
     width: 48px;
@@ -117,7 +129,7 @@ export const TreeNode = styled.div<INodeProps>`
   ${props => styleSelect(props.nodeInfo.level as number, props.nodeTrain)}
 `;
 /** 不同层级的节点样式 */
-const levelFirst = css<INodeProps>`
+const levelFirst = css < INodeProps > `
   padding-left: 24px;
   background: white;
   .tree-node-content {
@@ -125,11 +137,11 @@ const levelFirst = css<INodeProps>`
       ${props => (props.nodeInfo.children && props.nodeInfo.isExpand ? '#FFFFFF' : 'rgba(0, 0, 0, 0.08)')};
   }
 `;
-const levelSecond = css<INodeProps>`
+const levelSecond = css < INodeProps > `
   background: white;
   padding-left: 24px;
 `;
-const levelSecondProduct = css<INodeProps>`
+const levelSecondProduct = css < INodeProps > `
   padding-left: 27px;
   background: white;
   position: relative;
@@ -151,7 +163,7 @@ const levelSecondProduct = css<INodeProps>`
     background: ${props => (props.nodeInfo.levelFirst ? 'transparent' : 'rgba(0, 0, 0, 0.08)')};
   }
 `;
-const levelThirdProduct = css<INodeProps>`
+const levelThirdProduct = css < INodeProps > `
   background: white;
   padding-left: 24px;
 `;
@@ -162,10 +174,10 @@ const styleSelect = (level: number, nodeTrain: any[]) => {
   return level === 1
     ? levelFirst
     : level === 2
-    ? labelTrain.includes('产品')
-      ? levelSecondProduct
-      : levelSecond
-    : levelThirdProduct;
+      ? labelTrain.includes('产品')
+        ? levelSecondProduct
+        : levelSecond
+      : levelThirdProduct;
 };
 
 // 按钮显示函数
