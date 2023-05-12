@@ -222,7 +222,11 @@ export const ProductCapability = () => {
   const navRef = useRef(null);
   const [lock, setLock] = useState(false);
   useEffect(() => {
-    const fixedTop = navRef.current.offsetTop;
+    try {
+      const fixedTop = navRef.current.offsetTop;
+    } catch (error) {
+      console.log(error);
+    }
     const ScrollMagic = require('scrollmagic');
     const controller1 = new ScrollMagic.Controller();
     const scrollContent1 = document.getElementById('ProductCapContent1');
@@ -266,9 +270,10 @@ export const ProductCapability = () => {
       });
 
     window.onscroll = () => {
+      return false;
       let scrollTop = document.documentElement.scrollTop;
-      const isFixed = scrollTop >= fixedTop;
-      set_is_fixed(isFixed);
+      // const isFixed = scrollTop >= fixedTop;
+      // set_is_fixed(isFixed);
       if (!lock) {
         if (scrollTop >= scrollContent1.offsetTop - 153) {
           setActiveIndex(0)
@@ -282,8 +287,10 @@ export const ProductCapability = () => {
         setLock(false);
       }
         if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
-          if (scrollTop >= scrollContent3.offsetTop + scrollContent3.offsetHeight - 130) {
+          if (scrollTop >= scrollContent3.offsetTop + scrollContent3.offsetHeight - 130 ) {
             set_is_fixed(false);
+          }else if(scrollTop >= fixedTop){
+            set_is_fixed(true);
           }
         }
     }
@@ -344,7 +351,7 @@ export const ProductCapability = () => {
         </Content>
       </Visible>
       <Visible xs sm>
-        <Label ref={navRef} className={`bottom_border ${is_fixed ? 'fixedTop' : ''}`}>
+        {/* <Label ref={navRef} className={`bottom_border ${is_fixed ? 'fixedTop' : ''}`}>
           {
             labelList.map((({ img, activeImg, text, english_text }, index) => {
               return (
@@ -352,12 +359,11 @@ export const ProductCapability = () => {
                   <img src={activeIndex == index ? activeImg : img} alt="" />
                   <img src={activeImg} alt="" />
                   <div className="title-tab">{text}</div>
-                  {/* <div className="subtitle">{english_text}</div> */}
                 </LabelItem>
               )
             }))
           }
-        </Label>
+        </Label> */}
         <Content className='contents'>
           <div id="ProductCapContent1">
             <div>

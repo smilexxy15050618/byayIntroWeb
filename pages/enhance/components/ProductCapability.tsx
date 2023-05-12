@@ -228,7 +228,11 @@ export const ProductCapability = () => {
   const navRef = useRef(null);
   const [lock,setLock] = useState(false);
   useEffect(() => {
+    try {
     const fixedTop = navRef.current.offsetTop;
+    } catch (error) {
+      console.log(error);
+    }
     const ScrollMagic = require('scrollmagic');
     const controller1 = new ScrollMagic.Controller();
     const scrollContent1 = document.getElementById('ProductCapContent');
@@ -285,6 +289,8 @@ export const ProductCapability = () => {
         controller.destroy();
       });
     window.onscroll = () => {
+      // 以下代码为移动端滚动 tab跟随高亮
+      return  false;
       let scrollTop = document.documentElement.scrollTop;
       const isFixed = scrollTop >= fixedTop;
       set_is_fixed(isFixed);
@@ -370,7 +376,7 @@ export const ProductCapability = () => {
         </Content>
       </Visible>
       <Visible xs sm>
-        <Label ref={navRef} className={`bottom_border ${is_fixed ? 'fixedTop' : ''}`}>
+        {/* <Label ref={navRef} className={`bottom_border ${is_fixed ? 'fixedTop' : ''}`}>
           {
             labelList.map((({ img, activeImg, text, english_text }, index) => {
               return (
@@ -378,12 +384,11 @@ export const ProductCapability = () => {
                   <img src={activeIndex == index ? activeImg : img} alt="" />
                   <img src={activeImg} alt="" />
                   <div className="title-tab">{text}</div>
-                  {/* <div className="subtitle">{english_text}</div> */}
                 </LabelItem>
               )
             }))
           }
-        </Label>
+        </Label> */}
         <Content className='contents'>
           <div id='ProductCapContent'>
             <div>
