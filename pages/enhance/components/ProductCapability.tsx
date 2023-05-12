@@ -288,8 +288,13 @@ export const ProductCapability = () => {
   const scrollTo = (index) => {
     setActiveIndex(index);
     var dom = document.querySelectorAll('.contents>div')[index];
+    var scrollHeight = dom.offsetTop-'153';
     if (dom) {
-      dom.scrollIntoView({ behavior: "smooth" });
+      // dom.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({
+        top: scrollHeight,
+        behavior: 'smooth'
+      })
     }
   }
   return (
