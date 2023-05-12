@@ -12,7 +12,8 @@ import { FOOTER_CONFIG } from '../constants/page-modify';
 import classNames from 'classnames';
 const ByLink = withOpenOriginLink(Link);
 
-const CMMI_SRC = '//cdn.byai.com/static/official-website/crm/CMMI.png';
+const CMMI_SRC = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/底部隐私政策.png';
+// const CMMI_SRC = '/static/img2023/底部隐私政策.png';
 const XIN_SRC = '//cdn.byai.com/static/official-website/crm/xin.png';
 const PREFIX = 'https://cdn.byai.com/static/intro/img/footer';
 const IMG_HOVER_INFO = `${PREFIX}/get-news.png`;
@@ -65,7 +66,7 @@ const CRM_FOOTER_CONFIG = [
 const FooterWrapper = styled.footer`
   width: 100%;
   position: relative;
-  min-height: 524px;
+  min-height: 547px;
   background: #0d1727;
   padding-top: 14px;
   /* max-width: 1200px; */
@@ -74,6 +75,7 @@ const FooterWrapper = styled.footer`
     margin: 0 auto;
   }
   ${media.phone`
+    min-height: 524px;
     /* margin-bottom: 60px; */
     padding-left: 32px;
     .col-item {
@@ -107,16 +109,20 @@ const FooterWrapper = styled.footer`
     margin-left: auto;
     display: flex;
     align-items: center;
-    gap: 56px;
+    span {
+      color: rgba(255, 255, 255, 0.65);
+    }
   }
 
   .footer-icon-right--item {
-    display: flex;
-    align-items: center;
-    color: white;
-    opacity: 0.45;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1.6px;
+    line-height: 23.17px;
+    color: rgba(255, 255, 255, 0.65);
+    cursor: pointer;
     &:hover {
-      opacity: 1;
+      color: #00c8bd;
     }
     img {
       height: 32px;
@@ -344,6 +350,7 @@ const LinkCol = styled(Col)`
     margin-bottom: 16px;
     ${media.desktop`text-align: center;`}
   }
+
   &:nth-child(4) {
     > div {
       ${media.desktop`justify-content: center !important;`}
@@ -376,9 +383,17 @@ const LinkCol = styled(Col)`
       margin-top: 26px;
       margin-bottom: 22px;
     `}
+    span {
+      display: inline-block;
+      margin-left: 3px;
+      width: 26px;
+      height: 12px;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAYCAYAAAC1Ft6mAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAILSURBVFiF1ZdBkuIwDEWf3FyDZkWKW2B2vpWTW2VH5hYUs0r6HG3PwlERmATCtNNMvyo2trElW/pSBODD7Wzk04NYfhyxicivTX0uASQ5E47DyRda9zQCHiBCtanPJa0rys4V8dWGfYXObY/qgxHwEapXG/UVhLcKUuqsxhZ8uJ0NBGswzbo+NVMbta4oATR+x/YBCAQ7HB9br2fOsP+vPdb1qelcAcCoQ4FgBXwgADRTm6b4jaPzrSvKSPD9uis6V3jBHIaXpWfOcWbqTAAzb4PnaF1RqrOCObzXZ3mvzxKh0vCOhKO+IKQbF8xh+FPDb8c1xMYYfaEcziTV+V0O5zRMWleQ1nx6BhFwG96d2/qx8XtkfyENm6m8uszFBsQOXykHWR1S4+aopoZN/0rZuBtyQtyrks2hT+yX8iCHxArYJQ6+SG3eduuuQxEqg2mm57Vluubef5bmocrdUxgtZorBNJHg+wI5+b8hubuUrKKgzgtx/2jtM7n5DAsU1iTHjwxWec8dngvUoSTHAn7MqQ+3s53bHiGF2zNFcw7ZO4V1fWpaV1QCXsB3brvXbywh7iPBgly+XzKzSC+3qc+l9m699PtL45n6uyWcAZDOFXGp2/pOOldEwRxW6cZ4qEr/M5qr6/rUrIS3KhKOOvjKovgv9L2g1XomMPx++ZkMU+aql8zdyn8Ht7L/B8AQ9/bBLiWNAAAAAElFTkSuQmCC')
+        no-repeat center center/ contain;
+    }
   }
   a {
-    font-size: 16px;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.65) !important;
     line-height: 24px;
     letter-spacing: 1px;
@@ -466,28 +481,32 @@ const FriendLink = styled.div`
 
 const FriendLinkList = [
   {
+    name: '飞书',
+    link: 'https://www.feishu.cn',
+  },
+  {
+    name: 'WPS',
+    link: 'https://www.wps.cn',
+  },
+  {
+    name: '樊登读书',
+    link: 'https://www.dushu365.com',
+  },
+  {
+    name: '杭州社保',
+    link: 'http://hrss.hangzhou.gov.cn',
+  },
+  {
+    name: '亿邦动力',
+    link: 'https://www.ebrun.com',
+  },
+  {
     name: '企业微信SCRM',
     link: 'https://www.xlbscrm.com/scrm.html',
   },
   {
-    name: '亿邦动力',
-    link: 'https://www.ebrun.com/',
-  },
-  {
     name: '数据分析',
-    link: ' https://www.guandata.com/',
-  },
-  {
-    name: 'SCRM',
-    link: 'http://www.scrmcn.com/',
-  },
-  {
-    name: '万里牛ERP',
-    link: 'https://www.hupun.com',
-  },
-  {
-    name: '星耀裂变',
-    link: 'https://www.xyookj.com',
+    link: 'https://www.guandata.com',
   },
 ];
 
@@ -503,7 +522,7 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
       <Container>
         <Row justify="between">
           <Visible md lg xl xxl xxxl>
-            <Col lg={6}>
+            <Col lg={4}>
               <div style={{ width: '184px', marginTop: 26 }}>
                 <img src={BOTTOM_WHITE_LOGO} />
               </div>
@@ -512,8 +531,11 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
           {(origin === 'crm' ? CRM_FOOTER_CONFIG : FOOTER_CONFIG)
             .filter(block => block.title !== '热门搜索产品')
             .map((block, index) => (
-              <LinkCol key={block.title} lg={3}>
-                <h6>{block.title}</h6>
+              <LinkCol key={block.title} lg={index == 0 ? 5 : 3}>
+                <h6>
+                  {block.title}
+                  <span style={{ display: index == 1 ? 'inline-block' : 'none' }}></span>
+                </h6>
                 <Row style={block.style}>
                   {block.list.map((item, i) => (
                     <Col lg={24} md={8} sm={12} xs={12} key={i} className="col-item">
@@ -636,7 +658,20 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
             {videoCodeVisible && <div className="video-code public-qr-code"></div>}
           </div>
           <div className="footer-icon-right">
-            <div className="footer-icon-right--item">
+            {FriendLinkList.map((item, i) => {
+              const ret = (
+                <span
+                  className="footer-icon-right--item"
+                  onClick={() => {
+                    window.open(item.link, '_blank');
+                  }}>
+                  {item.name}
+                </span>
+              );
+              return i === 0 ? ret : [<span style={{ textAlign: 'center', width: '18px' }}>|</span>, ret];
+            })}
+
+            {/* <div className="footer-icon-right--item">
               <img src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/footer/iso.png" />
               <span>ISO27001</span>
             </div>
@@ -647,15 +682,14 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
             <div className="footer-icon-right--item">
               <img src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/footer/%E5%8A%A0%E5%AF%86.png" />
               <span>加密传输方案</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </Visible>
       <CompanyInfoCol>
-        <FriendLink>
+        {/* <FriendLink>
           <div style={{ width: '100%', display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-            {/* <span>友情链接: </span> */}
-            {FriendLinkList.flatMap((item, i) => {
+            {FriendLinkList.map((item, i) => {
               const ret = (
                 <span
                   className="friend-item"
@@ -668,7 +702,7 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
               return i === 0 ? ret : [<span style={{ textAlign: 'center', width: '18px' }}>|</span>, ret];
             })}
           </div>
-        </FriendLink>
+        </FriendLink> */}
         <span>
           Copyright © 2016-{new Date().getFullYear()}{' '}
           <a href="https://beian.miit.gov.cn/" target="_Blank" rel="noreferrer">
@@ -680,7 +714,7 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
           <PrivacyPolicy href="/privacy-policy" target="_blank">
             隐私政策
           </PrivacyPolicy>
-          <img src={CMMI_SRC} />
+          <img src={CMMI_SRC} style={{ width: '54px' }} />
           <img src={XIN_SRC} />
         </CrmImg>
       </CompanyInfoCol>

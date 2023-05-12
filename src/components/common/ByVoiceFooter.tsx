@@ -13,8 +13,12 @@ interface IProps {
 const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText }) => {
   return (
     <div className={className}>
-      <div style={{letterSpacing: '3px'}} className="title">立即体验AI时代的新一代用户运营平台</div>
-      <div style={{letterSpacing: '3px'}}  className="desc">用AI构建你和用户的“亲密关系”，共建存量时代的增长引擎</div>
+      <div style={{ letterSpacing: '3px' }} className="title">
+        立即体验AI时代的新一代用户运营平台
+      </div>
+      <div style={{ letterSpacing: '3px' }} className="desc">
+        用AI构建你和用户的“亲密关系”，共建存量时代的增长引擎
+      </div>
       <ByNormalBtn
         onClick={() => onClick()}
         width="200px"
@@ -79,18 +83,19 @@ const ByVoiceFooter = styled(RawByVoiceFooter)<IByVoiceFooterProps>`
     text-align: center;
   }
   @media (max-width: 768px) {
-    padding: 32px 28px;
+    padding: 46px 0;
     .title {
       font-size: 20px;
       color: #ffffff;
       line-height: 32px;
-      letter-spacing: 1px;
+      letter-spacing: 0 !important;
     }
     .desc {
       font-size: 14px;
       line-height: 22px;
       margin: 12px 0px 16px;
       color: #ffffff;
+      letter-spacing: 0 !important;
     }
   }
 `;

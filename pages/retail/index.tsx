@@ -11,32 +11,33 @@ import CustomerSolution from '../../src/components/ai-solution/customerTips';
 import VPane from '../../src/components/scene-solution/VPane';
 import { Wrapper } from '../../src/components/voice-robot/style';
 import { FOOTER_BG } from '../../src/constants/img-urls';
-import { NEW_BANNER, MOBILE_SCENE_SOLUTION_LIST, STRATEGY_LIST } from '../../src/constants/retail';
+import { NEW_BANNER, BANNER_LIST, MOBILE_SCENE_SOLUTION_LIST, STRATEGY_LIST } from '../../src/constants/retail';
 import { HOST_ENUM } from '../../src/lib/utils';
-import { IndustryCarousel } from '../../src/retail/components/IndustryCarousel-2023';
-import { IndustryCarouselMobile } from '../../src/retail/components/IndustryCarouselMobile';
+import { IndustryCarouselMobile as IndustryCarouselOld } from '../../src/retail/components/IndustryCarouselMobile';
 import StrategyMobile from '../../src/retail/components/StrategyMobile';
 import SceneSolution from '../../src/components/scene-solution-2023';
 import Play from './play';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 import AI from '../../src/retail/components/ai';
-import Strategy from './strategy-2023'
+import Strategy from './strategy-2023';
 import BannerWhite from '../../src/components/common/BannerWhite';
 import { TextArea } from '../../src/components/common/BannerTextElements';
-import imgurl from '../../img.url.js'
+import imgurl from '../../img.url.js';
+import SceneSolutionMobile from '../../src/retail/components/scene-solution';
 const BANNER_BG = `${imgurl}/about_banner_bg.png`;
 const JOIN_US_IMG = `${imgurl}/retail_carousel.png`;
+
 const BigTitle = styled.div`
   margin-top: 17px;
-  font-size:48px;
-  line-height:60px;
-  color:rgba(26, 26, 26, 1);
+  font-size: 48px;
+  line-height: 60px;
+  color: rgba(26, 26, 26, 1);
   font-weight: 600;
 `;
 const Desc = styled.div`
   margin-top: 16px;
   font-size: 20px;
-  line-height:34px;
+  line-height: 34px;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
 `;
@@ -93,15 +94,16 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                 <TextArea spaces={['', '']}>
                   <Hidden xs sm>
                     <BigTitle>
-                    品牌零售<br />智能用户运营解决方案
+                      品牌零售
+                      <br />
+                      智能用户运营解决方案
                     </BigTitle>
-                    <Desc>通过对话式AI助力品牌实现「极致用户体验+极致<br/>ROI」的全域营销服务</Desc>
-                    <BlueBtn
-                      onClick={() =>
-                        window.open('/form?formType=1')
-                      }>
-                      预约体验
-                    </BlueBtn>
+                    <Desc>
+                      通过对话式AI助力品牌实现「极致用户体验+极致
+                      <br />
+                      ROI」的全域营销服务
+                    </Desc>
+                    <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
                   </Hidden>
                 </TextArea>
               </BannerWhite>
@@ -291,9 +293,15 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
               {/* <Play /> */}
             </Visible>
             <Visible xs sm>
-              <IndustryCarouselMobile dataList={NEW_BANNER} />
+              <IndustryCarouselOld dataList={BANNER_LIST} />
+              <SceneSolutionMobile
+                dataList={MOBILE_SCENE_SOLUTION_LIST}
+                onJumpClick={() => {
+                  setFormVisible(true, FormType.CUSTOMER);
+                }}
+              />
               {STRATEGY_LIST.map(item => (
-                <StrategyMobile key={item.title} {...item} />
+                <StrategyMobile key={item.desc} {...item} />
               ))}
             </Visible>
             {/* <AIEmployee /> */}
@@ -306,7 +314,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
               btnText="与我联系"
               background={`url(${FOOTER_BG})`}
               onClick={() => {
-                window.open('/form?formType=1')
+                window.open('/form?formType=1');
               }}
             />
             {/* <ByVoiceFooter

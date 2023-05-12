@@ -10,11 +10,11 @@ import { NAV_CONFIG } from '../constants/page-modify-2023';
 import { media } from '../constants/style';
 import { withOpenOriginLink } from '../high-components/OpenOriginLink';
 import { HOST_ENUM, jumpUrl } from '../lib/utils';
-import imgurl from '../../img.url.js'
+import imgurl from '../../img.url.js';
 
 const ByLink = withOpenOriginLink(Link);
 // export const LOGO = '//cdn.byai.com/static/by-intro-2023/header-logo/black-logo1.png';
-export const LOGO = imgurl+'/black-logo1.png';
+export const LOGO = imgurl + '/black-logo1.png';
 
 export const LOGO_SM = '//cdn.byai.com/static/official-website/seo-logo-1222-sm.png';
 export const WHITE_LOGO = '//cdn.byai.com/static/by-intro-2023/header-logo/white-logo1.png';
@@ -35,7 +35,7 @@ const HeaderWrapper = styled.div<{ needOpacity: boolean; fontStyle: 'dark' | 'li
   top: 0;
   z-index: 99;
   width: 100%;
-  height: 60px;
+  height: 80px;
   background: ${props => (props.needOpacity ? 'transparent' : 'rgba(255,255,255,1)')};
   border-bottom: ${props => (props.needOpacity ? 'none' : '1px solid #eeeeee')};
   // backdrop-filter: blur(5px);
@@ -269,6 +269,9 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
       border-radius: 6px;
       padding: 8px;
       display: flex;
+      &:nth-child(1):hover {
+        background: transparent;
+      }
       &:hover {
         background: #f5f6f8;
       }
@@ -318,7 +321,7 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
     }
   }
 
-  .solve-scheme-content{
+  .solve-scheme-content {
     width: 800.5px;
     height: 336px;
     padding: 32px 40px;
@@ -329,37 +332,40 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
     cursor: ${props => (props.visible ? 'pointer' : 'auto')};
     overflow: hidden;
     gap: 0;
-    .solve-scheme-item{
-      &:nth-child(1){
+    .solve-scheme-item {
+      &:nth-child(1) {
         width: 320px;
       }
-      &:nth-child(2){
+      &:nth-child(2) {
         width: 160px;
         margin: 0 40px;
       }
-      &:nth-child(3){
+      &:nth-child(3) {
         width: 160px;
       }
-      .scheme-title{
+      .scheme-title {
         padding-left: 28px;
         height: 56px;
         line-height: 56px;
         font-size: 18px;
         color: rgba(26, 26, 26, 1);
-        border-bottom: 1px solid rgba(26, 26, 26, 0.18);   
+        border-bottom: 1px solid rgba(26, 26, 26, 0.18);
         margin-bottom: 16px;
       }
-      .qy-icon{
-        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAQCAYAAAAbBi9cAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAEeSURBVDiNnZMxTsMwFIY/W0ilggMAIyteqsIcd88BfJuE2+QW8SHaBdQNlKHqHAJqzJBYCY2ToP5TnvP8Oe//Y0GrJ/OVg9DMSFBvttnSnq9fAShTaofQgnozBXGIBKQGwiCv0El9KVNph4uUqdJuzyIFkMPmUvcblalSZUrt68Pz530R7ddFtF87SPy7AQhke2rT4HBROw4Ap9vv9+OqiI+rIh4drf+pXrvsetK3UVBjvMy98Q6ZN8CFmAINRttmS+sj9s9zaQZBjdFSdwZLPQcJgqC2w3oeFhwNavv3nzqH/wOkTJU6ZN7FL/N+Paax+FNf99NSphqFBTy6TKK9sAkILeB1qtnhosPLx8Pp5ucN4M4+xn6P6N+ry1XbX8WqfhZO+MBIAAAAAElFTkSuQmCC') no-repeat left center;
+      .qy-icon {
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAQCAYAAAAbBi9cAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAEeSURBVDiNnZMxTsMwFIY/W0ilggMAIyteqsIcd88BfJuE2+QW8SHaBdQNlKHqHAJqzJBYCY2ToP5TnvP8Oe//Y0GrJ/OVg9DMSFBvttnSnq9fAShTaofQgnozBXGIBKQGwiCv0El9KVNph4uUqdJuzyIFkMPmUvcblalSZUrt68Pz530R7ddFtF87SPy7AQhke2rT4HBROw4Ap9vv9+OqiI+rIh4drf+pXrvsetK3UVBjvMy98Q6ZN8CFmAINRttmS+sj9s9zaQZBjdFSdwZLPQcJgqC2w3oeFhwNavv3nzqH/wOkTJU6ZN7FL/N+Paax+FNf99NSphqFBTy6TKK9sAkILeB1qtnhosPLx8Pp5ucN4M4+xn6P6N+ry1XbX8WqfhZO+MBIAAAAAElFTkSuQmCC')
+          no-repeat left center;
       }
-      .zw-icon{
-        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAASCAYAAACEnoQPAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAGCSURBVDiNhZO/SiNRFMZ/JwgSRRQUbFIIFivMgJaChTdvca30EXyDyTzGVotdnsB2JmArWMRm2WCEZRFBUaIkg5izxc3V+Rc93T3nfN/5dz9hjoU26yh6KEiv313s1OVIHQhAIQJNQQxoKmjc7zbTAthXmD3NjDH21UI7NopEPuYIQdBYApupY5YewLwWPRE0jCsmhsBm6pzVREdcTxLYTBvzqrhWNfU7qLMKOLRj4wBirk8vUIicr9pdARzYTF9ao+QxvNv6c3I5BDGDo6uzf+bml9JIymMUwMK0vfx3lfuD4W62Nt4CmGy+HL8vvd36+Fxwv9tMhWn7x8/9vby/db5zKEzb5TvPwI3CPKPth6vFp+Zw9fdGD+C19UwZCJouCMTlRawM1vdWBuuADlvnO4BbpCdwl4AF9yACOr6L/A9zwPK5xHzMH9hJ8tU98xbYSRLYSVJyZvodQWizTv5HfmxbIFaIKqw5oEKU37oUE/IK+hSLl2dZlhU9l0n8NerU9h8RU8RHMv9yEwAAAABJRU5ErkJggg==') no-repeat left center;
+      .zw-icon {
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAASCAYAAACEnoQPAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAGCSURBVDiNhZO/SiNRFMZ/JwgSRRQUbFIIFivMgJaChTdvca30EXyDyTzGVotdnsB2JmArWMRm2WCEZRFBUaIkg5izxc3V+Rc93T3nfN/5dz9hjoU26yh6KEiv313s1OVIHQhAIQJNQQxoKmjc7zbTAthXmD3NjDH21UI7NopEPuYIQdBYApupY5YewLwWPRE0jCsmhsBm6pzVREdcTxLYTBvzqrhWNfU7qLMKOLRj4wBirk8vUIicr9pdARzYTF9ao+QxvNv6c3I5BDGDo6uzf+bml9JIymMUwMK0vfx3lfuD4W62Nt4CmGy+HL8vvd36+Fxwv9tMhWn7x8/9vby/db5zKEzb5TvPwI3CPKPth6vFp+Zw9fdGD+C19UwZCJouCMTlRawM1vdWBuuADlvnO4BbpCdwl4AF9yACOr6L/A9zwPK5xHzMH9hJ8tU98xbYSRLYSVJyZvodQWizTv5HfmxbIFaIKqw5oEKU37oUE/IK+hSLl2dZlhU9l0n8NerU9h8RU8RHMv9yEwAAAABJRU5ErkJggg==')
+          no-repeat left center;
       }
-      .jr-icon{
-        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAGWSURBVEiJ7VU7coMwEH1iMpPxOBlXTuXhAnAAOuQ7pNBtMLfxLSx39PEBMowru3LhEBo2hSRbCAmS1N4KrXbfPu0P4CETwsYuU9FwAiuUIdsfts+bMf2fAySipevqguvqgrcqBgNKAuUA46esBgCt79aH7Uz6MJ7G2QOf7x8AgHNWY1nFhfk2Mj8u8HJ8DZKMQheG0bKKb7pzVg/A58cFgIiHcEZe0G4IKgUA8KVTZYCXVazBx8VbAw1eMKA0OgKKU1ZbrEkyUAlE3Nj6iu0NkIiWXIdUtBsViHIGKu2i3gmFi91jn4iWXF0qGh46G1KGhC2DGqg2hMOik4Rol4pmbaXEsSFJQD4ZAGDczn0fINoBgEpfPxUMbE9A4XoF2rRz2EW8H4hyXzp84nkBSb0GrCCdZIhAoBvbIQnl62qCg+aY8SkLVRe2n4RKRcNDHaG6x69XPv3OAjwvOGxnUi01FEOwYVrsoZycAT+rcDET8b2bspn4Hyh26kRStSLpXmdcA3hXxK8C2IGA2xBqRyqB+9Z9yL/lB/JS34BOmvRmAAAAAElFTkSuQmCC') no-repeat left center;
+      .jr-icon {
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAGWSURBVEiJ7VU7coMwEH1iMpPxOBlXTuXhAnAAOuQ7pNBtMLfxLSx39PEBMowru3LhEBo2hSRbCAmS1N4KrXbfPu0P4CETwsYuU9FwAiuUIdsfts+bMf2fAySipevqguvqgrcqBgNKAuUA46esBgCt79aH7Uz6MJ7G2QOf7x8AgHNWY1nFhfk2Mj8u8HJ8DZKMQheG0bKKb7pzVg/A58cFgIiHcEZe0G4IKgUA8KVTZYCXVazBx8VbAw1eMKA0OgKKU1ZbrEkyUAlE3Nj6iu0NkIiWXIdUtBsViHIGKu2i3gmFi91jn4iWXF0qGh46G1KGhC2DGqg2hMOik4Rol4pmbaXEsSFJQD4ZAGDczn0fINoBgEpfPxUMbE9A4XoF2rRz2EW8H4hyXzp84nkBSb0GrCCdZIhAoBvbIQnl62qCg+aY8SkLVRe2n4RKRcNDHaG6x69XPv3OAjwvOGxnUi01FEOwYVrsoZycAT+rcDET8b2bspn4Hyh26kRStSLpXmdcA3hXxK8C2IGA2xBqRyqB+9Z9yL/lB/JS34BOmvRmAAAAAElFTkSuQmCC')
+          no-repeat left center;
       }
-      a{
-        display:inline-block;
+      a {
+        display: inline-block;
         width: 160px;
         height: 48px;
         border-radius: 4px;
@@ -368,15 +374,13 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
         font-size: 16px;
         color: rgba(26, 26, 26, 1);
         color: rgba(26, 26, 26, 1);
-        &:hover{
-          color:rgba(43, 88, 249, 1);
+        &:hover {
+          color: rgba(43, 88, 249, 1);
           background: rgba(43, 88, 249, 0.06);
         }
       }
     }
-
   }
-
 `;
 
 const Icon = styled.div<{ expandVisible: boolean; fontStyle: 'dark' | 'light' }>`
@@ -556,36 +560,36 @@ class Nav extends React.Component<
                     </LinkSwitch>
                     {item.smallDropdown && item.expand && (
                       <SmallDropdownWrapper visible={item.name === expandVisible} className="small-dropdown-identify">
-                        {item.path.includes('solutions') ? 
-                        <div className="solve-scheme-content">
-                          {item.expand.map(menuItem => (
-                            <div className="solve-scheme-item">
-                              <div className={menuItem.type}>{menuItem.title}</div>
-                              {menuItem.list.map(menuItems => (
-                                <a href={menuItems.path}>{menuItems.title}</a>
-                              ))} 
-                            </div>
-                          ))}  
-                        </div> 
-                        : 
-                        <div className="small-dropdown-content">
-                          {item.expand.map(menuItem => (
-                            <a
-                              href={isOpenOrigin ? `https://www.byai.com${menuItem.path}` : menuItem.path}
-                              key={menuItem.path}>
-                              <div className="link-btn-wrapper" onClick={() => this.handleOpenNewPage}>
-                                <div className="link-btn-icon">
-                                  <img src={menuItem.icon} />
-                                </div>
-                                <div>
-                                  <div className="link-btn-info-title">{menuItem.title}</div>
-                                  {menuItem.desc && <div className="link-btn-info-desc">{menuItem.desc}</div>}
-                                </div>
+                        {item.path.includes('solutions') ? (
+                          <div className="solve-scheme-content">
+                            {item.expand.map(menuItem => (
+                              <div className="solve-scheme-item">
+                                <div className={menuItem.type}>{menuItem.title}</div>
+                                {menuItem.list.map(menuItems => (
+                                  <a href={menuItems.path}>{menuItems.title}</a>
+                                ))}
                               </div>
-                            </a>
-                          ))}
-                        </div>
-                        }
+                            ))}
+                          </div>
+                        ) : (
+                          <div className="small-dropdown-content">
+                            {item.expand.map(menuItem => (
+                              <a
+                                href={isOpenOrigin ? `https://www.byai.com${menuItem.path}` : menuItem.path}
+                                key={menuItem.path}>
+                                <div className="link-btn-wrapper" onClick={() => this.handleOpenNewPage}>
+                                  <div className="link-btn-icon">
+                                    <img src={menuItem.icon} />
+                                  </div>
+                                  <div>
+                                    <div className="link-btn-info-title">{menuItem.title}</div>
+                                    {menuItem.desc && <div className="link-btn-info-desc">{menuItem.desc}</div>}
+                                  </div>
+                                </div>
+                              </a>
+                            ))}
+                          </div>
+                        )}
                       </SmallDropdownWrapper>
                     )}
                   </div>

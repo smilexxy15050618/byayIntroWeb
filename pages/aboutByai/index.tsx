@@ -1,16 +1,24 @@
-import React, { FC, useEffect, useState} from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Layout } from '../../src/components/Layout';
 import { FormType } from '../../src/components/TryForm';
-import {  Hidden } from 'react-grid-system';
+import { Hidden, Visible } from 'react-grid-system';
 import { TextArea } from '../../src/components/common/BannerTextElements';
 import BannerWhite from '../../src/components/common/BannerWhite';
-import { TabNav, EnterpriseIntroduction, MissionVision, DevelopHistory, SocietyDuty, FlairVoucher, CustomerWords, JoinUs } from '../../src/components/about';
+import {
+  TabNav,
+  EnterpriseIntroduction,
+  MissionVision,
+  DevelopHistory,
+  SocietyDuty,
+  FlairVoucher,
+  CustomerWords,
+  JoinUs,
+} from '../../src/components/about';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
-
-import imgurl from '../../img.url.js'
+import AboutOld, { AboutContent } from '../about';
+import imgurl from '../../img.url.js';
 import { HOST_ENUM } from '../../src/lib/utils';
-
 
 const BANNER_BG = `${imgurl}/about_banner_bg.png`;
 const JOIN_US_IMG = `${imgurl}/about_banner_img.png`;
@@ -21,21 +29,19 @@ const DEVELOPHIS_BG = `${imgurl}/develophis_bg.png`;
 const JOINUS_BG = `${imgurl}/web-com.png`;
 const FOOTER_BG = `${imgurl}/kqaizl.png`;
 
-const Wrapper = styled.div`
-  
-`;
+const Wrapper = styled.div``;
 
 const BigTitle = styled.div`
   margin-top: 20px;
-  font-size:48px;
-  line-height:80px;
-  color:rgba(26, 26, 26, 1);
+  font-size: 48px;
+  line-height: 80px;
+  color: rgba(26, 26, 26, 1);
 `;
 
 const Desc = styled.div`
   margin-top: 10px;
   font-size: 20px;
-  line-height:32px;
+  line-height: 32px;
   color: rgba(51, 51, 51, 1);
 `;
 
@@ -59,11 +65,11 @@ const EnIntroductionWrap = styled.div`
   background: rgba(255, 255, 255, 1);
   box-shadow: 20px -20px 110px 0px rgba(24, 63, 171, 0.12);
   border-radius: 20px 20px 0 0;
-`
+`;
 
 const TitleCredit = styled.div`
   padding-top: 80px;
-  padding-bottom:44px;
+  padding-bottom: 44px;
   font-size: 40px;
   line-height: 48px;
   color: #fff;
@@ -80,110 +86,100 @@ const CreditMedal = styled.div<{ backgroundImage?: string }>`
   background-position: center;
 `;
 
-
-
-
 const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
   const [initial, setInitial] = useState(true);
 
   const handleHeaderOpacity = () => {
-    document.body.getBoundingClientRect().top > -10 ? setInitial(true) : setInitial(false)
+    document.body.getBoundingClientRect().top > -10 ? setInitial(true) : setInitial(false);
   };
 
   const hadnleNav = () => {
-    setInitial(false)
-  }
+    setInitial(false);
+  };
 
-  useEffect(() => { 
+  useEffect(() => {
     document.addEventListener('wheel', handleHeaderOpacity);
-  }, [])
-  
+  }, []);
+
   return (
-  <Layout initialOpacity={initial}  headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
-    {(visible, setVisible ) => (
+    <Layout initialOpacity={initial} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
+      {(visible, setVisible) => (
         <Wrapper>
-          <BannerWhite
-            background={[`url(${BANNER_BG}) right top ,#F6FCFF`, '#F6FCFF']}
-            pcImgs={[
-              {
-                src: JOIN_US_IMG,
-                style: { width: 644, height:496, top: 0, right: 0 },
-                className: ['animate__fadeInRight', 'animate__ahead_300ms'],
-              },
-            ]}
-            mobileImg={JOIN_US_IMG}>
-            <TextArea spaces={['', '']}>
-              <Hidden xs sm>
-                <BigTitle>
-                  关于百应
-                </BigTitle>
-                <Desc>致力于通过前沿对话式AI能力<br />助力政府和企业高效连接C端用户</Desc>
-                <BlueBtn
-                  onClick={() =>
-                    window.open('/form?formType=1')
-                  }>
-                  预约体验
-                </BlueBtn>
-              </Hidden>
-            </TextArea>
-          </BannerWhite>
-          <EnIntroductionWrap>
-            <TabNav 
-              bannerList={[
+          <Hidden xs sm>
+            <BannerWhite
+              background={[`url(${BANNER_BG}) right top ,#F6FCFF`, '#F6FCFF']}
+              pcImgs={[
                 {
-                  name: '企业介绍',
-                  jumpTarget: '#qiyejieshao'
+                  src: JOIN_US_IMG,
+                  style: { width: 644, height: 496, top: 0, right: 0 },
+                  className: ['animate__fadeInRight', 'animate__ahead_300ms'],
                 },
-                {
-                  name: '使命愿景',
-                  jumpTarget: '#MissionVision'
-                },
-                {
-                  name: '发展历程',
-                  jumpTarget: '#DevelopHistory'
-                },
-                {
-                  name: '社会责任',
-                  jumpTarget: '#SocietyDuty'
-                },
-                {
-                  name: '荣誉证书',
-                  jumpTarget: '#CreditMedal'
-                },
-                {
-                  name: '加入我们',
-                  jumpTarget: '#JoinUs'
-                }
               ]}
-              onCancel={hadnleNav}
-            />
-            <EnterpriseIntroduction
-              cover={ABOUT_INTRO}
-            />
-          </EnIntroductionWrap>
-          <MissionVision
-            MissionBG={Mission_BG}
-            VisionBG={Vision_BG}
-          />
-          <DevelopHistory
-            backgroundImage={DEVELOPHIS_BG}
-          />
-          <SocietyDuty />
-          <FlairVoucher />
-          <CustomerWords />
-          <JoinUs backgroundImage={JOINUS_BG} />
+              mobileImg={JOIN_US_IMG}>
+              <TextArea spaces={['', '']}>
+                <Hidden xs sm>
+                  <BigTitle>关于百应</BigTitle>
+                  <Desc>
+                    致力于通过前沿对话式AI能力
+                    <br />
+                    助力政府和企业高效连接C端用户
+                  </Desc>
+                  <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+                </Hidden>
+              </TextArea>
+            </BannerWhite>
+            <EnIntroductionWrap>
+              <TabNav
+                bannerList={[
+                  {
+                    name: '企业介绍',
+                    jumpTarget: '#qiyejieshao',
+                  },
+                  {
+                    name: '使命愿景',
+                    jumpTarget: '#MissionVision',
+                  },
+                  {
+                    name: '发展历程',
+                    jumpTarget: '#DevelopHistory',
+                  },
+                  {
+                    name: '社会责任',
+                    jumpTarget: '#SocietyDuty',
+                  },
+                  {
+                    name: '荣誉证书',
+                    jumpTarget: '#CreditMedal',
+                  },
+                  {
+                    name: '加入我们',
+                    jumpTarget: '#JoinUs',
+                  },
+                ]}
+                onCancel={hadnleNav}
+              />
+              <EnterpriseIntroduction cover={ABOUT_INTRO} />
+            </EnIntroductionWrap>
+            <MissionVision MissionBG={Mission_BG} VisionBG={Vision_BG} />
+            <DevelopHistory backgroundImage={DEVELOPHIS_BG} />
+            <SocietyDuty />
+            <FlairVoucher />
+            <CustomerWords />
+            <JoinUs backgroundImage={JOINUS_BG} />
+          </Hidden>
+          <Visible xs sm>
+            {AboutContent}
+          </Visible>
           <ByVoiceFooter
             title="立即体验AI时代的新一代用户运营平台"
             desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
             btnText="与我联系"
             background={`url(${FOOTER_BG})`}
-            onClick={() =>
-              window.open('/form?formType=1')
-            }
+            onClick={() => window.open('/form?formType=1')}
           />
         </Wrapper>
-    )}
-  </Layout>
+      )}
+    </Layout>
   );
 };
 

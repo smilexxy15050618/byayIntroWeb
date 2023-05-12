@@ -1,6 +1,8 @@
 import { ChannelCooperation, Consult, FreeFile, PhoneCall, PhoneNumber } from '@indata/icon-byai';
 import * as React from 'react';
 import { CALL_NUMBER_400 } from '../../constants';
+import imgurl from '../../../img.url.js';
+
 import {
   CodeCard,
   FreeCard,
@@ -30,10 +32,10 @@ const SuspensionListMap = [
   },
 ];
 
-export const AVATAR = 'https://cdn.byai.com/by-fe-cdn/static/pmp/77b1d84c-a3ad-42a7-bae6-89b45e3a7716.png';
+export const AVATAR = imgurl + '/弹弹头.svg';
 export const AVATAR_FRAME = 'https://cdn.byai.com/by-fe-cdn/static/pmp/8f2b9215-34d3-49f7-af3c-114c29b29122.png';
-export const QR_CODE_1 = 'https://cdn.byai.com/static/intro/img/%E5%85%8D%E8%B4%B9%E9%A2%86%E5%8F%96.png';
-export const QR_CODE_2 = 'https://cdn.byai.com/static/intro/img/%E5%94%AE%E5%89%8D.png';
+export const QR_CODE_1 = imgurl + '/我是小应.svg';
+export const QR_CODE_2 = imgurl + '/免费领取.svg';
 
 interface ISuspensionState {
   welcomeVisible: boolean;
@@ -50,6 +52,8 @@ class Suspension extends React.Component<ISuspensionState> {
     const { activeIndex } = this.state;
     return (
       <SuspensionWrapper>
+        <img src={QR_CODE_1} style={{ opacity: '0' }} />
+        <img src={QR_CODE_2} style={{ opacity: '0' }} />
         <SuspensionAvatar
           onMouseEnter={() => this.setState({ welcomeVisible: true })}
           onMouseLeave={() => this.setState({ welcomeVisible: false })}>
@@ -60,15 +64,15 @@ class Suspension extends React.Component<ISuspensionState> {
               <div className="hover-head">
                 <img src={AVATAR} />
                 <div>
-                  <div className="hover-head-title">我是小应，您的专属增长顾问</div>
-                  <div className="hover-head-desc">免费1v1服务 AI助力商家轻松营销</div>
+                  <div className="hover-head-title">我是小应，您的专属运营顾问</div>
+                  <div className="hover-head-desc">免费1v1服务 AI开启用户运营新体验</div>
                 </div>
               </div>
               <div className="hover-content">
                 <img src={QR_CODE_1} alt="" className="hover-content-code" />
               </div>
               <div className="hover-content-tips">
-                <div>扫码添加 | 了解新鲜私域动态</div>
+                <div>扫码添加 | 了解头部客户案例</div>
               </div>
               <div className="hover-footer">
                 <PhoneNumber style={{ fontSize: 24 }} />
@@ -96,15 +100,15 @@ class Suspension extends React.Component<ISuspensionState> {
                   <div className="hover-head">
                     <img src={AVATAR} />
                     <div>
-                      <div className="hover-head-title">我是小应，您的专属增长顾问</div>
-                      <div className="hover-head-desc">免费1v1服务 AI助力商家轻松营销</div>
+                      <div className="hover-head-title">我是小应，您的专属运营顾问</div>
+                      <div className="hover-head-desc">免费1v1服务 AI开启用户运营新体验</div>
                     </div>
                   </div>
                   <div className="hover-content">
                     <img src={QR_CODE_1} alt="" className="hover-content-code" />
                   </div>
                   <div className="hover-content-tips">
-                    <div>扫码添加 | 了解新鲜私域动态</div>
+                    <div>扫码添加 | 了解头部客户案例</div>
                   </div>
                   <div className="hover-footer">
                     <PhoneNumber style={{ fontSize: 24 }} />
@@ -114,15 +118,15 @@ class Suspension extends React.Component<ISuspensionState> {
               )}
               {activeIndex === 2 && (
                 <PhoneCard isMove={true}>
-                  <div className="hover-head">咨询渠道合作 共享万亿市场</div>
+                  <div className="hover-head">咨询渠道合作 共建增长引擎</div>
                   <div className="hover-content">131 8508 3001</div>
                 </PhoneCard>
               )}
               {activeIndex === 3 && (
                 <FreeCard>
                   <div className="hover-head">
-                    <div>免费领取私域运营资料包</div>
-                    <div>抢先开启私域增长</div>
+                    <div>免费领取用户运营资料包</div>
+                    <div>抢先开启业务增长</div>
                   </div>
                   <div className="hover-content">
                     <img src={QR_CODE_2} alt="" className="hover-content-code" />
@@ -136,12 +140,12 @@ class Suspension extends React.Component<ISuspensionState> {
                   </div>
                   <div className="hover-footer">
                     <div>
-                      <span>私域加粉白皮书</span>
-                      <span>细分行业私域打法</span>
+                      <span>会员运营白皮书</span>
+                      <span>细分行业运营打法</span>
                     </div>
                     <div>
-                      <span>私域标杆案例</span>
-                      <span>1v1私域顾问服务</span>
+                      <span>行业标杆案例</span>
+                      <span>1v1专属顾问服务</span>
                     </div>
                   </div>
                 </FreeCard>

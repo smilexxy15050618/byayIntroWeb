@@ -153,127 +153,123 @@ const Wrapper = styled.div`
   background: #ffffff;
 `;
 
+export const AboutContent = (
+  <>
+    <div style={{ marginTop: 85 }}></div>
+    <Brief
+      backgroundImage="//cdn.byai.com/static/official-website/about/bg1.png"
+      cover="//cdn.byai.com/static/official-website/about/baiying-1222.png"
+    />
+    <NewsBanner title="百应头条" newsList={NEWS_LIST} />
+    {/* <Intro>
+    <Title title="百应文化" desc="BYAI CULTURE" />
+    <Container>
+      <Row justify="center">
+        {SERVICE_DEPLOY.map((item, index) => (
+          <Col lg={8} md={12} xs={24}>
+            <Deploy
+              icon={item.icon}
+              title={item.title}
+              desc={item.desc}
+              descSecond={item.descSecond}
+            />
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  </Intro> */}
+    <Vision />
+    <Intro backgroundImage="//cdn.byai.com/static/official-website/about/bg2.png">
+      <Title title="百应历程" desc="BYAI HISTORY" />
+      <Visible md lg xl xxl xxxl>
+        <Course courseList={COURSE_TIME.reverse()} />
+      </Visible>
+      <Visible xs sm>
+        <CourseXS courseList={COURSE_TIME} />
+      </Visible>
+    </Intro>
+    <TeamIntro title="百应团队" desc="BYAI TEAM" />
+    <Intro>
+      <Title title="证书及奖项" desc="THE CERTIFICATES AND AWARDS" />
+      <ScreenClassRender
+        render={screenClass => {
+          let limit;
+          switch (screenClass) {
+            case 'lg':
+              limit = 4;
+              break;
+            case 'md':
+              limit = 3;
+              break;
+            case 'sm':
+              limit = 2;
+              break;
+            case 'xs':
+              limit = 1;
+              break;
+            default:
+              limit = 5;
+          }
+          return <Certificate limit={limit} />;
+        }}
+      />
+    </Intro>
+    <DescContent
+      title={<Title style={{ paddingTop: 0, paddingBottom: 48 }} title="联系我们" desc="CONTACT US" />}
+      bannerList={[
+        {
+          name: '杭州',
+          title: '总部',
+          address: '浙江省杭州市余杭区梦想小镇天使村8幢、11幢',
+          imageUrl: 'https://cdn.byai.com/static/official-website/about/hangzhou.png',
+          openUrl: 'https://surl.amap.com/uEIZUw50rg',
+        },
+        {
+          name: '北京',
+          title: '分公司',
+          address: '北京市朝阳区望京SOHO T3B座2105',
+          imageUrl: 'https://cdn.byai.com/static/official-website/about/beijing-v2.png',
+          openUrl: 'https://surl.amap.com/2MvfXG1b7cT',
+        },
+        {
+          name: '上海',
+          title: '分公司',
+          address: '上海市闵行区申长路518号 虹桥绿谷广场C幢4楼411室',
+          imageUrl: 'https://cdn.byai.com/static/official-website/about/shanghai.png',
+          openUrl: 'https://surl.amap.com/4mOaeSz1menc',
+        },
+        {
+          name: '广州',
+          title: '分公司',
+          address: '广州天河区体育东路116号 财富广场西塔1301（1号线体育中心B出口）',
+          imageUrl: 'https://cdn.byai.com/static/official-website/about/guangzhou.png',
+          openUrl: 'https://surl.amap.com/v6WgE4A5fb',
+        },
+        {
+          name: '深圳',
+          title: '分公司',
+          address: '深圳市福田区滨河大道9289号 京基滨河时代大厦A座1206',
+          imageUrl: 'https://cdn.byai.com/static/official-website/about/shenzhen.png',
+          openUrl: 'https://surl.amap.com/rdkZis1jaxM',
+        },
+        {
+          name: '成都',
+          title: '分公司',
+          address: '四川省成都市高新区天府二街东方希望天祥广场B栋601室',
+          imageUrl: 'https://cdn.byai.com/static/official-website/about/chengdu.png',
+          openUrl: 'https://surl.amap.com/XiYQeMr4kc',
+        },
+      ]}
+    />
+  </>
+);
+
 const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => (
   <Layout hostType={hostType}>
     {(visible, setVisible) => (
       <>
         <Wrapper>
-          {/* <Banner
-            title="Build Your dreams with us"
-            desc="极致工作 快乐生活"
-            text="成为我们一员"
-            backgroundImage="//cdn.byai.com/static/official-website/about/about_banner.svg"
-            mobileBackgroundImage={BACKGOURND_XS}
-            onBtnClick={() =>
-              window.open('https://www.lagou.com/gongsi/154789.html')
-            }
-          /> */}
-          <div style={{ marginTop: 85 }}></div>
-          <Brief
-            backgroundImage="//cdn.byai.com/static/official-website/about/bg1.png"
-            cover="//cdn.byai.com/static/official-website/about/baiying-1222.png"
-          />
-          <NewsBanner title="百应头条" newsList={NEWS_LIST} />
-          {/* <Intro>
-            <Title title="百应文化" desc="BYAI CULTURE" />
-            <Container>
-              <Row justify="center">
-                {SERVICE_DEPLOY.map((item, index) => (
-                  <Col lg={8} md={12} xs={24}>
-                    <Deploy
-                      icon={item.icon}
-                      title={item.title}
-                      desc={item.desc}
-                      descSecond={item.descSecond}
-                    />
-                  </Col>
-                ))}
-              </Row>
-            </Container>
-          </Intro> */}
-          <Vision />
-          <Intro backgroundImage="//cdn.byai.com/static/official-website/about/bg2.png">
-            <Title title="百应历程" desc="BYAI HISTORY" />
-            <Visible md lg xl xxl xxxl>
-              <Course courseList={COURSE_TIME.reverse()} />
-            </Visible>
-            <Visible xs sm>
-              <CourseXS courseList={COURSE_TIME} />
-            </Visible>
-          </Intro>
-          <TeamIntro title="百应团队" desc="BYAI TEAM" />
-          <Intro>
-            <Title title="证书及奖项" desc="THE CERTIFICATES AND AWARDS" />
-            <ScreenClassRender
-              render={screenClass => {
-                let limit;
-                switch (screenClass) {
-                  case 'lg':
-                    limit = 4;
-                    break;
-                  case 'md':
-                    limit = 3;
-                    break;
-                  case 'sm':
-                    limit = 2;
-                    break;
-                  case 'xs':
-                    limit = 1;
-                    break;
-                  default:
-                    limit = 5;
-                }
-                return <Certificate limit={limit} />;
-              }}
-            />
-          </Intro>
-          <DescContent
-            title={<Title style={{ paddingTop: 0, paddingBottom: 48 }} title="联系我们" desc="CONTACT US" />}
-            bannerList={[
-              {
-                name: '杭州',
-                title: '总部',
-                address: '浙江省杭州市余杭区梦想小镇天使村8幢、11幢',
-                imageUrl: 'https://cdn.byai.com/static/official-website/about/hangzhou.png',
-                openUrl: 'https://surl.amap.com/uEIZUw50rg',
-              },
-              {
-                name: '北京',
-                title: '分公司',
-                address: '北京市朝阳区望京SOHO T3B座2105',
-                imageUrl: 'https://cdn.byai.com/static/official-website/about/beijing-v2.png',
-                openUrl: 'https://surl.amap.com/2MvfXG1b7cT',
-              },
-              {
-                name: '上海',
-                title: '分公司',
-                address: '上海市闵行区申长路518号 虹桥绿谷广场C幢4楼411室',
-                imageUrl: 'https://cdn.byai.com/static/official-website/about/shanghai.png',
-                openUrl: 'https://surl.amap.com/4mOaeSz1menc',
-              },
-              {
-                name: '广州',
-                title: '分公司',
-                address: '广州天河区体育东路116号 财富广场西塔1301（1号线体育中心B出口）',
-                imageUrl: 'https://cdn.byai.com/static/official-website/about/guangzhou.png',
-                openUrl: 'https://surl.amap.com/v6WgE4A5fb',
-              },
-              {
-                name: '深圳',
-                title: '分公司',
-                address: '深圳市福田区滨河大道9289号 京基滨河时代大厦A座1206',
-                imageUrl: 'https://cdn.byai.com/static/official-website/about/shenzhen.png',
-                openUrl: 'https://surl.amap.com/rdkZis1jaxM',
-              },
-              {
-                name: '成都',
-                title: '分公司',
-                address: '四川省成都市高新区天府二街东方希望天祥广场B栋601室',
-                imageUrl: 'https://cdn.byai.com/static/official-website/about/chengdu.png',
-                openUrl: 'https://surl.amap.com/XiYQeMr4kc',
-              },
-            ]}
-          />
+          {AboutContent}
           <VoiceFooter
             title="百应科技，值得信赖"
             mTitle1="百应科技，值得信赖"

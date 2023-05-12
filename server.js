@@ -84,6 +84,9 @@ app
     server.get('/robots.txt', (req, res) => res.status(200).sendFile('robots.txt', robotsOptions));
     server.get('/retail/favicon.ico', (req, res) => res.status(200).sendFile('/retail/favicon.ico', faviconOptions));
     server.get('/retail/robots.txt', (req, res) => res.status(200).sendFile('/retail/robots.txt', robotsOptions));
+    server.get('/baidu_verify_codeva-haeRxlHZmo.html', (req, res) =>
+      res.status(200).sendFile('/baidu_verify_codeva-haeRxlHZmo.html', faviconOptions),
+    );
     // server.get('/retail/sitemap.xml', (req, res) => res.status(200).sendFile('/retail/sitemap.xml', sitemapOptions));
     server.get('/retail/baidu_verify_code-WAYGtDLOTB.html', (req, res) =>
       res.status(200).sendFile('/retail/baidu_verify_code-WAYGtDLOTB.html', faviconOptions),

@@ -11,10 +11,9 @@ import { media } from '../constants/style';
 import { withOpenOriginLink } from '../high-components/OpenOriginLink';
 import { HOST_ENUM, jumpUrl } from '../lib/utils';
 const ByLink = withOpenOriginLink(Link);
-import imgurl from '../../img.url.js'
 
 // export const LOGO = '//cdn.byai.com/static/by-intro-2023/header-logo/black-logo1.png';
-export const LOGO = imgurl+'/black-logo1.png';
+export const LOGO = '//by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/black-logo1.png';
 
 export const LOGO_SM = '//cdn.byai.com/static/official-website/seo-logo-1222-sm.png';
 export const WHITE_LOGO = '//cdn.byai.com/static/by-intro-2023/header-logo/white-logo1.png';
@@ -35,7 +34,7 @@ const HeaderWrapper = styled.div<{ needOpacity: boolean; fontStyle: 'dark' | 'li
   top: 0;
   z-index: 99;
   width: 100%;
-  height: 60px;
+  height: 80px;
   background: ${props => (props.needOpacity ? 'transparent' : 'rgba(255,255,255,1)')};
   border-bottom: ${props => (props.needOpacity ? 'none' : '1px solid #eeeeee')};
   // backdrop-filter: blur(5px);
@@ -250,7 +249,7 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
   .small-dropdown-content {
     border-radius: 8px;
     border: 1px solid #dbdbe0;
-    min-width: 300px;
+    min-width: 360px;
     padding: 12px;
     box-shadow: 0px 12px 24px 0px rgba(3, 43, 183, 0.08);
     /* border-radius: 0px 0px 8px 8px; */
@@ -263,6 +262,7 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
     cursor: ${props => (props.visible ? 'pointer' : 'auto')};
     overflow: hidden;
     gap: 3px;
+
     .link-btn-wrapper {
       height: 64px;
       border-radius: 6px;
@@ -270,6 +270,15 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
       display: flex;
       &:hover {
         background: #f5f6f8;
+      }
+    }
+    .borderStyle {
+      border-bottom: 1px solid #eee;
+      .link-btn-wrapper {
+        cursor: text;
+        &:hover {
+          background: transparent;
+        }
       }
     }
     .link-btn-icon {
@@ -431,7 +440,7 @@ class Nav extends React.Component<
   };
   handleClick = () => {
     // 跳转后刷新页面
-    window.location.href='/';
+    window.location.href = '/';
   };
 
   render() {
@@ -460,12 +469,15 @@ class Nav extends React.Component<
         )}
         <HeaderWrapper fontStyle={headFontStyle} needOpacity={opacity} onMouseLeave={this.hideNavBar}>
           <Container className="content-wrapper">
-            <NavRow>
+            <NavRow style={{ justifyContent: 'space-between' }}>
               <NavCol lg={3}>
                 <Link href="/">
-                  <div className="logo" onClick={()=>{
-                    this.handleClick()
-                  }} style={{ width: '100%' }}>
+                  <div
+                    className="logo"
+                    onClick={() => {
+                      this.handleClick();
+                    }}
+                    style={{ width: '100%' }}>
                     {/* <img src={headFontStyle === 'light' ? WHITE_LOGO : LOGO} /> */}
                     <img alt="logo" className="byai-logo" src={LOGO} />
                     {/* <img style={{
@@ -486,11 +498,12 @@ class Nav extends React.Component<
                     onMouseOver={e => this.handleNavItemHover(item, e)}
                     onMouseLeave={() => (item.smallDropdown ? this.hideNavBar() : undefined)}>
                     <LinkSwitch href={item.path} shouldBeLink={!item.expand}>
-                      <a onClick={()=>{
-                        if(item.path ==='/'){
-                          window.location.href='/'
-                        }
-                      }}>
+                      <a
+                        onClick={() => {
+                          if (item.path === '/') {
+                            window.location.href = '/';
+                          }
+                        }}>
                         <div className="link">
                           {item.name}
                           {item.expand && (
@@ -509,7 +522,8 @@ class Nav extends React.Component<
                           {item.expand.map(menuItem => (
                             <a
                               href={isOpenOrigin ? `https://www.byai.com${menuItem.path}` : menuItem.path}
-                              key={menuItem.path}>
+                              key={menuItem.path}
+                              className={menuItem.title == '智能用户运营平台（AICOS）' ? 'borderStyle' : ''}>
                               <div className="link-btn-wrapper" onClick={() => this.handleOpenNewPage}>
                                 <div className="link-btn-icon">
                                   <img src={menuItem.icon} />

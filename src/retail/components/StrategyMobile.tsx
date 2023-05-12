@@ -19,6 +19,9 @@ const Wrapper = styled.div<{ colorBg?: string }>`
     color: #000000;
     line-height: 40px;
   }
+  .title + .title {
+    font-size: 20px;
+  }
 
   .desc {
     margin-top: 16px;

@@ -29,6 +29,7 @@ interface ICreateLeadParams {
   address: string;
   customerType?: string;
   bd_vid?: string;
+  keywordid?: string;
 }
 
 interface IValidInfo {
@@ -101,7 +102,7 @@ const errorMessageMap = new Map([
 ]);
 
 function getProvince() {
-  let cname = returnCitySN.cname || '';
+  let cname = typeof returnCitySN !== 'undefined' && returnCitySN.cname ? returnCitySN.cname : '';
   let city = '',
     province = '';
   if (/省/g.test(cname)) {
@@ -160,7 +161,7 @@ const LOGO = '//cdn.byai.com/static/official-website/form/logo-white-1222.png';
 const CRM_LOGO =
   '//cdn.byai.com/static/official-website/crm/%E7%99%BE%E5%BA%94%E6%98%93%E5%AE%A2%E6%B7%B1%E8%89%B2%E8%83%8C%E6%99%AFlogo.png';
 const IMG_BG = 'https://cdn.byai.com/by-fe-cdn/static/pmp/c5175ec6-804c-4cb6-b611-39e90fe67eeb.png';
-const LOGO_PC = 'https://cdn.byai.com/by-fe-cdn/static/pmp/8113e891-2256-47f8-a40a-6c78d508977a.png';
+const LOGO_PC = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/左上角-百应logo.svg';
 // 公众号默认图
 const PUBLIC_DEFAULT_IMG = 'https://cdn.byai.com/by-fe-cdn/static/pmp/4c7f4da2-03aa-4545-93ba-4927b8955d73.png';
 // 视频号默认图
@@ -824,6 +825,7 @@ export default class TryForm extends React.Component<TryFormProps, TryFormState>
     });
     const formType = this.props.formType || FormType.CUSTOMER;
     const origin = localStorage.getItem('origin');
+    const keywordid = localStorage.getItem('keywordid');
     const { city, province } = getProvince();
     const address = typeof returnCitySN !== 'undefined' ? returnCitySN.cname : '';
     const customerType = CustoemrTypeMap[formType];
@@ -838,6 +840,7 @@ export default class TryForm extends React.Component<TryFormProps, TryFormState>
       remark: value.remark,
       customerType,
       address,
+      keywordid,
       // bd_vid: localStorage.getItem('bd_vid') ? localStorage.getItem('bd_vid') : '',
     });
 
@@ -963,7 +966,7 @@ export default class TryForm extends React.Component<TryFormProps, TryFormState>
           <div className="content">
             <div className="left-wrapper">
               <div className="left-content">
-                <div className="title">就现在，开启AI电话增长之旅</div>
+                <div className="title">就现在，开启智能用户运营之旅</div>
                 <div className="divider"></div>
                 <div className="partners">
                   <IconList

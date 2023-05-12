@@ -11,7 +11,8 @@ import ByHoverIcon from './common/ByHoverIcon';
 
 const ByLink = withOpenOriginLink(Link);
 
-const CMMI_SRC = '//cdn.byai.com/static/official-website/crm/CMMI.png';
+const CMMI_SRC = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/底部隐私政策.png';
+// const CMMI_SRC = '/static/img2023/底部隐私政策.png';
 const XIN_SRC = '//cdn.byai.com/static/official-website/crm/xin.png';
 const PREFIX = 'https://cdn.byai.com/static/intro/img/footer';
 const IMG_HOVER_INFO = `${PREFIX}/get-news.png`;
@@ -153,7 +154,7 @@ const CompanyInfoCol = styled.span<{ origin?: 'crm' }>`
   }
 `;
 // 联系我们
-const CompanyDescCol = styled(Col) <{ origin?: string }>`
+const CompanyDescCol = styled(Col)<{ origin?: string }>`
   @media (max-width: 980px) {
     display: flex;
     align-items: center;

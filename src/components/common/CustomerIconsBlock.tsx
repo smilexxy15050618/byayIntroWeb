@@ -24,8 +24,8 @@ const createImgUrlMatrix = (row: number, col: number, base: string, offset: numb
     matrix.push(eveRow);
   }
   // 第五行新增两个特殊的
-  matrix[4].push('51.png')
-  matrix[4].push('52.png')
+  matrix[4].push('51.png');
+  matrix[4].push('52.png');
   console.log(matrix);
 
   return matrix;
@@ -56,9 +56,9 @@ const RawCustomerIconsBlock: FC<IProps> = ({ className }) => {
       <div className={className}>
         <Model />
         <div className="content-wrap">
-          <div className="center-title">
+          {/* <div className="center-title">
             <span>更受客户信任的战略伙伴</span>
-          </div>
+          </div> */}
           {matrix.map((row, i) => (
             <ByScrollLine
               width="100%"
@@ -134,13 +134,13 @@ const CustomerIconsBlock = styled(RawCustomerIconsBlock)<ICustomerIconsBlockProp
     transform: translate(-50%, 0);
     font-size: 32px;
     font-weight: 500;
-    color: #5A5A5A;
+    color: #5a5a5a;
     letter-spacing: 2.4px;
     width: 902px;
     height: 86px;
     line-height: 100px;
     text-align: center;
-    background: linear-gradient(270deg, #FFFFFF 0%, #FFFFFF 22.17%, #FFFFFF 76.04%, #FFFFFF 100%);
+    background: linear-gradient(270deg, #ffffff 0%, #ffffff 22.17%, #ffffff 76.04%, #ffffff 100%);
     span {
       margin-left: 10px;
       color: #000;

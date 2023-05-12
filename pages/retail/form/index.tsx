@@ -28,6 +28,7 @@ interface ICreateLeadParams {
   address: string;
   customerType?: string;
   bd_vid?: string;
+  keywordid?: string;
 }
 
 interface IValidInfo {
@@ -863,6 +864,7 @@ export default class TryForm extends React.Component<TryFormProps, TryFormState>
     });
     const formType = this.props.formType || FormType.CUSTOMER;
     const origin = localStorage.getItem('origin');
+    const keywordid = localStorage.getItem('keywordid');
     const { city, province } = getProvince();
     const address = typeof returnCitySN !== 'undefined' ? returnCitySN.cname : '';
     const customerType = CustoemrTypeMap[formType];
@@ -877,6 +879,7 @@ export default class TryForm extends React.Component<TryFormProps, TryFormState>
       remark: value.remark,
       customerType,
       address,
+      keywordid,
       // bd_vid: localStorage.getItem('bd_vid') ? localStorage.getItem('bd_vid') : '',
     });
 

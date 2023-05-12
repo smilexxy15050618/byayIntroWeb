@@ -16,7 +16,7 @@ const BANNER_BG = `${BASE_URL}solve-bg.png`;
 
 const BACKGOURND_XS = 'https://cdn.byai.com/static/official-website/home/jiejuefangan.png';
 const SOLUTION_BG = 'https://cdn.byai.com/node_front/1572872453833/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.png';
-const SOLUTION_1 = '//cdn.byai.com/static/official-website/solution/tu1.png';
+const SOLUTION_1 = '//cdn.byai.com/static/by-intro-2023/template/tu1.png';
 const SOLUTION_2 = '//cdn.byai.com/static/official-website/solution/tu2.png';
 const SOLUTION_3 = '//cdn.byai.com/static/official-website/solution/tu3.png';
 const SOLUTION_4 = '//cdn.byai.com/static/official-website/solution/tu4.png';

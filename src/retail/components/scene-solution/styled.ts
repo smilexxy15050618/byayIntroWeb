@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   text-align: center;
 
+  font-family: PingFangSC-Regular, PingFang SC;
   .title {
     padding: 40px 0 32px;
     font-size: 24px;
@@ -171,6 +172,10 @@ export const Wrapper = styled.div`
       font-weight: 400;
       color: rgba(255, 255, 255, 0.8);
       line-height: 28px;
+      &.large-text {
+        font-size: 18px;
+        line-height: 36px;
+      }
     }
 
     .text-btn {

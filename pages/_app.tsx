@@ -98,8 +98,11 @@ export default class extends App<
 
   componentDidMount() {
     const {
-      query: { bd_vid, origin },
+      query: { bd_vid, origin, keywordid },
     } = queryString.parseUrl(location.href);
+    if (keywordid) {
+      localStorage.setItem('keywordid', keywordid as string);
+    }
     if (bd_vid) {
       localStorage.removeItem('bd_vid');
       localStorage.setItem('bd_vid', bd_vid + '');
