@@ -32,7 +32,7 @@ background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 25
     color: rgba(51,51,51,1);
     text-align: center;
     @media (max-width: 768px) {
-      width:328px;
+      width:87%;
       font-size: 16px;
       font-weight: 400;
       line-height: 26px;
@@ -72,7 +72,7 @@ background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 25
     background: url(${imgurl}/enhance_banner.svg);
     background-size: 100% 100%;
     @media (max-width: 768px) {
-      width:370px;
+      width: calc(100vw - 18px);
       height: 201px;
     }
   }
