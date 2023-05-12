@@ -220,6 +220,7 @@ export const ProductCapability = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [is_fixed, set_is_fixed] = useState(false);
   const navRef = useRef(null);
+  const [lock, setLock] = useState(false);
   useEffect(() => {
     const fixedTop = navRef.current.offsetTop;
     const ScrollMagic = require('scrollmagic');
@@ -263,31 +264,38 @@ export const ProductCapability = () => {
         scrollContent3.querySelector('#img3').classList.add('animate__fadeInRight');
         controller3.destroy();
       });
-      window.onscroll = () => {
-        let scrollTop = document.documentElement.scrollTop;
-        const isFixed = scrollTop >= fixedTop;
-        set_is_fixed(isFixed);
+
+    window.onscroll = () => {
+      let scrollTop = document.documentElement.scrollTop;
+      const isFixed = scrollTop >= fixedTop;
+      set_is_fixed(isFixed);
+      if (!lock) {
+        if (scrollTop >= scrollContent1.offsetTop - 153) {
+          setActiveIndex(0)
+        }
+        if (scrollTop >= scrollContent2.offsetTop - 153) {
+          setActiveIndex(1)
+        }
+        if (scrollTop >= scrollContent3.offsetTop - 153) {
+          setActiveIndex(2)
+        }
+        setLock(false);
+      }
         if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
-          if (scrollTop >= scrollContent1.offsetTop - 153) {
-            setActiveIndex(0)
-          }
-          if (scrollTop >= scrollContent2.offsetTop - 153) {
-            setActiveIndex(1)
-          }
-          if (scrollTop >= scrollContent3.offsetTop - 153) {
-            setActiveIndex(2)
-          }
-          if(scrollTop >= scrollContent3.offsetTop + scrollContent3.offsetHeight - 118) {
+          if (scrollTop >= scrollContent3.offsetTop + scrollContent3.offsetHeight - 130) {
             set_is_fixed(false);
           }
         }
-      }
+    }
+
+
 
   })
   const scrollTo = (index) => {
+    setLock(true);
     setActiveIndex(index);
     var dom = document.querySelectorAll('.contents>div')[index];
-    var scrollHeight = dom.offsetTop-'153';
+    var scrollHeight = dom.offsetTop - '153';
     if (dom) {
       // dom.scrollIntoView({ behavior: "smooth" });
       window.scrollTo({
@@ -353,19 +361,19 @@ export const ProductCapability = () => {
         <Content className='contents'>
           <div id="ProductCapContent1">
             <div>
-              <img id='img1' style={{ width: '343px',  }} src={imgurl + '/yxhb.svg'} alt="" />
+              <img id='img1' style={{ width: '343px', }} src={imgurl + '/yxhb.svg'} alt="" />
               <img style={{ width: '335px', height: '350px' }} src={imgurl + '/yxhb_text.svg'} alt="" />
             </div>
           </div>
           <div id="ProductCapContent2">
             <div>
-              <img id='img2' style={{ width: '343px',  }} src={imgurl + '/ywlc.svg'} alt="" />
+              <img id='img2' style={{ width: '343px', }} src={imgurl + '/ywlc.svg'} alt="" />
               <img style={{ width: '335px', height: '302px' }} src={imgurl + '/ywlc_text.svg'} alt="" />
             </div>
           </div>
           <div id="ProductCapContent3">
             <div>
-            <img id='img3' style={{ width: '343px', }} src={imgurl + '/zstp.svg'} alt="" />
+              <img id='img3' style={{ width: '343px', }} src={imgurl + '/zstp.svg'} alt="" />
               <img style={{ width: '335px', height: '322px' }} src={imgurl + '/zstp_text.svg'} alt="" />
             </div>
           </div>
