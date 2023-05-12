@@ -36,6 +36,9 @@ export const NavBar = styled.div < { collapse: boolean } > `
   .tree-list .tree-list {
     .tree-node-content {
       height: 84px;
+      @media (max-width: 768px) {
+        min-height: 84px;
+    }
     }
   }
 `;
@@ -53,9 +56,14 @@ export const TreeNode = styled.div < INodeProps > `
     border-radius: 6px;
     padding: 8px;
     display: flex;
+    @media (max-width: 768px) {
+      min-height: 64px;
+      height:auto;
+    }
   }
   .borderStyle{
     position: relative;
+    display: inline-block;
     &::before{
       content: '';
       width: 100%;
@@ -88,6 +96,9 @@ export const TreeNode = styled.div < INodeProps > `
     color: #000000;
     line-height: 24px;
     margin-bottom: 4px;
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
   }
 
   .link-btn-info-desc {
