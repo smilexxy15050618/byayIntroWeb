@@ -277,6 +277,9 @@ export const ProductCapability = () => {
           if (scrollTop >= scrollContent3.offsetTop - 153) {
             setActiveIndex(2)
           }
+          if(scrollTop >= scrollContent3.offsetTop + scrollContent3.offsetHeight - 118) {
+            set_is_fixed(false);
+          }
         }
       }
 
