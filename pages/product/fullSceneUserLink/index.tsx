@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Visible } from 'react-grid-system';
 import styled from 'styled-components';
 import { TextArea } from '../../../src/components/common/BannerTextElements';
 import ByVoiceFooter from '../../../src/components/common/ByVoiceFooter';
@@ -28,23 +27,24 @@ const BigTitle = styled.div`
   @media (max-width: 768px) {
     text-align: center;
     font-size: 32px;
-    line-height: 40px;
+    line-height: 60px;
+    margin-bottom: 8px !important;
   }
 `;
 
 const Desc = styled.div`
   margin-top: 10px;
   font-size: 20px;
-  font-weight: 400;
   line-height: 32px;
+  font-weight: 400;
   color: rgba(51, 51, 51, 1);
   text-align: center;
   @media (max-width: 768px) {
-    padding-bottom: 10px;
-    padding-top: 20px;
+    padding-top: 8px;
     text-align: center;
     font-size: 16px;
     line-height: 26px;
+    margin-bottom: 24px !important;
   }
 `;
 
