@@ -175,7 +175,7 @@ const Content = styled.div`
     opacity: 1 !important;
   }
   div div {
-    width: 83.33%;
+     max-width: 1200px;
     margin: 0 auto;
     padding: 100px 0;
     display: flex;
