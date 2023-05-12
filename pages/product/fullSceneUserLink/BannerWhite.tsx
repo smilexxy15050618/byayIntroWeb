@@ -1,8 +1,8 @@
 import React, { CSSProperties, FC, ReactNode } from 'react';
 import { Hidden, Visible } from 'react-grid-system';
 import styled from 'styled-components';
-import ByContainer from '../../../src/components/common/ByContainerNew';
 import Box from '../../../src/components/Box';
+import ByContainer from '../../../src/components/common/ByContainerNew';
 
 const Linear = styled.div`
   @media (max-width: 768px) {
@@ -62,7 +62,7 @@ const RawBannerWhite: FC<IProps> = ({
     <ByContainer
       background={background}
       style={{ backgroundSize: 'cover' }}
-      height={['1184px', 'calc(100vh - 124px)']}
+      height={['1184px', '630px']}
       className={className}>
       {/* 头部空白占位，以便中间中间部分对齐 */}
       <Hidden xs sm>
@@ -95,7 +95,7 @@ const BannerWhite = styled(RawBannerWhite) < IBannerWhiteProps > `
   overflow: hidden;
   @media (max-height: 666px) and (max-width: 768px) {
     .linear {
-      padding-top: 80px;
+      padding-top: 131px;
     }
     .wap-banner {
       padding-top: 30px;
@@ -103,10 +103,10 @@ const BannerWhite = styled(RawBannerWhite) < IBannerWhiteProps > `
   }
   @media (min-height: 750px) and (max-width: 768px) {
     .linear {
-      padding-top: 80px;
+      padding-top: 131px;
     }
     .wap-banner {
-      padding-top: 50px;
+      padding-top: 40px;
     }
   }
 `;

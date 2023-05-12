@@ -1,6 +1,6 @@
-import React, { FC, ReactNode, useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
+import React, { FC, ReactNode, useEffect, useRef, useState } from 'react';
 import { Visible } from 'react-grid-system';
+import styled from 'styled-components';
 import FeatureIntroduce, { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
 
 const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
@@ -149,7 +149,7 @@ const FeatureWrap = styled.div`
         height: 4px;
         background: rgba(43, 88, 249, 1);
         @media (max-width: 768px) {
-          width: 95px;
+          width: 65px;
           height: 2px;
           left: 15px;
         }
@@ -176,6 +176,8 @@ const FeatureWrap = styled.div`
         color: rgba(26, 26, 26, 1);
         @media (max-width: 768px) {
           font-size: 10px;
+          font-weight: 600;
+          transform: scale(0.8);
           line-height: 14px;
         }
       }
@@ -186,10 +188,7 @@ const FeatureWrap = styled.div`
         line-height: 24px;
         color: rgba(90, 90, 90, 1);
         @media (max-width: 768px) {
-          padding-top: 6px;
-          font-size: 8px;
-          letter-spacing: 0;
-          line-height: 12px;
+          display: none;
         }
       }
     }
@@ -313,6 +312,10 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
         }
         if (scrollTop >= navRefIntelligentTerminal.current.offsetTop - 140) {
           setCurrIndex(3)
+        }
+
+        if (scrollTop >= navRefIntelligentTerminal.current.offsetTop + navRefIntelligentTerminal.current.offsetHeight - 118) {
+          set_is_fixed(false);
         }
       }
 
