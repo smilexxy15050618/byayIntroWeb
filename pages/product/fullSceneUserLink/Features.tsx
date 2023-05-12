@@ -106,9 +106,7 @@ const FeatureWrap = styled.div`
       padding: 34px 15px;
     }
   }
-  .placeholderDom{
-    padding-top: 84px;
-  }
+  
   .capacity-tab{
     height: 170px;
     display: flex;
@@ -151,9 +149,9 @@ const FeatureWrap = styled.div`
         height: 4px;
         background: rgba(43, 88, 249, 1);
         @media (max-width: 768px) {
-          width: 74px;
+          width: 95px;
           height: 2px;
-          left: 10px;
+          left: 15px;
         }
       }
       img{
@@ -220,7 +218,7 @@ const FeatureWrap = styled.div`
       background: rgba(255, 255, 255, 1);
       .relative-position-wap0{
         position: absolute;
-        top: -230px;
+        top: 0;
         left: 0;
         width: 100vw;
         background:#fff;
@@ -252,13 +250,6 @@ const FeatureWrap = styled.div`
           height: 261px;
         }
       }
-      &:nth-child(4) {
-        background: rgba(244, 248, 254, 1);
-        img{
-          width: 343px;
-          height: 277px;
-        }
-      }
       img{
         width: 343px;
         height: 289px;
@@ -284,6 +275,9 @@ const FeatureWrap = styled.div`
         color: rgba(0, 0, 0, 0.65);
       }
     }
+    .placeholderDom{
+      padding-top: 186px;
+    }
   }
 `;
 
@@ -300,27 +294,28 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
   const navRefCommunicate = useRef(null);
   const navRefOnlineCommunication = useRef(null);
   const navRefIntelligentTerminal = useRef(null);
+
   useEffect(() => {
     const fixedTop = navRef.current.offsetTop;
-
     window.onscroll = () => {
       let scrollTop = document.documentElement.scrollTop;
-      const isFixed = scrollTop >= fixedTop - 40;
+      const isFixed = scrollTop >= fixedTop - 110;
       set_is_fixed(isFixed);
       if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
-        if (scrollTop >= navRefWeChat.current.offsetTop - 130) {
+        if (scrollTop >= navRefWeChat.current.offsetTop - 140 && scrollTop < navRefCommunicate.current.offsetTop - 140) {
           setCurrIndex(0)
         }
-        if (scrollTop >= navRefCommunicate.current.offsetTop - 130) {
+        if (scrollTop >= navRefCommunicate.current.offsetTop - 140 && scrollTop < navRefOnlineCommunication.current.offsetTop - 140) {
           setCurrIndex(1)
         }
-        if (scrollTop >= navRefOnlineCommunication.current.offsetTop - 130) {
+        if (scrollTop >= navRefOnlineCommunication.current.offsetTop - 140 && scrollTop < navRefIntelligentTerminal.current.offsetTop - 140) {
           setCurrIndex(2)
         }
-        if (scrollTop >= navRefIntelligentTerminal.current.offsetTop - 130) {
-          setCurrIndex(2)
+        if (scrollTop >= navRefIntelligentTerminal.current.offsetTop - 140) {
+          setCurrIndex(3)
         }
       }
+
     };
   }, []);
 
@@ -354,7 +349,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
               key={i}
               id={item.id}
               imgFirst={i % 2 === 1}
-              background={i == 1 || i == 3 ? 'rgba(244, 248, 254, 1)' : '#FFFFFF'}
+              background={i == 1 ? 'rgba(244, 248, 254, 1)' : '#FFFFFF'}
               height={item.boxheight}
               padding="0 0"
               className={'relative-position ' + item.id}
@@ -368,7 +363,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
             <div
               className={i == currIndex ? 'capacity-item active' : 'capacity-item'}
               onClick={() => {
-                const node = document.querySelector(`.FeatureIntroduceWrap > .relative-position > .${item.id}`);
+                const node = document.querySelector(`.FeatureIntroduceWrap > .${item.id}`);
                 if (node) {
                   node.scrollIntoView({ behavior: 'smooth' });
                 }
@@ -382,11 +377,10 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
             </div>
           ))}
         </div>
-        <div className={is_fixed ? 'FeatureIntroduceWrap FeatureWap placeholderDom' : 'FeatureIntroduceWrap FeatureWap'}>
+        <div className='FeatureIntroduceWrap FeatureWap'>
           {FEATURE_INFO.map((item, i) => (
-            <div className="relative-position" ref={i == 0 ? navRefWeChat : i == 1 ? navRefCommunicate : i == 2 ? navRefOnlineCommunication : navRefIntelligentTerminal}>
+            <div className={currIndex == i && is_fixed ? `relative-position ${item.id} placeholderDom` : `relative-position ${item.id}`} ref={i == 0 ? navRefWeChat : i == 1 ? navRefCommunicate : i == 2 ? navRefOnlineCommunication : navRefIntelligentTerminal}>
               {/*占位div,吸定后脱离文档流，dom高度发生变化了*/}
-              <div className={`relative-position-wap${i} ${item.id}`}></div>
               <img src={item.pcImgs[0].src} />
               <div className="title1">{item.title}</div>
               <div className="title2">{item.textOne}</div>

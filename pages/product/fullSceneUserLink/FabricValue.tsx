@@ -65,6 +65,10 @@ const FeatureValueWrap = styled.div`
     opacity: 0;
     @media (max-width: 768px) {
       width: 100vw;
+      margin: 24px auto 0;
+      .custom-bar-wrapper{
+          width: 300px;
+      }
     }
     &.appear {
       transform: translateY(0);
