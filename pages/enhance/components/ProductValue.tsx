@@ -79,8 +79,8 @@ padding-bottom:90px;
         padding: 69px 0px 0;
         transition: all 0.3s;
         @media (max-width: 768px) {
-        width: 240px;
-        height: 195px;
+        width: 280px;
+        height: 255px;
             box-sizing: border-box;
             padding: 40px 0px 0;
       }
@@ -96,6 +96,15 @@ padding-bottom:90px;
                 img:last-child {
                     transform: translate(-5px,5px);
                 }
+
+                @media (max-width: 768px) {
+                    img:first-child {
+                    transform: none;
+                }
+                img:last-child {
+                    transform: none;
+                }
+      }
             }
         }
         &:nth-child(2) {
@@ -110,6 +119,14 @@ padding-bottom:90px;
                     img:first-child {
                         transform: translate(-5px,5px);
                     }
+                    @media (max-width: 768px) {
+                    img:first-child {
+                    transform: none;
+                }
+                img:last-child {
+                    transform: none;
+                }
+      }
                 }
             }
         }
@@ -124,6 +141,14 @@ padding-bottom:90px;
                         transform: translateY(-5px);
                     }
                 }
+                @media (max-width: 768px) {
+                    img:first-child {
+                    transform: none;
+                }
+                img:last-child {
+                    transform: none;
+                }
+      }
             }
         }
         div:first-child {
@@ -131,8 +156,8 @@ padding-bottom:90px;
             width: 80px;
             height: 80px;
             @media (max-width: 768px) {
-                    width: 40px;
-                    height: 40px;
+                    /* width: 40px;
+                    height: 40px; */
                     }
             margin: 0 auto 24px;
         }
@@ -143,7 +168,7 @@ padding-bottom:90px;
             color: rgba(26, 26, 26, 1);
             text-align: center;
             @media (max-width: 768px) {
-                font-size: 14px;
+                /* font-size: 14px; */
 
                     }
         }
@@ -155,7 +180,7 @@ padding-bottom:90px;
             text-align: center;
             margin-top: 18px;
             @media (max-width: 768px) {
-                font-size: 12px;
+                /* font-size: 12px; */
 
                     }
         }
@@ -166,13 +191,9 @@ padding-bottom:90px;
                 width: 80px;
                 top: -1px;
                 right: 0px;
-                @media (max-width: 768px) {
-                    width: 40px;
-                    }
+                
             }
-            @media (max-width: 768px) {
-                    width: 40px;
-                    }
+           
         }
     }
   }
@@ -219,7 +240,7 @@ export const ProductValue = () => {
                         newProgress={true}
                         initialSlide={0}
                         contentPadding="20px" progressPadding="0px"
-                        previewWidth="36%"
+                        previewWidth="70px"
                       >
                         {list.map((item, index) => {
                             return (

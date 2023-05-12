@@ -68,8 +68,8 @@ padding-bottom: 100px;
         padding: 69px 50px 0;
         transition: all 0.3s;
         @media (max-width: 768px) {
-            width: 240px;
-            height: 250px;
+            width: 280px;
+            height: 310px;
             margin-right: 0px;
             box-sizing: border-box;
             padding: 30px;
@@ -86,6 +86,14 @@ padding-bottom: 100px;
                 img:last-child {
                     transform: translate(-5px,5px);
                 }
+                @media (max-width: 768px) {
+                    img:first-child {
+                    transform: none;
+                }
+                img:last-child {
+                    transform: none;
+                }
+          }
             }
             
         }
@@ -95,8 +103,8 @@ padding-bottom: 100px;
             height: 80px;
             margin: 0 auto 24px;
             @media (max-width: 768px) {
-                width: 40px;
-                height: 40px;
+                /* width: 40px;
+                height: 40px; */
           }
         }
         div:nth-child(2) {
@@ -106,7 +114,7 @@ padding-bottom: 100px;
             color: rgba(26, 26, 26, 1);
             text-align: center;
             @media (max-width: 768px) {
-               font-size: 12px;
+               /* font-size: 12px; */
           }
         }
         div:last-child {
@@ -117,8 +125,8 @@ padding-bottom: 100px;
             text-align: left;
             margin-top: 18px;
             @media (max-width: 768px) {
-                margin-top: 10px;
-                font-size: 10px;
+                /* margin-top: 10px;
+                font-size: 10px; */
           }
         }
             img {
@@ -129,8 +137,8 @@ padding-bottom: 100px;
                     top: 9px;
                     right: 7px;
                     @media (max-width: 768px) {
-                width: 24px;
-                height: 24px;
+                /* width: 24px;
+                height: 24px; */
           }
                 }
             }
@@ -144,6 +152,14 @@ padding-bottom: 100px;
                     img:last-child {
                         transform: translateY(-5px);
                     }
+                    @media (max-width: 768px) {
+                        img:first-child {
+                        transform: translateY(0);
+                    }
+                    img:last-child {
+                        transform: translateY(0);
+                    }
+          }
                 }
                 
             }
@@ -204,7 +220,7 @@ export const ProductValue = () => {
                         newProgress={true}
                         initialSlide={0}
                         contentPadding="32px" progressPadding="0px"
-                        previewWidth="36%"
+                        previewWidth="70px"
                         >
                         {list.map((item, index) => (
                             <div className='list-item'>
