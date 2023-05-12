@@ -79,7 +79,12 @@ export const IndustryCarousel = () => {
   useEffect(() => {
     setTimeout(() => {
       var video = document.querySelector('video');
-      video.play();
+      try {
+        video.play();
+      }
+      catch(e) {
+        console.log(e)
+      }
     }, 5000);
   })
   return (
