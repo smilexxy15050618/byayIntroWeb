@@ -42,7 +42,198 @@ const Wrapper = styled.div`
     padding: 0 4%;
     border-bottom:2px solid #f5f5f5; 
   }
+  .title{
+    display: flex;
+    justify-content: center;
+    padding: 100px 0 40px;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 48px;
+    color: rgba(26, 26, 26, 1);
+    @media (max-width: 768px) {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 40px;
+      padding: 34px 15px;
+    }
+  }
+  .placeholderDom{
+    padding-top: 150px;
+  }
+  .capacity-tab{
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 4px solid #F4F8FE;
+    @media (max-width: 768px) {
+      height: 86px;
+      border-bottom: 1px solid #F4F8FE;
+    }
+    .capacity-item{
+      position: relative;
+      padding-top: 28px;
+      width: 190px;
+      height: 170px;
+      margin-right: 90px;
+      text-align: center;
+      box-sizing: border-box;
+      cursor: pointer;
+      @media (max-width: 768px) {
+        flex: 1;
+        margin-right: 0;
+        height: 86px;
+        padding-top: 14px;
+      }
+      &:hover{
+        img:nth-child(1){
+          display: none;
+        }
+        img:nth-child(2){
+          display: inline-block;
+        }
+      }
+      &::before {
+        display: none;
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 190px;
+        height: 4px;
+        background: rgba(43, 88, 249, 1);
+        @media (max-width: 768px) {
+          width: 95px;
+          height: 2px;
+          left: 15px;
+        }
+      }
+      img{
+        width: 36px;
+        height: 36px;
+        @media (max-width: 768px) {
+          width: 18px;
+          height: 18px;
+        }
+      }
+      img:nth-child(1){
+        display: inline-block;
+      }
+      img:nth-child(2){
+        display: none;
+      }
+      .title-tab{
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0px;
+        line-height: 28px;
+        color: rgba(26, 26, 26, 1);
+        @media (max-width: 768px) {
+          font-size: 10px;
+          line-height: 14px;
+        }
+      }
+      .subtitle{
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0px;
+        line-height: 24px;
+        color: rgba(90, 90, 90, 1);
+        @media (max-width: 768px) {
+          padding-top: 6px;
+          font-size: 7px;
+          letter-spacing: -1px;
+          line-height: 12px;
+        }
+      }
+    }
+    .capacity-item:last-child{
+      margin-right: 0;
+    }
+    .active{
+      &::before {
+        display: block;
+      }
+    }
+  }
+  .fixedTop{
+    z-index: 9;
+    position: fixed;
+    top: 64px;
+    width: 100vw;
+    background:#fff;
+  }
+  .FeatureWap{
+    .relative-position{
+      position: relative;
+      text-align: center;
+      padding-top: 36px;
+      padding-bottom: 34px;
+      background: rgba(255, 255, 255, 1);
+      .relative-position-wap0{
+        position: absolute;
+        top: -230px;
+        left: 0;
+        width: 100vw;
+        background:#fff;
+      }
+      .relative-position-wap1{
+        position: absolute;
+        top: -230px;
+        left: 0;
+        width: 100vw;
+        background:#fff;
+      }
+      .relative-position-wap2{
+        position: absolute;
+        top: -150px;
+        left: 0;
+        width: 100vw;
+        background:#fff;
+      }
+      &:nth-child(2) {
+        background: rgba(244, 248, 254, 1);
+        img{
+          width: 343px;
+          height: 312px;
+        }
+        }
+      }
+      &:nth-child(3) {
+        background: rgba(244, 248, 254, 1);
+        img{
+          width: 343px;
+          height: 261px;
+        }
+        }
+      }
+      img{
+        width: 343px;
+      }
+      .title1{
+        padding-top: 24px;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 30px;
+      }
+      .title2{
+        padding-top: 20px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.8);
+      }
+      .title3{
+        padding: 0 30px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 20px;
+        color: rgba(0, 0, 0, 0.65);
+      }
+    }
+  }
 `
+  
+
 const Title = styled.div`
 font-size: 40px;
 font-weight: 500;
@@ -222,6 +413,7 @@ export const ProductCapability = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [is_fixed, set_is_fixed] = useState(false);
   const navRef = useRef(null);
+  const [currIndex, setCurrIndex] = useState(0);
   useEffect(() => {
     const fixedTop = navRef.current.offsetTop;
     window.onscroll = () => {
@@ -231,7 +423,7 @@ export const ProductCapability = () => {
     }
     const ScrollMagic = require('scrollmagic');
     const controller1 = new ScrollMagic.Controller();
-    const scrollContent1 = document.getElementById('ProductCapContent');
+    const scrollContent1 = document.getElementById('ProductCapContent0');
     var scene = new ScrollMagic.Scene({
       triggerElement: scrollContent1,
       offset: 0, //从开始点滚动多少px触发（施法前摇）
@@ -273,7 +465,7 @@ export const ProductCapability = () => {
 
 
     const controller = new ScrollMagic.Controller();
-    const scrollContent = document.getElementById('ProductCapContent4');
+    const scrollContent = document.getElementById('ProductCapContent3');
     var scene = new ScrollMagic.Scene({
       triggerElement: scrollContent,
       offset: 0, //从开始点滚动多少px触发（施法前摇）
@@ -338,7 +530,26 @@ export const ProductCapability = () => {
         </Content>
       </Visible>
       <Visible xs sm>
-      <Label ref={navRef} className={`bottom_border ${is_fixed ? 'fixedTop' : ''}`}>
+      <div className={`capacity-tab ${is_fixed ? 'fixedTop' : ''}`} ref={navRef}>
+          {labelList.map((item, i) => (
+            <div
+              className={i == currIndex ? 'capacity-item active' : 'capacity-item'}
+              onClick={() => {
+                const node = document.querySelector(`.FeatureIntroduceWrap > #ProductCapContent${i}`);
+                if (node) {
+                  node.scrollIntoView({ behavior: 'smooth' });
+                }
+                // onCancel();
+                setCurrIndex(i);
+              }}>
+              <img src={i == currIndex ? item.activeImg : item.img} />
+              <img src={item.activeImg} />
+              <div className="title-tab">{item.text}</div>
+              <div className="subtitle">{item.english_text}</div>
+            </div>
+          ))}
+        </div>
+      {/* <Label ref={navRef} className={`bottom_border ${is_fixed ? 'fixedTop' : ''}`}>
           {
             labelList.map((({ img, activeImg, text, english_text }, index) => {
               return (
@@ -351,9 +562,10 @@ export const ProductCapability = () => {
               )
             }))
           }
-        </Label>
-        <Content className='contents'>
-          <div id='ProductCapContent'>
+        </Label> */}
+        
+        <Content className='FeatureIntroduceWrap'>
+          <div id='ProductCapContent0'>
             <div>
             <img id='img1' style={{ width: '343px',marginBottom: '32px' }} src={imgurl + '/qdsjcj.svg'} alt="" />
               <img style={{ width: '335px' }} src={imgurl + '/qdsjcj_text.svg'} alt="" /> 
@@ -371,7 +583,7 @@ export const ProductCapability = () => {
               <img style={{ width: '335px' }} src={imgurl + '/fjghsjwj_text.svg'} alt="" />
             </div>
           </div>
-          <div id='ProductCapContent4'>
+          <div id='ProductCapContent3'>
             <div>
               <img id='img4' style={{ width: '343px',marginBottom: '32px'  }} src={imgurl + '/yhhxdc.svg'} alt="" />
               <img style={{ width: '335px' }} src={imgurl + '/yhhxdc_texts.svg'} alt="" />
