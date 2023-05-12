@@ -38,6 +38,7 @@ export const NavBar = styled.div < { collapse: boolean } > `
       height: 84px;
       @media (max-width: 768px) {
         min-height: 84px;
+        height: auto;
     }
     }
   }
