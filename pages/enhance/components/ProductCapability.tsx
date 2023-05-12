@@ -76,7 +76,7 @@ const Label = styled.div`
   }
 `
 const LabelItem = styled.div`
-width: 190px;
+  width: 190px;
   height: 170px;
   display: flex;
   flex-direction: column;
@@ -86,14 +86,13 @@ width: 190px;
   margin-right: 90px;
   padding-top: 40px;
   @media (max-width: 768px) {
+      width: 95px;
       font-size: 10px;
       font-weight: 600;
-      padding-top: 15px;
-      height: 110px;
-      width: auto;
+      padding-top: 20px;
+      height: 86px;
       top: 2px;
       margin-right: 0;
-      /* height: 85px; */
     }
   &:hover{
     img:nth-child(1){
@@ -131,6 +130,8 @@ width: 190px;
     @media (max-width: 768px) {
       font-size: 10px;
       font-weight: 600;
+      transform: scale(0.8);
+      line-height: 14px;
     }
   }
   .subtitle{
@@ -141,7 +142,10 @@ width: 190px;
     color: rgba(90, 90, 90, 1);
     @media (max-width: 768px) {
       font-size: 7px;
-      transform: scale(0.9);
+      transform: scale(0.6);
+      line-height: 12px;
+      width: 120px;
+      text-align: center;
     }
   }
   span:nth-child(2) {
@@ -224,11 +228,6 @@ export const ProductCapability = () => {
   const navRef = useRef(null);
   useEffect(() => {
     const fixedTop = navRef.current.offsetTop;
-    window.onscroll = () => {
-      let scrollTop = document.documentElement.scrollTop;
-      const isFixed = scrollTop >= fixedTop;
-      set_is_fixed(isFixed);
-    }
     const ScrollMagic = require('scrollmagic');
     const controller1 = new ScrollMagic.Controller();
     const scrollContent1 = document.getElementById('ProductCapContent');
@@ -284,11 +283,28 @@ export const ProductCapability = () => {
         scrollContent.querySelector('#img4').classList.add('animate__fadeInLeft');
         controller.destroy();
       });
+    window.onscroll = () => {
+      let scrollTop = document.documentElement.scrollTop;
+      const isFixed = scrollTop >= fixedTop;
+      set_is_fixed(isFixed);
+      if (scrollTop >= scrollContent1.offsetTop - 153) {
+        setActiveIndex(0)
+      }
+      if (scrollTop >= scrollContent2.offsetTop - 153) {
+        setActiveIndex(1)
+      }
+      if (scrollTop >= scrollContent3.offsetTop - 153) {
+        setActiveIndex(2)
+      }
+      if (scrollTop >= scrollContent.offsetTop - 153) {
+        setActiveIndex(3)
+      }
+    }
   })
   const scrollTo = (index) => {
     setActiveIndex(index);
     var dom = document.querySelectorAll('.contents>div')[index];
-    var scrollHeight = dom.offsetTop-'153';
+    var scrollHeight = dom.offsetTop - '153';
     if (dom) {
       // dom.scrollIntoView({ behavior: "smooth" });
       window.scrollTo({
@@ -343,7 +359,7 @@ export const ProductCapability = () => {
         </Content>
       </Visible>
       <Visible xs sm>
-      <Label ref={navRef} className={`bottom_border ${is_fixed ? 'fixedTop' : ''}`}>
+        <Label ref={navRef} className={`bottom_border ${is_fixed ? 'fixedTop' : ''}`}>
           {
             labelList.map((({ img, activeImg, text, english_text }, index) => {
               return (
@@ -360,30 +376,30 @@ export const ProductCapability = () => {
         <Content className='contents'>
           <div id='ProductCapContent'>
             <div>
-            <img id='img1' style={{ width: '343px',marginBottom: '32px' }} src={imgurl + '/qdsjcj.svg'} alt="" />
-              <img style={{ width: '335px' }} src={imgurl + '/qdsjcj_text.svg'} alt="" /> 
+              <img id='img1' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/qdsjcj.svg'} alt="" />
+              <img style={{ width: '335px' }} src={imgurl + '/qdsjcj_text.svg'} alt="" />
             </div>
           </div>
           <div id='ProductCapContent1'>
             <div>
-              <img id='img2' style={{ width: '343px',marginBottom: '32px'  }} src={imgurl + '/oneidsb.svg'} alt="" />
+              <img id='img2' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/oneidsb.svg'} alt="" />
               <img style={{ width: '335px' }} src={imgurl + '/oneidsb_text.svg'} alt="" />
             </div>
           </div>
           <div id='ProductCapContent2'>
             <div>
-            <img id='img3' style={{ width: '343px',marginBottom: '32px'  }} src={imgurl + '/fjghsjwj.svg'} alt="" />
+              <img id='img3' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/fjghsjwj.svg'} alt="" />
               <img style={{ width: '335px' }} src={imgurl + '/fjghsjwj_text.svg'} alt="" />
             </div>
           </div>
           <div id='ProductCapContent4'>
             <div>
-              <img id='img4' style={{ width: '343px',marginBottom: '32px'  }} src={imgurl + '/yhhxdc.svg'} alt="" />
+              <img id='img4' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/yhhxdc.svg'} alt="" />
               <img style={{ width: '335px' }} src={imgurl + '/yhhxdc_texts.svg'} alt="" />
             </div>
           </div>
         </Content>
-        </Visible>
+      </Visible>
     </Wrapper>
   )
 }

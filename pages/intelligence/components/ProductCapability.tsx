@@ -82,11 +82,10 @@ const LabelItem = styled.div`
   @media (max-width: 768px) {
       font-size: 10px;
       font-weight: 600;
-      width: 195px;
       height: 116px;
-      padding-top: 15px;
+      padding-top: 20px;
       top: 2px;
-      /* height: 85px; */
+      height: 86px;
     }
   &:hover{
     img:nth-child(1){
@@ -124,6 +123,8 @@ const LabelItem = styled.div`
     @media (max-width: 768px) {
       font-size: 10px;
       font-weight: 600;
+      transform: scale(0.8);
+      line-height: 14px;
     }
   }
   .subtitle{
@@ -134,6 +135,8 @@ const LabelItem = styled.div`
     color: rgba(90, 90, 90, 1);
     @media (max-width: 768px) {
       font-size: 7px;
+      transform: scale(0.6);
+      line-height: 12px;
     }
   }
   span:last-child {
@@ -219,11 +222,6 @@ export const ProductCapability = () => {
   const navRef = useRef(null);
   useEffect(() => {
     const fixedTop = navRef.current.offsetTop;
-    window.onscroll = () => {
-      let scrollTop = document.documentElement.scrollTop;
-      const isFixed = scrollTop >= fixedTop;
-      set_is_fixed(isFixed);
-    }
     const ScrollMagic = require('scrollmagic');
     const controller1 = new ScrollMagic.Controller();
     const scrollContent1 = document.getElementById('ProductCapContent1');
@@ -265,6 +263,22 @@ export const ProductCapability = () => {
         scrollContent3.querySelector('#img3').classList.add('animate__fadeInRight');
         controller3.destroy();
       });
+      window.onscroll = () => {
+        let scrollTop = document.documentElement.scrollTop;
+        const isFixed = scrollTop >= fixedTop;
+        set_is_fixed(isFixed);
+        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
+          if (scrollTop >= scrollContent1.offsetTop - 153) {
+            setActiveIndex(0)
+          }
+          if (scrollTop >= scrollContent2.offsetTop - 153) {
+            setActiveIndex(1)
+          }
+          if (scrollTop >= scrollContent3.offsetTop - 153) {
+            setActiveIndex(2)
+          }
+        }
+      }
 
   })
   const scrollTo = (index) => {

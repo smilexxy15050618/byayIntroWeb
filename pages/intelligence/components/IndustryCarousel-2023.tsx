@@ -66,9 +66,12 @@ background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 25
   }
   video {
     display: block;
-    width: 83.33%;
+    width: 1200px;
     // height: 651px;
     margin: 0 auto;
+    @media (max-width: 768px) {
+      width: calc(100vw - 16px);
+    }
   }
 `
 
