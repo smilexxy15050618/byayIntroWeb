@@ -21,6 +21,7 @@ interface IProps {
   padding?: string | string[];
   background?: string | string[];
   height?: string;
+  id?: string;
 }
 
 const Img = styled.img`
@@ -31,7 +32,7 @@ const Img = styled.img`
   margin-bottom: 0px;
 `;
 
-const ImgArea = styled.div<{ imgFirst?: boolean }>`
+const ImgArea = styled.div < { imgFirst?: boolean } > `
   position: absolute;
   top: 0;
   bottom: 0;
@@ -106,29 +107,30 @@ const RawFeatureIntroduce: FC<IProps> = ({
   padding,
   background,
   height,
+  id
 }) => {
   return (
     <>
-      <ByContainer
-        height={height}
-        padding={padding || ['142px 0px', '']}
-        maxWidthPc="1200px"
-        background={background}
-        className={className}>
-        <Horizon reverse={imgFirst} justify="space-between" style={{ position: 'relative' }}>
-          <TextArea>
-            <Title>{title}</Title>
-            <Text>{textOne}</Text>
-            {textTwo && <TextTwo>{textTwo}</TextTwo>}
-          </TextArea>
-          <ImgArea imgFirst={imgFirst}>
-            {pcImgs.map(({ className = [], ...rest }, i) => {
-              const cls = [...commonClassName, ...className].join(' ');
-              return <Box as="img" {...rest} className={cls} minWidth={rest.style.width} key={i} />;
-            })}
-          </ImgArea>
-        </Horizon>
-      </ByContainer>
+    <ByContainer
+      height={height}
+      padding={padding || ['142px 0px', '']}
+      maxWidthPc="1200px"
+      background={background}
+      className={className}>
+      <Horizon reverse={imgFirst} justify="space-between" style={{ position: 'relative' }}>
+        <TextArea>
+          <Title>{title}</Title>
+          <Text>{textOne}</Text>
+          {textTwo && <TextTwo>{textTwo}</TextTwo>}
+        </TextArea>
+        <ImgArea imgFirst={imgFirst}>
+          {pcImgs.map(({ className = [], ...rest }, i) => {
+            const cls = [...commonClassName, ...className].join(' ');
+            return <Box as="img" {...rest} className={cls} minWidth={rest.style.width} key={i} />;
+          })}
+        </ImgArea>
+      </Horizon>
+    </ByContainer>
     </>
   );
 };
@@ -142,5 +144,5 @@ export type IFeatureIntroduceProps = IProps;
  * @param imgFirst 图片是否在前
  * @param background 背景图/颜色
  */
-const FeatureIntroduce = styled(RawFeatureIntroduce)<IFeatureIntroduceProps>``;
+const FeatureIntroduce = styled(RawFeatureIntroduce) < IFeatureIntroduceProps > ``;
 export default FeatureIntroduce;

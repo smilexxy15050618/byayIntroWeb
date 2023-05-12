@@ -33,7 +33,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
     title: '语音交互',
     textOne: '打造极致的对话体验',
     textTwo:
-      '基于自然语言处理（NLP）、语音识别（ASR）和语音合成（TTS）技术，实现自动语音应答，用自然逼真的对话与客户沟通。通过语音机器人完成营销、宣传、回访、催收等外呼和接待场景语音对话。',
+    '基于自然语言处理（NLP）、语音识别（ASR）和语音合成（TTS）技术，实现自动语音应答，用自然逼真的对话与客户沟通。通过语音机器人完成营销、宣传、回访、催收等外呼和接待场景语音对话。',
     pcImgs: [
       {
         src: `${PREFIX}/capacity-1.svg`,
@@ -48,7 +48,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
     title: '文本交互',
     textOne: '更聪明、更自然、更善解人意',
     textTwo:
-      '提供文本对话交互功能，能替代人工客服解决大部分咨询问题。支持官网、企业微信、APP等线上全渠道接入，24小时全天候在线，用户在各个入口都能体验智能、便捷的咨询服务。',
+    '提供文本对话交互功能，能替代人工客服解决大部分咨询问题。支持官网、企业微信、APP等线上全渠道接入，24小时全天候在线，用户在各个入口都能体验智能、便捷的咨询服务。',
     pcImgs: [
       {
         src: `${PREFIX}/capacity-2.svg`,
@@ -63,7 +63,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
     title: '视觉交互/虚拟数字人',
     textOne: '多样形象、智慧大脑、实时交互',
     textTwo:
-      '将计算机视觉、语音识别、自然语言处理等AI技术深度融合，充分模拟人与人之间真实可感的对话交互方式，达到“听得懂，看得见，说得出“的效果，所见即所得。',
+    '将计算机视觉、语音识别、自然语言处理等AI技术深度融合，充分模拟人与人之间真实可感的对话交互方式，达到“听得懂，看得见，说得出“的效果，所见即所得。',
     pcImgs: [
       {
         src: `${PREFIX}/capacity-3.svg`,
@@ -93,7 +93,7 @@ const FeatureWrap = styled.div`
     }
   }
   .placeholderDom{
-    padding-top: 150px;
+    padding-top: 84px;
   }
   .capacity-tab{
     height: 170px;
@@ -175,8 +175,8 @@ const FeatureWrap = styled.div`
         color: rgba(90, 90, 90, 1);
         @media (max-width: 768px) {
           padding-top: 6px;
-          font-size: 7px;
-          letter-spacing: -1px;
+          font-size: 8px;
+          letter-spacing: 0;
           line-height: 12px;
         }
       }
@@ -206,7 +206,7 @@ const FeatureWrap = styled.div`
       background: rgba(255, 255, 255, 1);
       .relative-position-wap0{
         position: absolute;
-        top: -230px;
+        top: 0;
         left: 0;
         width: 100vw;
         background:#fff;
@@ -231,14 +231,11 @@ const FeatureWrap = styled.div`
           width: 343px;
           height: 312px;
         }
-        }
       }
       &:nth-child(3) {
-        background: rgba(244, 248, 254, 1);
         img{
           width: 343px;
           height: 261px;
-        }
         }
       }
       img{
@@ -278,13 +275,28 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
   const [currIndex, setCurrIndex] = useState(0);
   const [is_fixed, set_is_fixed] = useState(false);
   const navRef = useRef(null);
+  const navRefvoice = useRef(null);
+  const navRefversion = useRef(null);
+  const navRefdigit = useRef(null);
 
   useEffect(() => {
     const fixedTop = navRef.current.offsetTop;
     window.onscroll = () => {
       let scrollTop = document.documentElement.scrollTop;
-      const isFixed = scrollTop >= fixedTop;
+      const isFixed = scrollTop >= fixedTop - 110;
       set_is_fixed(isFixed);
+      if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
+        if (scrollTop >= navRefvoice.current.offsetTop - 130) {
+          setCurrIndex(0)
+        }
+        if (scrollTop >= navRefversion.current.offsetTop - 130) {
+          setCurrIndex(1)
+        }
+        if (scrollTop >= navRefdigit.current.offsetTop - 130) {
+          setCurrIndex(2)
+        }
+      }
+
     };
   }, []);
 
@@ -318,7 +330,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
               key={i}
               id={item.id}
               imgFirst={i % 2 === 1}
-              background={i == 2 ? 'rgba(244, 248, 254, 1)' : '#FFFFFF'}
+              background={i == 1 ? 'rgba(244, 248, 254, 1)' : '#FFFFFF'}
               height={item.boxheight}
               padding="0 0"
               className={'relative-position ' + item.id}
@@ -346,9 +358,9 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
             </div>
           ))}
         </div>
-        <div className="FeatureIntroduceWrap FeatureWap">
+        <div className={is_fixed ? 'FeatureIntroduceWrap FeatureWap placeholderDom' : 'FeatureIntroduceWrap FeatureWap'}>
           {FEATURE_INFO.map((item, i) => (
-            <div className="relative-position">
+            <div className="relative-position" ref={i == 0 ? navRefvoice : i == 1 ? navRefversion : navRefdigit}>
               {/*占位div,吸定后脱离文档流，dom高度发生变化了*/}
               <div className={`relative-position-wap${i} ${item.id}`}></div>
               <img src={item.pcImgs[0].src} />
@@ -364,5 +376,5 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
 };
 
 export type IFeaturesProps = IProps;
-const Features = styled(RawFeatures)<IFeaturesProps>``;
+const Features = styled(RawFeatures) < IFeaturesProps > ``;
 export default Features;

@@ -97,16 +97,6 @@ padding-bottom:90px;
                     transform: translate(-5px,5px);
                 }
             }
-            @media (max-width: 768px) {
-                div {
-                    img:first-child {
-                        transform: none;
-                    }
-                    img:last-child {
-                        transform: none;
-                    }
-                }
-              }
         }
         &:nth-child(2) {
             background: #F9FDFF;

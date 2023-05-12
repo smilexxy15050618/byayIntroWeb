@@ -13,7 +13,7 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
     img3: `${PREFIX}/multimodal-value-1-3.png`,
     title: '情感化',
     subtitle:
-      '高度拟人，情感感知与情感交互。在营销和宣传过程中，调动对方情感是关键所在，有助于提升用户体验和传递信息的效果。',
+    '高度拟人，情感感知与情感交互。在营销和宣传过程中，调动对方情感是关键所在，有助于提升用户体验和传递信息的效果。',
   },
   {
     img1: `${PREFIX}/multimodal-value-2-1.svg`,
@@ -21,7 +21,7 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
     img3: `${PREFIX}/multimodal-value-2-3.png`,
     title: '主动式',
     subtitle:
-      '具备主动销售能力和宣传能力。根据预设目标，主动推进对话和沟通，而不仅限于被动响应和回答问题，从而实现更高效的销售和宣传效果。',
+    '具备主动销售能力和宣传能力。根据预设目标，主动推进对话和沟通，而不仅限于被动响应和回答问题，从而实现更高效的销售和宣传效果。',
   },
   {
     img1: `${PREFIX}/multimodal-value-3-1.svg`,
@@ -29,7 +29,7 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
     img3: `${PREFIX}/multimodal-value-3-3.png`,
     title: '全双工',
     subtitle:
-      '在语音和数字人场景中，听说状态的实时切换，适应各种场景，确保多轮对话能力得到有效处理，使人机对话更加贴近真实的人际沟通。',
+    '在语音和数字人场景中，听说状态的实时切换，适应各种场景，确保多轮对话能力得到有效处理，使人机对话更加贴近真实的人际沟通。',
   },
 ];
 
@@ -48,6 +48,11 @@ const FeatureValueWrap = styled.div`
     letter-spacing: 0px;
     line-height: 228px;
     color: rgba(26, 26, 26, 1);
+    @media (max-width: 768px) {
+      font-size: 24px;
+      height: 105px;
+      line-height: 105px;
+    }
   }
   .FeatureValue-tab {
     width: 1200px;
@@ -219,5 +224,5 @@ const RawFabricValue: FC<IProps> = ({ className }) => {
 };
 
 export type IFeaturesProps = IProps;
-const FabricValue = styled(RawFabricValue)<IFeaturesProps>``;
+const FabricValue = styled(RawFabricValue) < IFeaturesProps > ``;
 export default FabricValue;

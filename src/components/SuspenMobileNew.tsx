@@ -14,7 +14,7 @@ interface IProps {
   setForm: (visible: boolean, type?: FormType) => void;
 }
 
-const HoverIcon = styled(Conversation)`
+const HoverIcon = styled(Conversation) `
   font-size: 32px;
   color: white;
   background: #2b58f9;
@@ -33,13 +33,13 @@ const HoverIcon = styled(Conversation)`
   }
 `;
 
-const Close = styled(Fork)`
+const Close = styled(Fork) `
   position: absolute;
   right: 16px;
   top: 12px;
 `;
 
-const ModalBody = styled(Modal.Body)`
+const ModalBody = styled(Modal.Body) `
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -70,6 +70,7 @@ const RawSuspenMobileNew: FC<IProps> = ({ className, setForm }) => {
   return (
     <div className={className}>
       <div onClick={() => setShow(true)}>一对一咨询</div>
+      <div onClick={() => setForm(true, FormType.PARTNER)}>立即体验</div>
       <div onClick={() => setForm(true, FormType.PARTNER)}>渠道合作</div>
       <HoverIcon onClick={() => setForm(true, FormType.CUSTOMER)} />
       <Modal show={show} centered>
@@ -86,7 +87,7 @@ const RawSuspenMobileNew: FC<IProps> = ({ className, setForm }) => {
 };
 
 export type ISuspenMobileNewProps = IProps;
-const SuspenMobileNew = styled(RawSuspenMobileNew)<ISuspenMobileNewProps>`
+const SuspenMobileNew = styled(RawSuspenMobileNew) < ISuspenMobileNewProps > `
   position: fixed;
   z-index: 50;
   display: flex;
@@ -105,10 +106,15 @@ const SuspenMobileNew = styled(RawSuspenMobileNew)<ISuspenMobileNewProps>`
     text-align: center;
   }
   > div:nth-child(1) {
-    border-right: 1px solid rgb(230, 230, 230);
+    // border-right: 1px solid rgb(230, 230, 230);
     flex: 1;
   }
   > div:nth-child(2) {
+    flex: 1;
+    border-left: 1px solid rgb(230, 230, 230);
+    border-right: 1px solid rgb(230, 230, 230);
+  }
+  > div:nth-child(3) {
     flex: 1;
   }
 `;

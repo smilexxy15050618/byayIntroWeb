@@ -107,7 +107,7 @@ const FeatureWrap = styled.div`
     }
   }
   .placeholderDom{
-    padding-top: 150px;
+    padding-top: 84px;
   }
   .capacity-tab{
     height: 170px;
@@ -189,8 +189,8 @@ const FeatureWrap = styled.div`
         color: rgba(90, 90, 90, 1);
         @media (max-width: 768px) {
           padding-top: 6px;
-          font-size: 6px;
-          letter-spacing: -1px;
+          font-size: 8px;
+          letter-spacing: 0;
           line-height: 12px;
         }
       }
@@ -245,14 +245,18 @@ const FeatureWrap = styled.div`
           width: 343px;
           height: 312px;
         }
-        }
       }
       &:nth-child(3) {
-        background: rgba(244, 248, 254, 1);
         img{
           width: 343px;
           height: 261px;
         }
+      }
+      &:nth-child(4) {
+        background: rgba(244, 248, 254, 1);
+        img{
+          width: 343px;
+          height: 277px;
         }
       }
       img{
@@ -292,14 +296,31 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
   const [currIndex, setCurrIndex] = useState(0);
   const [is_fixed, set_is_fixed] = useState(false);
   const navRef = useRef(null);
-
+  const navRefWeChat = useRef(null);
+  const navRefCommunicate = useRef(null);
+  const navRefOnlineCommunication = useRef(null);
+  const navRefIntelligentTerminal = useRef(null);
   useEffect(() => {
     const fixedTop = navRef.current.offsetTop;
 
     window.onscroll = () => {
       let scrollTop = document.documentElement.scrollTop;
-      const isFixed = scrollTop >= fixedTop;
+      const isFixed = scrollTop >= fixedTop - 40;
       set_is_fixed(isFixed);
+      if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
+        if (scrollTop >= navRefWeChat.current.offsetTop - 130) {
+          setCurrIndex(0)
+        }
+        if (scrollTop >= navRefCommunicate.current.offsetTop - 130) {
+          setCurrIndex(1)
+        }
+        if (scrollTop >= navRefOnlineCommunication.current.offsetTop - 130) {
+          setCurrIndex(2)
+        }
+        if (scrollTop >= navRefIntelligentTerminal.current.offsetTop - 130) {
+          setCurrIndex(2)
+        }
+      }
     };
   }, []);
 
@@ -333,7 +354,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
               key={i}
               id={item.id}
               imgFirst={i % 2 === 1}
-              background={i == 2 ? 'rgba(244, 248, 254, 1)' : '#FFFFFF'}
+              background={i == 1 || i == 3 ? 'rgba(244, 248, 254, 1)' : '#FFFFFF'}
               height={item.boxheight}
               padding="0 0"
               className={'relative-position ' + item.id}
@@ -361,9 +382,9 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
             </div>
           ))}
         </div>
-        <div className="FeatureIntroduceWrap FeatureWap">
+        <div className={is_fixed ? 'FeatureIntroduceWrap FeatureWap placeholderDom' : 'FeatureIntroduceWrap FeatureWap'}>
           {FEATURE_INFO.map((item, i) => (
-            <div className="relative-position">
+            <div className="relative-position" ref={i == 0 ? navRefWeChat : i == 1 ? navRefCommunicate : i == 2 ? navRefOnlineCommunication : navRefIntelligentTerminal}>
               {/*占位div,吸定后脱离文档流，dom高度发生变化了*/}
               <div className={`relative-position-wap${i} ${item.id}`}></div>
               <img src={item.pcImgs[0].src} />
@@ -379,5 +400,5 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
 };
 
 export type IFeaturesProps = IProps;
-const Features = styled(RawFeatures)<IFeaturesProps>``;
+const Features = styled(RawFeatures) < IFeaturesProps > ``;
 export default Features;

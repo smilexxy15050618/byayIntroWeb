@@ -10,7 +10,9 @@ const Linear = styled.div`
   }
 `;
 const TextArea = styled.div`
-  position: relative;
+  @media (max-width: 768px) {
+    animation: none;
+  }
 `;
 const Img = styled.img`
   margin-bottom: 0;
@@ -60,7 +62,7 @@ const RawBannerWhite: FC<IProps> = ({
     <ByContainer
       background={background}
       style={{ backgroundSize: 'cover' }}
-      height={['1184px', 'calc(100vh - 210px)']}
+      height={['1184px', 'calc(100vh - 124px)']}
       className={className}>
       {/* 头部空白占位，以便中间中间部分对齐 */}
       <Hidden xs sm>
@@ -78,7 +80,7 @@ const RawBannerWhite: FC<IProps> = ({
         </Hidden>
         <Visible xs sm>
           <Img
-            className="wap-banner animate__animated animate__fadeInUp animate__ahead_300ms"
+            className="wap-banner"
             src={mobileImg}
             style={mobileStyle}
           />
@@ -89,17 +91,22 @@ const RawBannerWhite: FC<IProps> = ({
 };
 
 export type IBannerWhiteProps = IProps;
-const BannerWhite = styled(RawBannerWhite)<IBannerWhiteProps>`
+const BannerWhite = styled(RawBannerWhite) < IBannerWhiteProps > `
   overflow: hidden;
   @media (max-height: 666px) and (max-width: 768px) {
-    padding-top: 10px;
-  }
-  @media (min-height: 750px) and (max-width: 768px) {
     .linear {
-      padding-top: 120px;
+      padding-top: 80px;
     }
     .wap-banner {
       padding-top: 30px;
+    }
+  }
+  @media (min-height: 750px) and (max-width: 768px) {
+    .linear {
+      padding-top: 80px;
+    }
+    .wap-banner {
+      padding-top: 50px;
     }
   }
 `;

@@ -40,7 +40,7 @@ const Desc = styled.div`
   color: rgba(51, 51, 51, 1);
   text-align: center;
   @media (max-width: 768px) {
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     padding-top: 20px;
     text-align: center;
     font-size: 16px;
