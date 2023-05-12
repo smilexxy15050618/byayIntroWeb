@@ -70,7 +70,7 @@ export const TreeNode = styled.div < INodeProps > `
       width: 100%;
       height: 1px;
       bottom: 0;
-      left: -12px;
+      left: 0;
       position: absolute;
       background: #eee;
     }

@@ -62,7 +62,7 @@ const RawBannerWhite: FC<IProps> = ({
     <ByContainer
       background={background}
       style={{ backgroundSize: 'cover' }}
-      height={['1184px', '630px']}
+      height={['1184px', '670px']}
       className={className}>
       {/* 头部空白占位，以便中间中间部分对齐 */}
       <Hidden xs sm>

@@ -1,10 +1,8 @@
-import { FC, useEffect, useRef, useState } from 'react';
-import classNames from 'classnames';
-
-import { Controller } from 'scrollmagic';
-import styled from 'styled-components';
-import imgurl from '../../../img.url.js'
+import { useEffect, useRef, useState } from 'react';
 import { Visible } from 'react-grid-system';
+import styled from 'styled-components';
+import imgurl from '../../../img.url.js';
+
 
 const labelList = [
   {
@@ -53,8 +51,8 @@ text-align: center;
 margin-bottom: 40px;
 @media (max-width: 768px) {
   font-size: 24px;
-font-weight: 500;
-margin-bottom: 33px;
+  font-weight: 500;
+  margin-bottom: 0;
 }
 `
 const Label = styled.div`
@@ -226,10 +224,10 @@ export const ProductCapability = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [is_fixed, set_is_fixed] = useState(false);
   const navRef = useRef(null);
-  const [lock,setLock] = useState(false);
+  const [lock, setLock] = useState(false);
   useEffect(() => {
     try {
-    const fixedTop = navRef.current.offsetTop;
+      const fixedTop = navRef.current.offsetTop;
     } catch (error) {
       console.log(error);
     }
@@ -290,11 +288,11 @@ export const ProductCapability = () => {
       });
     window.onscroll = () => {
       // 以下代码为移动端滚动 tab跟随高亮
-      return  false;
+      return false;
       let scrollTop = document.documentElement.scrollTop;
       const isFixed = scrollTop >= fixedTop;
       set_is_fixed(isFixed);
-      if(!lock) {
+      if (!lock) {
         if (scrollTop >= scrollContent1.offsetTop - 153) {
           setActiveIndex(0)
         }
@@ -310,11 +308,11 @@ export const ProductCapability = () => {
         setLock(false);
       }
       if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
-        if(scrollTop >= scrollContent.offsetTop + scrollContent.offsetHeight - 118) {
+        if (scrollTop >= scrollContent.offsetTop + scrollContent.offsetHeight - 118) {
           set_is_fixed(false);
         }
-       }
-      
+      }
+
     }
   })
   const scrollTo = (index) => {

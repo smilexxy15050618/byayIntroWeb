@@ -103,7 +103,7 @@ const FeatureWrap = styled.div`
       font-size: 24px;
       font-weight: 500;
       line-height: 40px;
-      padding: 34px 15px;
+      padding: 34px 15px 0;
     }
   }
   
@@ -295,31 +295,31 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
   const navRefIntelligentTerminal = useRef(null);
 
   useEffect(() => {
-    const fixedTop = navRef.current.offsetTop;
-    window.onscroll = () => {
-      let scrollTop = document.documentElement.scrollTop;
-      const isFixed = scrollTop >= fixedTop - 110;
-      set_is_fixed(isFixed);
-      if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
-        if (scrollTop >= navRefWeChat.current.offsetTop - 140 && scrollTop < navRefCommunicate.current.offsetTop - 140) {
-          setCurrIndex(0)
-        }
-        if (scrollTop >= navRefCommunicate.current.offsetTop - 140 && scrollTop < navRefOnlineCommunication.current.offsetTop - 140) {
-          setCurrIndex(1)
-        }
-        if (scrollTop >= navRefOnlineCommunication.current.offsetTop - 140 && scrollTop < navRefIntelligentTerminal.current.offsetTop - 140) {
-          setCurrIndex(2)
-        }
-        if (scrollTop >= navRefIntelligentTerminal.current.offsetTop - 140) {
-          setCurrIndex(3)
-        }
+    // const fixedTop = navRef.current.offsetTop;
+    // window.onscroll = () => {
+    //   let scrollTop = document.documentElement.scrollTop;
+    //   const isFixed = scrollTop >= fixedTop - 110;
+    //   set_is_fixed(isFixed);
+    //   if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
+    //     if (scrollTop >= navRefWeChat.current.offsetTop - 140 && scrollTop < navRefCommunicate.current.offsetTop - 140) {
+    //       setCurrIndex(0)
+    //     }
+    //     if (scrollTop >= navRefCommunicate.current.offsetTop - 140 && scrollTop < navRefOnlineCommunication.current.offsetTop - 140) {
+    //       setCurrIndex(1)
+    //     }
+    //     if (scrollTop >= navRefOnlineCommunication.current.offsetTop - 140 && scrollTop < navRefIntelligentTerminal.current.offsetTop - 140) {
+    //       setCurrIndex(2)
+    //     }
+    //     if (scrollTop >= navRefIntelligentTerminal.current.offsetTop - 140) {
+    //       setCurrIndex(3)
+    //     }
 
-        if (scrollTop >= navRefIntelligentTerminal.current.offsetTop + navRefIntelligentTerminal.current.offsetHeight - 118) {
-          set_is_fixed(false);
-        }
-      }
+    //     if (scrollTop >= navRefIntelligentTerminal.current.offsetTop + navRefIntelligentTerminal.current.offsetHeight - 118) {
+    //       set_is_fixed(false);
+    //     }
+    //   }
 
-    };
+    // };
   }, []);
 
   return (
@@ -361,7 +361,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
         </div>
       </Visible>
       <Visible xs sm>
-        <div className={`capacity-tab ${is_fixed ? 'fixedTop' : ''}`} ref={navRef}>
+        {/* <div className={`capacity-tab ${is_fixed ? 'fixedTop' : ''}`} ref={navRef}>
           {FEATURE_TITLE.map((item, i) => (
             <div
               className={i == currIndex ? 'capacity-item active' : 'capacity-item'}
@@ -379,7 +379,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
               <div className="subtitle">{item.subtitle}</div>
             </div>
           ))}
-        </div>
+        </div> */}
         <div className='FeatureIntroduceWrap FeatureWap'>
           {FEATURE_INFO.map((item, i) => (
             <div className={currIndex == i && is_fixed ? `relative-position ${item.id} placeholderDom` : `relative-position ${item.id}`} ref={i == 0 ? navRefWeChat : i == 1 ? navRefCommunicate : i == 2 ? navRefOnlineCommunication : navRefIntelligentTerminal}>

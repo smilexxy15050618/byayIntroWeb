@@ -1,9 +1,7 @@
-import { FC, useEffect, useRef, useState } from 'react';
-import { Controller } from 'scrollmagic';
-import styled from 'styled-components';
-import imgurl from '../../../img.url.js'
-import classNames from 'classnames';
+import { useEffect, useRef, useState } from 'react';
 import { Visible } from 'react-grid-system';
+import styled from 'styled-components';
+import imgurl from '../../../img.url.js';
 
 
 const labelList = [
@@ -50,8 +48,8 @@ text-align: center;
 margin-bottom: 40px;
 @media (max-width: 768px) {
   font-size: 24px;
-font-weight: 500;
-margin-bottom: 33px;
+  font-weight: 500;
+  margin-bottom: 0;
 }
 `
 const Label = styled.div`
@@ -286,13 +284,13 @@ export const ProductCapability = () => {
         }
         setLock(false);
       }
-        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
-          if (scrollTop >= scrollContent3.offsetTop + scrollContent3.offsetHeight - 130 ) {
-            set_is_fixed(false);
-          }else if(scrollTop >= fixedTop){
-            set_is_fixed(true);
-          }
+      if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
+        if (scrollTop >= scrollContent3.offsetTop + scrollContent3.offsetHeight - 130) {
+          set_is_fixed(false);
+        } else if (scrollTop >= fixedTop) {
+          set_is_fixed(true);
         }
+      }
     }
 
 
