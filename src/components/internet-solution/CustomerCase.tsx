@@ -7,6 +7,9 @@ import imgurl from '../../../img.url.js';
 const SocietyDutyContainer = styled.div`
   padding-bottom: 88px;
   background: rgba(246, 252, 255, 1);
+  @media (max-width: 768px) {
+    padding-bottom: 36px;
+  }
 `;
 
 const SocietyDutyContainerWrap = styled.div`
@@ -27,6 +30,14 @@ const Title = styled.div`
   color: rgba(26, 26, 26, 1);
   text-align: center;
   font-weight: 500;
+  @media (max-width: 768px) {
+    padding: 0;
+    font-size: 24px;
+    font-weight: 500;
+    height: 112px;
+    line-height: 112px;
+    color: rgba(0, 0, 0, 1);
+  }
 `;
 
 const HoveUp = styled.div`
@@ -92,6 +103,51 @@ const Wrapper = styled.div`
   display: flex;
   width: 100vw;
   margin: 0 auto;
+  .logo_area-wap{
+    padding: 14px 0;
+    border-radius: 2.65px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 8px 0px rgba(36, 91, 219, 0.12);
+    img{
+      width: 100%;
+      height: 144px;
+    }
+  }
+  .swiper-counter {
+    text-align: center;
+    margin-top: 7px;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 18px;
+  }
+  .swiper-slide {
+    padding-bottom: 30px !important;
+  }
+  .swiper-container-horizontal > .swiper-scrollbar {
+    height: 3px !important;
+    background-color: #e7e7fb !important;
+  }
+  .swiper-scrollbar-drag {
+    background-color: #2b58f9 !important;
+    border-radius: 0;
+  }
+
+  .custom-bar-wrapper {
+    position: relative;
+    margin: -25px auto 0;
+    width: 300px;
+    height: 3px;
+    background: #f2f2f2;
+    border-radius: 0px 0px 4px 4px;
+  }
+  .custom-bar-content {
+    transition: width 0.3s ease-in-out;
+    width: 0px;
+    height: 3px;
+    background: #2b58f9;
+    border-radius: 0px 0px 4px 4px;
+  }
 `;
 
 const carouselDataList = [
@@ -160,7 +216,6 @@ const Carousel: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
 
 const CarouselMobile: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
   const [currIndex, setCurrIndex] = useState(0);
-  const [controlledSwiper, setControlledSwiper] = useState(null);
   const length = dataList.length;
   const currAnimateNumber = useRef(0);
   const taskList = useRef<Array<() => void>>([]);
@@ -179,6 +234,12 @@ const CarouselMobile: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
       }
     }, 250);
   };
+  const counterNode = (
+    <div className="swiper-counter">
+      {currIndex+1}/{length}
+    </div>
+  );
+
   return (
     <>
       <Wrapper>
@@ -190,13 +251,20 @@ const CarouselMobile: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
           }}
           slidesPerView="auto"
           centeredSlides={true}
-          spaceBetween={24}
+          spaceBetween={0}
           onSlideChange={swiper => {
             setCurrIndex(swiper.activeIndex);
           }}>
           {dataList.map(({ imgSrc, content, title }, i) => (
-            <SwiperSlide style={{ width: '295px' }}></SwiperSlide>
+            <SwiperSlide style={{ width: '100%', padding: '0 8px', boxSizing: 'border-box'}}>
+              <div className="logo_area-wap"><img src={imgurl + imgSrc} /></div>
+            </SwiperSlide>
           ))}
+
+            <div className="custom-bar-wrapper">
+              <div className="custom-bar-content" style={{ width: `${((currIndex + 1) * 100) / length}%` }}></div>
+            </div>
+            {counterNode}
         </Swiper>
       </Wrapper>
     </>

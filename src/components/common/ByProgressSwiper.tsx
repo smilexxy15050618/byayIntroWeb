@@ -8,6 +8,7 @@ interface IProps {
   setActiveIndex?: (index: number) => void;
   noProgress?: boolean;
   initialSlide?: number;
+  loop?: boolean;
   newProgress?: boolean;
   style?: CSSProperties;
   renderCustomerProgress?: (info: { currIndex: number; totalIndex: number; progressNode: ReactNode }) => ReactNode;
@@ -25,6 +26,7 @@ const RawByProgressSwiper: FC<IProps> = ({
   setActiveIndex,
   renderCustomerProgress,
   setControlledSwiper,
+  loop = false,
   autoplayDelay = 5000,
 }) => {
   const [actIndex, setActIndex] = useState(initialSlide + 1);
@@ -48,6 +50,7 @@ const RawByProgressSwiper: FC<IProps> = ({
         onSwiper={swiper => {
           setControlledSwiper && setControlledSwiper(swiper);
         }}
+        loop={loop}
         {...scrollTemp}
         autoplay={
           autoplayDelay

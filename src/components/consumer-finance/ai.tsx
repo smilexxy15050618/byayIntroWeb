@@ -1,6 +1,9 @@
-import React, { FC, useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import styled from 'styled-components';
+import {  Hidden, Visible } from 'react-grid-system';
 import imgurl from '../../../img.url.js';
+import ByProgressSwiper from '../common/ByProgressSwiper';
+
 
 const titleList = [
   {
@@ -22,13 +25,25 @@ const titleList = [
 export type IAiProps = {};
 const Pane = styled.div`
   padding: 80px 0;
+  @media (max-width: 768px) {
+    padding: 37px 0;
+  }
+  @media (max-width: 768px) {
+    .custom-bar-wrapper{
+      width: 300px;
+    }
+  }
   .title {
     font-size: 40px;
     font-weight: 500;
-    letter-spacing: 0px;
     line-height: 48px;
     color: rgba(26, 26, 26, 1);
     text-align: center;
+    @media (max-width: 768px) {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 40px;
+    }
   }
   .desc {
     font-size: 22px;
@@ -38,6 +53,39 @@ const Pane = styled.div`
     color: rgba(51, 51, 51, 1);
     text-align: center;
     margin: 16px auto 40px;
+    @media (max-width: 768px) {
+      padding: 0 16px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      margin: 16px auto 34px;
+    }
+  }
+  .swiper-wrapper .swiper-slide{
+  }
+  .channel-item{
+    width: 310px;
+    height: 340px;
+    border-radius: 8px;
+    background: rgba(246, 252, 255, 1);
+    .title {
+      padding-top: 16px;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 20px 15px 0;
+      text-align: left;
+    }
+    .subtitle {
+      padding: 10px 15px 15px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+    img{
+      width: 100%;
+      margin-top: 22px;
+      height: 146px;
+    }
   }
 `;
 const ListWrapper = styled.div`
@@ -122,6 +170,7 @@ const MainWrap = styled.div`
     }
   }
 `;
+
 const AiTSXID = 'aitsx';
 const AI: FC<IAiProps> = ({}) => {
   const [currIndex, setCurrIndex] = useState(0);
@@ -151,29 +200,48 @@ const AI: FC<IAiProps> = ({}) => {
         <div class="desc">
           加强用户生命周期运营管理，以转化效果为导向，赋能消金机构运营效率提升100%，转化效果提升60%
         </div>
-        <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
-          <div className="aitxs">
-            <ListWrapper>
-              <div class="lists">
-                {titleList.map(({ title, subTitle }, index) => {
-                  return (
-                    <ListItem
-                      className={
-                        index == currIndex ? 'animate__animated animate__fadeIn animate__ahead_300ms active' : ''
-                      }
-                      onClick={() => setCurrIndex(index)}>
-                      <div>{title}</div>
-                      {index == currIndex && <div dangerouslySetInnerHTML={{ __html: subTitle }}></div>}
-                    </ListItem>
-                  );
-                })}
-              </div>
-              <div class="imgWrapper">
-                <img src={`${imgurl}${titleList[currIndex].url}`} />
-              </div>
-            </ListWrapper>
+        <Visible md lg xl xxl xxxl>
+          <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
+            <div className="aitxs">
+              <ListWrapper>
+                <div class="lists">
+                  {titleList.map(({ title, subTitle }, index) => {
+                    return (
+                      <ListItem
+                        className={
+                          index == currIndex ? 'animate__animated animate__fadeIn animate__ahead_300ms active' : ''
+                        }
+                        onClick={() => setCurrIndex(index)}>
+                        <div>{title}</div>
+                        {index == currIndex && <div dangerouslySetInnerHTML={{ __html: subTitle }}></div>}
+                      </ListItem>
+                    );
+                  })}
+                </div>
+                <div class="imgWrapper">
+                  <img src={`${imgurl}${titleList[currIndex].url}`} />
+                </div>
+              </ListWrapper>
+            </div>
           </div>
-        </div>
+        </Visible>
+        <Visible xs sm>
+          <ByProgressSwiper
+            newProgress={true}
+            initialSlide={0}
+            contentPadding="40px"
+            progressPadding="0px"
+            previewWidth="70px">
+            {titleList.map((item, i) => (
+              // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
+              <div className="channel-item">
+                <div className="title">{item.title}</div>
+                <div className="subtitle" dangerouslySetInnerHTML={{ __html: item.subTitle }}></div>
+                <img src={imgurl+item.url} />
+              </div>
+            ))}
+          </ByProgressSwiper>
+        </Visible>
       </Pane>
     </MainWrap>
   );

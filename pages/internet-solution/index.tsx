@@ -2,27 +2,44 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { NextFunctionComponent } from 'next';
 import { Layout } from '../../src/components/Layout';
-import { Col, ColProps, Container, Hidden, Row, Visible, ScreenClassRender } from 'react-grid-system';
+import {  Hidden, Visible } from 'react-grid-system';
 import { TextArea } from '../../src/components/common/BannerTextElements';
 
-import { Wrapper } from '../../src/components/voice-robot/style';
-import BannerWhite from '../../src/components/common/BannerWhite';
+import BannerWhite from '../../src/components/common/BannerWhiteNew';
 import AI from '../../src/components/internet-solution/ai';
 import SceneSolution from '../../src/components/internet-solution/SceneSolution';
 import AiSolution from '../../src/components/internet-solution/AiSolution';
 import CustomerCase from '../../src/components/internet-solution/CustomerCase';
-
-import { IndustryCarouselMobile } from '../../src/retail/components/IndustryCarouselMobile';
 import SceneSolutionMobile from '../../src/retail/components/scene-solution';
-
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 
 import { BANNER_LIST, MOBILE_SCENE_SOLUTION_LIST } from '../../src/constants/plat';
 
-import { HOST_ENUM } from '../../src/lib/utils';
+import { HOST_ENUM, scrollIntoOffset } from '../../src/lib/utils';
 import imgurl from '../../img.url.js';
 const JOIN_US_IMG = `${imgurl}/internet-banner.svg`;
 const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
+
+const Wrapper = styled.div`
+  .m-bg-arror {
+    position: absolute;
+    top: 570px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    animation: jump 2s infinite;
+  }
+  @keyframes jump {
+    0% {
+      transform: translate(-50%, 0px);
+    }
+    50% {
+      transform: translate(-50%, 10px);
+    }
+    100% {
+      transform: translate(-50%, 0px);
+    }
+  }
+`;
 
 const BigTitle = styled.div`
   margin-top: 17px;
@@ -30,6 +47,14 @@ const BigTitle = styled.div`
   line-height: 60px;
   color: rgba(26, 26, 26, 1);
   font-weight: 600;
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: left;
+    font-size: 32px;
+    line-height: 47px;
+    padding: 0 12px;
+    margin-bottom: 8px !important;
+  }
 `;
 
 const Desc = styled.div`
@@ -38,6 +63,19 @@ const Desc = styled.div`
   line-height: 34px;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
+  @media (max-width: 768px) {
+    padding-top: 8px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 26px;
+    margin: 0 12px 46px !important;
+  }
+`;
+
+const BlueBtnWrap = styled.div`
+  width: 100%;
+  padding: 0 12px;
+  align-items: flex-start;
 `;
 
 const BlueBtn = styled.div`
@@ -53,42 +91,79 @@ const BlueBtn = styled.div`
   color: rgba(255, 255, 255, 1);
   text-align: center;
   cursor: pointer;
+  @media (max-width: 768px) {
+    margin-top: 0;
+    width: 112px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 40px;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+  }
 `;
 
 const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
   return (
     <>
-      <Layout hostType={HOST_ENUM.PF_HOST} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
+      <Layout hostType={HOST_ENUM.HOST} headPlaceholder={[false, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
         {(visible, setFormVisible) => (
           <Wrapper>
-            <Visible md lg xl xxl xxxl>
-              <BannerWhite
-                background={[`rgba(246, 252, 255, 1);`, 'rgba(246, 252, 255, 1)']}
-                pcImgs={[
-                  {
-                    src: JOIN_US_IMG,
-                    style: { width: 644, height: 496, top: 0, right: 0 },
-                    className: ['animate__fadeInRight', 'animate__ahead_300ms'],
-                  },
-                ]}
-                mobileImg={JOIN_US_IMG}>
-                <TextArea spaces={['', '']}>
-                  <Hidden xs sm>
-                    <BigTitle>
-                      互联网
-                      <br />
-                      数智化运营解决方案
-                    </BigTitle>
-                    <Desc>
-                      构建高转化用户触达模型，深度挖掘会员用户价值，打
-                      <br />
-                      造更优的沟通服务体验
-                    </Desc>
-                    <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
-                  </Hidden>
-                </TextArea>
-              </BannerWhite>
-              <AI></AI>
+            <BannerWhite
+              height={['560px', '657px']}
+              LinearHeight={['500px', '100%']}
+              background={[`rgba(246, 252, 255, 1);`, 'rgba(246, 252, 255, 1)']}
+              pcImgs={[
+                {
+                  src: JOIN_US_IMG,
+                  style: { width: 644, height: 496, top: 0, right: 0 },
+                  className: ['animate__fadeInRight', 'animate__ahead_300ms'],
+                },
+              ]}
+              mobileStyle={{height:'270px',paddingTop: '21px'}}
+              mobileImg={JOIN_US_IMG}>
+              <TextArea spaces={['', '']}>
+                <Hidden xs sm>
+                  <BigTitle>
+                    互联网
+                    <br />
+                    数智化运营解决方案
+                  </BigTitle>
+                  <Desc>
+                    构建高转化用户触达模型，深度挖掘会员用户价值，打
+                    <br />
+                    造更优的沟通服务体验
+                  </Desc>
+                  <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+                </Hidden>
+                <Visible xs sm>
+                  <BigTitle>
+                  互联网<br/>数智化运营解决方案
+                  </BigTitle>
+                  <Desc>构建高转化用户触达模型，深度挖掘会员用户价值，打造更优的沟通服务体验</Desc>
+                  <BlueBtnWrap>
+                    <BlueBtn
+                      onClick={() =>
+                        window.open('/form?formType=1')
+                      }>
+                      预约体验
+                    </BlueBtn>
+                  </BlueBtnWrap>
+                </Visible>
+              </TextArea>
+            </BannerWhite>
+            <Visible xs sm>
+              <img
+                onClick={() => {
+                  scrollIntoOffset('#aitsx', 50);
+                }}
+                src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/mobile/bg/arror.png"
+                className="m-bg-arror"
+              />
+            </Visible> 
+            <AI></AI>
+
+            <Visible md lg xl xxl xxxl>    
               <SceneSolution
                 onJumpClick={() => {
                   window.open('/form?formType=1');
@@ -259,12 +334,10 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                     ],
                   },
                 ]}
-                title="场景解决方案"></SceneSolution>
-              <AiSolution />
-              <CustomerCase />
+                title="场景解决方案">
+              </SceneSolution>
             </Visible>
             <Visible xs sm>
-              <IndustryCarouselMobile dataList={BANNER_LIST} />
               <SceneSolutionMobile
                 dataList={MOBILE_SCENE_SOLUTION_LIST}
                 onJumpClick={() => {
@@ -272,7 +345,8 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                 }}
               />
             </Visible>
-
+            <AiSolution />
+            <CustomerCase />
             <ByVoiceFooter
               title="立即体验AI时代的新一代用户运营平台"
               desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"

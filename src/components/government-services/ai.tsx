@@ -6,24 +6,23 @@ import ByProgressSwiper from '../common/ByProgressSwiper';
 
 const titleList = [
   {
-    title: '全流程智能化、自动化',
-    subTitle: '人群精细拆分，千人千面策略运营用户数据分析，规划运营增长旅途智能、流畅、自然，提升用户体验',
-    url: '/internet-solution-3.svg',
-    urlWap: '/internet-solution-wap-3.png',
+    title: '新一代服务型政府窗口',
+    subTitle: '覆盖贷款、理财、网银、信用卡4大<br />类业务<br />营销、唤醒、促销等20+细分场景<br />业务实践沉淀1000+套场景运营策略模版',
+    url: '/bank-govern-1.png',
+    urlWap: '/bank-govern-1.png',
   },
 
   {
-    title: '高转化模型测试',
-    subTitle:
-      '全变量对照测试，提升效果转化文案设计精细化，为沟通结果负责把控变量节点密度，验证最优模型数据分析迭代，完成激活上升曲线',
-    url: '/internet-solution-2.svg',
-    urlWap: '/internet-solution-wap-2.png',
+    title: '全生命周期用户运营',
+    subTitle: '丰富数据标签建模分层<br />分层用户精细化运营<br />用户画像实时分析<br />赋能中长尾用户活跃激活',
+    url: '/bank-govern-1.png',
+    urlWap: '/bank-govern-1.png',
   },
   {
-    title: '三大保障&提升方案',
-    subTitle: '自研产品，全面保障用户体验专业知识库，运营效率不断提升行业方法论，保障外呼效果全面运营服务，为效果负责',
-    url: '/internet-solution-1.svg',
-    urlWap: '/internet-solution-wap-1.png',
+    title: 'ROI导向升级运营服务',
+    subTitle: '运营策略制定与持续迭代<br />话术制作与持续调优<br />运营策略自动化执行<br />数据结果实时分析',
+    url: '/bank-govern-1.png',
+    urlWap: '/bank-govern-1.png',
   },
 ];
 export type IAiProps = {};
@@ -97,26 +96,27 @@ const Pane = styled.div`
 const ListWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 448px;
+  height: 552px;
   .lists {
     width: 296px;
   }
   .imgWrapper {
     width: 888px;
-    height: 448px;
+    height: 552px;
     border-radius: 8px;
     background: rgba(246, 252, 255, 1);
     box-sizing: border-box;
   }
   img {
     width: 100%;
-    height: 448px;
+    height: 552px;
     margin: 0;
+    border-radius: 8px;
   }
 `;
 const ListItem = styled.div`
   width: 296px;
-  height: 104px;
+  height: 148px;
   padding-top: 38px;
   padding-left: 40px;
   background: rgba(246, 252, 255, 1);
@@ -142,10 +142,10 @@ const ListItem = styled.div`
   }
   &.active {
     width: 296px;
-    height: 224px;
+    height: 240px;
     background: rgba(43, 88, 249, 1);
     color: rgba(255, 255, 255, 1);
-    padding: 40px 46px 48px 40px;
+    padding: 40px 35px 48px 40px;
     box-sizing: border-box;
     div:first-child {
       font-size: 20px;
@@ -202,13 +202,8 @@ const AI: FC<IAiProps> = ({}) => {
   return (
     <MainWrap id={AiTSXID}>
       <Pane>
-        <Visible md lg xl xxl xxxl>
-          <div class="title">以数智化助力互联网企业增长，提升用户活跃度</div>
-        </Visible>
-        <Visible xs sm>
-          <div class="title">以数智化助力互联网企业增长提升用户活跃度</div>
-        </Visible>
-        <div class="desc">助力品牌激活会员、高效转化、差异化触达营销，实现运营效率质变</div>
+        <div class="title">银行全场景智能营销</div>
+        <div class="desc">围绕用户生命周期，以转化效果为导向，制定用户运营策略并进行策略迭代运营助力银行机构AUM和MAU双效提升</div>
         <Visible md lg xl xxl xxxl>
           <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
             <div className="aitxs">

@@ -9,27 +9,25 @@ interface  SceneSolution{
 }
 
 const carouselDataList = [
-  {
-    title: '触达效率提升',
-    content: '围绕「强关系触达，弱关系弱触达」，激发用户购买意愿',
-    url: '/internet-iz-1.png',
-  },
-  {
-    title: '转化率更高',
-    content: '匹配对应的人群包，持续优化成交转化路径，ROI提升10%-30%',
-    url: '/internet-iz-2.png',
-  },
-  {
-    title: '用户体验更佳',
-    content: '根据用户画像，定制运营策略及服务关怀，实现极致的用户沟通体验',
-    url: '/internet-iz-3.png',
-  },
-  {
-    title: '转化成本更低',
-    content: '用更少的触达频次、更低成本的触达方式，达成最终的业务目标',
-    url: '/internet-iz-4.png',
-  },
-];
+    {
+        title:'统一运营',
+        content:'支持电话、短信、邮件、微信、APP、网页、H5、公众号、抖音/快手等全渠道',
+        url: '/government-sue-1.svg'
+    },{
+        title:'快速响应',
+        content:'富媒体通讯服务平台，沟通形式灵活运用于咨询、办理、通知回访各场景，快捷支持服务需求',
+        url: '/government-sue-2.svg'
+    },{
+        title:'主动触达',
+        content:'全面覆盖智能接待、内部协同服务全流程，主动服务，有效提升内外协同的便捷性',
+        url: '/government-sue-3.svg'
+    },{
+        title:'降本增效',
+        content:'智能外呼+智能接待+智能质检+智能辅助，构建智能服务大脑，打造智能化群众服务平台',
+        url: '/government-sue-4.svg'
+    }
+]
+
 const Wrapper = styled.div`
     .Bigtitle{
         padding: 40px 0;
@@ -50,13 +48,17 @@ const Card = styled.div<{bg:number}>`
    display:flex;
    justify-content: space-between;
    .carditem{
-    width: 284px;
+    width: 288px;
     height: 240px;
     opacity: 1;
     border-radius: 8px;
     background: rgba(43, 88, 249, 1);
     position: relative;
     transition: all 0.3s ease-in;
+    margin-right: 16px;
+    &:nth-child(4){
+        margin-right: 0;
+    }
     &:hover{
         transform: translateY(-8px);
     }
@@ -67,7 +69,7 @@ const Card = styled.div<{bg:number}>`
     }
     .textt_area{
         position: absolute;
-        width: 181px;
+        width: 240px;
         height: 112px;
         left:22px;
         bottom:22px;
@@ -157,6 +159,7 @@ useEffect(() => {
         .on('enter', () => {
             videoContent.classList.add('appear')
             // console.log('进入');
+            
             controller.destroy();
         });
   }, []);
@@ -164,8 +167,8 @@ useEffect(() => {
     <Wrapper>
         <Visible md lg xl xxl xxxl>
             <Pane title="核心价值"
-            titleStyle={{marginBottom:'56px'}}
-            paneBgColor="white" style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
+            titleStyle={{marginBottom:'40px'}}
+            paneBgColor="white" style={{ paddingBottom: 78 }} mobileStyle={{ paddingBottom: 40 }}>
             <MainWrap id={AISOLUTION}>
                 <HoveUp>
                     <Card>
@@ -173,12 +176,12 @@ useEffect(() => {
                             <div className='carditem'>
                                 <img src={imgurl+item.url} width={117}/>
                                 <div className='textt_area'>
-                                <div className='title_area'>
-                                {item.title}
-                                </div>
-                                <div className='cont_area'>
-                                {item.content}
-                                </div>
+                                    <div className='title_area'>
+                                    {item.title}
+                                    </div>
+                                    <div className='cont_area'>
+                                    {item.content}
+                                    </div>
                                 </div>
                             </div>
                         )}

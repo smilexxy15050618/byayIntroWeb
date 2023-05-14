@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="118px" viewBox="0 0 120 118" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="120" height="118"></rect>
+        <linearGradient x1="99.2374839%" y1="14.7419454%" x2="23.94587%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="99.1425183%" y1="14.7419454%" x2="23.9961213%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#39ACFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-128.000000, -137.000000)">
+            <g id="编组" transform="translate(128.357292, 137.822315)">
+                <g id="形状" opacity="0.146722703">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="蒙版"></g>
+                    <rect id="矩形" fill="url(#linearGradient-3)" fill-rule="nonzero" opacity="0" mask="url(#mask-2)" x="12.0013857" y="0.00165934907" width="105.38545" height="106.198341"></rect>
+                </g>
+                <path d="M88.0761659,54.9293056 L63.5095207,69.2225237 L63.5095207,97.8068856 L88.0761659,112.1 L112.642708,97.8068856 L112.642708,69.2225237 L88.0761659,54.9293056 Z M7.35729186,69.2225237 L7.35729186,97.8068856 L31.923937,112.1 L56.4904793,97.8068856 L56.4904793,69.2225237 L31.923937,54.9292019 L7.35729186,69.2225237 Z M84.5490466,20.1928032 L59.9825044,5.9 L35.4158592,20.1930107 L35.4158592,48.7773726 L59.9825044,63.0705907 L84.5490466,48.7773726 L84.5490466,20.1928032 Z" id="形状" fill="url(#linearGradient-4)" fill-rule="nonzero" opacity="0.146094"></path>
+            </g>
+        </g>
+    </g>
+</svg>

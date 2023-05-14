@@ -6,24 +6,29 @@ import ByProgressSwiper from '../common/ByProgressSwiper';
 
 const titleList = [
   {
-    title: '全流程智能化、自动化',
-    subTitle: '人群精细拆分，千人千面策略运营用户数据分析，规划运营增长旅途智能、流畅、自然，提升用户体验',
-    url: '/internet-solution-3.svg',
-    urlWap: '/internet-solution-wap-3.png',
+    title: '新一代服务型政府窗口',
+    subTitle: '提供在线客服、视频客服、语音客服、虚拟客服等多种类型AI机器人客服，打造智慧型、一体化、可持续的政务服务体系',
+    url: '/government-govern-1.svg',
+    urlWap: '/government-govern-1.svg',
   },
 
   {
-    title: '高转化模型测试',
-    subTitle:
-      '全变量对照测试，提升效果转化文案设计精细化，为沟通结果负责把控变量节点密度，验证最优模型数据分析迭代，完成激活上升曲线',
-    url: '/internet-solution-2.svg',
-    urlWap: '/internet-solution-wap-2.png',
+    title: '政务办理全流程闭环',
+    subTitle: '网上办 &nbsp; 掌上办 <br />就近办 &nbsp; 一次办',
+    url: '/government-govern-2.svg',
+    urlWap: '/government-govern-2.svg',
   },
   {
-    title: '三大保障&提升方案',
-    subTitle: '自研产品，全面保障用户体验专业知识库，运营效率不断提升行业方法论，保障外呼效果全面运营服务，为效果负责',
-    url: '/internet-solution-1.svg',
-    urlWap: '/internet-solution-wap-1.png',
+    title: '线上服务大厅',
+    subTitle: '搭建群众入口，构建服务大厅智能接待、智慧工单多应用场景打造个人中心，形成服务闭环',
+    url: '/government-govern-3.svg',
+    urlWap: '/government-govern-3.svg',
+  },
+  {
+    title: '办事导航指南',
+    subTitle: '集信息展示、智能接待、个人中心于一体的综合性办事导航指南，实时精准指导群众网办流程，让群众办事由繁到简、由难到易',
+    url: '/government-govern-4.svg',
+    urlWap: '/government-govern-4.svg',
   },
 ];
 export type IAiProps = {};
@@ -97,20 +102,20 @@ const Pane = styled.div`
 const ListWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 448px;
+  height: 560px;
   .lists {
     width: 296px;
   }
   .imgWrapper {
     width: 888px;
-    height: 448px;
+    height: 560px;
     border-radius: 8px;
     background: rgba(246, 252, 255, 1);
     box-sizing: border-box;
   }
   img {
     width: 100%;
-    height: 448px;
+    height: 560px;
     margin: 0;
   }
 `;
@@ -202,13 +207,8 @@ const AI: FC<IAiProps> = ({}) => {
   return (
     <MainWrap id={AiTSXID}>
       <Pane>
-        <Visible md lg xl xxl xxxl>
-          <div class="title">以数智化助力互联网企业增长，提升用户活跃度</div>
-        </Visible>
-        <Visible xs sm>
-          <div class="title">以数智化助力互联网企业增长提升用户活跃度</div>
-        </Visible>
-        <div class="desc">助力品牌激活会员、高效转化、差异化触达营销，实现运营效率质变</div>
+        <div class="title">打造智慧政务服务窗，促进政务服务降本增效</div>
+        <div class="desc">依托AI客服实现专业、智能、即时地响应居民业务办理需求，提高居民满意度</div>
         <Visible md lg xl xxl xxxl>
           <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
             <div className="aitxs">

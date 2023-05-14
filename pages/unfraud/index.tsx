@@ -87,14 +87,14 @@ const Game:NextFunctionComponent<IGameProps>=()=>{
                 <CoreValues></CoreValues>
                 <CustomerStories></CustomerStories>
                 <ByVoiceFooter
-            title="立即体验AI时代的新一代用户运营平台"
-            desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
-            btnText="与我联系"
-            background={`url(${FOOTER_BG})`}
-            onClick={() => {
-              window.open('/form?formType=1')
-            }}
-          />
+                  title="立即体验AI时代的新一代用户运营平台"
+                  desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
+                  btnText="与我联系"
+                  background={`url(${FOOTER_BG})`}
+                  onClick={() => {
+                    window.open('/form?formType=1')
+                  }}
+                />
             </Visible>
               
             </Wrapper>

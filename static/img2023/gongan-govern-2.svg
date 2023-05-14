@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="888px" height="560px" viewBox="0 0 888 560" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>“三驱一体”运营体系</title>
+    <defs>
+        <linearGradient x1="4.12797134%" y1="36.5248843%" x2="125.419451%" y2="76.3246059%" id="linearGradient-1">
+            <stop stop-color="#2B58F9" offset="0%"></stop>
+            <stop stop-color="#00C8BD" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="31.4333333" y="196.916382" width="243.8" height="221.435154" rx="13.8"></rect>
+        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="243.8" height="221.435154" fill="white">
+            <use xlink:href="#path-2"></use>
+        </mask>
+        <rect id="path-4" x="291.333333" y="196.916382" width="243.8" height="221.435154" rx="13.8"></rect>
+        <mask id="mask-5" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="243.8" height="221.435154" fill="white">
+            <use xlink:href="#path-4"></use>
+        </mask>
+        <rect id="path-6" x="553.533333" y="196.916382" width="243.8" height="221.435154" rx="13.8"></rect>
+        <mask id="mask-7" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="243.8" height="221.435154" fill="white">
+            <use xlink:href="#path-6"></use>
+        </mask>
+        <linearGradient x1="100%" y1="50%" x2="6.34101485%" y2="50%" id="linearGradient-8">
+            <stop stop-color="#377FFF" offset="0%"></stop>
+            <stop stop-color="#2B58F9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-1991.000000, -237.000000)">
+            <g id="编组-46" transform="translate(1559.000000, 69.000000)">
+                <g id="编组-29" transform="translate(120.000000, 168.000000)">
+                    <g id="“三驱一体”运营体系" transform="translate(312.000000, 0.000000)">
+                        <rect id="矩形备份-27" fill="#F6FCFF" x="0" y="0" width="888" height="560" rx="8"></rect>
+                        <g id="编组-128" transform="translate(30.000000, 56.000000)">
+                            <rect id="矩形" stroke="url(#linearGradient-1)" stroke-width="0.766666667" x="0.383333333" y="19.5386234" width="827.233333" height="429.078043" rx="13.4166667"></rect>
+                            <use id="矩形" stroke="#0364FF" mask="url(#mask-3)" stroke-width="1.53333333" stroke-dasharray="2.300000029641229" xlink:href="#path-2"></use>
+                            <use id="矩形" stroke="#0364FF" mask="url(#mask-5)" stroke-width="1.53333333" stroke-dasharray="2.300000029641229" xlink:href="#path-4"></use>
+                            <use id="矩形" stroke="#0364FF" mask="url(#mask-7)" stroke-width="1.53333333" stroke-dasharray="2.300000029641229" xlink:href="#path-6"></use>
+                            <text id="通过-问题、需求、数据驱动运营，实现高效" font-family="PingFangSC-Regular, PingFang SC" font-size="16.8666667" font-weight="normal" line-spacing="24.5333333">
+                                <tspan x="157" y="84.6530224" fill="#333333">通过 </tspan>
+                                <tspan x="196.239533" y="84.6530224" font-family="PingFangSC-Medium, PingFang SC" font-size="18.4" font-weight="400" fill="#2B58F9">问题、需求、数据驱动运营</tspan>
+                                <tspan x="417.149933" y="84.6530224" fill="#333333">，实现高效的、科学的管理及决策</tspan>
+                            </text>
+                            <g id="编组-5" transform="translate(91.233333, 108.802048)">
+                                <rect id="矩形备份-103" fill="#A6ECE8" x="0" y="0" width="114.233333" height="40.609215" rx="6.13333333"></rect>
+                                <text id="即时性" font-family="PingFangSC-Regular, PingFang SC" font-size="15.3333333" font-weight="normal" line-spacing="21.4666667" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="34.5" y="25.1880798">即时性</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-5" transform="translate(223.866667, 108.802048)">
+                                <rect id="矩形备份-103" fill="#A6ECE8" x="0" y="0" width="114.233333" height="40.609215" rx="6.13333333"></rect>
+                                <text id="全面性" font-family="PingFangSC-Regular, PingFang SC" font-size="15.3333333" font-weight="normal" line-spacing="21.4666667" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="34.5" y="25.1880798">全面性</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-5" transform="translate(356.500000, 108.802048)">
+                                <rect id="矩形备份-103" fill="#A6ECE8" x="0" y="0" width="114.233333" height="40.609215" rx="6.13333333"></rect>
+                                <text id="准确性" font-family="PingFangSC-Regular, PingFang SC" font-size="15.3333333" font-weight="normal" line-spacing="21.4666667" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="34.5" y="25.1880798">准确性</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-5" transform="translate(489.133333, 108.802048)">
+                                <rect id="矩形备份-103" fill="#A6ECE8" x="0" y="0" width="114.233333" height="40.609215" rx="6.13333333"></rect>
+                                <text id="系统性" font-family="PingFangSC-Regular, PingFang SC" font-size="15.3333333" font-weight="normal" line-spacing="21.4666667" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="34.5" y="25.1880798">系统性</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-5" transform="translate(621.766667, 108.802048)">
+                                <rect id="矩形备份-103" fill="#A6ECE8" x="0" y="0" width="114.233333" height="40.609215" rx="6.13333333"></rect>
+                                <text id="科学性" font-family="PingFangSC-Regular, PingFang SC" font-size="15.3333333" font-weight="normal" line-spacing="21.4666667" fill="#0A0F2C" fill-opacity="0.85">
+                                    <tspan x="34.5" y="25.1880798">科学性</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-7">
+                                <rect id="矩形备份-90" fill="url(#linearGradient-8)" x="0" y="0" width="828" height="50.5699659" rx="25.2849829"></rect>
+                                <text id="业务层" font-family="PingFangSC-Semibold, PingFang SC" font-size="18.4" font-weight="500" line-spacing="12.2666667" fill="#FFFFFF">
+                                    <tspan x="385.0752" y="33.9015163">业务层</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-6" transform="translate(80.500000, 179.293515)">
+                                <rect id="矩形" stroke="#0364FF" stroke-width="0.766666667" fill="#F6FCFF" x="0.383333333" y="0.383333333" width="149.5" height="34.4790671" rx="17.2395336"></rect>
+                                <text id="居民问题驱动" font-family="PingFangSC-Medium, PingFang SC" font-size="15.3333333" font-weight="400" fill="#2B58F9">
+                                    <tspan x="29.1333333" y="22.8897542">居民问题驱动</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-6" transform="translate(47.533333, 237.525597)">
+                                <rect id="矩形" fill="#2B58F9" x="0" y="0" width="212.366667" height="35.2457338" rx="17.6228669"></rect>
+                                <text id="统一问题收口" font-family="PingFangSC-Medium, PingFang SC" font-size="12.2666667" font-weight="400" fill="#FFFFFF">
+                                    <tspan x="69.7666667" y="22.9556657">统一问题收口</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-6" transform="translate(46.766667, 291.160410)">
+                                <rect id="矩形" fill="#2B58F9" x="0" y="0" width="212.366667" height="35.2457338" rx="17.6228669"></rect>
+                                <text id="任务协同处理" font-family="PingFangSC-Medium, PingFang SC" font-size="12.2666667" font-weight="400" fill="#FFFFFF">
+                                    <tspan x="70.5333333" y="22.9556657">任务协同处理</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-6" transform="translate(46.766667, 344.795222)">
+                                <rect id="矩形" fill="#2B58F9" x="0" y="0" width="212.366667" height="35.2457338" rx="17.6228669"></rect>
+                                <text id="问题处理全闭环" font-family="PingFangSC-Medium, PingFang SC" font-size="12.2666667" font-weight="400" fill="#FFFFFF">
+                                    <tspan x="64.4" y="22.9556657">问题处理全闭环</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-6" transform="translate(338.100000, 179.293515)">
+                                <rect id="矩形" stroke="#0364FF" stroke-width="0.766666667" fill="#F6FCFF" x="0.383333333" y="0.383333333" width="149.5" height="34.4790671" rx="17.2395336"></rect>
+                                <text id="基层需求驱动" font-family="PingFangSC-Medium, PingFang SC" font-size="15.3333333" font-weight="400" fill="#2B58F9">
+                                    <tspan x="29.1333333" y="22.8897542">基层需求驱动</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-6" transform="translate(307.433333, 237.525597)">
+                                <rect id="矩形" fill="#2B58F9" x="0" y="0" width="212.366667" height="35.2457338" rx="17.6228669"></rect>
+                                <text id="梳理业务流程" font-family="PingFangSC-Medium, PingFang SC" font-size="12.2666667" font-weight="400" fill="#FFFFFF">
+                                    <tspan x="69.7666667" y="22.9556657">梳理业务流程</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-6" transform="translate(307.433333, 291.160410)">
+                                <rect id="矩形" fill="#2B58F9" x="0" y="0" width="212.366667" height="35.2457338" rx="17.6228669"></rect>
+                                <text id="定义业务标准" font-family="PingFangSC-Medium, PingFang SC" font-size="12.2666667" font-weight="400" fill="#FFFFFF">
+                                    <tspan x="69.7666667" y="22.9556657">定义业务标准</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-6" transform="translate(307.433333, 344.795222)">
+                                <rect id="矩形" fill="#2B58F9" x="0" y="0" width="212.366667" height="35.2457338" rx="17.6228669"></rect>
+                                <text id="需求达成全在线" font-family="PingFangSC-Medium, PingFang SC" font-size="12.2666667" font-weight="400" fill="#FFFFFF">
+                                    <tspan x="63.6333333" y="22.9556657">需求达成全在线</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-6" transform="translate(600.300000, 179.293515)">
+                                <rect id="矩形" stroke="#0364FF" stroke-width="0.766666667" fill="#F6FCFF" x="0.383333333" y="0.383333333" width="149.5" height="34.4790671" rx="17.2395336"></rect>
+                                <text id="数据驱动" font-family="PingFangSC-Medium, PingFang SC" font-size="15.3333333" font-weight="400" fill="#2B58F9">
+                                    <tspan x="44.4666667" y="22.8897542">数据驱动</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-6" transform="translate(569.633333, 237.525597)">
+                                <rect id="矩形" fill="#2B58F9" x="0" y="0" width="212.366667" height="35.2457338" rx="17.6228669"></rect>
+                                <text id="定义业务指标" font-family="PingFangSC-Medium, PingFang SC" font-size="12.2666667" font-weight="400" fill="#FFFFFF">
+                                    <tspan x="69.7666667" y="22.9556657">定义业务指标</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-6" transform="translate(569.633333, 291.160410)">
+                                <rect id="矩形" fill="#2B58F9" x="0" y="0" width="212.366667" height="35.2457338" rx="17.6228669"></rect>
+                                <text id="评估服务效能" font-family="PingFangSC-Medium, PingFang SC" font-size="12.2666667" font-weight="400" fill="#FFFFFF">
+                                    <tspan x="69.7666667" y="22.9556657">评估服务效能</tspan>
+                                </text>
+                            </g>
+                            <g id="编组-6" transform="translate(569.633333, 344.795222)">
+                                <rect id="矩形" fill="#2B58F9" x="0" y="0" width="212.366667" height="35.2457338" rx="17.6228669"></rect>
+                                <text id="管理运营数智化" font-family="PingFangSC-Medium, PingFang SC" font-size="12.2666667" font-weight="400" fill="#FFFFFF">
+                                    <tspan x="63.6333333" y="22.9556657">管理运营数智化</tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
