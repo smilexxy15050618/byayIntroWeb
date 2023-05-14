@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../constants/style';
-import { cssSwitch, splitCssValue } from '../../lib/utils';
+import { cssSwitch, splitCssValue, scrollIntoOffset } from '../../lib/utils';
 interface IProps {
   className?: string;
   children?: ReactNode;
@@ -18,9 +18,27 @@ const Content = styled.div<{ maxWidthPc?: string; minWidthPC?: string }>`
         ${props => splitCssValue(props.maxWidthPc || Theme.ContentWidth).num}
     );
   }
+  @keyframes jump {
+    0% {
+      transform: translate(-50%, 0px);
+    }
+    50% {
+      transform: translate(-50%, 10px);
+    }
+    100% {
+      transform: translate(-50%, 0px);
+    }
+  }
   height: 100%;
   @media (max-width: 768px) {
     width: 100% !important;
+    .m-bg-arror {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      animation: jump 2s infinite;
+    }
   }
 `;
 
