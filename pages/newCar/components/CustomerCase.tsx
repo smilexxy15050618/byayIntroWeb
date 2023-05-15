@@ -1,6 +1,7 @@
 import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Pane from '../../../src/components/homepage/version2023/Pane';
+import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 
 import { Hidden, Visible } from 'react-grid-system';
 import imgurl from '../../../img.url.js';
@@ -9,6 +10,51 @@ const Wrapper = styled.div``;
 const HoveUp = styled.div`
   width: 1248px;
   margin: 0 auto;
+  @media (max-width: 768px) {
+    width: 100vw;
+}
+@media (max-width: 768px) {
+    width: 100%;
+    display: block;
+    .carditem {
+    position: relative;
+    width: 284px;
+    height: 364px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
+    overflow: hidden;
+    img.logo {
+      height: 160px;
+      border-radius: 8px 8px 0 0;
+      &:hover {
+        transform: scale(1.02);
+        transition: transform 0.4s;
+      }
+    }
+
+    .textt_area {
+      padding: 32px 24px;
+      font-size: 16px;
+      line-height: 26px;
+      font-size: 16px;
+      line-height: 26px;
+      color: rgba(0, 0, 0, 1);
+    }
+    .demo-go {
+      display: block;
+      padding-left: 24px;
+      padding-top: 26px;
+      font-size: 16px;
+      color: rgba(43, 88, 249, 1);
+      &:hover {
+      }
+    }
+  }
+  .custom-bar-wrapper{
+    width: 300px;
+  }
+}
 `;
 const Card = styled.div`
   width: 1200px;
@@ -50,6 +96,7 @@ const Card = styled.div`
       }
     }
   }
+ 
 `;
 
 const CustomerCaseList = [
@@ -106,12 +153,15 @@ const CustomerCase: FC<SceneSolution> = ({}) => {
   }, []);
 
   return (
+    <>
+    <Hidden xs sm>
     <Pane
       title="客户案例"
       titleStyle={{ marginBottom: '56px' }}
       paneBgColor="white"
       style={{ paddingBottom: 100 }}
       mobileStyle={{ paddingBottom: 40 }}>
+         
       <MainWrap id={AISOLUTION}>
         <HoveUp>
           <Card>
@@ -127,7 +177,47 @@ const CustomerCase: FC<SceneSolution> = ({}) => {
           </Card>
         </HoveUp>
       </MainWrap>
+
+
     </Pane>
+    </Hidden>
+
+<Visible xs sm>
+<Pane
+      title="客户案例"
+      titleStyle={{ marginBottom: '56px' }}
+      paneBgColor="white"
+      style={{ paddingBottom: 100 }}
+      mobileStyle={{ paddingBottom: 40 }}>
+<MainWrap id={AISOLUTION}>
+<HoveUp>
+<ByProgressSwiper
+newProgress={true}
+initialSlide={0}
+contentPadding="12px"
+progressPadding="0px"
+previewWidth="100px"
+autoplayDelay={5000}
+
+>
+  {/* <Card> */}
+   {CustomerCaseList.map(item => (
+     <div className="carditem">
+       <img className="logo" src={imgurl + item.imgUrl} />
+       <div className="textt_area">{item.title}</div>
+       <a href={item.pageUrl} className="demo-go">
+         了解详情 →
+       </a>
+     </div>
+   ))}
+ {/* </Card> */}
+     </ByProgressSwiper>
+
+</HoveUp>
+</MainWrap>
+</Pane>
+</Visible>
+</>
   );
 };
 
