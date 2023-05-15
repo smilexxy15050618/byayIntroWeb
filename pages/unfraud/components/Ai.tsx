@@ -1,6 +1,8 @@
 import React, { FC, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import styled from 'styled-components';
 import imgurl from '../../../img.url.js';
+import { Visible } from 'react-grid-system';
+import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 
 const titleList = [
   {
@@ -28,6 +30,9 @@ const titleList = [
 export interface IAiProps {}
 const Pane = styled.div`
   padding: 80px 0;
+  @media(max-width: 768px) {
+    padding: 0;
+  }
   .title {
     font-size: 40px;
     font-weight: 500;
@@ -36,6 +41,13 @@ const Pane = styled.div`
     color: rgba(26, 26, 26, 1);
     text-align: center;
     margin-bottom: 16px;
+    @media(max-width: 768px) {
+      font-size: 24px;
+font-weight: 500;
+letter-spacing: 0px;
+line-height: 40px;
+margin: 40px 31px 16px;
+    }
   }
   .sec-title {
     font-size: 22px;
@@ -44,6 +56,12 @@ const Pane = styled.div`
     color: rgba(51, 51, 51, 1);
     margin-bottom: 40px;
     text-align: center;
+    @media(max-width: 768px) {
+      font-size: 16px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 24px;
+    }
   }
 `;
 const ListWrapper = styled.div`
@@ -150,6 +168,7 @@ export const Ai: FC<IAiProps> = ({}) => {
   }, []);
   return (
     <MainWrap>
+      <Visible md lg xl xxl xxxl>
       <Pane>
         <div className="title">构建数智化反诈新模式，打造最全面的电信网络诈骗预防平台</div>
         <div className="sec-title">强力提升公安反诈预防全业务效能，助力电诈“双降”，持续保障居民生命财产安全</div>
@@ -174,6 +193,39 @@ export const Ai: FC<IAiProps> = ({}) => {
           </div>
         </div>
       </Pane>
+      </Visible>
+      <Visible xs sm>
+      <Pane>
+        <div className="title">构建数智化反诈新模式，打造最全面的数智反诈预防平台</div>
+        <div className="sec-title">强力提升公安反诈预防全业务效能，助力电诈“双降”，持续保障居民生命财产安全</div>
+
+        <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
+          <div id={UNFRAUDAI} className="aitxs">
+            <ListWrapper>
+            <ByProgressSwiper
+              newProgress={true}
+              initialSlide={0}
+              contentPadding="3.2%"
+              progressPadding="0px"
+              previewWidth="11.5%"
+              autoplayDelay={100000}
+              
+            >
+             {titleList.map((item,index)=> {
+               return (
+                  <div className='lists'>
+                  <div>{item.title}</div>
+                  <div>{item.subTitle}</div>
+                  <img style={{width: '100%',height: '200px'}} src={imgurl+item.url} alt="" />
+                  </div>
+               )
+             })}
+            </ByProgressSwiper>
+            </ListWrapper>
+          </div>
+        </div>
+      </Pane>
+      </Visible>
     </MainWrap>
   );
 };
