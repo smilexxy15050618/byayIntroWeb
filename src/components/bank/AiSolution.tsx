@@ -10,25 +10,58 @@ interface  SceneSolution{
 
 const carouselDataList = [
     {
-        title:'统一运营',
-        content:'支持电话、短信、邮件、微信、APP、网页、H5、公众号、抖音/快手等全渠道',
-        url: '/government-sue-1.svg'
-    },{
-        title:'快速响应',
-        content:'富媒体通讯服务平台，沟通形式灵活运用于咨询、办理、通知回访各场景，快捷支持服务需求',
-        url: '/government-sue-2.svg'
-    },{
-        title:'主动触达',
-        content:'全面覆盖智能接待、内部协同服务全流程，主动服务，有效提升内外协同的便捷性',
-        url: '/government-sue-3.svg'
-    },{
-        title:'降本增效',
-        content:'智能外呼+智能接待+智能质检+智能辅助，构建智能服务大脑，打造智能化群众服务平台',
-        url: '/government-sue-4.svg'
+        url: '/bank-scene-1.png',
+        title:'个人金融部',
+        content:[
+            {name: '投资理财'},
+            {name: '支付预算'},
+            {name: '贷款业务'},
+            {name: '卡片通知'},
+            {name: '储蓄业务'}
+        ],
+    },
+    {
+        url: '/back-scene-2.png',
+        title:'信用卡中心',
+        content:[
+            {name: '交叉营销'},
+            {name: '电子渠道'},
+            {name: '通知服务'},
+            {name: '分期营销'},
+            {name: '财富产品'}
+        ],
+    },
+    {
+        url: '/back-scene-3.png',
+        title:'电子银行部',
+        content:[
+            {name: '手机银行'},
+            {name: '微信银行'},
+            {name: '网上银行'}
+        ],
+    },
+    {
+        url: '/back-scene-4.png',
+        title:'小微企业部',
+        content:[
+            {name: '贷款业务'},
+            {name: '综合开发'},
+            {name: '大额异动'}
+        ],
+    },
+    {
+        url: '/back-scene-5.png',
+        title:'直销银行',
+        content:[
+            {name: '开户及入金'},
+            {name: '电子银行'},
+            {name: '财富产品'}
+        ],
     }
 ]
 
 const Wrapper = styled.div`
+    background: rgba(246, 252, 255, 1);
     .Bigtitle{
         padding: 40px 0;
         font-size: 24px;
@@ -48,46 +81,69 @@ const Card = styled.div<{bg:number}>`
    display:flex;
    justify-content: space-between;
    .carditem{
-    width: 288px;
-    height: 240px;
-    opacity: 1;
+    width: 224px;
+    height: 325px;
     border-radius: 8px;
-    background: rgba(43, 88, 249, 1);
-    position: relative;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 1);
     transition: all 0.3s ease-in;
-    margin-right: 16px;
-    &:nth-child(4){
+    margin-right: 20px;
+    &:nth-child(5){
         margin-right: 0;
     }
     &:hover{
         transform: translateY(-8px);
+        .title{
+            color: rgba(43, 88, 249, 1);
+        }
     }
     img{
-        position: absolute;
-        right: 0;
-        margin:0;
+        display: block;
+        width: 46px;
+        height: 46px;
+        margin: 27px auto 20px;
     }
-    .textt_area{
-        position: absolute;
-        width: 240px;
-        height: 112px;
-        left:22px;
-        bottom:22px;
-        .title_area{
-            font-size: 20px;
-            font-weight: 600;
-            line-height: 24px;
-            color: rgba(255, 255, 255, 1);
-            margin-bottom:16px;
+    .title{
+        width: 184px;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+        padding-bottom: 20px;
+        text-align: center;
+        color: rgba(26, 26, 26, 1);
+        border-bottom: 1px solid rgba(240, 240, 240, 1);
+    }
+    &:nth-child(3),&:nth-child(4),&:nth-child(5){
+        .tag-label{
+            &::after{
+                position: absolute;
+                content: '…';
+                left: 50%;
+                bottom: 10px;
+            }
+            span{
+                width: 100%;
+            }
         }
-        .cont_area{
-            font-size: 14px;
+    }
+    .tag-label{
+        position: relative;
+        width: 184px;
+        margin: 0 auto;
+        padding: 25px 0;
+        span{
+            display:inline-block;
+            width: 50%;
+            margin-bottom: 14px;
+            font-size: 16px;
             font-weight: 400;
-            letter-spacing: 0px;
             line-height: 24px;
-            color: rgba(255, 255, 255, 1);
+            color: rgba(26, 26, 26, 1);
+            text-align: center;
         }
     }
+    
    }
 `
 
@@ -110,34 +166,7 @@ const SolutionWap = styled.div`
             width: 300px;
         }
       }
-    .solution-item{
-        position: relative;
-        width: 180px;
-        height: 192px;
-        padding: 72px 18px 0;
-        border-radius: 8px;
-        background: rgba(43, 88, 249, 1);
-        box-sizing: border-box;
-        img{
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 120px;
-            height: 120px;
-        }
-        .title{
-            font-size: 16px;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 1);
-        }
-        .subtitle{
-            padding-top: 10px;
-            font-size: 12px;
-            font-weight: 400;
-            line-height: 20px;
-            color: rgba(255, 255, 255, 1);
-        }
-    }
+    
 `
 
 const AISOLUTION = 'ai_jiejue_2918'
@@ -166,22 +195,19 @@ useEffect(() => {
     return (
     <Wrapper>
         <Visible md lg xl xxl xxxl>
-            <Pane title="核心价值"
-            titleStyle={{marginBottom:'40px'}}
-            paneBgColor="white" style={{ paddingBottom: 78 }} mobileStyle={{ paddingBottom: 40 }}>
+            <Pane title="应用场景"
+            titleStyle={{marginBottom:'40px'}} style={{ paddingBottom: 80, background: 'rgba(246, 252, 255, 1)' }} mobileStyle={{ paddingBottom: 40 }}>
             <MainWrap id={AISOLUTION}>
                 <HoveUp>
                     <Card>
                         {carouselDataList.map(item => 
                             <div className='carditem'>
-                                <img src={imgurl+item.url} width={117}/>
-                                <div className='textt_area'>
-                                    <div className='title_area'>
-                                    {item.title}
-                                    </div>
-                                    <div className='cont_area'>
-                                    {item.content}
-                                    </div>
+                                <img src={imgurl+item.url} />
+                                <div className='title'>{item.title}</div>
+                                <div className='tag-label'>
+                                    {item.content.map(items => 
+                                       <span>{items.name}</span>
+                                    )}
                                 </div>
                             </div>
                         )}
@@ -201,13 +227,13 @@ useEffect(() => {
                 previewWidth="200px">
                 {carouselDataList.map((item, i) => (
                 // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
-                <div className='solution-item'>
+                <div className='carditem'>
                     <img src={imgurl+item.url} />
-                    <div className='title'>
-                        {item.title}
-                    </div>
-                    <div className='subtitle'>
-                        {item.content}
+                    <div className='title'>{item.title}</div>
+                    <div className='tag-label'>
+                        {item.content.map(items => 
+                            <span>{items.name}</span>
+                        )}
                     </div>
                 </div>
                 ))}

@@ -8,21 +8,21 @@ const titleList = [
   {
     title: '新一代服务型政府窗口',
     subTitle: '覆盖贷款、理财、网银、信用卡4大<br />类业务<br />营销、唤醒、促销等20+细分场景<br />业务实践沉淀1000+套场景运营策略模版',
-    url: '/bank-govern-1.png',
-    urlWap: '/bank-govern-1.png',
+    url: '/bank-govern-1.svg',
+    urlWap: '/bank-govern-1.svg',
   },
 
   {
     title: '全生命周期用户运营',
     subTitle: '丰富数据标签建模分层<br />分层用户精细化运营<br />用户画像实时分析<br />赋能中长尾用户活跃激活',
-    url: '/bank-govern-1.png',
-    urlWap: '/bank-govern-1.png',
+    url: '/bank-govern-2.svg',
+    urlWap: '/bank-govern-2.svg',
   },
   {
     title: 'ROI导向升级运营服务',
     subTitle: '运营策略制定与持续迭代<br />话术制作与持续调优<br />运营策略自动化执行<br />数据结果实时分析',
-    url: '/bank-govern-1.png',
-    urlWap: '/bank-govern-1.png',
+    url: '/bank-govern-3.svg',
+    urlWap: '/bank-govern-3.svg',
   },
 ];
 export type IAiProps = {};

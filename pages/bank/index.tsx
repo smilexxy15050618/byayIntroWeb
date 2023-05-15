@@ -106,6 +106,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
         {(visible, setFormVisible) => (
           <Wrapper>
             <BannerWhite
+              minWidthPC="1200px"
               height={['576px', '657px']}
               LinearHeight={['516px', '100%']}
               background={[`rgba(246, 252, 255, 1)`, 'rgba(246, 252, 255, 1)']}
@@ -156,8 +157,8 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
               />
             </Visible> 
             <AI></AI>
-            <SceneSolution />
             <AiSolution />
+            <SceneSolution />
             <CustomerStories></CustomerStories>
             <ByVoiceFooter
               title="立即体验AI时代的新一代用户运营平台"

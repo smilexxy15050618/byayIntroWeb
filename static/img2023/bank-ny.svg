@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="378px" height="161px" viewBox="0 0 378 161" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>3</title>
+    <title>1</title>
     <defs>
         <path d="M8,0 L370,0 C374.418278,-3.22053779e-14 378,3.581722 378,8 L378,161 L378,161 L0,161 L0,8 C-5.41083001e-16,3.581722 3.581722,8.11624501e-16 8,0 Z" id="path-1"></path>
         <rect id="path-3" x="0" y="0" width="449" height="160"></rect>
         <path d="M19.125,-5 L383.125,-5 C387.543278,-5 391.125,-1.418278 391.125,3 L391.125,160 L391.125,160 L11.125,160 L11.125,3 C11.125,-1.418278 14.706722,-5 19.125,-5 Z" id="path-5"></path>
     </defs>
     <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="画板" transform="translate(-942.000000, -42.000000)">
-            <g id="3" transform="translate(942.000000, 42.000000)">
+        <g id="画板" transform="translate(-114.000000, -42.000000)">
+            <g id="1" transform="translate(114.000000, 42.000000)">
                 <g id="矩形">
                     <mask id="mask-2" fill="white">
                         <use xlink:href="#path-1"></use>
@@ -28,15 +28,15 @@
                         </g>
                     </g>
                 </g>
-                <text id="接通率-80%-90%" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" line-spacing="36" fill="#00C8BD">
-                    <tspan x="26.304" y="60">接通率</tspan>
-                    <tspan x="68.304" y="60" font-size="16"></tspan>
-                    <tspan x="24" y="95.536" font-size="32">80%-90%</tspan>
+                <text id="接通率-45%-50%" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" line-spacing="36" fill="#00C8BD">
+                    <tspan x="36.304" y="55">接通率</tspan>
+                    <tspan x="78.304" y="55" font-size="16"></tspan>
+                    <tspan x="34" y="90.536" font-size="32">45%-50%</tspan>
                 </text>
-                <text id="意向率-8.5%-9%" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" line-spacing="36" fill="#00C8BD">
-                    <tspan x="206.304" y="60">意向率</tspan>
-                    <tspan x="248.304" y="60" font-size="16"></tspan>
-                    <tspan x="204" y="95.536" font-size="32">8.5%-9%</tspan>
+                <text id="手机银行促活意向率-6%+" font-family="PingFangSC-Medium, PingFang SC" font-size="14" font-weight="400" line-spacing="36" fill="#00C8BD">
+                    <tspan x="220.304" y="55">手机银行促活意向率</tspan>
+                    <tspan x="346.304" y="55" font-size="16"></tspan>
+                    <tspan x="218" y="90.536" font-size="32">6%+</tspan>
                 </text>
             </g>
         </g>

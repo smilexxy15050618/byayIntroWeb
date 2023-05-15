@@ -21,23 +21,22 @@ const list = [
 ]
 
 const Wrapper = styled.div`
-width: 100%;
-height: 650px;
-background: #F6FCFF;
+    width: 100%;
+    background: #F6FCFF;
 `
 const MainWrapper = styled.div`
-width: 1200px;
-margin: 0 auto;
-padding: 82px 0 100px;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0 80px;
 `
 const Title = styled.div`
-font-size: 40px;
-font-weight: 500;
-letter-spacing: 0px;
-line-height: 48px;
-color: rgba(26, 26, 26, 1);
-text-align: center;
-margin-bottom: 56px;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 48px;
+    color: rgba(26, 26, 26, 1);
+    text-align: center;
+    margin-bottom: 56px;
 `
 const ListWrapper = styled.div`
   display: flex;
@@ -95,9 +94,9 @@ position: relative;
         }
     }
     .content {
+        padding-right: 91px;
         font-size: 16px;
         font-weight: 400;
-        letter-spacing: -0.17px;
         line-height: 26px;
         color: rgba(0, 0, 0, 1);
         margin-top: 17px;

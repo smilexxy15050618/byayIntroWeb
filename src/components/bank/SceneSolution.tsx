@@ -6,20 +6,36 @@ interface  SceneSolution{
 
 }
 const Pane = styled.div`
-    .title {
-        font-size: 40px;
-        font-weight: 500;
-        letter-spacing: 0px;
-        line-height: 48px;
-        color: rgba(26, 26, 26, 1);
-        text-align: center;
-        @media (max-width: 768px) {
-            padding-top: 40px;
-            font-size: 24px;
-            font-weight: 500;
-            line-height: 40px;
-        }
+    padding: 80px 0;
+   .title {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 48px;
+    color: rgba(26, 26, 26, 1);
+    text-align: center;
+    @media (max-width: 768px) {
+      padding: 0 30px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 40px;
     }
+  }
+  .desc {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 32px;
+    color: rgba(51, 51, 51, 1);
+    text-align: center;
+    margin: 16px auto 40px;
+    @media (max-width: 768px) {
+      padding: 0 40px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      margin: 16px auto 34px;
+    }
+  }
 `
 const HoveUp = styled.div`
    width: 1250px;
@@ -47,7 +63,7 @@ const MainWrap = styled.div`
     }
 `
 
-const carouselDataList = imgurl+'/government-scen-img.png'
+const carouselDataList = imgurl+'/bank-scene-solution.svg'
 
 
 const SceneSolution: FC<SceneSolution> = ({}) => {
@@ -72,7 +88,8 @@ useEffect(() => {
   }, []);
     return (
         <Pane>
-        <div class="title">应用场景</div>
+        <div class="title">行业化服务体系</div>
+        <div class="desc">业务高适配产品和行业化服务体系保障行方业务像素级落地</div>
         <MainWrap id={HANGYE}>
             <HoveUp>
                 <img src={carouselDataList} />
