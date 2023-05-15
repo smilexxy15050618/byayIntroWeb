@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
 import imgurl from '../../../img.url.js';
 import { Hidden, Visible } from 'react-grid-system';
+import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 
 export type IStrategyProps = {};
 const Pane = styled.div`
@@ -145,32 +146,21 @@ const Strategy: FC<IStrategyProps> = ({}) => {
         {/* <div class="desc">目前汽车行业面临的痛点</div> */}
         <div style={{  width: '100vw', marginTop: '24px' }}>
           <Wrapper id={STRATEGY}>
-            <ArrowClick
-              onClick={e => {
-                controlledSwiper.navigation.onPrevClick(e);
-              }}>
-              <img className="left_img" src={`${imgurl}/left1.png`} />
-            </ArrowClick>
-            <Swiper
-              loop={true}
-              autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
-              onSwiper={swiper => setControlledSwiper(swiper)}>
-              <SwiperSlide style={{ width: '100%' }} className="my-slide">
-                <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/carbanner1.png'}></img>
-              </SwiperSlide>
-              <SwiperSlide style={{ width: '100%' }} className="my-slide">
-                <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/carbanner2.png'}></img>
-              </SwiperSlide>
-              <SwiperSlide style={{ width: '100%' }} className="my-slide">
-                <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/carbanner3.png'}></img>
-              </SwiperSlide>
-            </Swiper>
-            <ArrowClick
-              onClick={e => {
-                controlledSwiper.navigation.onNextClick(e);
-              }}>
-              <img className="right_img" src={`${imgurl}/right1.png`} />
-            </ArrowClick>
+          <ByProgressSwiper
+              newProgress={true}
+              initialSlide={0}
+              contentPadding="12px"
+              progressPadding="0px"
+              previewWidth="0"
+              autoplayDelay={15000}
+              
+            >
+              <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/carbanner1.png'}></img>
+              <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/carbanner2.png'}></img>
+              <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/carbanner3.png'}></img>
+
+
+                    </ByProgressSwiper>
           </Wrapper>
         </div>
       </Visible>

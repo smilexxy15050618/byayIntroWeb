@@ -226,7 +226,7 @@ const AiSolution: FC<SceneSolution> = ({}) => {
               contentPadding="6%"
               progressPadding="0px"
               previewWidth="49%"
-              autoplayDelay={15000}
+              autoplayDelay={5000}
               
             >
                 {carouselDataList.map(item => 
