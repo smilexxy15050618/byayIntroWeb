@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   background: #ffffff;
   .m-bg-arror {
     position: absolute;
-    top: 570px;
+    top: 656px;
     left: 50%;
     transform: translate(-50%, 0);
     animation: jump 2s infinite;

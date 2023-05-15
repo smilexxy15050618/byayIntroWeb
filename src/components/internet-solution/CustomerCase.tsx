@@ -104,13 +104,13 @@ const Wrapper = styled.div`
   width: 100vw;
   margin: 0 auto;
   .logo_area-wap{
-    padding: 14px 0;
+    padding: 14px 20px;
     border-radius: 2.65px;
     background: rgba(255, 255, 255, 1);
     box-shadow: 0px 0px 8px 0px rgba(36, 91, 219, 0.12);
     img{
       width: 100%;
-      height: 144px;
+      height: 164px;
     }
   }
   .swiper-counter {
@@ -159,6 +159,18 @@ const carouselDataList = [
   },
   {
     imgSrc: '/internet-al-3.svg',
+  },
+];
+
+const carouselDataListWap = [
+  {
+    imgSrc: '/internet-case-wap-1.png',
+  },
+  {
+    imgSrc: '/internet-case-wap-2.png',
+  },
+  {
+    imgSrc: '/internet-case-wap-3.png',
   },
 ];
 
@@ -260,7 +272,6 @@ const CarouselMobile: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
               <div className="logo_area-wap"><img src={imgurl + imgSrc} /></div>
             </SwiperSlide>
           ))}
-
             <div className="custom-bar-wrapper">
               <div className="custom-bar-content" style={{ width: `${((currIndex + 1) * 100) / length}%` }}></div>
             </div>
@@ -304,7 +315,7 @@ const CustomerCase: React.SFC<SocietyDutyProps> = () => {
           <Carousel dataList={carouselDataList}></Carousel>
         </Hidden>
         <Visible xs sm>
-          <CarouselMobile dataList={carouselDataList}></CarouselMobile>
+          <CarouselMobile dataList={carouselDataListWap}></CarouselMobile>
         </Visible>
       </SocietyDutyContainerWrap>
     </SocietyDutyContainer>

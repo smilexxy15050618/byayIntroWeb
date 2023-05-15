@@ -37,7 +37,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
     pcImgs: [
       {
         src: `${PREFIX}/capacity-1.svg`,
-        srcWap: `/static/img2023/capacity-wap-1.png`,
+        srcWap: `${PREFIX}/capacity-wap-1.png`,
         style: { width: '680px', height: '573px', top: '100px', left: '0' },
         className: ['animate__fadeInRight'],
       },

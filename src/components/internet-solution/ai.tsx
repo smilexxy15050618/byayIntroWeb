@@ -6,25 +6,24 @@ import ByProgressSwiper from '../common/ByProgressSwiper';
 
 const titleList = [
   {
-    title: '全流程智能化、自动化',
-    subTitle: '人群精细拆分，千人千面策略运营用户数据分析，规划运营增长旅途智能、流畅、自然，提升用户体验',
-    url: '/internet-solution-3.svg',
-    urlWap: '/internet-solution-wap-3.png',
-  },
-
-  {
-    title: '高转化模型测试',
-    subTitle:
-      '全变量对照测试，提升效果转化文案设计精细化，为沟通结果负责把控变量节点密度，验证最优模型数据分析迭代，完成激活上升曲线',
-    url: '/internet-solution-2.svg',
-    urlWap: '/internet-solution-wap-2.png',
-  },
-  {
     title: '三大保障&提升方案',
     subTitle: '自研产品，全面保障用户体验专业知识库，运营效率不断提升行业方法论，保障外呼效果全面运营服务，为效果负责',
     url: '/internet-solution-1.svg',
     urlWap: '/internet-solution-wap-1.png',
   },
+  {
+    title: '高转化模型测试',
+    subTitle: '全变量对照测试，提升效果转化文案设计精细化，为沟通结果负责把控变量节点密度，验证最优模型数据分析迭代，完成激活上升曲线',
+    url: '/internet-solution-2.svg',
+    urlWap: '/internet-solution-wap-2.png',
+  },
+  {
+    title: '全流程智能化、自动化',
+    subTitle: '人群精细拆分，千人千面策略运营用户数据分析，规划运营增长旅途智能、流畅、自然，提升用户体验',
+    url: '/internet-solution-3.svg',
+    urlWap: '/internet-solution-wap-3.png',
+  },
+  
 ];
 export type IAiProps = {};
 
@@ -75,22 +74,21 @@ const Pane = styled.div`
     border-radius: 8px;
     background: rgba(246, 252, 255, 1);
     .title {
-      padding-top: 16px;
       font-size: 16px;
       line-height: 20px;
-      padding: 20px 15px 0;
+      padding: 24px 16px 0;
       text-align: left;
     }
     .subtitle {
-      padding: 10px 15px 15px;
+      padding: 12px 16px 0 16px;
       font-size: 12px;
       font-weight: 400;
       line-height: 20px;
     }
     img{
-      margin-top: 22px;
+      margin-top: 12px;
       width: 100%;
-      height: 146px;
+      height: 189px;
     }
   }
 `;

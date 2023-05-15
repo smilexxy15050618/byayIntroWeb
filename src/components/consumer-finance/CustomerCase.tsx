@@ -179,7 +179,7 @@ const CustomerCase: FC<SceneSolution> = ({}) => {
             initialSlide={0}
             contentPadding="32px"
             progressPadding="0px"
-            previewWidth="90px">
+            previewWidth="60px">
             {CustomerCaseList.map((item, i) => (
             // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
             <div className='solution-item'>

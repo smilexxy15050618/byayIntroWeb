@@ -126,8 +126,8 @@ const SolutionWap = styled.div`
             position: absolute;
             right: 0;
             top: 0;
-            width: 120px;
-            height: 120px;
+            width: 90px;
+            height: 90px;
         }
         .title{
             font-size: 16px;
@@ -202,7 +202,7 @@ useEffect(() => {
                 initialSlide={0}
                 contentPadding="32px"
                 progressPadding="0px"
-                previewWidth="200px">
+                previewWidth="170px">
                 {carouselDataList.map((item, i) => (
                 // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
                 <div className='solution-item'>

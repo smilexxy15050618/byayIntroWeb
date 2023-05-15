@@ -23,7 +23,7 @@ const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
 const Wrapper = styled.div`
   .m-bg-arror {
     position: absolute;
-    top: 570px;
+    top: 626px;
     left: 50%;
     transform: translate(-50%, 0);
     animation: jump 2s infinite;
