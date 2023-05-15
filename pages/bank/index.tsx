@@ -5,9 +5,9 @@ import { Layout } from '../../src/components/Layout';
 import {  Hidden, Visible } from 'react-grid-system';
 import { TextArea } from '../../src/components/common/BannerTextElements';
 import BannerWhite from '../../src/components/common/BannerWhiteNew';
-import AI from '../../src/components/government-services/ai';
-import SceneSolution from '../../src/components/government-services/SceneSolution';
-import AiSolution from '../../src/components/government-services/AiSolution';
+import AI from '../../src/components/bank/ai';
+import SceneSolution from '../../src/components/bank/SceneSolution';
+import AiSolution from '../../src/components/bank/AiSolution';
 import {CustomerStories} from './components/CustomerStories'
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 

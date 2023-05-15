@@ -7,28 +7,22 @@ import ByProgressSwiper from '../common/ByProgressSwiper';
 const titleList = [
   {
     title: '新一代服务型政府窗口',
-    subTitle: '提供在线客服、视频客服、语音客服、虚拟客服等多种类型AI机器人客服，打造智慧型、一体化、可持续的政务服务体系',
-    url: '/government-govern-1.svg',
-    urlWap: '/government-govern-1.svg',
+    subTitle: '覆盖贷款、理财、网银、信用卡4大<br />类业务<br />营销、唤醒、促销等20+细分场景<br />业务实践沉淀1000+套场景运营策略模版',
+    url: '/bank-govern-1.png',
+    urlWap: '/bank-govern-1.png',
   },
 
   {
-    title: '政务办理全流程闭环',
-    subTitle: '网上办 &nbsp; 掌上办 <br />就近办 &nbsp; 一次办',
-    url: '/government-govern-2.svg',
-    urlWap: '/government-govern-2.svg',
+    title: '全生命周期用户运营',
+    subTitle: '丰富数据标签建模分层<br />分层用户精细化运营<br />用户画像实时分析<br />赋能中长尾用户活跃激活',
+    url: '/bank-govern-1.png',
+    urlWap: '/bank-govern-1.png',
   },
   {
-    title: '线上服务大厅',
-    subTitle: '搭建群众入口，构建服务大厅智能接待、智慧工单多应用场景打造个人中心，形成服务闭环',
-    url: '/government-govern-3.svg',
-    urlWap: '/government-govern-3.svg',
-  },
-  {
-    title: '办事导航指南',
-    subTitle: '集信息展示、智能接待、个人中心于一体的综合性办事导航指南，实时精准指导群众网办流程，让群众办事由繁到简、由难到易',
-    url: '/government-govern-4.svg',
-    urlWap: '/government-govern-4.svg',
+    title: 'ROI导向升级运营服务',
+    subTitle: '运营策略制定与持续迭代<br />话术制作与持续调优<br />运营策略自动化执行<br />数据结果实时分析',
+    url: '/bank-govern-1.png',
+    urlWap: '/bank-govern-1.png',
   },
 ];
 export type IAiProps = {};
@@ -102,26 +96,27 @@ const Pane = styled.div`
 const ListWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 560px;
+  height: 552px;
   .lists {
     width: 296px;
   }
   .imgWrapper {
     width: 888px;
-    height: 560px;
+    height: 552px;
     border-radius: 8px;
     background: rgba(246, 252, 255, 1);
     box-sizing: border-box;
   }
   img {
     width: 100%;
-    height: 560px;
+    height: 552px;
     margin: 0;
+    border-radius: 8px;
   }
 `;
 const ListItem = styled.div`
   width: 296px;
-  height: 104px;
+  height: 148px;
   padding-top: 38px;
   padding-left: 40px;
   background: rgba(246, 252, 255, 1);
@@ -147,10 +142,10 @@ const ListItem = styled.div`
   }
   &.active {
     width: 296px;
-    height: 224px;
+    height: 240px;
     background: rgba(43, 88, 249, 1);
     color: rgba(255, 255, 255, 1);
-    padding: 40px 46px 48px 40px;
+    padding: 40px 35px 48px 40px;
     box-sizing: border-box;
     div:first-child {
       font-size: 20px;
@@ -207,8 +202,8 @@ const AI: FC<IAiProps> = ({}) => {
   return (
     <MainWrap id={AiTSXID}>
       <Pane>
-        <div class="title">打造智慧政务服务窗，促进政务服务降本增效</div>
-        <div class="desc">依托AI客服实现专业、智能、即时地响应居民业务办理需求，提高居民满意度</div>
+        <div class="title">银行全场景智能营销</div>
+        <div class="desc">围绕用户生命周期，以转化效果为导向，制定用户运营策略并进行策略迭代运营助力银行机构AUM和MAU双效提升</div>
         <Visible md lg xl xxl xxxl>
           <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
             <div className="aitxs">

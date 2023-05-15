@@ -109,5 +109,15 @@ const BannerWhite = styled(RawBannerWhite) < IBannerWhiteProps > `
       padding-top: 40px;
     }
   }
+
+   @media (max-width: 768px) {
+    .linear {
+      padding-top: 131px;
+    }
+    .wap-banner {
+      padding-top: 20px;
+    }
+  }
+  
 `;
 export default BannerWhite;

@@ -73,7 +73,6 @@ const MainWrap = styled.div`
             bottom: 0;
             width: 588px;
             height: 208px;
-            opacity: 0.22;
         }
         .title{
             position: absolute;
@@ -109,12 +108,12 @@ const carouselDataList = [
         subtitle:'利用居民画像，实现平安三率、精神文明、垃圾分类、反诈反邪教等全方位点对点的精准宣防，一键触达'
     },
     {
-        bgImg:'/gongan-scene-3.svg',
+        bgImg:'/gongan-scene-4.svg',
         title: '政务服务场景',
         subtitle:'政务服务向乡镇街道延伸，以AI支撑业务咨询引导办理，提升网办率，打通服务群众“最后一百米”'
     },
     {
-        bgImg:'/gongan-scene-4.svg',
+        bgImg:'/gongan-scene-3.svg',
         title: '巡查及自查上报场景',
         subtitle:'建议与辖区群防群治力量/居民、规范、紧密、有效、结构化的服务、指挥、互动、管理渠道，形成群防群治完整闭环'
     }

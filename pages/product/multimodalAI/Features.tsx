@@ -37,6 +37,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
     pcImgs: [
       {
         src: `${PREFIX}/capacity-1.svg`,
+        srcWap: `/static/img2023/capacity-wap-1.png`,
         style: { width: '680px', height: '573px', top: '100px', left: '0' },
         className: ['animate__fadeInRight'],
       },
@@ -52,6 +53,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
     pcImgs: [
       {
         src: `${PREFIX}/capacity-2.svg`,
+        srcWap: `${PREFIX}/capacity-2.svg`,
         style: { width: '680px', height: '619px', top: '100px', left: '0' },
         className: ['animate__fadeInLeft'],
       },
@@ -67,6 +69,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
     pcImgs: [
       {
         src: `${PREFIX}/capacity-3.svg`,
+        srcWap: `${PREFIX}/capacity-3.svg`,
         style: { width: '680px', height: '518px', top: '100px', right: '0' },
         className: ['animate__fadeInRight'],
       },
@@ -375,7 +378,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
             <div className="relative-position" ref={i == 0 ? navRefvoice : i == 1 ? navRefversion : navRefdigit}>
               {/*占位div,吸定后脱离文档流，dom高度发生变化了*/}
               <div className={`relative-position-wap${i} ${item.id}`}></div>
-              <img src={item.pcImgs[0].src} />
+              <img src={item.pcImgs[0].srcWap} />
               <div className="title1">{item.title}</div>
               <div className="title2">{item.textOne}</div>
               <div className="title3">{item.textTwo}</div>

@@ -4,17 +4,17 @@ import imgurl from '../../../img.url.js'
 
 const list = [
     {
-        banner: '/tj.png',
+        banner: '/gongan-hz.svg',
         title: '杭州市临平区公安局',
         content: '宣传、服务全量铺开，首创百万级居民治理服务“新路径”。'
     },
     {
-        banner: '/dg.png',
+        banner: '/gongan-jn.svg',
         title: '济南市市中区公安局',
         content: '打造虚拟民警“卫民小微”，助力提升居民安满度服务成效。'
     },
     {
-        banner: '/lp.png',
+        banner: '/gongan-tj.svg',
         title: '天津市公安局',
         content: '建立“1+N+N”的线上警务互动平台，实现辖区居民服务一键触达'
     }
@@ -148,7 +148,7 @@ export const CustomerStories: FC = () => {
                         list.map(({ title, banner, content }, index) => {
                             return (
                                 <ListItem>
-                                    <div style={{ background: `url(https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023${banner})`, backgroundSize: '100% 100%' }} className='banner'></div>
+                                    <div style={{ background: `url(${imgurl}${banner})`, backgroundSize: '100% 100%' }} className='banner'></div>
                                     <div className="detail">
                                         <div className="title">{title}</div>
                                         <div className="content">{content}</div>
