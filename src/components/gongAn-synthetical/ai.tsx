@@ -6,24 +6,29 @@ import ByProgressSwiper from '../common/ByProgressSwiper';
 
 const titleList = [
   {
-    title: '全流程智能化、自动化',
-    subTitle: '人群精细拆分，千人千面策略运营用户数据分析，规划运营增长旅途智能、流畅、自然，提升用户体验',
-    url: '/internet-solution-3.svg',
-    urlWap: '/internet-solution-wap-3.png',
+    title: '线上警民互动平台',
+    subTitle: '以AI机器人为技术依托打造统一的虚拟IP民警，通过全渠道通道，实现警民长效高效连接',
+    url: '/gongan-govern-1.svg',
+    urlWap: '/gongan-govern-1.svg',
   },
 
   {
-    title: '高转化模型测试',
-    subTitle:
-      '全变量对照测试，提升效果转化文案设计精细化，为沟通结果负责把控变量节点密度，验证最优模型数据分析迭代，完成激活上升曲线',
-    url: '/internet-solution-2.svg',
-    urlWap: '/internet-solution-wap-2.png',
+    title: '“三驱一体”运营体系',
+    subTitle: '通过问题、需求、数据驱动运营，方案体系即时准确，实现高效的、科学的管理及决策',
+    url: '/gongan-govern-2.svg',
+    urlWap: '/gongan-govern-2.svg',
   },
   {
-    title: '三大保障&提升方案',
-    subTitle: '自研产品，全面保障用户体验专业知识库，运营效率不断提升行业方法论，保障外呼效果全面运营服务，为效果负责',
-    url: '/internet-solution-1.svg',
-    urlWap: '/internet-solution-wap-1.png',
+    title: '数据模型闭环完整',
+    subTitle: 'AI社工与居民的互动自动化采集互动标签、模型标签，完善标签画像体系，保障基层基础数据的鲜活性',
+    url: '/gongan-govern-3.svg',
+    urlWap: '/gongan-govern-3.svg',
+  },
+  {
+    title: '数据驾驶舱',
+    subTitle: '基于已运行数据建设驾驶舱，辅助公安分析研判居民服务治理重点，支撑政策研究制定及工作优化决策',
+    url: '/gongan-govern-4.png',
+    urlWap: '/gongan-govern-4.png',
   },
 ];
 export type IAiProps = {};
@@ -97,20 +102,20 @@ const Pane = styled.div`
 const ListWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 448px;
+  height: 560px;
   .lists {
     width: 296px;
   }
   .imgWrapper {
     width: 888px;
-    height: 448px;
+    height: 560px;
     border-radius: 8px;
     background: rgba(246, 252, 255, 1);
     box-sizing: border-box;
   }
   img {
     width: 100%;
-    height: 448px;
+    height: 560px;
     margin: 0;
   }
 `;
@@ -202,12 +207,7 @@ const AI: FC<IAiProps> = ({}) => {
   return (
     <MainWrap id={AiTSXID}>
       <Pane>
-        <Visible md lg xl xxl xxxl>
-          <div class="title">以数智化助力互联网企业增长，提升用户活跃度</div>
-        </Visible>
-        <Visible xs sm>
-          <div class="title">以数智化助力互联网企业增长提升用户活跃度</div>
-        </Visible>
+        <div class="title">开辟基层治理新路径，打造权威可信、即时响应的“AI警察朋友”</div>
         <div class="desc">助力品牌激活会员、高效转化、差异化触达营销，实现运营效率质变</div>
         <Visible md lg xl xxl xxxl>
           <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>

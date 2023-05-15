@@ -2,12 +2,39 @@ import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from 'react
 import styled from 'styled-components';
 import Pane from '../../components/homepage/version2023/Pane';
 import { Hidden, Visible } from 'react-grid-system';
+import ByProgressSwiper from '../common/ByProgressSwiper';
 import imgurl from '../../../img.url.js'
 interface  SceneSolution{
-
 }
+const CustomerCaseList = [
+    {
+        title:'贷前、贷中、贷后全链路运营服务，助力小米信贷业务增长',
+        imgUrl: '/case-01.png',
+        pageUrl: '/form?formType=1'
+    },{
+        title:'用AI和数据赋能业务增长，授信率、放款额等关键指标提升40%',
+        imgUrl: '/case-02.png',
+        pageUrl: '/form?formType=1'
+    },{
+        title:'助力电销业务提质增效，实现效率效能双增长',
+        imgUrl: '/case-03.png',
+        pageUrl: '/form?formType=1'
+    },{
+        title:'提供智能用户运营平台，推动招联消金私域业务人效提升100%',
+        imgUrl: '/case-04.png',
+        pageUrl: '/form?formType=1'
+    }
+]
+
 const Wrapper = styled.div`
-    
+.Bigtitle{
+    padding: 40px 0;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 40px;
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+}
 `
 const HoveUp = styled.div`
    width: 1248px;
@@ -56,26 +83,6 @@ const Card = styled.div`
    }
 `
 
-
-const CustomerCaseList = [
-    {
-        title:'贷前、贷中、贷后全链路运营服务，助力小米信贷业务增长',
-        imgUrl: '/case-01.png',
-        pageUrl: '/form?formType=1'
-    },{
-        title:'用AI和数据赋能业务增长，授信率、放款额等关键指标提升40%',
-        imgUrl: '/case-02.png',
-        pageUrl: '/form?formType=1'
-    },{
-        title:'助力电销业务提质增效，实现效率效能双增长',
-        imgUrl: '/case-03.png',
-        pageUrl: '/form?formType=1'
-    },{
-        title:'提供智能用户运营平台，推动招联消金私域业务人效提升100%',
-        imgUrl: '/case-04.png',
-        pageUrl: '/form?formType=1'
-    }
-]
 const MainWrap = styled.div`
     transform: translateY(50%);
     transition: all 0.4s;
@@ -86,11 +93,46 @@ const MainWrap = styled.div`
     }
 `
 
+const SolutionWap = styled.div`
+    width: 100%;
+    padding-bottom: 40px;
+    @media (max-width: 768px) {
+        .custom-bar-wrapper{
+            width: 300px;
+        }
+      }
+    .solution-item{
+        position: relative;
+        width: 290px;
+        height: 364px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
+        box-sizing: border-box;
+        img{
+            width: 290px;
+            height: 160px;
+        }
+        .title{
+            padding: 30px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 1);
+        }
+        .demo-go{
+            padding-top: 10px;
+            padding-left: 24px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: rgba(43, 88, 249, 1);
+        }
+    }
+`
+
 const AISOLUTION = 'ai_jiejue_2919'
 const CustomerCase: FC<SceneSolution> = ({}) => {
  
-    const [wrapindex, setWrapindex] = useState(0);
-
     useEffect(() => {
         const ScrollMagic = require('scrollmagic');
         var controller = new ScrollMagic.Controller();
@@ -109,6 +151,8 @@ const CustomerCase: FC<SceneSolution> = ({}) => {
     }, []);
 
     return (
+    <Wrapper>
+    <Visible md lg xl xxl xxxl>
         <Pane title="客户案例" titleStyle={{marginBottom:'56px'}} paneBgColor="white" style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
             <MainWrap id={AISOLUTION}>
                 <HoveUp>
@@ -126,6 +170,30 @@ const CustomerCase: FC<SceneSolution> = ({}) => {
                 </HoveUp>
             </MainWrap>
         </Pane>
+    </Visible>
+    <Visible xs sm>
+    <div className="Bigtitle">客户案例</div>
+    <SolutionWap id={AISOLUTION}>
+        <ByProgressSwiper
+            newProgress={true}
+            initialSlide={0}
+            contentPadding="32px"
+            progressPadding="0px"
+            previewWidth="90px">
+            {CustomerCaseList.map((item, i) => (
+            // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
+            <div className='solution-item'>
+                <img src={imgurl+item.imgUrl} />
+                <div className='title'>
+                    {item.title}
+                </div>
+                <a href={item.pageUrl} className="demo-go">了解详情 →</a>
+            </div>
+            ))}
+        </ByProgressSwiper>
+    </SolutionWap>
+    </Visible>
+    </Wrapper>    
     );
   };
   

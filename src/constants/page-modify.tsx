@@ -121,20 +121,25 @@ export const NAV_CONFIG = [
       },
       // {
       //   title: '汽车',
-      //   desc: '全自动、智能化营销服务',
+      //   desc: 'AAAAAAA',
       //   icon:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/xfjrheadicon.png',
       //   path: '/newcar',
-      // }
-
+      // },
       // {
-      //   title: '教育',
-      //   desc: '低成本高效率提升课程复购',
+      //   title: '公安综合',
+      //   desc: 'BBBBB',
       //   icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E6%95%99%E8%82%B2ai.svg',
       //   path: '/retail3',
       // },
       // {
-      //   title: 'AI数字员工',
-      //   desc: '',
+      //   title: '政务服务',
+      //   desc: 'CCCCC',
+      //   icon: 'https://cdn.byai.com/static/official-website/product/nav-icon/AssistantRobot.svg',
+      //   path: '/solutions',
+      // },
+      // {
+      //   title: '银行',
+      //   desc: 'DDDDD',
       //   icon: 'https://cdn.byai.com/static/official-website/product/nav-icon/AssistantRobot.svg',
       //   path: '/solutions',
       // },

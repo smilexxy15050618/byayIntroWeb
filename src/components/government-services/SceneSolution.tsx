@@ -20,23 +20,6 @@ const Pane = styled.div`
             line-height: 40px;
         }
     }
-    .desc {
-        font-size: 22px;
-        font-weight: 400;
-        letter-spacing: 0px;
-        line-height: 32px;
-        color: rgba(51, 51, 51, 1);
-        text-align: center;
-        margin: 16px auto 40px;
-        @media (max-width: 768px) {
-            padding-top: 14px;
-            padding-bottom: 24px;
-            margin: 0;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 24px;
-        }
-    }
 `
 const HoveUp = styled.div`
    width: 1250px;
@@ -64,7 +47,7 @@ const MainWrap = styled.div`
     }
 `
 
-const carouselDataList = imgurl+'/scenario-img.png'
+const carouselDataList = imgurl+'/government-scen-img.png'
 
 
 const SceneSolution: FC<SceneSolution> = ({}) => {
@@ -90,7 +73,6 @@ useEffect(() => {
     return (
         <Pane>
         <div class="title">应用场景</div>
-        <div class="desc">运营策略覆盖消费金融业务全链路</div>
         <MainWrap id={HANGYE}>
             <HoveUp>
                 <img src={carouselDataList} />

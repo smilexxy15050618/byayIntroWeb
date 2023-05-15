@@ -9,27 +9,25 @@ interface  SceneSolution{
 }
 
 const carouselDataList = [
-  {
-    title: '触达效率提升',
-    content: '围绕「强关系触达，弱关系弱触达」，激发用户购买意愿',
-    url: '/internet-iz-1.png',
-  },
-  {
-    title: '转化率更高',
-    content: '匹配对应的人群包，持续优化成交转化路径，ROI提升10%-30%',
-    url: '/internet-iz-2.png',
-  },
-  {
-    title: '用户体验更佳',
-    content: '根据用户画像，定制运营策略及服务关怀，实现极致的用户沟通体验',
-    url: '/internet-iz-3.png',
-  },
-  {
-    title: '转化成本更低',
-    content: '用更少的触达频次、更低成本的触达方式，达成最终的业务目标',
-    url: '/internet-iz-4.png',
-  },
-];
+    {
+        title:'降本增效，长效运营',
+        content:'搭建统一的知识库后台，沉淀公安业务知识，重复性常规性问题，机器人可以做到100%标准专业回复',
+        url: '/goan-use-1.png'
+    },{
+        title:'精准触达，千人千面',
+        content:'通过居民画像打标，熟知每个居民特征特性，协助民警在1对1的沟通中提供更加精准的便民服务',
+        url: '/goan-use-2.png'
+    },{
+        title:'及时响应，满意度提升',
+        content:'AI民警7*24小时全天候服务，及时响应居民咨询，提升基层工作，提升便民服务效能和群众满意度',
+        url: '/goan-use-3.png'
+    },{
+        title:'形象统一，公信力强',
+        content:'树立统一的公安形象，如果辖区民警有人员变化，不用重新与居民建立关联关系，居民有问题依然会直接找虚拟民警',
+        url: '/goan-use-4.png'
+    }
+]
+
 const Wrapper = styled.div`
     .Bigtitle{
         padding: 40px 0;
@@ -50,13 +48,17 @@ const Card = styled.div<{bg:number}>`
    display:flex;
    justify-content: space-between;
    .carditem{
-    width: 284px;
+    width: 288px;
     height: 240px;
     opacity: 1;
     border-radius: 8px;
     background: rgba(43, 88, 249, 1);
     position: relative;
     transition: all 0.3s ease-in;
+    margin-right: 16px;
+    &:nth-child(4){
+        margin-right: 0;
+    }
     &:hover{
         transform: translateY(-8px);
     }
@@ -67,7 +69,7 @@ const Card = styled.div<{bg:number}>`
     }
     .textt_area{
         position: absolute;
-        width: 181px;
+        width: 240px;
         height: 112px;
         left:22px;
         bottom:22px;
@@ -157,6 +159,7 @@ useEffect(() => {
         .on('enter', () => {
             videoContent.classList.add('appear')
             // console.log('进入');
+            
             controller.destroy();
         });
   }, []);
@@ -164,8 +167,8 @@ useEffect(() => {
     <Wrapper>
         <Visible md lg xl xxl xxxl>
             <Pane title="核心价值"
-            titleStyle={{marginBottom:'56px'}}
-            paneBgColor="white" style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
+            titleStyle={{marginBottom:'40px'}}
+            paneBgColor="white" style={{ paddingBottom: 78 }} mobileStyle={{ paddingBottom: 40 }}>
             <MainWrap id={AISOLUTION}>
                 <HoveUp>
                     <Card>
@@ -173,12 +176,12 @@ useEffect(() => {
                             <div className='carditem'>
                                 <img src={imgurl+item.url} width={117}/>
                                 <div className='textt_area'>
-                                <div className='title_area'>
-                                {item.title}
-                                </div>
-                                <div className='cont_area'>
-                                {item.content}
-                                </div>
+                                    <div className='title_area'>
+                                    {item.title}
+                                    </div>
+                                    <div className='cont_area'>
+                                    {item.content}
+                                    </div>
                                 </div>
                             </div>
                         )}
