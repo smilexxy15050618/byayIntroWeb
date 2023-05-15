@@ -1,6 +1,8 @@
 import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Hidden, Visible } from 'react-grid-system';
+import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
+
 import imgurl from '../../../img.url.js';
 interface SceneSolution {}
 const Pane = styled.div`
@@ -22,6 +24,18 @@ const Pane = styled.div`
     text-align: center;
     margin: 16px auto 40px;
   }
+  @media (max-width: 768px)  {
+   
+   .title{
+     font-size: 24px;
+   font-weight: 500;
+   letter-spacing: 0px;
+   line-height: 40px;
+   color: rgba(0, 0, 0, 1);
+   margin-bottom: 40px;
+   
+   }
+  }
 `;
 const HoveUp = styled.div`
   width: 1250px;
@@ -35,44 +49,7 @@ const Card = styled.div<{ bg: number }>`
   }
 `;
 
-const Tab = styled.div`
-  width: 1200px;
-  margin: 0 auto;
-  margin-bottom: 40px;
-  display: flex;
-  box-sizing: border-box;
-  padding: 0 220px;
-  justify-content: space-between;
-  li {
-    border-radius: 32px;
-    list-style: none;
-    width: 172px;
-    height: 48px;
-    background: unset;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    img {
-      width: 24px;
-      height: 24px;
-      margin: 0;
-      margin-right: 10px;
-    }
-    span {
-      font-size: 18px;
-      font-weight: 500;
-      /* color: rgba(43, 88, 249, 1); */
-      color: rgba(51, 51, 51, 1);
-    }
-    &.active {
-      background: rgba(246, 252, 255, 1);
-      span {
-        color: rgba(43, 88, 249, 1);
-      }
-    }
-  }
-`;
+
 
 const MainWrap = styled.div`
   transform: translateY(50%);
@@ -84,6 +61,9 @@ const MainWrap = styled.div`
   }
   width: 1200px;
   margin: 0 auto;
+  @media (max-width: 768px) { 
+    width: 100%;
+    }
   .title {
     font-size: 40px;
     font-weight: 500;
@@ -106,6 +86,41 @@ const MainWrap = styled.div`
       top: 0;
     }
   }
+  @media (max-width: 768px)  {
+   
+
+    .my-slide{
+      width: 300px;
+      height: 116px;
+      border-radius: 8px;
+      background: rgba(246, 252, 255, 1);
+      padding: 24px 16px;
+      box-sizing: border-box;
+      .title_mobile{
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: 20px;
+        color: rgba(0, 0, 0, 1);
+        margin-bottom: 8px;
+      }
+      p{
+        font-size: 12px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 20px;
+color: rgba(0, 0, 0, 1);
+      }
+    }
+    .img_bottom2{
+      text-align: center;
+      padding-bottom: 70px;
+      img{
+        width: 300px;
+        margin-top: 20px;
+      }
+    }
+  }
 `;
 
 const carouselDataList = imgurl + '/scenario-img.png';
@@ -125,7 +140,9 @@ const SceneSolution: FC<SceneSolution> = ({}) => {
       // .setClassToggle('.aitxs', 'appear')
       .addTo(controller)
       .on('enter', () => {
-        videoContent.classList.add('appear');
+        if(videoContent){
+          videoContent.classList.add('appear');
+        }
         // console.log('进入');
         controller.destroy();
       });
@@ -134,6 +151,7 @@ const SceneSolution: FC<SceneSolution> = ({}) => {
     <Pane>
       <div className="title">应用场景</div>
       {/* <div class="desc">运营策略覆盖消费金融业务全链路</div> */}
+      <Visible  md lg xl xxl xxxl>
       <Hidden xs sm>
         <MainWrap id={HANGYE}>
           <div className="content">
@@ -141,7 +159,50 @@ const SceneSolution: FC<SceneSolution> = ({}) => {
           </div>
         </MainWrap>
       </Hidden>
+      </Visible>
       <Visible xs sm>
+      <MainWrap id={HANGYE}>
+      <ByProgressSwiper
+              newProgress={true}
+              initialSlide={0}
+              contentPadding="20px" progressPadding="0px"
+              previewWidth="90px"
+            >
+              <div style={{ width: '300px' }} className="my-slide">
+                      <div className='title_mobile'>线索清洗</div>
+                      <p>
+                      多元渠道提升线索量级，持续触达提升品牌势能，搭建初筛模型识别高价值线索
+                      </p>
+              </div>
+              <div style={{ width: '300px' }} className="my-slide">
+                      <div className='title_mobile'>营销通知</div>
+                      <p>
+                      电联人效提升3倍以上，AI标记准确率97%以上，营销触达率100%
+                      </p>
+              </div>
+              <div style={{ width: '300px' }} className="my-slide">
+                      <div className='title_mobile'>私域加粉</div>
+                      <p>
+                      用户分层精准营销，构建基于用户数据的品牌私域流量池，蓄力长期转化
+                      </p>
+              </div>
+              <div style={{ width: '300px' }} className="my-slide">
+                      <div className='title_mobile'>试驾邀约</div>
+                      <p>
+                    体验服务的形式邀约更能加深用户对品牌的印象，促进潜在用户到店转化
+                      </p>
+              </div>
+              <div style={{ width: '300px' }} className="my-slide">
+                      <div className='title_mobile'>售后回访</div>
+                      <p>
+                   用户反馈路径AI代替人工自动化执行，构建“反馈-响应-回访”一体化售后闭环
+                      </p>
+              </div>
+            </ByProgressSwiper>
+            <div className='img_bottom2'>
+            <img src={`${imgurl}/caryycj2.png`} alt="" />
+            </div>
+            </MainWrap>
         {/* <CarouselMobile dataList={carouselDataList}></CarouselMobile> */}
       </Visible>
     </Pane>

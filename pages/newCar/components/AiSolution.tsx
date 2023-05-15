@@ -107,7 +107,9 @@ const AiSolution: FC<SceneSolution> = ({}) => {
       // .setClassToggle('.aitxs', 'appear')
       .addTo(controller)
       .on('enter', () => {
-        videoContent.classList.add('appear');
+        if(videoContent){
+          videoContent.classList.add('appear');
+        }
         // console.log('进入');
 
         controller.destroy();
@@ -137,6 +139,9 @@ const AiSolution: FC<SceneSolution> = ({}) => {
           </HoveUp>
         </MainWrap>
       </Hidden>
+      <Visible xs sm>
+                  
+      </Visible>
     </Pane>
   );
 };
