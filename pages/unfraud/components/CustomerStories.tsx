@@ -1,6 +1,8 @@
 import React, { FC, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import styled from 'styled-components';
 import imgurl from '../../../img.url.js'
+import { Visible } from 'react-grid-system';
+import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 
 const list = [
     {
@@ -29,6 +31,9 @@ const MainWrapper = styled.div`
 width: 1200px;
 margin: 0 auto;
 padding: 82px 0 100px;
+@media(max-width: 768px) {
+    width: 100vw;
+}
 `
 const Title = styled.div`
 font-size: 40px;
@@ -58,6 +63,10 @@ background: rgba(255, 255, 255, 1);
 box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
 overflow: hidden;
 position: relative;
+@media(max-width: 768px) {
+    width: 300px;
+    height: 356px;
+}
 .banner {
     width: 100%;
     height: 160px;
@@ -131,6 +140,7 @@ export const CustomerStories: FC = () => {
     return (
         <Wrapper>
             <MainWrapper>
+                <Visible md lg xl xxl xxxl>
                 <Title>客户案例</Title>
                 <ListWrapper id={UNFRAUD}>
                     {
@@ -150,6 +160,35 @@ export const CustomerStories: FC = () => {
                         })
                     }
                 </ListWrapper>
+                </Visible>
+                <Visible xs sm>
+                <Title>客户案例</Title>
+                <ListWrapper id={UNFRAUD}>
+                <ByProgressSwiper
+              newProgress={true}
+              initialSlide={0}
+              contentPadding="12px" progressPadding="0px"
+              previewWidth="17%"
+            >
+                    {
+                        list.map(({ img, banner, content }, index) => {
+                            return (
+                                <ListItem>
+                                    <div style={{ background: `url(${imgurl}${banner})`, backgroundSize: '100% 100%' }} className='banner'></div>
+                                    <div className="detail">
+                                        <img src={imgurl + img} alt="" />
+                                        <div>{content}</div>
+                                        <div onClick={() =>
+                                            window.open('/form?formType=1')
+                                        }>了解详情</div>
+                                    </div>
+                                </ListItem>
+                            )
+                        })
+                    }
+                    </ByProgressSwiper>
+                </ListWrapper>
+                </Visible>
             </MainWrapper>
         </Wrapper>
 

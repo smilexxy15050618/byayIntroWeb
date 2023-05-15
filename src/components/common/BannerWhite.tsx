@@ -92,11 +92,10 @@ const RawBannerWhite: FC<IProps> = ({
       <Visible xs sm>
       <ByContainer
           background={background}
-          height='calc(100vh - 52px)'
+          min-height='calc(100vh - 52px)'
           maxWidthPc="1200px"
           minWidthPC={minWidthPC}
-          className={className}
-          padding={[, '50px 8.6% 0px']}>
+          className={className}>
           {/* 头部空白占位，以便中间中间部分对齐 */}
           <Hidden xs sm>
             <Placeholder />

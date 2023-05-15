@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Pane from '../../../src/components/homepage/version2023/Pane';
 import { Hidden, Visible } from 'react-grid-system';
 import imgurl from '../../../img.url.js'
+import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import SwiperClass from 'swiper/types/swiper-class';
 interface  CoreValues{
@@ -14,6 +15,50 @@ const Wrapper = styled.div`
 const HoveUp = styled.div`
    width: 1248px;
    margin:0 auto; 
+   @media (max-width: 728px) {
+    width: 100vw;
+    .custom-bar-wrapper{
+      width: 300px;
+  }
+   }
+   .carditem{
+    width: 179px;
+height: 223px;
+opacity: 1;
+border-radius: 8px;
+background: rgba(43, 88, 249, 1);
+    position: relative;
+    &:hover {
+      transform: translateY(-8px);
+      transition: all 1s;
+    }
+    img{
+        position: absolute;
+        right: 0;
+        margin:0;
+    }
+    .textt_area{
+        position: absolute;
+        width: 236px;
+        height: 112px;
+        left:24px;
+        top:60px;
+        .title_area{
+            font-size: 20px;
+font-weight: 600;
+line-height: 24px;
+color: rgba(255, 255, 255, 1);
+margin-bottom:16px;
+        }
+        .cont_area{
+            font-size: 14px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 24px;
+color: rgba(255, 255, 255, 1);
+        }
+    }
+   }
 `
 const Card = styled.div<{bg:number}>`
    width: 1200px;
@@ -143,7 +188,36 @@ useEffect(() => {
             </MainWrap>
           </Hidden>
           <Visible xs sm>
-            {/* <CarouselMobile dataList={carouselDataList}></CarouselMobile> */}
+               <MainWrap id={AISOLUTION}>
+               <HoveUp>
+               <ByProgressSwiper
+              newProgress={true}
+              initialSlide={0}
+              contentPadding="6%"
+              progressPadding="0px"
+              previewWidth="49%"
+              autoplayDelay={100000}
+              
+            >
+                {carouselDataList.map(item => 
+                        <div className='carditem'>
+                          <img src={imgurl+item.url} width={117}/>
+                          <div className='textt_area'>
+                                  <div className='title_area'>
+                                  {item.title}
+                                  </div>
+                                  <div className='cont_area'>
+                                    {item.content}
+                                  </div>
+                          </div>
+                      </div>
+                    )}
+                    </ByProgressSwiper>
+               
+               </HoveUp>
+               </MainWrap>
+              
+            
           </Visible>
         </Pane>
     );
