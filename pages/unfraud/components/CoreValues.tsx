@@ -59,6 +59,38 @@ color: rgba(255, 255, 255, 1);
         }
     }
    }
+   @media (max-width: 728px) {
+    width: 100vw;
+      .custom-bar-wrapper{
+          width: 300px;
+      }
+      .carditem{
+      .textt_area{
+        position: absolute;
+        width: 153px;
+        height: auto;
+        left:24px;
+        bottom:20px;
+        top: auto;
+        .title_area{
+color: rgba(255, 255, 255, 1);
+margin-bottom:12px;
+font-size: 16px;
+font-weight: 600;
+letter-spacing: 0px;
+line-height: 19.2px;
+        }
+        .cont_area{
+          width: 90%;
+            font-size: 12px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 20px;
+color: rgba(255, 255, 255, 1);
+        }
+    }
+  }
+   }
 `
 const Card = styled.div<{bg:number}>`
    width: 1200px;
@@ -196,12 +228,12 @@ useEffect(() => {
               contentPadding="6%"
               progressPadding="0px"
               previewWidth="49%"
-              autoplayDelay={100000}
+              autoplayDelay={5000}
               
             >
                 {carouselDataList.map(item => 
                         <div className='carditem'>
-                          <img src={imgurl+item.url} width={117}/>
+                          <img src={imgurl+item.url} width={86}/>
                           <div className='textt_area'>
                                   <div className='title_area'>
                                   {item.title}

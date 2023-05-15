@@ -1,6 +1,6 @@
 import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-
+import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 import Pane from '../../../src/components/homepage/version2023/Pane';
 import { Hidden, Visible } from 'react-grid-system';
 import imgurl from '../../../img.url.js';
@@ -11,6 +11,77 @@ const Wrapper = styled.div``;
 const HoveUp = styled.div`
   width: 1248px;
   margin: 0 auto;
+  
+   .carditem{
+    width: 179px;
+height: 192px;
+opacity: 1;
+border-radius: 8px;
+background: rgba(43, 88, 249, 1);
+    position: relative;
+    &:hover {
+      transform: translateY(-8px);
+      transition: all 1s;
+    }
+    img{
+        position: absolute;
+        right: 0;
+        margin:0;
+    }
+    .textt_area{
+        position: absolute;
+        width: 236px;
+        height: 112px;
+        left:24px;
+        top:60px;
+        .title_area{
+            font-size: 20px;
+font-weight: 600;
+line-height: 24px;
+color: rgba(255, 255, 255, 1);
+margin-bottom:16px;
+        }
+        .cont_area{
+            font-size: 14px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 24px;
+color: rgba(255, 255, 255, 1);
+        }
+    }
+   }
+   @media (max-width: 728px) {
+    width: 100vw;
+      .custom-bar-wrapper{
+          width: 300px;
+      }
+      .carditem{
+      .textt_area{
+        position: absolute;
+        width: 153px;
+        height: auto;
+        left:24px;
+        bottom:20px;
+        top: auto;
+        .title_area{
+color: rgba(255, 255, 255, 1);
+margin-bottom:12px;
+font-size: 16px;
+font-weight: 600;
+letter-spacing: 0px;
+line-height: 19.2px;
+        }
+        .cont_area{
+          width: 90%;
+            font-size: 12px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 20px;
+color: rgba(255, 255, 255, 1);
+        }
+    }
+  }
+   }
 `;
 const Card = styled.div<{ bg: number }>`
   width: 1200px;
@@ -55,6 +126,13 @@ const Card = styled.div<{ bg: number }>`
       }
     }
   }
+  @media (max-width: 728px) {
+    width: 100vw;
+      .custom-bar-wrapper{
+          width: 300px;
+      }
+
+}
   /* border-radius: 8px; */
   /* box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12); */
 `;
@@ -140,7 +218,35 @@ const AiSolution: FC<SceneSolution> = ({}) => {
         </MainWrap>
       </Hidden>
       <Visible xs sm>
-                  
+               <MainWrap id={AISOLUTION}>
+               <HoveUp>
+               <ByProgressSwiper
+              newProgress={true}
+              initialSlide={0}
+              contentPadding="6%"
+              progressPadding="0px"
+              previewWidth="49%"
+              autoplayDelay={15000}
+              
+            >
+                {carouselDataList.map(item => 
+                        <div className='carditem'>
+                          <img src={imgurl+item.url} width={86}/>
+                          <div className='textt_area'>
+                                  <div className='title_area'>
+                                  {item.title}
+                                  </div>
+                                  <div className='cont_area'>
+                                    {item.content}
+                                  </div>
+                          </div>
+                      </div>
+                    )}
+                    </ByProgressSwiper>
+               
+               </HoveUp>
+               </MainWrap>
+            
       </Visible>
     </Pane>
   );
