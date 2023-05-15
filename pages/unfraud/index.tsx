@@ -144,7 +144,7 @@ const Game:NextFunctionComponent<IGameProps>=()=>{
                     </BlueBtn>
               </BannerWhite>
               <Ai></Ai>
-              {/* <ApplicationIndustry></ApplicationIndustry> */}
+              <ApplicationIndustry></ApplicationIndustry>
               <CoreValues></CoreValues>
               <CustomerStories></CustomerStories>
               <ByVoiceFooter

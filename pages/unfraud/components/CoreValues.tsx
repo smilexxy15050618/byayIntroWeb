@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 const HoveUp = styled.div`
    width: 1248px;
    margin:0 auto; 
-   @media (max-width: 728px) {
+   @media (max-width: 768px) {
     width: 100vw;
     .custom-bar-wrapper{
       width: 300px;
@@ -59,7 +59,7 @@ color: rgba(255, 255, 255, 1);
         }
     }
    }
-   @media (max-width: 728px) {
+   @media (max-width: 768px) {
     width: 100vw;
       .custom-bar-wrapper{
           width: 300px;
@@ -71,7 +71,7 @@ color: rgba(255, 255, 255, 1);
         height: auto;
         left:24px;
         bottom:20px;
-        top: auto;
+        top: 48px;
         .title_area{
 color: rgba(255, 255, 255, 1);
 margin-bottom:12px;

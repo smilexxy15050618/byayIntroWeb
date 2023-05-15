@@ -31,7 +31,10 @@ export interface IAiProps {}
 const Pane = styled.div`
   padding: 80px 0;
   @media(max-width: 768px) {
-    padding: 0;
+    padding: 0 0 80px 0;
+    .custom-bar-wrapper{
+      width: 300px;
+    }
   }
   .title {
     font-size: 40px;
@@ -69,6 +72,29 @@ const ListWrapper = styled.div`
   justify-content: space-between;
   .lists {
     width: 296px;
+    @media (max-width: 768px) {
+      width: 300px;
+      height: 340px;
+      padding: 24px 0 0 16px;
+      border-radius: 8px;
+      background: rgba(246, 252, 255, 1);
+      div:first-child {
+        font-size: 16px;
+       font-weight: 600;
+       letter-spacing: 0px;
+       margin-bottom: 12px;
+      }
+      div:nth-child(2) {
+        width: 268px;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: 20px;
+        color: rgba(0, 0, 0, 1);
+        text-align: justify;
+        margin-bottom: 24px;
+      }
+    }
   }
   .imgWrapper {
     width: 888px;

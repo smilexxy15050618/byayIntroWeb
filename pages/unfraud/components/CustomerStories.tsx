@@ -26,6 +26,9 @@ const Wrapper = styled.div`
 width: 100%;
 height: 650px;
 background: #F6FCFF;
+@media(max-width: 768px) {
+    height: 569px;
+}
 `
 const MainWrapper = styled.div`
 width: 1200px;
@@ -33,6 +36,10 @@ margin: 0 auto;
 padding: 82px 0 100px;
 @media(max-width: 768px) {
     width: 100vw;
+    padding: 40px 0 40px;
+    .custom-bar-wrapper{
+        width: 300px;
+      }
 }
 `
 const Title = styled.div`
@@ -43,6 +50,14 @@ line-height: 48px;
 color: rgba(26, 26, 26, 1);
 text-align: center;
 margin-bottom: 56px;
+@media(max-width: 768px) {
+    font-size: 24px;
+font-weight: 500;
+letter-spacing: 0px;
+line-height: 40px;
+color: rgba(0, 0, 0, 1);
+margin-bottom: 40px;
+}
 `
 const ListWrapper = styled.div`
   display: flex;

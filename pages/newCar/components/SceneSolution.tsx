@@ -151,7 +151,7 @@ const SceneSolution: FC<SceneSolution> = ({}) => {
     <Pane>
       <div className="title">应用场景</div>
       {/* <div class="desc">运营策略覆盖消费金融业务全链路</div> */}
-      <Visible  md lg xl xxl xxxl>
+      <Visible md lg xl xxl xxxl>
       <Hidden xs sm>
         <MainWrap id={HANGYE}>
           <div className="content">
