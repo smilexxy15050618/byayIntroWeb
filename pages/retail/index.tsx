@@ -33,6 +33,14 @@ const BigTitle = styled.div`
   line-height: 60px;
   color: rgba(26, 26, 26, 1);
   font-weight: 600;
+  @media (max-width: 768px) {
+    font-size: 32px;
+font-weight: 500;
+letter-spacing: 0px;
+line-height: 47px;
+margin-top: 47px !important;
+width: 100%;
+  }
 `;
 const Desc = styled.div`
   margin-top: 16px;
@@ -40,6 +48,13 @@ const Desc = styled.div`
   line-height: 34px;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
+  @media (max-width: 768px) {
+    font-size: 16px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 26px;
+  }
+  
 `;
 const BlueBtn = styled.div`
   margin-top: 40px;
@@ -54,6 +69,17 @@ const BlueBtn = styled.div`
   color: rgba(255, 255, 255, 1);
   text-align: center;
   cursor: pointer;
+  @media (max-width: 768px) {
+    width: 112px;
+height: 40px;
+opacity: 1;
+border-radius: 5.33px;
+background: rgba(43, 88, 249, 1);
+font-size: 16px;
+font-weight: 500;
+line-height: 40px;
+margin-top: 20px;
+  }
 `;
 const SmallLabel = styled.div`
   font-size: 14px;
@@ -290,25 +316,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
               />
               <AiSolution></AiSolution>
               <CustomerSolution></CustomerSolution>
-              {/* <Play /> */}
-            </Visible>
-            <Visible xs sm>
-              <IndustryCarouselOld dataList={BANNER_LIST} />
-              <SceneSolutionMobile
-                dataList={MOBILE_SCENE_SOLUTION_LIST}
-                onJumpClick={() => {
-                  setFormVisible(true, FormType.CUSTOMER);
-                }}
-              />
-              {STRATEGY_LIST.map(item => (
-                <StrategyMobile key={item.desc} {...item} />
-              ))}
-            </Visible>
-            {/* <AIEmployee /> */}
-
-            {/* <Advantage></Advantage> */}
-            {/* <CustomerIconsBlock padding="73px 0 83px" /> */}
-            <ByVoiceFooter
+              <ByVoiceFooter
               title="立即体验AI时代的新一代用户运营平台"
               desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
               btnText="与我联系"
@@ -317,6 +325,58 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                 window.open('/form?formType=1');
               }}
             />
+              {/* <Play /> */}
+            </Visible>
+            <Visible xs sm>
+              <BannerWhite
+                background={[`url(${BANNER_BG}) right top ,rgba(246, 252, 255, 1)`, 'rgba(246, 252, 255, 1)']}
+                pcImgs={[
+                  {
+                    src: JOIN_US_IMG,
+                    style: { width: 644, height: 496, top: 0, right: 0 },
+                    className: ['animate__fadeInRight', 'animate__ahead_300ms'],
+                  },
+                ]}
+                mobileImg={JOIN_US_IMG}>
+                <BigTitle>
+                  品牌零售
+                  <br />
+                  智能用户运营解决方案
+                </BigTitle>
+                <Desc>
+                  通过对话式AI助力品牌实现「极致用户体验+极致
+                  <br />
+                  ROI」的全域营销服务
+                </Desc>
+                <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+              </BannerWhite>
+              {/* {STRATEGY_LIST.map(item => (
+                <StrategyMobile key={item.desc} {...item} />
+              ))} */}
+              <Strategy></Strategy>
+              <SceneSolutionMobile
+                dataList={MOBILE_SCENE_SOLUTION_LIST}
+                onJumpClick={() => {
+                  setFormVisible(true, FormType.CUSTOMER);
+                }}
+              />
+              <AiSolution></AiSolution>
+              <CustomerSolution></CustomerSolution>
+              <ByVoiceFooter
+              title="立即体验AI时代的新一代用户运营平台"
+              desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
+              btnText="与我联系"
+              background={`url(${FOOTER_BG})`}
+              onClick={() => {
+                window.open('/form?formType=1');
+              }}
+            />
+            </Visible>
+            {/* <AIEmployee /> */}
+
+            {/* <Advantage></Advantage> */}
+            {/* <CustomerIconsBlock padding="73px 0 83px" /> */}
+            
             {/* <ByVoiceFooter
               title={
                 <>

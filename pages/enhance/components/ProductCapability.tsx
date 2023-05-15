@@ -390,26 +390,26 @@ export const ProductCapability = () => {
         <Content className='contents'>
           <div id='ProductCapContent'>
             <div>
-              <img id='img1' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/qdsjcj.svg'} alt="" />
-              <img style={{ width: '335px' }} src={imgurl + '/qdsjcj_text.svg'} alt="" />
+              <img id='img1' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/qdsjcjm.png'} alt="" />
+              <img style={{ width: '335px' }} src={imgurl + '/qdsjcj_textm.png'} alt="" />
             </div>
           </div>
           <div id='ProductCapContent1'>
             <div>
-              <img id='img2' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/oneidsb.svg'} alt="" />
-              <img style={{ width: '335px' }} src={imgurl + '/oneidsb_text.svg'} alt="" />
+              <img id='img2' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/oneidsbm.png'} alt="" />
+              <img style={{ width: '335px' }} src={imgurl + '/oneidsb_textm.png'} alt="" />
             </div>
           </div>
           <div id='ProductCapContent2'>
             <div>
-              <img id='img3' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/fjghsjwj.svg'} alt="" />
-              <img style={{ width: '335px' }} src={imgurl + '/fjghsjwj_text.svg'} alt="" />
+              <img id='img3' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/fjghsjwjm.png'} alt="" />
+              <img style={{ width: '335px' }} src={imgurl + '/fjghsjwj_textm.png'} alt="" />
             </div>
           </div>
           <div id='ProductCapContent4'>
             <div>
-              <img id='img4' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/yhhxdc.svg'} alt="" />
-              <img style={{ width: '335px' }} src={imgurl + '/yhhxdc_texts.svg'} alt="" />
+              <img id='img4' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/yhhxdcm.png'} alt="" />
+              <img style={{ width: '335px' }} src={imgurl + '/yhhxdc_textm.png'} alt="" />
             </div>
           </div>
         </Content>

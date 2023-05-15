@@ -5,6 +5,7 @@ import Box from '../Box';
 import { Wrapper } from '../voice-robot/style';
 import ByContainer from './ByContainer';
 import { Linear } from './LinearLayout';
+import { calWidthAndHeight, scrollIntoOffset } from '../../lib/utils';
 
 const TextArea = styled.div`
   @media (max-width: 768px) {
@@ -60,32 +61,70 @@ const RawBannerWhite: FC<IProps> = ({
 }) => {
   return (
     <Wrapper>
-      <ByContainer
-        background={background}
-        height={['560px', 'calc(100vh - 116px)']}
-        maxWidthPc="1200px"
-        minWidthPC={minWidthPC}
-        className={className}
-        padding={[, '50px 8.6% 0px']}>
-        {/* 头部空白占位，以便中间中间部分对齐 */}
-        <Hidden xs sm>
-          <Placeholder />
-        </Hidden>
-        <Linear justify="space-between" height={['500px', '100%']}>
-          <TextArea className="linear animate__animated animate__fadeInLeft animate__ahead_300ms">{children}</TextArea>
+      <Visible md lg xl xxl xxxl>
+        <ByContainer
+          background={background}
+          height={['560px', 'calc(100vh - 116px)']}
+          maxWidthPc="1200px"
+          minWidthPC={minWidthPC}
+          className={className}
+          padding={[, '50px 8.6% 0px']}>
+          {/* 头部空白占位，以便中间中间部分对齐 */}
           <Hidden xs sm>
-            <ImgArea>
-              {pcImgs.map(({ className = [], ...rest }, index) => {
-                const cls = [...commonClassName, ...className].join(' ');
-                return <Box key={index} as="img" {...rest} className={cls} minWidth={rest.style.width} />;
-              })}
-            </ImgArea>
+            <Placeholder />
           </Hidden>
-          <Visible xs sm>
-            <Img src={mobileImg} style={mobileStyle} />
-          </Visible>
-        </Linear>
-      </ByContainer>
+          <Linear justify="space-between" height={['500px', '100%']}>
+            <TextArea className="linear animate__animated animate__fadeInLeft animate__ahead_300ms">{children}</TextArea>
+            <Hidden xs sm>
+              <ImgArea>
+                {pcImgs.map(({ className = [], ...rest }, index) => {
+                  const cls = [...commonClassName, ...className].join(' ');
+                  return <Box key={index} as="img" {...rest} className={cls} minWidth={rest.style.width} />;
+                })}
+              </ImgArea>
+            </Hidden>
+            <Visible xs sm>
+              <Img src={mobileImg} style={mobileStyle} />
+            </Visible>
+          </Linear>
+        </ByContainer>
+      </Visible>
+      <Visible xs sm>
+      <ByContainer
+          background={background}
+          height='calc(100vh - 52px)'
+          maxWidthPc="1200px"
+          minWidthPC={minWidthPC}
+          className={className}
+          padding={[, '50px 8.6% 0px']}>
+          {/* 头部空白占位，以便中间中间部分对齐 */}
+          <Hidden xs sm>
+            <Placeholder />
+          </Hidden>
+          <Linear justify="space-between" height={['500px', '100%']}>
+            <TextArea className="linear animate__animated animate__fadeInLeft animate__ahead_300ms">{children}</TextArea>
+            <Hidden xs sm>
+              <ImgArea>
+                {pcImgs.map(({ className = [], ...rest }, index) => {
+                  const cls = [...commonClassName, ...className].join(' ');
+                  return <Box key={index} as="img" {...rest} className={cls} minWidth={rest.style.width} />;
+                })}
+              </ImgArea>
+            </Hidden>
+            <Visible xs sm>
+              <Img src={mobileImg} style={mobileStyle} />
+            </Visible>
+          </Linear>
+          <img
+              onClick={() => {
+                scrollIntoOffset('#STRAGETYMOBILE', 50);
+              }}
+              src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/mobile/bg/arror.png"
+              className="m-bg-arror"
+            />
+        </ByContainer>
+
+      </Visible>
     </Wrapper>
   );
 };

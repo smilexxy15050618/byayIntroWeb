@@ -2,9 +2,10 @@ import React, { CSSProperties, useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperClass from 'swiper/types/swiper-class';
 import Pane from '../../components/homepage/version2023/Pane';
-import { Hidden, Visible } from 'react-grid-system';
+import { Visible } from 'react-grid-system';
 import styled from 'styled-components';
 import imgurl from '../../../img.url.js'
+import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 
 
 
@@ -21,20 +22,28 @@ const HoveUp = styled.div`
         height: 860px;
         width:100%;
     }
+    #CUSTOMERTIPS {
+        transform: translateY(50%);
+        transition: all 0.4s;
+        opacity: 0;
+        &.appear{
+            transform: translateY(0);
+            opacity: 1;
+          }
+    }
    .wrap_hovres{
         width: 1080px;
-    margin:0 auto; 
+        margin:0 auto; 
+       @media(max-width: 768px) {
+        width: 100vw;
+            .custom-bar-wrapper{
+                width: 300px;
+            }
+       }
    }
    .swiperwrap{
     box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
     border-radius: 8px;
-    transform: translateY(50%);
-    transition: all 0.4s;
-    opacity: 0;
-    &.appear{
-      transform: translateY(0);
-      opacity: 1;
-    }
    }
 
    .card{
@@ -47,6 +56,15 @@ const HoveUp = styled.div`
         width:1000px;
         margin:0 auto;
     }
+    @media(max-width: 768px) {
+        width: 100%;
+        padding: 0;
+        img{
+            width:100%;
+            margin:0 auto;
+        }
+    }
+    
    }
 `
 
@@ -101,12 +119,12 @@ const dataList = [
         bg: '/syt.png'
     }
 ]
-let imglegt =`${imgurl}/arowl1.png`;
-let imgright =`${imgurl}/arowl2.png`;
+let imglegt = `${imgurl}/arowl1.png`;
+let imgright = `${imgurl}/arowl2.png`;
 const CUSTOMERTIPS = 'CUSTOMERTIPS'
 const Carousel: React.FC<ICarouselProps> = ({ style }) => {
     const [controlledSwiper, setControlledSwiper] = useState(null);
-    const [currIndex,setCurrIndex] = useState(0);
+    const [currIndex, setCurrIndex] = useState(0);
     const [arrowbg, setArrowbg] = useState(imglegt);
     const [arrowbg2, setArrowbg2] = useState(imgright);
     useEffect(() => {
@@ -131,70 +149,94 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
     return (
 
         <HoveUp>
-            <div style={{'background': '#F6FCFF'}} className='coverimg'>
+            <Visible md lg xl xxl xxxl>
+                <div style={{ 'background': '#F6FCFF' }} className='coverimg'>
 
-            </div>
-            <div style={{ width: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
-                <ArrowClick onClick={e => {
-                    const res = controlledSwiper.navigation.onPrevClick(e);
-                }} style={{ marginRight: 30 }}  onMouseEnter={()=>{
-                    // if(currIndex != 0){
-                      setArrowbg(`${imgurl}/arowl1hover.png`)
-                    // }
-                  }}
-                    onMouseLeave={()=>{
-                    setArrowbg(imglegt)
-                  }}>
-                     <img src={arrowbg}  />
-                </ArrowClick>
+                </div>
+                <div id={CUSTOMERTIPS} style={{ width: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
+                    <ArrowClick onClick={e => {
+                        const res = controlledSwiper.navigation.onPrevClick(e);
+                    }} style={{ marginRight: 30 }} onMouseEnter={() => {
+                        // if(currIndex != 0){
+                        setArrowbg(`${imgurl}/arowl1hover.png`)
+                        // }
+                    }}
+                        onMouseLeave={() => {
+                            setArrowbg(imglegt)
+                        }}>
+                        <img src={arrowbg} />
+                    </ArrowClick>
 
-                <div className='wrap_hovres'>
+                    <div className='wrap_hovres'>
 
-                    <Pane title="客户案例"
-                        titleStyle={{ marginBottom: '48px',position:'relative',zIndex:22 }}
-                        style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
-                        <Hidden xs sm>
-                            <Swiper 
-                                id={CUSTOMERTIPS}
-                                className='swiperwrap'
-                                autoplay={{
-                                    delay: 3000,
-                                    disableOnInteraction: false,
-                                    pauseOnMouseEnter: true
-                                }}
-                                loop={true}
-                                slidesPerView='auto'
-                                onSwiper={swiper => setControlledSwiper(swiper)}
-                                onSlideChange = {(e)=> {console.log(setCurrIndex(e.activeIndex))}}
+                        <Pane title="客户案例"
+                            titleStyle={{ marginBottom: '48px', position: 'relative', zIndex: 22 }}
+                            style={{ paddingBottom: 100, background: 'none' }} mobileStyle={{ paddingBottom: 40 }}>
+                                <Swiper
+                                    
+                                    className='swiperwrap'
+                                    autoplay={{
+                                        delay: 3000,
+                                        disableOnInteraction: false,
+                                        pauseOnMouseEnter: true
+                                    }}
+                                    loop={true}
+                                    slidesPerView='auto'
+                                    onSwiper={swiper => setControlledSwiper(swiper)}
+                                    onSlideChange={(e) => { console.log(setCurrIndex(e.activeIndex)) }}
                                 >
-                                {dataList.map(({url}) => (
-                                    <SwiperSlide style={{}}>
+                                    {dataList.map(({ url }) => (
+                                        <SwiperSlide style={{}}>
+                                            <div className='card'>
+                                                <img src={`${imgurl}${url}`} />
+                                            </div>
+                                        </SwiperSlide>
+                                    ))}
+                                </Swiper>
+                        </Pane>
+                    </div>
+                    <ArrowClick onClick={e => {
+                        controlledSwiper.navigation.onNextClick(e);
+                    }} style={{ marginLeft: 30 }} onMouseEnter={() => {
+                        // if(currIndex != 0){
+                        setArrowbg2(`${imgurl}/arowl2hover.png`)
+                        // }
+                    }}
+                        onMouseLeave={() => {
+                            setArrowbg2(imgright)
+                        }}>
+                        <img src={arrowbg2} />
+                    </ArrowClick>
+                </div>
+            </Visible>
+            <Visible xs sm>
+
+                <div id={CUSTOMERTIPS} style={{ width: 'calc(100vw - 18px)', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
+
+                    <div className='wrap_hovres'>
+
+                        <Pane title="客户案例"
+                            titleStyle={{ marginBottom: '48px', position: 'relative', zIndex: 22 }}
+                            style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
+                            <ByProgressSwiper
+                                newProgress={true}
+                                initialSlide={0}
+                                contentPadding="2.4%" progressPadding="0px"
+                                previewWidth="0"
+                            >
+                                {dataList.map(({ url }) => (
+                                    <div style={{}}>
                                         <div className='card'>
                                             <img src={`${imgurl}${url}`} />
                                         </div>
-                                    </SwiperSlide>
+                                    </div>
                                 ))}
-                            </Swiper>
-                        </Hidden>
-                        <Visible xs sm>
-                            {/* <CarouselMobile dataList={carouselDataList}></CarouselMobile> */}
-                        </Visible>
+                            </ByProgressSwiper>
                     </Pane>
                 </div>
-                <ArrowClick onClick={e => {
-                    controlledSwiper.navigation.onNextClick(e);
-                }} style={{ marginLeft: 30 }}   onMouseEnter={()=>{
-                    // if(currIndex != 0){
-                      setArrowbg2(`${imgurl}/arowl2hover.png`)
-                    // }
-                  }}
-                    onMouseLeave={()=>{
-                    setArrowbg2(imgright)
-                  }}>
-                  <img src={arrowbg2}  />
-                </ArrowClick>
             </div>
-        </HoveUp>
+        </Visible>
+        </HoveUp >
 
     );
 };
