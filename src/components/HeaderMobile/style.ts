@@ -35,12 +35,17 @@ export const NavBar = styled.div < { collapse: boolean } > `
 
   .tree-list .tree-list {
     .tree-node-content {
-      height: 84px;
+      height: 56px;
       @media (max-width: 768px) {
-        min-height: 84px;
+        min-height: 56px;
         height: auto;
+      }
     }
-    }
+  }
+  .solution-two-item .tree-node-content{
+    height: 56px !important;
+    min-height: 56px !important;
+    padding: 4px 0;
   }
 `;
 interface INodeProps {
@@ -65,14 +70,59 @@ export const TreeNode = styled.div < INodeProps > `
   .borderStyle{
     position: relative;
     display: inline-block;
+    .link-btn-icon{
+      display: none;
+    }
+    .tree-node-content{
+      margin-left: 6px;
+    }
+    .tree-node-content{
+      height: 56px !important;
+      min-height: 56px !important;
+    }
+    .link-btn-info-title{
+      margin: 0;
+    }
     &::before{
       content: '';
-      width: 100%;
+      width: 280px;
       height: 1px;
       bottom: 0;
       left: 0;
       position: absolute;
       background: #eee;
+    }
+  }
+  .solution-item{
+    .is-expand{
+      background: none !important;
+    }
+    .tree-node-content{
+      margin-left: 6px;
+      width: 280px;
+      height: 56px !important;
+      min-height: 56px !important;
+    }
+    .triangle-icon{
+      display: none;
+    }
+    .link-btn-wrapper{
+      height: 56px;
+      padding: 0;
+    }
+    .link-btn-icon{
+      display: none;
+    }
+    .link-btn-info-title{
+      margin: 0 0 0 6px;
+      font-size: 16px;
+      font-weight: 500;
+      width: 268px;
+      height: 56px;
+      line-height: 56px;
+      color: rgba(26, 26, 26, 1);
+      border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+      box-sizing: border-box;
     }
   }
   .link-btn-icon {
@@ -130,6 +180,7 @@ export const TreeNode = styled.div < INodeProps > `
     padding-right: 27px;
     &.is-expand {
       color: #2b58f9;
+      background: rgba(242, 245, 255, 1);
       .triangle-icon {
         color: #2b58f9;
       }
@@ -142,9 +193,9 @@ export const TreeNode = styled.div < INodeProps > `
 `;
 /** 不同层级的节点样式 */
 const levelFirst = css < INodeProps > `
-  padding-left: 24px;
   background: white;
   .tree-node-content {
+    padding-left: 24px;
     border-bottom: 1px solid
       ${props => (props.nodeInfo.children && props.nodeInfo.isExpand ? '#FFFFFF' : 'rgba(0, 0, 0, 0.08)')};
   }
@@ -158,6 +209,7 @@ const levelSecondProduct = css < INodeProps > `
   background: white;
   position: relative;
   .tree-node-content {
+    padding-left: 24px;
     font-size: 14px;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.45);

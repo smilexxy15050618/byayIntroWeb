@@ -14,7 +14,7 @@ const carouselDataList = [
         title:'个人金融部',
         content:[
             {name: '投资理财'},
-            {name: '支付预算'},
+            {name: '支付结算'},
             {name: '贷款业务'},
             {name: '卡片通知'},
             {name: '储蓄业务'}
@@ -84,7 +84,6 @@ const Card = styled.div<{bg:number}>`
     width: 224px;
     height: 325px;
     border-radius: 8px;
-    cursor: pointer;
     background: rgba(255, 255, 255, 1);
     transition: all 0.3s ease-in;
     margin-right: 20px;

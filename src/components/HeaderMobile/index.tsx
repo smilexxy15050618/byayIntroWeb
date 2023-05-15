@@ -89,7 +89,7 @@ const RawHeaderMobileNew: FC<IProps> = ({ initialOpacity, className, setForm, he
                         window.location.href = isOpenOrigin ? `https://www.byai.com${nodeInfo.path}` : nodeInfo.path;
                       }
                     }}
-                    className={nodeInfo.title == '智能用户运营平台（AICOS）' ? 'borderStyle' : ''}
+                    className={nodeInfo.title == '智能用户运营平台（AICOS）' ? 'borderStyle' : nodeInfo.type ? 'solution-item' : ''}
                   >
                     <div className={classNames('tree-node-content', { ['is-expand']: nodeInfo.isExpand })}>
                       {nodeInfo.level <= 1 ? (

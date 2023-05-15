@@ -1,6 +1,6 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
+import { Visible } from 'react-grid-system';
 import styled from 'styled-components';
-import {  Hidden, Visible } from 'react-grid-system';
 import imgurl from '../../../img.url.js';
 import ByProgressSwiper from '../common/ByProgressSwiper';
 
@@ -20,13 +20,13 @@ const titleList = [
   },
   {
     title: '数据模型闭环完整',
-    subTitle: 'AI社工与居民的互动自动化采集互动标签、模型标签，完善标签画像体系，保障基层基础数据的鲜活性',
+    subTitle: 'AI社工与居民的互动中自动化采集互动标签、模型标签，完善标签画像，保障基层基础数据的鲜活性',
     url: '/gongan-govern-3.svg',
     urlWap: '/gongan-govern-3.svg',
   },
   {
     title: '数据驾驶舱',
-    subTitle: '基于已运行数据建设驾驶舱，辅助公安分析研判居民服务治理重点，支撑政策研究制定及工作优化决策',
+    subTitle: '基于实际运行数据建设驾驶舱，辅助公安分析研判居民服务治理重点，支撑后续政策研究制定及决策',
     url: '/gongan-govern-4.png',
     urlWap: '/gongan-govern-4.png',
   },
@@ -57,7 +57,7 @@ const Pane = styled.div`
     }
   }
   .desc {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 400;
     letter-spacing: 0px;
     line-height: 32px;
@@ -183,7 +183,7 @@ const MainWrap = styled.div`
 `;
 
 const AiTSXID = 'aitsx';
-const AI: FC<IAiProps> = ({}) => {
+const AI: FC<IAiProps> = ({ }) => {
   const [currIndex, setCurrIndex] = useState(0);
   useEffect(() => {
     const ScrollMagic = require('scrollmagic');
@@ -208,7 +208,7 @@ const AI: FC<IAiProps> = ({}) => {
     <MainWrap id={AiTSXID}>
       <Pane>
         <div class="title">开辟基层治理新路径，打造权威可信、即时响应的“AI警察朋友”</div>
-        <div class="desc">助力品牌激活会员、高效转化、差异化触达营销，实现运营效率质变</div>
+        <div class="desc">搭建警民”线上联络网格”，实现与居民的无感链接和深度触达</div>
         <Visible md lg xl xxl xxxl>
           <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
             <div className="aitxs">
@@ -246,7 +246,7 @@ const AI: FC<IAiProps> = ({}) => {
               <div className="channel-item">
                 <div className="title">{item.title}</div>
                 <div className="subtitle" dangerouslySetInnerHTML={{ __html: item.subTitle }}></div>
-                <img src={imgurl+item.urlWap} />
+                <img src={imgurl + item.urlWap} />
               </div>
             ))}
           </ByProgressSwiper>

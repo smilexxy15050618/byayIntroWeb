@@ -2,7 +2,6 @@
  * @prop smallDropdown 标记是否是小展开项 (移动端)
  * @prop followExpand 是否跟随上级节点一起展开 (移动端)
  */
-import imgurl from '../../img.url.js';
 
 export const NAV_CONFIG = [
   {
@@ -34,7 +33,7 @@ export const NAV_CONFIG = [
         path: '/enhance',
       },
       {
-        title: '全场景用户连接与对话（AICC+ ）',
+        title: '全场景用户连接与对话（AICC+)',
         desc: '全场景、全平台，用沟通连接用户',
         icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/全场景用户连接与对话.svg',
         path: '/product/fullSceneUserLink',
@@ -90,61 +89,136 @@ export const NAV_CONFIG = [
     smallDropdown: true,
     expand: [
       {
-        title: '品牌零售',
-        desc: '会员用户全域运营管理',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/pplsheadicon.png',
-        path: '/retail',
+        title: '企业',
+        type: 'scheme-title',
+        followExpand: true,
+        expand: [
+          {
+            title: '品牌零售',
+            desc: '会员用户全域运营管理',
+            icon: '/static/img2023/nav-solution-1.svg',
+            path: '/retail',
+          },
+          {
+            title: '银行',
+            desc: '实现AUM和MAU双效提升',
+            icon: '/static/img2023/nav-solution-2.svg',
+            path: '/bank'
+          },
+          {
+            title: '互联网',
+            desc: '深度挖掘用户价值，拉升LTV',
+            icon: '/static/img2023/nav-solution-3.svg',
+            path: '/internet-solution'
+          },
+          {
+            title: '保险',
+            desc: '“大数据+Al+人”三驱模式',
+            icon: '/static/img2023/nav-solution-4.svg',
+            path: '/insure'
+          },
+          {
+            title: '汽车',
+            desc: '达成客户体验闭环，驱动增长',
+            icon: '/static/img2023/nav-solution-5.svg',
+            path: '/newCar'
+          },
+          {
+            title: '消费金融',
+            desc: '全自动、智能化营销服务',
+            icon: '/static/img2023/nav-solution-6.svg',
+            path: '/customer-finance'
+          }
+        ]
       },
       {
-        title: '互联网',
-        desc: '深度挖掘用户价值，拉升LTV',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/hlwheadicon.png',
-        path: '/internet-solution',
-      },
-      {
-        title: '保险',
-        desc: '“大数据+AI+人”三驱模式',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/baoxianheadicon.png',
-        path: '/insure',
-      },
-      {
-        title: '公安反诈',
-        desc: '强力提升公安反诈预防全业务效能',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/gafzheadicon.png',
-        path: '/unfraud',
-      },
-      {
-        title: '消费金融',
-        desc: '全自动、智能化营销服务',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/xfjrheadicon.png',
-        path: '/customer-finance',
-      },
-      {
-        title: '汽车',
-        desc: 'AAAAAAA',
-        icon:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/xfjrheadicon.png',
-        path: '/newcar',
-      },
-      {
-        title: '公安综合',
-        desc: 'BBBBB',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E6%95%99%E8%82%B2ai.svg',
-        path: '/gongAn-synthetical',
-      },
-      {
-        title: '政务服务',
-        desc: 'CCCCC',
-        icon: 'https://cdn.byai.com/static/official-website/product/nav-icon/AssistantRobot.svg',
-        path: '/government-services',
-      },
-      {
-        title: '银行',
-        desc: 'DDDDD',
-        icon: 'https://cdn.byai.com/static/official-website/product/nav-icon/AssistantRobot.svg',
-        path: '/bank',
+        title: '政务',
+        type: 'scheme-title',
+        followExpand: true,
+        expand: [
+          {
+            title: '公安综治',
+            desc: '开辟基层治理新路径',
+            icon: '/static/img2023/nav-solution-7.svg',
+            path: '/gongAn-synthetical'
+          },
+          {
+            title: '公安反诈',
+            desc: '提升公安反诈预防全业务效能',
+            icon: '/static/img2023/nav-solution-8.svg',
+            path: '/unfraud'
+          },
+          {
+            title: '政务服务',
+            desc: '智慧型、一体化、可持续',
+            icon: '/static/img2023/nav-solution-9.svg',
+            path: '/government-services'
+          }
+        ]
       },
     ],
   },
+  // {
+  //   path: '/solutions',
+  //   name: '解决方案',
+  //   smallDropdown: true,
+  //   expand: [
+  //     {
+  //       title: '品牌零售',
+  //       desc: '会员用户全域运营管理',
+  //       icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/pplsheadicon.png',
+  //       path: '/retail',
+  //     },
+  //     {
+  //       title: '互联网',
+  //       desc: '深度挖掘用户价值，拉升LTV',
+  //       icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/hlwheadicon.png',
+  //       path: '/internet-solution',
+  //     },
+  //     {
+  //       title: '保险',
+  //       desc: '“大数据+AI+人”三驱模式',
+  //       icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/baoxianheadicon.png',
+  //       path: '/insure',
+  //     },
+  //     {
+  //       title: '公安反诈',
+  //       desc: '强力提升公安反诈预防全业务效能',
+  //       icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/gafzheadicon.png',
+  //       path: '/unfraud',
+  //     },
+  //     {
+  //       title: '消费金融',
+  //       desc: '全自动、智能化营销服务',
+  //       icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/xfjrheadicon.png',
+  //       path: '/customer-finance',
+  //     },
+  //     {
+  //       title: '汽车',
+  //       desc: 'AAAAAAA',
+  //       icon:'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/xfjrheadicon.png',
+  //       path: '/newcar',
+  //     },
+  //     {
+  //       title: '公安综合',
+  //       desc: 'BBBBB',
+  //       icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/nav/%E6%95%99%E8%82%B2ai.svg',
+  //       path: '/gongAn-synthetical',
+  //     },
+  //     {
+  //       title: '政务服务',
+  //       desc: 'CCCCC',
+  //       icon: 'https://cdn.byai.com/static/official-website/product/nav-icon/AssistantRobot.svg',
+  //       path: '/government-services',
+  //     },
+  //     {
+  //       title: '银行',
+  //       desc: 'DDDDD',
+  //       icon: 'https://cdn.byai.com/static/official-website/product/nav-icon/AssistantRobot.svg',
+  //       path: '/bank',
+  //     },
+  //   ],
+  // },
   // {
   //   path: '/customer-case',
   //   name: '客户案例',

@@ -43,80 +43,80 @@ export const Layout: React.FunctionComponent<{
   initialOpacity,
   hostType,
 }) => {
-  const isPC = React.useContext(isPCContext);
-  const [formVisible, setFormVisible] = React.useState(false);
-  const [formType, setFormType] = React.useState(FormType.CUSTOMER);
-  const [placeholder, placeholderXs] = headPlaceholder;
-  const [key,setKey] = React.useState(0)
-  React.useEffect(()=>{
-    // console.log(document.body.getBoundingClientRect().top ,'ddd');
-    //   setKey(Date.now())
-  },[headPlaceholder,initialOpacity])
-  const [headFont, headFontXs] = headFontStyle;
-  const setForm = (visible: boolean, type: FormType = FormType.CUSTOMER) => {
-    const hostname = window.location.hostname;
-    const testHostList = ['localhost', 'www.xinoa.cc'];
-    // 为了兼容open.byai.com, 暂时写死线上路劲
-    let url = `/form?formType=${type}`;
-    if (hostname === 'www.byrobot.cn') {
-      url = 'https://www.byrobot.cn' + url;
-    } else if (testHostList.includes(hostname)) {
-    } else {
-      url = 'https://www.byai.com' + url;
-    }
-    window.open(url);
-    // setFormType(type);
-    // setFormVisible(visible);
-  };
-  console.log(headFontStyle, 'isPC');
-  const guessOpacity = headFontStyle[0] === 'dark';
-  const guessOpacityMobile = headFontStyle[1] === 'dark';
-  initialOpacity = typeof initialOpacity !== 'undefined' ? initialOpacity : guessOpacity;
-  const initialOpacityMobile = typeof initialOpacity !== 'undefined' ? initialOpacity : guessOpacityMobile;
-  return (
-    <ScreenClassProvider fallbackScreenClass={isPC ? 'lg' : 'xs'}>
-      <div id="layout" >
-        <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        </Head>
-        {simpleHeader && (
-          <>
-            <SimpleHeader onBtnClick={() => setForm(true)} />
-            <NewSuspension setForm={setForm} />
-            <Visible sm xs>
-              <SuspenMobileNew setForm={setForm} />
-            </Visible>
-          </>
-        )}
-        {!simpleHeader && (
-          <>
-            <Hidden sm xs>
-              <Header
-                key={key}
-                hostType={hostType}
-                initialOpacity={initialOpacity}
-                headPlaceholder={placeholder}
-                headFontStyle={headFont}
-                onBtnClick={() => setForm(true)}
-              />
-              <Suspension setForm={setForm} />
-            </Hidden>
-            <Visible sm xs>
-              <SuspenMobileNew setForm={setForm} />
-              <HeaderMobileNew
-                key={key}
-                initialOpacity={initialOpacityMobile}
-                headPlaceholder={placeholderXs}
-                headFontStyle={headFontXs}
-                setForm={setForm}
-              />
-            </Visible>
-          </>
-        )}
+    const isPC = React.useContext(isPCContext);
+    const [formVisible, setFormVisible] = React.useState(false);
+    const [formType, setFormType] = React.useState(FormType.CUSTOMER);
+    const [placeholder, placeholderXs] = headPlaceholder;
+    const [key, setKey] = React.useState(0)
+    React.useEffect(() => {
+      // console.log(document.body.getBoundingClientRect().top ,'ddd');
+      //   setKey(Date.now())
+    }, [headPlaceholder, initialOpacity])
+    const [headFont, headFontXs] = headFontStyle;
+    const setForm = (visible: boolean, type: FormType = FormType.CUSTOMER) => {
+      const hostname = window.location.hostname;
+      const testHostList = ['localhost', 'www.xinoa.cc'];
+      // 为了兼容open.byai.com, 暂时写死线上路劲
+      let url = `/form?formType=${type}`;
+      if (hostname === 'www.byrobot.cn') {
+        url = 'https://www.byrobot.cn' + url;
+      } else if (testHostList.includes(hostname)) {
+      } else {
+        url = 'https://www.byai.com' + url;
+      }
+      window.open(url);
+      // setFormType(type);
+      // setFormVisible(visible);
+    };
+    console.log(headFontStyle, 'isPC');
+    const guessOpacity = headFontStyle[0] === 'dark';
+    const guessOpacityMobile = headFontStyle[1] === 'dark';
+    initialOpacity = typeof initialOpacity !== 'undefined' ? initialOpacity : guessOpacity;
+    const initialOpacityMobile = typeof initialOpacity !== 'undefined' ? initialOpacity : guessOpacityMobile;
+    return (
+      <ScreenClassProvider fallbackScreenClass={isPC ? 'lg' : 'xs'}>
+        <div id="layout" >
+          <Head>
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+          </Head>
+          {simpleHeader && (
+            <>
+              <SimpleHeader onBtnClick={() => setForm(true)} />
+              <NewSuspension setForm={setForm} />
+              <Visible sm xs>
+                <SuspenMobileNew setForm={setForm} />
+              </Visible>
+            </>
+          )}
+          {!simpleHeader && (
+            <>
+              <Hidden sm xs>
+                <Header
+                  key={key}
+                  hostType={hostType}
+                  initialOpacity={initialOpacity}
+                  headPlaceholder={placeholder}
+                  headFontStyle={headFont}
+                  onBtnClick={() => setForm(true)}
+                />
+                <Suspension setForm={setForm} />
+              </Hidden>
+              <Visible sm xs>
+                <SuspenMobileNew setForm={setForm} />
+                <HeaderMobileNew
+                  key={key}
+                  initialOpacity={initialOpacityMobile}
+                  headPlaceholder={placeholderXs}
+                  headFontStyle={headFontXs}
+                  setForm={setForm}
+                />
+              </Visible>
+            </>
+          )}
 
-        <main>{children(formVisible, setForm, formType)}</main>
-        <Footer disableLink={simpleHeader} />
-      </div>
-    </ScreenClassProvider>
-  );
-};
+          <main>{children(formVisible, setForm, formType)}</main>
+          <Footer disableLink={simpleHeader} />
+        </div>
+      </ScreenClassProvider>
+    );
+  };

@@ -23,7 +23,7 @@ const Pane = styled.div`
         }
     }
     .desc {
-        font-size: 22px;
+        font-size: 16px;
         font-weight: 400;
         letter-spacing: 0px;
         line-height: 32px;
@@ -45,6 +45,7 @@ const MainWrap = styled.div`
     display: flex;
     flex-wrap: wrap;
     width: 1200px;
+    padding-bottom: 56px;
     margin: 0 auto;
     transform: translateY(50%);
     transition: all 0.2s;
@@ -77,7 +78,7 @@ const MainWrap = styled.div`
         .title{
             position: absolute;
             left: 36px;
-            top: 36px;
+            top: 50px;
             font-size: 24px;
             font-weight: 500;
             line-height: 32px;
@@ -86,7 +87,7 @@ const MainWrap = styled.div`
         .subtitle{
             position: absolute;
             left: 36px;
-            top: 103px;
+            top: 102px;
             padding-right: 44px;
             font-size: 18px;
             font-weight: 400;

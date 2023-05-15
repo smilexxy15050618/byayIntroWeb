@@ -60,7 +60,7 @@ const Card = styled.div<{bg:number}>`
     position: relative;
     transition: all 0.3s ease-in;
     margin-right: 16px;
-    &:nth-child(4){
+    &:nth-child(5){
         margin-right: 0;
     }
     &:hover{

@@ -72,7 +72,7 @@ const Card = styled.div<{bg:number}>`
         width: 240px;
         height: 112px;
         left:22px;
-        bottom:22px;
+        bottom:24px;
         .title_area{
             font-size: 20px;
             font-weight: 600;

@@ -1,15 +1,15 @@
+import classNames from 'classnames';
 import Link from 'next/link';
 import * as React from 'react';
 import { useState } from 'react';
 import { Col, Container, Row, Visible } from 'react-grid-system';
 import styled from 'styled-components';
 import { CALL_NUMBER_400 } from '../constants';
+import { FOOTER_CONFIG } from '../constants/page-modify';
 import { media } from '../constants/style';
 import { withOpenOriginLink } from '../high-components/OpenOriginLink';
 import Box from './Box';
 import { BOTTOM_WHITE_LOGO } from './Header-2021';
-import { FOOTER_CONFIG } from '../constants/page-modify';
-import classNames from 'classnames';
 const ByLink = withOpenOriginLink(Link);
 
 const CMMI_SRC = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/底部隐私政策.png';
@@ -237,7 +237,7 @@ const CompanyInfoCol = styled.span`
   }
 `;
 // 联系我们
-const CompanyDescCol = styled(Col) `
+const CompanyDescCol = styled(Col)`
   @media (max-width: 980px) {
     display: flex;
     align-items: center;
@@ -343,7 +343,7 @@ const CompanyDescCol = styled(Col) `
     }
   `}
 `;
-const LinkCol = styled(Col) `
+const LinkCol = styled(Col)`
   display: flex;
   flex-direction: column;
   > div > div {
@@ -613,25 +613,6 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
                 </Box>
               </Box>
             </Visible>
-            {/* <Visible sm xs>
-              <MobileORCode>
-                <Box textAlign="center" mr="5%">
-                  <img src={PUBLIC_CODE} />
-                  <Box lineHeight="20px" fontSize="14px" color="rgba(255, 255, 255, 0.32)" mt="12px" mb={3}>
-                    公众号
-                  </Box>
-                </Box>
-                <Box textAlign="center">
-                  <img src={VIDEO_CODE} />
-                  <Box lineHeight="20px" fontSize="14px" color="rgba(255, 255, 255, 0.32)" mt="12px" mb={3}>
-                    视频号
-                  </Box>
-                </Box>
-              </MobileORCode>
-            </Visible> */}
-            {/* <div className="margin-adjust" style={{ margin: '26px 0 32px' }}>
-              <div>友情链接合作请联系【右侧-渠道合作】微信</div>
-            </div> */}
           </CompanyDescCol>
         </Row>
       </Container>
@@ -670,39 +651,10 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
               );
               return i === 0 ? ret : [<span style={{ textAlign: 'center', width: '18px' }}>|</span>, ret];
             })}
-
-            {/* <div className="footer-icon-right--item">
-              <img src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/footer/iso.png" />
-              <span>ISO27001</span>
-            </div>
-            <div className="footer-icon-right--item">
-              <img src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/footer/%E4%BF%9D%E6%8A%A4.png" />
-              <span>三级等保</span>
-            </div>
-            <div className="footer-icon-right--item">
-              <img src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/footer/%E5%8A%A0%E5%AF%86.png" />
-              <span>加密传输方案</span>
-            </div> */}
           </div>
         </div>
       </Visible>
       <CompanyInfoCol>
-        {/* <FriendLink>
-          <div style={{ width: '100%', display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-            {FriendLinkList.map((item, i) => {
-              const ret = (
-                <span
-                  className="friend-item"
-                  onClick={() => {
-                    window.open(item.link, '_blank');
-                  }}>
-                  {item.name}
-                </span>
-              );
-              return i === 0 ? ret : [<span style={{ textAlign: 'center', width: '18px' }}>|</span>, ret];
-            })}
-          </div>
-        </FriendLink> */}
         <span>
           Copyright © 2016-{new Date().getFullYear()}{' '}
           <a href="https://beian.miit.gov.cn/" target="_Blank" rel="noreferrer">

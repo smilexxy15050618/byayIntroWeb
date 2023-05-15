@@ -6,7 +6,7 @@ import ByProgressSwiper from '../common/ByProgressSwiper';
 
 const titleList = [
   {
-    title: '新一代服务型政府窗口',
+    title: '全业务场景覆盖',
     subTitle: '覆盖贷款、理财、网银、信用卡4大<br />类业务<br />营销、唤醒、促销等20+细分场景<br />业务实践沉淀1000+套场景运营策略模版',
     url: '/bank-govern-1.svg',
     urlWap: '/bank-govern-1.svg',
@@ -51,7 +51,7 @@ const Pane = styled.div`
     }
   }
   .desc {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 400;
     letter-spacing: 0px;
     line-height: 32px;
@@ -117,7 +117,7 @@ const ListWrapper = styled.div`
 const ListItem = styled.div`
   width: 296px;
   height: 148px;
-  padding-top: 38px;
+  padding-top: 62px;
   padding-left: 40px;
   background: rgba(246, 252, 255, 1);
   margin-bottom: 8px;
@@ -203,7 +203,7 @@ const AI: FC<IAiProps> = ({}) => {
     <MainWrap id={AiTSXID}>
       <Pane>
         <div class="title">银行全场景智能营销</div>
-        <div class="desc">围绕用户生命周期，以转化效果为导向，制定用户运营策略并进行策略迭代运营助力银行机构AUM和MAU双效提升</div>
+        <div class="desc">围绕用户生命周期，以转化效果为导向，助力银行机构AUM和MAU双效提升</div>
         <Visible md lg xl xxl xxxl>
           <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
             <div className="aitxs">

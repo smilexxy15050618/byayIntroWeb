@@ -1,6 +1,6 @@
-import React, { FC, useState, useEffect } from 'react';
-import styled from 'styled-components';
 import { assign, clone } from 'lodash';
+import React, { FC, useEffect, useState } from 'react';
+import styled from 'styled-components';
 interface INodePropsMap {
   label: string | string[];
   id: any;
@@ -94,7 +94,7 @@ const RawByTree: FC<IProps> = ({
       {selfExpand &&
         handledData.map((item: any, i: number, array: any[]) => {
           return (
-            <div key={i}>
+            <div key={i} className={item.type == 'scheme-title' ? 'solution-two-item' : ''}>
               {/* 每一项label的HTML在这里，在children中调用第三个参数即可触发展开 */}
               {children(
                 handleNodeInfo(item, subExpands[i], array, i),
@@ -133,7 +133,7 @@ export interface IByTreeProps extends IProps {
  * @param selfExpand 树是否展开，默认第一层树是展开的 true
  * @param level 树的开始层级，默认是1
  */
-const ByTree = styled(RawByTree)<IByTreeProps>`
+const ByTree = styled(RawByTree) <IByTreeProps>`
   width: ${props => props.width || '100%'};
   height: auto;
   transition: 0.6s;

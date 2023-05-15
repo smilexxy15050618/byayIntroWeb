@@ -127,7 +127,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                     智能用户运营解决方案
                   </BigTitle>
                   <Desc>
-                    覆盖银行零售业务各场景，以存量用户运营为核心，推<br />动银行4.0转型升级，助力银行增强消费者信任和业务<br />增长
+                    覆盖银行零售业务各场景，以存量用户运营为核心，推<br />动银行4.0转型升级，助力银行增强用户信任和业务<br />增长
                   </Desc>
                   <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
                 </Hidden>
@@ -135,7 +135,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                   <BigTitle>
                   银行<br/>智能用户运营解决方案
                   </BigTitle>
-                  <Desc>覆盖银行零售业务各场景，以存量用户运营为核心，推动银行4.0转型升级，助力银行增强消费者信任和业务增长</Desc>
+                  <Desc>覆盖银行零售业务各场景，以存量用户运营为核心，推动银行4.0转型升级，助力银行增强用户信任和业务增长</Desc>
                   <BlueBtnWrap>
                     <BlueBtn
                       onClick={() =>

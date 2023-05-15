@@ -58,21 +58,15 @@ const ListItem = styled.div`
     box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
     overflow: hidden;
     position: relative;
+    &:hover{
+        .banner{
+            transform: scale(1.02);
+            transition: transform 0.4s;
+        }
+    }
     .banner {
         width: 100%;
         height: 160px;
-        &::after {
-            display: block;
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 160px;
-            border-radius: 8px 8px 0px, 0px;
-            background: #2B58F9;
-            opacity: 0.2;
-        }
     }
     .detail {
         padding: 22px 24px 0 24px;
@@ -86,7 +80,7 @@ const ListItem = styled.div`
                 content: '';
                 width: 17px;
                 height: 20px;
-                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAoCAYAAACb3CikAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAHPSURBVFiFzZdhcoIwEIXf0pk6PQvcoXiL3Ea4Dbcw3kHP4tAZSX/gKoVINlnS9v1xZHD345lsHoQIVeZaA4DD2+F51dXjJ1kAILgTAJy7XRNTm+Kac1NxeUtwJwnUS5DKXOu05i8btcBrpxYgWwN4WnpdIm4OFLUDDp5fZhMBLQNRab6O+Z5eDkSl6d1fQrAKbQECWl6IqjpaRy7djgBAW0flyNQJrSsqR9gNlqZWsiM+BzSuJDsyd4OVWk8AMk5CYLAAcO4+rKQwD0n+HhqWARCyl+59L2kcBuubNZjAGnF1ZfomN4QAZLRUAyOBEIFoYKQQd5AxWW0NEwMBkI2aIw70meNeIHKgcR7NcW9BuKlPTr/GuSNV5IhfFudwrdNg70e4LKXNx/p0QU5jH0s67i/djpIOvcr0TWl6N90VDjiUpnc/d1Z4R/JB+QjPDsUxjEBWmm8JaCXbl10uAD7IJPNEHrIlENPYUDwv5to9Mj1Azt2H3SIESzVf3Itw81uvF/MduNg1hGGT/LEmn/MLkNx/kW/e3K/7FXd66iBWQbaGWYMIgmwFE4IQgWhhCMNekvxFIClAEheSQWRAZAm3Vvr+owKZAgFjLExp/i/1DVTs8sHhjj1fAAAAAElFTkSuQmCC');
+                background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTlweCIgaGVpZ2h0PSIxOXB4IiB2aWV3Qm94PSIwIDAgMTkgMTkiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+6ZK755+zPC90aXRsZT4KICAgIDxnIGlkPSLpobXpnaItMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IueUu+advyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMC4wMDAwMDAsIC0zOTEuMDAwMDAwKSIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPGcgaWQ9IuWuouaIt+ahiOS+i+agt+W8jy005qC85aSH5Lu9IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5NS4wMDAwMDAsIDIwNS4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxnIGlkPSLnvJbnu4QtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjUuODQwOTczLCAxODIuNTAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgPGcgaWQ9IumSu+efsyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsIDQuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxyZWN0IGlkPSLnn6nlvaIiIGZpbGw9IiMwMDAwMDAiIG9wYWNpdHk9IjAiIHg9IjAiIHk9IjAiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PC9yZWN0PgogICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNi44NTM5NTcwMywwLjkgTDIuNywwLjkgTDAsNS44NSBMNC45NSw1Ljg1IEw2Ljg1Mzk1NzAzLDAuOSBaIE0xOCw1Ljg1IEwxNS4zLDAuOSBMMTEuMTQ2NSwwLjkgTDEzLjA1LDUuODUgTDE4LDUuODUgWiBNMTIuMTUsNS44NSBMMTAuMjQ2NSwwLjkgTDcuNzUzOTU3MDMsMC45IEw1Ljg1LDUuODUgTDEyLjE1LDUuODUgWiBNMTAuMzg0NjQ2NSwxNS44ODg2MDM1IEwxOCw2Ljc1IEwxMy4wNSw2Ljc1IEwxMC4zODQ2NDY1LDE1Ljg4ODYwMzUgWiBNMCw2Ljc1IEw3LjYxNTM1MzUyLDE1Ljg4ODYwMzUgTDQuOTUsNi43NSBMMCw2Ljc1IFogTTUuODUsNi43NSBMOSwxNy41NSBMMTIuMTUsNi43NSBMNS44NSw2Ljc1IFoiIGlkPSLlvaLnirYiIGZpbGw9IiMyQjU4RjkiPjwvcGF0aD4KICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -149,7 +143,7 @@ export const CustomerStories: FC = () => {
                         list.map(({ title, banner, content }, index) => {
                             return (
                                 <ListItem>
-                                    <div style={{ background: `url(${imgurl}${banner})`, backgroundSize: '100% 100%' }} className='banner'></div>
+                                    <img className="banner" src={imgurl + banner} />
                                     <div className="detail">
                                         <div className="title">{title}</div>
                                         <div className="content">{content}</div>

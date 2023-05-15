@@ -9,7 +9,7 @@ import styled, { css } from 'styled-components';
 import { NAV_CONFIG } from '../constants/page-modify';
 import { media } from '../constants/style';
 import { withOpenOriginLink } from '../high-components/OpenOriginLink';
-import { HOST_ENUM, jumpUrl } from '../lib/utils';
+import { HOST_ENUM } from '../lib/utils';
 const ByLink = withOpenOriginLink(Link);
 
 // export const LOGO = '//cdn.byai.com/static/by-intro-2023/header-logo/black-logo1.png';
@@ -133,11 +133,11 @@ const LoginBtn = styled.div<{ fontStyle: 'dark' | 'light' }>`
   }
   :hover {
     ${props =>
-      props.fontStyle === 'light'
-        ? css`
+    props.fontStyle === 'light'
+      ? css`
             opacity: 0.85;
           `
-        : css`
+      : css`
             color: rgba(23, 66, 222, 1);
           `}
   }
@@ -163,11 +163,11 @@ const ExpBtn = styled.div<{ fontStyle: 'dark' | 'light' }>`
   &:hover {
     box-shadow: 0px 4px 10px 0px rgba(3, 100, 255, 0.3);
     /* ${props =>
-      props.fontStyle === 'light'
-        ? css`
+    props.fontStyle === 'light'
+      ? css`
             opacity: 0.85;
           `
-        : css`
+      : css`
             color: rgba(23, 66, 222, 1);
           `}; */
   }
@@ -248,11 +248,8 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
   cursor: auto;
   .small-dropdown-content {
     border-radius: 8px;
-    border: 1px solid #dbdbe0;
-    min-width: 360px;
-    padding: 12px;
-    box-shadow: 0px 12px 24px 0px rgba(3, 43, 183, 0.08);
-    /* border-radius: 0px 0px 8px 8px; */
+    min-width: 400px;
+    padding: 32px 40px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -269,15 +266,29 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
       padding: 8px;
       display: flex;
       &:hover {
-        background: #f5f6f8;
+        border-radius: 6px; 
+        background: rgba(242, 245, 255, 1);
+        .link-btn-info-title {
+          color:rgba(43, 88, 249, 1);
+        }
       }
     }
     .borderStyle {
       border-bottom: 1px solid #eee;
       .link-btn-wrapper {
+        padding: 6px 6px 16px;
         cursor: text;
         &:hover {
           background: transparent;
+        }
+        .link-btn-icon{
+          display: none;
+        }
+        .link-btn-info-title{
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 24px;
+          color: rgba(26, 26, 26, 1);
         }
       }
     }
@@ -325,6 +336,97 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
       }
     }
   }
+  .solve-scheme-content {
+    width: 940px;
+    height: 344px;
+    padding: 36px 40px;
+    display: flex;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    opacity: ${props => (props.visible ? 1 : 0)};
+    cursor: ${props => (props.visible ? 'pointer' : 'auto')};
+    overflow: hidden;
+    box-sizing: border-box;
+    .solve-scheme-item {
+      &:nth-child(1) {
+        width: 568px;
+      }
+      &:nth-child(2) {
+        width: 276pxpx;
+        margin-left: 16px;
+      }
+      .scheme-title {
+        padding-left: 28px;
+        height: 56px;
+        line-height: 56px;
+        font-size: 18px;
+        color: rgba(26, 26, 26, 1);
+        border-bottom: 1px solid rgba(26, 26, 26, 0.18);
+        margin-bottom: 16px;
+      }
+      .scheme-item-wrap{
+        width: 568px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      .scheme-item{
+        width: 276px;
+        height: 68px;
+        padding: 10px 0 10px 8px;
+        display: flex;
+        align-items: center;
+        &:hover{
+          border-radius: 6px;
+          background: rgba(242, 245, 255, 1);
+          .cheme-item-tips .title{
+            color:rgba(43, 88, 249, 1)
+          }
+        }
+        &:nth-child(2n){
+          margin-left: 16px;
+        }
+        .icon{
+          width: 48px;
+          height: 48px;
+          padding: 8px;
+          border-radius: 8px;
+          background: rgba(242, 245, 255, 1);
+          box-sizing: border-box;
+        }
+        img{
+          width: 32px;
+          height: 32px;
+          margin: 0;
+        }
+        .cheme-item-tips{
+          flex: 1;
+          padding-left: 16px;
+          .title{
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: rgba(0, 0, 0, 1);
+          }
+          .subtitle{
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+            color: rgba(10, 15, 44, 0.45);
+          }
+        }
+      }
+      &:nth-child(2) {
+        .scheme-item-wrap{
+          width: 278px;
+        }
+        .scheme-item{
+          margin: 0;
+        }
+      }
+    }
+  }
 `;
 
 const Icon = styled.div<{ expandVisible: boolean; fontStyle: 'dark' | 'light' }>`
@@ -364,7 +466,7 @@ class Nav extends React.Component<
     initialOpacity?: boolean;
     hostType?: HOST_ENUM;
   } & WithRouterProps
-> {
+  > {
   state = {
     expandVisible: '',
     opacity: true,
@@ -518,24 +620,46 @@ class Nav extends React.Component<
                     </LinkSwitch>
                     {item.smallDropdown && item.expand && (
                       <SmallDropdownWrapper visible={item.name === expandVisible} className="small-dropdown-identify">
-                        <div className="small-dropdown-content">
-                          {item.expand.map(menuItem => (
-                            <a
-                              href={isOpenOrigin ? `https://www.byai.com${menuItem.path}` : menuItem.path}
-                              key={menuItem.path}
-                              className={menuItem.title == '智能用户运营平台（AICOS）' ? 'borderStyle' : ''}>
-                              <div className="link-btn-wrapper" onClick={() => this.handleOpenNewPage}>
-                                <div className="link-btn-icon">
-                                  <img src={menuItem.icon} />
-                                </div>
-                                <div>
-                                  <div className="link-btn-info-title">{menuItem.title}</div>
-                                  {menuItem.desc && <div className="link-btn-info-desc">{menuItem.desc}</div>}
+
+                        {item.path.includes('solutions') ? (
+                          <div className="solve-scheme-content">
+                            {item.expand.map(menuItem => (
+                              <div className="solve-scheme-item">
+                                <div className={menuItem.type}>{menuItem.title}</div>
+                                <div className="scheme-item-wrap">
+                                  {menuItem.expand.map(menuItems => (
+                                    <div className="scheme-item" onClick={() => this.handleOpenNewPage(menuItems.path)}>
+                                      <div className="icon"><img src={menuItems.icon} /></div>
+                                      <div className="cheme-item-tips">
+                                        <div className="title">{menuItems.title}</div>
+                                        <div className="subtitle">{menuItems.desc}</div>
+                                      </div>
+                                    </div>
+                                  ))}
                                 </div>
                               </div>
-                            </a>
-                          ))}
-                        </div>
+                            ))}
+                          </div>
+                        ) : (
+                            <div className="small-dropdown-content">
+                              {item.expand.map(menuItem => (
+                                <a
+                                  href={isOpenOrigin ? `https://www.byai.com${menuItem.path}` : menuItem.path}
+                                  key={menuItem.path}
+                                  className={menuItem.title == '智能用户运营平台（AICOS）' ? 'borderStyle' : ''}>
+                                  <div className="link-btn-wrapper" onClick={() => this.handleOpenNewPage}>
+                                    <div className="link-btn-icon">
+                                      <img src={menuItem.icon} />
+                                    </div>
+                                    <div>
+                                      <div className="link-btn-info-title">{menuItem.title}</div>
+                                      {menuItem.desc && <div className="link-btn-info-desc">{menuItem.desc}</div>}
+                                    </div>
+                                  </div>
+                                </a>
+                              ))}
+                            </div>
+                          )}
                       </SmallDropdownWrapper>
                     )}
                   </div>

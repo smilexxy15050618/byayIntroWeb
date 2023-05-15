@@ -21,7 +21,7 @@ const Pane = styled.div`
     }
   }
   .desc {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 400;
     letter-spacing: 0px;
     line-height: 32px;

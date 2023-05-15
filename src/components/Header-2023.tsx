@@ -6,11 +6,12 @@ import { withRouter, WithRouterProps } from 'next/router';
 import * as React from 'react';
 import { Col, Container, Row } from 'react-grid-system';
 import styled, { css } from 'styled-components';
+import imgurl from '../../img.url.js';
 import { NAV_CONFIG } from '../constants/page-modify-2023';
 import { media } from '../constants/style';
 import { withOpenOriginLink } from '../high-components/OpenOriginLink';
-import { HOST_ENUM, jumpUrl } from '../lib/utils';
-import imgurl from '../../img.url.js';
+import { HOST_ENUM } from '../lib/utils';
+
 
 const ByLink = withOpenOriginLink(Link);
 // export const LOGO = '//cdn.byai.com/static/by-intro-2023/header-logo/black-logo1.png';
@@ -135,11 +136,11 @@ const LoginBtn = styled.div<{ fontStyle: 'dark' | 'light' }>`
   }
   :hover {
     ${props =>
-      props.fontStyle === 'light'
-        ? css`
+    props.fontStyle === 'light'
+      ? css`
             opacity: 0.85;
           `
-        : css`
+      : css`
             color: rgba(23, 66, 222, 1);
           `}
   }
@@ -165,11 +166,11 @@ const ExpBtn = styled.div<{ fontStyle: 'dark' | 'light' }>`
   &:hover {
     box-shadow: 0px 4px 10px 0px rgba(3, 100, 255, 0.3);
     /* ${props =>
-      props.fontStyle === 'light'
-        ? css`
+    props.fontStyle === 'light'
+      ? css`
             opacity: 0.85;
           `
-        : css`
+      : css`
             color: rgba(23, 66, 222, 1);
           `}; */
   }
@@ -420,7 +421,7 @@ class Nav extends React.Component<
     initialOpacity?: boolean;
     hostType?: HOST_ENUM;
   } & WithRouterProps
-> {
+  > {
   state = {
     expandVisible: '',
     opacity: true,
@@ -572,24 +573,24 @@ class Nav extends React.Component<
                             ))}
                           </div>
                         ) : (
-                          <div className="small-dropdown-content">
-                            {item.expand.map(menuItem => (
-                              <a
-                                href={isOpenOrigin ? `https://www.byai.com${menuItem.path}` : menuItem.path}
-                                key={menuItem.path}>
-                                <div className="link-btn-wrapper" onClick={() => this.handleOpenNewPage}>
-                                  <div className="link-btn-icon">
-                                    <img src={menuItem.icon} />
+                            <div className="small-dropdown-content">
+                              {item.expand.map(menuItem => (
+                                <a
+                                  href={isOpenOrigin ? `https://www.byai.com${menuItem.path}` : menuItem.path}
+                                  key={menuItem.path}>
+                                  <div className="link-btn-wrapper" onClick={() => this.handleOpenNewPage}>
+                                    <div className="link-btn-icon">
+                                      <img src={menuItem.icon} />
+                                    </div>
+                                    <div>
+                                      <div className="link-btn-info-title">{menuItem.title}</div>
+                                      {menuItem.desc && <div className="link-btn-info-desc">{menuItem.desc}</div>}
+                                    </div>
                                   </div>
-                                  <div>
-                                    <div className="link-btn-info-title">{menuItem.title}</div>
-                                    {menuItem.desc && <div className="link-btn-info-desc">{menuItem.desc}</div>}
-                                  </div>
-                                </div>
-                              </a>
-                            ))}
-                          </div>
-                        )}
+                                </a>
+                              ))}
+                            </div>
+                          )}
                       </SmallDropdownWrapper>
                     )}
                   </div>
