@@ -365,20 +365,20 @@ export const ProductCapability = () => {
         <Content className='contents'>
           <div id="ProductCapContent1">
             <div>
-              <img id='img1' style={{ width: '343px', }} src={imgurl + '/yxhb.svg'} alt="" />
-              <img style={{ width: '335px', height: '350px' }} src={imgurl + '/yxhb_text.svg'} alt="" />
+              <img id='img1' style={{ width: '343px', }} src={imgurl + '/yxhbm.png'} alt="" />
+              <img style={{ width: '335px', height: '350px' }} src={imgurl + '/yxhb_textm.png'} alt="" />
             </div>
           </div>
           <div id="ProductCapContent2">
             <div>
-              <img id='img2' style={{ width: '343px', }} src={imgurl + '/ywlc.svg'} alt="" />
-              <img style={{ width: '335px', height: '302px' }} src={imgurl + '/ywlc_text.svg'} alt="" />
+              <img id='img2' style={{ width: '343px', }} src={imgurl + '/ywlcm.png'} alt="" />
+              <img style={{ width: '335px', height: '302px' }} src={imgurl + '/ywlc_textm.png'} alt="" />
             </div>
           </div>
           <div id="ProductCapContent3">
             <div>
-              <img id='img3' style={{ width: '343px', }} src={imgurl + '/zstp.svg'} alt="" />
-              <img style={{ width: '335px', height: '322px' }} src={imgurl + '/zstp_text.svg'} alt="" />
+              <img id='img3' style={{ width: '343px', }} src={imgurl + '/zstpm.png'} alt="" />
+              <img style={{ width: '335px', height: '322px' }} src={imgurl + '/zstp_textm.png'} alt="" />
             </div>
           </div>
         </Content>
