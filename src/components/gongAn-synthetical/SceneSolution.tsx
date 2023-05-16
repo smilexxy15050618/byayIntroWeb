@@ -8,6 +8,9 @@ interface  SceneSolution{
 const Pane = styled.div`
     padding-top: 66px;
     background: rgba(246, 252, 255, 1);
+    @media (max-width: 768px) {
+        padding-top: 0;
+    }
     .title {
         font-size: 40px;
         font-weight: 500;
@@ -56,6 +59,8 @@ const MainWrap = styled.div`
     }
     @media (max-width: 768px) {
         animation: none;
+        width: 100%;
+        padding-bottom: 40px;
     }
     .carditem{
         position: relative;
@@ -63,8 +68,16 @@ const MainWrap = styled.div`
         height: 208px;
         margin-bottom: 24px;
         margin-right: 24px;
+        @media (max-width: 768px) {
+            width: 332px;
+            height: 122px;
+            margin: 0 auto 16px;
+        }
         &:nth-child(2n){
             margin-right: 0;
+            @media (max-width: 768px) {
+                margin: 0 auto 16px;
+            }
         }
         img{
             position: absolute;
@@ -74,6 +87,10 @@ const MainWrap = styled.div`
             bottom: 0;
             width: 588px;
             height: 208px;
+            @media (max-width: 768px) {
+                width: 332px;
+                height: 122px;
+            }
         }
         .title{
             position: absolute;
@@ -83,6 +100,13 @@ const MainWrap = styled.div`
             font-weight: 500;
             line-height: 32px;
             color: rgba(0, 0, 0, 1);
+            @media (max-width: 768px) {
+                padding-top: 0;
+                left: 16px;
+                top: 20px;
+                font-size: 16px;
+                line-height: 22px;
+            }
         }
         .subtitle{
             position: absolute;
@@ -93,6 +117,13 @@ const MainWrap = styled.div`
             font-weight: 400;
             line-height: 26px;
             color: rgba(0, 0, 0, 1);
+            @media (max-width: 768px) {
+                padding-right: 10px;
+                left: 16px;
+                top: 52px;
+                font-size: 12px;
+                line-height: 22px;
+            }
         }
     }
 `
@@ -118,6 +149,29 @@ const carouselDataList = [
         title: '巡查及自查上报场景',
         subtitle:'建议与辖区群防群治力量/居民、规范、紧密、有效、结构化的服务、指挥、互动、管理渠道，形成群防群治完整闭环'
     }
+]
+
+const carouselDataListWap = [
+    {
+        bgImg:'/gongan-scene-1.svg',
+        title: '底数摸排场景',
+        subtitle:'AI社工以多轮对话的形式对业主的实际居住情况、房屋内人员的实际居住情况进行调研，完成用户信息的采集及更新'
+    },
+    {
+        bgImg:'/gongan-scene-2.svg',
+        title: '宣传宣防场景',
+        subtitle:'利用居民画像，实现平安三率、精神文明、垃圾分类、反诈反邪教等全方位点对点的精准宣防，一键触达'
+    },
+    {
+        bgImg:'/gongan-scene-3.svg',
+        title: '巡查及自查上报场景',
+        subtitle:'建议与辖区群防群治力量/居民、规范、紧密、有效、结构化的服务、指挥、互动、管理渠道，形成群防群治完整闭环'
+    },
+    {
+        bgImg:'/gongan-scene-4.svg',
+        title: '政务服务场景',
+        subtitle:'政务服务向乡镇街道延伸，以AI支撑业务咨询引导办理，提升网办率，打通服务群众“最后一百米”'
+    },
 ]
 
 
@@ -146,6 +200,7 @@ useEffect(() => {
         <div class="title">应用场景</div>
         <div class="desc">基层日常工作</div>
         <MainWrap id={HANGYE}>
+        <Visible md lg xl xxl xxxl>
             {carouselDataList.map(item => 
                 <div className='carditem'>
                     <img src={imgurl+item.bgImg} width={117}/>
@@ -153,6 +208,16 @@ useEffect(() => {
                     <div className='subtitle'>{item.subtitle}</div>
                 </div>
             )}
+        </Visible>
+        <Visible xs sm>
+            {carouselDataListWap.map(item => 
+                <div className='carditem'>
+                    <img src={imgurl+item.bgImg} width={117}/>
+                    <div className='title'>{item.title}</div>
+                    <div className='subtitle'>{item.subtitle}</div>
+                </div>
+            )}
+        </Visible>
         </MainWrap>
         </Pane>
     );

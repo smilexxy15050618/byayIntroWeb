@@ -16,12 +16,13 @@ import {
   JoinUs,
 } from '../../src/components/about';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
-import AboutOld, { AboutContent } from '../about';
 import imgurl from '../../img.url.js';
 import { HOST_ENUM } from '../../src/lib/utils';
 
 const BANNER_BG = `${imgurl}/about_banner_bg.png`;
+const BANNER_WAP_BG = `/static/img2023/about-wap-bg.svg`;
 const JOIN_US_IMG = `${imgurl}/about_banner_img.png`;
+const JOIN_US_WAP_IMG = `/static/img2023/about-wap-banner.svg`;
 const ABOUT_INTRO = `${imgurl}/about-intro.jpg`;
 const Mission_BG = `${imgurl}/mission-bg.png`;
 const Vision_BG = `${imgurl}/vision-bg.png`;
@@ -36,6 +37,14 @@ const BigTitle = styled.div`
   font-size: 48px;
   line-height: 80px;
   color: rgba(26, 26, 26, 1);
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    line-height: 47px;
+    padding: 0 12px;
+    margin-bottom: 8px !important;
+  }
 `;
 
 const Desc = styled.div`
@@ -43,6 +52,13 @@ const Desc = styled.div`
   font-size: 20px;
   line-height: 32px;
   color: rgba(51, 51, 51, 1);
+  @media (max-width: 768px) {
+    padding-top: 8px;
+    text-align: centet;
+    font-size: 16px;
+    line-height: 26px;
+    margin: 0 12px 46px !important;
+  }
 `;
 
 const BlueBtn = styled.div`
@@ -168,7 +184,59 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
             <JoinUs backgroundImage={JOINUS_BG} />
           </Hidden>
           <Visible xs sm>
-            {AboutContent}
+            <BannerWhite
+              height={['560px', '584px']}
+              LinearHeight={['500px', '100%']}
+              background={[`url(${BANNER_BG}) right top ,#F6FCFF`, `url(${BANNER_WAP_BG}) center,#F6FCFF`]}
+              pcImgs={[
+                {
+                  src: JOIN_US_IMG,
+                  style: { width: 644, height: 496, top: 0, right: 0 },
+                  className: ['animate__fadeInRight', 'animate__ahead_300ms'],
+                },
+              ]}
+              mobileImg={JOIN_US_WAP_IMG}
+              mobileStyle={{width: '319px',height:'245px',paddingTop: '0', }}
+              >
+              <TextArea spaces={['', '']}>
+                <BigTitle>关于百应</BigTitle>
+                <Desc>
+                  致力于通过前沿对话式AI能力
+                  <br />
+                  助力政府和企业高效连接C端用户
+                </Desc>
+                <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+              </TextArea>
+            </BannerWhite>
+            <TabNav
+              bannerList={[
+                {
+                  name: '企业介绍',
+                  jumpTarget: '#qiyejieshao',
+                },
+                {
+                  name: '使命愿景',
+                  jumpTarget: '#MissionVision',
+                },
+                {
+                  name: '发展历程',
+                  jumpTarget: '#DevelopHistory',
+                },
+                {
+                  name: '社会责任',
+                  jumpTarget: '#SocietyDuty',
+                },
+                {
+                  name: '荣誉证书',
+                  jumpTarget: '#CreditMedal',
+                },
+                {
+                  name: '加入我们',
+                  jumpTarget: '#JoinUs',
+                },
+              ]}
+              onCancel={hadnleNav}
+            />
           </Visible>
           <ByVoiceFooter
             title="立即体验AI时代的新一代用户运营平台"

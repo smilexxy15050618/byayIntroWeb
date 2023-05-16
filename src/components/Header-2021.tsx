@@ -286,7 +286,7 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
           display: none;
         }
         .link-btn-info-title{
-              font-size: 16px;
+              font-size: 18px;
               font-weight: 400;
               line-height: 24px;
               color: rgba(0,0,0,1);
@@ -337,7 +337,7 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
   .solve-scheme-content {
     width: 940px;
     height: 330px;
-    padding: 24px 40px 0;
+    padding: 22px 40px 0;
     display: flex;
     background: rgba(255, 255, 255, 1);
     border-radius: 8px;
@@ -356,7 +356,7 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
       }
       .scheme-title {
         padding-left: 28px;
-        height: 56px;
+        height: 58px;
         line-height: 56px;
         font-size: 18px;
         color: rgba(26, 26, 26, 1);
