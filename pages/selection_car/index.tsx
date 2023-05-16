@@ -12,7 +12,7 @@ import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 import ByProgressSwiper from '../../src/components/common/ByProgressSwiper';
 
 import imgurl from '../../img.url.js';
-import { HOST_ENUM } from '../../src/lib/utils';
+import { HOST_ENUM,scrollIntoOffset } from '../../src/lib/utils';
 const BANNER_BG = `${imgurl}/about_banner_bg.png`;
 const JOIN_US_IMG = `${imgurl}/cartopbanner.png`;
 const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
@@ -84,6 +84,27 @@ line-height: 40px;
 margin-top: 20px;
   }
 `;
+const Down = styled.div`
+.m-bg-arror {
+  position: absolute;
+  top: 656px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  animation: jump 2s infinite;
+  z-index: 10;
+}
+@keyframes jump {
+  0% {
+    transform: translate(-50%, 0px);
+  }
+  50% {
+    transform: translate(-50%, 10px);
+  }
+  100% {
+    transform: translate(-50%, 0px);
+  }
+}
+`
 
 const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
   return (
@@ -134,6 +155,15 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
 
 
             <Visible xs sm>
+            <Down>
+            <img
+              onClick={() => {
+                scrollIntoOffset('#STRATEGY_WRAP', 180);
+              }}
+              src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/mobile/bg/arror.png"
+              className="m-bg-arror"
+            />
+            </Down>
               <BannerWhite
                 background={[`url(${BANNER_BG}) right top ,rgba(246, 252, 255, 1)`, 'rgba(246, 252, 255, 1)']}
                 pcImgs={[

@@ -12,7 +12,7 @@ import VPane from '../../src/components/scene-solution/VPane';
 import { Wrapper } from '../../src/components/voice-robot/style';
 import { FOOTER_BG } from '../../src/constants/img-urls';
 import { NEW_BANNER, BANNER_LIST, MOBILE_SCENE_SOLUTION_LIST, STRATEGY_LIST } from '../../src/constants/retail';
-import { HOST_ENUM } from '../../src/lib/utils';
+import { HOST_ENUM, scrollIntoOffset } from '../../src/lib/utils';
 import { IndustryCarouselMobile as IndustryCarouselOld } from '../../src/retail/components/IndustryCarouselMobile';
 import StrategyMobile from '../../src/retail/components/StrategyMobile';
 import SceneSolution from '../../src/components/scene-solution-2023';
@@ -99,6 +99,27 @@ const BagLabel = styled.div`
     margin-top: 0;
   }
 `;
+const Down = styled.div`
+.m-bg-arror {
+  position: absolute;
+  top: 656px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  animation: jump 2s infinite;
+  z-index: 10;
+}
+@keyframes jump {
+  0% {
+    transform: translate(-50%, 0px);
+  }
+  50% {
+    transform: translate(-50%, 10px);
+  }
+  100% {
+    transform: translate(-50%, 0px);
+  }
+}
+`
 
 const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
   return (
@@ -328,6 +349,15 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
               {/* <Play /> */}
             </Visible>
             <Visible xs sm>
+            <Down>
+            <img
+              onClick={() => {
+                scrollIntoOffset('#STRAGETYMOBILE', 50);
+              }}
+              src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/mobile/bg/arror.png"
+              className="m-bg-arror"
+            />
+            </Down>
               <BannerWhite
                 background={[`url(${BANNER_BG}) right top ,rgba(246, 252, 255, 1)`, 'rgba(246, 252, 255, 1)']}
                 pcImgs={[

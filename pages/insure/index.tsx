@@ -8,7 +8,7 @@ import { Ai } from './components/Ai';
 // import {CoreValues} from './components/CoreValues'
 import { WhySelect } from './components/WhySelect'
 import { CustomerCase } from './components/CustomerCase'
-import { HOST_ENUM } from '../../src/lib/utils';
+import { HOST_ENUM,scrollIntoOffset } from '../../src/lib/utils';
 import { Wrapper } from '../../src/components/voice-robot/style';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 import imgurl from '../../img.url.js'
@@ -70,6 +70,27 @@ line-height: 40px;
 margin-top: 20px;
   }
 `;
+const Down = styled.div`
+.m-bg-arror {
+  position: absolute;
+  top: 656px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  animation: jump 2s infinite;
+  z-index: 10;
+}
+@keyframes jump {
+  0% {
+    transform: translate(-50%, 0px);
+  }
+  50% {
+    transform: translate(-50%, 10px);
+  }
+  100% {
+    transform: translate(-50%, 0px);
+  }
+}
+`
 
 const FOOTER_BG = `${imgurl}/kqaizl.png`;
 interface IGameProps {
@@ -127,6 +148,15 @@ const Game: NextFunctionComponent<IGameProps> = () => {
 
 
             <Visible xs sm>
+            <Down>
+            <img
+              onClick={() => {
+                scrollIntoOffset('#AI', 390);
+              }}
+              src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/mobile/bg/arror.png"
+              className="m-bg-arror"
+            />
+            </Down>
             <BannerWhite
                 background={[`url(${BANNER_BG}) right top ,rgba(246, 252, 255, 1)`, 'rgba(246, 252, 255, 1)']}
                 pcImgs={[
