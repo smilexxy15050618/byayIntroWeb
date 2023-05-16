@@ -53,11 +53,14 @@ border-radius: 8px;
 background: rgba(255, 255, 255, 1);
 box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
 margin-bottom: 20px;
-
+overflow:hidden;
 &:nth-child(5),&:nth-child(6) {
   width: 100%;
   height: 182px;
   overflow: hidden;
+}
+aside{
+  // position: absolute;
 }
 .title {
   display: flex;
@@ -114,6 +117,7 @@ padding: 0 8px;
   }
 .havebg_hover{
   display: none;
+
 }
 .planet{
   opacity: 0;
@@ -138,6 +142,7 @@ margin-bottom: 32px;
 }
 .nobg_hover{
   display: none;
+ 
 }
 
 .havebg_hover{
