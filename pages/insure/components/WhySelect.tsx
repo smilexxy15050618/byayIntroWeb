@@ -4,7 +4,8 @@ import imgurl from '../../../img.url.js'
 import { Swiper, SwiperSlide} from 'swiper/react';
 import SwiperClass from 'swiper/types/swiper-class';
 import { RightArrow, LefttArrow } from '@indata/icon-byai';
-
+import { Visible } from 'react-grid-system';
+import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 
 const dataList = [
     {
@@ -17,6 +18,9 @@ const dataList = [
 const Wrapper = styled.div`
 padding-top: 80px;
 padding-bottom: 100px;
+.custom-bar-wrapper , .swiper-counter{
+    display:none;
+}
   .myswiper-container {
     width: 1200px;
     margin: 0 auto;
@@ -26,6 +30,9 @@ padding-bottom: 100px;
     transform: translateY(20%);
     transition: all 0.4s;
     opacity: 0;
+    @media (max-width: 768px) {
+        width:100vw;
+    }
     &.appear{
       transform: translateY(0);
       opacity: 1;
@@ -33,6 +40,11 @@ padding-bottom: 100px;
     .swiper-wrapper {
         width: 1100px !important;
         text-align: center;
+        @media (max-width: 768px) {
+            width:100vw !important;
+            
+        }
+      
     }
     .swiper-container {
         background: rgba(255, 255, 255, 1);
@@ -54,6 +66,10 @@ padding-bottom: 100px;
         height: 640px;
         opacity: 1;
         border-radius: 8px;
+    @media (max-width: 768px) {
+        width: 100vw;
+        height: auto;
+    }
     }
   }
 `
@@ -65,6 +81,12 @@ line-height: 48px;
 color: rgba(26, 26, 26, 1);
 text-align: center;
 margin-bottom: 48px;
+@media (max-width: 768px) {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 40px;
+}
 `
 const ArrowClick = styled.div`
     width: 40px;
@@ -104,11 +126,11 @@ export const WhySelect: FC = () => {
     }, []);
     return (
         <Wrapper>
+      <Visible md lg xl xxl xxxl>
+
             <Title>客户为什么选择百应</Title>
             <div id={WHYSELECT} className="myswiper-container">
-            {/* <ArrowClick>
-            <img src={`${imgurl}/arowl1.png`}  />
-            </ArrowClick> */}
+           
             <Swiper effect="slide" autoplay={{delay: 3000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,}} 
@@ -142,6 +164,34 @@ export const WhySelect: FC = () => {
                 </SwiperSlide>
             </Swiper>
             </div>
+      </Visible>
+
+      <Visible xs sm>
+
+      <Title>客户为什么选择百应</Title>
+            <div id={WHYSELECT} className="myswiper-container">
+            <ByProgressSwiper newProgress={true}
+            //   initialSlide={0}
+              contentPadding="3.2%"
+              progressPadding="0px"
+              previewWidth="11.5%"
+              autoplayDelay={5000}>
+                    <div className='my-slide'>
+                    <img className='content' src={imgurl+'/why1.png'} alt="" />
+                    </div>
+            </ByProgressSwiper>
+            <ByProgressSwiper newProgress={true}
+            //   initialSlide={0}
+              contentPadding="3.2%"
+              progressPadding="0px"
+              previewWidth="11.5%"
+              autoplayDelay={5000}>
+                    <div className='my-slide'>
+                    <img className='content' src={imgurl+'/why2.png'} alt="" />
+                    </div>
+            </ByProgressSwiper>
+            </div>
+      </Visible>
         </Wrapper>
     )
 }

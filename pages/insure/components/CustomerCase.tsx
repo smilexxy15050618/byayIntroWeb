@@ -1,6 +1,9 @@
 import React, { FC, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import styled from 'styled-components';
 import imgurl from '../../../img.url.js'
+import { Visible } from 'react-grid-system';
+import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
+
 
 const list = [
     {
@@ -27,11 +30,21 @@ const Wrapper = styled.div`
 width: 100%;
 height: 650px;
 background: #F6FCFF;
+@media(max-width: 768px) {
+    height: 569px;
+}
 `
 const MainWrapper = styled.div`
 width: 1200px;
 margin: 0 auto;
 padding: 82px 0 100px;
+@media(max-width: 768px) {
+    width: 100vw;
+    padding: 40px 0 40px;
+    .custom-bar-wrapper{
+        width: 300px;
+      }
+}
 `
 const Title = styled.div`
 font-size: 40px;
@@ -41,6 +54,14 @@ line-height: 48px;
 color: rgba(26, 26, 26, 1);
 text-align: center;
 margin-bottom: 56px;
+@media(max-width: 768px) {
+    font-size: 24px;
+font-weight: 500;
+letter-spacing: 0px;
+line-height: 40px;
+color: rgba(0, 0, 0, 1);
+margin-bottom: 40px;
+}
 `
 const ListWrapper = styled.div`
   display: flex;
@@ -61,6 +82,10 @@ background: rgba(255, 255, 255, 1);
 box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
 overflow: hidden;
 position: relative;
+@media(max-width: 768px) {
+    width: 300px;
+    height: 356px;
+}
 &:nth-child(2) {
     .detail {
         div:first-child {
@@ -159,6 +184,7 @@ export const CustomerCase: FC = () => {
     return (
         <Wrapper>
             <MainWrapper>
+            <Visible md lg xl xxl xxxl>
                 <Title>客户案例</Title>
                 <ListWrapper id={INSURE}>
                     {
@@ -179,6 +205,36 @@ export const CustomerCase: FC = () => {
                         })
                     }
                 </ListWrapper>
+            </Visible>
+
+            <Visible xs sm>
+                <Title>客户案例</Title>
+                <ListWrapper id={INSURE}>
+                <ByProgressSwiper
+              newProgress={true}
+              initialSlide={0}
+              contentPadding="12px" progressPadding="0px"
+              previewWidth="17%"
+            >
+                    {
+                        list.map(({ img, banner, content }, index) => {
+                            return (
+                                <ListItem>
+                                    <div style={{ background: `url(${imgurl}${img})`, backgroundSize: '100% 100%' }} className='banner'></div>
+                                    <div className="detail">
+                                        {/* <img src={imgurl + img} alt="" /> */}
+                                        <div>{content}</div>
+                                        <div onClick={() =>
+                                            window.open('/form?formType=1')
+                                        }>了解详情</div>
+                                    </div>
+                                </ListItem>
+                            )
+                        })
+                    }
+                    </ByProgressSwiper>
+                </ListWrapper>
+                </Visible>
             </MainWrapper>
         </Wrapper>
 

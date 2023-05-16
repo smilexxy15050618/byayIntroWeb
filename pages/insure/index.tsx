@@ -23,6 +23,14 @@ const BigTitle = styled.div`
   line-height:60px;
   color:rgba(26, 26, 26, 1);
   font-weight: 600;
+  @media (max-width: 768px) {
+    font-size: 32px;
+font-weight: 500;
+letter-spacing: 0px;
+line-height: 47px;
+margin-top: 47px !important;
+width: 100%;
+  }
 `;
 const Desc = styled.div`
   margin-top: 16px;
@@ -30,6 +38,12 @@ const Desc = styled.div`
   line-height:34px;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
+  @media (max-width: 768px) {
+    font-size: 16px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 26px;
+  }
 `;
 const BlueBtn = styled.div`
   margin-top: 40px;
@@ -44,6 +58,17 @@ const BlueBtn = styled.div`
   color: rgba(255, 255, 255, 1);
   text-align: center;
   cursor: pointer;
+  @media (max-width: 768px) {
+    width: 112px;
+height: 40px;
+opacity: 1;
+border-radius: 5.33px;
+background: rgba(43, 88, 249, 1);
+font-size: 16px;
+font-weight: 500;
+line-height: 40px;
+margin-top: 20px;
+  }
 `;
 
 const FOOTER_BG = `${imgurl}/kqaizl.png`;
@@ -58,7 +83,6 @@ const Game: NextFunctionComponent<IGameProps> = () => {
       {(visible, setVisible) => (
         <>
           <Wrapper>
-
             <Visible md lg xl xxl xxxl>
               <BannerWhite
                 background={[`url(${BANNER_BG}) right top ,rgba(246, 252, 255, 1)`, 'rgba(246, 252, 255, 1)']}
@@ -99,6 +123,35 @@ const Game: NextFunctionComponent<IGameProps> = () => {
                   window.open('/form?formType=1')
                 }}
               />
+            </Visible>
+
+
+            <Visible xs sm>
+            <BannerWhite
+                background={[`url(${BANNER_BG}) right top ,rgba(246, 252, 255, 1)`, 'rgba(246, 252, 255, 1)']}
+                pcImgs={[
+                  {
+                    src: JOIN_US_IMG,
+                    style: { width: 644, height: 496, top: 0, right: 0 },
+                    className: ['animate__fadeInRight', 'animate__ahead_300ms'],
+                  },
+                ]}
+                mobileImg={JOIN_US_IMG}>
+                    <BigTitle>
+                    保险行业<br />BPO解决方案
+                    </BigTitle>
+                    <Desc>“大数据+AI+人”三驱模式，为保险客户提供从赠险<br />到长险的全业务链条服务</Desc>
+                    <BlueBtn
+                      onClick={() =>
+                        window.open('/form?formType=1')
+                      }>
+                      预约体验
+                    </BlueBtn>
+              </BannerWhite>
+              <Ai></Ai>
+              <WhySelect></WhySelect>
+              <CustomerCase></CustomerCase>
+
             </Visible>
 
           </Wrapper>
