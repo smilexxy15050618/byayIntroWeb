@@ -83,7 +83,7 @@ export const NAV_CONFIG = [
           {
             title: '汽车',
             desc: '达成客户体验闭环，驱动增长',
-            icon: '/static/img2023/nav-solution-5.svg',
+            icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/nav-solution-5.svg',
             path: '/selection_car'
           },
           {
