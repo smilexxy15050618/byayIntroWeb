@@ -2,7 +2,6 @@ import { FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Pane from '../../components/homepage/version2023/Pane';
 import { Hidden, Visible } from 'react-grid-system';
-import ByProgressSwiper from '../common/ByProgressSwiper';
 import imgurl from '../../../img.url.js'
 
 interface  SceneSolution{
@@ -146,6 +145,47 @@ const Card = styled.div<{bg:number}>`
    }
 `
 
+const CardWap = styled.div`
+    padding: 0 16px;
+    .carditem{
+        width: 343px;
+        height: 119px;
+        margin-bottom: 12px;
+        padding: 13px 16px 0;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 1);
+        box-sizing: border-box;
+        .title{
+            margin: 0 6px;
+            height: 45px;
+            line-height: 45px;
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 1);
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(240, 240, 240, 1);
+            img{
+                width: 32px;
+                height: 32px;
+                margin:0 12px 0 0;
+            }
+        }
+        .tag-label{
+            height: 20px;
+            line-height: 20px;
+            padding: 16px 0 24px;
+            span{
+                padding-right: 12px;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 20px;
+                color: rgba(0, 0, 0, 1);
+            }
+        }
+    }
+`
+
 const MainWrap = styled.div`
     transform: translateY(50%);
     transition: all 0.4s;
@@ -156,15 +196,13 @@ const MainWrap = styled.div`
       opacity: 1;
     }
 `
-
 const SolutionWap = styled.div`
     width: 100%;
     padding-bottom: 40px;
     @media (max-width: 768px) {
-        .custom-bar-wrapper{
-            width: 300px;
-        }
-      }
+        width: 100%;
+        padding-bottom: 28px;
+    }
     
 `
 
@@ -216,27 +254,20 @@ useEffect(() => {
             </Pane>
         </Visible>
         <Visible xs sm>
-        <div className="Bigtitle">深耕行业多年的产品服务优势</div>
+        <div className="Bigtitle">应用场景</div>
         <SolutionWap id={AISOLUTION}>
-            <ByProgressSwiper
-                newProgress={true}
-                initialSlide={0}
-                contentPadding="32px"
-                progressPadding="0px"
-                previewWidth="200px">
-                {carouselDataList.map((item, i) => (
-                // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
+            <CardWap>
+                {carouselDataList.map(item => 
                 <div className='carditem'>
-                    <img src={imgurl+item.url} />
-                    <div className='title'>{item.title}</div>
+                    <div className='title'><img src={imgurl+item.url} />{item.title}</div>
                     <div className='tag-label'>
                         {item.content.map(items => 
                             <span>{items.name}</span>
                         )}
                     </div>
                 </div>
-                ))}
-            </ByProgressSwiper>
+                )}
+            </CardWap>
         </SolutionWap>
         </Visible>
     </Wrapper>

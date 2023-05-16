@@ -266,9 +266,15 @@ const CompanyDescCol = styled(Col)`
     letter-spacing: 1px;
   }
   .phone {
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.65) !important;
+    &:hover{
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
   }
   .addr {
+    font-size: 14px;
     margin: 23px 0px 24px;
   }
   .margin-adjust {

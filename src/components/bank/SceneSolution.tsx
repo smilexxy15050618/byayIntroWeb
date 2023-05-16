@@ -1,12 +1,15 @@
 import { FC, useEffect} from 'react';
 import styled from 'styled-components';
-import { Hidden, Visible } from 'react-grid-system';
 import imgurl from '../../../img.url.js'
+import {  Hidden, Visible } from 'react-grid-system';
 interface  SceneSolution{
 
 }
 const Pane = styled.div`
     padding: 80px 0;
+    @media (max-width: 768px) {
+     padding: 40px 0;
+   }
    .title {
     font-size: 40px;
     font-weight: 500;
@@ -42,7 +45,11 @@ const HoveUp = styled.div`
    margin:0 auto; 
    @media (max-width: 768px) {
      width: 100%;
-     padding: 0 12px 34px;
+     padding: 0 12px;
+     img{
+        width:100%;
+        margin:147px;
+      }
    }
    img{
         width:100%;
@@ -64,7 +71,7 @@ const MainWrap = styled.div`
 `
 
 const carouselDataList = imgurl+'/bank-scene-solution.svg'
-
+const carouselDataListWap = '/static/img2023/bank-scene-solution-wap.png'
 
 const SceneSolution: FC<SceneSolution> = ({}) => {
    
@@ -91,9 +98,16 @@ useEffect(() => {
         <div class="title">行业化服务体系</div>
         <div class="desc">业务高适配产品和行业化服务体系保障行方业务像素级落地</div>
         <MainWrap id={HANGYE}>
-            <HoveUp>
-                <img src={carouselDataList} />
-            </HoveUp>
+            <Visible md lg xl xxl xxxl>
+              <HoveUp>
+                  <img src={carouselDataList} />
+              </HoveUp>
+            </Visible>
+            <Visible xs sm>
+              <HoveUp>
+                  <img src={carouselDataListWap} />
+              </HoveUp>
+            </Visible>
         </MainWrap>
         </Pane>
     );

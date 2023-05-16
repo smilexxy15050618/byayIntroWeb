@@ -8,21 +8,24 @@ const titleList = [
   {
     title: '全业务场景覆盖',
     subTitle: '覆盖贷款、理财、网银、信用卡4大<br />类业务<br />营销、唤醒、促销等20+细分场景<br />业务实践沉淀1000+套场景运营策略模版',
+    subTitleWap: '覆盖贷款、理财、网银、信用卡4大类业务<br />营销、唤醒、促销等20+细分场景<br />业务实践沉淀1000+套场景运营策略模版',
     url: '/bank-govern-1.svg',
-    urlWap: '/bank-govern-1.svg',
+    urlWap: '/bank-govern-wap-1.png',
   },
 
   {
     title: '全生命周期用户运营',
     subTitle: '丰富数据标签建模分层<br />分层用户精细化运营<br />用户画像实时分析<br />赋能中长尾用户活跃激活',
+    subTitleWap:'丰富数据标签建模分层<br />分层用户精细化运营<br />用户画像实时分析<br />赋能中长尾用户活跃激活',
     url: '/bank-govern-2.svg',
-    urlWap: '/bank-govern-2.svg',
+    urlWap: '/bank-govern-wap-2.png',
   },
   {
     title: 'ROI导向升级运营服务',
     subTitle: '运营策略制定与持续迭代<br />话术制作与持续调优<br />运营策略自动化执行<br />数据结果实时分析',
+    subTitleWap:'运营策略制定与持续迭代<br />话术制作与持续调优<br />运营策略自动化执行<br />数据结果实时分析',
     url: '/bank-govern-3.svg',
-    urlWap: '/bank-govern-3.svg',
+    urlWap: '/bank-govern-wap-3.png',
   },
 ];
 export type IAiProps = {};
@@ -69,6 +72,7 @@ const Pane = styled.div`
   .swiper-wrapper .swiper-slide{
   }
   .channel-item{
+    position: relative;
     width: 310px;
     height: 340px;
     border-radius: 8px;
@@ -87,9 +91,11 @@ const Pane = styled.div`
       line-height: 20px;
     }
     img{
-      margin-top: 22px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
       width: 100%;
-      height: 146px;
+      height: 200px;
     }
   }
 `;
@@ -240,7 +246,8 @@ const AI: FC<IAiProps> = ({}) => {
               // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
               <div className="channel-item">
                 <div className="title">{item.title}</div>
-                <div className="subtitle" dangerouslySetInnerHTML={{ __html: item.subTitle }}></div>
+                <div className="subtitle" dangerouslySetInnerHTML={{ __html: item.subTitleWap }}></div>
+                {/*'/static/img2023'*/}
                 <img src={imgurl+item.urlWap} />
               </div>
             ))}

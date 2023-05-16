@@ -19,7 +19,7 @@ const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
 const Wrapper = styled.div`
   .m-bg-arror {
     position: absolute;
-    top: 570px;
+    top: 640px;
     left: 50%;
     transform: translate(-50%, 0);
     animation: jump 2s infinite;
@@ -107,7 +107,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
           <Wrapper>
             <BannerWhite
               minWidthPC="1200px"
-              height={['576px', '657px']}
+              height={['576px', '667px']}
               LinearHeight={['516px', '100%']}
               background={[`rgba(246, 252, 255, 1)`, 'rgba(246, 252, 255, 1)']}
               pcImgs={[
