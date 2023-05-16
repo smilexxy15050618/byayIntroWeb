@@ -15,7 +15,7 @@ export const NAV_CONFIG = [
     expand: [
       {
         title: '智能用户运营平台',
-        desc: 'AI时代的新一代用户运营平台',
+        desc: '',
         icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/百应智能（用户）运营平台.svg',
         path: 'javascript:void(0)',
         // path:'/product/intelligenceUser'
@@ -183,36 +183,36 @@ export const FOOTER_WAP_CONFIG = [
     title: '百应产品',
     list: [
       {
-        name: '多模态情感化AI（MEAI）',href: '/product/multimodalAI',
+        name: '多模态情感化AI（MEAI）', href: '/product/multimodalAI',
       },
       {
-        name: '增强型用户画像洞察（CDP+）',href: '/enhance',
+        name: '增强型用户画像洞察（CDP+）', href: '/enhance',
       },
       {
-        name: '全场景用户连接与对话（AICC+ ）',href: '/product/fullSceneUserLink',
+        name: '全场景用户连接与对话（AICC+ ）', href: '/product/fullSceneUserLink',
       },
       {
-        name: '策略智能与自动化（OSA）',href: '/intelligence',
+        name: '策略智能与自动化（OSA）', href: '/intelligence',
       },
     ],
   },
   {
     title: '解决方案',
     list: [
-      { 
-        name: '品牌零售', href: '/retail' 
+      {
+        name: '品牌零售', href: '/retail'
       },
-      { 
-        name: '公安反诈', href: '/unfraud' 
+      {
+        name: '公安反诈', href: '/unfraud'
       },
-      { 
-        name: '互联网', href: '/internet-solution' 
+      {
+        name: '互联网', href: '/internet-solution'
       },
-      { 
-        name: '保险', href: '/insure' 
+      {
+        name: '保险', href: '/insure'
       },
-      { 
-        name: '消费金融', href: '/customer-finance' 
+      {
+        name: '消费金融', href: '/customer-finance'
       },
     ],
   },
@@ -231,25 +231,25 @@ export const FOOTER_WAP_CONFIG = [
     title: '友情链接',
     list: [
       {
-        name: '飞书',href: 'https://www.feishu.cn',
+        name: '飞书', href: 'https://www.feishu.cn',
       },
       {
-        name: 'WPS',href: 'https://www.wps.cn',
+        name: 'WPS', href: 'https://www.wps.cn',
       },
       {
-        name: '樊登读书',href: 'https://www.dushu365.com',
+        name: '樊登读书', href: 'https://www.dushu365.com',
       },
       {
-        name: '杭州社保',href: 'http://hrss.hangzhou.gov.cn',
+        name: '杭州社保', href: 'http://hrss.hangzhou.gov.cn',
       },
       {
-        name: '亿邦动力',href: 'https://www.ebrun.com',
+        name: '亿邦动力', href: 'https://www.ebrun.com',
       },
       {
-        name: '企业微信SCRM',href: 'https://www.xlbscrm.com/scrm.html',
+        name: '企业微信SCRM', href: 'https://www.xlbscrm.com/scrm.html',
       },
       {
-        name: '数据分析',href: 'https://www.guandata.com',
+        name: '数据分析', href: 'https://www.guandata.com',
       },
     ],
   },
@@ -257,16 +257,16 @@ export const FOOTER_WAP_CONFIG = [
     title: '联系我们',
     list: [
       {
-        name: '电话',href: 'javascript:void(0)',
+        name: '电话', href: 'javascript:void(0)',
       },
       {
-        name: '400-0235-100',href: 'tel:4000235100',
+        name: '400-0235-100', href: 'tel:4000235100',
       },
       {
-        name: '公司地址：',href: 'javascript:void(0)',
+        name: '公司地址：', href: 'javascript:void(0)',
       },
       {
-        name: '浙江省杭州市余杭区梦想小镇天使村11幢',href: 'javascript:void(0)',
+        name: '浙江省杭州市余杭区梦想小镇天使村11幢', href: 'javascript:void(0)',
       }
     ],
   },

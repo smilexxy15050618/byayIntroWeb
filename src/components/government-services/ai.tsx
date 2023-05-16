@@ -1,6 +1,6 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
+import { Visible } from 'react-grid-system';
 import styled from 'styled-components';
-import {  Hidden, Visible } from 'react-grid-system';
 import imgurl from '../../../img.url.js';
 import ByProgressSwiper from '../common/ByProgressSwiper';
 
@@ -57,7 +57,7 @@ const Pane = styled.div`
     }
   }
   .desc {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 400;
     letter-spacing: 0px;
     line-height: 32px;
@@ -183,7 +183,7 @@ const MainWrap = styled.div`
 `;
 
 const AiTSXID = 'aitsx';
-const AI: FC<IAiProps> = ({}) => {
+const AI: FC<IAiProps> = ({ }) => {
   const [currIndex, setCurrIndex] = useState(0);
   useEffect(() => {
     const ScrollMagic = require('scrollmagic');
@@ -246,7 +246,7 @@ const AI: FC<IAiProps> = ({}) => {
               <div className="channel-item">
                 <div className="title">{item.title}</div>
                 <div className="subtitle" dangerouslySetInnerHTML={{ __html: item.subTitle }}></div>
-                <img src={imgurl+item.urlWap} />
+                <img src={imgurl + item.urlWap} />
               </div>
             ))}
           </ByProgressSwiper>

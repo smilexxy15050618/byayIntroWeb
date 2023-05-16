@@ -274,7 +274,8 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
       }
     }
     .borderStyle {
-      border-bottom: 1px solid #eee;
+      height: 48px;
+      border-bottom: 1px solid rgba(26,26,26,0.18);
       .link-btn-wrapper {
         padding: 6px 6px 16px;
         cursor: text;
@@ -626,7 +627,7 @@ class Nav extends React.Component<
                                 <div className={menuItem.type}>{menuItem.title}</div>
                                 <div className="scheme-item-wrap">
                                   {menuItem.expand.map(menuItems => (
-                                    <a 
+                                    <a
                                       className="scheme-item"
                                       href={menuItems.path}
                                       key={menuItems.path}

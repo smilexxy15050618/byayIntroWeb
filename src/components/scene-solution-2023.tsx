@@ -1,11 +1,9 @@
 import classNames from 'classnames';
-import { CSSProperties, FC, ReactNode, useEffect, useRef, useState } from 'react';
-import SwiperCore, { Navigation, Scrollbar, Mousewheel } from 'swiper';
+import { FC, ReactNode, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { renderCss, screenHeightRules } from '../lib/utils';
-import { AngleRight } from './accordion/AngleRight';
+import SwiperCore, { Mousewheel, Navigation, Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperClass from 'swiper/types/swiper-class';
+import { AngleRight } from './accordion/AngleRight';
 SwiperCore.use([Navigation, Scrollbar, Mousewheel]);
 
 
@@ -23,21 +21,19 @@ const AslideWrap = styled.aside`
     margin-top:76px;
     text-align: center;
     font-size: 40px;
-    font-family: PingFangSC-Medium, "PingFang SC";
     font-weight: 500;
     color: rgb(26, 26, 26);
-    line-height: 44px;
+    line-height: 48px;
 
   }
   .head_title_two{
     margin-top:16px;
     text-align: center;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 400;
     letter-spacing: 0px;
     line-height: 32px;
-    color: rgb(51, 51, 51);
-    font-family: PingFangSC-Medium, "PingFang SC";
+    color: rgba(51,51,51,1);
   }
 }
   nav{
@@ -277,7 +273,7 @@ const navTitle = ['会员召回',
   '私域运营']
 const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, desc, onJumpClick }) => {
   const [navIndex, setNavIndex] = useState(0);
-  const [hidePoster ,setHidePoster] = useState(false)
+  const [hidePoster, setHidePoster] = useState(false)
   const [currSubIndex, setCurrSubIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
   const currInfo = infoList[navIndex];
@@ -312,8 +308,8 @@ const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, desc, onJumpC
   return (
     <AslideWrap>
       <div className='head_title'>
-          <div className='head_title_one'>AI赋能零售品牌全域增长，打造核心用户价值</div>
-          <div className='head_title_two'>助力品牌高效引流获客、营销增长、精细化运营，提升会员体验和业绩增量</div>
+        <div className='head_title_one'>AI赋能零售品牌全域增长，打造核心用户价值</div>
+        <div className='head_title_two'>助力品牌高效引流获客、营销增长、精细化运营，提升会员体验和业绩增量</div>
 
       </div>
       <nav>
@@ -337,9 +333,9 @@ const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, desc, onJumpC
               'nobg': currInfo.imgSrcList
             })}>
               <div
-              className={classNames('poster', {
-                'hidePoster': hidePoster || currInfo.imgSrcList
-              })}>
+                className={classNames('poster', {
+                  'hidePoster': hidePoster || currInfo.imgSrcList
+                })}>
                 <div className="poster-title">{currInfo.videoTitle}</div>
                 <div
                   onClick={() => {
@@ -358,51 +354,51 @@ const SceneSolution: FC<ISceneSolutionProps> = ({ title, infoList, desc, onJumpC
               }
             </div>
             <div className='right_section'>
-              
-            <DotWrapper>
-                  {infoList[navIndex].content.map((_, i) => {
-                    return (
-                      <Dot
-                        onClick={() => {
-                            controlledSwiper.slideTo(i);
-                        }}
-                        key={`${navIndex}${i}`}
-                        className={classNames({ active: i === currSubIndex })}></Dot>
-                    );
-                  })}
-                </DotWrapper>
-            <Swiper
-              autoplay={false}
-              //  allowTouchMove={false}
-              // scrollbar={{ draggable: true }}
-              mousewheel={{ forceToAxis: true }}
-              onScroll={handleScroll}
-              onSwiper={swiper => {
-                setControlledSwiper(swiper)
-              }} onSlideChange={e => setCurrSubIndex(e.activeIndex)} direction='vertical'>
-              {infoList[navIndex].content.map(({ title, content, specialBtnStr, hiddenBtn }, i) => {
-                return (
-                  <SwiperSlide>
-                    <ContentWrapper data-index={`${i}`}>
-                      <Content>
-                        <div>
-                          {title.map(str => {
-                            return <ContentHeader>{str}</ContentHeader>;
-                          })}
-                        </div>
-                        {content}
-                        {!hiddenBtn && (
-                          <JumpBtn onClick={onJumpClick} >
-                            {specialBtnStr || infoList[navIndex].btnStr}
-                            <AngleRight />
-                          </JumpBtn>
-                        )}
-                      </Content>
-                    </ContentWrapper>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
+
+              <DotWrapper>
+                {infoList[navIndex].content.map((_, i) => {
+                  return (
+                    <Dot
+                      onClick={() => {
+                        controlledSwiper.slideTo(i);
+                      }}
+                      key={`${navIndex}${i}`}
+                      className={classNames({ active: i === currSubIndex })}></Dot>
+                  );
+                })}
+              </DotWrapper>
+              <Swiper
+                autoplay={false}
+                //  allowTouchMove={false}
+                // scrollbar={{ draggable: true }}
+                mousewheel={{ forceToAxis: true }}
+                onScroll={handleScroll}
+                onSwiper={swiper => {
+                  setControlledSwiper(swiper)
+                }} onSlideChange={e => setCurrSubIndex(e.activeIndex)} direction='vertical'>
+                {infoList[navIndex].content.map(({ title, content, specialBtnStr, hiddenBtn }, i) => {
+                  return (
+                    <SwiperSlide>
+                      <ContentWrapper data-index={`${i}`}>
+                        <Content>
+                          <div>
+                            {title.map(str => {
+                              return <ContentHeader>{str}</ContentHeader>;
+                            })}
+                          </div>
+                          {content}
+                          {!hiddenBtn && (
+                            <JumpBtn onClick={onJumpClick} >
+                              {specialBtnStr || infoList[navIndex].btnStr}
+                              <AngleRight />
+                            </JumpBtn>
+                          )}
+                        </Content>
+                      </ContentWrapper>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
             </div>
 
           </section>
