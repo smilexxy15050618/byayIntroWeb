@@ -95,7 +95,7 @@ useEffect(() => {
   }, []);
     return (
         <Pane>
-        <div class="title">行业化服务体系</div>
+        <div class="title">业务效果保障</div>
         <div class="desc">业务高适配产品和行业化服务体系保障行方业务像素级落地</div>
         <MainWrap id={HANGYE}>
             <Visible md lg xl xxl xxxl>

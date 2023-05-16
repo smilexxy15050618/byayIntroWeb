@@ -126,8 +126,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                     政务创新服务解决方案
                   </BigTitle>
                   <Desc>
-                    面向居民办事场景，创新性打造以AI客服为核心的智慧<br />型、一体化、可持续政务服务窗口，综合运用视频客<br />服、语音客服、文字客服、虚拟客服等多种AI客服能<br />力，提升居民办事满意度
-                    
+                    面向居民办事场景，创新性打造以AI客服为核心的智慧<br />型、一体化、可持续政务服务窗口，综合运用多种AI客<br />服能力，提升居民办事满意度
                   </Desc>
                   <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
                 </Hidden>
@@ -135,7 +134,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                   <BigTitle>
                   易窗通办<br/>政务创新服务解决方案
                   </BigTitle>
-                  <Desc>面向居民办事场景，创新性打造以AI客服为核心的智慧型、一体化、可持续政务服务窗口，综合运用视频客服、语音客服、文字客服、虚拟客服等多种AI客服能力，提升居民办事满意度</Desc>
+                  <Desc>面向居民办事场景，创新性打造以AI客服为核心的智慧型、一体化、可持续政务服务窗口，综合运用多种AI客服能力，提升居民办事满意度</Desc>
                   <BlueBtnWrap>
                     <BlueBtn
                       onClick={() =>

@@ -285,10 +285,10 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
           display: none;
         }
         .link-btn-info-title{
-          font-size: 18px;
-          font-weight: 500;
-          line-height: 24px;
-          color: rgba(26, 26, 26, 1);
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 24px;
+              color: rgba(0,0,0,1);
         }
       }
     }
@@ -309,19 +309,16 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
     }
     .link-btn-info-title {
       font-size: 16px;
-      font-family: PingFangSC-Medium, PingFang SC;
-      font-weight: 500;
-      color: #000000;
+      font-weight: 400;
       line-height: 24px;
-      margin-bottom: 4px;
+      color: rgba(0,0,0,1);
     }
 
     .link-btn-info-desc {
       font-size: 14px;
-      font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 400;
-      color: rgba(10, 15, 44, 0.45);
       line-height: 22px;
+      color: rgba(10,15,44,0.45);
       white-space: nowrap;
     }
     .link-btn-small {
@@ -338,8 +335,8 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
   }
   .solve-scheme-content {
     width: 940px;
-    height: 344px;
-    padding: 36px 40px;
+    height: 330px;
+    padding: 24px 40px 0;
     display: flex;
     background: rgba(255, 255, 255, 1);
     border-radius: 8px;
@@ -651,7 +648,7 @@ class Nav extends React.Component<
                                 <a
                                   href={isOpenOrigin ? `https://www.byai.com${menuItem.path}` : menuItem.path}
                                   key={menuItem.path}
-                                  className={menuItem.title == '智能用户运营平台（AICOS）' ? 'borderStyle' : ''}>
+                                  className={menuItem.title == '智能用户运营平台' ? 'borderStyle' : ''}>
                                   <div className="link-btn-wrapper" onClick={() => this.handleOpenNewPage}>
                                     <div className="link-btn-icon">
                                       <img src={menuItem.icon} />

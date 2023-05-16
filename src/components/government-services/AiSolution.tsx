@@ -19,7 +19,7 @@ const carouselDataList = [
         url: '/government-sue-2.svg'
     },{
         title:'主动触达',
-        content:'全面覆盖智能接待、内部协同服务全流程，主动服务，有效提升内外协同的便捷性',
+        content:'覆盖智能接待、内部协同服务全流程，主动服务，有效提升内外协同的便捷性',
         url: '/government-sue-3.svg'
     },{
         title:'降本增效',

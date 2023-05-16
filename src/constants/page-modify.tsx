@@ -14,7 +14,7 @@ export const NAV_CONFIG = [
     smallDropdown: true,
     expand: [
       {
-        title: '智能用户运营平台（AICOS）',
+        title: '智能用户运营平台',
         desc: 'AI时代的新一代用户运营平台',
         icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/百应智能（用户）运营平台.svg',
         path: 'javascript:void(0)',

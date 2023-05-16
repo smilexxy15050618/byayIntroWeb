@@ -128,7 +128,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                   <Desc>
                     依托人工智能、大数据等先进手段，创新性推出具备咨
                     <br />
-                    询、服务、宣传、分享功能的虚拟IP民警
+                    询、服务、宣传、分享功能的定制化AI民警
                   </Desc>
                   <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
                 </Hidden>
@@ -136,7 +136,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                   <BigTitle>
                   公安综治<br/>智能化解决方案
                   </BigTitle>
-                  <Desc>依托人工智能、大数据等先进手段，创新性推出具备咨询、服务、宣传、分享功能的虚拟IP民警</Desc>
+                  <Desc>依托人工智能、大数据等先进手段，创新性推出具备咨询、服务、宣传、分享功能的定制化AI民警</Desc>
                   <BlueBtnWrap>
                     <BlueBtn
                       onClick={() =>

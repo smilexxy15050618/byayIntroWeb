@@ -209,6 +209,7 @@ const AI: FC<IAiProps> = ({ }) => {
       <Pane>
         <div class="title">开辟基层治理新路径，打造权威可信、即时响应的“AI警察朋友”</div>
         <div class="desc">搭建警民”线上联络网格”，实现与居民的无感链接和深度触达</div>
+        <img src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/gongan-govern-4.png" style={{width:'0',height:'0',opacity:'0'}} />
         <Visible md lg xl xxl xxxl>
           <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
             <div className="aitxs">
