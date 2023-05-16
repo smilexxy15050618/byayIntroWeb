@@ -13,7 +13,7 @@ import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 
 import { HOST_ENUM, scrollIntoOffset } from '../../src/lib/utils';
 import imgurl from '../../img.url.js';
-const JOIN_US_IMG = `${imgurl}/gongan-zh-banner.svg`;
+const JOIN_US_IMG = `${imgurl}/gongan-zh-banner.png`;
 const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
 
 const Wrapper = styled.div`

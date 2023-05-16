@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Col, Container, Row, Visible } from 'react-grid-system';
 import styled from 'styled-components';
 import { CALL_NUMBER_400 } from '../constants';
-import { FOOTER_CONFIG } from '../constants/page-modify';
+import { FOOTER_CONFIG, FOOTER_WAP_CONFIG } from '../constants/page-modify';
 import { media } from '../constants/style';
 import { withOpenOriginLink } from '../high-components/OpenOriginLink';
 import Box from './Box';
@@ -74,9 +74,8 @@ const FooterWrapper = styled.footer`
     margin: 0 auto;
   }
   ${media.phone`
-    min-height: 524px;
-    /* margin-bottom: 60px; */
-    padding-left: 32px;
+    // min-height: 524px;
+    // padding-left: 32px;
     .col-item {
       text-align: left;
       line-height: 22px;
@@ -417,9 +416,6 @@ const CrmImg = styled.div`
   img {
     height: 28px;
     margin-bottom: 0;
-    /* &:first-child {
-      margin-right: 16px;
-    } */
   }
   @media (max-width: 768px) {
     width: 300px;
@@ -479,6 +475,52 @@ const FriendLink = styled.div`
   }
 `;
 
+const LinkColWap = styled.div`
+  width: 100%;
+  h6{
+    position: relative;
+    padding-left: 32px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 46px;
+    color: rgba(255, 255, 255, 1);
+    &::after{
+      position: absolute;
+      right: 32px;
+      top: 15px;
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAABnSURBVFiFY2AYCuD///8F////LxhIB8DAwDgCGgKjjhh1xKgjRh0x6ohRR5DjiPeE1DLRyA0BUPoijczHDf7//38A6vsDI9ZygvE+avmo5aOWj1pOjuVEVy60csDAWQ51wMB1TGkNAP36ZwJAerQYAAAAAElFTkSuQmCC') no-repeat center center/ contain;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  h6.active{
+    
+    &::after{
+      transform: rotate(90deg);
+    }
+  }
+  .type-wap-wrap{
+    padding: 10px 0;
+    background: rgba(12, 27, 52, 1);
+    .col-wap-item{
+      display: block;
+      padding-left: 32px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.65);
+      &:hover{
+        color: rgba(255, 255, 255, 0.65);
+        text-decoration: none;
+      }
+    }
+  }
+`
+
 const FriendLinkList = [
   {
     name: '飞书',
@@ -516,6 +558,7 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
 }) => {
   const [publicCodeVisible, setPublicCodeVisible] = useState<boolean>(false);
   const [videoCodeVisible, setVideoCodeVisible] = useState<boolean>(false);
+  const [footetWapIndex, setFootetWapIndex] = useState<number>(5);
   const [currCodeSrc, setCurrCordSrc] = useState(PUBLIC_CODE);
   return (
     <FooterWrapper>
@@ -528,7 +571,8 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
               </div>
             </Col>
           </Visible>
-          {(origin === 'crm' ? CRM_FOOTER_CONFIG : FOOTER_CONFIG)
+          <Visible md lg xl xxl xxxl>
+            {(origin === 'crm' ? CRM_FOOTER_CONFIG : FOOTER_CONFIG)
             .filter(block => block.title !== '热门搜索产品')
             .map((block, index) => (
               <LinkCol key={block.title} lg={index == 0 ? 5 : 3}>
@@ -554,17 +598,42 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
                 </Row>
               </LinkCol>
             ))}
+          </Visible>
+          <Visible sm xs>
+            {FOOTER_WAP_CONFIG.map((item, index) => (
+              <LinkColWap key={item.title}>
+                <h6 
+                  className={footetWapIndex == index ? 'active' : ''} 
+                  onClick={e => {
+                    if(footetWapIndex == index){
+                      setFootetWapIndex(5)
+                    } else {
+                      setFootetWapIndex(index)
+                    }
+                  }} 
+                >{item.title}</h6>
+                <div className="type-wap-wrap" style={{display: footetWapIndex == index ? 'block' : 'none'}}>
+                  {item.list.map((items, i) => (
+                    <a href={items.href} className="col-wap-item">
+                      {items.name}
+                    </a>
+                  ))}
+                </div>
+              </LinkColWap>
+            ))}
+          </Visible>
           <CompanyDescCol lg={7}>
-            <div className="title">联系我们</div>
-            <a href="tel:4000235100" className="margin-adjust phone">
-              <div>电话: </div>
-              <div>400-0235-100</div>
-            </a>
-
-            <div className="margin-adjust addr">
-              <div>公司地址：</div>
-              <div>浙江省杭州市余杭区梦想小镇天使村11幢</div>
-            </div>
+            <Visible md lg xl xxl xxxl>
+              <div className="title">联系我们</div>
+              <a href="tel:4000235100" className="margin-adjust phone">
+                <div>电话: </div>
+                <div>400-0235-100</div>
+              </a>
+              <div className="margin-adjust addr">
+                <div>公司地址：</div>
+                <div>浙江省杭州市余杭区梦想小镇天使村11幢</div>
+              </div>
+            </Visible>
             <Visible sm xs>
               <Box
                 mb="80px"
@@ -573,7 +642,7 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
                 height="396px"
                 bgcolor="#0D1F3B"
                 display="flex"
-                mr="32px"
+                ml="32px"
                 justifyContent="center"
                 alignItems="center">
                 <div style={{ width: '184px', marginTop: 0 }}>

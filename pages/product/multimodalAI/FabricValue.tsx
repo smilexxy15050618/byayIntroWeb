@@ -5,7 +5,6 @@ import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 import { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
 
 const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
-// const PREFIX = '/static/img2023';
 const FEATURE_TITLE: IFeatureIntroduceProps[] = [
   {
     img1: `${PREFIX}/multimodal-value-1-1.svg`,

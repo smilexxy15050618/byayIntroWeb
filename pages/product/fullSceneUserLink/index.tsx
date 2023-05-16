@@ -11,7 +11,6 @@ import FabricValue from './FabricValue';
 import Features from './Features';
 
 const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
-// const PREFIX = '/static/img2023'
 const BANNER_BG = `${PREFIX}/multimodal-banner-bg.svg`;
 const WAP_BANNER_IMGS = `${PREFIX}/fullSceneUserLink-banner-wap.png`;
 
