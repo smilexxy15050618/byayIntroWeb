@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="857px" height="527px" viewBox="0 0 857 527" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>编组 20备份 2</title>
+    <title>安盾备份 3</title>
     <defs>
         <linearGradient x1="131.790456%" y1="100%" x2="12.3722591%" y2="21.4666201%" id="linearGradient-1">
             <stop stop-color="#3DB1FE" offset="0%"></stop>
@@ -54,9 +54,8 @@
     </defs>
     <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="画板" transform="translate(-201.000000, -151.000000)">
-            <g id="编组-20备份-2" transform="translate(201.171733, 151.000000)">
-                <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="856" height="527" rx="22"></rect>
-                <g id="编组-19" transform="translate(33.051379, 81.538966)">
+            <g id="编组-20备份-3" transform="translate(228.076783, 232.538966)">
+                <g id="编组-19" transform="translate(0.000000, -0.000000)">
                     <text id="建立多渠道融通、主动公开全覆盖、线上线下" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal" line-spacing="24" fill="#1A1A1A">
                         <tspan x="592.92159" y="265.142364">建立多渠道融通、主动公开全覆</tspan>
                         <tspan x="592.92159" y="289.142364">盖、线上线下均联动的一体化智</tspan>
@@ -108,7 +107,7 @@
                         <polygon id="Fill-19" points="34.484813 19.4809576 36.0887578 19.4809576 36.0887578 18.669251 34.484813 18.669251"></polygon>
                         <polygon id="Fill-20" points="36.0887578 18.669251 36.8907302 18.669251 36.8907302 17.8575444 36.0887578 17.8575444"></polygon>
                         <polygon id="Fill-21" points="33.6828406 18.669251 34.484813 18.669251 34.484813 17.8575444 33.6828406 17.8575444"></polygon>
-                        <polygon id="Fill-22" points="32.8808682 0.811706565 33.6828406 0.811706565 33.6828406 0 32.8808682 0"></polygon>
+                        <polygon id="Fill-22" points="32.8808682 0.811706565 33.6828406 0.811706565 33.6828406 -2.84217094e-14 32.8808682 -2.84217094e-14"></polygon>
                         <polygon id="Fill-23" points="32.8808682 3.24682626 33.6828406 3.24682626 33.6828406 2.43511969 32.8808682 2.43511969"></polygon>
                         <polygon id="Fill-24" points="33.6828406 2.43511969 35.2867854 2.43511969 35.2867854 0.811706565 33.6828406 0.811706565"></polygon>
                         <polygon id="Fill-25" points="31.2769234 2.43511969 32.8808682 2.43511969 32.8808682 0.811706565 31.2769234 0.811706565"></polygon>
@@ -116,7 +115,7 @@
                         <polygon id="Fill-27" points="1.60394479 21.9160772 2.40591719 21.9160772 2.40591719 21.1043707 1.60394479 21.1043707"></polygon>
                         <polygon id="Fill-28" points="2.40591719 21.1043707 3.20788958 21.1043707 3.20788958 19.4809576 2.40591719 19.4809576"></polygon>
                         <polygon id="Fill-29" points="0 21.1043707 1.60394479 21.1043707 1.60394479 19.4809576 0 19.4809576"></polygon>
-                        <polygon id="Fill-30" points="1.60394479 0.811706565 2.40591719 0.811706565 2.40591719 0 1.60394479 0"></polygon>
+                        <polygon id="Fill-30" points="1.60394479 0.811706565 2.40591719 0.811706565 2.40591719 -2.84217094e-14 1.60394479 -2.84217094e-14"></polygon>
                         <polygon id="Fill-31" points="1.60394479 3.24682626 2.40591719 3.24682626 2.40591719 2.43511969 1.60394479 2.43511969"></polygon>
                         <polygon id="Fill-32" points="2.40591719 2.43511969 3.20788958 2.43511969 3.20788958 0.811706565 2.40591719 0.811706565"></polygon>
                         <polygon id="Fill-33" points="0 2.43511969 1.60394479 2.43511969 1.60394479 0.811706565 0 0.811706565"></polygon>
@@ -150,7 +149,7 @@
                     <text id="温暖" font-family="PingFangSC-Semibold, PingFang SC" font-size="22" font-weight="500" fill="#2B58F9">
                         <tspan x="132.855836" y="159.305341">温暖</tspan>
                     </text>
-                    <line x1="541.297322" y1="-1.77635684e-14" x2="541.297322" y2="34.6091327" id="路径-13" stroke="#2B58F9" stroke-width="2"></line>
+                    <line x1="541.297322" y1="1.0658141e-14" x2="541.297322" y2="34.6091327" id="路径-13" stroke="#2B58F9" stroke-width="2"></line>
                     <line x1="580.458505" y1="207.356024" x2="580.458505" y2="241.965157" id="路径-13备份" stroke="#2B58F9" stroke-width="2"></line>
                     <line x1="186.601504" y1="134.000775" x2="186.601504" y2="168.609908" id="路径-13备份-2" stroke="#2B58F9" stroke-width="2"></line>
                 </g>
