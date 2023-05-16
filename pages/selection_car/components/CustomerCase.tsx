@@ -102,22 +102,22 @@ const Card = styled.div`
 const CustomerCaseList = [
   {
     title: '陪跑中国领先的汽车消费者在线服务平台数字化进阶之路  ',
-    imgUrl: '/qczjcar.png',
+    imgUrl: '/qczjcar.svg',
     pageUrl: '/form?formType=1',
   },
   {
     title: '助力科技型智能电动汽车品牌实现营销服务数智化升级%',
-    imgUrl: '/lpqccar.png',
+    imgUrl: '/lpqccar.svg',
     pageUrl: '/form?formType=1',
   },
   {
     title: '携手瓜子二手车，打造行业领军的汽车消费服务智能新体验',
-    imgUrl: '/gzcar.png',
+    imgUrl: '/gzcar.svg',
     pageUrl: '/form?formType=1',
   },
   {
     title: '中国领先的汽车互联网企业的营销服务数字化升级之旅%',
-    imgUrl: '/yccar.png',
+    imgUrl: '/yccar.svg',
     pageUrl: '/form?formType=1',
   },
 ];

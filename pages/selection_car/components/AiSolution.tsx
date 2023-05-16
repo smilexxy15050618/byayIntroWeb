@@ -143,22 +143,22 @@ const carouselDataList = [
   {
     title: '全渠道触点管理',
     content: '每个触点回流后导向下一次触点判断，提升再触达精准度和用户转化效率',
-    url: '/use-bank-01.png',
+    url: '/use-bank-01.svg',
   },
   {
     title: '私域联动多维触达',
     content: '为企业设计阶段性增长解决方案，优化沟通体验，提升用户的全生命周期价值',
-    url: '/use-bank-02.png',
+    url: '/use-bank-02.svg',
   },
   {
     title: '旅程自动化运营',
     content: '优化服务流程，有效降低人工时间成本和运营压力，助力企业营销提质增效',
-    url: '/use-bank-03.png',
+    url: '/use-bank-03.svg',
   },
   {
     title: '数字化全景运营',
     content: '拓宽自动化SOP的全场景应用边界，为企业构建并持续迭代精细化运营体系',
-    url: '/use-bank-04.png',
+    url: '/use-bank-04.svg',
   },
 ];
 const MainWrap = styled.div`
