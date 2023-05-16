@@ -14,7 +14,7 @@ const list = [
         content: '打造虚拟民警“卫民小微”，助力提升居民安满度服务成效。'
     },
     {
-        banner: '/gongan-tj.svg',
+        banner: '/gongan-tj.png',
         title: '天津市公安局',
         content: '建立“1+N+N”的线上警务互动平台，实现辖区居民服务一键触达'
     }
