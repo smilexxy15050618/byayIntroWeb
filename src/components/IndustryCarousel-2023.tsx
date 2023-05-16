@@ -490,7 +490,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                   <br /> 复合增长率（CAGR）超100%
                 </div>
 
-                <div className="carousel-btn" onClick={() => window.open('/form?formType=1')}>
+                <div className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/Ebu43ZcMV6ted0f55efIRg')}>
                   点击查看
                 </div>
                 <div className="bg-img-blue">
@@ -537,7 +537,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                 <div
                   className="carousel-btn"
                   onClick={() => {
-                    window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
+                    window.open(`/form?formType=1`);
                   }}>
                   点击查看
                 </div>
