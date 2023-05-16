@@ -372,6 +372,7 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
       }
       
       .scheme-item{
+        display: block;
         width: 276px;
         height: 68px;
         padding: 10px 0 10px 8px;
@@ -628,13 +629,17 @@ class Nav extends React.Component<
                                 <div className={menuItem.type}>{menuItem.title}</div>
                                 <div className="scheme-item-wrap">
                                   {menuItem.expand.map(menuItems => (
-                                    <div className="scheme-item" onClick={() => this.handleOpenNewPage(menuItems.path)}>
+                                    <a 
+                                      className="scheme-item"
+                                      href={menuItems.path}
+                                      key={menuItems.path}
+                                    >
                                       <div className="icon"><img src={menuItems.icon} /></div>
                                       <div className="cheme-item-tips">
                                         <div className="title">{menuItems.title}</div>
                                         <div className="subtitle">{menuItems.desc}</div>
                                       </div>
-                                    </div>
+                                    </a>
                                   ))}
                                 </div>
                               </div>

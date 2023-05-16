@@ -4,17 +4,17 @@ import imgurl from '../../../img.url.js'
 
 const list = [
     {
-        banner: '/bank-ny.svg',
+        banner: '/bank-ny.png',
         title: '中国农业银行',
         content: '高效激活存量客户，精细化运营手段助力转化。'
     },
     {
-        banner: '/bank-hz.svg',
+        banner: '/bank-hz.png',
         title: '杭州联合银行',
         content: '助力银行贷款营销及客户回访场景业务突破。'
     },
     {
-        banner: '/bank-lc.svg',
+        banner: '/bank-lc.png',
         title: '隆昌农商行',
         content: 'AI规模化快速筛选优质客户，提升人效。'
     }
