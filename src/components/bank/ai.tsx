@@ -248,7 +248,7 @@ const AI: FC<IAiProps> = ({}) => {
                 <div className="title">{item.title}</div>
                 <div className="subtitle" dangerouslySetInnerHTML={{ __html: item.subTitleWap }}></div>
                 {/*'/static/img2023'*/}
-                <img src={imgurl+item.urlWap} />
+                <img src={imgurl+item.url} />
               </div>
             ))}
           </ByProgressSwiper>

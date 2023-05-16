@@ -1,6 +1,6 @@
-import React, { FC, useEffect, useState } from 'react';
-import { Visible } from 'react-grid-system';
+import React, { FC, useState, useEffect } from 'react';
 import styled from 'styled-components';
+import {  Hidden, Visible } from 'react-grid-system';
 import imgurl from '../../../img.url.js';
 import ByProgressSwiper from '../common/ByProgressSwiper';
 
@@ -75,6 +75,7 @@ const Pane = styled.div`
   .swiper-wrapper .swiper-slide{
   }
   .channel-item{
+    position: relative;
     width: 310px;
     height: 340px;
     border-radius: 8px;
@@ -93,9 +94,11 @@ const Pane = styled.div`
       line-height: 20px;
     }
     img{
-      margin-top: 22px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
       width: 100%;
-      height: 146px;
+      height: 200px;
     }
   }
 `;

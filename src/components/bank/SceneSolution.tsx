@@ -105,7 +105,7 @@ useEffect(() => {
             </Visible>
             <Visible xs sm>
               <HoveUp>
-                  <img src={carouselDataListWap} />
+                  <img src={carouselDataList} />
               </HoveUp>
             </Visible>
         </MainWrap>

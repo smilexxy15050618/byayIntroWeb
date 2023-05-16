@@ -19,7 +19,7 @@ const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
 const Wrapper = styled.div`
   .m-bg-arror {
     position: absolute;
-    top: 570px;
+    top: 660px;
     left: 50%;
     transform: translate(-50%, 0);
     animation: jump 2s infinite;
@@ -99,6 +99,7 @@ const BlueBtn = styled.div`
   }
 `;
 
+
 const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
   return (
     <>
@@ -116,7 +117,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                   className: ['animate__fadeInRight', 'animate__ahead_300ms'],
                 },
               ]}
-              mobileStyle={{height:'270px',paddingTop: '21px'}}
+              mobileStyle={{height:'304px',paddingTop: '0'}}
               mobileImg={JOIN_US_IMG}>
               <TextArea spaces={['', '']}>
                 <Hidden xs sm>
