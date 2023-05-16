@@ -8,23 +8,34 @@ const titleList = [
   {
     title: '宣防劝阻工作分类管理',
     subTitle: '分段式的预防策略，通过协助公安劝阻、宣防的预防工作，逐步消减受害人、潜在受害人和易感人群的占比',
+    subTitlem:'分段式的预防策略，通过协助公安劝阻、宣防的预防工作，逐步消减受害人、潜在受害人和易感人群的占比',
+
     url: '/gafz1.png',
+    urlm:'/gafz1m.png'
   },
   {
     title: '反诈预防平台业务流程',
     subTitle: '数据清洗与分发<br>策略制定与执行<br>反诈效果追踪反馈<br>专业知识库创建及丰富',
+    subTitlem:'数据清洗与分发，策略制定与执行，反诈效果追踪反馈，专业知识库创建及丰富',
     url: '/gafz2.png',
+    urlm:'/gafz2m.png'
   },
   {
     title: '触达双通道',
     subTitle:
       '群体全覆盖：覆盖潜在受害人群；<br>​业务强闭环：宣传劝阻持续转化；<br>保护全方位：根据不同线索等级，<br>递进式全方位持续保护',
+    subTitlem:'群体全覆盖：覆盖潜在受害人群；<br>​业务强闭环：宣传劝阻持续转化；<br>保护全方位：根据不同线索等级，<br>递进式全方位持续保护',
+
     url: '/gafz3.png',
+    urlm:'/gafz3m.png'
   },
   {
     title: '数据驾驶舱',
     subTitle: '全流程可视化：数据报表和大屏；<br>全面追踪宣传劝阻转化数据；<br>持续反馈居民画像，支撑后续反诈策略决策',
+    subTitlem:'全流程可视化：数据报表和大屏；<br>全面追踪宣传劝阻转化数据；<br>持续反馈居民画像，支撑后续反诈策略决策',
+
     url: '/gafz4.png',
+    urlm:'/gafz4m.png'
   },
 ];
 export interface IAiProps {}
@@ -49,7 +60,8 @@ const Pane = styled.div`
 font-weight: 500;
 letter-spacing: 0px;
 line-height: 40px;
-margin: 40px 31px 16px;
+margin: 40px 39px 16px;
+text-align: justify;
     }
   }
   .sec-title {
@@ -64,6 +76,9 @@ margin: 40px 31px 16px;
 font-weight: 400;
 letter-spacing: 0px;
 line-height: 24px;
+margin: 40px 44px ;
+text-align: justify;
+
     }
   }
 `;
@@ -241,8 +256,8 @@ export const Ai: FC<IAiProps> = ({}) => {
                return (
                   <div className='lists'>
                   <div>{item.title}</div>
-                  <div>{item.subTitle}</div>
-                  <img style={{width: '100%',height: '200px'}} src={imgurl+item.url} alt="" />
+                  <div dangerouslySetInnerHTML={{ __html: item.subTitlem }}></div>
+                  <img style={{width: '100%',height: '200px'}} src={imgurl+item.urlm} alt="" />
                   </div>
                )
              })}

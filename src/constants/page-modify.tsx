@@ -121,7 +121,7 @@ export const NAV_CONFIG = [
             title: '汽车',
             desc: '达成客户体验闭环，驱动增长',
             icon: '/static/img2023/nav-solution-5.svg',
-            path: '/newCar'
+            path: '/selection_car'
           },
           {
             title: '消费金融',
