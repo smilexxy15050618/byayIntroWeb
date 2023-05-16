@@ -101,12 +101,12 @@ const Card = styled.div`
 
 const CustomerCaseList = [
   {
-    title: '陪跑中国领先的汽车消费者在线服务平台数字化进阶之路  ',
+    title: '陪跑中国领先的汽车消费者在线服务平台数字化进阶之路',
     imgUrl: '/qczjcar.svg',
     pageUrl: '/form?formType=1',
   },
   {
-    title: '助力科技型智能电动汽车品牌实现营销服务数智化升级%',
+    title: '助力科技型智能电动汽车品牌实现营销服务数智化升级',
     imgUrl: '/lpqccar.svg',
     pageUrl: '/form?formType=1',
   },
@@ -116,7 +116,7 @@ const CustomerCaseList = [
     pageUrl: '/form?formType=1',
   },
   {
-    title: '中国领先的汽车互联网企业的营销服务数字化升级之旅%',
+    title: '中国领先的汽车互联网企业的营销服务数字化升级之旅',
     imgUrl: '/yccar.svg',
     pageUrl: '/form?formType=1',
   },
