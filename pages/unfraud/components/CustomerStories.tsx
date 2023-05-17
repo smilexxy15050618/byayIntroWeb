@@ -7,16 +7,19 @@ import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 const list = [
     {
         img: '/tj_i.png',
+        img1: '/tj_i_m.png',
         banner: '/tj.png',
         content: '打造全国反诈成效逆势上扬的“天津样板”。'
     },
     {
         img: '/dg_i.png',
+        img1: '/dg_i_m.png',
         banner: '/dg.png',
         content: '高发诈骗类型精准圈定，实效助力反诈指标“双降”。'
     },
     {
         img: '/lp_i.png',
+        img1: '/lp_i_m.png',
         banner: '/lp.png',
         content: '宣传劝阻全量铺开，首创百万级居民反诈“新路径”。'
     }
@@ -186,16 +189,16 @@ export const CustomerStories: FC = () => {
               previewWidth="17%"
             >
                     {
-                        list.map(({ img, banner, content }, index) => {
+                        list.map(({ img, banner, content, img1 }, index) => {
                             return (
                                 <ListItem>
                                     <div style={{ background: `url(${imgurl}${banner})`, backgroundSize: '100% 100%' }} className='banner'></div>
                                     <div className="detail">
-                                        <img src={imgurl + img} alt="" />
+                                        <img src={imgurl + img1} alt="" />
                                         <div>{content}</div>
                                         <div onClick={() =>
                                             window.open('/form?formType=1')
-                                        }>了解详情</div>
+                                        }>体验Demo</div>
                                     </div>
                                 </ListItem>
                             )

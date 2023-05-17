@@ -90,6 +90,9 @@ const MainWrap = styled.div`
    .custom-bar-wrapper{
     display:none;
    }
+   .swiper-counter {
+    display:none;
+   }
 
     .my-slide{
       width: 300px;

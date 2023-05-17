@@ -8,18 +8,21 @@ import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 const list = [
     {
         img: '/public_security.png',
+        img1: '/public_security_m.png',
         banner: '/security_icon1.png',
         content: '保险为本，科技赋能，百应AI助力加快实施数字化战略',
         label: '中国人寿'
     },
     {
         img: '/public_security2.png',
+        img1: '/public_security2_m.png',
         banner: '/security_icon2.png',
         content: 'AI赋能获客提效，开启业绩高效增长之旅',
         label: '人民保险'
     },
     {
         img: '/public_security3.png',
+        img1: '/public_security3_m.png',
         banner: '/security_icon3.png',
         content: '对话式AI高效触达客户，用数智化谱写新篇章',
         label: '众安保险'
@@ -83,7 +86,7 @@ box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
 overflow: hidden;
 position: relative;
 @media(max-width: 768px) {
-    width: 300px;
+    width: 284px;
     height: 356px;
 }
 &:nth-child(2) {
@@ -213,14 +216,14 @@ export const CustomerCase: FC = () => {
                 <ByProgressSwiper
               newProgress={true}
               initialSlide={0}
-              contentPadding="12px" progressPadding="0px"
-              previewWidth="17%"
+              contentPadding="4%" progressPadding="0px"
+              previewWidth="20%"
             >
                     {
-                        list.map(({ img, banner, content }, index) => {
+                        list.map(({ img, banner, content, img1 }, index) => {
                             return (
                                 <ListItem>
-                                    <div style={{ background: `url(${imgurl}${img})`, backgroundSize: '100% 100%' }} className='banner'></div>
+                                    <div style={{ background: `url(${imgurl}${img1})`, backgroundSize: '100% 100%' }} className='banner'></div>
                                     <div className="detail">
                                         {/* <img src={imgurl + img} alt="" /> */}
                                         <div>{content}</div>

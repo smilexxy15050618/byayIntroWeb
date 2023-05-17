@@ -135,7 +135,7 @@ const Game:NextFunctionComponent<IGameProps>=()=>{
                     <BigTitle>
                     百应安盾<br />电信网络诈骗预防平台
                     </BigTitle>
-                    <Desc>全链条贯通反诈的宣传劝阻业务流程，打造具备“点面<br/>结合，长短并行”能力的AI虚拟民警</Desc>
+                    <Desc>全链条贯通反诈的宣传劝阻业务流程，打造具备“点面结合，长短并行”能力的AI虚拟民警</Desc>
                     <BlueBtn
                       onClick={() =>
                         window.open('/form?formType=1')

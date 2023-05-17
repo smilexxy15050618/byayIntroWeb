@@ -58,7 +58,7 @@ const Pane = styled.div`
 font-weight: 500;
 letter-spacing: 0px;
 line-height: 40px;
-margin: 40px 39px 16px;
+margin: 40px 31px 16px;
 text-align: justify;
     }
   }
@@ -76,7 +76,7 @@ text-align: justify;
 font-weight: 400;
 letter-spacing: 0px;
 line-height: 24px;
-margin: 40px 44px ;
+margin: 0px 31px;
 text-align: justify;
 
     }
@@ -108,6 +108,9 @@ const ListWrapper = styled.div`
         color: rgba(0, 0, 0, 1);
         text-align: justify;
         margin-bottom: 24px;
+      }
+      img {
+        margin-left: -8px;
       }
     }
   }

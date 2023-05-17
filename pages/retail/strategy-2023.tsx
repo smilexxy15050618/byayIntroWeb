@@ -185,7 +185,7 @@ const Strategy: FC<IStrategyProps> = ({ }) => {
       <Visible xs sm>
         <MainMobileStyle id="STRAGETYMOBILE">
         <Pane title="百应策略: 被TOP品牌验证的会员运营策略">
-        <div style={{  width: '100vw', margin: '0 auto' }}>
+        <div style={{  width: '100vw', margin: '-16px auto 0' }}>
           <Wrapper id={STRATEGY}>
             <ByProgressSwiper
               newProgress={true}
@@ -206,7 +206,7 @@ const Strategy: FC<IStrategyProps> = ({ }) => {
         </div>
         </Pane>
         <Pane title="百应玩法：行业领先的AI触达运营方法论">
-        <div style={{ width: '100vw', margin: '0 auto' }}>
+        <div style={{ width: '100vw', margin: '-16px auto 0' }}>
           <Wrapper id={STRATEGY1}>
             <ByProgressSwiper
               newProgress={true}
