@@ -34,6 +34,9 @@ const titleList = [
 export interface IAiProps {};
 const Pane = styled.div`
 padding: 80px 0;
+@media(max-width: 768px) {
+  padding: 40px 0;
+}
 .title {
     font-size: 40px;
 font-weight: 500;

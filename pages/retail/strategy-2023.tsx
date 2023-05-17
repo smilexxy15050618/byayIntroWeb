@@ -195,11 +195,11 @@ const Strategy: FC<IStrategyProps> = ({ }) => {
             >
               <div style={{ width: '100%' }} className="my-slide">
                 <div>提升超级会员占比 拉升会员LTV</div>
-                <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/strategy2.png'}></img>
+                <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/strategy2_m.png'}></img>
               </div>
               <div style={{ width: '100%' }} className="my-slide">
                 <div>全流程策略支持，实现优体验、高转化</div>
-                <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/strategy1.png'}></img>
+                <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/strategy1_m.png'}></img>
               </div>
             </ByProgressSwiper>
           </Wrapper>
@@ -216,11 +216,11 @@ const Strategy: FC<IStrategyProps> = ({ }) => {
             >
               <div style={{ width: '100%' }} className="my-slide">
                 <div>一式 × 三率 × 七变量</div>
-                <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/play1.png'}></img>
+                <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/play1_m.png'}></img>
               </div>
               <div style={{ width: '100%' }} className="my-slide">
                 <div>触达流程精细化，AI带来效率质变</div>
-                <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/play2.png'}></img>
+                <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/play2_m.png'}></img>
               </div>
             </ByProgressSwiper>
           </Wrapper>

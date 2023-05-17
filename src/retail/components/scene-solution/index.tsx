@@ -11,7 +11,7 @@ export interface ISceneSolutionMobileProps {
   onJumpClick: () => void;
 }
 
-const SceneSolutionMobile: FC<ISceneSolutionMobileProps> = ({ title = '场景解决方案', dataList, onJumpClick }) => {
+const SceneSolutionMobile: FC<ISceneSolutionMobileProps> = ({ dataList, onJumpClick }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleTabClick = (index: number) => {
@@ -26,7 +26,9 @@ const SceneSolutionMobile: FC<ISceneSolutionMobileProps> = ({ title = '场景解
 
   return (
     <Wrapper>
-      <div className="title">{title}</div>
+        <div style={{fontSize: '24px',fontWeight: 50,lineHeight: '40px',color: 'rgba(0, 0, 0, 1)',textAlign: 'center', margin: '40px 0 24px'}}>
+          AI赋能零售品牌全域增长<br/>打造核心用户价值
+        </div>
       <div className="tab-wrapper">
         <Container fluid>
           <Row>
