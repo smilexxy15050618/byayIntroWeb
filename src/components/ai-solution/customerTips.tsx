@@ -103,19 +103,19 @@ width: 18px;
 `
 const dataList = [
     {
-        url: '/cusino2.png',
+        url: '/cusino2_m.png',
         bg: '/mz.png'
     },
     {
-        url: '/cusino3.png',
+        url: '/cusino3_m.png',
         bg: '/fs.png',
     },
     {
-        url: '/cusino4.png',
+        url: '/cusino4_m.png',
         bg: '/ry.png'
     },
     {
-        url: '/cusino5.png',
+        url: '/cusino5_m.png',
         bg: '/syt.png'
     }
 ]
@@ -211,21 +211,22 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
             </Visible>
             <Visible xs sm>
 
-                <div id={CUSTOMERTIPS} style={{ width: 'calc(100vw - 18px)', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
+                <div id={CUSTOMERTIPS} style={{ width: 'calc(100vw)', margin: '0 auto', display: 'flex', justifyContent: 'center', background: 'rgba(246, 252, 255, 1)' }}>
 
                     <div className='wrap_hovres'>
 
                         <Pane title="客户案例"
-                            titleStyle={{ marginBottom: '48px', position: 'relative', zIndex: 22 }}
-                            style={{ paddingBottom: 100 }} mobileStyle={{ paddingBottom: 40 }}>
+                            titleStyle={{ marginBottom: '32px', position: 'relative', zIndex: 22 }}
+                            style={{ paddingBottom: 100 }} mobileStyle={{ 
+                            paddingBottom: 40, background: 'none' }}>
                             <ByProgressSwiper
                                 newProgress={true}
                                 initialSlide={0}
-                                contentPadding="2.4%" progressPadding="0px"
+                                contentPadding="19px" progressPadding="0px"
                                 previewWidth="0"
                             >
                                 {dataList.map(({ url }) => (
-                                    <div style={{}}>
+                                    <div style={{width: 'calc(100vw - 18px)',background: '#fff', padding: '13px 19px 16px' }}>
                                         <div className='card'>
                                             <img src={`${imgurl}${url}`} />
                                         </div>

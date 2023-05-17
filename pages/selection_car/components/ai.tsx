@@ -155,7 +155,7 @@ const Strategy: FC<IStrategyProps> = ({}) => {
               contentPadding="12px"
               progressPadding="0px"
               previewWidth="0"
-              autoplayDelay={15000}
+              autoplayDelay={3000}
               
             >
               <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/carbanner1m.png'}></img>

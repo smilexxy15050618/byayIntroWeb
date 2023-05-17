@@ -8,7 +8,7 @@ import { Ai } from './components/Ai';
 // import {CoreValues} from './components/CoreValues'
 import { WhySelect } from './components/WhySelect'
 import { CustomerCase } from './components/CustomerCase'
-import { HOST_ENUM,scrollIntoOffset } from '../../src/lib/utils';
+import { HOST_ENUM, scrollIntoOffset } from '../../src/lib/utils';
 import { Wrapper } from '../../src/components/voice-robot/style';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 import imgurl from '../../img.url.js'
@@ -148,7 +148,7 @@ const Game: NextFunctionComponent<IGameProps> = () => {
 
 
             <Visible xs sm>
-            <Down>
+              {/* <Down>
             <img
               onClick={() => {
                 scrollIntoOffset('#AI', 390);
@@ -156,8 +156,8 @@ const Game: NextFunctionComponent<IGameProps> = () => {
               src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/mobile/bg/arror.png"
               className="m-bg-arror"
             />
-            </Down>
-            <BannerWhite
+            </Down> */}
+              <BannerWhite
                 background={[`url(${BANNER_BG}) right top ,rgba(246, 252, 255, 1)`, 'rgba(246, 252, 255, 1)']}
                 pcImgs={[
                   {
@@ -167,16 +167,18 @@ const Game: NextFunctionComponent<IGameProps> = () => {
                   },
                 ]}
                 mobileImg={JOIN_US_IMG}>
-                    <BigTitle>
+                <div style={{padding: '0 8px'}}>
+                  <BigTitle>
                     保险行业<br />BPO解决方案
-                    </BigTitle>
-                    <Desc>“大数据+AI+人”三驱模式，为保险客户提供从赠险<br />到长险的全业务链条服务</Desc>
-                    <BlueBtn
-                      onClick={() =>
-                        window.open('/form?formType=1')
-                      }>
-                      预约体验
-                    </BlueBtn>
+                  </BigTitle>
+                  <Desc>“大数据+AI+人”三驱模式，为保险客户提供从赠险到长险的全业务链条服务</Desc>
+                  <BlueBtn
+                    onClick={() =>
+                      window.open('/form?formType=1')
+                    }>
+                    预约体验
+                  </BlueBtn>
+                </div>
               </BannerWhite>
               <Ai></Ai>
               <WhySelect></WhySelect>

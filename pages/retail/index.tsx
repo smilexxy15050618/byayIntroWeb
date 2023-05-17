@@ -338,18 +338,18 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
               <AiSolution></AiSolution>
               <CustomerSolution></CustomerSolution>
               <ByVoiceFooter
-              title="立即体验AI时代的新一代用户运营平台"
-              desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
-              btnText="与我联系"
-              background={`url(${FOOTER_BG})`}
-              onClick={() => {
-                window.open('/form?formType=1');
-              }}
-            />
+                title="立即体验AI时代的新一代用户运营平台"
+                desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
+                btnText="与我联系"
+                background={`url(${FOOTER_BG})`}
+                onClick={() => {
+                  window.open('/form?formType=1');
+                }}
+              />
               {/* <Play /> */}
             </Visible>
             <Visible xs sm>
-            <Down>
+              {/* <Down>
             <img
               onClick={() => {
                 scrollIntoOffset('#STRAGETYMOBILE', 50);
@@ -357,7 +357,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
               src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/mobile/bg/arror.png"
               className="m-bg-arror"
             />
-            </Down>
+            </Down> */}
               <BannerWhite
                 background={[`url(${BANNER_BG}) right top ,rgba(246, 252, 255, 1)`, 'rgba(246, 252, 255, 1)']}
                 pcImgs={[
@@ -368,17 +368,17 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                   },
                 ]}
                 mobileImg={JOIN_US_IMG}>
-                <BigTitle>
-                  品牌零售
-                  <br />
-                  智能用户运营解决方案
-                </BigTitle>
-                <Desc>
-                  通过对话式AI助力品牌实现「极致用户体验+极致
-                  <br />
-                  ROI」的全域营销服务
-                </Desc>
-                <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+                <div style={{ padding: '0 8px' }}>
+                  <BigTitle>
+                    品牌零售
+                    <br />
+                    智能用户运营解决方案
+                  </BigTitle>
+                  <Desc>
+                    针对零售行业会员增长需求，设计用户运营策略，通过对话式AI助力品牌实现「极致用户体验+极致ROI」的全域营销服务
+                  </Desc>
+                  <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+                </div>
               </BannerWhite>
               {/* {STRATEGY_LIST.map(item => (
                 <StrategyMobile key={item.desc} {...item} />
@@ -393,20 +393,20 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
               <AiSolution></AiSolution>
               <CustomerSolution></CustomerSolution>
               <ByVoiceFooter
-              title="立即体验AI时代的新一代用户运营平台"
-              desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
-              btnText="与我联系"
-              background={`url(${FOOTER_BG})`}
-              onClick={() => {
-                window.open('/form?formType=1');
-              }}
-            />
+                title="立即体验AI时代的新一代用户运营平台"
+                desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
+                btnText="与我联系"
+                background={`url(${FOOTER_BG})`}
+                onClick={() => {
+                  window.open('/form?formType=1');
+                }}
+              />
             </Visible>
             {/* <AIEmployee /> */}
 
             {/* <Advantage></Advantage> */}
             {/* <CustomerIconsBlock padding="73px 0 83px" /> */}
-            
+
             {/* <ByVoiceFooter
               title={
                 <>

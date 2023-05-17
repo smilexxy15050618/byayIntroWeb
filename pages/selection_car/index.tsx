@@ -12,7 +12,7 @@ import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 import ByProgressSwiper from '../../src/components/common/ByProgressSwiper';
 
 import imgurl from '../../img.url.js';
-import { HOST_ENUM,scrollIntoOffset } from '../../src/lib/utils';
+import { HOST_ENUM, scrollIntoOffset } from '../../src/lib/utils';
 const BANNER_BG = `${imgurl}/about_banner_bg.png`;
 const JOIN_US_IMG = `${imgurl}/cartopbanner.png`;
 const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
@@ -108,62 +108,11 @@ const Down = styled.div`
 
 const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
   return (
-    <Layout hostType={hostType} headPlaceholder={[false, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
+    <Layout hostType={hostType} headPlaceholder={[false, false]} headFontStyle={['dark', 'dark']}>
       {(visible, setVisible) => (
         <>
           <Wrapper>
-          <Visible md lg xl xxl xxxl>
-            <BannerWhite
-              background={[`url(${BANNER_BG}) right top ,rgba(246, 252, 255, 1)`, 'rgba(246, 252, 255, 1)']}
-              pcImgs={[
-                {
-                  src: JOIN_US_IMG,
-                  style: { width: 644, height: 496, top: 0, right: 0 },
-                  className: ['animate__fadeInRight', 'animate__ahead_300ms'],
-                },
-              ]}
-              mobileImg={JOIN_US_IMG}>
-              <TextArea spaces={['', '']}>
-                <Hidden xs sm>
-                  <BigTitle>
-                    汽车行业
-                    <br />
-                    数智化解决方案
-                  </BigTitle>
-                  <Desc>
-                    通过AI智能外呼机器人帮助车企建立用户营销触达策略
-                    <br />
-                    和完善的用户画像体系，实现企业升级和营销转型，驱动业务持续增长
-                  </Desc>
-                  <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
-                </Hidden>
-               
-              </TextArea>
-            </BannerWhite>
-              <AI></AI>
-            <SceneSolution></SceneSolution>
-            <AiSolution></AiSolution>
-            <CustomerCase></CustomerCase>
-            <ByVoiceFooter
-              title="立即体验AI时代的新一代用户运营平台"
-              desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
-              btnText="与我联系"
-              background={`url(${FOOTER_BG})`}
-              onClick={() => window.open('/form?formType=1')}
-            />
-            </Visible >
-
-
-            <Visible xs sm>
-            <Down>
-            <img
-              onClick={() => {
-                scrollIntoOffset('#STRATEGY_WRAP', 180);
-              }}
-              src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/mobile/bg/arror.png"
-              className="m-bg-arror"
-            />
-            </Down>
+            <Visible md lg xl xxl xxxl>
               <BannerWhite
                 background={[`url(${BANNER_BG}) right top ,rgba(246, 252, 255, 1)`, 'rgba(246, 252, 255, 1)']}
                 pcImgs={[
@@ -174,24 +123,76 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
                   },
                 ]}
                 mobileImg={JOIN_US_IMG}>
-                <BigTitle>
-                汽车行业
-                  <br />
-                  数智化解决方案
-                </BigTitle>
-                <Desc>
-                通过AI智能外呼机器人帮助车企建立用户营销触达策略
+                <TextArea spaces={['', '']}>
+                  <Hidden xs sm>
+                    <BigTitle>
+                      汽车行业
+                      <br />
+                      数智化解决方案
+                    </BigTitle>
+                    <Desc>
+                      通过AI智能外呼机器人帮助车企建立用户营销触达策略
+                      <br />
+                      和完善的用户画像体系，实现企业升级和营销转型，驱动业务持续增长
+                    </Desc>
+                    <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+                  </Hidden>
+
+                </TextArea>
+              </BannerWhite>
+              <AI></AI>
+              <SceneSolution></SceneSolution>
+              <AiSolution></AiSolution>
+              <CustomerCase></CustomerCase>
+              <ByVoiceFooter
+                title="立即体验AI时代的新一代用户运营平台"
+                desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
+                btnText="与我联系"
+                background={`url(${FOOTER_BG})`}
+                onClick={() => window.open('/form?formType=1')}
+              />
+            </Visible >
+
+
+            <Visible xs sm>
+              {/* <Down>
+            <img
+              onClick={() => {
+                scrollIntoOffset('#STRATEGY_WRAP', 180);
+              }}
+              src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/mobile/bg/arror.png"
+              className="m-bg-arror"
+            />
+            </Down> */}
+              <BannerWhite
+                background={[`url(${BANNER_BG}) right top ,rgba(246, 252, 255, 1)`, 'rgba(246, 252, 255, 1)']}
+                pcImgs={[
+                  {
+                    src: JOIN_US_IMG,
+                    style: { width: 644, height: 496, top: 0, right: 0 },
+                    className: ['animate__fadeInRight', 'animate__ahead_300ms'],
+                  },
+                ]}
+                mobileImg={JOIN_US_IMG}>
+                <div style={{padding: '0 8px'}}>
+                  <BigTitle>
+                    汽车行业
                     <br />
+                    数智化解决方案
+                  </BigTitle>
+                  <Desc>
+                    通过AI智能外呼机器人帮助车企建立用户营销触达策略
                     和完善的用户画像体系，实现企业升级和营销转型，驱动业务持续增长
-                </Desc>
-                <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+                  </Desc>
+                  <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+                </div>
               </BannerWhite>
 
               <AI></AI>
-            <SceneSolution></SceneSolution>
-            <AiSolution></AiSolution>
-            <CustomerCase></CustomerCase>
-            {/* <ByVoiceFooter
+              <SceneSolution></SceneSolution>
+              <AiSolution></AiSolution>
+              <CustomerCase></CustomerCase>
+              {/* <ByVoiceFooter
               title="立即体验AI时代的新一代用户运营平台"
               desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
               btnText="与我联系"
@@ -199,7 +200,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
               onClick={() => window.open('/form?formType=1')}
             /> */}
             </Visible>
-          
+
           </Wrapper>
         </>
       )}

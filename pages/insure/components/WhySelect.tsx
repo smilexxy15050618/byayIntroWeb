@@ -18,6 +18,10 @@ const dataList = [
 const Wrapper = styled.div`
 padding-top: 80px;
 padding-bottom: 100px;
+@media(max-width: 768px) {
+    padding-top: 40px;
+    padding-bottom: 32px;
+}
 .custom-bar-wrapper , .swiper-counter{
     display:none;
 }
