@@ -35,17 +35,29 @@ export const NavBar = styled.div < { collapse: boolean } > `
 
   .tree-list .tree-list {
     .tree-node-content {
-      height: 56px;
+      height: 48px;
+      padding-left: 18px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
       @media (max-width: 768px) {
-        min-height: 56px;
+        min-height: 48px;
         height: auto;
       }
     }
-  }
-  .solution-two-item .tree-node-content{
-    height: 56px !important;
-    min-height: 56px !important;
-    padding: 4px 0;
+    .solution-two-item{
+      width: 160px;
+      margin-left:16px;
+      float: left;
+      overflow: hidden;
+      .tree-node-content{
+        padding-left: 0;
+      }
+      &:nth-child(1){
+        margin-left:18px;
+      }
+    }
+    
   }
 `;
 interface INodeProps {
@@ -57,13 +69,15 @@ export const TreeNode = styled.div < INodeProps > `
   width: 100%;
   background: white;
   cursor: pointer;
+  padding-left: 0 !important;
   .link-btn-wrapper {
     height: 64px;
     border-radius: 6px;
-    padding: 8px;
     display: flex;
+    align-items: center;
+    padding-left: 8px;
     @media (max-width: 768px) {
-      min-height: 64px;
+      min-height: 48px;
       height:auto;
     }
   }
@@ -80,9 +94,6 @@ export const TreeNode = styled.div < INodeProps > `
       height: 56px !important;
       min-height: 56px !important;
     }
-    .link-btn-info-title{
-      margin: 0;
-    }
     &::before{
       content: '';
       width: 280px;
@@ -98,46 +109,42 @@ export const TreeNode = styled.div < INodeProps > `
       background: none !important;
     }
     .tree-node-content{
-      margin-left: 6px;
       width: 280px;
-      height: 56px !important;
-      min-height: 56px !important;
     }
     .triangle-icon{
       display: none;
     }
     .link-btn-wrapper{
-      height: 56px;
-      padding: 0;
+      width: 100%;
+      height: 32px;
+      line-height: 32px;
+      padding: 0 0 0 8px;
+      border-radius:0;
+      border-bottom: 1px solid rgba(240, 240, 240, 1);
     }
     .link-btn-icon{
       display: none;
     }
     .link-btn-info-title{
-      margin: 0 0 0 6px;
-      font-size: 16px;
-      font-weight: 500;
-      width: 268px;
-      height: 56px;
-      line-height: 56px;
-      color: rgba(26, 26, 26, 1);
-      border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 1);
       box-sizing: border-box;
     }
   }
   .link-btn-icon {
-    width: 48px;
-    height: 48px;
-    background: #f5f6f8;
-    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 5.33px;
+    background: rgba(242, 245, 255, 1);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 16px;
+    margin-right: 12px;
     > * {
       margin-bottom: 0;
-      font-size: 32px;
-      height: 32px;
+      font-size: 18px;
+      height: 18px;
     }
   }
   .link-btn-info-title {
@@ -172,16 +179,16 @@ export const TreeNode = styled.div < INodeProps > `
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     color: #000000;
-    line-height: 22px;
-    height: 62px;
-    padding-right: 27px;
+    line-height: 56px;
+    height: 56px;
+    padding-right: 16px;
     &.is-expand {
       color: #2b58f9;
-      background: rgba(242, 245, 255, 1);
-      .triangle-icon {
+      // background: rgba(242, 245, 255, 1);
+      .link-btn-info-title {
         color: #2b58f9;
       }
     }
@@ -195,9 +202,9 @@ export const TreeNode = styled.div < INodeProps > `
 const levelFirst = css < INodeProps > `
   background: white;
   .tree-node-content {
-    padding-left: 24px;
-    border-bottom: 1px solid
-      ${props => (props.nodeInfo.children && props.nodeInfo.isExpand ? '#FFFFFF' : 'rgba(0, 0, 0, 0.08)')};
+    padding-left: 18px;
+    // border-bottom: 1px solid
+    //   ${props => (props.nodeInfo.children && props.nodeInfo.isExpand ? '#FFFFFF' : 'rgba(0, 0, 0, 0.08)')};
   }
 `;
 const levelSecond = css < INodeProps > `
@@ -257,6 +264,9 @@ export const ScrollWrap = styled.div`
   height: 100%;
   padding-bottom: 100px; // 补充底部按钮高度
   overflow-y: auto;
+  .tree-list{
+    padding-top: 8px;
+  }
 `;
 
 export const LoginRegister = styled.div`

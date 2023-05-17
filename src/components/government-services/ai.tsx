@@ -85,11 +85,11 @@ const Pane = styled.div`
       padding-top: 16px;
       font-size: 16px;
       line-height: 20px;
-      padding: 20px 15px 0;
+      padding: 24px 16px 0;
       text-align: left;
     }
     .subtitle {
-      padding: 10px 15px 15px;
+      padding: 12px 16px 15px;
       font-size: 12px;
       font-weight: 400;
       line-height: 20px;

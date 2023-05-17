@@ -108,7 +108,7 @@ const Down = styled.div`
 
 const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
   return (
-    <Layout hostType={hostType} headPlaceholder={[false, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
+    <Layout hostType={hostType} headPlaceholder={[false, false]} headFontStyle={['dark', 'dark']}>
       {(visible, setVisible) => (
         <>
           <Wrapper>

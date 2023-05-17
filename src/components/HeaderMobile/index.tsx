@@ -73,7 +73,7 @@ const RawHeaderMobileNew: FC<IProps> = ({ initialOpacity, className, setForm, he
         </NavBarToggler >
         {/* 导航栏 */}
         < NavBar collapse={collapse} >
-          <ScrollWrap>
+          <ScrollWrap style={{borderTop:'1px solid rgba(26, 26, 26, 0.18)'}}>
             <ByTree nodePropsMap={NODE_PROPS_MAP} data={NAV_CONFIG} repelExpandLevel={[1]}>
               {/* 
                 children由用户定义返回
@@ -101,7 +101,7 @@ const RawHeaderMobileNew: FC<IProps> = ({ initialOpacity, className, setForm, he
                             </div>
                             <div>
                               <div className="link-btn-info-title">{nodeInfo.title}</div>
-                              {nodeInfo.desc && <div className="link-btn-info-desc">{nodeInfo.desc}</div>}
+                              {/*{nodeInfo.desc && <div className="link-btn-info-desc">{nodeInfo.desc}</div>}*/}
                             </div>
                           </div>
                         )}

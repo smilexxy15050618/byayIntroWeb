@@ -13,13 +13,13 @@ export const NAV_CONFIG = [
     name: '产品与服务',
     smallDropdown: true,
     expand: [
-      {
-        title: '智能用户运营平台',
-        desc: '',
-        icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/百应智能（用户）运营平台.svg',
-        path: 'javascript:void(0)',
-        // path:'/product/intelligenceUser'
-      },
+      // {
+      //   title: '智能用户运营平台',
+      //   desc: '',
+      //   icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/百应智能（用户）运营平台.svg',
+      //   path: 'javascript:void(0)',
+      //   // path:'/product/intelligenceUser'
+      // },
       {
         title: '多模态情感化AI（MEAI）',
         desc: '多模态、情感化、主动式、全双工',

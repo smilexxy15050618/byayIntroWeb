@@ -247,33 +247,39 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
   pointer-events: ${props => (props.visible ? 'auto' : 'none')};
   cursor: auto;
   .small-dropdown-content {
-    border-radius: 8px;
-    min-width: 400px;
-    padding: 32px 40px;
+    width: 304px;
+    height: 236px;
+    padding: 16px 16px 12px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+    border-radius: 0px 0px, 4px, 4px;
     background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 4px 16px 0px rgba(43, 88, 249, 0.08);
     transition: all 0.3s ease-in-out;
     opacity: ${props => (props.visible ? 1 : 0)};
     cursor: ${props => (props.visible ? 'pointer' : 'auto')};
     overflow: hidden;
-    gap: 3px;
-
+    box-sizing: border-box;
     .link-btn-wrapper {
-      height: 64px;
+      width: 272px;
+      height: 48px;
+      line-height: 48px;
+      padding: 10px 0 10px 8px;
       border-radius: 6px;
-      padding: 8px;
       display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      margin-bottom: 4px;
       &:hover {
-        border-radius: 6px; 
+        border-radius: 6px;
         background: rgba(242, 245, 255, 1);
         .link-btn-info-title {
-          color:rgba(43, 88, 249, 1);
+          color: rgba(43, 88, 249, 1);
         }
       }
     }
-    .borderStyle {
+    /*.borderStyle {
       height: 48px;
       border-bottom: 1px solid rgba(26,26,26,0.18);
       .link-btn-wrapper {
@@ -292,27 +298,27 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
               color: rgba(0,0,0,1);
         }
       }
-    }
+    }*/
     .link-btn-icon {
-      width: 48px;
-      height: 48px;
-      background: #f5f6f8;
-      border-radius: 8px;
+      width: 32px;
+      height: 32px;
+      border-radius: 5.33px;
+      background: rgba(242, 245, 255, 1);
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-right: 16px;
+      margin-right: 12px;
       > * {
         margin-bottom: 0;
-        font-size: 32px;
-        height: 32px;
+        font-size: 18px;
+        height: 18px;
       }
     }
     .link-btn-info-title {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 400;
-      line-height: 24px;
-      color: rgba(0,0,0,1);
+      line-height: 20px;
+      color: rgba(0, 0, 0, 1);
     }
 
     .link-btn-info-desc {
@@ -322,90 +328,82 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
       color: rgba(10,15,44,0.45);
       white-space: nowrap;
     }
-    .link-btn-small {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 50px;
-      font-size: 16px;
-      color: rgba(0, 0, 0, 0.65);
-      :hover {
-        color: #2b58f9;
-      }
-    }
   }
   .solve-scheme-content {
-    width: 940px;
-    height: 330px;
-    padding: 22px 40px 0;
-    display: flex;
+    width: 336px;
+    height: 372px;
+    border-radius: 0px 0px, 4px, 4px;
     background: rgba(255, 255, 255, 1);
-    border-radius: 8px;
+    box-shadow: 0px 4px 16px 0px rgba(43, 88, 249, 0.08);
+    display: flex;
     transition: all 0.3s ease-in-out;
+    padding: 8px 16px 16px;
     opacity: ${props => (props.visible ? 1 : 0)};
     cursor: ${props => (props.visible ? 'pointer' : 'auto')};
     overflow: hidden;
     box-sizing: border-box;
     .solve-scheme-item {
       &:nth-child(1) {
-        width: 568px;
+        width: 144px;
       }
       &:nth-child(2) {
-        width: 276pxpx;
+        width: 144px;
         margin-left: 16px;
       }
       .scheme-title {
-        padding-left: 28px;
-        height: 58px;
-        line-height: 56px;
-        font-size: 18px;
-        color: rgba(26, 26, 26, 1);
-        border-bottom: 1px solid rgba(26, 26, 26, 0.18);
-        margin-bottom: 16px;
+        padding-left: 7px;
+        height: 31px;
+        line-height: 32px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 32px;
+        color: rgba(90, 90, 90, 1);
+        border-bottom: 1px solid rgba(240, 240, 240, 1);
       }
       .scheme-item-wrap{
-        width: 568px;
+        padding-top: 8px;
+        width: 144px;
         display: flex;
         flex-wrap: wrap;
       }
       
       .scheme-item{
         display: block;
-        width: 276px;
-        height: 68px;
+        width: 144px;
+        height: 48px;
+        line-height: 48px;
         padding: 10px 0 10px 8px;
         display: flex;
         align-items: center;
+        margin-bottom: 4px;
         &:hover{
           border-radius: 6px;
           background: rgba(242, 245, 255, 1);
           .cheme-item-tips .title{
-            color:rgba(43, 88, 249, 1)
+            color: rgba(43, 88, 249, 1);
           }
         }
-        &:nth-child(2n){
-          margin-left: 16px;
-        }
         .icon{
-          width: 48px;
-          height: 48px;
-          padding: 8px;
-          border-radius: 8px;
-          background: rgba(242, 245, 255, 1);
-          box-sizing: border-box;
-        }
-        img{
           width: 32px;
           height: 32px;
-          margin: 0;
+          border-radius: 5.33px;
+          background: rgba(242, 245, 255, 1);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 12px;
+          > * {
+            margin-bottom: 0;
+            font-size: 18px;
+            height: 18px;
+          }
         }
         .cheme-item-tips{
           flex: 1;
-          padding-left: 16px;
           .title{
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 400;
-            line-height: 24px;
+            line-height: 20px;
             color: rgba(0, 0, 0, 1);
           }
           .subtitle{
@@ -414,14 +412,6 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
             line-height: 22px;
             color: rgba(10, 15, 44, 0.45);
           }
-        }
-      }
-      &:nth-child(2) {
-        .scheme-item-wrap{
-          width: 278px;
-        }
-        .scheme-item{
-          margin: 0;
         }
       }
     }
@@ -635,7 +625,7 @@ class Nav extends React.Component<
                                       <div className="icon"><img src={menuItems.icon} /></div>
                                       <div className="cheme-item-tips">
                                         <div className="title">{menuItems.title}</div>
-                                        <div className="subtitle">{menuItems.desc}</div>
+                                        {/*<div className="subtitle">{menuItems.desc}</div>*/}
                                       </div>
                                     </a>
                                   ))}
@@ -656,7 +646,7 @@ class Nav extends React.Component<
                                     </div>
                                     <div>
                                       <div className="link-btn-info-title">{menuItem.title}</div>
-                                      {menuItem.desc && <div className="link-btn-info-desc">{menuItem.desc}</div>}
+                                      {/*{menuItem.desc && <div className="link-btn-info-desc">{menuItem.desc}</div>}*/}
                                     </div>
                                   </div>
                                 </a>

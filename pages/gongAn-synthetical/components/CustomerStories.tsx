@@ -6,7 +6,7 @@ import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 
 const list = [
     {
-        banner: '/gongan-hz.svg',
+        banner: '/gongan-hz.svg.png',
         title: '杭州市临平区公安局',
         content: '宣传、服务全量铺开，首创百万级居民治理服务“新路径”。'
     },
