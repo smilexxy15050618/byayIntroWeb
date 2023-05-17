@@ -15,6 +15,7 @@ import {
   CustomerWords,
   JoinUs,
 } from '../../src/components/about';
+import AboutOld, { AboutContent } from '../about';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 import imgurl from '../../img.url.js';
 import { HOST_ENUM } from '../../src/lib/utils';
@@ -184,7 +185,7 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
             <JoinUs backgroundImage={JOINUS_BG} />
           </Hidden>
           <Visible xs sm>
-            <BannerWhite
+            {/*<BannerWhite
               height={['560px', '584px']}
               LinearHeight={['500px', '100%']}
               background={[`url(${BANNER_BG}) right top ,#F6FCFF`, `url(${BANNER_WAP_BG}) center,#F6FCFF`]}
@@ -236,7 +237,8 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
                 },
               ]}
               onCancel={hadnleNav}
-            />
+            />*/}
+            {AboutContent}
           </Visible>
           <ByVoiceFooter
             title="立即体验AI时代的新一代用户运营平台"
