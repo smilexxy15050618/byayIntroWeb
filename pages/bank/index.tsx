@@ -130,7 +130,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                   <Desc>
                     覆盖银行零售业务各场景，以存量用户运营为核心，推<br />动银行4.0转型升级，助力银行增强用户信任和业务<br />增长
                   </Desc>
-                  <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+                  <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
                 </Hidden>
                 <Visible xs sm>
                   <BigTitle>
@@ -142,7 +142,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                       onClick={() =>
                         window.open('/form?formType=1')
                       }>
-                      预约体验
+                      立即体验
                     </BlueBtn>
                   </BlueBtnWrap>
                 </Visible>

@@ -97,6 +97,7 @@ img {
       width: 300px;
       height: 340px;
       padding: 24px 0 0 16px;
+      box-sizing: border-box;
       border-radius: 8px;
       background: rgba(246, 252, 255, 1);
       div:first-child {
@@ -236,16 +237,16 @@ export const Ai: FC<IAiProps> = ({ }) => {
         <div className="title">聚焦四大场景，助力保险行业提升营销效果和服务效率</div>
         {/* <div className="sec-title">强力提升公安反诈预防全业务效能，助力电诈“双降”，持续保障居民生命财产安全</div> */}
 
-        <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
+        <div style={{  width: '100vw', margin: '0 auto' }}>
           <div id={AI} className="aitxs">
             <ListWrapper>
             <ByProgressSwiper
               newProgress={true}
               initialSlide={0}
-              contentPadding="3.2%"
+              contentPadding="20px"
               progressPadding="0px"
               previewWidth="11.5%"
-              autoplayDelay={5000}
+              autoplayDelay={15000}
               
             >
              {titleList.map((item,index)=> {

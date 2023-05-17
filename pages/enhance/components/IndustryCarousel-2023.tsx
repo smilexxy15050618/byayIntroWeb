@@ -87,14 +87,14 @@ export const IndustryCarousel = () => {
       <Visible md lg xl xxl xxxl>
         <div className='desc'>利用人工智能和自然语言处理，感知客户意向及情绪，构建完善、动态、非结构化数据感知生成的用户标签体系</div>
         <div className="jumpbtn" onClick={() => window.open('/form?formType=1')}>
-          预约体验
+          立即体验
         </div>
         <div className='banner'></div>
       </Visible>
       <Visible xs sm>
       <div className='desc'>利用人工智能和自然语言处理，感知客户意向及情绪，构建完善、动态、非结构化数据感知生成的用户标签体系</div>
         <div className="jumpbtn" onClick={() => window.open('/form?formType=1')}>
-          预约体验
+          立即体验
         </div>
         <div className='banner'></div>
       </Visible>

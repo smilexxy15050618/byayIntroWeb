@@ -117,7 +117,7 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
                 <br />
                 交互场景与内容
               </Desc>
-              <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+              <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
             </TextArea>
           </BannerWhite>
           <Features onCancel={hadnleNav} />

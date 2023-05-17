@@ -180,7 +180,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
               <SubTitle>全链条贯通反诈的宣传劝阻业务流程，打造具备“点面结合，长短并行”能力的AI虚拟民警 </SubTitle>
               <img src={imgurl+'/unfraud_carousel1.png'}></img>
               <div className="jumpbtn" onClick={() => setForm()}>
-                预约体验
+                立即体验
               </div>
             </BgContent>
           </BgWrapper>

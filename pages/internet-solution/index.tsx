@@ -135,7 +135,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                     <br />
                     造更优的沟通服务体验
                   </Desc>
-                  <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+                  <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
                 </Hidden>
                 <Visible xs sm>
                   <BigTitle>
@@ -147,7 +147,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                       onClick={() =>
                         window.open('/form?formType=1')
                       }>
-                      预约体验
+                      立即体验
                     </BlueBtn>
                   </BlueBtnWrap>
                 </Visible>

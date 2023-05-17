@@ -182,7 +182,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
               <SubTitle>筛选高意向新玩家用户，唤醒沉睡玩家，吸引并激励高价值玩家持续互动，用有限的营销预算带来更高的ROI，同时提升用户体验 </SubTitle>
               <img src={imgurl+'/retail_carousel1.png'}></img>
               <div className="jumpbtn" onClick={() => setForm()}>
-                预约体验
+                立即体验
               </div>
             </BgContent>
           </BgWrapper>

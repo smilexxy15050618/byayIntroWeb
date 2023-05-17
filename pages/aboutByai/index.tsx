@@ -143,7 +143,7 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
                 <br />
                 助力政府和企业高效连接C端用户
               </Desc>
-              <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+              <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
             </TextArea>
           </BannerWhite>
           <Hidden xs sm>

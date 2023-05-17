@@ -101,7 +101,7 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
                 <br />
                 再通过“语义+语音+视觉”，构建支持多种场景的数字机器人形象
               </Desc>
-              <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+              <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
             </TextArea>
           </BannerWhite>
 

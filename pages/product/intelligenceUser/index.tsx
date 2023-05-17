@@ -96,7 +96,7 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
               <TextArea spaces={['', '']}>
                 <BigTitle>智能用户运营平台</BigTitle>
                 <Desc>基于百应用户运营方法论，以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台</Desc>
-                <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+                <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
               </TextArea>
             </BannerWhite>
             <FabricValue />

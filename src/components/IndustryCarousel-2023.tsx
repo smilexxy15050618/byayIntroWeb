@@ -479,7 +479,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                   onClick={() => {
                     window.open(`/form?formType=1`);
                   }}>
-                  预约体验
+                  立即体验
                 </div>
               </div>
             </Carousel.Item>
