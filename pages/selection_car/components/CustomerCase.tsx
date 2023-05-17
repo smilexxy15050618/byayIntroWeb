@@ -13,12 +13,15 @@ const HoveUp = styled.div`
   @media (max-width: 768px) {
     width: 100vw;
 }
+.swiper-slide {
+  width: 285px !important;
+}
 @media (max-width: 768px) {
     width: 100%;
     display: block;
     .carditem {
     position: relative;
-    width: 284px;
+    width: 285px;
     height: 364px;
     border-radius: 8px;
     background: rgba(255, 255, 255, 1);
@@ -192,13 +195,18 @@ const CustomerCase: FC<SceneSolution> = ({}) => {
 <MainWrap id={AISOLUTION}>
 <HoveUp>
 <ByProgressSwiper
+// newProgress={true}
+// initialSlide={0}
+// contentPadding="12px"
+// progressPadding="0px"
+// previewWidth="100px"
+// autoplayDelay={5000}
 newProgress={true}
 initialSlide={0}
-contentPadding="12px"
-progressPadding="0px"
-previewWidth="100px"
-autoplayDelay={5000}
-
+slidesPerView="auto"
+autoplayDelay={15000}
+spaceBetween={12}
+centeredSlides={true}
 >
   {/* <Card> */}
    {CustomerCaseList.map(item => (

@@ -11,7 +11,11 @@ const Wrapper = styled.div``;
 const HoveUp = styled.div`
   width: 1248px;
   margin: 0 auto;
-  
+  @media (max-width: 768px) {
+    .swiper-slide {
+      width: 179px !important;
+    }
+  }
    .carditem{
     width: 179px;
 height: 192px;
@@ -225,11 +229,10 @@ const AiSolution: FC<SceneSolution> = ({}) => {
                <ByProgressSwiper
               newProgress={true}
               initialSlide={0}
-              contentPadding="6%"
-              progressPadding="0px"
-              previewWidth="49%"
+              slidesPerView="auto"
               autoplayDelay={5000}
-              
+              spaceBetween={16}
+              centeredSlides={true}
             >
                 {carouselDataList.map(item => 
                         <div className='carditem'>

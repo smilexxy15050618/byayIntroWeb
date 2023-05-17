@@ -28,6 +28,11 @@ const RawByProgressSwiper: FC<IProps> = ({
   setControlledSwiper,
   loop = false,
   autoplayDelay = 5000,
+  slidesOffsetBefore = 0,
+  slidesPerView = 0,
+  spaceBetween = 0,
+  slidesOffsetAfter = 0,
+  centeredSlides = true
 }) => {
   const [actIndex, setActIndex] = useState(initialSlide + 1);
   const total = Children.toArray(children).length;
@@ -59,6 +64,11 @@ const RawByProgressSwiper: FC<IProps> = ({
               }
             : undefined
         }
+        slidesOffsetBefore={slidesOffsetBefore}
+        slidesPerView={slidesPerView}
+        spaceBetween={spaceBetween}
+        slidesOffsetAfter={slidesOffsetAfter}
+        centeredSlides={centeredSlides}
         onSlideChange={swiper => onSlideChange(swiper)}>
         {Children.map(children, (child, i) => (
           <SwiperSlide className="one-slide" key={i}>
