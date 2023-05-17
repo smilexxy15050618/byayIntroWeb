@@ -9,7 +9,8 @@ import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 
 const dataList = [
     {
-        url: '/why1.png'
+        url: '/why1.png',
+        url_m: '/why1_m.png',
     },
     // {
     //     url: '/why2.png'
@@ -46,7 +47,9 @@ padding-bottom: 100px;
         text-align: center;
         @media (max-width: 768px) {
             width:100vw !important;
-            
+            .swiper-slide {
+                padding-bottom: 0 !important;
+            }
         }
       
     }
@@ -181,7 +184,7 @@ export const WhySelect: FC = () => {
               previewWidth="11.5%"
               autoplayDelay={5000}>
                     <div className='my-slide'>
-                    <img className='content' src={imgurl+'/why1.png'} alt="" />
+                    <img className='content' src={imgurl+'/why1_m.png'} alt="" />
                     </div>
             </ByProgressSwiper>
             <ByProgressSwiper newProgress={true}
@@ -190,8 +193,8 @@ export const WhySelect: FC = () => {
               progressPadding="0px"
               previewWidth="11.5%"
               autoplayDelay={5000}>
-                    <div className='my-slide'>
-                    <img className='content' src={imgurl+'/why2.png'} alt="" />
+                    <div style={{marginTop: '40px'}} className='my-slide'>
+                    <img className='content' src={imgurl+'/why2_m.png'} alt="" />
                     </div>
             </ByProgressSwiper>
             </div>

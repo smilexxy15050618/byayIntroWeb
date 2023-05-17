@@ -52,10 +52,11 @@ margin-bottom:16px;
         }
         .cont_area{
             font-size: 14px;
-font-weight: 400;
-letter-spacing: 0px;
-line-height: 24px;
-color: rgba(255, 255, 255, 1);
+            font-weight: 400;
+            letter-spacing: 0px;
+            line-height: 24px;
+            color: rgba(255, 255, 255, 1);
+            text-align: justify;
         }
     }
    }
@@ -66,12 +67,12 @@ color: rgba(255, 255, 255, 1);
       }
       .carditem{
       .textt_area{
+        width: 100%;
         position: absolute;
-        width: 153px;
-        height: auto;
-        left:24px;
-        bottom:20px;
         top: 48px;
+        left: 0px;
+        padding: 0 18px;
+        box-sizing: border-box;
         .title_area{
 color: rgba(255, 255, 255, 1);
 margin-bottom:12px;
@@ -81,12 +82,12 @@ letter-spacing: 0px;
 line-height: 19.2px;
         }
         .cont_area{
-          width: 90%;
             font-size: 12px;
-font-weight: 400;
-letter-spacing: 0px;
-line-height: 20px;
-color: rgba(255, 255, 255, 1);
+            font-weight: 400;
+            letter-spacing: 0px;
+            line-height: 20px;
+            color: rgba(255, 255, 255, 1);
+            text-align: justify;
         }
     }
   }
@@ -144,18 +145,22 @@ color: rgba(255, 255, 255, 1);
 
 const carouselDataList = [{
     title:'AI技术实力领先，提升居民沟通体验',
+    title1:'AI技术实力领先提升居民沟通体验',
     content:'全栈全自研的语音技术、智能对话技术，能够顺畅的进行语义理解和语言交互，提升居民沟通体验',
     url: '/gafz_hxjz1.png'
 },{
     title:'知识内容沉淀深厚，提升AI灵敏度',
+    title1:'知识内容沉淀深厚提升AI灵敏度',
     content:'已沉淀1000+语料模型，确保上下文链接流畅自然，并能以引导式沟通获得关键信息，展现AI的专业灵敏度',
     url: '/gafz_hxjz2.png'
 },{
     title:'及时性、强闭环，实现持续保护',
+    title1:'及时性、强闭环实现持续保护',
     content:'通过双通道反诈，在保障及时性预警劝阻措施同时，持续定期微信/电话回访，实现长期保护人民群众财产安全',
     url: '/gafz_hxjz3.png'
 },{
     title:'场景覆盖丰富，提升宣传劝阻成效',
+    title1:'场景覆盖丰富提升宣传劝阻成效',
     content:'拥有150+话术场景，覆盖市面90%以上诈骗类型，反诈场景全面铺开，强力提升宣传劝阻成效',
     url: '/gafz_hxjz4.png'
 }]
@@ -228,7 +233,7 @@ useEffect(() => {
               contentPadding="6%"
               progressPadding="0px"
               previewWidth="49%"
-              autoplayDelay={5000}
+              autoplayDelay={115000}
               
             >
                 {carouselDataList.map(item => 
@@ -236,7 +241,7 @@ useEffect(() => {
                           <img src={imgurl+item.url} width={86}/>
                           <div className='textt_area'>
                                   <div className='title_area'>
-                                  {item.title}
+                                  {item.title1}
                                   </div>
                                   <div className='cont_area'>
                                     {item.content}

@@ -124,6 +124,11 @@ color: rgba(0, 0, 0, 1);
         width: 300px;
         margin-top: 20px;
       }
+      @media(max-width: 768px) {
+        img{
+          margin-top: -4px;
+        }
+      }
     }
   }
 `;
