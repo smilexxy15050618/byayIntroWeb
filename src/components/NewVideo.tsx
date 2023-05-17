@@ -125,6 +125,7 @@ padding: 0 8px;
   .chosevhoer{
   background: linear-gradient(270deg, rgba(0, 147, 255, 1) 0%, rgba(43, 88, 249, 1) 100%);
   position: relative;
+  overflow: hidden;
   .planet{
     position: absolute;
     right: 0;
@@ -392,8 +393,11 @@ export const NewVideo = () => {
               }
 
             </div>
+            <img className='planet' src={imgurl + '/planet.svg'} />
+
           </aside>
-          <img className='planet' src={imgurl + '/planet.svg'} />
+
+
         </div>)
       })}
     </ListWrapper>

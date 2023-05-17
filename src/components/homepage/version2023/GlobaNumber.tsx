@@ -58,10 +58,10 @@ const contentImg = [`${imgurl}/zstp_content.png`];
 
 const menuList = [
   {
-    title: '语音技术',
+    title: '智能语音技术',
     squire: imgurl + '/pakksl1.svg',
-    subTitle: 'Speech tech',
-    subTitle1: 'Speech technology',
+    subTitle: 'IST',
+    subTitle1: 'Intelligent Speech Technology',
     a: 0,
     content: [
       'ASR：字准率97%、句准率92%，具备语言模型、声学模型高度可定制；',
@@ -170,6 +170,7 @@ const Item = styled.div`
     letter-spacing: 0px;
     line-height: 40px;
     color: rgba(51, 51, 51, 1);
+    font-family: DINAlternate;
     span:first-child {
       font-family: DINAlternate;
     }
@@ -241,14 +242,14 @@ const Menu = styled.div`
         letter-spacing: 0px;
         line-height: 24px;
         color: #5a5a5a;
-        text-align: left;
+        text-align: center;
         vertical-align: top;
       }
     }
     .menu-item:first-child {
       position: absolute;
       top: 12px;
-      left: 303px;
+      left: 283px;
     }
     .menu-item:nth-child(2) {
       position: absolute;
@@ -375,6 +376,12 @@ const Menu = styled.div`
         text-align: justify;
       }
     }
+    .goknoemow{
+      &:hover{
+        color: #2b58f9;
+        cursor: pointer;
+      }
+    }
   }
 `;
 const GLOBAL_ID_WRAP = 'global_number_wrap';
@@ -438,6 +445,7 @@ const GlobalNumber = ({}) => {
               return <p>{item}</p>;
             })}
           </div>
+          <p className='goknoemow'>了解更多&nbsp;&nbsp;></p>
         </div>
       </Menu>
       <Content>
