@@ -43,6 +43,9 @@ padding: 82px 0 100px;
     .custom-bar-wrapper{
         width: 300px;
       }
+      .swiper-slide {
+    width: 300px !important;
+    }
 }
 `
 const Title = styled.div`
@@ -183,10 +186,12 @@ export const CustomerStories: FC = () => {
                 <Title>客户案例</Title>
                 <ListWrapper id={UNFRAUD}>
                 <ByProgressSwiper
-              newProgress={true}
-              initialSlide={0}
-              contentPadding="12px" progressPadding="0px"
-              previewWidth="17%"
+            newProgress={true}
+            initialSlide={0}
+            slidesPerView="auto"
+            autoplayDelay={5000}
+            spaceBetween={12}
+            centeredSlides={true}
             >
                     {
                         list.map(({ img, banner, content, img1 }, index) => {

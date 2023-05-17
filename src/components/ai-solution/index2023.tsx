@@ -20,6 +20,9 @@ const HoveUp = styled.div`
     .custom-bar-wrapper{
       width: 300px;
   }
+  .swiper-slide {
+    width: 224px !important;
+    }
    }
    .carditem{
     width: 224px;
@@ -54,6 +57,7 @@ line-height: 24px;
 color: rgba(255, 255, 255, 1);
         }
     }
+  }
 `
 const Card = styled.div<{ bg: number }>`
    width: 1200px;
@@ -185,10 +189,12 @@ const SceneSolution: FC<SceneSolution> = ({ }) => {
         <MainWrap id={AISOLUTION}>
           <HoveUp>
             <ByProgressSwiper
-              newProgress={true}
-              initialSlide={0}
-              contentPadding="0" progressPadding="0px"
-              previewWidth="35%"
+          newProgress={true}
+          initialSlide={0}
+          slidesPerView="auto"
+          autoplayDelay={5000}
+          spaceBetween={16}
+          centeredSlides={true}
             >
               {carouselDataList.map(item =>
                 <div className='carditem'>
