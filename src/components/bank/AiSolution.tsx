@@ -31,12 +31,12 @@ const carouselDataList = [
         ],
     },
     {
-        url: '/back-scene-3.png',
-        title:'电子银行部',
+        url: '/back-scene-5.png',
+        title:'网银业务部',
         content:[
-            {name: '手机银行'},
-            {name: '微信银行'},
-            {name: '网上银行'}
+            {name: '用户唤醒激活'},
+            {name: '营销活动通知'},
+            {name: '权益领取通知'},
         ],
     },
     {
@@ -48,15 +48,15 @@ const carouselDataList = [
             {name: '大额异动'}
         ],
     },
-    {
-        url: '/back-scene-5.png',
-        title:'直销银行',
-        content:[
-            {name: '开户及入金'},
-            {name: '电子银行'},
-            {name: '财富产品'}
-        ],
-    }
+    // {
+    //     url: '/back-scene-5.png',
+    //     title:'直销银行',
+    //     content:[
+    //         {name: '开户及入金'},
+    //         {name: '电子银行'},
+    //         {name: '财富产品'}
+    //     ],
+    // }
 ]
 
 const Wrapper = styled.div`
@@ -80,13 +80,13 @@ const Card = styled.div<{bg:number}>`
    display:flex;
    justify-content: space-between;
    .carditem{
-    width: 224px;
+    width: 286px;
     height: 325px;
     border-radius: 8px;
     background: rgba(255, 255, 255, 1);
     transition: all 0.3s ease-in;
     margin-right: 20px;
-    &:nth-child(5){
+    &:nth-child(4){
         margin-right: 0;
     }
     &:hover{
@@ -112,13 +112,13 @@ const Card = styled.div<{bg:number}>`
         color: rgba(26, 26, 26, 1);
         border-bottom: 1px solid rgba(240, 240, 240, 1);
     }
-    &:nth-child(3),&:nth-child(4),&:nth-child(5){
+    &:nth-child(4),&:nth-child(3){
         .tag-label{
             &::after{
-                position: absolute;
-                content: '…';
-                left: 50%;
-                bottom: 10px;
+                // position: absolute;
+                // content: '…';
+                // left: 50%;
+                // bottom: 10px;
             }
             span{
                 width: 100%;

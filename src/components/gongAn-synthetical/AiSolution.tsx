@@ -72,7 +72,7 @@ const Card = styled.div<{bg:number}>`
         width: 240px;
         height: 112px;
         left:22px;
-        bottom:24px;
+        bottom:22px;
         .title_area{
             font-size: 20px;
             font-weight: 600;
@@ -114,7 +114,7 @@ const SolutionWap = styled.div`
         position: relative;
         width: 180px;
         height: 192px;
-        padding: 72px 18px 0;
+        padding: 56px 18px 0;
         border-radius: 8px;
         background: rgba(43, 88, 249, 1);
         box-sizing: border-box;
@@ -131,7 +131,7 @@ const SolutionWap = styled.div`
             color: rgba(255, 255, 255, 1);
         }
         .subtitle{
-            padding-top: 10px;
+            padding-top: 12px;
             font-size: 12px;
             font-weight: 400;
             line-height: 20px;
@@ -191,7 +191,7 @@ useEffect(() => {
             </Pane>
         </Visible>
         <Visible xs sm>
-        <div className="Bigtitle">深耕行业多年的产品服务优势</div>
+        <div className="Bigtitle">核心价值</div>
         <SolutionWap id={AISOLUTION}>
             <ByProgressSwiper
                 newProgress={true}

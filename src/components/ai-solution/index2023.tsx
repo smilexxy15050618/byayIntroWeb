@@ -187,8 +187,8 @@ const SceneSolution: FC<SceneSolution> = ({ }) => {
             <ByProgressSwiper
               newProgress={true}
               initialSlide={0}
-              contentPadding="4%" progressPadding="0px"
-              previewWidth="43%"
+              contentPadding="0" progressPadding="0px"
+              previewWidth="35%"
             >
               {carouselDataList.map(item =>
                 <div className='carditem'>

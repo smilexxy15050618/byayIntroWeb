@@ -114,13 +114,6 @@ const RawBannerWhite: FC<IProps> = ({
               <Img src={mobileImg} style={mobileStyle} />
             </Visible>
           </Linear>
-          <img
-              onClick={() => {
-                scrollIntoOffset('#STRAGETYMOBILE', 50);
-              }}
-              src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/mobile/bg/arror.png"
-              className="m-bg-arror"
-            />
         </ByContainer>
 
       </Visible>

@@ -19,7 +19,7 @@ const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
 const Wrapper = styled.div`
   .m-bg-arror {
     position: absolute;
-    top: 570px;
+    top: 660px;
     left: 50%;
     transform: translate(-50%, 0);
     animation: jump 2s infinite;
@@ -106,7 +106,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
         {(visible, setFormVisible) => (
           <Wrapper>
             <BannerWhite
-              height={['576px', '657px']}
+              height={['576px', '667px']}
               LinearHeight={['516px', '100%']}
               background={[`rgba(246, 252, 255, 1)`, 'rgba(246, 252, 255, 1)']}
               pcImgs={[
@@ -116,7 +116,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                   className: ['animate__fadeInRight', 'animate__ahead_300ms'],
                 },
               ]}
-              mobileStyle={{height:'270px',paddingTop: '21px'}}
+              mobileStyle={{height:'304px',paddingTop: '0'}}
               mobileImg={JOIN_US_IMG}>
               <TextArea spaces={['', '']}>
                 <Hidden xs sm>
@@ -128,7 +128,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                   <Desc>
                     依托人工智能、大数据等先进手段，创新性推出具备咨
                     <br />
-                    询、服务、宣传、分享功能的虚拟IP民警
+                    询、服务、宣传、分享功能的定制化AI民警
                   </Desc>
                   <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
                 </Hidden>
@@ -136,7 +136,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                   <BigTitle>
                   公安综治<br/>智能化解决方案
                   </BigTitle>
-                  <Desc>依托人工智能、大数据等先进手段，创新性推出具备咨询、服务、宣传、分享功能的虚拟IP民警</Desc>
+                  <Desc>依托人工智能、大数据等先进手段，创新性推出具备咨询、服务、宣传、分享功能的定制化AI民警</Desc>
                   <BlueBtnWrap>
                     <BlueBtn
                       onClick={() =>
@@ -160,7 +160,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
             <AI></AI>
             <SceneSolution></SceneSolution>
             <AiSolution />
-            <CustomerStories></CustomerStories>
+            {/* <CustomerStories></CustomerStories> */}
             <ByVoiceFooter
               title="立即体验AI时代的新一代用户运营平台"
               desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"

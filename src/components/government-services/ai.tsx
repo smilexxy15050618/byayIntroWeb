@@ -4,6 +4,7 @@ import {  Hidden, Visible } from 'react-grid-system';
 import imgurl from '../../../img.url.js';
 import ByProgressSwiper from '../common/ByProgressSwiper';
 
+
 const titleList = [
   {
     title: '新一代服务型政府窗口',
@@ -15,14 +16,14 @@ const titleList = [
   {
     title: '政务办理全流程闭环',
     subTitle: '网上办 &nbsp; 掌上办 <br />就近办 &nbsp; 一次办',
-    url: '/government-govern-2.svg',
-    urlWap: '/government-govern-2.svg',
+    url: '/government-govern-3.svg',
+    urlWap: '/government-govern-3.svg',
   },
   {
     title: '线上服务大厅',
-    subTitle: '搭建群众入口，构建服务大厅智能接待、智慧工单多应用场景打造个人中心，形成服务闭环',
-    url: '/government-govern-3.svg',
-    urlWap: '/government-govern-3.svg',
+    subTitle: '搭建群众入口，构建服务大厅<br />智能接待、智慧工单多应用场景<br />打造个人中心，形成服务闭环',
+    url: '/government-govern-2.svg',
+    urlWap: '/government-govern-2.svg',
   },
   {
     title: '办事导航指南',
@@ -57,7 +58,7 @@ const Pane = styled.div`
     }
   }
   .desc {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 400;
     letter-spacing: 0px;
     line-height: 32px;
@@ -75,6 +76,7 @@ const Pane = styled.div`
   .swiper-wrapper .swiper-slide{
   }
   .channel-item{
+    position: relative;
     width: 310px;
     height: 340px;
     border-radius: 8px;
@@ -93,9 +95,11 @@ const Pane = styled.div`
       line-height: 20px;
     }
     img{
-      margin-top: 22px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
       width: 100%;
-      height: 146px;
+      height: 200px;
     }
   }
 `;
@@ -117,6 +121,7 @@ const ListWrapper = styled.div`
     width: 100%;
     height: 560px;
     margin: 0;
+    border-radius: 8px;
   }
 `;
 const ListItem = styled.div`
@@ -208,7 +213,7 @@ const AI: FC<IAiProps> = ({}) => {
     <MainWrap id={AiTSXID}>
       <Pane>
         <div class="title">打造智慧政务服务窗，促进政务服务降本增效</div>
-        <div class="desc">依托AI客服实现专业、智能、即时地响应居民业务办理需求，提高居民满意度</div>
+        <div class="desc">依托AI客服实现专业、智能、即时地响应居民业务办理需求</div>
         <Visible md lg xl xxl xxxl>
           <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
             <div className="aitxs">
@@ -246,7 +251,8 @@ const AI: FC<IAiProps> = ({}) => {
               <div className="channel-item">
                 <div className="title">{item.title}</div>
                 <div className="subtitle" dangerouslySetInnerHTML={{ __html: item.subTitle }}></div>
-                <img src={imgurl+item.urlWap} />
+                {/*'/static/img2023'*/}
+                <img src={imgurl+item.url} />
               </div>
             ))}
           </ByProgressSwiper>

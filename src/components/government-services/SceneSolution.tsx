@@ -2,31 +2,59 @@ import { FC, useEffect} from 'react';
 import styled from 'styled-components';
 import { Hidden, Visible } from 'react-grid-system';
 import imgurl from '../../../img.url.js'
+import ByProgressSwiper from '../common/ByProgressSwiper';
 interface  SceneSolution{
-
 }
 const Pane = styled.div`
-    .title {
-        font-size: 40px;
-        font-weight: 500;
-        letter-spacing: 0px;
-        line-height: 48px;
-        color: rgba(26, 26, 26, 1);
-        text-align: center;
-        @media (max-width: 768px) {
-            padding-top: 40px;
-            font-size: 24px;
-            font-weight: 500;
-            line-height: 40px;
-        }
+    padding: 80px 0;
+    @media (max-width: 768px) {
+     padding: 40px 0;
+   }
+   @media (max-width: 768px) {
+    .custom-bar-wrapper{
+      width: 300px;
     }
+  }
+   .title {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 48px;
+    color: rgba(26, 26, 26, 1);
+    text-align: center;
+    @media (max-width: 768px) {
+      padding-bottom: 40px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 40px;
+    }
+  }
+  .desc {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 32px;
+    color: rgba(51, 51, 51, 1);
+    text-align: center;
+    margin: 16px auto 40px;
+    @media (max-width: 768px) {
+      padding: 0 40px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      margin: 16px auto 34px;
+    }
+  }
 `
 const HoveUp = styled.div`
    width: 1250px;
    margin:0 auto; 
    @media (max-width: 768px) {
      width: 100%;
-     padding: 0 12px 34px;
+     padding: 0 12px;
+     img{
+        width:100%;
+        margin:147px;
+      }
    }
    img{
         width:100%;
@@ -45,10 +73,52 @@ const MainWrap = styled.div`
     @media (max-width: 768px) {
         animation: none;
     }
+    .channel-item{
+        position: relative;
+        width: 300px;
+        height: 116px;
+        padding: 23px 16px;
+        border-radius: 8px;
+        background: rgba(246, 252, 255, 1);
+        box-sizing: border-box;
+        .title-item {
+            height: 20px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+        }
+        .subtitle {
+            padding-top: 6px;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 20px;
+            color: rgba(0, 0, 0, 1);
+        }
+    }
+    .wap-bg{
+        display: block;
+        width:300px;
+        height:210px;
+        margin: 20px auto 0;
+    }
 `
 
 const carouselDataList = imgurl+'/government-scen-img.png'
-
+const carouselDataListBg = '/static/img2023'+'/government-scen-bg.png'
+const carouselWapList = [
+    {
+        title:'公安行业咨询场景',
+        subtitle: '围绕户籍、户政等高频公安业务办理事项，提供一体化智能业务咨询办理'
+    },
+    {
+        title:'社保行业帮办场景',
+        subtitle: '立足社保业务场景，让群众办事由繁到简、由难到易'
+    },
+    {
+        title:'医保行业服务场景',
+        subtitle: '打造线上“枢纽”服务站，精准指导群众网办流程，打通服务群众“最后一公里”'
+    }
+]
 
 const SceneSolution: FC<SceneSolution> = ({}) => {
    
@@ -74,9 +144,29 @@ useEffect(() => {
         <Pane>
         <div class="title">应用场景</div>
         <MainWrap id={HANGYE}>
-            <HoveUp>
-                <img src={carouselDataList} />
-            </HoveUp>
+            <Visible md lg xl xxl xxxl>
+              <HoveUp>
+                  <img src={carouselDataList} />
+              </HoveUp>
+            </Visible>
+            <Visible xs sm>
+              <ByProgressSwiper
+                newProgress={true}
+                noProgress={true}
+                initialSlide={0}
+                contentPadding="40px"
+                progressPadding="0px"
+                previewWidth="75px">
+                {carouselWapList.map((item, i) => (
+                // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
+                <div className="channel-item">
+                    <div className="title-item">{item.title}</div>
+                    <div className="subtitle" dangerouslySetInnerHTML={{ __html: item.subtitle }}></div>
+                </div>
+                ))}
+                </ByProgressSwiper>
+                <img className='wap-bg' src={carouselDataListBg} />
+            </Visible>
         </MainWrap>
         </Pane>
     );
