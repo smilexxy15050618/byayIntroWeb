@@ -144,6 +144,7 @@ const SolutionWap = styled.div`
         img{
             width: 300px;
             height: 160px;
+            margin: 0;
         }
         .title{
             font-size: 18px;
@@ -169,7 +170,7 @@ const SolutionWap = styled.div`
             font-weight: 400;
             line-height: 26px;
             color: rgba(0, 0, 0, 1);
-            padding: 16px 24px 32px;
+            padding: 16px 24px 25px;
         }
         .demo-go{
             padding-top: 10px;

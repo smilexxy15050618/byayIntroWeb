@@ -65,21 +65,18 @@ const CRM_FOOTER_CONFIG = [
 const FooterWrapper = styled.footer`
   width: 100%;
   position: relative;
-  min-height: 547px;
+  min-height: 514px;
   background: #0d1727;
-  padding-top: 14px;
-  /* max-width: 1200px; */
   > div {
     max-width: 1200px !important;
     margin: 0 auto;
   }
   ${media.phone`
-    // min-height: 524px;
-    // padding-left: 32px;
     .col-item {
       text-align: left;
-      line-height: 22px;
-      margin-bottom: 12px;
+      height: 24px;
+      line-height: 24px;
+      margin-bottom: 6px;
       &, a {
         font-size: 14px;
         line-height: 22px;
@@ -113,7 +110,7 @@ const FooterWrapper = styled.footer`
   }
 
   .footer-icon-right--item {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
     letter-spacing: 1.6px;
     line-height: 23.17px;
@@ -203,7 +200,6 @@ const FooterWrapper = styled.footer`
   }
 `;
 const CompanyInfoCol = styled.span`
-  /* padding: 0 20px;   */
   max-width: 1200px;
   text-align: center;
   height: 94px;
@@ -220,16 +216,25 @@ const CompanyInfoCol = styled.span`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  a{
+    color: rgba(255, 255, 255, 0.65);
+    &:hover{
+      color:#fff;
+      text-decoration: none;
+    }
+  }
   span {
     text-align: center;
+    font-size: 12px;
   }
   @media (max-width: 768px) {
-    font-size: 14px;
-    padding: 24px 28px;
+    font-size: 12px;
+    padding: 27px 21px;
     flex-direction: column;
-    height: 228px;
+    height: 258px;
     justify-content: flex-start;
     line-height: 20px;
+    color: rgba(255, 255, 255, 0.65);
     span {
       /* margin-bottom: 24px; */
     }
@@ -242,13 +247,7 @@ const CompanyDescCol = styled(Col)`
     align-items: center;
     flex-direction: column;
     padding-bottom: 192px;
-    .margin-adjust {
-      display: flex !important;
-      align-items: flex-start;
-      flex-direction: column;
-      font-size: 14px;
-      line-height: 22px;
-    }
+    
     .two-icon {
       margin-bottom: 40px;
     }
@@ -257,31 +256,8 @@ const CompanyDescCol = styled(Col)`
   color: rgba(255, 255, 255, 0.65) !important;
   font-size: 16px;
   letter-spacing: 1px;
-  .title {
-    margin-bottom: 24px;
-    font-size: 20px;
-    font-weight: 500;
-    color: #ffffff;
-    line-height: 28px;
-    letter-spacing: 1px;
-  }
-  .phone {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.65) !important;
-    &:hover{
-      color: #ffffff !important;
-      text-decoration: none !important;
-    }
-  }
-  .addr {
-    font-size: 14px;
-    margin: 23px 0px 24px;
-  }
-  .margin-adjust {
-    > div {
-      margin-bottom: 7px;
-    }
-  }
+
+  
   .two-icon {
     display: flex;
     align-items: center;
@@ -352,16 +328,15 @@ const LinkCol = styled(Col)`
   display: flex;
   flex-direction: column;
   > div > div {
-    margin-bottom: 16px;
+    margin-bottom: 6px;
     ${media.desktop`text-align: center;`}
   }
-
+  
   &:nth-child(4) {
     > div {
       ${media.desktop`justify-content: center !important;`}
       > div {
         ${media.desktop`
-          /* flex: 0 0 auto !important; */
           width: auto !important;
         `}
       }
@@ -373,13 +348,14 @@ const LinkCol = styled(Col)`
     }
   }
   h6 {
-    margin-bottom: 24px;
-    font-size: 20px;
+    margin-bottom: 3px;
+    font-size: 16px;
     font-weight: 500;
     color: #ffffff;
-    line-height: 28px;
+    height: 44px;
+    line-height: 44px;
     letter-spacing: 1px;
-    margin-top: 25px;
+    margin-top: 26px;
     ${media.desktop`text-align: center;`}
     ${media.phone`
       text-align: left;
@@ -412,6 +388,30 @@ const LinkCol = styled(Col)`
     width: 32px;
     height: 32px;
   }
+  
+  .phone {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65) !important;
+    &:hover{
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+  }
+  .addr {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65) !important;
+    margin: 23px 0px 24px;
+  }
+  .margin-adjust {
+    display: flex !important;
+    align-items: flex-start;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 22px;
+    > div {
+      margin-bottom: 7px;
+    }
+  }
 `;
 
 const CrmImg = styled.div`
@@ -443,7 +443,7 @@ const MobileORCode = styled.div`
   }
 `;
 const PrivacyPolicy = styled.a`
-  font-size: 16px;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.65);
   line-height: 24px;
   letter-spacing: 1px;
@@ -454,42 +454,23 @@ const PrivacyPolicy = styled.a`
     text-decoration: none;
   }
   @media (max-width: 768px) {
+    width: 100%;
     order: 3;
-  }
-`;
-
-const FriendLink = styled.div`
-  position: absolute;
-  // left: 32px;
-  top: -24px;
-  font-size: 14px;
-  transform: translateY(-100%);
-  color: #fffff;
-  overflow-y: auto;
-  width: calc(100% - 64px);
-
-  .friend-item {
-    color: rgba(255, 255, 255, 0.65);
-    cursor: pointer;
-    &:hover {
-      color: #00c8bd;
-    }
-  }
-
-  @media (max-width: 768px) {
-    left: 32px;
   }
 `;
 
 const LinkColWap = styled.div`
   width: 100%;
+  &:nth-child(1){
+    margin-top: 32px;
+  }
   h6{
     position: relative;
     padding-left: 32px;
     margin: 0;
     font-size: 16px;
     font-weight: 500;
-    line-height: 46px;
+    line-height: 44px;
     color: rgba(255, 255, 255, 1);
     &::after{
       position: absolute;
@@ -501,9 +482,16 @@ const LinkColWap = styled.div`
       background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAABnSURBVFiFY2AYCuD///8F////LxhIB8DAwDgCGgKjjhh1xKgjRh0x6ohRR5DjiPeE1DLRyA0BUPoijczHDf7//38A6vsDI9ZygvE+avmo5aOWj1pOjuVEVy60csDAWQ51wMB1TGkNAP36ZwJAerQYAAAAAElFTkSuQmCC') no-repeat center center/ contain;
       transition: all 0.3s ease-in-out;
     }
+    span {
+      display: inline-block;
+      margin-left: 3px;
+      width: 20px;
+      height: 9px;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAYCAYAAAC1Ft6mAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAILSURBVFiF1ZdBkuIwDEWf3FyDZkWKW2B2vpWTW2VH5hYUs0r6HG3PwlERmATCtNNMvyo2trElW/pSBODD7Wzk04NYfhyxicivTX0uASQ5E47DyRda9zQCHiBCtanPJa0rys4V8dWGfYXObY/qgxHwEapXG/UVhLcKUuqsxhZ8uJ0NBGswzbo+NVMbta4oATR+x/YBCAQ7HB9br2fOsP+vPdb1qelcAcCoQ4FgBXwgADRTm6b4jaPzrSvKSPD9uis6V3jBHIaXpWfOcWbqTAAzb4PnaF1RqrOCObzXZ3mvzxKh0vCOhKO+IKQbF8xh+FPDb8c1xMYYfaEcziTV+V0O5zRMWleQ1nx6BhFwG96d2/qx8XtkfyENm6m8uszFBsQOXykHWR1S4+aopoZN/0rZuBtyQtyrks2hT+yX8iCHxArYJQ6+SG3eduuuQxEqg2mm57Vluubef5bmocrdUxgtZorBNJHg+wI5+b8hubuUrKKgzgtx/2jtM7n5DAsU1iTHjwxWec8dngvUoSTHAn7MqQ+3s53bHiGF2zNFcw7ZO4V1fWpaV1QCXsB3brvXbywh7iPBgly+XzKzSC+3qc+l9m699PtL45n6uyWcAZDOFXGp2/pOOldEwRxW6cZ4qEr/M5qr6/rUrIS3KhKOOvjKovgv9L2g1XomMPx++ZkMU+aql8zdyn8Ht7L/B8AQ9/bBLiWNAAAAAElFTkSuQmCC')
+        no-repeat center center/ contain;
+    }
   }
   h6.active{
-    
     &::after{
       transform: rotate(90deg);
     }
@@ -569,19 +557,19 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
   return (
     <FooterWrapper>
       <Container>
-        <Row justify="between">
+        <Row justify="between" style={{paddingBottom: '52px'}}>
           <Visible md lg xl xxl xxxl>
-            <Col lg={4}>
-              <div style={{ width: '184px', marginTop: 26 }}>
+            <div style={{ width: '244px',}}>
+              <div style={{ width: '182px', marginTop: 32 }}>
                 <img src={BOTTOM_WHITE_LOGO} />
               </div>
-            </Col>
+            </div>
           </Visible>
           <Visible md lg xl xxl xxxl>
             {(origin === 'crm' ? CRM_FOOTER_CONFIG : FOOTER_CONFIG)
             .filter(block => block.title !== '热门搜索产品')
             .map((block, index) => (
-              <LinkCol key={block.title} lg={index == 0 ? 5 : 3}>
+              <LinkCol key={block.title} style={{width: block.title=='百应产品' ? '296px' : block.title=='解决方案' ? '192px' : block.title == '探索百应' ? '168px' : 'auto', flex:'none'}}>
                 <h6>
                   {block.title}
                   <span style={{ display: index == 1 ? 'inline-block' : 'none' }}></span>
@@ -604,6 +592,17 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
                 </Row>
               </LinkCol>
             ))}
+            <LinkCol style={{width: '300px'}}>
+              <h6>联系我们</h6>
+              <a href="tel:4000235100" className="margin-adjust phone">
+                <div>电话: </div>
+                <div>400-0235-100</div>
+              </a>
+              <div className="margin-adjust addr">
+                <div>公司地址：</div>
+                <div>浙江省杭州市余杭区梦想小镇天使村11幢</div>
+              </div>
+            </LinkCol>
           </Visible>
           <Visible sm xs>
             {FOOTER_WAP_CONFIG.map((item, index) => (
@@ -617,7 +616,10 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
                       setFootetWapIndex(index)
                     }
                   }} 
-                >{item.title}</h6>
+                >
+                  {item.title}
+                  <span style={{ display: item.title == '解决方案' ? 'inline-block' : 'none' }}></span>
+                </h6>
                 <div className="type-wap-wrap" style={{display: footetWapIndex == index ? 'block' : 'none'}}>
                   {item.list.map((items, i) => (
                     <a href={items.href} className="col-wap-item">
@@ -628,33 +630,23 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
               </LinkColWap>
             ))}
           </Visible>
-          <CompanyDescCol lg={7}>
-            <Visible md lg xl xxl xxxl>
-              <div className="title">联系我们</div>
-              <a href="tel:4000235100" className="margin-adjust phone">
-                <div>电话: </div>
-                <div>400-0235-100</div>
-              </a>
-              <div className="margin-adjust addr">
-                <div>公司地址：</div>
-                <div>浙江省杭州市余杭区梦想小镇天使村11幢</div>
-              </div>
-            </Visible>
+          <CompanyDescCol>
             <Visible sm xs>
               <Box
-                mb="80px"
+                mb="40px"
                 flexDirection="column"
                 width="calc(100vw - 64px)"
-                height="396px"
+                height="304px"
                 bgcolor="#0D1F3B"
                 display="flex"
                 ml="32px"
+                borderRadius="8px"
                 justifyContent="center"
                 alignItems="center">
-                <div style={{ width: '184px', marginTop: 0 }}>
-                  <img src={BOTTOM_WHITE_LOGO} />
+                <div style={{ width: '132px', height: '30px' }}>
+                  <img src={BOTTOM_WHITE_LOGO} style={{margin: '0'}} />
                 </div>
-                <img style={{ height: '128px' }} src={currCodeSrc} />
+                <img style={{ height: '128px', marginTop: '2px', marginBottom:'16px' }} src={currCodeSrc} />
                 <Box display="flex">
                   <div
                     onClick={() => {
@@ -672,7 +664,7 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
                       active: currCodeSrc === VIDEO_CODE,
                     })}></div>
                 </Box>
-                <Box mt="40px" width="100%" display="flex" justifyContent="space-around">
+                {/* <Box mt="40px" width="100%" display="flex" justifyContent="space-around">
                   <Box display="flex" flexDirection="column" className="footer-icon-right--item">
                     <img src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/footer/iso.png" />
                     <span>ISO27001</span>
@@ -685,7 +677,7 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
                     <img src="https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/footer/%E5%8A%A0%E5%AF%86.png" />
                     <span>加密传输方案</span>
                   </Box>
-                </Box>
+                </Box> */}
               </Box>
             </Visible>
           </CompanyDescCol>
@@ -737,13 +729,25 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
           </a>{' '}
           版权所有 浙江百应科技有限公司
         </span>
-        <CrmImg>
-          <PrivacyPolicy href="/privacy-policy" target="_blank">
-            隐私政策
-          </PrivacyPolicy>
-          <img src={CMMI_SRC} style={{ width: '54px' }} />
-          <img src={XIN_SRC} />
-        </CrmImg>
+        <Visible md lg xl xxl xxxl>
+          <CrmImg>
+            <PrivacyPolicy href="/privacy-policy" target="_blank">
+              隐私政策
+            </PrivacyPolicy>
+            <img src={CMMI_SRC} style={{ width: '54px' }} />
+            <img src={XIN_SRC} />
+          </CrmImg>
+        </Visible>
+        <Visible sm xs>
+          <CrmImg>
+            <img src={CMMI_SRC} style={{ width: '54px' }} />
+            <img src={XIN_SRC} />
+            <PrivacyPolicy href="/privacy-policy" target="_blank">
+              隐私政策
+            </PrivacyPolicy>
+          </CrmImg>
+        </Visible>
+        
       </CompanyInfoCol>
     </FooterWrapper>
   );

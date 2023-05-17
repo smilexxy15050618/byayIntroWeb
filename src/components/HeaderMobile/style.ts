@@ -188,7 +188,7 @@ export const TreeNode = styled.div < INodeProps > `
     &.is-expand {
       color: #2b58f9;
       // background: rgba(242, 245, 255, 1);
-      .link-btn-info-title {
+    .tree-node-content  .link-btn-info-title {
         color: #2b58f9;
       }
     }

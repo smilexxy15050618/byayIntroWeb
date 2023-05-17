@@ -161,7 +161,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
             <AI></AI>
             <SceneSolution></SceneSolution>
             <AiSolution />
-            {/* <CustomerStories></CustomerStories> */}
+            <CustomerStories></CustomerStories>
             <ByVoiceFooter
               title="立即体验AI时代的新一代用户运营平台"
               desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"

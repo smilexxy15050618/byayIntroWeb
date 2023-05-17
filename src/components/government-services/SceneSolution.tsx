@@ -104,7 +104,7 @@ const MainWrap = styled.div`
 `
 
 const carouselDataList = imgurl+'/government-scen-img.png'
-const carouselDataListBg = '/static/img2023'+'/government-scen-bg.png'
+const carouselDataListBg = imgurl+'/government-scen-bg.png'
 const carouselWapList = [
     {
         title:'公安行业咨询场景',

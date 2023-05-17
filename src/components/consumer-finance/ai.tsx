@@ -69,14 +69,14 @@ const Pane = styled.div`
     border-radius: 8px;
     background: rgba(246, 252, 255, 1);
     .title {
-      padding-top: 16px;
+      padding-top: 24px;
       font-size: 16px;
       line-height: 20px;
-      padding: 20px 15px 0;
+      padding: 20px 16px 0;
       text-align: left;
     }
     .subtitle {
-      padding: 10px 15px 15px;
+      padding: 12px 16px 15px;
       font-size: 12px;
       font-weight: 400;
       line-height: 20px;
