@@ -36,6 +36,9 @@ const Pane = styled.div`
 padding: 80px 0;
 @media(max-width: 768px) {
   padding: 40px 0;
+  .swiper-slide {
+    width: 300px !important;
+  }
 }
 .title {
     font-size: 40px;
@@ -243,11 +246,8 @@ export const Ai: FC<IAiProps> = ({ }) => {
             <ByProgressSwiper
               newProgress={true}
               initialSlide={0}
-              contentPadding="20px"
-              progressPadding="0px"
-              previewWidth="11.5%"
-              autoplayDelay={15000}
-              
+              spaceBetween={12}
+              slidesPerView="auto"
             >
              {titleList.map((item,index)=> {
                return (
