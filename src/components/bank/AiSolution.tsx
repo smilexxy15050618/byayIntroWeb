@@ -148,7 +148,7 @@ const Card = styled.div<{bg:number}>`
 const CardWap = styled.div`
     padding: 0 16px;
     .carditem{
-        width: 343px;
+        width: 100%;
         height: 119px;
         margin-bottom: 12px;
         padding: 13px 16px 0;

@@ -6,7 +6,7 @@ import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 
 const list = [
     {
-        banner: '/government-jn.svg',
+        banner: '/government-jn.svg.png',
         title: '济南社保',
         content: '实现业务办理从“多次跑”转变为“零次跑”。'
     },
@@ -16,7 +16,7 @@ const list = [
         content: '聚焦高频办理业务，打造智能、便利公安服务。'
     },
     {
-        banner: '/government-hz.svg',
+        banner: '/government-hz.svg.png',
         title: '杭州医保',
         content: '引入智能AI客服垂直深耕，助力医保服务智能化升级。'
     }

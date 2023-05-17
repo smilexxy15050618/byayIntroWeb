@@ -67,7 +67,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
     textTwo: '提供网站/小程序/APP内的音视频在线沟通，方便实时交流',
     pcImgs: [
       {
-        src: `${PREFIX}/onlinecommun-banner.svg`,
+        src: `${PREFIX}/onlinecommun-banner.svg.png`,
         style: { width: '680px', height: '518px', top: '100px', right: '0' },
         className: ['animate__fadeInRight'],
       },

@@ -118,12 +118,12 @@ const BannerWhite = styled(RawBannerWhite) < IBannerWhiteProps > `
   overflow: hidden;
   @media (max-height: 666px) and (max-width: 768px) {
     .linear {
-      padding-top: 47px;
+      padding-top: 111px;
     }
   }
   @media (min-height: 750px) and (max-width: 768px) {
     .linear {
-      padding-top: 47px;
+      padding-top: 111px;
     }
   }
 `;

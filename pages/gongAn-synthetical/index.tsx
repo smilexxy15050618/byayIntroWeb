@@ -18,6 +18,7 @@ const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
 
 const Wrapper = styled.div`
   .m-bg-arror {
+    display: none;
     position: absolute;
     top: 660px;
     left: 50%;
@@ -48,7 +49,7 @@ const BigTitle = styled.div`
     text-align: left;
     font-size: 32px;
     line-height: 47px;
-    padding: 0 12px;
+    padding: 0 28px;
     margin-bottom: 8px !important;
   }
 `;
@@ -64,13 +65,13 @@ const Desc = styled.div`
     text-align: left;
     font-size: 16px;
     line-height: 26px;
-    margin: 0 12px 46px !important;
+    margin: 0 28px 46px !important;
   }
 `;
 
 const BlueBtnWrap = styled.div`
   width: 100%;
-  padding: 0 12px;
+  padding: 0 28px;
   align-items: flex-start;
 `;
 
@@ -102,7 +103,7 @@ const BlueBtn = styled.div`
 const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
   return (
     <>
-      <Layout hostType={HOST_ENUM.HOST} headPlaceholder={[false, '#F9FAFF']} headFontStyle={['dark', 'dark']}>
+      <Layout hostType={HOST_ENUM.HOST} headPlaceholder={[false, false]} headFontStyle={['dark', 'dark']}>
         {(visible, setFormVisible) => (
           <Wrapper>
             <BannerWhite
