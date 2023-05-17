@@ -169,6 +169,11 @@ const CarouselWrapper = styled.div`
     line-height: 60px;
     color: rgba(26, 26, 26, 1);
   }
+  .main-title1 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 40px; 
+  }
   .sec-title {
     font-size: 20px;
     font-weight: 400;
@@ -481,13 +486,10 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
 
             <Carousel.Item className="no_duration" key={2}>
               <div className="main-container">
-                <div className="main-title">逆势增长砥砺前行</div>
-                <div className="sec-title" style={{ marginBottom: '16px' }}>
-                  《百应科技2022年度报告》
-                </div>
-                <div className="third-title">
-                  年营收增长40%，连续六年保持增长，
-                  <br /> 复合增长率（CAGR）超100%
+                <div className="main-title1">百应科技荣获</div>
+                <div style={{lineHeight: '48px', marginTop: '8px'}} className="main-title">浙江省“专精特新”中小企业称号</div>
+                <div style={{ marginBottom: '16px', lineHeight: '48px' }}  className="third-title" style={{ marginBottom: '16px' }}>
+                浙江省经济和信息化厅公示｜2023年度第一批企业名单
                 </div>
 
                 <div className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/Ebu43ZcMV6ted0f55efIRg')}>
@@ -505,10 +507,11 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                 // window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
               }}>
               <div className="main-container">
-                <div className="main-title">百应科技荣誉入选</div>
-                <div className="sec-title" style={{ marginBottom: '16px' }}>
-                  《国家人工智能创新应用先导区“智赋百景”》
+                <div className="main-title1">百应科技荣誉入选</div>
+                <div style={{lineHeight: '48px', marginTop: '8px'}} className="main-title">
+                   国家人工智能
                 </div>
+                <div style={{ marginBottom: '16px', lineHeight: '48px' }} className="main-title">创新应用先导区“智赋百景”</div>
                 <div className="third-title">工信部公示｜「城市管理」领域应用场景的优秀技术提供单位</div>
 
                 <div

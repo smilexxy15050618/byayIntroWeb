@@ -57,6 +57,13 @@ const Wrapper = styled.div`
       width: calc(100vw - 14px);
     .my-slide {
       width: calc(100vw - 14px);
+      div:first-child {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: 40px;
+        text-align: center;
+      }
     }
     }
     
@@ -187,10 +194,12 @@ const Strategy: FC<IStrategyProps> = ({ }) => {
               // previewWidth="70px"
             >
               <div style={{ width: '100%' }} className="my-slide">
-                <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/strategy1.png'}></img>
+                <div>提升超级会员占比 拉升会员LTV</div>
+                <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/strategy2.png'}></img>
               </div>
               <div style={{ width: '100%' }} className="my-slide">
-                <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/strategy2.png'}></img>
+                <div>全流程策略支持，实现优体验、高转化</div>
+                <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/strategy1.png'}></img>
               </div>
             </ByProgressSwiper>
           </Wrapper>
@@ -206,9 +215,11 @@ const Strategy: FC<IStrategyProps> = ({ }) => {
               // previewWidth="70px"
             >
               <div style={{ width: '100%' }} className="my-slide">
+                <div>一式 × 三率 × 七变量</div>
                 <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/play1.png'}></img>
               </div>
               <div style={{ width: '100%' }} className="my-slide">
+                <div>触达流程精细化，AI带来效率质变</div>
                 <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/play2.png'}></img>
               </div>
             </ByProgressSwiper>
