@@ -14,11 +14,10 @@ interface IProps {
   renderCustomerProgress?: (info: { currIndex: number; totalIndex: number; progressNode: ReactNode }) => ReactNode;
   setControlledSwiper?: (s: any) => void;
   autoplayDelay?: number;
-  slidesOffsetBefore? : number;
-  slidesPerView? : number;
-  spaceBetween? : number;
-  slidesOffsetAfter? : number;
-  centeredSlides? : boolean;
+  slidesOffsetBefore?: number,
+  spaceBetween?: number,
+  slidesOffsetAfter?: number,
+  centeredSlides?: boolean,
 }
 
 const RawByProgressSwiper: FC<IProps> = ({
