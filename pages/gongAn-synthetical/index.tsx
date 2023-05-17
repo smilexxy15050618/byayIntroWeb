@@ -131,7 +131,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                     <br />
                     询、服务、宣传、分享功能的定制化AI民警
                   </Desc>
-                  <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+                  <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
                 </Hidden>
                 <Visible xs sm>
                   <BigTitle>
@@ -143,7 +143,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                       onClick={() =>
                         window.open('/form?formType=1')
                       }>
-                      预约体验
+                      立即体验
                     </BlueBtn>
                   </BlueBtnWrap>
                 </Visible>

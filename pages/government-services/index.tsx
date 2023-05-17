@@ -130,7 +130,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                   <Desc>
                     面向居民办事场景，创新性打造以AI客服为核心的智慧<br />型、一体化、可持续政务服务窗口，综合运用多种AI客<br />服能力，提升居民办事满意度
                   </Desc>
-                  <BlueBtn onClick={() => window.open('/form?formType=1')}>预约体验</BlueBtn>
+                  <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
                 </Hidden>
                 <Visible xs sm>
                   <BigTitle>
@@ -142,7 +142,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                       onClick={() =>
                         window.open('/form?formType=1')
                       }>
-                      预约体验
+                      立即体验
                     </BlueBtn>
                   </BlueBtnWrap>
                 </Visible>

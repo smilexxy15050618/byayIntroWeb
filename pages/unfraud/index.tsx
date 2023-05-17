@@ -102,7 +102,7 @@ const Game:NextFunctionComponent<IGameProps>=()=>{
                       onClick={() =>
                         window.open('/form?formType=1')
                       }>
-                      预约体验
+                      立即体验
                     </BlueBtn>
                   </Hidden>
                 </TextArea>
@@ -140,7 +140,7 @@ const Game:NextFunctionComponent<IGameProps>=()=>{
                       onClick={() =>
                         window.open('/form?formType=1')
                       }>
-                      预约体验
+                      立即体验
                     </BlueBtn>
               </BannerWhite>
               <Ai></Ai>

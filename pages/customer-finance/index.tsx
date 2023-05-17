@@ -134,7 +134,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
                   onClick={() =>
                     window.open('/form?formType=1')
                   }>
-                  预约体验
+                  立即体验
                 </BlueBtn>
               </Hidden>
               <Visible xs sm>
@@ -147,7 +147,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
                     onClick={() =>
                       window.open('/form?formType=1')
                     }>
-                    预约体验
+                    立即体验
                   </BlueBtn>
                 </BlueBtnWrap>
               </Visible>

@@ -45,6 +45,7 @@ export const MOBILE_SCENE_SOLUTION_LIST = [
           { title: '数据利用率：短信触达的', content: '5-10倍' },
           { title: 'ROI', content: '8-100' },
         ],
+        btnName: '立即开启GMV增长',
       },
     ],
   },

@@ -321,7 +321,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
                 return <SubTitle>{str}</SubTitle>;
               })}
               <div className="jumpbtn" onClick={() => setForm()}>
-                预约体验
+                立即体验
               </div>
 
              

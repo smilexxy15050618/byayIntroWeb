@@ -534,7 +534,7 @@ const LabelList = styled.div`
 const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
   return (
     <Pane
-      title="顶尖资本支持，智领未来AI沟通新方式"
+      title="携手产业资本，共创行业未来"
       paneBgColor="grey"
       style={{ paddingBottom: '90px', background: `url(${imgurl}/zbbg.png)`, backgroundSize: '100% 100%' }}
       titleStyle={{ marginBottom: '48px' }}

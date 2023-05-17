@@ -191,7 +191,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ dataList = [] }) => {
                   <Title>保险行业<br></br>BPO解决方案</Title>
                   <SubTitle>“大数据+AI+人”三驱模式，为保险客户提供从赠险到长险的全业务链条服务</SubTitle>
                   <div className="jumpbtn" scale={0.8} onClick={() => setForm()}>
-                    预约体验
+                    立即体验
                   </div>
                 </BgContent>
                 <img src={imgurl+'/bxjfbanner.png'} className='bgimg22'></img>
