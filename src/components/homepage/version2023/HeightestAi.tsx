@@ -38,9 +38,6 @@ const HoveUp = styled.div`
         .name_area {
           padding: 0px 0px 0 56px;
         }
-        .name_area {
-          padding-bottom: 20px;
-        }
       }
     }
   }
@@ -56,7 +53,7 @@ const CardContent = styled.aside`
   .logo {
     width: 200px;
     height: 50px;
-    margin: 42px 0 42px 56px;
+    margin: 42px 0 23px 56px;
   }
   .bigLogo {
     width: 374px;
@@ -66,11 +63,12 @@ const CardContent = styled.aside`
     top: 0;
   }
   .diwen {
-    width: 160px;
-    height: 160px;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top: 92px;
-    left: -42px;
+    top: 0;
+    left: 0;
+    margin-bottom: 0;
   }
   .img_area {
     right: 0;
@@ -94,21 +92,21 @@ const CardContent = styled.aside`
     text-align: left;
   }
   .name_area {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 500;
     letter-spacing: 0px;
     line-height: 20px;
-    color: rgba(90, 90, 90, 1);
+    color: rgba(51, 51, 51, 1);
     text-align: left;
-    margin-top: 16px;
-    padding-bottom: 16px;
     // border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    margin-left: 56px;
+    margin-bottom: 41px;
     span {
       font-size: 20px;
-      font-weight: 500;
+      font-weight: 400;
       letter-spacing: 0px;
-      line-height: 24px;
-      color: rgba(90, 90, 90, 1);
+      line-height: 20px;
+      color: rgba(51, 51, 51, 1);
     }
   }
   .introduce_area {
@@ -185,14 +183,14 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
             <SwiperSlide style={{ width: 'auto', paddingTop: 10 }} key={i} className="hoer_bg_more">
               <CardContent>
                 <img className="logo" src={logoSrc} alt="" />
+                <p className="name_area">
+                    {tagName} &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>{personName}</span>
+                  </p>
                 <img className="bigLogo" src={bigSrc} alt="" />
                 <img className="diwen" src={imgurl + '/tzdwen.png'} alt="" />
                 <div className="text_area" style={{}}>
                   <div className="info_area">{content}</div>
-                  <p className="name_area">
-                    {tagName} &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span>{personName}</span>
-                  </p>
                   {/* <div className='introduce_area'>
                     我们已经合作有一段时间了，百应给我们提供了专业且全面的解决方案，整体跑下来结果一直都不错。
                     </div> */}

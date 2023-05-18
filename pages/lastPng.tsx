@@ -4,29 +4,28 @@ import imgurl from '../img.url.js';
 
 export interface IAiProps {}
 const Pane = styled.div`
-  width: 1200px;
-  margin: 0 auto;
+  margin: 0 0px 0px 160px;
   overflow: hidden;
   .title {
     margin-top: 80px;
     margin-bottom: 56px;
-    width: 100%;
+    width: calc(100vw - 320px);
     text-align: center;
     font-size: 40px;
     font-weight: 500;
     letter-spacing: 0px;
-    line-height: 48px;
+    line-height: 36px;
     color: rgba(26, 26, 26, 1);
   }
   .left {
-    width: 577px;
+    width: 34%;
     // img{
     //     width: 100%;
     //     margin-top: 73px;
     // }
     .text {
       // padding-left: 20px;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 400;
       letter-spacing: 0px;
       line-height: 28px;
@@ -39,20 +38,22 @@ const Pane = styled.div`
     opacity: 1;
     background: rgba(0, 200, 189, 1);
     // margin-left: 20px;
-    margin-top: 16px;
+    margin-top: 24px;
   }
   .hengtiaoxiafang {
-    margin-top: 123px;
+    margin-top: 122px;
     display: flex;
     flex-wrap: wrap;
     .hengtiaoxiafang_list {
-      height: 30px;
+      height: 72px;
       width: 50%;
       box-sizing: border-box;
       display: flex;
+      align-items: center;
       .iconself {
-        width: 26px;
-        margin-right: 25px;
+        width: 40px;
+        height: 40px;
+        margin-right: 16px;
         img {
           width: 100%;
         }
@@ -67,12 +68,12 @@ const Pane = styled.div`
     }
   }
   .content {
-    margin-bottom: 99px;
+    margin-bottom: 54px;
     display: flex;
   }
   .right {
-    flex: 1;
-    text-align: right;
+    width: 39%;
+    margin-left: 12.3%;
     .right_box {
       display: flex;
       justify-content: space-between;
@@ -85,24 +86,26 @@ const Pane = styled.div`
         justify-content: center;
         flex-direction: column;
         margin-bottom: 24px;
-        width: 33%;
+        margin-right: 5%;
         cursor: pointer;
         img {
-          margin-bottom: 8px;
-          width: 56px;
-          height: 56px;
-          box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
+          margin-bottom: 12px;
+          width: 72px;
+          height: 72px;
+          background: rgba(255, 255, 255, 1);
+          box-shadow: 0px 0px 15px 1px rgba(36, 91, 219, 0.06);
           border-radius: 50%;
         }
         &:hover img {
           box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
         }
         p {
-          font-size: 12px;
+          width: 140px;
+          text-align: center;
+          font-size: 14px;
           font-weight: 400;
-          letter-spacing: 0px;
-          line-height: 16px;
           color: rgba(90, 90, 90, 1);
+          margin-bottom: 0;
         }
       }
     }
@@ -110,7 +113,6 @@ const Pane = styled.div`
       height: 288px;
     }
   }
-  /* text-align: center; */
   img {
     margin-bottom: 0;
   }
@@ -172,13 +174,13 @@ export const LastPng: FC<IAiProps> = ({}) => {
             </div>
             <div className="hengtiao"></div>
             <div className="hengtiaoxiafang">
-              <div className="hengtiaoxiafang_list" style={{ marginBottom: '55px' }}>
+              <div className="hengtiaoxiafang_list">
                 <div className="iconself">
                   <img src={imgurl + '/aqhg1.png'} alt="" />
                 </div>
                 <div className="text_self">4v1专属团队服务</div>
               </div>
-              <div className="hengtiaoxiafang_list" style={{ marginBottom: '55px' }}>
+              <div className="hengtiaoxiafang_list">
                 <div className="iconself">
                   <img src={imgurl + '/aqhg2.png'} alt="" />
                 </div>

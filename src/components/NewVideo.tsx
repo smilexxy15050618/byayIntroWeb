@@ -45,7 +45,7 @@ flex-wrap: wrap;
 justify-content: space-between;
   .listItem {
     width: 590px;
-height: 264px;
+height: 248px;
 position: relative;
 padding: 40px;
 opacity: 1;
@@ -85,20 +85,19 @@ color: rgba(51, 51, 51, 1);
   margin-top: 25px;
   div {
     height: 22px;
-opacity: 1;
-border-radius: 2px;
-background: rgba(250, 251, 253, 1);
+    border-radius: 2px;
+    background: rgba(43, 88, 249, 0.06);
 
 border: 1px solid rgba(219, 219, 224, 1);
 font-size: 12px;
 font-weight: 400;
 letter-spacing: 0px;
 line-height: 20px;
-color: rgba(10, 15, 44, 0.85);
+color: rgba(36, 91, 219, 1);
 text-align: center;
 margin-right: 8px;
-margin-bottom: 10px;
-padding: 0 8px;
+margin-bottom: 8px;
+padding: 0 12px;
   }
 }
 .bottomImg {
@@ -169,23 +168,23 @@ margin-bottom: 32px;
       }
 .number_h1{
   font-size: 14px;
-font-weight: 400;
-letter-spacing: 0px;
-line-height: 24px;
-color: rgba(255, 255, 255, 1);
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 1);
 }
 .number_content{
   font-family: DINAlternate;
   font-size: 48px;
-font-weight: 700;
-letter-spacing: 0.86px;
-line-height: 64px;
-color: rgba(255, 255, 255, 1);
-span {
-  font-size: 32px;
   font-weight: 700;
-letter-spacing: 0.57px;
-}
+  letter-spacing: 0.86px;
+  line-height: 64px;
+  color: rgba(255, 255, 255, 1);
+  span {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.57px;
+  }
 }
   }
 }
@@ -232,7 +231,7 @@ const lists = [
     contents: ['体系化标签管理', '个性化用户分群', '360°深度洞察', '行业算法模型标签'],
     url: `${imgurl}/aiimg1.png`,
     chose: false,
-    width: '330px',
+    width: '350px',
     contentArr: [{
       number_h1: '标签体系',
       number_content: '4',
@@ -273,7 +272,7 @@ const lists = [
   },
   {
     chose: false,
-    width: '320px',
+    width: '340px',
     title: '多模态情感化AI',
     hovSubtitle: '多模态Al形情感化沟通感知',
     subTitle: '在不同的渠道和场景中使用多模态Al形式沟通，情感化沟通感知，跨端能力共享，为用户提供个性化服务和推荐，提高用户体验。',
@@ -339,8 +338,8 @@ const lists = [
 export const NewVideo = () => {
   let [listArr, setListArr] = useState(lists);
   return (<AITime>
-    <Title>AI时代的新一代智能用户运营平台</Title>
-    <SubTitle>以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，打造智能用户运营平台</SubTitle>
+    <Title>AI时代的智能用户运营平台</Title>
+    <SubTitle>以“数据、智能、互动式内容、连接通道、运营策略”为核心运营要素，构建智能用户运营平台</SubTitle>
     <ListWrapper>
       {listArr.map((item, index) => {
         return (<div

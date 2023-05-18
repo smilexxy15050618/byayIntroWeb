@@ -42,6 +42,11 @@ const Wrapper = styled.div`
           color: rgba(43, 88, 249, 1);
           border-color: rgba(43, 88, 249, 1);
         }
+        &:focus {
+          border: 1px solid #1a1a1a !important;
+          color: #1a1a1a !important;
+          outline: none;
+        }
       }
     }
     .swiper-pagination-bullet {
@@ -201,7 +206,7 @@ const list = [
 export const News = () => {
   return (
     <div style={{ paddingTop: '80px' }}>
-      <Title>新闻动态 持续引领</Title>
+      <Title>了解百应最新动态，洞察行业趋势发展</Title>
       <Wrapper>
         <Swiper
           effect="slide"

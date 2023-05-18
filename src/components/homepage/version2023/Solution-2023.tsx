@@ -422,6 +422,7 @@ const ContentWrapper = styled.div`
     background: #f6fcff;
     border-radius: 4px;
     color: #5a5a5a;
+    margin-right: 4px;
     .active {
       background: rgba(43, 88, 249, 1);
       color: #fff;
@@ -433,6 +434,7 @@ const ContentWrapper = styled.div`
       height: 72px;
       cursor: pointer;
       padding-left: 24px;
+      border-radius: 4px;
       span {
         font-size: 16px;
         font-weight: 400;
@@ -450,8 +452,9 @@ const ContentWrapper = styled.div`
     flex: 1;
     background: linear-gradient(154.05deg, rgba(43, 88, 249, 0) 0%, rgba(43, 88, 249, 0.13) 100%),
       rgba(246, 252, 255, 1);
-    background-blend-mode: normalnormal;
+    background-blend-mode: normal;
     padding: 40px 64px;
+    border-radius: 4px;
     .labels {
       display: flex;
       font-size: 20px;
