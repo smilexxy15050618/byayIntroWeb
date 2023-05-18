@@ -98,7 +98,7 @@ const MainWrap = styled.div`
         .title-item {
             height: 20px;
             font-size: 16px;
-            font-weight: 400;
+            font-weight: 600;
             line-height: 20px;
         }
         .subtitle {
