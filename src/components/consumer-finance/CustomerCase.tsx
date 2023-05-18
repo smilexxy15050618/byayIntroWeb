@@ -114,9 +114,8 @@ const SolutionWap = styled.div`
             height: 160px;
         }
         .title{
-            padding: 30px 24px;
+            padding: 36px 24px 60px;
             font-size: 16px;
-            font-weight: 600;
             color: rgba(0, 0, 0, 1);
         }
         .demo-go{
@@ -163,7 +162,7 @@ const CustomerCase: FC<SceneSolution> = ({}) => {
                                 <div className='textt_area'>
                                     {item.title}
                                 </div>
-                                <a href={item.pageUrl} className="demo-go">了解详情 →</a>
+                                <a href={item.pageUrl} className="demo-go">体验demo →</a>
                             </div>
                         )}
                     </Card>
@@ -187,7 +186,7 @@ const CustomerCase: FC<SceneSolution> = ({}) => {
                 <div className='title'>
                     {item.title}
                 </div>
-                <a href={item.pageUrl} className="demo-go">了解详情 →</a>
+                <a href={item.pageUrl} className="demo-go">体验demo →</a>
             </div>
             ))}
         </ByProgressSwiper>

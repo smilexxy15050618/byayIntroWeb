@@ -7,16 +7,19 @@ import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 const list = [
     {
         banner: '/gongan-hz.svg.png',
+        wapBanner:'/gongan-wap-hz.png',
         title: '杭州市临平区公安局',
         content: '宣传、服务全量铺开，首创百万级居民治理服务“新路径”。'
     },
     {
         banner: '/gongan-jn.svg',
+        wapBanner:'/gongan-wap-jn.png',
         title: '济南市市中区公安局',
         content: '打造虚拟民警“卫民小微”，助力提升居民安满度服务成效。'
     },
     {
         banner: '/gongan-tj.png',
+        wapBanner:'/gongan-wap-tj.png',
         title: '天津市公安局',
         content: '建立“1+N+N”的线上警务互动平台，实现辖区居民服务一键触达'
     }
@@ -129,10 +132,15 @@ const SolutionWap = styled.div`
     width: 100%;
     padding-bottom: 40px;
     @media (max-width: 768px) {
+         width: 100%;
+        display: block;
+        .swiper-slide {
+            width: 300px !important;
+        }
         .custom-bar-wrapper{
             width: 300px;
         }
-      }
+    }
     .solution-item{
         position: relative;
         width: 300px;
@@ -144,6 +152,7 @@ const SolutionWap = styled.div`
         img{
             width: 300px;
             height: 160px;
+            margin: 0;
         }
         .title{
             font-size: 18px;
@@ -169,7 +178,7 @@ const SolutionWap = styled.div`
             font-weight: 400;
             line-height: 26px;
             color: rgba(0, 0, 0, 1);
-            padding: 16px 24px 32px;
+            padding: 16px 24px 25px;
         }
         .demo-go{
             padding-top: 10px;
@@ -231,13 +240,14 @@ export const CustomerStories: FC = () => {
                     <ByProgressSwiper
                         newProgress={true}
                         initialSlide={0}
-                        contentPadding="32px"
-                        progressPadding="0px"
-                        previewWidth="70px">
+                        slidesPerView="auto"
+                        autoplayDelay={5000}
+                        spaceBetween={16}
+                        centeredSlides={true}>
                         {list.map((item, i) => (
                         // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
                         <div className='solution-item'>
-                            <img src={imgurl+item.banner} />
+                            <img src={imgurl+item.wapBanner} />
                             <div className='title'>{item.title}</div>
                             <div className="content">{item.content}</div>
                             <a 

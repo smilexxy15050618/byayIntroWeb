@@ -20,7 +20,11 @@ const HoveUp = styled.div`
     .custom-bar-wrapper{
       width: 300px;
   }
+  .swiper-slide {
+      width: 179px !important;
+    }
    }
+   
    .carditem{
     width: 179px;
 height: 223px;
@@ -228,13 +232,12 @@ useEffect(() => {
                <MainWrap id={AISOLUTION}>
                <HoveUp>
                <ByProgressSwiper
-              newProgress={true}
-              initialSlide={0}
-              contentPadding="6%"
-              progressPadding="0px"
-              previewWidth="49%"
-              autoplayDelay={15000}
-              
+             newProgress={true}
+             initialSlide={0}
+             slidesPerView="auto"
+             autoplayDelay={5000}
+             spaceBetween={16}
+             centeredSlides={true}
             >
                 {carouselDataList.map(item => 
                         <div className='carditem'>

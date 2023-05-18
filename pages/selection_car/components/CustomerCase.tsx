@@ -13,12 +13,13 @@ const HoveUp = styled.div`
   @media (max-width: 768px) {
     width: 100vw;
 }
-.swiper-slide {
-  width: 285px !important;
-}
+
 @media (max-width: 768px) {
     width: 100%;
     display: block;
+    .swiper-slide {
+  width: 285px !important;
+}
     .carditem {
     position: relative;
     width: 285px;
@@ -204,7 +205,7 @@ const CustomerCase: FC<SceneSolution> = ({}) => {
 newProgress={true}
 initialSlide={0}
 slidesPerView="auto"
-autoplayDelay={15000}
+autoplayDelay={5000}
 spaceBetween={12}
 centeredSlides={true}
 >

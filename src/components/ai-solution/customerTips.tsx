@@ -39,6 +39,9 @@ const HoveUp = styled.div`
             .custom-bar-wrapper{
                 width: 300px;
             }
+            .swiper-slide {
+                width: 376px !important;
+                }
        }
    }
    .swiperwrap{
@@ -220,10 +223,12 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
                             style={{ paddingBottom: 100 }} mobileStyle={{ 
                             paddingBottom: 40, background: 'none' }}>
                             <ByProgressSwiper
-                                newProgress={true}
-                                initialSlide={0}
-                                contentPadding="19px" progressPadding="0px"
-                                previewWidth="0"
+                                    newProgress={true}
+                                    initialSlide={0}
+                                    slidesPerView="auto"
+                                    autoplayDelay={5000}
+                                    spaceBetween={12}
+                                    centeredSlides={true}
                             >
                                 {dataList.map(({ url }) => (
                                     <div style={{width: 'calc(100vw - 18px)',background: '#fff', padding: '13px 19px 16px' }}>

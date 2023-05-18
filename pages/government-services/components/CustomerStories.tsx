@@ -7,16 +7,19 @@ import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 const list = [
     {
         banner: '/government-jn.svg.png',
+        wapBanner: '/overnment-wap-jn.png',
         title: '济南社保',
         content: '实现业务办理从“多次跑”转变为“零次跑”。'
     },
     {
         banner: '/government-dq.svg',
+        wapBanner: '/overnment-wap-dq.png',
         title: '德清公安',
         content: '聚焦高频办理业务，打造智能、便利公安服务。'
     },
     {
         banner: '/government-hz.svg.png',
+        wapBanner: '/overnment-wap-hz.png',
         title: '杭州医保',
         content: '引入智能AI客服垂直深耕，助力医保服务智能化升级。'
     }
@@ -129,10 +132,15 @@ const SolutionWap = styled.div`
     width: 100%;
     padding-bottom: 40px;
     @media (max-width: 768px) {
+         width: 100%;
+        display: block;
+        .swiper-slide {
+            width: 300px !important;
+        }
         .custom-bar-wrapper{
             width: 300px;
         }
-      }
+    }
     .solution-item{
         position: relative;
         width: 300px;
@@ -144,6 +152,7 @@ const SolutionWap = styled.div`
         img{
             width: 300px;
             height: 160px;
+            margin: 0;
         }
         .title{
             font-size: 18px;
@@ -156,11 +165,11 @@ const SolutionWap = styled.div`
                 content: '';
                 width: 18px;
                 height: 18px;
-                background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTlweCIgaGVpZ2h0PSIxOXB4IiB2aWV3Qm94PSIwIDAgMTkgMTkiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+6ZK755+zPC90aXRsZT4KICAgIDxnIGlkPSLpobXpnaItMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IueUu+advyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMC4wMDAwMDAsIC0zOTEuMDAwMDAwKSIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPGcgaWQ9IuWuouaIt+ahiOS+i+agt+W8jy005qC85aSH5Lu9IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5NS4wMDAwMDAsIDIwNS4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxnIGlkPSLnvJbnu4QtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjUuODQwOTczLCAxODIuNTAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgPGcgaWQ9IumSu+efsyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsIDQuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxyZWN0IGlkPSLnn6nlvaIiIGZpbGw9IiMwMDAwMDAiIG9wYWNpdHk9IjAiIHg9IjAiIHk9IjAiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PC9yZWN0PgogICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNi44NTM5NTcwMywwLjkgTDIuNywwLjkgTDAsNS44NSBMNC45NSw1Ljg1IEw2Ljg1Mzk1NzAzLDAuOSBaIE0xOCw1Ljg1IEwxNS4zLDAuOSBMMTEuMTQ2NSwwLjkgTDEzLjA1LDUuODUgTDE4LDUuODUgWiBNMTIuMTUsNS44NSBMMTAuMjQ2NSwwLjkgTDcuNzUzOTU3MDMsMC45IEw1Ljg1LDUuODUgTDEyLjE1LDUuODUgWiBNMTAuMzg0NjQ2NSwxNS44ODg2MDM1IEwxOCw2Ljc1IEwxMy4wNSw2Ljc1IEwxMC4zODQ2NDY1LDE1Ljg4ODYwMzUgWiBNMCw2Ljc1IEw3LjYxNTM1MzUyLDE1Ljg4ODYwMzUgTDQuOTUsNi43NSBMMCw2Ljc1IFogTTUuODUsNi43NSBMOSwxNy41NSBMMTIuMTUsNi43NSBMNS44NSw2Ljc1IFoiIGlkPSLlvaLnirYiIGZpbGw9IiMyQjU4RjkiPjwvcGF0aD4KICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==');
+                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAmCAYAAACh1knUAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAHdSURBVFiFxZhRkoIwDIb/sDs6ngXusHiL3ga4Dbeg3kHO4uDMbvehZotIbUqB/V90nEg+0yRNJESoULcSAAw+KvepKe0raQAgmAsAXNtjHfNskjh3jtmp+PGaYC4SKC+IA4h17nXUAP5IvYCsDeCDmgLRXs59QMCPvrYnTbm6d3sDzAFRrgazxoMAwABVyNanz1QIwCVgru5fS6ObpUJwNOz77+ad7WYg0+y/tifNjW1XkDktjcoCENK2Y772AsBGxR5XXGQEVUOaf6UNfbz4jgKy0ldZwaqxd8UyABZ/v1BD6bMJHo0BqkINdQrIA6J+12dEOZIKE4IQg6TASCCiQBwMJ956EA+Q2AaUiUHkIr2gj/zoLWyjQWJKWWpLMJcs5aJiFWqoU0ucAEA+k5Du28PZOr+Vc51y2volg1ffHiljB0JwFOpW5ureGWTdXEUYoMrVYDhCvF74xGPEaGbNOinMmuII/k3x/zW79u2RgFHVrJG0sXqe7kbaNyou8YFJH9kzKlNfTyBuutoaAs202c3uvlsekW/E9C7h28A854UIZH0YPwQQuPT69nBeJ2feQwRBALtOpsAQ0IQgHnYy8d0hX7TtGiIfBSIVHv/iABaDOKDxGMB/5MUDsH4B1O/1vh4q4ZgAAAAASUVORK5CYII=');
                 background-position: center;
                 background-repeat: no-repeat;
-                background-size: cover;
-                vertical-align: -4px;
+                background-size: contain;
+                vertical-align: -2px;
                 margin-right: 4px;
             }
         }
@@ -169,7 +178,7 @@ const SolutionWap = styled.div`
             font-weight: 400;
             line-height: 26px;
             color: rgba(0, 0, 0, 1);
-            padding: 16px 24px 32px;
+            padding: 16px 24px 25px;
         }
         .demo-go{
             padding-top: 10px;
@@ -231,13 +240,14 @@ export const CustomerStories: FC = () => {
                     <ByProgressSwiper
                         newProgress={true}
                         initialSlide={0}
-                        contentPadding="32px"
-                        progressPadding="0px"
-                        previewWidth="70px">
+                        slidesPerView="auto"
+                        autoplayDelay={5000}
+                        spaceBetween={16}
+                        centeredSlides={true}>
                         {list.map((item, i) => (
                         // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
                         <div className='solution-item'>
-                            <img src={imgurl+item.banner} />
+                            <img src={imgurl+item.wapBanner} />
                             <div className='title'>{item.title}</div>
                             <div className="content">{item.content}</div>
                             <a 

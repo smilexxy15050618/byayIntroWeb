@@ -47,6 +47,9 @@ padding: 82px 0 100px;
     .custom-bar-wrapper{
         width: 300px;
       }
+      .swiper-slide {
+    width: 285px !important;
+    }
 }
 `
 const Title = styled.div`
@@ -86,7 +89,7 @@ box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
 overflow: hidden;
 position: relative;
 @media(max-width: 768px) {
-    width: 284px;
+    width: 285px;
     height: 356px;
 }
 &:nth-child(2) {
@@ -214,10 +217,12 @@ export const CustomerCase: FC = () => {
                 <Title>客户案例</Title>
                 <ListWrapper id={INSURE}>
                 <ByProgressSwiper
-              newProgress={true}
-              initialSlide={0}
-              contentPadding="4%" progressPadding="0px"
-              previewWidth="20%"
+            newProgress={true}
+            initialSlide={0}
+            slidesPerView="auto"
+            autoplayDelay={5000}
+            spaceBetween={12}
+            centeredSlides={true}
             >
                     {
                         list.map(({ img, banner, content, img1 }, index) => {

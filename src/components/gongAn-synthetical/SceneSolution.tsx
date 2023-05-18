@@ -155,7 +155,7 @@ const carouselDataListWap = [
     {
         bgImg:'/gongan-scene-1.svg',
         title: '底数摸排场景',
-        subtitle:'AI社工以多轮对话的形式对业主的实际居住情况、房屋内人员的实际居住情况进行调研，完成用户信息的采集及更新'
+        subtitle:'AI社工以多轮对话的形式对业主的实际居住情况、房屋内人员的居住情况进行调研，完成用户信息的采集及更新'
     },
     {
         bgImg:'/gongan-scene-2.svg',
@@ -165,7 +165,7 @@ const carouselDataListWap = [
     {
         bgImg:'/gongan-scene-3.svg',
         title: '巡查及自查上报场景',
-        subtitle:'建议与辖区群防群治力量/居民、规范、紧密、有效、结构化的服务、指挥、互动、管理渠道，形成群防群治完整闭环'
+        subtitle:'建立与辖区居民、规范、紧密、有效、结构化的服务、指挥、互动、管理渠道，形成群防群治完整闭环'
     },
     {
         bgImg:'/gongan-scene-4.svg',

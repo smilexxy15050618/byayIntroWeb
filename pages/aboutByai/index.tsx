@@ -21,9 +21,9 @@ import imgurl from '../../img.url.js';
 import { HOST_ENUM } from '../../src/lib/utils';
 
 const BANNER_BG = `${imgurl}/about_banner_bg.png`;
-const BANNER_WAP_BG = `/static/img2023/about-wap-bg.svg`;
+const BANNER_WAP_BG = `${imgurl}/about-wap-bg.svg`;
 const JOIN_US_IMG = `${imgurl}/about_banner_img.png`;
-const JOIN_US_WAP_IMG = `/static/img2023/about-wap-banner.svg`;
+const JOIN_US_WAP_IMG = `${imgurl}/about-wap-banner.svg`;
 const ABOUT_INTRO = `${imgurl}/about-intro.jpg`;
 const Mission_BG = `${imgurl}/mission-bg.png`;
 const Vision_BG = `${imgurl}/vision-bg.png`;
@@ -187,8 +187,8 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
             <JoinUs backgroundImage={JOINUS_BG} />
           </Hidden>
           <Visible xs sm>
-            {/*{AboutContent}*/}
-            <TabNav
+            {AboutContent}
+            {/* <TabNav
               bannerList={[
                 {
                   name: '企业介绍',
@@ -216,7 +216,7 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
                 },
               ]}
               onCancel={hadnleNav}
-            />
+            /> */}
           </Visible>
           <ByVoiceFooter
             title="立即体验AI时代的新一代用户运营平台"
