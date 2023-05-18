@@ -7,16 +7,19 @@ import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 const list = [
     {
         banner: '/bank-ny.png',
+        wapBanner:'/bank-wap-ny.png',
         title: '中国农业银行',
         content: '高效激活存量客户，精细化运营手段助力转化。'
     },
     {
         banner: '/bank-hz.png',
+        wapBanner:'/bank-wap-hz.png',
         title: '杭州联合银行',
         content: '助力银行贷款营销及客户回访场景业务突破。'
     },
     {
         banner: '/bank-lc.png',
+        wapBanner:'/bank-wap-lc.png',
         title: '隆昌农商行',
         content: 'AI规模化快速筛选优质客户，提升人效。'
     }
@@ -129,10 +132,15 @@ const SolutionWap = styled.div`
     width: 100%;
     padding-bottom: 40px;
     @media (max-width: 768px) {
+         width: 100%;
+        display: block;
+        .swiper-slide {
+            width: 300px !important;
+        }
         .custom-bar-wrapper{
             width: 300px;
         }
-      }
+    }
     .solution-item{
         position: relative;
         width: 300px;
@@ -232,13 +240,14 @@ export const CustomerStories: FC = () => {
                     <ByProgressSwiper
                         newProgress={true}
                         initialSlide={0}
-                        contentPadding="32px"
-                        progressPadding="0px"
-                        previewWidth="70px">
+                        slidesPerView="auto"
+                        autoplayDelay={5000}
+                        spaceBetween={16}
+                        centeredSlides={true}>
                         {list.map((item, i) => (
                         // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
                         <div className='solution-item'>
-                            <img src={imgurl+item.banner} />
+                            <img src={imgurl+item.wapBanner} />
                             <div className='title'>{item.title}</div>
                             <div className="content">{item.content}</div>
                             <a 

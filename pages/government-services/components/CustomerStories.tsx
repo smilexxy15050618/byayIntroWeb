@@ -7,16 +7,19 @@ import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 const list = [
     {
         banner: '/government-jn.svg.png',
+        wapBanner: '/overnment-wap-jn.png',
         title: '济南社保',
         content: '实现业务办理从“多次跑”转变为“零次跑”。'
     },
     {
         banner: '/government-dq.svg',
+        wapBanner: '/overnment-wap-dq.png',
         title: '德清公安',
         content: '聚焦高频办理业务，打造智能、便利公安服务。'
     },
     {
         banner: '/government-hz.svg.png',
+        wapBanner: '/overnment-wap-hz.png',
         title: '杭州医保',
         content: '引入智能AI客服垂直深耕，助力医保服务智能化升级。'
     }
@@ -129,10 +132,15 @@ const SolutionWap = styled.div`
     width: 100%;
     padding-bottom: 40px;
     @media (max-width: 768px) {
+         width: 100%;
+        display: block;
+        .swiper-slide {
+            width: 300px !important;
+        }
         .custom-bar-wrapper{
             width: 300px;
         }
-      }
+    }
     .solution-item{
         position: relative;
         width: 300px;
@@ -232,13 +240,14 @@ export const CustomerStories: FC = () => {
                     <ByProgressSwiper
                         newProgress={true}
                         initialSlide={0}
-                        contentPadding="32px"
-                        progressPadding="0px"
-                        previewWidth="70px">
+                        slidesPerView="auto"
+                        autoplayDelay={5000}
+                        spaceBetween={16}
+                        centeredSlides={true}>
                         {list.map((item, i) => (
                         // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
                         <div className='solution-item'>
-                            <img src={imgurl+item.banner} />
+                            <img src={imgurl+item.wapBanner} />
                             <div className='title'>{item.title}</div>
                             <div className="content">{item.content}</div>
                             <a 
