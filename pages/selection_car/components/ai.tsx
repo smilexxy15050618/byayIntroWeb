@@ -155,12 +155,14 @@ const Strategy: FC<IStrategyProps> = ({}) => {
           <ByProgressSwiper
               newProgress={true}
               initialSlide={0}
-              slidesPerView="auto"
-              spaceBetween="12"
+              slidesPerView={'1'}
+              autoplayDelay={5000}
+              spaceBetween={12}
+              centeredSlides={true}
             >
-              <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/carbanner1m.png'}></img>
-              <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/carbanner2m.png'}></img>
-              <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/carbanner3m.png'}></img>
+              <img style={{ textAlign: 'center', maxWidth: '97%' }} src={imgurl + '/carbanner1m.png'}></img>
+              <img style={{ textAlign: 'center', maxWidth: '97%' }} src={imgurl + '/carbanner2m.png'}></img>
+              <img style={{ textAlign: 'center', maxWidth: '97%' }} src={imgurl + '/carbanner3m.png'}></img>
 
 
                     </ByProgressSwiper>
