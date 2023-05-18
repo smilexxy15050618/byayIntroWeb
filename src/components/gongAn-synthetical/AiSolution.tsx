@@ -15,7 +15,7 @@ const carouselDataList = [
         url: '/goan-use-1.png'
     },{
         title:'精准触达<br />千人千面',
-        content:'通过居民画像打标，熟知<br />每个居民特征特性，协助<br />民警在1对1的沟通中提供更<br />加精准的便民服务',
+        content:'通过居民画像打标，熟知<br />每个居民特征特性，协助<br />民警在1对1的沟通中提供<br />更加精准的便民服务',
         url: '/goan-use-2.png'
     },{
         title:'及时响应<br />满意度提升',
@@ -134,7 +134,6 @@ const SolutionWap = styled.div`
         }
         .subtitle{
             padding-top: 12px;
-            padding-right: 18px;
             font-size: 12px;
             font-weight: 400;
             line-height: 20px;

@@ -27,18 +27,17 @@ const Placeholder = styled.div<{ bgColor?: string }>`
 `;
 
 const HeaderWrapper = styled.div<{ needOpacity: boolean; fontStyle: 'dark' | 'light' }>`
-  /* ${media.desktop`display: none;`}
-  ${media.tablet`display: none;`}
-  ${media.phone`display: none;`} */
   position: fixed;
   top: 0;
   z-index: 99;
   width: 100%;
   height: 80px;
+  transition:background-color 1s;
   background: ${props => (props.needOpacity ? 'transparent' : 'rgba(255,255,255,1)')};
   border-bottom: ${props => (props.needOpacity ? 'none' : '1px solid #eeeeee')};
-  // backdrop-filter: blur(5px);
-  transition: all 0.1s ease-in-out;
+  &:hover{
+    background-color: rgba(255,255,255,1);
+  }
   .content-wrapper {
     max-width: 1200px !important;
     height: 100%;
@@ -66,7 +65,6 @@ const HeaderWrapper = styled.div<{ needOpacity: boolean; fontStyle: 'dark' | 'li
   }
   .nav-list {
     .nav-item {
-      // 导航项
       position: relative;
       display: flex;
       align-items: center;
@@ -95,9 +93,9 @@ const HeaderWrapper = styled.div<{ needOpacity: boolean; fontStyle: 'dark' | 'li
         }
         &:hover {
           /* color: ${props => (props.fontStyle === 'light' ? '#ffffff' : 'rgba(49,83,212,1)')}; */
-          color: rgba(49, 83, 212, 1);
+          color: #2B58F9;
           > .icon {
-            border-color: rgba(49, 83, 212, 1) transparent transparent transparent;
+            border-color: #2B58F9 transparent transparent transparent;
           }
         }
       }
@@ -279,26 +277,6 @@ const SmallDropdownWrapper = styled.div<{ visible: boolean }>`
         }
       }
     }
-    /*.borderStyle {
-      height: 48px;
-      border-bottom: 1px solid rgba(26,26,26,0.18);
-      .link-btn-wrapper {
-        padding: 6px 6px 16px;
-        cursor: text;
-        &:hover {
-          background: transparent;
-        }
-        .link-btn-icon{
-          display: none;
-        }
-        .link-btn-info-title{
-              font-size: 18px;
-              font-weight: 400;
-              line-height: 24px;
-              color: rgba(0,0,0,1);
-        }
-      }
-    }*/
     .link-btn-icon {
       width: 32px;
       height: 32px;

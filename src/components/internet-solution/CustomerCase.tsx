@@ -110,7 +110,7 @@ const Wrapper = styled.div`
     box-shadow: 0px 0px 8px 0px rgba(36, 91, 219, 0.12);
     img{
       width: 100%;
-      height: 164px;
+      height: 173px;
     }
   }
   .swiper-counter {

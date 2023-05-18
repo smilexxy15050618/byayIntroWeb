@@ -57,6 +57,9 @@ export const NavBar = styled.div < { collapse: boolean } > `
         margin-left:18px;
       }
     }
+    .is-expand{
+      background: transparent;
+    }
     
   }
 `;
@@ -126,10 +129,11 @@ export const TreeNode = styled.div < INodeProps > `
       display: none;
     }
     .link-btn-info-title{
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 400;
-      color: rgba(0, 0, 0, 1);
+      color: #5A5A5A;
       box-sizing: border-box;
+      font-family: PingFangSC-Regular, PingFang SC;
     }
   }
   .link-btn-icon {
@@ -149,7 +153,7 @@ export const TreeNode = styled.div < INodeProps > `
   }
   .link-btn-info-title {
     font-size: 16px;
-    font-family: PingFangSC-Medium, PingFang SC;
+    font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 500;
     color: #000000;
     line-height: 24px;
@@ -187,10 +191,13 @@ export const TreeNode = styled.div < INodeProps > `
     padding-right: 16px;
     &.is-expand {
       color: #2b58f9;
-      // background: rgba(242, 245, 255, 1);
+      background: #F2F5FF;
     .tree-node-content  .link-btn-info-title {
         color: #2b58f9;
-      }
+    }
+    .triangle-icon {
+      border-color: #2b58f9 transparent transparent transparent;
+    }
     }
     .triangle-icon {
       opacity: ${props => (hideDropdownIcon(props.nodeTrain) ? 0 : 1)};

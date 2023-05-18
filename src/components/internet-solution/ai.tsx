@@ -13,13 +13,13 @@ const titleList = [
   },
   {
     title: '高转化模型测试',
-    subTitle: '全变量对照测试，提升效果转化文案设计精细化，为沟通结果负责把控变量节点密度，验证最优模型数据分析迭代，完成激活上升曲线',
+    subTitle: '全变量对照测试，提升效果转化<br />文案设计精细化，为沟通结果负责<br />把控变量节点密度，验证最优模型<br />数据分析迭代，完成激活上升曲线',
     url: '/internet-solution-2.svg',
     urlWap: '/internet-solution-wap-2.png',
   },
   {
     title: '全流程智能化、自动化',
-    subTitle: '人群精细拆分，千人千面策略运营用户数据分析，规划运营增长旅途智能、流畅、自然，提升用户体验',
+    subTitle: '人群精细拆分，千人千面策略运营<br />用户数据分析，规划运营增长旅途<br />智能、流畅、自然，提升用户体验',
     url: '/internet-solution-3.svg',
     urlWap: '/internet-solution-wap-3.png',
   },
@@ -207,7 +207,7 @@ const AI: FC<IAiProps> = ({}) => {
           <div class="title">以数智化助力互联网企业增长，提升用户活跃度</div>
         </Visible>
         <Visible xs sm>
-          <div class="title">以数智化助力互联网企业增长提升用户活跃度</div>
+          <div class="title">以数智化助力互联网企业增长<br />提升用户活跃度</div>
         </Visible>
         <div class="desc">助力品牌激活会员、高效转化、差异化触达营销，实现运营效率质变</div>
         <Visible md lg xl xxl xxxl>
