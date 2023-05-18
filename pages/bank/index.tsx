@@ -65,7 +65,7 @@ const Desc = styled.div`
     text-align: left;
     font-size: 16px;
     line-height: 26px;
-    margin: 0 28px 46px !important;
+    margin: 0 24px 26px 28px !important;
   }
 `;
 
