@@ -93,6 +93,10 @@ img {
     width: 100%;
     height: 528px;
     margin-bottom:0;
+    @media (max-width: 768px) {
+      width:auto;
+      max-width:unset;
+    }
 }
 .lists {
     width: 296px;
