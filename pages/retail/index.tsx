@@ -38,7 +38,7 @@ const BigTitle = styled.div`
 font-weight: 500;
 letter-spacing: 0px;
 line-height: 47px;
-margin-top: 47px !important;
+margin-top: 11px !important;
 width: 100%;
   }
 `;

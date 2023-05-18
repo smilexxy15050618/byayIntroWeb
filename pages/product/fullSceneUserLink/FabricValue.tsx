@@ -66,10 +66,14 @@ const FeatureValueWrap = styled.div`
     @media (max-width: 768px) {
       width: 100vw;
       margin: 24px auto 0;
+      .swiper-slide {
+        width: 300px !important;
+        }
       .custom-bar-wrapper{
           width: 300px;
       }
     }
+
     &.appear {
       transform: translateY(0);
       opacity: 1;
@@ -84,7 +88,7 @@ const FeatureValueWrap = styled.div`
       @media (max-width: 768px) {
         width: 240px;
         height: 250px;
-        margin-right: 16px;
+        margin-right: 0;
         padding: 30px;
       }
       img {
@@ -209,9 +213,10 @@ const RawFabricValue: FC<IProps> = ({ className }) => {
           <ByProgressSwiper
             newProgress={true}
             initialSlide={0}
-            contentPadding="32px"
-            progressPadding="0px"
-            previewWidth="70px">
+            slidesPerView="auto"
+            autoplayDelay={5000}
+            spaceBetween={16}
+            centeredSlides={true}>
             {FEATURE_TITLE.map((item, i) => (
               // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
               <div className="FeatureValue-item">

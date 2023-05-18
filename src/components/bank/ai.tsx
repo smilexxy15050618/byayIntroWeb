@@ -35,11 +35,14 @@ const Pane = styled.div`
   @media (max-width: 768px) {
     padding: 37px 0;
   }
-  @media (max-width: 768px) {
-    .custom-bar-wrapper{
-      width: 300px;
+   @media (max-width: 768px) {
+      .swiper-slide {
+        width: 300px !important;
+      }
+      .custom-bar-wrapper{
+          width: 300px;
+      }
     }
-  }
   .title {
     font-size: 40px;
     font-weight: 500;
@@ -239,9 +242,10 @@ const AI: FC<IAiProps> = ({}) => {
           <ByProgressSwiper
             newProgress={true}
             initialSlide={0}
-            contentPadding="40px"
-            progressPadding="0px"
-            previewWidth="70px">
+            slidesPerView="auto"
+            autoplayDelay={5000}
+            spaceBetween={16}
+            centeredSlides={true}>
             {titleList.map((item, i) => (
               // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
               <div className="channel-item">

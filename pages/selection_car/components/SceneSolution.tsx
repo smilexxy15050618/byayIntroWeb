@@ -106,8 +106,9 @@ const MainWrap = styled.div`
       box-sizing: border-box;
       .title_mobile{
         font-size: 16px;
-        font-weight: 400;
+        font-weight: 600;
         letter-spacing: 0px;
+        
         line-height: 20px;
         color: rgba(0, 0, 0, 1);
         margin-bottom: 8px;

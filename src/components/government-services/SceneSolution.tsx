@@ -70,9 +70,23 @@ const MainWrap = styled.div`
       transform: translateY(0);
       opacity: 1;
     }
+   
     @media (max-width: 768px) {
         animation: none;
+        .swiper-slide {
+        width: 300px !important;
+        }
+        .custom-bar-wrapper{
+            width: 300px;
+        }
+        .custom-bar-wrapper{
+            display:none;
+        }
+        .swiper-counter {
+            display:none;
+        }
     }
+    
     .channel-item{
         position: relative;
         width: 300px;
@@ -84,7 +98,7 @@ const MainWrap = styled.div`
         .title-item {
             height: 20px;
             font-size: 16px;
-            font-weight: 400;
+            font-weight: 600;
             line-height: 20px;
         }
         .subtitle {
@@ -152,11 +166,9 @@ useEffect(() => {
             <Visible xs sm>
               <ByProgressSwiper
                 newProgress={true}
-                noProgress={true}
                 initialSlide={0}
-                contentPadding="40px"
-                progressPadding="0px"
-                previewWidth="75px">
+                slidesPerView="auto"
+                spaceBetween={12}>
                 {carouselWapList.map((item, i) => (
                 // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
                 <div className="channel-item">

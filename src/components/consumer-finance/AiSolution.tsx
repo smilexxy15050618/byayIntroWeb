@@ -110,10 +110,13 @@ const SolutionWap = styled.div`
     width: 100%;
     padding-bottom: 40px;
     @media (max-width: 768px) {
-        .custom-bar-wrapper{
-            width: 300px;
-        }
+      .swiper-slide {
+        width: 180px !important;
       }
+      .custom-bar-wrapper{
+          width: 300px;
+      }
+    }
     .solution-item{
         position: relative;
         width: 180px;
@@ -200,9 +203,10 @@ useEffect(() => {
             <ByProgressSwiper
                 newProgress={true}
                 initialSlide={0}
-                contentPadding="32px"
-                progressPadding="0px"
-                previewWidth="170px">
+                slidesPerView="auto"
+                autoplayDelay={5000}
+                spaceBetween={16}
+                centeredSlides={true}>
                 {carouselDataList.map((item, i) => (
                 // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
                 <div className='solution-item'>
