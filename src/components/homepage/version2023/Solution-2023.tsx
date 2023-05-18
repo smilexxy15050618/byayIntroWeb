@@ -542,7 +542,7 @@ const ContentWrapper = styled.div`
 
 const labelInfo = [
   {
-    name: '企业数智化用户运营解决方案',
+    name: '企业数字化',
     fontTitle: [
       '品牌零售行业解决方案',
       '互联网行业解决方案',
@@ -579,7 +579,7 @@ const labelInfo = [
     banner: ['/001ls.png', '/002hlw.png', '/003qc.png', '/004bx.png', '/005xj.png', '/006yh.png'],
   },
   {
-    name: '政府基层服务和治理自动化解决方案',
+    name: '政务数字化',
     fontTitle: ['百应安盾电信网络诈骗预防平台', '易窗通办政务创新服务解决方案', '公安综治智能化解决方案'],
     fontSubTitle: [
       '以AI能力为核心，全链条贯通反诈的宣传劝阻业务流程，助力电诈“双降”，打造具备“点面结合，长短并行”能力的AI虚拟民警',
