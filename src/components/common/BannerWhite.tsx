@@ -127,7 +127,7 @@ const BannerWhite = styled(RawBannerWhite) <IBannerWhiteProps>`
   @media (max-height: 666px) and (max-width: 768px) {
     padding-top: 10px;
   }
-  @media (min-height: 750px) and (max-width: 768px) {
+  @media (max-width: 768px) {
     .linear {
       padding-top: 60px;
     }
