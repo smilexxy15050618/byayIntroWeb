@@ -29,6 +29,9 @@ padding-top: 100px;
 padding-bottom: 100px;
 @media (max-width: 768px) {
     padding-top: 40px;
+    .swiper-slide {
+        width: 280px !important;
+      }
     }
   .title {
     font-size: 40px;
@@ -217,10 +220,12 @@ export const ProductValue = () => {
             <Visible xs sm>
                 <div id={celue}>
                     <ByProgressSwiper
-                        newProgress={true}
-                        initialSlide={0}
-                        contentPadding="32px" progressPadding="0px"
-                        previewWidth="70px"
+                       newProgress={true}
+                       initialSlide={0}
+                       slidesPerView="auto"
+                       autoplayDelay={5000}
+                       spaceBetween={20}
+                       centeredSlides={true}
                         >
                         {list.map((item, index) => (
                             <div className='list-item'>
