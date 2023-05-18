@@ -248,7 +248,7 @@ export const Ai: FC<IAiProps> = ({ }) => {
           <div className="title">构建数智化反诈新模式，打造最全面的数智反诈预防平台</div>
           <div className="sec-title">强力提升公安反诈预防全业务效能，助力电诈“双降”，持续保障居民生命财产安全</div>
 
-          <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
+          <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' ,marginTop:'20px'}}>
             <div id={UNFRAUDAI} className="aitxs">
               <ListWrapper>
                 <ByProgressSwiper

@@ -79,8 +79,8 @@ export const MOBILE_SCENE_SOLUTION_LIST = [
   {
     tabName: '用户服务',
     videoName: '百应「用户调研」录音demo',
-    videoSrc:
-      'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/retail/%E7%94%A8%E6%88%B7%E8%B0%83%E7%A0%94%E5%BD%95%E9%9F%B3demo%E8%84%B1%E6%95%8F%E7%89%88.mp3',
+    videoSrc: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/retail/%E7%94%A8%E6%88%B7%E6%9C%8D%E5%8A%A1%E8%A7%86%E9%A2%91.mp4',
+      // 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/retail/%E7%94%A8%E6%88%B7%E8%B0%83%E7%A0%94%E5%BD%95%E9%9F%B3demo%E8%84%B1%E6%95%8F%E7%89%88.mp3',
     detailList: [
       {
         title: '每个用户都满意的\n品牌AI管家',
