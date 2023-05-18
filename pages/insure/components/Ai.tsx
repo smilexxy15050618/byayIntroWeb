@@ -93,13 +93,16 @@ img {
     width: 100%;
     height: 528px;
     margin-bottom:0;
+    @media (max-width: 768px) {
+      width:auto;
+      max-width:unset;
+    }
 }
 .lists {
     width: 296px;
     @media (max-width: 768px) {
       width: 300px;
       height: 340px;
-      padding: 24px 0 0 16px;
       box-sizing: border-box;
       border-radius: 8px;
       background: rgba(246, 252, 255, 1);
@@ -108,6 +111,7 @@ img {
        font-weight: 600;
        letter-spacing: 0px;
        margin-bottom: 12px;
+       padding: 24px 0 0 16px;
       }
       div:nth-child(2) {
         width: 268px;
@@ -118,6 +122,7 @@ img {
         color: rgba(0, 0, 0, 1);
         text-align: justify;
         margin-bottom: 24px;
+        padding: 0 0 0 16px;
       }
     }
   }

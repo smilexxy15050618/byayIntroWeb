@@ -122,31 +122,31 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
     <Layout initialOpacity={initial} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
       {(visible, setVisible) => (
         <Wrapper>
-          <BannerWhite
-            height={['560px', '584px']}
-            LinearHeight={['500px', '100%']}
-            background={[`url(${BANNER_BG}) right top ,#F6FCFF`, `url(${BANNER_WAP_BG}) center,#F6FCFF`]}
-            pcImgs={[
-              {
-                src: JOIN_US_IMG,
-                style: { width: 644, height: 496, top: 0, right: 0 },
-                className: ['animate__fadeInRight', 'animate__ahead_300ms'],
-              },
-            ]}
-            mobileImg={JOIN_US_WAP_IMG}
-            mobileStyle={{width: '319px',height:'245px',paddingTop: '0', }}
-            >
-            <TextArea spaces={['', '']}>
-              <BigTitle>关于百应</BigTitle>
-              <Desc>
-                致力于通过前沿对话式AI能力
-                <br />
-                助力政府和企业高效连接C端用户
-              </Desc>
-              <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
-            </TextArea>
-          </BannerWhite>
           <Hidden xs sm>
+            <BannerWhite
+              height={['560px', '584px']}
+              LinearHeight={['500px', '100%']}
+              background={[`url(${BANNER_BG}) right top ,#F6FCFF`, `url(${BANNER_WAP_BG}) center,#F6FCFF`]}
+              pcImgs={[
+                {
+                  src: JOIN_US_IMG,
+                  style: { width: 644, height: 496, top: 0, right: 0 },
+                  className: ['animate__fadeInRight', 'animate__ahead_300ms'],
+                },
+              ]}
+              mobileImg={JOIN_US_WAP_IMG}
+              mobileStyle={{width: '319px',height:'245px',paddingTop: '0', }}
+              >
+              <TextArea spaces={['', '']}>
+                <BigTitle>关于百应</BigTitle>
+                <Desc>
+                  致力于通过前沿对话式AI能力
+                  <br />
+                  助力政府和企业高效连接C端用户
+                </Desc>
+                <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
+              </TextArea>
+            </BannerWhite>
             <EnIntroductionWrap>
               <TabNav
                 bannerList={[

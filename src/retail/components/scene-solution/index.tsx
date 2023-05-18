@@ -27,7 +27,7 @@ const SceneSolutionMobile: FC<ISceneSolutionMobileProps> = ({ dataList, onJumpCl
   return (
     <Wrapper>
         <div style={{fontSize: '24px',fontWeight: 50,lineHeight: '40px',color: 'rgba(0, 0, 0, 1)',textAlign: 'center', margin: '40px 0 24px'}}>
-          AI赋能零售品牌全域增长<br/>打造核心用户价值
+          场景解决方案
         </div>
       <div className="tab-wrapper">
         <Container fluid>

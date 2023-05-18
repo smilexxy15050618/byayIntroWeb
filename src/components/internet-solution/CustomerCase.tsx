@@ -104,13 +104,19 @@ const Wrapper = styled.div`
   width: 100vw;
   margin: 0 auto;
   .logo_area-wap{
-    padding: 14px 20px;
-    border-radius: 2.65px;
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0px 0px 8px 0px rgba(36, 91, 219, 0.12);
+    // padding: 14px 20px;
+    // border-radius: 2.65px;
+    // background: rgba(255, 255, 255, 1);
+    // box-shadow: 0px 0px 8px 0px rgba(36, 91, 219, 0.12);
     img{
-      width: 100%;
-      height: 164px;
+      display: block;
+      width: 334px;
+      height: 173px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      border-radius: 2.65px;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0px 0px 8px 0px rgba(36, 91, 219, 0.12);
     }
   }
   .swiper-counter {
@@ -268,7 +274,7 @@ const CarouselMobile: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
             setCurrIndex(swiper.activeIndex);
           }}>
           {dataList.map(({ imgSrc, content, title }, i) => (
-            <SwiperSlide style={{ width: '100%', padding: '0 8px', boxSizing: 'border-box'}}>
+            <SwiperSlide style={{ width: '100vh', padding: '0 8px', boxSizing: 'border-box'}}>
               <div className="logo_area-wap"><img src={imgurl + imgSrc} /></div>
             </SwiperSlide>
           ))}
