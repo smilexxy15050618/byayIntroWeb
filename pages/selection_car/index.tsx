@@ -181,8 +181,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
                     数智化解决方案
                   </BigTitle>
                   <Desc>
-                    通过AI智能外呼机器人帮助车企建立用户营销触达策略
-                    和完善的用户画像体系，实现企业升级和营销转型，驱动业务持续增长
+                    通过AI智能外呼机器人帮助车企建立用户营销触达策略和完善的用户画像体系，实现企业升级和营销转型，驱动业务持续增长
                   </Desc>
                   <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
                 </div>

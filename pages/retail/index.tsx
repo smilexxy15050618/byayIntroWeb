@@ -375,7 +375,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                     智能用户运营解决方案
                   </BigTitle>
                   <Desc>
-                    针对零售行业会员增长需求，设计用户运营策略，通过对话式AI助力品牌实现「极致用户体验+极致ROI」的全域营销服务
+                    通过对话式AI助力品牌实现「极致用户体验+极致ROI」的全域营销服务
                   </Desc>
                   <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
                 </div>
