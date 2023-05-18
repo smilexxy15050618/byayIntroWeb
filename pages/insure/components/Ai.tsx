@@ -100,6 +100,7 @@ img {
 }
 .lists {
     width: 296px;
+    position: relative;
     @media (max-width: 768px) {
       width: 300px;
       height: 340px;
@@ -123,6 +124,11 @@ img {
         text-align: justify;
         margin-bottom: 24px;
         padding: 0 0 0 16px;
+      }
+      img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
       }
     }
   }
