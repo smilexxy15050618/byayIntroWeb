@@ -3,12 +3,27 @@ import styled from 'styled-components';
 import { Hidden, Visible } from 'react-grid-system';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import imgurl from '../../../img.url.js';
+import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 
 const SocietyDutyContainer = styled.div`
   padding-bottom: 88px;
   background: rgba(246, 252, 255, 1);
   @media (max-width: 768px) {
     padding-bottom: 36px;
+    .swiper-slide {
+      width: 376px !important;
+  }
+  }
+  .card_img{
+    @media(max-width: 768px) {
+        width: 100%;
+        padding: 0;
+        img{
+            width:100%;
+            margin:0 auto;
+        }
+    }
+    
   }
 `;
 
@@ -110,10 +125,10 @@ const Wrapper = styled.div`
     // box-shadow: 0px 0px 8px 0px rgba(36, 91, 219, 0.12);
     img{
       display: block;
-      width: 334px;
-      height: 173px;
+      width: 100%;
+      /* height: 173px; */
       margin: 0 auto;
-      padding: 14px 20px;
+      /* padding: 14px 20px; */
       border-radius: 2.65px;
       background: rgba(255, 255, 255, 1);
       box-shadow: 0px 0px 8px 0px rgba(36, 91, 219, 0.12);
@@ -263,7 +278,7 @@ const CarouselMobile: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
       <Wrapper>
         <Swiper
           autoplay={{
-            delay: 3000,
+            delay: 13000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
@@ -274,7 +289,7 @@ const CarouselMobile: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
             setCurrIndex(swiper.activeIndex);
           }}>
           {dataList.map(({ imgSrc, content, title }, i) => (
-            <SwiperSlide style={{ width: '100vh', padding: '0 8px', boxSizing: 'border-box'}}>
+            <SwiperSlide style={{ width: '100vw',  boxSizing: 'border-box'}}>
               <div className="logo_area-wap"><img src={imgurl + imgSrc} /></div>
             </SwiperSlide>
           ))}
@@ -321,7 +336,24 @@ const CustomerCase: React.SFC<SocietyDutyProps> = () => {
           <Carousel dataList={carouselDataList}></Carousel>
         </Hidden>
         <Visible xs sm>
-          <CarouselMobile dataList={carouselDataListWap}></CarouselMobile>
+
+                <ByProgressSwiper
+                                    newProgress={true}
+                                    initialSlide={0}
+                                    slidesPerView="auto"
+                                    autoplayDelay={5000}
+                                    spaceBetween={12}
+                                    centeredSlides={true}
+                            >
+                                {carouselDataListWap.map(({ imgSrc }) => (
+                                    <div style={{width: 'calc(100vw - 18px)', background: '#fff',padding: '13px 19px 16px',boxSizing:'border-box' }}>
+                                        <div className='card_img'>
+                                            <img src={`${imgurl}${imgSrc}`} />
+                                        </div>
+                                    </div>
+                                ))}
+                            </ByProgressSwiper>
+          {/* <CarouselMobile dataList={carouselDataListWap}></CarouselMobile> */}
         </Visible>
       </SocietyDutyContainerWrap>
     </SocietyDutyContainer>

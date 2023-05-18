@@ -107,18 +107,22 @@ width: 18px;
 const dataList = [
     {
         url: '/cusino2_m.png',
+        url2: '/cusino2.png',
         bg: '/mz.png'
     },
     {
         url: '/cusino3_m.png',
+        url2: '/cusino3.png',
         bg: '/fs.png',
     },
     {
         url: '/cusino4_m.png',
+        url2: '/cusino4.png',
         bg: '/ry.png'
     },
     {
         url: '/cusino5_m.png',
+        url2: '/cusino5.png',
         bg: '/syt.png'
     }
 ]
@@ -188,10 +192,10 @@ const Carousel: React.FC<ICarouselProps> = ({ style }) => {
                                     onSwiper={swiper => setControlledSwiper(swiper)}
                                     onSlideChange={(e) => { console.log(setCurrIndex(e.activeIndex)) }}
                                 >
-                                    {dataList.map(({ url }) => (
+                                    {dataList.map(({ url2 }) => (
                                         <SwiperSlide style={{}}>
                                             <div className='card'>
-                                                <img src={`${imgurl}${url}`} />
+                                                <img src={`${imgurl}${url2}`} />
                                             </div>
                                         </SwiperSlide>
                                     ))}
