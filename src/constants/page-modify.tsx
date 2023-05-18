@@ -57,22 +57,16 @@ export const NAV_CONFIG = [
         followExpand: true,
         expand: [
           {
-            title: '品牌零售',
-            desc: '会员用户全域运营管理',
-            icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/nav-solution-1.svg',
-            path: '/retail',
-          },
-          {
             title: '银行',
             desc: '实现AUM和MAU双效提升',
             icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/nav-solution-2.svg',
             path: '/bank'
           },
           {
-            title: '互联网',
-            desc: '深度挖掘用户价值，拉升LTV',
-            icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/nav-solution-3.svg',
-            path: '/internet-solution'
+            title: '零售',
+            desc: '会员用户全域运营管理',
+            icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/nav-solution-1.svg',
+            path: '/retail',
           },
           {
             title: '保险',
@@ -81,17 +75,23 @@ export const NAV_CONFIG = [
             path: '/insure'
           },
           {
-            title: '汽车',
-            desc: '达成客户体验闭环，驱动增长',
-            icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/nav-solution-5.svg',
-            path: '/selection_car'
+            title: '互联网',
+            desc: '深度挖掘用户价值，拉升LTV',
+            icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/nav-solution-3.svg',
+            path: '/internet-solution'
           },
           {
             title: '消费金融',
             desc: '全自动、智能化营销服务',
             icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/nav-solution-6.svg',
             path: '/customer-finance'
-          }
+          },
+          {
+            title: '汽车',
+            desc: '达成客户体验闭环，驱动增长',
+            icon: 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/nav-solution-5.svg',
+            path: '/selection_car'
+          },
         ]
       },
       {
@@ -156,7 +156,7 @@ export const FOOTER_CONFIG = [
   {
     title: '解决方案',
     list: [
-      { name: '品牌零售', href: '/retail' },
+      { name: '零售', href: '/retail' },
       { name: '公安反诈', href: '/unfraud' },
       { name: '互联网', href: '/internet-solution' },
       { name: '保险', href: '/insure' },
