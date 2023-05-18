@@ -25,6 +25,10 @@ background: rgba(43, 88, 249, 1);
     position: relative;
     &:hover {
       transform: translateY(-8px);
+      @media (max-width: 768px) {
+      transform: none;
+       
+      }
       transition: all 1s;
     }
     img{
