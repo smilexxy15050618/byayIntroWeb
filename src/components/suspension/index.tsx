@@ -64,7 +64,7 @@ class Suspension extends React.Component<ISuspensionState> {
               <div className="hover-head">
                 <img src={AVATAR} />
                 <div>
-                  <div className="hover-head-title">我是小应，您的专属运营顾问</div>
+                  <div className="hover-head-title">我是小应，您的专属AI运营顾问</div>
                   <div className="hover-head-desc">免费1v1服务 AI开启用户运营新体验</div>
                 </div>
               </div>
@@ -100,7 +100,7 @@ class Suspension extends React.Component<ISuspensionState> {
                   <div className="hover-head">
                     <img src={AVATAR} />
                     <div>
-                      <div className="hover-head-title">我是小应，您的专属运营顾问</div>
+                      <div className="hover-head-title">我是小应，您的专属AI运营顾问</div>
                       <div className="hover-head-desc">免费1v1服务 AI开启用户运营新体验</div>
                     </div>
                   </div>
@@ -125,8 +125,8 @@ class Suspension extends React.Component<ISuspensionState> {
               {activeIndex === 3 && (
                 <FreeCard>
                   <div className="hover-head">
-                    <div>免费领取用户运营资料包</div>
-                    <div>抢先开启业务增长</div>
+                    <div>免费领取各行业核心资料</div>
+                    <div>了解最新运营打法</div>
                   </div>
                   <div className="hover-content">
                     <img src={QR_CODE_2} alt="" className="hover-content-code" />
@@ -140,8 +140,8 @@ class Suspension extends React.Component<ISuspensionState> {
                   </div>
                   <div className="hover-footer">
                     <div>
-                      <span>会员运营白皮书</span>
-                      <span>细分行业运营打法</span>
+                      <span>全域运营白皮书</span>
+                      <span>典型项目报告</span>
                     </div>
                     <div>
                       <span>行业标杆案例</span>
