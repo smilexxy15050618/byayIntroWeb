@@ -15,6 +15,9 @@ margin: 0 auto;
     .swiper-counter {
         display: none;
     }
+    .swiper-slide {
+      width: 300px;
+    }
     }
 .title {
     font-size: 40px;
@@ -133,8 +136,8 @@ export const ApplicationIndustry: FC = () => {
            <ByProgressSwiper
               newProgress={true}
               initialSlide={0}
-              contentPadding="12px" progressPadding="0px"
-              previewWidth="67px"
+              slidesPerView="auto"
+              spaceBetween={12}
             >
               <div style={{ width: '300px' }} className="my-slide">
                       <div className='title_mobile'>高效劝阻<span>加强数智化建设</span></div>

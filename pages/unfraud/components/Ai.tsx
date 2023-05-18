@@ -55,11 +55,11 @@ const Pane = styled.div`
     line-height: 48px;
     @media(max-width: 768px) {
       font-size: 24px;
-font-weight: 500;
-letter-spacing: 0px;
-line-height: 40px;
-margin: 40px 31px 16px;
-text-align: justify;
+      font-weight: 500;
+      letter-spacing: 0px;
+      line-height: 40px;
+      margin: 40px 31px 16px;
+      text-align: justify;
     }
   }
   .sec-title {
@@ -85,6 +85,11 @@ text-align: justify;
 const ListWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  @media(max-width: 768px) {
+    .swiper-slide {
+      width: 300px;
+    }
+  }
   .lists {
     width: 296px;
     @media (max-width: 768px) {
@@ -249,11 +254,8 @@ export const Ai: FC<IAiProps> = ({ }) => {
                 <ByProgressSwiper
                   newProgress={true}
                   initialSlide={0}
-                  contentPadding="3.2%"
-                  progressPadding="0px"
-                  previewWidth="11.5%"
-                  autoplayDelay={100000}
-
+                  slidesPerView="auto"
+                  spaceBetween={12}
                 >
                   {titleList.map((item, index) => {
                     return (

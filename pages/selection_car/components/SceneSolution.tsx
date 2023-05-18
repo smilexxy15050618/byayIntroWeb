@@ -63,6 +63,9 @@ const MainWrap = styled.div`
   margin: 0 auto;
   @media (max-width: 768px) { 
     width: 100%;
+    .swiper-slide {
+      width: 300px;
+    }
     }
   .title {
     font-size: 40px;
@@ -175,8 +178,8 @@ const SceneSolution: FC<SceneSolution> = ({}) => {
       <ByProgressSwiper
               newProgress={true}
               initialSlide={0}
-              contentPadding="12px" progressPadding="0px"
-              previewWidth="67px"
+              slidesPerView="auto"
+              spaceBetween={12}
             >
               <div style={{ width: '300px' }} className="my-slide">
                       <div className='title_mobile'>线索清洗</div>

@@ -190,8 +190,7 @@ const Strategy: FC<IStrategyProps> = ({ }) => {
             <ByProgressSwiper
               newProgress={true}
               initialSlide={0}
-              contentPadding="20px" progressPadding="0px"
-              // previewWidth="70px"
+              slidesPerView="auto"
             >
               <div style={{ width: '100%' }} className="my-slide">
                 <div>提升超级会员占比 拉升会员LTV</div>
@@ -211,8 +210,7 @@ const Strategy: FC<IStrategyProps> = ({ }) => {
             <ByProgressSwiper
               newProgress={true}
               initialSlide={0}
-              contentPadding="20px" progressPadding="0px"
-              // previewWidth="70px"
+              slidesPerView="auto"
             >
               <div style={{ width: '100%' }} className="my-slide">
                 <div>一式 × 三率 × 七变量</div>

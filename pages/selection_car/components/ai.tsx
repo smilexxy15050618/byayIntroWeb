@@ -93,6 +93,9 @@ const Wrapper = styled.div`
     .my-slide {
       width:  100%;
     }
+    .swiper-slide {
+      width: 300px;
+    }
     .custom-bar-wrapper{
       width:300px;
     }
@@ -152,11 +155,8 @@ const Strategy: FC<IStrategyProps> = ({}) => {
           <ByProgressSwiper
               newProgress={true}
               initialSlide={0}
-              contentPadding="12px"
-              progressPadding="0px"
-              previewWidth="0"
-              autoplayDelay={3000}
-              
+              slidesPerView="auto"
+              spaceBetween="12"
             >
               <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/carbanner1m.png'}></img>
               <img style={{ textAlign: 'center', maxWidth: '100%' }} src={imgurl + '/carbanner2m.png'}></img>

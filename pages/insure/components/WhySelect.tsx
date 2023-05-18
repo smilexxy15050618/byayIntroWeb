@@ -177,20 +177,12 @@ export const WhySelect: FC = () => {
 
       <Title>客户为什么选择百应</Title>
             <div id={WHYSELECT} className="myswiper-container">
-            <ByProgressSwiper newProgress={true}
-              initialSlide={0}
-              autoplayDelay={1500}>
                     <div className='my-slide'>
                     <img className='content' src={imgurl+'/why1_m.png'} alt="" />
                     </div>
-            </ByProgressSwiper>
-            <ByProgressSwiper newProgress={true}
-              initialSlide={0}
-              autoplayDelay={1500}>
                     <div style={{marginTop: '40px'}} className='my-slide'>
                     <img className='content' src={imgurl+'/why2_m.png'} alt="" />
                     </div>
-            </ByProgressSwiper>
             </div>
       </Visible>
         </Wrapper>

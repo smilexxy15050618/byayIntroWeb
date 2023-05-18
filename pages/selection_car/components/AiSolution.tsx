@@ -54,7 +54,7 @@ color: rgba(255, 255, 255, 1);
         }
     }
    }
-   @media (max-width: 728px) {
+   @media (max-width: 768px) {
     width: 100vw;
       .custom-bar-wrapper{
           width: 300px;
@@ -65,15 +65,14 @@ color: rgba(255, 255, 255, 1);
         width: 153px;
         height: auto;
         left:24px;
-        bottom:20px;
-        top: auto;
+        top: 48px;
         .title_area{
-color: rgba(255, 255, 255, 1);
-margin-bottom:12px;
-font-size: 16px;
-font-weight: 600;
-letter-spacing: 0px;
-line-height: 19.2px;
+          color: rgba(255, 255, 255, 1);
+          margin-bottom:12px;
+          font-size: 16px;
+          font-weight: 600;
+          letter-spacing: 0px;
+          line-height: 19.2px;
         }
         .cont_area{
           width: 90%;
@@ -130,7 +129,7 @@ const Card = styled.div<{ bg: number }>`
       }
     }
   }
-  @media (max-width: 728px) {
+  @media (max-width: 768px) {
     width: 100vw;
       .custom-bar-wrapper{
           width: 300px;
