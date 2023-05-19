@@ -396,7 +396,7 @@ const LabelWrapper = styled.div`
   height: 56px;
   line-height: 54px;
   text-align: center;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 400;
   letter-spacing: 0px;
   color: rgba(51, 51, 51, 1);
@@ -718,9 +718,9 @@ const Solution: FC<ICustomerWordsProps> = ({}) => {
   const [currIndexicon, setCurrIndexicon] = useState(0);
   return (
     <Pane
-      title="全场景解决方案"
+      title="定制化行业解决方案，卓越的用户运营体验"
       style={{ paddingBottom: 80 }}
-      titleStyle={{ marginBottom: '24px' }}
+      titleStyle={{ marginBottom: '40px' }}
       mobileStyle={{ paddingBottom: 40 }}>
       <Hidden xs sm>
         <LabelList>
