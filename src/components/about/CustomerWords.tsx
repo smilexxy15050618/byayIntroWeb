@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Pane from './Pane';
 import styled from 'styled-components';
 import { Hidden, Visible } from 'react-grid-system';
+import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
 import imgurl from '../../../img.url.js'
 
 export type ICustomerWordsProps = {};
@@ -11,6 +12,7 @@ interface ICarouselProps {
   dataList: { bg: string; content: string; avatarSrc: string; personName: string; tagName: string }[];
   style?: CSSProperties;
 }
+
 
 const CardContent = styled.div`
   flex: 1;
@@ -243,10 +245,6 @@ const MaxContent = styled.div<{ jumpStrColor: string }>`
       height: 8px;
       margin: 0 0 0 5px;
     }
-    /* background-color: white;
-    color: ${props => props.jumpStrColor};
-    .arrow {
-    } */
   }
 `;
 
@@ -273,26 +271,59 @@ const MinContent = styled.div`
     line-height: 40px;
   }
 `;
-const ProgressWrapper = styled.div`
-  width: 300px;
-  max-width: calc(100vw - 37px);
-  margin: 32px auto 8px;
-  height: 3px;
-  background: #f2f2f2;
-`;
-const ProgressContent = styled.div`
-  height: 100%;
-  transition: width 0.3s ease-in-out;
-  background: #2b58f9;
-`;
+
 const MainWrap = styled.div`
-transform: translateY(50%);
-transition: all 0.4s;
-opacity: 0;
-&.appear{
-  transform: translateY(0);
-  opacity: 1;
-}`
+  transform: translateY(50%);
+  transition: all 0.4s;
+  opacity: 0;
+  @media(max-width: 768px) {
+      transition: none;
+      opacity: 1;
+  }
+  &.appear{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  @media (max-width: 768px) {
+    .swiper-slide {
+      width: 273px !important;
+      padding-bottom: 32px !important;
+    }
+    .custom-bar-wrapper{
+        width: 300px;
+    }
+  }
+  .solution-item{
+        position: relative;
+        width: 273px;
+        height: 300px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
+        box-sizing: border-box;
+        img{
+            width: 283px;
+            height: 130px;
+            margin: 0;
+        }
+        .content {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 29px;
+            padding-top: 26px;
+            padding: 26px 16px;
+            color: rgba(26, 26, 26, 1);
+        }
+        .demo-go{
+            padding: 0 16px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: rgba(43, 88, 249, 1);
+        }
+    }
+
+`
 
 const Content = styled.div<{ bgSrc: string; currWidth: number; gap: number; color: string }>`
   position: relative;
@@ -341,81 +372,97 @@ const Wrapper = styled.div<{ wrapperWidth?: number }>`
 const carouselDataList = [
   {
     avatarSrc:`${imgurl}/honor-1.jpeg`,
+    avatarSrcWap:`${imgurl}/honor-wap-1.png`,
     content:'“创新引领｜百应科技荣登《2023中国未来独角兽TOP100榜单》',
     linkUrl: 'https://mp.weixin.qq.com/s/1yppgDXsWYBGhyeC14-sKg',
   },
   {
     avatarSrc:`${imgurl}/honor-2.jpg`,
+    avatarSrcWap:`${imgurl}/honor-wap-2.png`,
     content:'“引领对话式AI，百应科技入选艾瑞《2022中国人工智能产业研究报告》',
     linkUrl: 'https://mp.weixin.qq.com/s/B5PsNbhgrzjIfoZyIFel6A',
   },
   {
     avatarSrc:`${imgurl}/honor-3.jpg`,
+    avatarSrcWap:`${imgurl}/honor-wap-3.png`,
     content:'“百应科技入选「AI中国」 2022 最佳人工智能企业TOP30',
     linkUrl: 'https://mp.weixin.qq.com/s/sszrNGf_PgyrDjEnrJRTUw',
   },
   {
     avatarSrc:`${imgurl}/honor-4.jpg`,
+    avatarSrcWap:`${imgurl}/honor-wap-4.png`,
     content:'百应科技实力入选「2022中国企业数智化创新TOP50」榜单',
     linkUrl: 'https://mp.weixin.qq.com/s/irAz2DFmGIZAenwn_YR4ug',
   },
   {
     avatarSrc:`${imgurl}/honor-5.jpeg`,
+    avatarSrcWap:`${imgurl}/honor-wap-5.png`,
     content:'领航数智创新｜百应科技荣获亿邦未来零售“2022数字化突出贡献奖”',
     linkUrl: 'https://mp.weixin.qq.com/s/69l7_d5Cyfv-rclQp7aHgg',
   },
   {
     avatarSrc:`${imgurl}/honor-6.jpg`,
+    avatarSrcWap:`${imgurl}/honor-wap-6.png`,
     content:'百应科技项目入选2022年杭州市第三批重点建设人工智能应用场景',
     linkUrl: 'https://mp.weixin.qq.com/s/R4FrsYO3tu8qaQlxYhfeJQ',
   },
   {
     avatarSrc:`${imgurl}/honor-7.jpeg`,
+    avatarSrcWap:`${imgurl}/honor-wap-7.png`,
     content:'工信部公示“智赋百景”，百应科技荣誉入选',
     linkUrl: 'https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw',
   },
   {
     avatarSrc:`${imgurl}/honor-8.jpeg`,
+    avatarSrcWap:`${imgurl}/honor-wap-8.png`,
     content:'参编《2022浙江省人工智能产业发展报告》，百应硬核展现“再上分”',
     linkUrl: 'https://mp.weixin.qq.com/s/ZIO9FaodpCTOaEV3-Akkyg',
   },
   {
     avatarSrc:`${imgurl}/honor-9.jpeg`,
+    avatarSrcWap:`${imgurl}/honor-wap-9.png`,
     content:'百应获得CMMI 5级国际权威认证，跻身全球软件业开发能力最高水平！',
     linkUrl: 'https://mp.weixin.qq.com/s/MSDRE6jemrK3kYIsH9xHWA',
   },
   {
     avatarSrc:`${imgurl}/honor-10.jpeg`,
+    avatarSrcWap:`${imgurl}/honor-wap-10.png`,
     content:'百应科技获评腾讯智慧零售“千域计划年度认证合作伙伴”',
     linkUrl: 'https://mp.weixin.qq.com/s/Lgb0LkS_jQ9Zs85hiMdAmA',
   },
   {
     avatarSrc:`${imgurl}/honor-11.jpg`,
+    avatarSrcWap:`${imgurl}/honor-wap-11.png`,
     content:'百应科技获评机器之心「最具商业价值解决方案」',
     linkUrl: 'https://mp.weixin.qq.com/s/rak-d_8n-r3MhijE7-jeuA',
   },
   {
     avatarSrc:`${imgurl}/honor-12.jpeg`,
+    avatarSrcWap:`${imgurl}/honor-wap-12.png`,
     content:'再获认可！百应获评省高新技术企业研发中心',
     linkUrl: 'https://mp.weixin.qq.com/s/2hkDciDqLt-MUj5rDWTKdw',
   },
   {
     avatarSrc:`${imgurl}/honor-13.jpg`,
+    avatarSrcWap:`${imgurl}/honor-wap-13.png`,
     content:'百应科技荣获2021年浙江软件核心竞争力企业',
     linkUrl: 'https://mp.weixin.qq.com/s/BKdLbKibu4iA5MHZZqc-fg',
   },
   {
     avatarSrc:`${imgurl}/honor-14.jpeg`,
+    avatarSrcWap:`${imgurl}/honor-wap-14.png`,
     content:'致创新 见未来 | 百应获评「2021全球人工智能创新应用企业」',
     linkUrl: 'https://mp.weixin.qq.com/s/A-RNY56pT6mg7fWrEFHkNA',
   },
   {
     avatarSrc:`${imgurl}/honor-15.jpeg`,
+    avatarSrcWap:`${imgurl}/honor-wap-15.png`,
     content:'百应实力获评WISE 2021新经济之王“年度硬核企业”',
     linkUrl: 'https://mp.weixin.qq.com/s/jvj5cIfo90HHlfbqxVGt-Q',
   },
   {
     avatarSrc:`${imgurl}/honor-16.jpeg`,
+    avatarSrcWap:`${imgurl}/honor-wap-16.png`,
     content:'百应科技连续2年荣登杭州准独角兽榜单，AI SaaS「未来独角兽」蓄势待发',
     linkUrl: 'https://mp.weixin.qq.com/s/o8ZUSoftKHjagcfWP7f2Bw',
   },
@@ -478,68 +525,6 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
   );
 };
 
-const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
-  const [currIndex, setCurrIndex] = useState(0);
-  const [controlledSwiper, setControlledSwiper] = useState(null);
-  const length = dataList.length;
-  const currAnimateNumber = useRef(0);
-  const taskList = useRef<Array<() => void>>([]);
-  const taskFn = (index: number) => {
-    if (currAnimateNumber.current >= 1) {
-      taskList.current.push(() => taskFn(index));
-      return;
-    }
-    setCurrIndex(index);
-    currAnimateNumber.current++;
-    setTimeout(() => {
-      currAnimateNumber.current--;
-      if (taskList.current.length) {
-        const t = taskList.current.shift();
-        t();
-      }
-    }, 250);
-  };
-  return (
-    <>
-      <Wrapper>
-        <Swiper
-          autoplay={{
-            delay: 5000,
-          }}
-          slidesPerView="auto"
-          centeredSlides={true}
-          spaceBetween={24}
-          // onSwiper={swiper => setControlledSwiper(swiper)}
-          onSlideChange={swiper => {
-            setCurrIndex(swiper.activeIndex);
-          }}>
-          {dataList.map(({ avatarSrc, content, linkUrl }, i) => (
-            <SwiperSlide style={{ width: '295px' }}>
-              <Card>
-                <CardContent>
-                  <div className="customer-words-icon">
-                    <img src={avatarSrc} />
-                  </div>
-                  <div className="customer-words-desc">{content}</div>
-                  <a className="customer-words-name" href={linkUrl}>查看详情 →</a>
-              </CardContent>
-              </Card>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </Wrapper>
-      <div>
-        <ProgressWrapper>
-          <ProgressContent style={{ width: `${((currIndex + 1) * 100) / dataList.length}%` }}></ProgressContent>
-        </ProgressWrapper>
-        <SwiperCounter>
-          {currIndex + 1}/{dataList.length}
-        </SwiperCounter>
-      </div>
-    </>
-  );
-};
-
 export const CustomerId = 'customer_id'
  const CustomerIdwrap = 'customer_id_wrap'
 
@@ -574,18 +559,43 @@ const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
   return (
   
     <Pane id={CustomerId} title="荣誉奖项"
-    titleStyle={{marginBottom:'53px'}}
-     paneBgColor="white" style={{ paddingBottom: 80 }} mobileStyle={{ paddingBottom: 40 }}>
+      titleStyle={{marginBottom:'53px'}}
+      paneBgColor="white" style={{ paddingBottom: 80 }} mobileStyle={{ paddingBottom: 40 }}>
       <Hidden xs sm>
       <MainWrap
         id={CustomerIdwrap}
         ref={myRef}
-        >
+      >
         <Carousel dataList={carouselDataList}></Carousel>
-    </MainWrap>
+      </MainWrap>
       </Hidden>
       <Visible xs sm>
-        <CarouselMobile dataList={carouselDataList}></CarouselMobile>
+        <MainWrap
+          id={CustomerIdwrap}
+          ref={myRef}
+        >
+          <ByProgressSwiper
+            newProgress={true}
+            initialSlide={0}
+            slidesPerView="auto"
+            autoplayDelay={5000}
+            spaceBetween={16}
+            centeredSlides={true}>
+            {carouselDataList.map((item, i) => (
+            // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
+            <div className='solution-item'>
+                <img src={item.avatarSrcWap} />
+                <div className="content">{item.content}</div>
+                <a 
+                onClick={() =>
+                    window.open('/form?formType=1')
+                }
+                className="demo-go">了解详情 →</a>
+            </div>
+            ))}
+        </ByProgressSwiper>
+          
+      </MainWrap>
       </Visible>
     </Pane>
   );

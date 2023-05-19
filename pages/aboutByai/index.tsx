@@ -193,11 +193,8 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
             </Visible>
             <SocietyDuty />
             <FlairVoucher />
-            {/*<CustomerWords />*/}
-            {/*<JoinUs backgroundImage={JOINUS_BG} />*/}
-          <Visible xs sm>
-            {/*{AboutContent}*/}
-          </Visible>
+            <CustomerWords />
+            <JoinUs backgroundImage={JOINUS_BG} />
           <ByVoiceFooter
             title="立即体验AI时代的新一代用户运营平台"
             desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"

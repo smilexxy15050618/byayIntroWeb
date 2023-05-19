@@ -1,6 +1,5 @@
 import React, { CSSProperties, FC, useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../constants/style';
 import { Hidden, Visible } from 'react-grid-system';
 import { Swiper, SwiperSlide} from 'swiper/react';
 import ByProgressSwiper from '../../../src/components/common/ByProgressSwiper';
@@ -19,7 +18,7 @@ const Title = styled.div`
     line-height: 40px;
     color:rgba(255, 255, 255, 1);
     padding-top: 40px;
-    padding-bottom: 9px;
+    padding-bottom: 16px;
   }
 `;
 
@@ -30,10 +29,10 @@ const SubTitle = styled.div`
   color:rgba(255, 255, 255, 1);
   text-align: center;
   @media(max-width: 768px) {
-    font-size: 18px;
-    line-height: 28px;
-    padding:0 40px 40px;
-    
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17.38px;
+    color: rgba(255, 255, 255, 1);
   }
 `;
 
@@ -49,6 +48,9 @@ const WrapperContent = styled.div`
     width: 100%;
     height: 287px;
     background: rgba(43, 88, 249, 1);
+    @media(max-width: 768px) {
+    height: 240px;
+  }
   }
 `;
 
@@ -80,31 +82,24 @@ const FlairVoucherSlide = styled.div`
   .wrap_hovres{
     width: 100vw;
     .custom-bar-wrapper{
-        width: 300px;
+        display: none;
+    }
+    .swiper-counter{
+      display: none;
     }
     .swiper-slide {
-        width: 343px !important;
-        padding-bottom: 32px !important;
-        border-radius: 10px;
-        overflow: hidden;
+        width: 128px !important;
     }
   }
-   .swiperwrap{
-      width: 343px !important;
-      height: 130px;
-      background: rgba(255, 255, 255, 1);
-      box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
-   }
-
    .card{
-      width:100%;
-      height: 130px;
+      width:128px;
+      height: 180px;
       background: rgba(255, 255, 255, 1);
       box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
       box-sizing:border-box;
       img{
           width:100%;
-          height: 130px;
+          height: 180px;
       }
    }
 
@@ -137,11 +132,29 @@ const Wrapper = styled.div`
 const carouselDataList = [
   {
     imgSrc:'/flair-voucher-1.png',
-    imgSrcWap:'/responsibility-1.svg',
   },
   {
     imgSrc:'/flair-voucher-2.png',
-    imgSrcWap:'/responsibility-1.svg',
+  }
+];
+const carouselDataListWap = [
+  {
+    imgSrc:'/flair-voucher-1.png',
+  },
+  {
+    imgSrc:'/flair-voucher-2.png',
+  },
+  {
+    imgSrc:'/flair-voucher-1.png',
+  },
+  {
+    imgSrc:'/flair-voucher-2.png',
+  },
+  {
+    imgSrc:'/flair-voucher-1.png',
+  },
+  {
+    imgSrc:'/flair-voucher-2.png',
   }
 ];
 
@@ -228,12 +241,10 @@ const FlairVoucher: FC<SocietyDutyProps> = () => {
                   spaceBetween={16}
                   centeredSlides={true}
                 >
-                  {carouselDataList.map(({ imgSrcWap, content, title }) => (
+                  {carouselDataListWap.map(({ imgSrc }) => (
                       <div style={{width: '100vw',background: '#fff' }}>
                           <div className='card'>
-                              <img src={`/static/img2023${imgSrcWap}`} />
-                              <div className='title'>{title}</div>
-                              <div className='subtitle'>{content}</div>
+                              <img src={`${imgurl}${imgSrc}`} />
                           </div>
                       </div>
                   ))}
