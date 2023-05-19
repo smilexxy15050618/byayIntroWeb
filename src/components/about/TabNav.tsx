@@ -98,7 +98,7 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
   useEffect(() => {
     window.onscroll = () => {
       let scrollTop = document.documentElement.scrollTop;
-      if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
+      if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent) && false) {
         
         const qiyejieshao = document.getElementById('qiyejieshao');
         const MissionVision = document.getElementById('MissionVision');

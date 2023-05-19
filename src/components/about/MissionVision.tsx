@@ -1,7 +1,6 @@
 import React, { FC, useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../constants/style';
-import { splitCssValue } from '../../lib/utils';
 
 
 interface MissionVisionProps {
@@ -11,11 +10,15 @@ interface MissionVisionProps {
 }
 
 const MissionVisionContainer = styled.div`
-
   .aitxs{
     transform: translateY(50%);
     transition: all 0.4s;
     opacity: 0;
+    @media (max-width: 768px) {
+      padding: 0 16px;
+      animation: none;
+      opacity: 1;
+    }
     &.appear{
       transform: translateY(0);
       opacity: 1;
@@ -30,6 +33,15 @@ const Title = styled.div`
   line-height: 48px;
   color:rgba(43, 43, 43, 1);
   text-align: center;
+  @media (max-width: 768px) {
+    padding-top: 40px;
+    padding-bottom:40px;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 40px;
+    color: rgba(255, 255, 255, 1);
+  }
 `;
 
 const MissionVisionContainerWrap = styled.div<{ MissionBG?: string, VisionBG?: string }>`
@@ -122,7 +134,7 @@ const MissionVision: FC<MissionVisionProps> = ({ minWidthPC, MissionBG, VisionBG
   }, [myRef]);
       
   return (
-    <MissionVisionContainer id={AiTSXID} maxWidthPc="1200px" minWidthPC={minWidthPC}>
+    <MissionVisionContainer id={AiTSXID}>
       <MissionVisionContainerWrap MissionBG={MissionBG} VisionBG={VisionBG} ref={myRef}>
           <div className='mission-tips'><p className="title">使命</p><p className="subtitle">以AI赋能经济发展和社会生活</p></div>
           <div className='vision-tips'><p className="title">愿景</p><p className="subtitle">成为智能用户运营领域创领者</p></div>
