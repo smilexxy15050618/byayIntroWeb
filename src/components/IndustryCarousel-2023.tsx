@@ -189,6 +189,28 @@ const CarouselWrapper = styled.div`
     color: rgba(51, 51, 51, 1);
     margin-bottom: 56px;
   }
+  .third-group {
+    display: flex;
+    margin-bottom: 56px;
+    
+div {
+  width: 128px;
+  height: 56px;
+  opacity: 1;
+  border-radius: 4px;
+  background: rgba(43, 88, 249, 0.06);
+  
+  border: 0.5px solid rgba(43, 88, 249, 1);
+  margin-right: 8px;
+  font-size: 14px;
+font-weight: 400;
+letter-spacing: 0.64px;
+line-height: 20px;
+color: rgba(43, 88, 249, 1);
+text-align: center;
+padding-top: 9px;
+}
+  }
   .jump-group {
     display: flex;
     gap: 16px;
@@ -464,7 +486,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
           })}>
           {<img className="carousel-bg-ball" src={BG_BALL} />}
           <div className="carousel-bg-right"></div>
-          <Carousel style={{ width: '100%' }} interval={3000} fade activeIndex={index} onSelect={handleSelect}>
+          <Carousel style={{ width: '100%' }} interval={333000} fade activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item className="no_duration" key={1}>
               <div className="main-container">
                 <div className="main-title">智能用户运营领域创领者</div>
@@ -497,7 +519,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                   点击查看
                 </div>
                 <div className="bg-img-blue">
-                  <img src={imgurl + '/sy-banner3.png'} alt="" />
+                  <img style={{width: '644px', height: '496px'}} src={imgurl + '/sy-banner3.png'} alt="" />
                 </div>
               </div>
             </Carousel.Item>
@@ -529,14 +551,13 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
             </Carousel.Item>
             <Carousel.Item className="no_duration " key={3}>
               <div className="main-container">
-                <div className="main-title">参与制定行业标准</div>
-                <div className="sec-title" style={{ marginBottom: '16px' }}></div>
-                <div className="third-title">
-                  大规模训练技术模型和应用评估方法
-                  <br />
-                  智能对话平台开发及服务能力要求及评估方法
-                  <br /> 智能客服系统服务等级评估方法
-                </div>
+                <div className="main-title">四大人工智能<br></br>关键技术标准编写单位</div>
+               <div className='third-group'>
+                <div>大规模训练技术模型开发</div>
+                <div>大规模训练技术模型能力</div>
+                <div>智能对话平台<br></br>开发及服务能力</div>
+                <div>智能客服<br />系统服务</div>
+               </div>
 
                 <div
                   className="carousel-btn"
@@ -546,7 +567,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                   点击查看
                 </div>
                 <div className="bg-img-blue">
-                  <img style={{ width: '610px' }} src={imgurl + '/sy-banner4.png'} alt="" />
+                  <img style={{width: '644px', height: '496px'}} src={imgurl + '/sy-banner4.png'} alt="" />
                 </div>
               </div>
             </Carousel.Item>

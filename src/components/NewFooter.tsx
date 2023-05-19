@@ -112,8 +112,8 @@ const FooterWrapper = styled.footer`
   .footer-icon-right--item {
     font-size: 12px;
     font-weight: 400;
-    letter-spacing: 1.6px;
-    line-height: 23.17px;
+    letter-spacing: 1.2px;
+    line-height: 17.38px;
     color: rgba(255, 255, 255, 0.65);
     cursor: pointer;
     &:hover {
@@ -226,6 +226,8 @@ const CompanyInfoCol = styled.span`
   span {
     text-align: center;
     font-size: 12px;
+    letter-spacing: 1.07px;
+    line-height: 17.38px;
   }
   @media (max-width: 768px) {
     font-size: 12px;
@@ -400,7 +402,7 @@ const LinkCol = styled(Col)`
   .addr {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.65) !important;
-    margin: 23px 0px 24px;
+    margin: 0px 0px 24px;
   }
   .margin-adjust {
     display: flex !important;
@@ -417,10 +419,10 @@ const LinkCol = styled(Col)`
 const CrmImg = styled.div`
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 4px;
 
   img {
-    height: 28px;
+    height: 20px;
     margin-bottom: 0;
   }
   @media (max-width: 768px) {
@@ -443,6 +445,7 @@ const MobileORCode = styled.div`
   }
 `;
 const PrivacyPolicy = styled.a`
+  width: 72px;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.65);
   line-height: 24px;
@@ -734,13 +737,13 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
             <PrivacyPolicy href="/privacy-policy" target="_blank">
               隐私政策
             </PrivacyPolicy>
-            <img src={CMMI_SRC} style={{ width: '54px' }} />
+            <img src={CMMI_SRC} style={{ width: '38px' }} />
             <img src={XIN_SRC} />
           </CrmImg>
         </Visible>
         <Visible sm xs>
           <CrmImg>
-            <img src={CMMI_SRC} style={{ width: '54px' }} />
+            <img src={CMMI_SRC} style={{ width: '38px' }} />
             <img src={XIN_SRC} />
             <PrivacyPolicy href="/privacy-policy" target="_blank">
               隐私政策
