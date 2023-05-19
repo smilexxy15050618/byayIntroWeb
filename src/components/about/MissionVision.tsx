@@ -1,28 +1,22 @@
 import React, { FC, useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../constants/style';
-
+import {  Hidden, Visible } from 'react-grid-system';
+import imgurl from '../../../img.url.js';
 
 interface MissionVisionProps {
-  minWidthPC?: string;
-  MissionBG?: string;
-  VisionBG?: string;
 }
 
+const MissionBG = `${imgurl}/mission-bg.png`;
+const VisionBG = `${imgurl}/vision-bg.png`;
+const MissionWapBG = `/static/img2023/mission-wap-bg.svg`;
+const VisionWapBG = `/static/img2023/vision-wap-bg.png`;
+
 const MissionVisionContainer = styled.div`
-  .aitxs{
-    transform: translateY(50%);
-    transition: all 0.4s;
-    opacity: 0;
-    @media (max-width: 768px) {
-      padding: 0 16px;
-      animation: none;
-      opacity: 1;
-    }
-    &.appear{
-      transform: translateY(0);
-      opacity: 1;
-    }
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 332px;
+    background: rgba(43, 88, 249, 1);
   }
 `;
 
@@ -44,16 +38,16 @@ const Title = styled.div`
   }
 `;
 
-const MissionVisionContainerWrap = styled.div<{ MissionBG?: string, VisionBG?: string }>`
+// pc
+const MissionVisionContainerWrap = styled.div`
   position: relative;
   height: 480px;
   margin: 0 auto;
-  background-image: ${props => `url(${props.MissionBG})`};
+  background-image: ${`url(${MissionBG})`};
   background-repeat: no-repeat;
   background-size: 510px 77px;
   background-position: center 112px;
   background-color: rgba(43, 88, 249, 1);
-  
   transform: translateY(50%);
   transition: all 0.4s;
   opacity: 0;
@@ -85,7 +79,7 @@ const MissionVisionContainerWrap = styled.div<{ MissionBG?: string, VisionBG?: s
     padding-top: 72px;
     text-align: center;
     border-radius: 8px;
-    background-image: ${props => `url(${props.VisionBG})`};
+    background-image: ${`url(${VisionBG})`};
     background-repeat: no-repeat;
     background-size: 510px 77px;
     background-position: center 120px;
@@ -107,9 +101,27 @@ const MissionVisionContainerWrap = styled.div<{ MissionBG?: string, VisionBG?: s
   }
 `;
 
+// wap
+const MissionVisionWap = styled.div`
+  position: relative;
+  z-index: 22;
+  margin-bottom: 100px;
+  img.missvis{
+    width: 100%;
+    height: 134px;
+    margin: 0;
+  }
+  img.vismiss{
+    display: block;
+    width: 278px;
+    height: 171px;
+    margin: 18px auto;
+  }
+`;
+
 
 const AiTSXID = 'MissionVision';
-const MissionVision: FC<MissionVisionProps> = ({ minWidthPC, MissionBG, VisionBG }) => {
+const MissionVision: FC<MissionVisionProps> = ({ MissionBG, VisionBG }) => {
   const myRef = useRef(null);
   useEffect(() => {
     const timer =  setInterval(()=>{
@@ -135,10 +147,19 @@ const MissionVision: FC<MissionVisionProps> = ({ minWidthPC, MissionBG, VisionBG
       
   return (
     <MissionVisionContainer id={AiTSXID}>
-      <MissionVisionContainerWrap MissionBG={MissionBG} VisionBG={VisionBG} ref={myRef}>
-          <div className='mission-tips'><p className="title">使命</p><p className="subtitle">以AI赋能经济发展和社会生活</p></div>
-          <div className='vision-tips'><p className="title">愿景</p><p className="subtitle">成为智能用户运营领域创领者</p></div>
-      </MissionVisionContainerWrap>
+      <Hidden xs sm>
+        <MissionVisionContainerWrap ref={myRef}>
+            <div className='mission-tips'><p className="title">使命</p><p className="subtitle">以AI赋能经济发展和社会生活</p></div>
+            <div className='vision-tips'><p className="title">愿景</p><p className="subtitle">成为智能用户运营领域创领者</p></div>
+        </MissionVisionContainerWrap>
+      </Hidden>
+      <Visible xs sm>
+        <Title>使命和愿景</Title>
+        <MissionVisionWap ref={myRef}>
+          <img className="missvis" src={MissionWapBG} />
+          <img className="vismiss" src={VisionWapBG} />
+        </MissionVisionWap>
+      </Visible>
     </MissionVisionContainer>
   )
 };
