@@ -244,6 +244,9 @@ const CompanyInfoCol = styled.span`
 `;
 // 联系我们
 const CompanyDescCol = styled(Col)`
+&:empty{
+  display:none;
+}
   @media (max-width: 980px) {
     display: flex;
     align-items: center;
