@@ -55,7 +55,7 @@ const Desc = styled.div`
   color: rgba(51, 51, 51, 1);
   @media (max-width: 768px) {
     padding-top: 8px;
-    text-align: centet;
+    text-align: center;
     font-size: 16px;
     line-height: 26px;
     margin: 0 12px 46px !important;
@@ -82,6 +82,12 @@ const EnIntroductionWrap = styled.div`
   background: rgba(255, 255, 255, 1);
   box-shadow: 20px -20px 110px 0px rgba(24, 63, 171, 0.12);
   border-radius: 20px 20px 0 0;
+  @media (max-width: 768px) {
+    padding-bottom: 35px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 20px -20px 110px 0px rgba(24, 63, 171, 0.12);
+    border-radius: 20px 20px 0 0;
+  }
 `;
 
 const TitleCredit = styled.div`
@@ -122,7 +128,6 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
     <Layout initialOpacity={initial} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
       {(visible, setVisible) => (
         <Wrapper>
-          <Hidden xs sm>
             <BannerWhite
               height={['560px', '584px']}
               LinearHeight={['500px', '100%']}
@@ -180,43 +185,13 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
               <EnterpriseIntroduction cover={ABOUT_INTRO} />
             </EnIntroductionWrap>
             <MissionVision MissionBG={Mission_BG} VisionBG={Vision_BG} />
-            <DevelopHistory backgroundImage={DEVELOPHIS_BG} />
-            <SocietyDuty />
-            <FlairVoucher />
-            <CustomerWords />
-            <JoinUs backgroundImage={JOINUS_BG} />
-          </Hidden>
+            {/*<DevelopHistory backgroundImage={DEVELOPHIS_BG} />*/}
+            {/*<SocietyDuty />*/}
+            {/*<FlairVoucher />*/}
+            {/*<CustomerWords />*/}
+            {/*<JoinUs backgroundImage={JOINUS_BG} />*/}
           <Visible xs sm>
-            {AboutContent}
-            {/* <TabNav
-              bannerList={[
-                {
-                  name: '企业介绍',
-                  jumpTarget: '#qiyejieshao',
-                },
-                {
-                  name: '使命愿景',
-                  jumpTarget: '#MissionVision',
-                },
-                {
-                  name: '发展历程',
-                  jumpTarget: '#DevelopHistory',
-                },
-                {
-                  name: '社会责任',
-                  jumpTarget: '#SocietyDuty',
-                },
-                {
-                  name: '荣誉证书',
-                  jumpTarget: '#CreditMedal',
-                },
-                {
-                  name: '加入我们',
-                  jumpTarget: '#JoinUs',
-                },
-              ]}
-              onCancel={hadnleNav}
-            /> */}
+            {/*{AboutContent}*/}
           </Visible>
           <ByVoiceFooter
             title="立即体验AI时代的新一代用户运营平台"

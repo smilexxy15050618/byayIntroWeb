@@ -1,28 +1,21 @@
 import React, { FC, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../../constants/style';
-import { splitCssValue } from '../../lib/utils';
+import { Hidden, Visible } from 'react-grid-system';
 
 const Title = styled.div`
-  padding-top: 80px;
-  padding-bottom:44px;
-  font-size: 40px;
-  line-height: 48px;
-  color:rgba(43, 43, 43, 1);
+  width: 100%;
+  height: 118px;
+  line-height: 118px;
+  font-size: 24px;
+  font-weight: 500;
+  color: rgba(26, 26, 26, 1);
   text-align: center;
 `;
 
-const BriefContainer = styled.div<{ maxWidthPc?: string; minWidthPC?: string }>`
-  @media (min-width: 768px) {
-    max-width: ${props => props.maxWidthPc || Theme.ContentWidth};
-    min-width: ${props => props.minWidthPC || 'unset'};
-    width: calc(
-      100vw / ${splitCssValue(Theme.DesignDraftWidth).num} *
-        ${props => splitCssValue(props.maxWidthPc || Theme.ContentWidth).num}
-    );
-    margin: 0 auto;
-  }
-  height: 100%;
+const BriefContainer = styled.div`
+  width: 1200px;
+  margin: 0 auto;
   @media (max-width: 768px) {
     width: 100% !important;
   }
@@ -34,6 +27,11 @@ const BriefContainer = styled.div<{ maxWidthPc?: string; minWidthPC?: string }>`
     transform: translateY(50%);
     transition: all 0.4s;
     opacity: 0;
+    @media (max-width: 768px) {
+      padding: 0 16px;
+      animation: none;
+      opacity: 1;
+    }
     &.appear{
       transform: translateY(0);
       opacity: 1;
@@ -51,9 +49,21 @@ const BriefCover = styled.div<{ backgroundImage?: string }>`
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 0px 13px 0px rgba(0, 6, 24, 0.15);
   box-sizing: border-box;
+  @media (max-width: 768px) {
+    padding: 0 16px;
+    animation: none;
+    opacity: 1;
+    padding: 6px;
+    height: auto;
+  }
   img{
     width: 472px;
     height: 360px;
+    @media (max-width: 768px) {
+      width: 331px;
+      height: 242px;
+      margin: 0;
+    }
   }
 `;
 
@@ -63,6 +73,10 @@ const BriefIntro = styled.div`
   word-break: break-all;
   width: 664px;
   box-sizing: border-box;
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 20px 0;
+  }
   div{
     font-weight: normal;
     font-size: 24px;
@@ -70,23 +84,38 @@ const BriefIntro = styled.div`
     line-height: 40px;
     margin-top: -2px;
     padding-bottom: 24px;
+    @media (max-width: 768px) {
+      height: 56px;
+      line-height: 56px;
+      padding: 0;
+      margin: 0;
+      font-size: 18px;
+      font-weight: 500;
+      color: rgba(26, 26, 26, 1);
+    }
   }
   p {
     font-size: 16px;
     font-weight: 400;
     color: rgba(43, 43, 43, 1);
     line-height: 28px;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 28px;
+      color: rgba(43, 43, 43, 1);
+      margin-bottom: 14px;
+      letter-spacing: -0.7px;
+    }
   }
 `;
 
 interface IBriefProps {
-  backgroundImage: string;
   cover?: string;
-  minWidthPC?: string;
 }
 const AiTSXID = 'aitsx';
 
-const EnterpriseIntroduction: FC<IBriefProps> = ({ minWidthPC,backgroundImage, cover }) => {
+const EnterpriseIntroduction: FC<IBriefProps> = ({ cover }) => {
 
   const myRef = useRef(null);
 
@@ -107,8 +136,11 @@ const EnterpriseIntroduction: FC<IBriefProps> = ({ minWidthPC,backgroundImage, c
         });
   }, []);
   return (
-  <BriefContainer id={AiTSXID} ref={myRef} maxWidthPc="1200px" minWidthPC={minWidthPC}>
-    <div className="BriefContainerWrap">  
+  <BriefContainer id={AiTSXID} ref={myRef}>
+    <div className="BriefContainerWrap">
+      <Visible xs sm>
+        <Title>企业介绍</Title>
+      </Visible>
       <BriefCover>
         <img src={cover} />
       </BriefCover>

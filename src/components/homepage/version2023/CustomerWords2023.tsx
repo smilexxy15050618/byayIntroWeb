@@ -278,7 +278,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
             pauseOnMouseEnter: true,
           }}
           slidesPerView="auto"
-          speed={5000}
+          speed={7000}
           centeredSlides={false}
           onSwiper={swiper => setControlledSwiper(swiper)}
           onSlideChange={swiper => {
@@ -518,52 +518,52 @@ const carouselDataList = [
   },
 
   {
-    bg: `${imgurl}/瓜子-图.png`,
-    avatarSrc: `${imgurl}/瓜子logo.png`,
+    bg: `${imgurl}/移动1.png`,
+    avatarSrc: `${imgurl}/移动2.png`,
 
     content: '百应AI的真实交互感和温度感，为我们带来了高效的用户触达和卓越的转化效果',
     personName: 'AI标记准确率97%；触达人效提升3倍',
     tagName: '中国移动',
-    icon: `${imgurl}/lscion18.png`,
+    icon: `${imgurl}/lscion28.png`,
     left_title: '用户转化率提高',
     left_title2: '10%',
     right_title: '综合人效显著',
     right_title2: '提升',
   },
   {
-    bg: `${imgurl}/瓜子-图.png`,
-    avatarSrc: `${imgurl}/瓜子logo.png`,
+    bg: `${imgurl}/联通1.png`,
+    avatarSrc: `${imgurl}/联通1.png`,
 
     content: '百应科技是一家值得信赖的企业，我们的合作非常愉快',
     personName: 'AI标记准确率97%；触达人效提升3倍',
     tagName: '中国联通',
-    icon: `${imgurl}/lscion18.png`,
+    icon: `${imgurl}/lscion28.png`,
     left_title: '触达效果提升',
     left_title2: '82%',
     right_title: '日均触达用户超',
     right_title2: '百万',
   },
   {
-    bg: `${imgurl}/瓜子-图.png`,
-    avatarSrc: `${imgurl}/瓜子logo.png`,
+    bg: `${imgurl}/腾讯1.png`,
+    avatarSrc: `${imgurl}/腾讯2.png`,
 
     content: '百应AI解决方案非常专业，是真正的行业创新引领者',
     personName: 'AI标记准确率97%；触达人效提升3倍',
     tagName: '腾讯',
-    icon: `${imgurl}/lscion18.png`,
+    icon: `${imgurl}/lscion12.png`,
     left_title: '触达成功率',
     left_title2: '70%+',
     right_title: '有效沟通时长超',
     right_title2: '60s',
   },
   {
-    bg: `${imgurl}/瓜子-图.png`,
-    avatarSrc: `${imgurl}/瓜子logo.png`,
+    bg: `${imgurl}/百度1.png`,
+    avatarSrc: `${imgurl}/百度2.png`,
 
     content: '百应的产品和团队非常给力，期待后续的深入合作',
     personName: 'AI标记准确率97%；触达人效提升3倍',
     tagName: '百度',
-    icon: `${imgurl}/lscion18.png`,
+    icon: `${imgurl}/lscion12.png`,
     left_title: '用户活跃度增长',
     left_title2: '10%',
     right_title: '客户满意度提高',
