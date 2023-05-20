@@ -10,6 +10,7 @@ import {
   EnterpriseIntroduction,
   MissionVision,
   DevelopHistory,
+  DevelopHistoryWap,
   SocietyDuty,
   FlairVoucher,
   CustomerWords,
@@ -25,8 +26,7 @@ const BANNER_WAP_BG = `${imgurl}/about-wap-bg.svg`;
 const JOIN_US_IMG = `${imgurl}/about_banner_img.png`;
 const JOIN_US_WAP_IMG = `${imgurl}/about-wap-banner.svg`;
 const ABOUT_INTRO = `${imgurl}/about-intro.jpg`;
-const Mission_BG = `${imgurl}/mission-bg.png`;
-const Vision_BG = `${imgurl}/vision-bg.png`;
+
 const DEVELOPHIS_BG = `${imgurl}/develophis_bg.png`;
 const JOINUS_BG = `${imgurl}/web-com.png`;
 const FOOTER_BG = `${imgurl}/kqaizl.png`;
@@ -184,15 +184,17 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
               />
               <EnterpriseIntroduction cover={ABOUT_INTRO} />
             </EnIntroductionWrap>
-            <MissionVision MissionBG={Mission_BG} VisionBG={Vision_BG} />
-            {/*<DevelopHistory backgroundImage={DEVELOPHIS_BG} />*/}
-            {/*<SocietyDuty />*/}
-            {/*<FlairVoucher />*/}
-            {/*<CustomerWords />*/}
-            {/*<JoinUs backgroundImage={JOINUS_BG} />*/}
-          <Visible xs sm>
-            {/*{AboutContent}*/}
-          </Visible>
+            <MissionVision />
+            <Visible md lg xl xxl xxxl>
+              <DevelopHistory backgroundImage={DEVELOPHIS_BG} />
+            </Visible>
+            <Visible xs sm>
+              <DevelopHistoryWap />
+            </Visible>
+            <SocietyDuty />
+            <FlairVoucher />
+            <CustomerWords />
+            <JoinUs backgroundImage={JOINUS_BG} />
           <ByVoiceFooter
             title="立即体验AI时代的新一代用户运营平台"
             desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"

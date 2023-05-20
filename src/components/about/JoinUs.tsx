@@ -1,18 +1,23 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../constants/style';
-import { splitCssValue } from '../../lib/utils';
+import { Hidden, Visible } from 'react-grid-system';
+import imgurl from '../../../img.url.js'
+const joinUsImg = `/static/img2023/join-wap.png`
 
 const JoinUsWrap = styled.div`
-background: linear-gradient(251.87deg, rgba(232, 233, 254, 1) 0%, rgba(246, 252, 255, 1) 100%);
+  background: linear-gradient(251.87deg, rgba(232, 233, 254, 1) 0%, rgba(246, 252, 255, 1) 100%);
 `
 
 const AboutUsBtnWrap = styled.div`
   display: flex;
   align-items: center;
-  > div:nth-child(1) {
-    margin-right: 24px;
+  @media (max-width: 768px) {
+    padding-top: 11px;
+    justify-content: center;
   }
+  // > div:nth-child(1) {
+  //   margin-right: 24px;
+  // }
 `;
 
 const BlueBtn = styled.div`
@@ -46,15 +51,8 @@ const WhiteBtn = styled.div`
   }
 `;
 
-const BriefContainer = styled.div<{ maxWidthPc?: string; minWidthPC?: string, backgroundImage?: string }>`
-  @media (min-width: 768px) {
-    max-width: ${props => props.maxWidthPc || Theme.ContentWidth};
-    min-width: ${props => props.minWidthPC || 'unset'};
-    width: calc(
-      100vw / ${splitCssValue(Theme.DesignDraftWidth).num} *
-        ${props => splitCssValue(props.maxWidthPc || Theme.ContentWidth).num}
-    );
-  }
+const BriefContainer = styled.div<{ backgroundImage?: string }>`
+  width: 1200px;
   height: 431px;
   background-image: ${props => `url(${props.backgroundImage})`};
   background-repeat: no-repeat;
@@ -82,30 +80,77 @@ const BriefContainer = styled.div<{ maxWidthPc?: string; minWidthPC?: string, ba
       color: rgb(43,88,249);
     }
   }
-  .
 `;
 
+const BriefWapWrap = styled.div`
+  width: 100%;
+  height: 536px;
+  padding-top: 40px;
+  box-sizing: border-box;
+  img{
+    display: block;
+    width: 343px;
+    height: 286px;
+    margin: 0 auto;
+  }
+  .title{
+    padding-top: 24px;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 1.38px;
+    line-height: 48px;
+    color: rgba(43, 43, 43, 1);
+    text-align: center;
+  }
+  .subtitle{
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1.25px;
+    line-height: 48px;
+    color: rgba(43, 43, 43, 1);
+    margin-top: -8px;
+    text-align: center;
+    span{
+      color: rgba(43, 88, 249, 1);
+    }
+  }
+`
 
 interface IBriefProps {
-  maxWidthPc?: string;
   backgroundImage: string;
-  minWidthPC?: string;
 }
 
-const JoinUs: React.SFC<IBriefProps> = ({ minWidthPC,backgroundImage }) => (
+const JoinUs: React.SFC<IBriefProps> = ({ backgroundImage }) => (
   <JoinUsWrap id="JoinUs">
-    <BriefContainer maxWidthPc="1200px" minWidthPC={minWidthPC} backgroundImage={backgroundImage}>
-      <div className='title'>极致工作 快乐生活</div>
-      <div className='subtitle'><span>B</span>uild <span>Y</span>our dreams with us</div>
-      <AboutUsBtnWrap>
-        <BlueBtn
-          onClick={() =>
-            window.open('https://www.zhipin.com/gongsir/1f1899216bf70b801HV53tu1FA~~.html?ka=company-jobs')
-          }>
-          加入我们
-        </BlueBtn>
-      </AboutUsBtnWrap>
-    </BriefContainer>
+    <Hidden xs sm>
+      <BriefContainer backgroundImage={backgroundImage}>
+        <div className='title'>极致工作 快乐生活</div>
+        <div className='subtitle'><span>B</span>uild <span>Y</span>our dreams with us</div>
+        <AboutUsBtnWrap>
+          <BlueBtn
+            onClick={() =>
+              window.open('https://www.zhipin.com/gongsir/1f1899216bf70b801HV53tu1FA~~.html?ka=company-jobs')
+            }>
+            加入我们
+          </BlueBtn>
+        </AboutUsBtnWrap>
+      </BriefContainer>
+    </Hidden>
+    <Visible xs sm>
+      <BriefWapWrap>
+        <img src={joinUsImg} />
+        <div className='title'>极致工作 快乐生活</div>
+        <div className='subtitle'><span>B</span>uild <span>Y</span>our dreams with us</div>
+          <AboutUsBtnWrap>
+            <BlueBtn
+              onClick={() =>
+                window.open('https://www.zhipin.com/gongsir/1f1899216bf70b801HV53tu1FA~~.html?ka=company-jobs')
+              }>
+              加入我们
+            </BlueBtn>
+          </AboutUsBtnWrap>
+      </BriefWapWrap>
+    </Visible>
   </JoinUsWrap>
 );
 

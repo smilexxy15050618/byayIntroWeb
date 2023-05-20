@@ -339,30 +339,6 @@ class DevelopHistory extends React.Component<ICourseProps, ICourseState> {
     });
   };
 
-  // const myRef = useRef(null);
-  
-  // useEffect(() => {
-  //   const timer =  setInterval(()=>{
-  //     if(myRef.current){
-  //       clearInterval(timer);
-  //       const ScrollMagic = require('scrollmagic');
-  //       var controller = new ScrollMagic.Controller();
-  //       const videoContent = myRef.current;
-  //         new ScrollMagic.Scene({
-  //           triggerElement: videoContent, //触发元素
-  //           triggerHook: 'onEnter', //触发元素开始离开视口时触发
-  //           offset: 0, //从开始点滚动多少px触发（施法前摇）
-  //           duration: 400, //效果持续的距离（法术持续时间/距离）
-  //         })
-  //           .addTo(controller)
-  //           .on('enter', () => {
-  //               videoContent.classList.add('appear')
-  //               controller.destroy();
-  //           });
-  //     }
-  //   })
-  // }, [myRef]);
-
   render() {
     const { clientWidth, activeIndex, translateX, hoverIndex } = this.state;
     const courseList  = COURSE_TIME;
