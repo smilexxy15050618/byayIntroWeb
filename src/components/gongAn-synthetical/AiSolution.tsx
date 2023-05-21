@@ -48,19 +48,18 @@ const Card = styled.div<{bg:number}>`
    display:flex;
    justify-content: space-between;
    .carditem{
-    width: 288px;
-    height: 240px;
+    width: 284px;
+    height: 234.19px;
     opacity: 1;
     border-radius: 8px;
-    background: rgba(43, 88, 249, 1);
+    background: rgba(43,88,249,1);
     position: relative;
-    transition: all 0.3s ease-in;
-    margin-right: 16px;
-    &:nth-child(4){
-        margin-right: 0;
-    }
-    &:hover{
+    &:hover {
         transform: translateY(-8px);
+        @media (max-width: 768px) {
+            transform: none;
+        }
+        transition: all 1s;
     }
     img{
         position: absolute;
@@ -69,13 +68,14 @@ const Card = styled.div<{bg:number}>`
     }
     .textt_area{
         position: absolute;
-        width: 240px;
-        left:22px;
-        top:30px;
+        width: 236px;
+        height: 112px;
+        left:24px;
+        top:60px;
         .title_area{
             font-size: 20px;
             font-weight: 600;
-            line-height: 30px;
+            line-height: 24px;
             color: rgba(255, 255, 255, 1);
             margin-bottom:16px;
         }
@@ -85,6 +85,7 @@ const Card = styled.div<{bg:number}>`
             letter-spacing: 0px;
             line-height: 24px;
             color: rgba(255, 255, 255, 1);
+            text-align: justify;
         }
     }
    }

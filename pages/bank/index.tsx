@@ -123,7 +123,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
               <TextArea spaces={['', '']}>
                 <Hidden xs sm>
                   <BigTitle>
-                    银行
+                    银行业
                     <br />
                     智能用户运营解决方案
                   </BigTitle>

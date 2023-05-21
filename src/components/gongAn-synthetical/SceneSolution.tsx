@@ -18,6 +18,7 @@ const Pane = styled.div`
         line-height: 48px;
         color: rgba(26, 26, 26, 1);
         text-align: center;
+        padding-bottom: 40px;
         @media (max-width: 768px) {
             padding-top: 40px;
             font-size: 24px;
@@ -142,12 +143,12 @@ const carouselDataList = [
     {
         bgImg:'/gongan-scene-4.svg',
         title: '政务服务场景',
-        subtitle:'政务服务向乡镇街道延伸，以AI支撑业务咨询引导办理，提升网办率，打通服务群众“最后一百米”'
+        subtitle:'政务服务向乡镇街道延伸，以AI支撑业务咨询引导办理，提升网办率，打通服务群众“最后一公里”'
     },
     {
         bgImg:'/gongan-scene-3.svg',
         title: '巡查及自查上报场景',
-        subtitle:'建议与辖区群防群治力量/居民、规范、紧密、有效、结构化的服务、指挥、互动、管理渠道，形成群防群治完整闭环'
+        subtitle:'建立与辖区群防群治力量/居民、规范、紧密、有效、结构化的服务、指挥、互动、管理渠道，形成群防群治完整闭环'
     }
 ]
 
@@ -198,7 +199,7 @@ useEffect(() => {
     return (
         <Pane>
         <div class="title">应用场景</div>
-        <div class="desc">基层日常工作</div>
+        {/* <div class="desc">基层日常工作</div> */}
         <MainWrap id={HANGYE}>
         <Visible md lg xl xxl xxxl>
             {carouselDataList.map(item => 

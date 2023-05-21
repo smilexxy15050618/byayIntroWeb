@@ -9,13 +9,13 @@ const list = [
         banner: '/gongan-hz.svg.png',
         wapBanner:'/gongan-wap-hz.png',
         title: '杭州市临平区公安局',
-        content: '宣传、服务全量铺开，首创百万级居民治理服务“新路径”。'
+        content: '宣传、服务全量铺开，首创百万级居民治理服务“新路径”'
     },
     {
         banner: '/gongan-jn.svg.png',
         wapBanner:'/gongan-wap-jn.png',
         title: '济南市市中区公安局',
-        content: '打造虚拟民警“卫民小微”，助力提升居民安满度服务成效。'
+        content: '打造虚拟民警“卫民小微”，助力提升居民安满度服务成效'
     },
     {
         banner: '/gongan-tj.png',
