@@ -497,7 +497,7 @@ const carouselDataList = [
   },
   {
     bg: `${imgurl}/联通1.png`,
-    avatarSrc: `${imgurl}/联通1.png`,
+    avatarSrc: `${imgurl}/联通2.png`,
 
     content: '百应科技是一家值得信赖的企业，我们的合作非常愉快',
     personName: 'AI标记准确率97%；触达人效提升3倍',
