@@ -141,7 +141,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                 <TextArea spaces={['', '']}>
                   <Hidden xs sm>
                     <BigTitle>
-                      品牌零售
+                    零售行业
                       <br />
                       智能用户运营解决方案
                     </BigTitle>
@@ -370,7 +370,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                 mobileImg={JOIN_US_IMG}>
                 <div style={{ padding: '0 8px' }}>
                   <BigTitle>
-                    品牌零售
+                  零售行业
                     <br />
                     智能用户运营解决方案
                   </BigTitle>

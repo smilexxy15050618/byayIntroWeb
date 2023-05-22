@@ -93,7 +93,7 @@ export const IndustryCarousel = () => {
         策略智能与自动化
       </div>
       <Visible md lg xl xxl xxxl>
-        <div className='desc'>策略自动生成、数据验证、自动化运行,实现目标人群的精准触达,提升关键指标和运营效率</div>
+        <div className='desc'>策略自动生成、数据验证、自动化运行，实现目标人群的精准触达，提升关键指标和运营效率</div>
         <div className="jumpbtn" onClick={() => window.open('/form?formType=1')}>
           立即体验
         </div>

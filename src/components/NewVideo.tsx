@@ -87,8 +87,6 @@ color: rgba(51, 51, 51, 1);
     height: 22px;
     border-radius: 2px;
     background: rgba(43, 88, 249, 0.06);
-
-border: 1px solid rgba(219, 219, 224, 1);
 font-size: 12px;
 font-weight: 400;
 letter-spacing: 0px;
@@ -295,11 +293,11 @@ const lists = [
   },
   {
     chose: false,
-    width: '380px',
+    width: '300px',
     title: '全场景用户连接与对话',
     hovSubtitle: '个性化触达与沟通策略',
     subTitle: '充分洞察用户，并针对性制定触达与沟通策略，使用合适的内容，在合适的时间触达合适的客户。',
-    contents: ['通信：AI智能电话｜短信｜5G消息', '在线：音视频｜直播交互', '微信：加微｜单聊｜群聊｜视频号｜公众号', '线下：智能终端'],
+    contents: ['微信：企微｜公众号', '通信：电话｜短信', '在线：音视频｜直播', '线下：智能终端'],
     url: `${imgurl}/aiimg4.png`,
     contentArr: [{
       number_h1: '全场景覆盖',

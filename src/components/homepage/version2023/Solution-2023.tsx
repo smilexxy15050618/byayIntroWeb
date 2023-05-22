@@ -570,7 +570,7 @@ const labelInfo = [
       ['用户分层', '贷款营销', '客户服务', '催收管理'],
       ['信用卡贷款', '个性化营销', '客户服务', '风险控制'],
     ],
-    urls: ['/retail', '/internet-solution', '', '/insure', '/customer-finance', ''],
+    urls: ['/retail', '/internet-solution', '/selection_car', '/insure', '/customer-finance', '/bank'],
     imgs: [
       ['lslogo1.png', 'lslogo2.png', '新希望logo.png', 'lslogo4.png', 'lslogo5.png'],
       ['hlwlogo1.png', 'hlwlogo2.png', 'hlwlogo3.png', 'hlwlogo4.png', 'hlwlogo5.png'],
@@ -594,7 +594,7 @@ const labelInfo = [
       ['线上服务大厅', '智能AI客服', '社保帮办', '医保服务'],
       ['居民咨询服务', '群众业务导办', '工作宣传', '民意回访'],
     ],
-    urls: ['/unfraud', '', ''],
+    urls: ['/unfraud', '/government-services', '/gongAn-synthetical'],
     banner: ['/007fz.png', '/zwfw008.png', '/zz009.png'],
     imgs: [
       ['fzlogo1.png', 'fzlogo2.png', 'fzlogo3.png', 'fzlogo4.png', 'fzlogo5.png'],

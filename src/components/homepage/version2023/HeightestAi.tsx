@@ -205,8 +205,8 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
               <div
                 className={index == currIndex ? 'active' : ''}
                 onClick={() => {
-                  setCurrIndex(index);
-                  controlledSwiper.slideTo(index);
+                  setCurrIndex(index+1);
+                  controlledSwiper.slideTo(index+1);
                 }}>
                 <img src={avatarSrc} alt="" />
               </div>
@@ -242,7 +242,7 @@ const carouselDataList = [
     tagName: '信雅达科技股份有限公司（600571）董事长',
   },
   {
-    avatarSrc: `${imgurl}/hengsheng1.png`,
+    avatarSrc: `${imgurl}/hungsun.png`,
     logoSrc: `${imgurl}/hengsheng3.png`,
     bigSrc: `${imgurl}/hengsheng2.png`,
     content:

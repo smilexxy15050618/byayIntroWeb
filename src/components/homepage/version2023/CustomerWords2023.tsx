@@ -128,6 +128,7 @@ const Card = styled.div<{ bg: string }>`
       position: absolute;
       left: 0;
       top: 0;
+      border-radius:0 0 8px 0;
       z-index: 2;
     }
     .mengbanm {
@@ -227,6 +228,9 @@ const HoveUp = styled.div`
     // transition-duration: 3000ms !important;
     transition-timing-function: linear !important;
   }
+  .swiper-container {
+    overflow: scroll !important;
+  }
   .hoer_bg_more {
     transition: all 0.3s;
     &:hover {
@@ -277,6 +281,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
+          mousewheel="true"
           slidesPerView="auto"
           speed={7000}
           centeredSlides={false}
@@ -284,7 +289,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
           onSlideChange={swiper => {
             setCurrIndex(swiper.activeIndex);
           }}
-          style={{ paddingRight: 32, overflow: 'hidden', paddingBottom: 30, marginBottom: -30, paddingTop: 20 }}>
+          style={{ paddingRight: 32, paddingBottom: 30, marginBottom: -30, paddingTop: 20 }}>
           {dataList.map(
             (
               { bg, avatarSrc, content, personName, tagName, icon, left_title, left_title2, right_title, right_title2 },
@@ -423,6 +428,20 @@ const carouselDataList = [
     right_title: '用户黏性',
     right_title2: '有效提升',
   },
+
+  {
+    bg: `${imgurl}/腾讯1.png`,
+    avatarSrc: `${imgurl}/腾讯2.png`,
+
+    content: '百应AI解决方案非常专业，是真正的行业创新引领者',
+    personName: 'AI标记准确率97%；触达人效提升3倍',
+    tagName: '腾讯',
+    icon: `${imgurl}/lscion12.png`,
+    left_title: '触达成功率',
+    left_title2: '70%+',
+    right_title: '有效沟通时长超',
+    right_title2: '60s',
+  },
   {
     bg: `${imgurl}/农行-图.png`,
     avatarSrc: `${imgurl}/农行logo.png`,
@@ -475,6 +494,19 @@ const carouselDataList = [
     left_title2: '800+',
     right_title: '综合满意度',
     right_title2: '90%',
+  },
+  {
+    bg: `${imgurl}/联通1.png`,
+    avatarSrc: `${imgurl}/联通1.png`,
+
+    content: '百应科技是一家值得信赖的企业，我们的合作非常愉快',
+    personName: 'AI标记准确率97%；触达人效提升3倍',
+    tagName: '中国联通',
+    icon: `${imgurl}/lscion28.png`,
+    right_title: '触达效果提升',
+    right_title2: '82%',
+    left_title: '日均触达用户超',
+    left_title2: '百万',
   },
   {
     bg: `${imgurl}/人寿-图.png`,
@@ -530,32 +562,7 @@ const carouselDataList = [
     right_title: '综合人效显著',
     right_title2: '提升',
   },
-  {
-    bg: `${imgurl}/联通1.png`,
-    avatarSrc: `${imgurl}/联通1.png`,
-
-    content: '百应科技是一家值得信赖的企业，我们的合作非常愉快',
-    personName: 'AI标记准确率97%；触达人效提升3倍',
-    tagName: '中国联通',
-    icon: `${imgurl}/lscion28.png`,
-    left_title: '触达效果提升',
-    left_title2: '82%',
-    right_title: '日均触达用户超',
-    right_title2: '百万',
-  },
-  {
-    bg: `${imgurl}/腾讯1.png`,
-    avatarSrc: `${imgurl}/腾讯2.png`,
-
-    content: '百应AI解决方案非常专业，是真正的行业创新引领者',
-    personName: 'AI标记准确率97%；触达人效提升3倍',
-    tagName: '腾讯',
-    icon: `${imgurl}/lscion12.png`,
-    left_title: '触达成功率',
-    left_title2: '70%+',
-    right_title: '有效沟通时长超',
-    right_title2: '60s',
-  },
+ 
   {
     bg: `${imgurl}/百度1.png`,
     avatarSrc: `${imgurl}/百度2.png`,
@@ -762,10 +769,11 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
       <Wrapper>
         <Swiper
           autoplay={{
-            delay: 1000, //自动切换的时间间隔
+            delay: 0, //自动切换的时间间隔
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
+          mousewheel="true"
           slidesPerView="auto"
           centeredSlides={false}
           spaceBetween={24}
