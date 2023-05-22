@@ -255,7 +255,7 @@ const Menu = styled.div`
     .menu-item:first-child {
       position: absolute;
       width: 72px;
-      top: 26px;
+      top: 22px;
       left: 50%;
       margin-left: -40px;
     }
@@ -293,7 +293,7 @@ const Menu = styled.div`
     }
     .menu-item:nth-child(6) {
       position: absolute;
-      top: 224px;
+      top: 228px;
       left: 50%;
       margin-left: -50px;
       div {

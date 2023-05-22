@@ -21,17 +21,17 @@ const CardContent = styled.div`
   position: relative;
 
   .customer-words-icon {
-    margin-bottom: 12px;
+    margin-top: 10px;
     img {
       width: 150px;
-      height: 30px;
+      height: 50px;
       margin-bottom: 0;
     }
     background: #ffffff;
     @media (max-width: 768px) {
       margin-bottom: 20px;
       width: 150px;
-      height: 30px;
+      height: 50px;
     }
   }
   .customer-words-desc {

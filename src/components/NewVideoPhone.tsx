@@ -46,7 +46,7 @@ flex-wrap: wrap;
 justify-content: space-between;
   .listItem {
     width: 590px;
-    height: 206px;
+    // height: 206px;
     position: relative;
     padding: 22px;
     opacity: 1;
@@ -58,7 +58,7 @@ justify-content: space-between;
     overflow:hidden;
   &:nth-child(5),&:nth-child(6) {
     width: 100%;
-    height: 182px;
+    // height: 182px;
     overflow: hidden;
   }
 aside{
