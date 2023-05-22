@@ -197,6 +197,8 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
       </NavItemContainer>
     </Visible>
     <Visible xs sm>
+      {/* 吸顶占位 */}
+      <div style={{height: '1px', paddingTop: '129px', display: is_fixed ? 'block' : 'none'}}></div>
       <div className={`capacity-tab ${is_fixed ? 'fixedTop' : ''}`} id="tabNav">
         <ArrowClickL
           onClick={e => {
@@ -234,7 +236,6 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
           }}
           style={{display: actIndex == bannerList.length -1 ? 'none' : 'block'}}
         ></ArrowClickR>
-
       </div>
     </Visible>
     </Wrapper>

@@ -253,7 +253,7 @@ const FlairVoucher: FC<SocietyDutyProps> = () => {
                   centeredSlides={true}
                 >
                   {carouselDataListWap.map(({ wapImgSrc }) => (
-                      <div style={{width: '100vw',background: '#fff' }}>
+                      <div style={{width: '100vw'}}>
                           <div className='card'>
                               <img src={`${imgurl}${wapImgSrc}`} />
                           </div>

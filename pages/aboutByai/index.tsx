@@ -140,7 +140,7 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
                 },
               ]}
               mobileImg={JOIN_US_WAP_IMG}
-              mobileStyle={{width: '319px',height:'245px',paddingTop: '0', }}
+              mobileStyle={{display:'block', width: '319px',height:'245px', margin: '0 auto', paddingTop: '0', }}
               >
               <TextArea spaces={['', '']}>
                 <BigTitle>关于百应</BigTitle>

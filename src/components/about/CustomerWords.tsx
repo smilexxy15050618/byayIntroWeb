@@ -590,7 +590,7 @@ const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
                   <div className="content">{item.content}</div>
                   <a 
                   onClick={() =>
-                      window.open('/form?formType=1')
+                      window.open(item.linkUrl)
                   }
                   className="demo-go">了解详情 →</a>
               </div>
