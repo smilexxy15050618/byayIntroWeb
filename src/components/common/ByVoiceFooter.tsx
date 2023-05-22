@@ -22,11 +22,24 @@ const Phone = styled.div`
 height: 48px;
 border-radius: 6px;
 background: rgba(255, 255, 255, 1);
+@media (max-width: 768px) {
+  width: 97%;
+  margin:0 auto;
+  // margin: 0 16px;
+.dropdown botton{
+  min-width:20%;
+
+}
+}
 
 border: 1px solid rgba(255, 255, 255, 1);
 button:last-child {
   width: 132px;
 height: 46px;
+@media (max-width: 768px) {
+  width:70px;
+  font-size:12px;
+}
 opacity: 1;
 border-radius: 6px;
 background: rgba(43, 88, 249, 1);

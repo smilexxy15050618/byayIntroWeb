@@ -114,7 +114,7 @@ export const Layout: React.FunctionComponent<{
             </>
           )}
 
-          <main>{children(formVisible, setForm, formType)}</main>
+          <main style={{zIndex:2,position:'relative'}}>{children(formVisible, setForm, formType)}</main>
           <Footer disableLink={simpleHeader} />
         </div>
       </ScreenClassProvider>
