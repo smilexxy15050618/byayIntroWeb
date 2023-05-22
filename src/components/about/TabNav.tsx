@@ -6,8 +6,8 @@ import { splitCssValue } from '../../lib/utils';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import imgurl from '../../../img.url.js'
 
-const left = '/static/img2023/left.png'
-const right = '/static/img2023/right.png'
+const left = imgurl+'/left.png'
+const right = imgurl+'/right.png'
 
 interface TabNavItem {
   name: string;

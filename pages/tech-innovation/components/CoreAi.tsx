@@ -4,7 +4,7 @@ import imgurl from '../../../img.url.js'
 
 const MainWrap = styled.div`
     width: 1200px;
-    padding: 80px 0 33px;
+    padding: 80px 0 100px;
     box-sizing:border-box;
     margin: 0 auto;
     @media(max-width: 768px) {
@@ -29,10 +29,12 @@ const MainWrap = styled.div`
     }
     .content{
         width: 1200px;
-        height: 512px;
+        padding-top: 50px;
         img{
-            width: 1200px;
-            height: 512px;
+            display: block;
+            margin: 0 auto;
+            width: 1181px;
+            height: 488px;
         }
     }
 }
@@ -42,7 +44,7 @@ export const CoreAi: FC = () => {
         <MainWrap>
             <div className="title">百余项核心AI技术专利，赢得行业广泛认可</div>
             <div class="content">
-                <img src={imgurl+'/data-intell.png'} alt="" />
+                <img src={imgurl+'/honor-pc.png'} alt="" />
             </div>
         </MainWrap>
     )

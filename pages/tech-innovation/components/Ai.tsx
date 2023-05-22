@@ -52,15 +52,20 @@ const LabelWrapper = styled.div`
     flex: 1;
     text-align: center;
     img{
-        display: inline-block
-        width: 30px;
-        height: 30px;
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
+        margin-bottom: 0;
     }
     img.normal{
         display: inline-block;
     }
     img.active{
         display: none;
+    }
+    &:hover{
+        color: rgba(43, 88, 249, 1);
     }
     &.active {
         color: #fff;
@@ -75,51 +80,38 @@ const LabelWrapper = styled.div`
     }
 `;
 const ContentWrapper = styled.div`
+    position: relative;
     margin-top: 16px;
     height: 472px;
     border-radius: 4.72px;
     background: rgba(246, 252, 255, 1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    .left{
-        width: 506px;
-        padding-left: 40px;
-        box-sizing: border-box;
-        .con-title{
-            padding: 45px 0 30px;
-            font-size: 26px;
-            font-weight: 500;
-            line-height: 37.76px;
-            color: rgba(26, 26, 26, 1);
-        }
-        .con-subtitle{
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 32px;
-            color: rgba(90, 90, 90, 1);
-        }
-        .ljzx{
-            margin-top: 88px;
-            width: 120px;
-            height: 36px;
-            font-size: 16px;
-            font-weight: 400;
-            letter-spacing: 0px;
-            line-height: 36px;
-            text-align: center;
-            color: rgba(255, 255, 255, 1);
-            border-radius: 4px;
-            background: rgba(43, 88, 249, 1);
-        }
+    img{
+        display: block;
+        margin: 0 auto;
+         width:1200px;
+        height: 280px;
     }
-    .right{
-        width: 694px;
-        text-align: right;
-        img{
-            width: 636px;
-            height: 200px;
-        }
+    
+    .con-title{
+        padding: 45px 40px 0;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 37.76px;
+        color: rgba(26, 26, 26, 1);
+    }
+    .ljzx{
+        position: absolute;
+        left: 40px;
+        bottom: 60px;
+        width: 120px;
+        height: 36px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 36px;
+        text-align: center;
+        color: rgba(255, 255, 255, 1);
+        border-radius: 4px;
+        background: rgba(43, 88, 249, 1);
     }
 `;
 
@@ -132,32 +124,32 @@ const labelInfo = [
       imgs: '/intelligence-1.png'
     },
     {
-        name: '只能语音技术',
+        name: '智能语音技术',
         titleImg: '/intell-nav-3.png',
         activeImg: '/intell-nav-4.png',
         fontTitle: '基于深度学习技术，具备大规模预训练、微调（Fine-tuning）能力，能够对海量数据进行学习和训练，从而实现在多种NLP任务中的优异表现；在语义理解、生成创作、上下文理解、逻辑推理等方面具有优秀的模型能力。',
-        imgs: '/intelligence-1.png'
+        imgs: '/intelligence-2.png'
     },
     {
         name: '全双工连续对话',
         titleImg: '/intell-nav-5.png',
         activeImg: '/intell-nav-6.png',
         fontTitle: '基于深度学习技术，具备大规模预训练、微调（Fine-tuning）能力，能够对海量数据进行学习和训练，从而实现在多种NLP任务中的优异表现；在语义理解、生成创作、上下文理解、逻辑推理等方面具有优秀的模型能力。',
-        imgs: '/intelligence-1.png'
+        imgs: '/intelligence-3.png'
     },
     {
         name: '知识工程',
         titleImg: '/intell-nav-7.png',
         activeImg: '/intell-nav-8.png',
         fontTitle: '基于深度学习技术，具备大规模预训练、微调（Fine-tuning）能力，能够对海量数据进行学习和训练，从而实现在多种NLP任务中的优异表现；在语义理解、生成创作、上下文理解、逻辑推理等方面具有优秀的模型能力。',
-        imgs: '/intelligence-1.png'
+        imgs: '/intelligence-4.png'
     },
     {
         name: '阅读理解',
         titleImg: '/intell-nav-10.png',
         activeImg: '/intell-nav-11.png',
         fontTitle: '基于深度学习技术，具备大规模预训练、微调（Fine-tuning）能力，能够对海量数据进行学习和训练，从而实现在多种NLP任务中的优异表现；在语义理解、生成创作、上下文理解、逻辑推理等方面具有优秀的模型能力。',
-        imgs: '/intelligence-1.png'
+        imgs: '/intelligence-5.png'
     },
   ];
 
@@ -181,23 +173,18 @@ export const Ai: FC<IAiProps> = ({ }) => {
                         setCurrIndex(i);
                         }}
                         className={i == currIndex ? 'active' : ''}>
-                        <img className="normal" src={imgurl + item.activeImg} />
-                        <img className="active" src={imgurl + item.titleImg} />
+                        <img className="normal" src={imgurl + item.titleImg} />
+                        <img className="active" src={imgurl + item.activeImg} />
                         {item.name}
                     </LabelWrapper>
                     );
                 })}
                 </LabelList>
                 <ContentWrapper>
-                    <div className="left">
-                        <div className="con-title">{labelInfo[currIndex].name}</div>
-                        <div className="con-subtitle">{labelInfo[currIndex].fontTitle}</div>
-                        <div onClick={() => window.open('/form?formType=1')} className="ljzx">
-                            立即咨询
-                        </div>
-                    </div>
-                    <div className="right">
-                        <img src={imgurl + labelInfo[currIndex].imgs} />
+                    <div className="con-title">{labelInfo[currIndex].name}</div>
+                    <img src={imgurl+labelInfo[currIndex].imgs} className={'img'+currIndex} />
+                    <div onClick={() => window.open('/form?formType=1')} className="ljzx">
+                        立即咨询
                     </div>
                 </ContentWrapper>
             </Hidden>
