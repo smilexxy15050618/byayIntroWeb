@@ -13,8 +13,9 @@ const Pane = styled.div`
     box-sizing:border-box;
     margin: 0 auto;
     @media(max-width: 768px) {
-        padding: 40px 0;
-        }
+        width: 100%;
+        padding: 344px 0 50px;
+    }
     .title {
         font-size: 40px;
         font-weight: 500;
@@ -23,6 +24,14 @@ const Pane = styled.div`
         color: rgba(26, 26, 26, 1);
         text-align: center;
         margin-bottom: 16px;
+        @media (max-width: 768px) {
+            padding-top: 40px;
+            font-size: 24px;
+            font-weight: 500;
+            letter-spacing: 0px;
+            line-height: 40px;
+            color: rgba(0, 0, 0, 1);
+        }
     }
     .sec-title{
         font-size: 16px;
@@ -31,6 +40,10 @@ const Pane = styled.div`
         color: rgba(51, 51, 51, 1);
         margin-bottom: 56px;
         text-align:center;
+        @media (max-width: 768px) {
+            line-height: 24px;
+        }
+        
     }
 `
 
@@ -163,7 +176,13 @@ export const Ai: FC<IAiProps> = ({ }) => {
     <MainWrap>
         <Pane>
             <div className="title">认知智能</div>
-            <div className="sec-title">先进的认知智能算法和模型，高度模拟人类思维和理解的能力</div>
+            <Visible md lg xl xxl xxxl>
+                <div className="sec-title">先进的认知智能算法和模型，高度模拟人类思维和理解的能力</div>
+            </Visible>
+            <Visible xs sm>
+            <div className="sec-title">先进的认知智能算法和模型<br />高度模拟人类思维和理解的能力</div> 
+            </Visible>
+            
             <Hidden xs sm>
                 <LabelList>
                 {labelInfo.map((item, i) => {

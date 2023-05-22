@@ -25,7 +25,7 @@ const Game: NextFunctionComponent<IGameProps> = () => {
         <>
           <Wrapper>
             <Banner></Banner>
-            {/* <Ai></Ai> */}
+            <Ai></Ai>
             {/* <ApplicationIndustry></ApplicationIndustry> */}
             {/* <Strategy></Strategy> */}
             {/* <Algorithm></Algorithm> */}
