@@ -181,8 +181,8 @@ export const Ai: FC<IAiProps> = ({ }) => {
                         setCurrIndex(i);
                         }}
                         className={i == currIndex ? 'active' : ''}>
-                        <img className="normal" src={'/static/img2023/' + item.activeImg} />
-                        <img className="active" src={'/static/img2023/' + item.titleImg} />
+                        <img className="normal" src={imgurl + item.activeImg} />
+                        <img className="active" src={imgurl + item.titleImg} />
                         {item.name}
                     </LabelWrapper>
                     );
@@ -197,7 +197,7 @@ export const Ai: FC<IAiProps> = ({ }) => {
                         </div>
                     </div>
                     <div className="right">
-                        <img src={'/static/img2023/' + labelInfo[currIndex].imgs} />
+                        <img src={imgurl + labelInfo[currIndex].imgs} />
                     </div>
                 </ContentWrapper>
             </Hidden>
