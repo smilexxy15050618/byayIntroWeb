@@ -515,7 +515,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                 浙江省经济和信息化厅公示｜2023年度第一批企业名单
                 </div>
 
-                <div className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/Ebu43ZcMV6ted0f55efIRg')}>
+                <div className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/f2fOn80IdZv1LYT5BtItng')}>
                   点击查看
                 </div>
                 <div className="bg-img-blue">
@@ -551,11 +551,11 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
             </Carousel.Item>
             <Carousel.Item className="no_duration " key={3}>
               <div className="main-container">
-                <div className="main-title">四大人工智能<br></br>关键技术标准编写单位</div>
+                <div className="main-title">4项人工智能<br></br>关键技术标准编写单位</div>
                <div className='third-group'>
-                <div>大规模训练技术模型开发</div>
-                <div>大规模训练技术模型能力</div>
-                <div>智能对话平台<br></br>开发及服务能力</div>
+                <div>大规模训练技术<br />模型开发</div>
+                <div>大规模训练技术<br />模型能力</div>
+                <div>智能对话平台开发<br></br>及服务能力</div>
                 <div>智能客服<br />系统服务</div>
                </div>
 

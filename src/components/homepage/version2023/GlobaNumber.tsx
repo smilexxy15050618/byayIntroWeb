@@ -374,9 +374,22 @@ const Menu = styled.div`
         line-height: 32px;
         color: rgba(51, 51, 51, 1);
         text-align: justify;
+        &:last-child {
+          margin-bottom: 40px;
+        }
       }
     }
     .goknoemow{
+      font-size: 16px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 24px;
+color: rgba(26, 26, 26, 1);
+display: flex;
+img {
+  width: 24px;
+  height: 24px;
+}
       &:hover{
         color: #2b58f9;
         cursor: pointer;
@@ -445,7 +458,7 @@ const GlobalNumber = ({}) => {
               return <p>{item}</p>;
             })}
           </div>
-          <p className='goknoemow'>了解更多&nbsp;&nbsp;></p>
+          <p className='goknoemow'>了解更多&nbsp;&nbsp;<img src={imgurl+'/aitime_arrow.png'} alt="" /></p>
         </div>
       </Menu>
       <Content>

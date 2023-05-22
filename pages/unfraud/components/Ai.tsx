@@ -162,7 +162,7 @@ const ListItem = styled.div`
     height: 224px;
     background: rgba(43, 88, 249, 1);
     color: rgba(255, 255, 255, 1);
-    padding: 40px 46px 48px 40px;
+    padding: 40px 40px 48px 40px;
     box-sizing: border-box;
     div:first-child {
       font-size: 20px;

@@ -108,6 +108,10 @@ position: relative;
     display:flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s;
+    &:hover {
+        background-size: 150% 150% !important;
+    }
     &::after {
         display: block;
         content: "";
@@ -197,7 +201,7 @@ export const CustomerCase: FC = () => {
                         list.map(({ img, banner, content, label, bg }, index) => {
                             return (
                                 <ListItem>
-                                    <div style={{ background: `url(${imgurl}${img}) no-repeat`, backgroundSize: '100% 100%' }} className='banner'>
+                                    <div style={{ background: `url(${imgurl}${img}) no-repeat`, backgroundSize: '100% 100%', backgroundPosition: 'center' }} className='banner'>
                                     </div>
                                     <div className="detail">
                                         {/* <div><img src={imgurl+banner} alt="" />{label}</div> */}
