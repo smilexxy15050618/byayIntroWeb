@@ -22,7 +22,7 @@ const BigTitle = styled.div`
   font-weight: 600;
   color: rgba(26, 26, 26, 1);
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   @media (max-width: 768px) {
     text-align: center;
     font-size: 32px;
@@ -32,7 +32,7 @@ const BigTitle = styled.div`
 `;
 
 const Desc = styled.div`
-  margin-top: 10px;
+  margin-top: 6px;
   font-size: 20px;
   line-height: 32px;
   font-weight: 400;
@@ -97,9 +97,7 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
             <TextArea spaces={['', '']}>
               <BigTitle>全场景用户互动触达</BigTitle>
               <Desc>
-                从文字、语音、数字人表情动作的多模态角度，用对话和与语境相关的动作完成跨渠道交互
-                <br />
-                再通过“语义+语音+视觉”，构建支持多种场景的数字机器人形象
+                提供跨平台，多形式交互的客户沟通解决方案，与客户建立稳固联系
               </Desc>
               <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
             </TextArea>

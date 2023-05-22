@@ -127,7 +127,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
             <TextArea spaces={['', '']}>
               <Hidden xs sm>
                 <BigTitle>
-                  消费金融<br/>智能用户运营解决方案
+                  消费金融行业<br/>智能用户运营解决方案
                 </BigTitle>
                 <Desc>针对消费金融业务全链路提供智能化运营方案，用数据<br/>驱动精细化运营策略升级，用AI助力消费金融机构业务<br/>增长</Desc>
                 <BlueBtn

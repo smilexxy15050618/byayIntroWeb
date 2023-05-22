@@ -309,10 +309,12 @@ const MainWrap = styled.div`
         .content {
             font-size: 16px;
             font-weight: 400;
+            height: 120px;
             line-height: 29px;
             padding-top: 26px;
-            padding: 26px 16px;
+            padding: 26px 16px 16px;
             color: rgba(26, 26, 26, 1);
+            box-sizing: border-box;
         }
         .demo-go{
             padding: 0 16px;
@@ -582,17 +584,17 @@ const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
             spaceBetween={16}
             centeredSlides={true}>
             {carouselDataList.map((item, i) => (
-            // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
-            <div className='solution-item'>
-                <img src={item.avatarSrcWap} />
-                <div className="content">{item.content}</div>
-                <a 
-                onClick={() =>
-                    window.open('/form?formType=1')
-                }
-                className="demo-go">了解详情 →</a>
-            </div>
-            ))}
+              // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
+              <div className='solution-item'>
+                  <img src={item.avatarSrcWap} />
+                  <div className="content">{item.content}</div>
+                  <a 
+                  onClick={() =>
+                      window.open('/form?formType=1')
+                  }
+                  className="demo-go">了解详情 →</a>
+              </div>
+              ))}
         </ByProgressSwiper>
           
       </MainWrap>

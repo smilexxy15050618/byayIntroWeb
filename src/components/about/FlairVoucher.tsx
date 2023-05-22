@@ -88,11 +88,11 @@ const FlairVoucherSlide = styled.div`
       display: none;
     }
     .swiper-slide {
-        width: 128px !important;
+      width: 343px !important;
     }
   }
    .card{
-      width:128px;
+      width:100%;
       height: 180px;
       background: rgba(255, 255, 255, 1);
       box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
@@ -132,29 +132,11 @@ const Wrapper = styled.div`
 const carouselDataList = [
   {
     imgSrc:'/flair-voucher-1.png',
+    wapImgSrc: '/flair-vouche-wap-1.png',
   },
   {
     imgSrc:'/flair-voucher-2.png',
-  }
-];
-const carouselDataListWap = [
-  {
-    imgSrc:'/flair-voucher-1.png',
-  },
-  {
-    imgSrc:'/flair-voucher-2.png',
-  },
-  {
-    imgSrc:'/flair-voucher-1.png',
-  },
-  {
-    imgSrc:'/flair-voucher-2.png',
-  },
-  {
-    imgSrc:'/flair-voucher-1.png',
-  },
-  {
-    imgSrc:'/flair-voucher-2.png',
+    wapImgSrc: '/flair-vouche-wap-2.png',
   }
 ];
 
@@ -241,10 +223,10 @@ const FlairVoucher: FC<SocietyDutyProps> = () => {
                   spaceBetween={16}
                   centeredSlides={true}
                 >
-                  {carouselDataListWap.map(({ imgSrc }) => (
+                  {carouselDataList.map(({ wapImgSrc }) => (
                       <div style={{width: '100vw',background: '#fff' }}>
                           <div className='card'>
-                              <img src={`${imgurl}${imgSrc}`} />
+                              <img src={`static/img2023${wapImgSrc}`} />
                           </div>
                       </div>
                   ))}

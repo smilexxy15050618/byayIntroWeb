@@ -7,7 +7,7 @@ import ByProgressSwiper from '../common/ByProgressSwiper';
 const titleList = [
   {
     title: '全业务场景覆盖',
-    subTitle: '覆盖贷款、理财、网银、信用卡4大<br />类业务<br />营销、唤醒、促销等20+细分场景<br />业务实践沉淀1000+套场景运营策略模版',
+    subTitle: '覆盖贷款、理财、网银、信用卡4<br />大类业务营销、唤醒、促销等20+<br />细分场景业务实践沉淀1000+套场<br />景运营策略模版',
     subTitleWap: '覆盖贷款、理财、网银、信用卡4大类业务<br />营销、唤醒、促销等20+细分场景<br />业务实践沉淀1000+套场景运营策略模版',
     url: '/bank-govern-1.svg',
     urlWap: '/bank-govern-wap-1.png',

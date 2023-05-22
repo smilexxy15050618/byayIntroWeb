@@ -53,7 +53,7 @@ const BigTitle = styled.div`
 `;
 
 const Desc = styled.div`
-  margin-top: 10px;
+  margin-top: 6px;
   font-size: 20px;
   line-height: 32px;
   font-weight: 400;
@@ -110,12 +110,10 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
             ]}
             pcImgs={PC_BANNER_IMGS}
             mobileImg={WAP_BANNER_IMGS}>
-            <TextArea margin="-50px 0 0" spaces={['20px 48px', '8px 32px']}>
+            <TextArea spaces={['20px 48px', '8px 32px']}>
               <BigTitle>多模态情感化AI</BigTitle>
               <Desc>
-                将AI交互的深度推进到多模态交互领域，丰富
-                <br />
-                交互场景与内容
+                将AI交互的深度推进到多模态交互领域，丰富交互场景与内容
               </Desc>
               <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
             </TextArea>

@@ -7,13 +7,13 @@ import ByProgressSwiper from '../common/ByProgressSwiper';
 const titleList = [
   {
     title: '三大保障&提升方案',
-    subTitle: '自研产品，全面保障用户体验专业知识库，运营效率不断提升行业方法论，保障外呼效果全面运营服务，为效果负责',
+    subTitle: '自研产品，全面保障用户体验<br />专业知识库，运营效率不断提<br />升行业方法论，保障外呼效果<br />全面运营服务，为效果负责',
     url: '/internet-solution-1.svg',
     urlWap: '/internet-solution-wap-1.png',
   },
   {
     title: '高转化模型测试',
-    subTitle: '全变量对照测试，提升效果转化<br />文案设计精细化，为沟通结果负责<br />把控变量节点密度，验证最优模型<br />数据分析迭代，完成激活上升曲线',
+    subTitle: '全变量对照测试，提升效果转化文<br />案设计精细化，为沟通结果负责把<br />控变量节点密度，验证最优模型数<br />据分析迭代，完成激活上升曲线',
     url: '/internet-solution-2.svg',
     urlWap: '/internet-solution-wap-2.png',
   },
@@ -146,7 +146,7 @@ const ListItem = styled.div`
     height: 224px;
     background: rgba(43, 88, 249, 1);
     color: rgba(255, 255, 255, 1);
-    padding: 40px 46px 48px 40px;
+    padding: 40px 0 48px 40px;
     box-sizing: border-box;
     div:first-child {
       font-size: 20px;
