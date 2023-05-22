@@ -1,7 +1,6 @@
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, ReactNode, useState,useEffect } from 'react';
 import styled from 'styled-components';
 import ByNormalBtn from './ByNormalBtn';
-
 // import Dropdown from 'react-dropdown';
 import { Container, Dropdown, DropdownButton } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -191,7 +190,14 @@ const list = [
 ];
 const defaultOption = 1;
 const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText }) => {
-  const [sleindex, setSleindex] = useState(list[0]);
+  useEffect(()=>{
+    document.body.addEventListener('click',function(e){
+      // console.log(e);
+    })
+  },[])
+  const [sleindex,  ] = useState(list[0]);
+  
+  
   return (
     <div className={className}>
       <div style={{ letterSpacing: '3px' }} className="title">
