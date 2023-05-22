@@ -88,18 +88,23 @@ const FlairVoucherSlide = styled.div`
       display: none;
     }
     .swiper-slide {
-      width: 343px !important;
+      width: 128px !important;
+      &:nth-child(7){
+        width: 234px !important;
+      }
     }
   }
    .card{
       width:100%;
       height: 180px;
-      background: rgba(255, 255, 255, 1);
-      box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
+      border: none;
+      // background: rgba(255, 255, 255, 1);
+      // box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
       box-sizing:border-box;
       img{
           width:100%;
           height: 180px;
+          margin: 0;
       }
    }
 
@@ -137,6 +142,30 @@ const carouselDataList = [
   {
     imgSrc:'/flair-voucher-2.png',
     wapImgSrc: '/flair-vouche-wap-2.png',
+  }
+];
+
+const carouselDataListWap = [
+  {
+    wapImgSrc: '/flair-vouche-wap-1.png',
+  },
+  {
+    wapImgSrc: '/flair-vouche-wap-2.png',
+  },
+  {
+    wapImgSrc: '/flair-vouche-wap-3.png',
+  },
+  {
+    wapImgSrc: '/flair-vouche-wap-4.png',
+  },
+  {
+    wapImgSrc: '/flair-vouche-wap-5.png',
+  },
+  {
+    wapImgSrc: '/flair-vouche-wap-6.png',
+  },
+  {
+    wapImgSrc: '/flair-vouche-wap-7.png',
   }
 ];
 
@@ -223,10 +252,10 @@ const FlairVoucher: FC<SocietyDutyProps> = () => {
                   spaceBetween={16}
                   centeredSlides={true}
                 >
-                  {carouselDataList.map(({ wapImgSrc }) => (
+                  {carouselDataListWap.map(({ wapImgSrc }) => (
                       <div style={{width: '100vw',background: '#fff' }}>
                           <div className='card'>
-                              <img src={`static/img2023${wapImgSrc}`} />
+                              <img src={`${imgurl}${wapImgSrc}`} />
                           </div>
                       </div>
                   ))}

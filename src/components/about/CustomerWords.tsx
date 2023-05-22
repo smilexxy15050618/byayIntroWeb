@@ -302,7 +302,7 @@ const MainWrap = styled.div`
         box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
         box-sizing: border-box;
         img{
-            width: 283px;
+            width: 273px;
             height: 130px;
             margin: 0;
         }

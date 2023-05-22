@@ -113,7 +113,7 @@ const BriefIntro = styled.div`
 interface IBriefProps {
   cover?: string;
 }
-const AiTSXID = 'aitsx';
+const AiTSXID = 'qiyejieshao';
 
 const EnterpriseIntroduction: FC<IBriefProps> = ({ cover }) => {
 
