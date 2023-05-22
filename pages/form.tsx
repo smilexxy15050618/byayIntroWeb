@@ -919,9 +919,25 @@ export default class TryForm extends React.Component<TryFormProps, TryFormState>
       },
     });
   };
-
+  getparamsfromurl = (variable) =>{
+    // 从?开始获取后面的所有数据
+    var query = window.location.search.substring(1);
+    // 从字符串&开始分隔成数组split
+    var vars = query.split("&");
+    // 遍历该数组
+    for (var i = 0; i < vars.length; i++) {
+      // 从等号部分分割成字符
+        var pair = vars[i].split("=");
+        // 如果第一个元素等于 传进来的参的话 就输出第二个元素
+        if (pair[0] == variable) {
+            return pair[1];
+        }
+    }
+    return (false);
+ };
   componentDidMount() {
     this.renderYpRiddler();
+
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -931,7 +947,7 @@ export default class TryForm extends React.Component<TryFormProps, TryFormState>
   }
 
   render() {
-    const { formType = FormType.CUSTOMER, origin, phone } = this.props;
+    let { formType = FormType.CUSTOMER, origin, phone } = this.props;
     const {
       captchaTime,
       submitSuccess,
@@ -943,7 +959,11 @@ export default class TryForm extends React.Component<TryFormProps, TryFormState>
       isAgree,
     } = this.state;
     if (typeof document === 'undefined') return null;
-
+    // const inputpone = React.useRef(null);
+    // phone = 
+    // console.log( this.getparamsfromurl('phone'));
+    // 获取地址栏参数
+    phone = this.getparamsfromurl('phone')
     return (
       <FormWrapper origin={origin}>
         <div className="free-page-head">
@@ -1088,6 +1108,7 @@ export default class TryForm extends React.Component<TryFormProps, TryFormState>
                               placeholder="请填写您的电话"
                               type="text"
                               {...field}
+                              // ref={inputpone}
                               // value={phone}
                               className={error.target === ErrorTarget.PHONE ? 'error-input' : ''}
                               onFocus={e => {

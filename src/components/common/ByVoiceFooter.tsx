@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useState,useEffect } from 'react';
+import React, { FC, ReactNode, useState,useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import ByNormalBtn from './ByNormalBtn';
 // import Dropdown from 'react-dropdown';
@@ -93,7 +93,7 @@ padding-left: 16px;
 `
 const list = [
   {
-    area:'中国大陆 ',
+    area:'',
     number:'+86'
   },
   {
@@ -190,13 +190,27 @@ const list = [
 ];
 const defaultOption = 1;
 const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText }) => {
-  useEffect(()=>{
-    document.body.addEventListener('click',function(e){
-      // console.log(e);
-    })
-  },[])
+  const linkgo  = useRef(null);
   const [sleindex,  setSleindex] = useState(list[0]);
-  
+ 
+  useEffect(()=>{
+    // document.body.addEventListener('click',function(e){
+    //   // console.log(e);
+    // })
+    document.onkeydown = function (e) { // 回车提交表单
+      // 兼容FF和IE和Opera
+          var theEvent = window.event || e;
+          var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+          if (code == 13) {
+            const number = parseInt(sleindex.number)+document.querySelector('#input_value_number').value;
+            if(number) {
+              window.open('/form?formType=1&phone='+number)
+            }
+         
+            
+          }
+      }
+  },[sleindex])
   
   return (
     <div className={className}>
@@ -223,8 +237,8 @@ const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText
           </Dropdown.Menu>
         </Dropdown>
         <input type="text" id='input_value_number' placeholder='请输入您的手机号' />
-        <button onClick={() => {
-          console.log(parseInt(sleindex.number)+document.querySelector('#input_value_number').value);
+        <button ref={linkgo}  onClick={() => {
+          // console.log(parseInt(sleindex.number)+document.querySelector('#input_value_number').value);
           const number = parseInt(sleindex.number)+document.querySelector('#input_value_number').value;
           if(number) {
             window.open('/form?formType=1&phone='+number)
