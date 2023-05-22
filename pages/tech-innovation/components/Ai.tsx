@@ -126,38 +126,38 @@ const ContentWrapper = styled.div`
 const labelInfo = [
     {
       name: '自建大模型',
-      titleImg: 'intell-nav-1.png',
-      activeImg: 'intell-nav-2.png',
+      titleImg: '/intell-nav-1.png',
+      activeImg: '/intell-nav-2.png',
       fontTitle: '基于深度学习技术，具备大规模预训练、微调（Fine-tuning）能力，能够对海量数据进行学习和训练，从而实现在多种NLP任务中的优异表现；在语义理解、生成创作、上下文理解、逻辑推理等方面具有优秀的模型能力。',
-      imgs: 'intelligence-1.png'
+      imgs: '/intelligence-1.png'
     },
     {
         name: '只能语音技术',
-        titleImg: 'intell-nav-3.png',
-        activeImg: 'intell-nav-4.png',
+        titleImg: '/intell-nav-3.png',
+        activeImg: '/intell-nav-4.png',
         fontTitle: '基于深度学习技术，具备大规模预训练、微调（Fine-tuning）能力，能够对海量数据进行学习和训练，从而实现在多种NLP任务中的优异表现；在语义理解、生成创作、上下文理解、逻辑推理等方面具有优秀的模型能力。',
-        imgs: 'intelligence-1.png'
+        imgs: '/intelligence-1.png'
     },
     {
         name: '全双工连续对话',
-        titleImg: 'intell-nav-5.png',
-        activeImg: 'intell-nav-6.png',
+        titleImg: '/intell-nav-5.png',
+        activeImg: '/intell-nav-6.png',
         fontTitle: '基于深度学习技术，具备大规模预训练、微调（Fine-tuning）能力，能够对海量数据进行学习和训练，从而实现在多种NLP任务中的优异表现；在语义理解、生成创作、上下文理解、逻辑推理等方面具有优秀的模型能力。',
-        imgs: 'intelligence-1.png'
+        imgs: '/intelligence-1.png'
     },
     {
         name: '知识工程',
-        titleImg: 'intell-nav-7.png',
-        activeImg: 'intell-nav-8.png',
+        titleImg: '/intell-nav-7.png',
+        activeImg: '/intell-nav-8.png',
         fontTitle: '基于深度学习技术，具备大规模预训练、微调（Fine-tuning）能力，能够对海量数据进行学习和训练，从而实现在多种NLP任务中的优异表现；在语义理解、生成创作、上下文理解、逻辑推理等方面具有优秀的模型能力。',
-        imgs: 'intelligence-1.png'
+        imgs: '/intelligence-1.png'
     },
     {
         name: '阅读理解',
-        titleImg: 'intell-nav-10.png',
-        activeImg: 'intell-nav-11.png',
+        titleImg: '/intell-nav-10.png',
+        activeImg: '/intell-nav-11.png',
         fontTitle: '基于深度学习技术，具备大规模预训练、微调（Fine-tuning）能力，能够对海量数据进行学习和训练，从而实现在多种NLP任务中的优异表现；在语义理解、生成创作、上下文理解、逻辑推理等方面具有优秀的模型能力。',
-        imgs: 'intelligence-1.png'
+        imgs: '/intelligence-1.png'
     },
   ];
 

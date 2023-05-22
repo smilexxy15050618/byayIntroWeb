@@ -90,7 +90,7 @@ const StrateWrap = styled.div`
     .right{
         width: 660px;
         height: 378px;
-        img{
+        video{
             width: 660px;
             height: 378px;
         }
@@ -106,15 +106,15 @@ const copilotTag = [
 
 const copilotList = [
     {
-        img: 'copilot-1.svg',
+        img: '/copilot-1.svg',
         name: 'AI算法根据历史数据生成的客户模型标签，可精准圈选出目标人群；'
     },
     {
-        img: 'copilot-2.svg',
+        img: '/copilot-2.svg',
         name: '输出策略搭建意图，系统自动匹配已有模版流程中相似度最高策略；'
     },
     {
-        img: 'copilot-3.svg',
+        img: '/copilot-3.svg',
         name: '分析不同运营策略效果数据，根据prompt进行自动分析，得出结论。'
     }
 ]
@@ -145,7 +145,13 @@ export const Strategy: FC = () => {
                         })}
                     </div>
                 </div>
-                <div className="right"><img src='/static/img2023/join-wap.png' /></div>
+                <div className="right">
+                    <video
+                        src="/static/img2023/策略智能.mp4"
+                        controls
+                        playsInline
+                    />
+                </div>
             </StrateWrap>
         </MainWrap>
     )

@@ -36,7 +36,7 @@ const TextArea = styled.div`
     }
 `
 const BlueBtn = styled.div`
-  margin: 16px auto;
+  margin: 16px auto 80px;
   width: 132px;
   height: 48px;
   border-radius: 5.33px;
@@ -96,7 +96,7 @@ const AcademyTram = styled.div`
         }
     }
     .team-info{
-        // padding-right: 57px;
+        padding-top: 42px;
         width: 663px;
         font-size: 16px;
         font-weight: 400;
@@ -109,6 +109,7 @@ const AcademyTram = styled.div`
     }
     .tram-logo{
         width: 1200px;
+        padding-top: 30px;
         padding-left: 57px;
         img{
             width: 60px;

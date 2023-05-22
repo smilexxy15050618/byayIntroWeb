@@ -75,9 +75,9 @@ const AlgorItem = styled.div<{ backgroundColor?: string }>`
 `
 const AlgorithmTag  = styled.div`
     width: 1200px;
-    margin: 0 auto;
+    margin: 40px auto 0;
     display: flex;
-    padding-top: 80px;
+    padding-top: 46px;
     justify-content: center;
     .item{
         width: 180px;
@@ -104,6 +104,7 @@ const AlgorithmTag  = styled.div`
             font-size: 14px;
             font-weight: 400;
             line-height: 24px;
+            text-align: left;
         }
     }
 `
@@ -134,27 +135,27 @@ const list = [
 
 const tag = [
     {
-        img: 'algorithm-tag-1.png',
+        img: '/algorithm-tag-1.png',
         title: '大模型参数',
         content: '自训练大语言模型提高语言理解和泛化能力，自建大模型参数在100亿-300亿之间'
     },
     {
-        img: 'algorithm-tag-1.png',
+        img: '/algorithm-tag-2.png',
         title: '场景包模型',
         content: '累计沉淀出场景包模型30+，每个场景包知识库数量300+，识别准确率90%+'
     },
     {
-        img: 'algorithm-tag-1.png',
+        img: '/algorithm-tag-3.png',
         title: 'AI对话引擎',
         content: '50+核心模块，支撑全双工、主动式对话引导、高拟人度的对话管理'
     },
     {
-        img: 'algorithm-tag-1.png',
+        img: '/algorithm-tag-4.png',
         title: '知识体系',
         content: '4级知识体系，5000+的知识点数量，覆盖零售、金融、公安等多个行业应用场景'
     },
     {
-        img: 'algorithm-tag-1.png',
+        img: '/algorithm-tag-5.png',
         title: '实体识别',
         content: '支持实体识别类型200+，重点关注关键信息，支撑用户精细化的意图理解和响应'
     }
@@ -181,7 +182,7 @@ export const Algorithm: FC = () => {
                 {tag.map((item, i) => {
                     return (
                         <div className="item">
-                            <img src={imgurl + item.img} />
+                            <img src={'static/img2023' + item.img} />
                             <div className="tag-title">{item.title}</div>
                             <div className="tag-subtitle">{item.content}</div>
                         </div>
