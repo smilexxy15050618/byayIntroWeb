@@ -518,7 +518,7 @@ const ContentWrapper = styled.div`
       letter-spacing: 0px;
       line-height: 22px;
       color: rgba(90, 90, 90, 1);
-      // margin-bottom: 18px;
+      margin-bottom: 18px;
       width: 100%;
     }
     .log_arrow {
@@ -531,6 +531,9 @@ const ContentWrapper = styled.div`
       display: flex;
       flex-wrap: wrap;
       // justify-content: space-between;
+      div {
+        margin-bottom: 8px;
+      }
     }
     .logo_bottom {
       width: 120px;

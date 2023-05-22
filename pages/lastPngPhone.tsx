@@ -50,7 +50,7 @@ const Pane = styled.div`
       .iconself {
         width: 40px;
         height: 40px;
-        margin-right: 16px;
+        margin-right: 8px;
         img {
           width: 100%;
         }
@@ -96,6 +96,7 @@ const Pane = styled.div`
           letter-spacing: 0px;
           line-height: 13.45px;
           color: rgba(90, 90, 90, 1);
+          transform: scale(.8);
         }
         &:hover img {
           box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);

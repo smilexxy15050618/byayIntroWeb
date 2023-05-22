@@ -195,7 +195,7 @@ const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText
       // console.log(e);
     })
   },[])
-  const [sleindex,  ] = useState(list[0]);
+  const [sleindex,  setSleindex] = useState(list[0]);
   
   
   return (

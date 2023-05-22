@@ -172,7 +172,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
               <CardContent>
                 <img className="logo" src={logoSrc} alt="" />
                 <p className="name_area">
-                    {tagName} &nbsp;&nbsp;&nbsp;&nbsp;
+                    {tagName} &nbsp;&nbsp;
                     <span>{personName}</span>
                   </p>
                 <img className="bigLogo" src={bigSrc} alt="" />
