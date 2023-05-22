@@ -36,7 +36,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
       '基于自然语言处理（NLP）、语音识别（ASR）和语音合成（TTS）技术，实现自动语音应答，用自然逼真的对话与客户沟通。通过语音机器人完成营销、宣传、回访、催收等外呼和接待场景语音对话。',
     pcImgs: [
       {
-        src: `${PREFIX}/capacity-1.svg`,
+        src: `${PREFIX}/capacity-1.png`,
         srcWap: `${PREFIX}/capacity-wap-1.png`,
         style: { width: '680px', height: '573px', top: '100px', left: '0' },
         className: ['animate__fadeInRight'],

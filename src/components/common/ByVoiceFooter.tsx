@@ -22,11 +22,24 @@ const Phone = styled.div`
 height: 48px;
 border-radius: 6px;
 background: rgba(255, 255, 255, 1);
+@media (max-width: 768px) {
+  width: 97%;
+  margin:0 auto;
+  // margin: 0 16px;
+.dropdown botton{
+  min-width:20%;
+
+}
+}
 
 border: 1px solid rgba(255, 255, 255, 1);
 button:last-child {
   width: 132px;
 height: 46px;
+@media (max-width: 768px) {
+  width:70px;
+  font-size:12px;
+}
 opacity: 1;
 border-radius: 6px;
 background: rgba(43, 88, 249, 1);
@@ -80,30 +93,101 @@ padding-left: 16px;
 }
 `
 const list = [
-  '+86',
-  "中国香港 +852",
-  '中国澳门 +853',
-  '中国台湾 +886',
-  '韩国 +82',
-  '日本 +81',
-  '美国 +1',
-  '加拿大 +1',
-  '英国 +44',
-  '新加坡 +65',
-  '马来西亚 +60',
-  '泰国 +66',
-  '越南 +84',
-  '菲律宾 +63',
-  '印度尼西亚 +62',
-  '意大利 +39',
-  '俄罗斯 +7',
-  '新西兰 +64',
-  '荷兰 +31',
-  '瑞典 +46',
-  '澳大利亚 +61',
-  '乌克兰 +380',
-  '法国 +33',
-  '德国 +49',
+  {
+    area:'中国大陆 ',
+    number:'+86'
+  },
+  {
+    area:'中国香港 ',
+    number:'+852'
+  },
+  {
+    area:'中国澳门 ',
+    number:'+853'
+  },
+  {
+    area:'中国台湾 ',
+    number:'+886'
+  },
+  {
+    area:'韩国 ',
+    number:'+82'
+  },
+  {
+    area:'日本',
+    number:'+81'
+  },
+  {
+    area:'美国',
+    number:'+1'
+  },{
+    area:'加拿大',
+    number:'+1'
+  },
+  {
+    area:'英国',
+    number:'+44'
+  },
+  {
+    area:'新加坡',
+    number:'+65'
+  },
+  {
+    area:'马来西亚',
+    number:'+60'
+  },
+  {
+    area:'泰国',
+    number:'+66'
+  },
+  {
+    area:'越南',
+    number:'+84'
+  },
+  {
+    area:'菲律宾',
+    number:'+63'
+  },
+  {
+    area:'印度尼西亚',
+    number:'+62'
+  },
+  {
+    area:'意大利',
+    number:'+39'
+  },
+  {
+    area:'俄罗斯',
+    number:'+7'
+  },
+  {
+    area:'新西兰',
+    number:'+64'
+  },
+  {
+    area:'荷兰',
+    number:'+31'
+  },
+  {
+    area:'瑞典',
+    number:'+46'
+  },
+  {
+    area:'澳大利亚',
+    number:'+61'
+  },
+  {
+    area:'乌克兰',
+    number:'+380'
+  },
+  {
+    area:'法国',
+    number:'+33'
+  },
+  {
+    area:'德国',
+    number:'+49'
+  },
 ];
 const defaultOption = 1;
 const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText }) => {
@@ -120,20 +204,26 @@ const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText
       <Phone>
         <Dropdown >
           <Dropdown.Toggle variant="info" id="dropdown-basic">
-            {sleindex}
+            {sleindex.area+sleindex.number}
           </Dropdown.Toggle>
           <Dropdown.Menu style={{ height: '300px', overflow: 'auto' }}>
             {list.map((item, index) => {
               return (
                 <Dropdown.Item onClick={() => {
                   setSleindex(item)
-                }} key={1} value={list[0]}>{item}</Dropdown.Item>
+                }} key={item.area} value={item.number}>{item.area+item.number}</Dropdown.Item>
               )
             })}
           </Dropdown.Menu>
         </Dropdown>
-        <input type="text" placeholder='请输入您的手机号' />
-        <button onClick={() => onClick()}>马上体验</button>
+        <input type="text" id='input_value_number' placeholder='请输入您的手机号' />
+        <button onClick={() => {
+          console.log(parseInt(sleindex.number)+document.querySelector('#input_value_number').value);
+          const number = parseInt(sleindex.number)+document.querySelector('#input_value_number').value;
+          if(number) {
+            window.open('/form?formType=1&phone='+number)
+          }
+        }}>马上体验</button>
       </Phone>
       {/* <ByNormalBtn
         onClick={() => onClick()}

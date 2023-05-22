@@ -26,6 +26,8 @@ const BASE_URL = [
 ];
 const BG = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/bg/n-bg.png';
 const BG_BALL = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/bg/ball.png';
+const BG_BALL_PHONE = imgurl + '/banner背景图.png';
+const BG_BALL2_PHONE = imgurl + '/背景色.png';
 const BG_BOTTLE = imgurl + '/ban1.png';
 
 const BASE_URL_MOBILE = [
@@ -66,6 +68,10 @@ const CarouselWrapper = styled.div`
       transform: translate(-17%, -44%);
       width: 798px;
       opacity: 1;
+
+      @media (max-width: 768px) {
+
+      }
     }
     .carousel-bg-right {
       position: absolute;
@@ -256,7 +262,7 @@ padding-top: 9px;
     margin-bottom: 24px;
   }
   .main-title-m {
-    font-size: 40px;
+    font-size: 36px;
     font-family: PingFangSC-Medium, PingFang SC;
     font-weight: 500;
     color: #333333;
@@ -377,18 +383,81 @@ padding-top: 9px;
   }
 
   @media (max-width: 768px) {
+    .third-group {
+      margin-bottom: 26px;
+    }
+
+    .main-title1 {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 30px; 
+    }
+
+    .third-title {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0px;
+    }
+
+    .sec-title {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0px;
+      line-height: 20.27px;
+      margin-bottom: 24px;
+    }
+
+    .carousel-indicators {
+      width: 100%;
+      margin: 0 auto;
+      bottom: 0;
+      justify-content: center;
+    }
+
+    .bg-img-blue-phone {
+      // position: relative;
+      img {
+        // height: 279px;
+      }
+    }
+
     .carousel-body {
-      height: ${calWidthAndHeight(580)};
-      text-align: center;
+      height: 710px;
+      min-height: 480px;
+      background: #f6fcff;
+      position: relative;
+      // overflow:hidden;
+      .carousel-bg-ball {
+        transform: none;
+        width: 100%;
+        height: 710px;
+      }
+    }
+
+    .main-container {
+      width: 100%;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 100px;
+    }
+
+    .carousel-body {
+      // height: ${calWidthAndHeight(580)};
+      height: 711px;
+      // text-align: center;
     }
 
     .carousel-item {
-      padding: ${calWidthAndHeight(96)} 0 0 0 !important;
+      // padding: ${calWidthAndHeight(96)} 0 0 0 !important;
     }
 
     .main-title {
-      font-size: ${calWidthAndHeight(48)};
-      line-height: ${calWidthAndHeight(60)};
+      // font-size: ${calWidthAndHeight(48)};
+      font-size: 36px;
+      font-family: PingFangSC-Medium,PingFang SC;
+      font-weight: 500;
+      color: #333333;
+      // line-height: ${calWidthAndHeight(60)};
     }
 
     .sub-title {
@@ -398,7 +467,8 @@ padding-top: 9px;
     }
 
     .carousel-btn {
-      margin: ${calWidthAndHeight(32)} auto;
+      // margin: ${calWidthAndHeight(32)} auto;
+      margin-bottom: 86px;
     }
   }
 `;
@@ -454,6 +524,62 @@ const QuickArea = styled.div`
         vertical-align: top;
       }
     }
+  }
+`;
+
+const QuickAreaPhone = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 14.4px;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 10px 23px;
+
+  > div {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    width: 50%;
+
+    img {
+      margin-top: -6px;
+      width: 36px;
+      height: 36px;
+    }
+    .content {
+      margin-left: 8px;
+      div:first-child {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0px;
+        line-height: 14.4px;
+        color: #333333;
+        text-align: left;
+        vertical-align: top;
+      }
+      div:last-child {
+        margin-top: 4px;
+        font-size: 8px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: 13px;
+        color: #5a5a5a;
+        text-align: left;
+        vertical-align: top;
+      }
+    }
+  }
+  div:nth-child(3) {
+    margin-top: 23px;
+  }
+  div:nth-child(4) {
+    margin-top: 23px;
   }
 `;
 
@@ -588,7 +714,114 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
         </div>
       </Visible>
       <Visible xs sm>
-        <div className="carousel-body-mobile">
+        <div
+          className={classNames('carousel-body')}>
+          {<img className="carousel-bg-ball" src={BG_BALL_PHONE} />}
+          <div className="carousel-bg-right"></div>
+          <Carousel style={{ width: '100%' }} interval={333000} fade activeIndex={index} onSelect={handleSelect}>
+            <Carousel.Item className="no_duration" key={1}>
+              <div className="main-container">
+                <div className="main-title-m">智能用户</div>
+                <div className="main-title-m">运营领域创领者</div>
+                <div className="sec-title">
+                  用AI助力构建用户长期信任关系
+                </div>
+                <div
+                  className="carousel-btn"
+                  onClick={() => {
+                    window.open(`/form?formType=1`);
+                  }}>
+                  立即体验
+                </div>
+                <div style={{ width: '375px',height: '279px' }} className="bg-img-blue-phone">
+                  <img style={{ height: '100%' }} src={imgurl + '/sy-banner1.png'} alt="" />
+                </div>
+              </div>
+            </Carousel.Item>
+
+            <Carousel.Item className="no_duration" key={2}>
+              <div className="main-container">
+                <div className="main-title1">百应科技荣获</div>
+                <div style={{lineHeight: '36px', marginTop: '8px', marginBottom: '8px',}} className="main-title">浙江省“专精特新”中小企业称号</div>
+                <div style={{ marginBottom: '16px', lineHeight: '14px' }}  className="third-title">
+                浙江省经济和信息化厅公示｜2023年度第一批企业名单
+                </div>
+                <div style={{marginBottom: '56px',}} className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/Ebu43ZcMV6ted0f55efIRg')}>
+                  点击查看
+                </div>
+                <div style={{ width: '375px',height: '279px' }} className="bg-img-blue-phone">
+                  <img style={{ height: '100%' }} src={imgurl + '/sy-banner3.png'} alt="" />
+                </div>
+              </div>
+            </Carousel.Item>
+            <Carousel.Item
+              className="no_duration "
+              key={3}
+              onClick={() => {
+                // window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
+              }}>
+              <div className="main-container">
+                <div className="main-title1">百应科技荣誉入选</div>
+                <div style={{lineHeight: '40px', marginTop: '8px', marginBottom: '8px'}} className="main-title">
+                   国家人工智能
+                </div>
+                <div style={{ marginBottom: '8px', lineHeight: '38px' }} className="main-title">创新应用先导区“智赋百景”</div>
+                <div style={{ marginBottom: '0', lineHeight: '20.27px' }} className="third-title">工信部公示｜「城市管理」领域应用场景的优秀技术提供单位</div>
+                <div
+                  className="carousel-btn"
+                  style={{ marginBottom: '16px' }}
+                  onClick={() => {
+                    window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
+                  }}>
+                  点击查看
+                </div>
+                <div className="bg-img-blue-phone">
+                  <img style={{ width: '610px' }} src={imgurl + '/sy-banner2.png'} alt="" />
+                </div>
+              </div>
+            </Carousel.Item>
+            <Carousel.Item className="no_duration " key={3}>
+              <div className="main-container">
+                <div style={{ lineHeight: '38px', whiteSpace: 'nowrap' }} className="main-title-m">4项人工智能<br></br>关键技术标准编写单位</div>
+               <div className='third-group'>
+                <div style={{ padding: '0' }}>大规模训练技术<br />模型开发</div>
+                <div style={{ padding: '0' }}>大规模训练技术<br />模型能力</div>
+                <div style={{ padding: '0' }}>智能对话平台开发<br></br>及服务能力</div>
+                <div style={{ padding: '0' }}>智能客服<br />系统服务</div>
+               </div>
+
+                <div
+                  style={{ marginBottom: '0' }}
+                  className="carousel-btn"
+                  onClick={() => {
+                    window.open(`/form?formType=1`);
+                  }}>
+                  点击查看
+                </div>
+                <div className="bg-img-blue-phone">
+                  <img src={imgurl + '/sy-banner4.png'} alt="" />
+                </div>
+              </div>
+            </Carousel.Item>
+          </Carousel>
+        </div>
+        <div>
+          {<img style={{ position: 'absolute' }} src={BG_BALL2_PHONE} />}
+          <QuickAreaPhone>
+            {bannerList.map((item, index) => {
+              return (
+                <div>
+                  <img src={item.img} alt="" />
+                  <div className="content">
+                    <div>{item.title}</div>
+                    <div>{item.desc}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </QuickAreaPhone>
+        </div>
+        {/* <div className="carousel-body-mobile">
           <div className="carousel-m-wrapper">
             <div className="main-top-wrapper">
               <div className="main-title-m">百应AI</div>
@@ -623,7 +856,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
               className="m-bg-arror"
             />
           </div>
-        </div>
+        </div> */}
       </Visible>
     </CarouselWrapper>
   );

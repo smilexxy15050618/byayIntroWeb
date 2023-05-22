@@ -2,12 +2,16 @@ import { Visible } from 'react-grid-system';
 import React, { FC, useState, useEffect, useRef, useCallback, useMemo, ReactNode } from 'react';
 import ByVoiceFooter from '../src/components/common/ByVoiceFooter';
 import CustomerIconsBlock from '../src/components/common/CustomerIconsBlock';
+import CustomerIconsBlockPhone from '../src/components/common/CustomerIconsBlockPhone';
 import AiPlatform from '../src/components/homepage/version2023/AiPlatform';
 import Solution from '../src/components/homepage/version2023/Solution-2023';
+import SolutionPhone from '../src/components/homepage/version2023/SolutionPhone-2023';
 import SolutionOld from '../src/components/homepage/version2023/Solution';
 import HeightestAi from '../src/components/homepage/version2023/HeightestAi';
+import HeightestAiPhone from '../src/components/homepage/version2023/HeightestAiPhone';
 import GlobaNumber from '../src/components/homepage/version2023/GlobaNumber';
 import CustomerWords from '../src/components/homepage/version2023/CustomerWords2023';
+import CustomerWordsPhone from '../src/components/homepage/version2023/CustomerWordsPhone2023';
 import { IndustryCarousel } from '../src/components/IndustryCarousel-2023';
 import { Layout } from '../src/components/Layout';
 import { FormType } from '../src/components/TryForm';
@@ -18,8 +22,12 @@ import { ScrollToPlugin } from 'gsap/all';
 import imgurl from '../img.url.js';
 import Advantage from '../src/components/homepage/version2023/advantage';
 import { NewVideo } from '../src/components/NewVideo';
+import { NewVideoPhone } from '../src/components/NewVideoPhone';
+import { GlobaNumberPhone } from '../src/components/homepage/version2023/GlobaNumberPhone';
 import { News } from '../src/components/homepage/version2023/News';
+import { NewsPhone } from '../src/components/homepage/version2023/NewsPhone';
 import { LastPng } from './lastPng';
+import { LastPngPhone } from './lastPngPhone';
 const FOOTER_BG = `${imgurl}/kqaizl.png`;
 const BASE_URL = 'https://cdn.byai.com/static/intro/img/index/version2021/banner';
 const TEMPORARY_BANNER_BG = `${BASE_URL}/temporary-bg.jpg`;
@@ -172,9 +180,18 @@ export default props => {
             <LastPng></LastPng>
           </Visible>
           <Visible xs sm>
-            <VideoListMobile contentList={videoInfoList}></VideoListMobile>
-            <SolutionOld />
-            <Advantage></Advantage>
+            <NewVideoPhone></NewVideoPhone>
+            <GlobaNumberPhone></GlobaNumberPhone>
+            <SolutionPhone></SolutionPhone>
+            <CustomerWordsPhone></CustomerWordsPhone>
+            <CustomerIconsBlockPhone></CustomerIconsBlockPhone>
+            <HeightestAiPhone></HeightestAiPhone>
+            <NewsPhone></NewsPhone>
+            <LastPngPhone></LastPngPhone>
+            {/* <NewVideo></NewVideo> */}
+            {/* <VideoListMobile contentList={videoInfoList}></VideoListMobile> */}
+            {/* <SolutionOld />
+            <Advantage></Advantage> */}
           </Visible>
           <ByVoiceFooter
             title="就现在，开启AI电话增长之旅"
