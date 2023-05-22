@@ -138,7 +138,7 @@ export const Strategy: FC = () => {
                         {copilotList.map((item, i) => {
                             return (
                                 <div className="copilot-list-dom">
-                                    <img src={'/static/img2023/' + item.img} />
+                                    <img src={imgurl + item.img} />
                                     <div className="title">{item.name}</div>
                                 </div>
                             );

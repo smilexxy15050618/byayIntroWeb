@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Hidden, Visible } from 'react-grid-system';
 import imgurl from '../../../img.url.js'
-const joinUsImg = `/static/img2023/join-wap.png`
+const joinUsImg = `${imgurl}/join-wap.png`
 
 const JoinUsWrap = styled.div`
   background: linear-gradient(251.87deg, rgba(232, 233, 254, 1) 0%, rgba(246, 252, 255, 1) 100%);

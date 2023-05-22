@@ -43,7 +43,7 @@ export const ApplicationIndustry: FC = () => {
             <div className="title">数据智能</div>
             <div className="sec-title">利用大数据、人工智能和机器学习技术，挖掘数据价值、优化决策</div>
             <div class="content">
-                <img src={'/static/img2023/data-intell.png'} alt="" />
+                <img src={imgurl+'/data-intell.png'} alt="" />
             </div>
         </MainWrap>
     )

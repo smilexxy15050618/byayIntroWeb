@@ -119,23 +119,23 @@ const AcademyTram = styled.div`
 `
 
 const teamImg = [
-    {img: '/static/img2023/teamImg-1.png'},
-    {img: '/static/img2023/teamImg-2.png'},
-    {img: '/static/img2023/teamImg-3.png'},
-    {img: '/static/img2023/teamImg-4.png'},
+    {img: imgurl+'/teamImg-1.png'},
+    {img: imgurl+'/teamImg-2.png'},
+    {img: imgurl+'/teamImg-3.png'},
+    {img: imgurl+'/teamImg-4.png'},
 ]
 
 const teamLogo = [
-    {img: '/static/img2023/teamLogo-1.png'},
-    {img: '/static/img2023/teamLogo-2.png'},
-    {img: '/static/img2023/teamLogo-3.png'},
-    {img: '/static/img2023/teamLogo-4.png'},
-    {img: '/static/img2023/teamLogo-5.png'},
-    {img: '/static/img2023/teamLogo-6.png'},
-    {img: '/static/img2023/teamLogo-7.png'},
-    {img: '/static/img2023/teamLogo-8.png'},
-    {img: '/static/img2023/teamLogo-9.png'},
-    {img: '/static/img2023/teamLogo-10.png'},
+    {img: imgurl+'/teamLogo-1.png'},
+    {img: imgurl+'/teamLogo-2.png'},
+    {img: imgurl+'/teamLogo-3.png'},
+    {img: imgurl+'/teamLogo-4.png'},
+    {img: imgurl+'/teamLogo-5.png'},
+    {img: imgurl+'/teamLogo-6.png'},
+    {img: imgurl+'/teamLogo-7.png'},
+    {img: imgurl+'/teamLogo-8.png'},
+    {img: imgurl+'/teamLogo-9.png'},
+    {img: imgurl+'/teamLogo-10.png'},
     
 ]
 

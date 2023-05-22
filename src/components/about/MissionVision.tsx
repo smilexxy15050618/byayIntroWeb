@@ -8,8 +8,8 @@ interface MissionVisionProps {
 
 const MissionBG = `${imgurl}/mission-bg.png`;
 const VisionBG = `${imgurl}/vision-bg.png`;
-const MissionWapBG = `/static/img2023/mission-wap-bg.svg`;
-const VisionWapBG = `/static/img2023/vision-wap-bg.png`;
+const MissionWapBG = `${imgurl}/mission-wap-bg.svg`;
+const VisionWapBG = `${imgurl}/vision-wap-bg.png`;
 
 const MissionVisionContainer = styled.div`
   

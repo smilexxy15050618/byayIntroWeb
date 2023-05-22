@@ -5,9 +5,9 @@ import CarouselItem from 'react-bootstrap/CarouselItem';
 import styled from 'styled-components';
 import imgurl from '../../../img.url.js';
 
-const DevelopBg = `/static/img2023/devehistBg.png`;
-const DevelopLeft = `/static/img2023/devehisLeft.svg`;
-const DevelopRight = `/static/img2023/devehisRight.svg`;
+const DevelopBg = `${imgurl}/devehistBg.png`;
+const DevelopLeft = `${imgurl}/devehisLeft.svg`;
+const DevelopRight = `${imgurl}/devehisRight.svg`;
 
 const DevelopWrap = styled.div`
   position: relative;
@@ -217,7 +217,7 @@ const COURSE_TIME = [
 ];
 
 const DevelopHistoryWap: React.SFC<IAiProps> = ({}) => (
-  <DevelopWrap>
+  <DevelopWrap id="DevelopHistory">
     <div className="title">发展历程</div>
     <Carousel
       nextIcon={
