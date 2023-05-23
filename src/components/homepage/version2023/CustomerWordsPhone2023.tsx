@@ -34,6 +34,7 @@ const CardContent = styled.div`
       height: 30px;
       img {
         height: 30px;
+        max-width: unset;
       }
     }
   }

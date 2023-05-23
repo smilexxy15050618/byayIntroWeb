@@ -307,7 +307,14 @@ export const NewsPhone = () => {
         </Swiper>
         <RightNews>
           <div className="top">
-            <span>百应动态</span>
+            <span  style={{
+                fontSize: '16px',
+                fontWeight: '500',
+                letterSpacing: '0px',
+                lineHeight: '18px',
+                color: 'rgba(26, 26, 26, 1)',
+                marginBottom: '10px'
+              }}>百应动态</span>
             <span className="hoverCode">
               查看更多
               <div className="bgsks">

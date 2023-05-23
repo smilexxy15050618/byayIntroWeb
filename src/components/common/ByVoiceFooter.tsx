@@ -230,7 +230,9 @@ const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText
       <Phone>
         <Dropdown >
           <Dropdown.Toggle variant="info" id="dropdown-basic">
-            {sleindex.area+sleindex.number}
+            {/* {sleindex.number == 86? sleindex.number:sleindex.area+sleindex.number} */}
+            {sleindex.number}
+
           </Dropdown.Toggle>
           <Dropdown.Menu style={{ height: '300px', overflow: 'auto' }}>
             {list.map((item, index) => {
