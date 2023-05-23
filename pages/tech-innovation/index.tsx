@@ -26,10 +26,10 @@ const Game: NextFunctionComponent<IGameProps> = () => {
           <Wrapper>
             <Banner></Banner>
             <Ai></Ai>
-            {/* <ApplicationIndustry></ApplicationIndustry> */}
-            {/* <Strategy></Strategy> */}
-            {/* <Algorithm></Algorithm> */}
-            {/* <CoreAi></CoreAi> */}
+            <ApplicationIndustry></ApplicationIndustry>
+            <Strategy></Strategy>
+            <Algorithm></Algorithm>
+            <CoreAi></CoreAi>
             <ByVoiceFooter
               title="就现在，开启AI电话增长之旅"
               desc="留下联系方式，将有AI行业专家为您提供专属服务"

@@ -1,6 +1,7 @@
 import React, { FC, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import styled from 'styled-components';
 import imgurl from '../../../img.url.js'
+import { Visible, Hidden } from 'react-grid-system';
 
 const MainWrap = styled.div`
     width: 1200px;
@@ -8,8 +9,9 @@ const MainWrap = styled.div`
     box-sizing:border-box;
     margin: 0 auto;
     @media(max-width: 768px) {
+        width: 100%;
         padding: 40px 0;
-        }
+    }
     .title {
         font-size: 40px;
         font-weight: 500;
@@ -18,6 +20,13 @@ const MainWrap = styled.div`
         color: rgba(26, 26, 26, 1);
         text-align: center;
         margin-bottom: 16px;
+        @media(max-width: 768px) {
+            font-size: 24px;
+            font-weight: 500;
+            letter-spacing: 0px;
+            line-height: 32px;
+            color: rgba(0, 0, 0, 1);
+        }
     }
     .sec-title{
         font-size: 16px;
@@ -26,6 +35,15 @@ const MainWrap = styled.div`
         color: rgba(51, 51, 51, 1);
         margin-bottom: 56px;
         text-align:center;
+        @media(max-width: 768px) {
+            margin-bottom: 32px;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0px;
+            line-height: 24px;
+            color: rgba(0, 0, 0, 1);
+            text-align: center;
+        }
     }
 }
 `
@@ -34,13 +52,27 @@ const StrateWrap = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media(max-width: 768px) {
+        display: block;
+    }
     .left{
         width: 432px;
+        @media(max-width: 768px) {
+            width: 100%;
+            padding: 0 27px;
+        }
         .copilot{
             font-size: 28px;
             font-weight: 500;
             line-height: 32px;
             color: rgba(26, 26, 26, 1);
+            @media(max-width: 768px) {
+                font-size: 22px;
+                font-weight: 500;
+                letter-spacing: 0px;
+                line-height: 30px;
+                color: rgba(26, 26, 26, 1);
+            }
         }
         .copilot-sub{
             padding: 8px 0 24px;
@@ -55,6 +87,8 @@ const StrateWrap = styled.div`
                 width: 136px;
                 font-size: 14px;
                 font-weight: 400;
+                height: 24px;
+                margin-bottom: 8px;
                 line-height: 24px;
                 color: rgba(51, 51, 51, 1);
                 &::before{
@@ -72,12 +106,23 @@ const StrateWrap = styled.div`
         }
         .copilot-list{
             padding-top: 44px;
+            @media(max-width: 768px) {
+                padding-top: 40px;
+            }
             .copilot-list-dom{
+                padding-bottom: 17px;
+                @media(max-width: 768px) {
+                    padding-bottom: 20px;
+                }
                 img{
                     width: 159px;
                     height: 21px;
+                    @media(max-width: 768px) {
+                        display: block;
+                        margin: 0;
+                    }
                 }
-                div{
+                .cop-title{
                     padding-top: 8px;
                     font-size: 14px;
                     font-weight: 400;
@@ -90,9 +135,19 @@ const StrateWrap = styled.div`
     .right{
         width: 660px;
         height: 378px;
+        @media(max-width: 768px) {
+            width: 100%;
+            height: auto;
+            padding: 20px 16px 0;
+        }
         video{
             width: 660px;
             height: 378px;
+            @media(max-width: 768px) {
+                width: 100%;
+                height: auto;
+                margin: 0;
+            }
         }
     }
 `
@@ -122,7 +177,13 @@ export const Strategy: FC = () => {
     return (
         <MainWrap>
             <div className="title">策略智能</div>
-            <div className="sec-title">策略自动生成、数据验证、自动化运行，提升关键指标和运营效率</div>
+            
+            <Visible md lg xl xxl xxxl>
+                <div className="sec-title">策略自动生成、数据验证、自动化运行，提升关键指标和运营效率</div>
+            </Visible>
+            <Visible xs sm>
+                <div className="sec-title">策略自动生成、数据验证、自动化运行<br />提升关键指标和运营效率</div>
+            </Visible>
             <StrateWrap>
                 <div className="left">
                     <div className="copilot">MA Copilot</div>
@@ -139,7 +200,7 @@ export const Strategy: FC = () => {
                             return (
                                 <div className="copilot-list-dom">
                                     <img src={imgurl + item.img} />
-                                    <div className="title">{item.name}</div>
+                                    <div className="cop-title">{item.name}</div>
                                 </div>
                             );
                         })}
