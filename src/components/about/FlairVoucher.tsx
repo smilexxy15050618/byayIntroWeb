@@ -270,7 +270,7 @@ const FlairVoucher: FC<SocietyDutyProps> = () => {
                   {carouselDataListWap.map(({ wapImgSrc }) => (
                       <div style={{width: '100vw'}}>
                           <div className='card'>
-                              <img src={`static/img2023${wapImgSrc}`} />
+                              <img src={`${imgurl}${wapImgSrc}`} />
                           </div>
                       </div>
                   ))}
