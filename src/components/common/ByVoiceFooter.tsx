@@ -317,8 +317,8 @@ const ByVoiceFooter = styled(RawByVoiceFooter) <IByVoiceFooterProps>`
       letter-spacing: 0 !important;
     }
     .desc {
-      font-size: 14px;
-      line-height: 22px;
+      font-size: 12px;
+      line-height: 20px;
       margin: 12px 0px 16px;
       color: #ffffff;
       letter-spacing: 0 !important;

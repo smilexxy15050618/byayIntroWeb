@@ -467,7 +467,9 @@ export const GlobaNumberPhone = ({}) => {
               return <p>{item}</p>;
             })}
           </div>
-          <p className='goknoemow'>了解更多&nbsp;&nbsp;></p>
+          <p className='goknoemow' onClick={() => {
+              window.open('/form?formType=1');
+            }}>了解更多&nbsp;&nbsp;></p>
         </div>
       </Menu>
       <Content>
