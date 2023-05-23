@@ -22,9 +22,9 @@ import imgurl from '../../img.url.js';
 import { HOST_ENUM } from '../../src/lib/utils';
 
 const BANNER_BG = `${imgurl}/about_banner_bg.png`;
-const BANNER_WAP_BG = `${imgurl}/about-wap-bg.svg`;
+const BANNER_WAP_BG = `${imgurl}/about-wap-bg.png`;
 const JOIN_US_IMG = `${imgurl}/about_banner_img.png`;
-const JOIN_US_WAP_IMG = `${imgurl}/about-wap-banner.svg`;
+const JOIN_US_WAP_IMG = `${imgurl}/about-wap-banner.png`;
 const ABOUT_INTRO = `${imgurl}/about-intro.jpg`;
 
 const DEVELOPHIS_BG = `${imgurl}/develophis_bg.png`;
@@ -111,17 +111,26 @@ const CreditMedal = styled.div<{ backgroundImage?: string }>`
 
 const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
   const [initial, setInitial] = useState(true);
+  const [indexTab, setIndexTab] = useState(0);
+  // const [is_fixed, set_is_fixed] = useState(false);
 
   const handleHeaderOpacity = () => {
     document.body.getBoundingClientRect().top > -10 ? setInitial(true) : setInitial(false);
   };
 
-  const hadnleNav = () => {
+  const hadnleNav = (e) => {
     setInitial(false);
+    setIndexTab(e)
   };
 
   useEffect(() => {
     document.addEventListener('wheel', handleHeaderOpacity);
+    // const fixedTop = document.getElementById('tabNav').offsetTop;
+    // window.onscroll = () => {
+    //   const scrollTop = document.documentElement.scrollTop;
+    //   const isFixed = scrollTop >= fixedTop - 110;
+    //   set_is_fixed(isFixed);
+    // };
   }, []);
 
   return (

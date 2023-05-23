@@ -2,7 +2,6 @@ import React, { FC, ReactNode, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Hidden, Visible } from 'react-grid-system';
 import { Theme } from '../../constants/style';
-import { splitCssValue } from '../../lib/utils';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import imgurl from '../../../img.url.js'
 
@@ -124,10 +123,10 @@ const ArrowClickR = styled.div`
 
 
 const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) => {
-  const [index, setIndex] = React.useState(0);
-  const [actIndex, setActIndex] = React.useState(0)
-  const [controlledSwiper, setControlledSwiper] = React.useState(null);
-  const [is_fixed, set_is_fixed] = React.useState(false);
+  const [index, setIndex] = useState(0);
+  const [actIndex, setActIndex] = useState(0)
+  const [controlledSwiper, setControlledSwiper] = useState(null);
+  const [is_fixed, set_is_fixed] = useState(false);
   const navRef = useRef(null);
 
   const onSlideChange = index => {
@@ -151,22 +150,22 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
         const isFixed = scrollTop >= fixedTop - 110;
         set_is_fixed(isFixed);
 
-        if (scrollTop >= qiyejieshao.offsetTop - 140 && scrollTop < MissionVision.offsetTop - 140) {
+        if (scrollTop >= qiyejieshao.offsetTop - 109 && scrollTop < MissionVision.offsetTop - 109) {
           setActIndex(0)
         }
-        if (scrollTop >= MissionVision.offsetTop - 140 && scrollTop < DevelopHistory.offsetTop - 140) {
+        if (scrollTop >= MissionVision.offsetTop - 109 && scrollTop < DevelopHistory.offsetTop - 109) {
           setActIndex(1)
         }
-        if (scrollTop >= DevelopHistory.offsetTop - 140 && scrollTop < SocietyDuty.offsetTop - 140) {
+        if (scrollTop >= DevelopHistory.offsetTop - 109 && scrollTop < SocietyDuty.offsetTop - 109) {
           setActIndex(2)
         }
-        if (scrollTop >= SocietyDuty.offsetTop - 140 && scrollTop < CreditMedal.offsetTop - 140) {
+        if (scrollTop >= SocietyDuty.offsetTop - 109 && scrollTop < CreditMedal.offsetTop - 109) {
           setActIndex(3)
         }
-        if (scrollTop >= CreditMedal.offsetTop - 140 && scrollTop < JoinUs.offsetTop - 140) {
+        if (scrollTop >= CreditMedal.offsetTop - 109 && scrollTop < JoinUs.offsetTop - 109) {
           setActIndex(4)
         }
-        if (scrollTop >= JoinUs.offsetTop - 140) {
+        if (scrollTop >= JoinUs.offsetTop - 109) {
           setActIndex(5)
         }
       }
@@ -197,8 +196,7 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
       </NavItemContainer>
     </Visible>
     <Visible xs sm>
-      {/* 吸顶占位 */}
-      <div style={{height: '1px', paddingTop: '129px', display: is_fixed ? 'block' : 'none'}}></div>
+      {/* 吸顶占位 onSlideChange={swiper => onSlideChange(swiper.activeIndex)} */}
       <div className={`capacity-tab ${is_fixed ? 'fixedTop' : ''}`} id="tabNav">
         <ArrowClickL
           onClick={e => {
@@ -209,7 +207,6 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
         <Swiper
           slidesPerView="auto"
           onSwiper={swiper => setControlledSwiper(swiper)}
-          onSlideChange={swiper => onSlideChange(swiper.activeIndex)}
         >
           {bannerList.map(({ name, jumpTarget }, navIndex) => {
             return (
@@ -222,7 +219,7 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
                   if (node) {
                     node.scrollIntoView({ behavior: 'smooth' });
                   }
-                  onCancel()
+                  onCancel(navIndex)
                 }}
               >
               {name}
@@ -238,6 +235,7 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
         ></ArrowClickR>
       </div>
     </Visible>
+    {/*<div style={{width: '100%', height: '129px', paddingTop: '129px', display: is_fixed ? 'block' : 'none'}}></div>*/}
     </Wrapper>
   )
 };
