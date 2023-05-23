@@ -36,7 +36,7 @@ button:last-child {
   width: 132px;
 height: 46px;
 @media (max-width: 768px) {
-  width:70px;
+  width:80px;
   font-size:12px;
 }
 opacity: 1;
@@ -60,6 +60,12 @@ color: rgba(255, 255, 255, 1);
     background: none;
     border-radius: 0;
     font-size: 14px;
+
+    @media (max-width: 768px) {
+        min-width: 90px;
+        padding: 0 10px;
+        font-size:12px;
+    }
 font-weight: 400;
 letter-spacing: 0px;
 line-height: 24px;

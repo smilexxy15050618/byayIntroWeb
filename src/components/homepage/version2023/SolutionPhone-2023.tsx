@@ -570,11 +570,11 @@ const ContentWrapper = styled.div`
       font-size: 10px;
       font-weight: 400;
       letter-spacing: 0px;
-      line-height: 22px;
+      line-height: 20px;
     }
     .ljzx {
-      color: #fff;
-      background: rgba(43, 88, 249, 1);
+        color: #fff;
+        background: rgba(43, 88, 249, 1);
     }
     .ljgd {
       color: rgba(43, 88, 249, 1);

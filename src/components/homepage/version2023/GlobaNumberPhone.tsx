@@ -128,14 +128,16 @@ const Wrapper = styled.div`
   width: 100%;
   padding-top: 56px;
 
-  background: url(${imgurl}/qzzy_bg.png) no-repeat;
+//   background: url(${imgurl}/qzzy_bg.png) no-repeat;
+  background: url(${imgurl}/全栈自研背景色.png) no-repeat;
   background-size: 100% 100%;
 `;
 const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: url(${imgurl}/maps.png) no-repeat;
+//   background: url(${imgurl}/maps.png) no-repeat;
+  background: url(${imgurl}/全栈自研地图.png) no-repeat;
   background-size: 923px 447px;
   background-position: center top;
   width: 100%;

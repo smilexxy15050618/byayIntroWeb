@@ -42,11 +42,12 @@ const Pane = styled.div`
     display: flex;
     flex-wrap: wrap;
     .hengtiaoxiafang_list {
-      height: 72px;
+      height: 56px;
       width: 50%;
       box-sizing: border-box;
       display: flex;
       align-items: center;
+      justify-content: center;
       .iconself {
         width: 26px;
         // height: 20px;

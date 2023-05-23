@@ -180,14 +180,14 @@ aside{
 }
 .number_content {
   font-family: DINAlternate;
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 500;
   letter-spacing: 0.86px;
-  line-height: 64px;
+  line-height: 32px;
   color: rgba(255, 255, 255, 1);
   span {
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 500;
     letter-spacing: 0.57px;
   }
 }
@@ -350,7 +350,7 @@ export const NewVideoPhone = () => {
         return (<div
           onClick={()=>{
             if(item.path){
-              window.location.href = item.path;
+            //   window.location.href = item.path;
             }
           }}
           className={classNames('listItem', {
