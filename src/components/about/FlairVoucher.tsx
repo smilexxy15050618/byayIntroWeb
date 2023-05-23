@@ -88,18 +88,38 @@ const FlairVoucherSlide = styled.div`
       display: none;
     }
     .swiper-slide {
-      width: 343px !important;
+      width: 128px !important;
+      &:nth-child(5){
+        width: 127px !important;
+        .card{
+          box-shadow: none;
+        }
+      }
+      &:nth-child(6){
+        .card{
+          box-shadow: none;
+        }
+      }
+      &:nth-child(7){
+        width: 218px !important;
+        .card{
+          box-shadow: none;
+        }
+      }
     }
   }
    .card{
       width:100%;
-      height: 180px;
-      background: rgba(255, 255, 255, 1);
-      box-shadow: 0px 0px 12px 1px rgba(36, 91, 219, 0.06);
+      height: 182px;
+      border: none;
+      background: transparent;
       box-sizing:border-box;
+      border-radius: 8px;
+      box-shadow: 0px 0px 16px 0px rgba(0, 6,24, 0.15);
       img{
           width:100%;
-          height: 180px;
+          height: 182px;
+          margin: 0;
       }
    }
 
@@ -140,7 +160,32 @@ const carouselDataList = [
   }
 ];
 
+const carouselDataListWap = [
+  {
+    wapImgSrc: '/flair-vouche-wap-1.png',
+  },
+  {
+    wapImgSrc: '/flair-vouche-wap-2.png',
+  },
+  {
+    wapImgSrc: '/flair-vouche-wap-3.png',
+  },
+  {
+    wapImgSrc: '/flair-vouche-wap-4.png',
+  },
+  {
+    wapImgSrc: '/flair-vouche-wap-5.png',
+  },
+  {
+    wapImgSrc: '/flair-vouche-wap-6.png',
+  },
+  {
+    wapImgSrc: '/flair-vouche-wap-7.png',
+  }
+];
+
 interface SocietyDutyProps {
+  indexTab: string;
   dataList: { content: string; imgSrc: string; title: string }[];
   style?: CSSProperties;
 }
@@ -178,7 +223,7 @@ const Carousel: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
   );
 };
 
-const FlairVoucher: FC<SocietyDutyProps> = () => {
+const FlairVoucher: FC<SocietyDutyProps> = ({indexTab}) => {
 
   const myRef = useRef(null);
   useEffect(() => {
@@ -204,7 +249,7 @@ const FlairVoucher: FC<SocietyDutyProps> = () => {
   }, [myRef]);
   
   return (
-  <WrapperContent id="CreditMedal">
+  <WrapperContent id="CreditMedal" style={{paddingTop: indexTab == 4 ? '109px' : '0'}}>
     <FlairVoucherContainer>
       <Title>资质认证</Title>
       <SubTitle>从自身产品安全性到对外数据服务，为数据安全保驾护航</SubTitle>
@@ -223,10 +268,10 @@ const FlairVoucher: FC<SocietyDutyProps> = () => {
                   spaceBetween={16}
                   centeredSlides={true}
                 >
-                  {carouselDataList.map(({ wapImgSrc }) => (
-                      <div style={{width: '100vw',background: '#fff' }}>
+                  {carouselDataListWap.map(({ wapImgSrc }) => (
+                      <div style={{width: '100vw'}}>
                           <div className='card'>
-                              <img src={`static/img2023${wapImgSrc}`} />
+                              <img src={`${imgurl}${wapImgSrc}`} />
                           </div>
                       </div>
                   ))}

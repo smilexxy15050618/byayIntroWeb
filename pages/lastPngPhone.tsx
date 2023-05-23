@@ -38,19 +38,20 @@ const Pane = styled.div`
     background: rgba(0, 200, 189, 1);
   }
   .hengtiaoxiafang {
-    margin-top: 56px;
+    margin-top: 26px;
     display: flex;
     flex-wrap: wrap;
     .hengtiaoxiafang_list {
-      height: 72px;
+      height: 56px;
       width: 50%;
       box-sizing: border-box;
       display: flex;
       align-items: center;
+      justify-content: center;
       .iconself {
-        width: 40px;
-        height: 40px;
-        margin-right: 16px;
+        width: 26px;
+        // height: 20px;
+        margin-right: 8px;
         img {
           width: 100%;
         }
@@ -96,6 +97,8 @@ const Pane = styled.div`
           letter-spacing: 0px;
           line-height: 13.45px;
           color: rgba(90, 90, 90, 1);
+          transform: scale(.8);
+          white-space: nowrap;
         }
         &:hover img {
           box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);

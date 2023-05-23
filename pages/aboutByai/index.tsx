@@ -22,9 +22,9 @@ import imgurl from '../../img.url.js';
 import { HOST_ENUM } from '../../src/lib/utils';
 
 const BANNER_BG = `${imgurl}/about_banner_bg.png`;
-const BANNER_WAP_BG = `${imgurl}/about-wap-bg.svg`;
+const BANNER_WAP_BG = `${imgurl}/about-wap-bg.png`;
 const JOIN_US_IMG = `${imgurl}/about_banner_img.png`;
-const JOIN_US_WAP_IMG = `${imgurl}/about-wap-banner.svg`;
+const JOIN_US_WAP_IMG = `${imgurl}/about-wap-banner.png`;
 const ABOUT_INTRO = `${imgurl}/about-intro.jpg`;
 
 const DEVELOPHIS_BG = `${imgurl}/develophis_bg.png`;
@@ -42,7 +42,9 @@ const BigTitle = styled.div`
     width: 100%;
     text-align: center;
     font-size: 32px;
-    line-height: 47px;
+    font-weight: 500;
+    line-height: 40px;
+    color: rgba(0, 0, 0, 1);
     padding: 0 12px;
     margin-bottom: 8px !important;
   }
@@ -58,7 +60,7 @@ const Desc = styled.div`
     text-align: center;
     font-size: 16px;
     line-height: 26px;
-    margin: 0 12px 46px !important;
+    margin: 0 12px 24px !important;
   }
 `;
 
@@ -111,17 +113,26 @@ const CreditMedal = styled.div<{ backgroundImage?: string }>`
 
 const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
   const [initial, setInitial] = useState(true);
+  const [indexTab, setIndexTab] = useState(0);
+  // const [is_fixed, set_is_fixed] = useState(false);
 
   const handleHeaderOpacity = () => {
     document.body.getBoundingClientRect().top > -10 ? setInitial(true) : setInitial(false);
   };
 
-  const hadnleNav = () => {
+  const hadnleNav = (e) => {
     setInitial(false);
+    setIndexTab(e)
   };
 
   useEffect(() => {
     document.addEventListener('wheel', handleHeaderOpacity);
+    // const fixedTop = document.getElementById('tabNav').offsetTop;
+    // window.onscroll = () => {
+    //   const scrollTop = document.documentElement.scrollTop;
+    //   const isFixed = scrollTop >= fixedTop - 110;
+    //   set_is_fixed(isFixed);
+    // };
   }, []);
 
   return (
@@ -140,7 +151,7 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
                 },
               ]}
               mobileImg={JOIN_US_WAP_IMG}
-              mobileStyle={{width: '319px',height:'245px',paddingTop: '0', }}
+              mobileStyle={{display:'block', width: '319px',height:'245px', margin: '0 auto', paddingTop: '0', }}
               >
               <TextArea spaces={['', '']}>
                 <BigTitle>关于百应</BigTitle>
@@ -182,19 +193,19 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
                 ]}
                 onCancel={hadnleNav}
               />
-              <EnterpriseIntroduction cover={ABOUT_INTRO} />
+              <EnterpriseIntroduction cover={ABOUT_INTRO} indexTab={indexTab} />
             </EnIntroductionWrap>
-            <MissionVision />
+            <MissionVision indexTab={indexTab} />
             <Visible md lg xl xxl xxxl>
               <DevelopHistory backgroundImage={DEVELOPHIS_BG} />
             </Visible>
             <Visible xs sm>
               <DevelopHistoryWap />
             </Visible>
-            <SocietyDuty />
-            <FlairVoucher />
+            <SocietyDuty indexTab={indexTab} />
+            <FlairVoucher indexTab={indexTab} />
             <CustomerWords />
-            <JoinUs backgroundImage={JOINUS_BG} />
+            <JoinUs indexTab={indexTab} backgroundImage={JOINUS_BG} />
           <ByVoiceFooter
             title="立即体验AI时代的新一代用户运营平台"
             desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"

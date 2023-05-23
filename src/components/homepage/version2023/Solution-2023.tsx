@@ -547,7 +547,7 @@ const labelInfo = [
   {
     name: '企业数字化',
     fontTitle: [
-      '品牌零售行业解决方案',
+      '零售行业解决方案',
       '互联网行业解决方案',
       '汽车行业解决方案',
       '保险行业解决方案',
@@ -608,7 +608,7 @@ const leftMenuList = [
     {
       icon: '/ppls_icon1.svg',
       icon2: '/ppls_icon1lght.png',
-      label: '品牌零售',
+      label: '零售',
     },
     {
       icon2: '/ppls_icon2lght.png',

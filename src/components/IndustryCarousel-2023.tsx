@@ -128,6 +128,9 @@ const CarouselWrapper = styled.div`
     width: 1200px;
     margin: 0 auto;
     bottom: ${calWidthAndHeight(134)};
+    @media (max-width: 768px) {
+      margin-bottom: 20px!important;
+    }
   }
   @keyframes mywidth {
     from {
@@ -186,6 +189,7 @@ const CarouselWrapper = styled.div`
     letter-spacing: 0.91px;
     line-height: 32px;
     color: rgba(51, 51, 51, 1);
+    margin-top: 20px;
     margin-bottom: 24px;
   }
   .third-title {
@@ -383,8 +387,31 @@ padding-top: 9px;
   }
 
   @media (max-width: 768px) {
+    .sec-title {
+      margin-bottom: 24px;
+    }
+
     .third-group {
-      margin-bottom: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+      div {
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        height: 39px;
+        line-height: 20px;
+        color: rgba(43, 88, 249, 1);
+        width: 48%;
+        margin-bottom: 5px;
+      }
+      div:nth-child(2), div:nth-child(4) {
+        margin-right: 0;
+      }
+      div:nth-child(3), div:nth-child(4) {
+        line-height: 18px;
+        margin-bottom: 0;
+      }
     }
 
     .main-title1 {
@@ -436,9 +463,10 @@ padding-top: 9px;
 
     .main-container {
       width: 100%;
-      padding-left: 30px;
-      padding-right: 30px;
-      padding-top: 100px;
+      padding-left: 24px;
+      padding-right: 24px;
+      padding-top: 94px;
+      color: 'rgba(51, 51, 51, 1)'
     }
 
     .carousel-body {
@@ -469,6 +497,8 @@ padding-top: 9px;
     .carousel-btn {
       // margin: ${calWidthAndHeight(32)} auto;
       margin-bottom: 86px;
+      height: 40px;
+      line-height: 40px;
     }
   }
 `;
@@ -529,33 +559,40 @@ const QuickArea = styled.div`
 
 const QuickAreaPhone = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  position: relative;
   z-index: 1;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0px;
   line-height: 14.4px;
-  width: 100%;
+  // width: 96%;
   flex-wrap: wrap;
-  padding: 10px 23px;
+  margin: 0 8px;
+  padding: 25px 0;
+  background: #ffffff;
+  border-radius: 10px;
+  position: absolute;
+
 
   > div {
     display: flex;
     cursor: pointer;
     justify-content: center;
-    width: 50%;
+    width: 45%;
 
     img {
-      margin-top: -6px;
+      // margin-top: -6px;
       width: 36px;
       height: 36px;
     }
     .content {
-      margin-left: 8px;
+      // margin-left: 8px;
+      
       div:first-child {
+      margin-left: 8px;
         font-size: 12px;
+        white-space:nowrap;
         font-weight: 500;
         letter-spacing: 0px;
         line-height: 14.4px;
@@ -564,11 +601,11 @@ const QuickAreaPhone = styled.div`
         vertical-align: top;
       }
       div:last-child {
-        margin-top: 4px;
-        font-size: 8px;
+        // margin-top: 4px;
+        font-size: 12px;
         font-weight: 400;
         letter-spacing: 0px;
-        line-height: 13px;
+        line-height: 16px;
         color: #5a5a5a;
         text-align: left;
         vertical-align: top;
@@ -641,7 +678,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                 浙江省经济和信息化厅公示｜2023年度第一批企业名单
                 </div>
 
-                <div className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/f2fOn80IdZv1LYT5BtItng')}>
+                <div className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/Ebu43ZcMV6ted0f55efIRg')}>
                   点击查看
                 </div>
                 <div className="bg-img-blue">
@@ -679,9 +716,9 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
               <div className="main-container">
                 <div className="main-title">4项人工智能<br></br>关键技术标准编写单位</div>
                <div className='third-group'>
-                <div>大规模训练技术<br />模型开发</div>
-                <div>大规模训练技术<br />模型能力</div>
-                <div>智能对话平台开发<br></br>及服务能力</div>
+                <div>大规模训练技术<br/>模型开发</div>
+                <div>大规模训练技术<br/>模型能力</div>
+                <div>智能对话平台开发<br/>及服务能力</div>
                 <div>智能客服<br />系统服务</div>
                </div>
 
@@ -723,7 +760,9 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
               <div className="main-container">
                 <div className="main-title-m">智能用户</div>
                 <div className="main-title-m">运营领域创领者</div>
-                <div className="sec-title">
+                <div className="sec-title"
+                  style={{ marginBottom : '14px' }}
+                >
                   用AI助力构建用户长期信任关系
                 </div>
                 <div
@@ -731,7 +770,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                   onClick={() => {
                     window.open(`/form?formType=1`);
                   }}>
-                  立即体验
+                  预约体验
                 </div>
                 <div style={{ width: '375px',height: '279px' }} className="bg-img-blue-phone">
                   <img style={{ height: '100%' }} src={imgurl + '/sy-banner1.png'} alt="" />
@@ -741,15 +780,15 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
 
             <Carousel.Item className="no_duration" key={2}>
               <div className="main-container">
-                <div className="main-title1">百应科技荣获</div>
-                <div style={{lineHeight: '36px', marginTop: '8px', marginBottom: '8px',}} className="main-title">浙江省“专精特新”中小企业称号</div>
-                <div style={{ marginBottom: '16px', lineHeight: '14px' }}  className="third-title">
+                <div className="main-title1" style={{fontSize: '16px', fontWeight: '500', letterSpacing: '0px',lineHeight: '24px'}}>百应科技荣获</div>
+                <div style={{fontSize: '36px', fontWeight: '500', letterSpacing: '0px',lineHeight: '47px', marginBottom: '14px'}} className="main-title">浙江省“专精特新”中小企业称号</div>
+                <div  style={{fontSize: '14px', fontWeight: '400', letterSpacing: '0px',lineHeight: '24px', marginBottom: '24px', lineHeight: '20.27px' }}  className="third-title">
                 浙江省经济和信息化厅公示｜2023年度第一批企业名单
                 </div>
-                <div style={{marginBottom: '56px',}} className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/Ebu43ZcMV6ted0f55efIRg')}>
+                <div style={{marginBottom: '33px',}} className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/Ebu43ZcMV6ted0f55efIRg')}>
                   点击查看
                 </div>
-                <div style={{ width: '375px',height: '279px' }} className="bg-img-blue-phone">
+                <div style={{ width: '100%',height: '279px' }} className="bg-img-blue-phone">
                   <img style={{ height: '100%' }} src={imgurl + '/sy-banner3.png'} alt="" />
                 </div>
               </div>
@@ -761,15 +800,14 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                 // window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
               }}>
               <div className="main-container">
-                <div className="main-title1">百应科技荣誉入选</div>
-                <div style={{lineHeight: '40px', marginTop: '8px', marginBottom: '8px'}} className="main-title">
-                   国家人工智能
+                <div className="main-title1" style={{fontSize: '16px', fontWeight: '500', letterSpacing: '0px',lineHeight: '24px'}}>百应科技荣誉入选</div>
+                <div style={{fontSize: '36px', fontWeight: '500', letterSpacing: '0px',lineHeight: '47px', marginTop: '8px', marginBottom: '14px'}} className="main-title">
+                  国家人工智能创新应用先导区“智赋百景”
                 </div>
-                <div style={{ marginBottom: '8px', lineHeight: '38px' }} className="main-title">创新应用先导区“智赋百景”</div>
-                <div style={{ marginBottom: '0', lineHeight: '20.27px' }} className="third-title">工信部公示｜「城市管理」领域应用场景的优秀技术提供单位</div>
+                <div style={{ fontSize: '14px', fontWeight: '400', letterSpacing: '0px',marginBottom: '24px', lineHeight: '20.27px' }} className="third-title">工信部公示｜「城市管理」领域应用场景的优秀技术提供单位</div>
                 <div
                   className="carousel-btn"
-                  style={{ marginBottom: '16px' }}
+                  style={{ marginBottom: '33px' }}
                   onClick={() => {
                     window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
                   }}>
@@ -782,16 +820,17 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
             </Carousel.Item>
             <Carousel.Item className="no_duration " key={3}>
               <div className="main-container">
-                <div style={{ lineHeight: '38px', whiteSpace: 'nowrap' }} className="main-title-m">4项人工智能<br></br>关键技术标准编写单位</div>
-               <div className='third-group'>
-                <div style={{ padding: '0' }}>大规模训练技术<br />模型开发</div>
-                <div style={{ padding: '0' }}>大规模训练技术<br />模型能力</div>
-                <div style={{ padding: '0' }}>智能对话平台开发<br></br>及服务能力</div>
-                <div style={{ padding: '0' }}>智能客服<br />系统服务</div>
-               </div>
+                <div style={{ marginBottom: '14px', lineHeight: '38px'}} className="main-title-m">4项人工智能关键</div>
+                <div style={{ marginBottom: '14px', lineHeight: '38px'}} className="main-title-m">技术标准编写单位</div>
+                <div className='third-group'>
+                    <div style={{ padding: '0', lineHeight: '36px' }}>大规模训练技术模型开发</div>
+                    <div style={{ padding: '0', lineHeight: '36px' }}>大规模训练技术模型能力</div>
+                    <div style={{ padding: '0' ,lineHeight: '36px' }}>智能对话平台开发及服务能力</div>
+                    <div style={{ padding: '0', lineHeight: '36px' }}>智能客服系统服务</div>
+                </div>
 
                 <div
-                  style={{ marginBottom: '0' }}
+                  style={{ marginBottom: '22px' }}
                   className="carousel-btn"
                   onClick={() => {
                     window.open(`/form?formType=1`);
@@ -805,22 +844,20 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
             </Carousel.Item>
           </Carousel>
         </div>
-        <div>
-          {<img style={{ position: 'absolute' }} src={BG_BALL2_PHONE} />}
+          {/* {<img style={{ position: 'absolute' }} src={BG_BALL2_PHONE} />} */}
           <QuickAreaPhone>
             {bannerList.map((item, index) => {
               return (
                 <div>
                   <img src={item.img} alt="" />
-                  <div className="content">
+                  <div className="content" >
                     <div>{item.title}</div>
-                    <div>{item.desc}</div>
+                    <div style={{transform:'scale(0.9)',float:'left'}}>{item.desc}</div>
                   </div>
                 </div>
               );
             })}
           </QuickAreaPhone>
-        </div>
         {/* <div className="carousel-body-mobile">
           <div className="carousel-m-wrapper">
             <div className="main-top-wrapper">

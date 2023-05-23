@@ -32,10 +32,10 @@ const SuspensionListMap = [
   },
 ];
 
-export const AVATAR = imgurl + '/弹弹头.svg';
+export const AVATAR = imgurl + '/弹弹头.png';
 export const AVATAR_FRAME = 'https://cdn.byai.com/by-fe-cdn/static/pmp/8f2b9215-34d3-49f7-af3c-114c29b29122.png';
-export const QR_CODE_1 = imgurl + '/我是小应.svg';
-export const QR_CODE_2 = imgurl + '/免费领取.svg';
+export const QR_CODE_1 = imgurl + '/我是小应.png';
+export const QR_CODE_2 = imgurl + '/免费领取.png';
 
 interface ISuspensionState {
   welcomeVisible: boolean;

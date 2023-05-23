@@ -4,12 +4,13 @@ import {  Hidden, Visible } from 'react-grid-system';
 import imgurl from '../../../img.url.js';
 
 interface MissionVisionProps {
+  indexTab: string;
 }
 
 const MissionBG = `${imgurl}/mission-bg.png`;
 const VisionBG = `${imgurl}/vision-bg.png`;
-const MissionWapBG = `/static/img2023/mission-wap-bg.svg`;
-const VisionWapBG = `/static/img2023/vision-wap-bg.png`;
+const MissionWapBG = `${imgurl}/mission-wap-bg.svg`;
+const VisionWapBG = `${imgurl}/vision-wap-bg.png`;
 
 const MissionVisionContainer = styled.div`
   
@@ -113,15 +114,15 @@ const MissionVisionWap = styled.div`
   }
   img.vismiss{
     display: block;
-    width: 278px;
-    height: 171px;
-    margin: 18px auto;
+    width: 343px;
+    height: 156px;
+    margin: 0 auto;
   }
 `;
 
 
 const AiTSXID = 'MissionVision';
-const MissionVision: FC<MissionVisionProps> = ({ MissionBG, VisionBG }) => {
+const MissionVision: FC<MissionVisionProps> = ({ indexTab }) => {
   const myRef = useRef(null);
   useEffect(() => {
     const timer =  setInterval(()=>{
@@ -146,7 +147,7 @@ const MissionVision: FC<MissionVisionProps> = ({ MissionBG, VisionBG }) => {
   }, [myRef]);
       
   return (
-    <MissionVisionContainer id={AiTSXID}>
+    <MissionVisionContainer id={AiTSXID} style={{paddingTop: indexTab == 1 ? '109px' : '0'}}>
       <Hidden xs sm>
         <MissionVisionContainerWrap ref={myRef}>
             <div className='mission-tips'><p className="title">使命</p><p className="subtitle">以AI赋能经济发展和社会生活</p></div>

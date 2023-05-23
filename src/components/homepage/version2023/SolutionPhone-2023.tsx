@@ -430,11 +430,26 @@ const ContentWrapper = styled.div`
     color: #5a5a5a;
     margin-right: 4px;
     margin-bottom: 24px;
+
+    &::-webkit-scrollbar {
+      // height: 0.5em;
+      display:none;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background-color: #fff;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: #000;
+    } 
+
     .active {
       background: rgba(43, 88, 249, 1);
       color: #fff;
     }
     div {
+      min-width: 72px;
       max-width: 72px;
       height: 60px;
       background: rgba(246, 252, 255, 1);
@@ -475,7 +490,7 @@ const ContentWrapper = styled.div`
       letter-spacing: 0px;
       line-height: 28px;
       color: rgba(43, 88, 249, 1);
-      padding-bottom: 24px;
+      padding-bottom: 14px;
       div {
         font-size: 14px;
         font-weight: 600;
@@ -488,8 +503,8 @@ const ContentWrapper = styled.div`
         margin-right: 6px;
       }
       img {
-        width: 11px;
-        height: 11px;
+        width: 16px;
+        height: 16px;
         margin-left: 2px;
         margin-bottom: 0;
       }
@@ -498,7 +513,7 @@ const ContentWrapper = styled.div`
       margin-bottom: 0;
     }
     .posationbg {
-      width: 88px;
+      width: 110px;
       position: absolute;
       right: 0;
 
@@ -518,7 +533,7 @@ const ContentWrapper = styled.div`
       letter-spacing: 0px;
       line-height: 22px;
       color: rgba(90, 90, 90, 1);
-      // margin-bottom: 18px;
+      margin-bottom: 18px;
       width: 100%;
     }
     .log_arrow {
@@ -527,33 +542,39 @@ const ContentWrapper = styled.div`
     }
     .bottomLogo {
       border-top: 1px solid rgba(0, 0, 0, 0.08);
-      padding-top: 30px;
+      padding-top: 15px;
+      padding-right: 70px;
       display: flex;
       flex-wrap: wrap;
       // justify-content: space-between;
+      div {
+        margin-bottom: 7px;
+      }
     }
     .logo_bottom {
-      width: 120px;
-      height: 42px;
+      width: 70px;
+      height: 24px;
       margin-bottom: 0;
-      margin-right: 10px;
+      margin-right: 8px;
     }
     .btnGroup {
       display: flex;
+      margin-top: 24px;
     }
     .btnGroup > div {
-      width: 120px;
-      margin-top: 27px;
-      height: 36px;
+      width: 60px;
+      height: 22px;
       border-radius: 4px;
-      font-size: 16px;
       text-align: center;
-      line-height: 36px;
       cursor: pointer;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0px;
+      line-height: 20px;
     }
     .ljzx {
-      color: #fff;
-      background: rgba(43, 88, 249, 1);
+        color: #fff;
+        background: rgba(43, 88, 249, 1);
     }
     .ljgd {
       color: rgba(43, 88, 249, 1);
@@ -613,7 +634,7 @@ const labelInfo = [
     labels: [
       ['高效劝阻', '有效宣传', '智能交互', '分类管理'],
       ['线上服务大厅', '智能AI客服', '社保帮办', '医保服务'],
-      ['居民咨询服务', '群众业务导办', '工作宣传', '民意回访'],
+      ['咨询服务', '业务导办', '工作宣传', '民意回访'],
     ],
     urls: ['/unfraud', '', ''],
     banner: ['/007fz.png', '/zwfw008.png', '/zz009.png'],

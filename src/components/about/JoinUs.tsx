@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Hidden, Visible } from 'react-grid-system';
 import imgurl from '../../../img.url.js'
-const joinUsImg = `/static/img2023/join-wap.png`
+const joinUsImg = `${imgurl}/join-wap.png`
 
 const JoinUsWrap = styled.div`
   background: linear-gradient(251.87deg, rgba(232, 233, 254, 1) 0%, rgba(246, 252, 255, 1) 100%);
@@ -117,11 +117,12 @@ const BriefWapWrap = styled.div`
 `
 
 interface IBriefProps {
+  indexTab: string;
   backgroundImage: string;
 }
 
-const JoinUs: React.SFC<IBriefProps> = ({ backgroundImage }) => (
-  <JoinUsWrap id="JoinUs">
+const JoinUs: React.SFC<IBriefProps> = ({ backgroundImage, indexTab }) => (
+  <JoinUsWrap id="JoinUs" style={{paddingTop: indexTab == 5 ? '109px' : '0'}}>
     <Hidden xs sm>
       <BriefContainer backgroundImage={backgroundImage}>
         <div className='title'>极致工作 快乐生活</div>

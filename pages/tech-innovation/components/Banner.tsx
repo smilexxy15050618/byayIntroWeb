@@ -5,6 +5,7 @@ import { Visible } from 'react-grid-system';
 
 export interface IAiProps {};
 
+const bannerBg = imgurl+'/tech-banner-bg.png'
 
 const BannerWrap = styled.div`
     width: 100%;
@@ -15,16 +16,32 @@ const TechInnovWrap = styled.div`
     width: 1200px;
     height: 636px;
     margin: 0 auto;
+    @media (max-width: 768px) {
+        width: 100%;
+        height: 667px;
+        background-image: url(${bannerBg});
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 `
 
 const TextArea = styled.div`
     padding-top: 175px;
+    @media (max-width: 768px) {
+        padding-top: 96px;
+    }
     .title{
         font-size: 48px;
         font-weight: 600;
         line-height: 60px;
         color: rgba(26, 26, 26, 1);
         text-align: center;
+        @media (max-width: 768px) {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 47px;
+            color: rgba(0, 0, 0, 1);
+        }
     }
     .subtitle{
         padding-top: 16px;
@@ -33,10 +50,17 @@ const TextArea = styled.div`
         line-height: 32px;
         color: rgba(51, 51, 51, 1);
         text-align: center;
+        @media (max-width: 768px) {
+            padding: 12px 20px 0;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: rgba(51, 51, 51, 1);
+        }
     }
 `
 const BlueBtn = styled.div`
-  margin: 16px auto;
+  margin: 16px auto 80px;
   width: 132px;
   height: 48px;
   border-radius: 5.33px;
@@ -58,6 +82,7 @@ const BlueBtn = styled.div`
     font-weight: 500;
     line-height: 40px;
     margin-top: 20px;
+    margin-bottom: 0;
   }
 `;
 
@@ -70,25 +95,60 @@ const AcademyTram = styled.div`
     border-radius: 16px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
     box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
-    margin: 80p auto 0;
+    margin: 80px auto 0;
     box-sizing: border-box;
+
+    @media (max-width: 768px) {
+        display: block;
+        width: 343px;
+        height: 666px;
+        margin: 32px auto 0;
+        padding: 40px 19px;
+        border-radius: 16px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
+    }
+
     .team{
         padding-left: 57px;
         width: 480px;
+        @media (max-width: 768px) {
+            padding: 0;
+            width: 100%;
+        }
         .title{
             font-size: 26px;
             font-weight: 600;
             letter-spacing: 0px;
             line-height: 40px;
             color: rgba(26, 26, 26, 1);
+            @media (max-width: 768px) {
+                font-size: 24px;
+                font-weight: 600;
+                letter-spacing: 0px;
+                line-height: 32px;
+                color: rgba(26, 26, 26, 1);
+                text-align: center;
+            }
         }
         .img{
             margin-top: 32px;
             width: 268px;
+            @media (max-width: 768px) {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+            }
             img{
                 width: 117px;
                 height: 34px;
                 margin: 0 10px 6px 0;
+                @media (max-width: 768px) {
+                    display: block;
+                    width: 147px;
+                    height: 35px;
+                    margin: 0 10px 10px 0;
+                }
                 &:nth-child(2n){
                     margin-right: 0;
                 }
@@ -96,46 +156,69 @@ const AcademyTram = styled.div`
         }
     }
     .team-info{
-        // padding-right: 57px;
+        padding-top: 42px;
         width: 663px;
         font-size: 16px;
         font-weight: 400;
         letter-spacing: 0px;
         line-height: 32px;
         color: rgba(51, 51, 51, 1);
+        @media (max-width: 768px) {
+            width: 100%;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 26px;
+            color: rgba(51, 51, 51, 1);
+            padding-top: 23px;
+            box-sizing: border-box;
+        }
         div{
             margin-bottom: 16px;
         }
     }
     .tram-logo{
         width: 1200px;
+        padding-top: 30px;
         padding-left: 57px;
+        @media (max-width: 768px) {
+            width: 100%;
+            padding-top: 5px;
+            padding-left: 0;
+        }
         img{
             width: 60px;
             height: 60px;
             margin: 0 54px 0 0;
+            @media (max-width: 768px) {
+                width: 36px;
+                height: 36px;
+                margin: 0 30px 15px 0;
+                &:nth-child(5n){
+                    margin-right: 0;
+                }
+            }
         }
     }
 `
 
 const teamImg = [
-    {img: '/static/img2023/teamImg-1.png'},
-    {img: '/static/img2023/teamImg-2.png'},
-    {img: '/static/img2023/teamImg-3.png'},
-    {img: '/static/img2023/teamImg-4.png'},
+    {img: imgurl+'/teamImg-1.png'},
+    {img: imgurl+'/teamImg-2.png'},
+    {img: imgurl+'/teamImg-3.png'},
+    {img: imgurl+'/teamImg-4.png'},
 ]
 
 const teamLogo = [
-    {img: '/static/img2023/teamLogo-1.png'},
-    {img: '/static/img2023/teamLogo-2.png'},
-    {img: '/static/img2023/teamLogo-3.png'},
-    {img: '/static/img2023/teamLogo-4.png'},
-    {img: '/static/img2023/teamLogo-5.png'},
-    {img: '/static/img2023/teamLogo-6.png'},
-    {img: '/static/img2023/teamLogo-7.png'},
-    {img: '/static/img2023/teamLogo-8.png'},
-    {img: '/static/img2023/teamLogo-9.png'},
-    {img: '/static/img2023/teamLogo-10.png'},
+    {img: imgurl+'/teamLogo-1.png'},
+    {img: imgurl+'/teamLogo-2.png'},
+    {img: imgurl+'/teamLogo-3.png'},
+    {img: imgurl+'/teamLogo-4.png'},
+    {img: imgurl+'/teamLogo-5.png'},
+    {img: imgurl+'/teamLogo-6.png'},
+    {img: imgurl+'/teamLogo-7.png'},
+    {img: imgurl+'/teamLogo-8.png'},
+    {img: imgurl+'/teamLogo-9.png'},
+    {img: imgurl+'/teamLogo-10.png'},
     
 ]
 
@@ -149,7 +232,12 @@ export const Banner: FC<IAiProps> = ({ }) => {
         <TechInnovWrap>
             <TextArea>
                 <div className="title">全栈自研的AI核心技术</div>
-                <div className="subtitle">百应拥有近百项 AI 及大数据领域相关专利和软件著作，研发水平位列行业前沿，保<br />证了超高语音识别率、超强语义理解，实现人机无障碍交流沟通</div>
+                <Visible md lg xl xxl xxxl>
+                    <div className="subtitle">百应拥有近百项 AI 及大数据领域相关专利和软件著作，研发水平位列行业前沿，保<br />证了超高语音识别率、超强语义理解，实现人机无障碍交流沟通</div>
+                </Visible>
+                <Visible xs sm>
+                    <div className="subtitle">百应拥有近百项 AI 及大数据领域相关专利和软件著作，研发水平位列行业前沿，保证了超高语音识别率、超强语义理解，实现人机无障碍交流沟通</div>
+                </Visible>
                 <BlueBtn
                     onClick={() =>
                     window.open('/form?formType=1')

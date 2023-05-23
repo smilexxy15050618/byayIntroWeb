@@ -47,8 +47,8 @@ const list = [
     content: '日对话服务频次',
   },
   {
-    title: 96,
-    unit: '%+',
+    title: '96%+',
+    unit: '',
     sub: '',
     content: '识别准确率',
   },
@@ -124,17 +124,20 @@ const menuList = [
   },
 ];
 const Wrapper = styled.div`
+  font-family: 'PingFangSC';
   width: 100%;
   padding-top: 56px;
 
-  background: url(${imgurl}/qzzy_bg.png) no-repeat;
+//   background: url(${imgurl}/qzzy_bg.png) no-repeat;
+  background: url(${imgurl}/全栈自研背景色.png) no-repeat;
   background-size: 100% 100%;
 `;
 const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: url(${imgurl}/maps.png) no-repeat;
+//   background: url(${imgurl}/maps.png) no-repeat;
+  background: url(${imgurl}/全栈自研地图.png) no-repeat;
   background-size: 923px 447px;
   background-position: center top;
   width: 100%;
@@ -163,14 +166,12 @@ const Item = styled.div`
     background: rgba(0, 200, 189, 1);
   }
   div:first-child {
-    font-size: 48px;
+    font-size: 33px;
     font-weight: 700;
     letter-spacing: 0px;
     line-height: 40px;
     color: rgba(51, 51, 51, 1);
-    font-family: DINAlternate;
     span:first-child {
-      font-family: DINAlternate;
       font-size: 33px;
       font-weight: 700;
       letter-spacing: 0px;
@@ -218,6 +219,8 @@ const Menu = styled.div`
     opacity: 1;
   }
   .left-menu {
+    transform: scale(.9);
+    margin-left: 6px;
     width: 100%;
     height: 260px;
     position: relative;
@@ -255,7 +258,7 @@ const Menu = styled.div`
     .menu-item:first-child {
       position: absolute;
       width: 72px;
-      top: 26px;
+      top: 22px;
       left: 50%;
       margin-left: -40px;
     }
@@ -288,12 +291,12 @@ const Menu = styled.div`
       right: 28px;
       top: 164px;
       div {
-        text-align: right;
+        text-align: left;
       }
     }
     .menu-item:nth-child(6) {
       position: absolute;
-      top: 224px;
+      top: 228px;
       left: 50%;
       margin-left: -50px;
       div {
@@ -306,14 +309,14 @@ const Menu = styled.div`
   }
   @keyframes fangda {
     0% {
-      transform: scale(0.93);
+      transform: scale(0.83);
     }
 
     50% {
-      transform: scale(0.8);
+      transform: scale(0.7);
     }
     100% {
-      transform: scale(0.93);
+      transform: scale(0.83);
     }
   }
   .pakksl {
@@ -337,7 +340,7 @@ const Menu = styled.div`
       left: 50%;
       top: 50%;
       margin-left: -80px;
-      margin-top: -91px;
+      margin-top: -89px;
       transform-origin: center;
     }
   }
@@ -387,6 +390,9 @@ const Menu = styled.div`
         letter-spacing: 0px;
         line-height: 24px;
         color: rgba(51, 51, 51, 1);
+      }
+      p:nth-child(1) {
+        margin-bottom: 0;
       }
     }
     .goknoemow{
@@ -463,7 +469,9 @@ export const GlobaNumberPhone = ({}) => {
               return <p>{item}</p>;
             })}
           </div>
-          <p className='goknoemow'>了解更多&nbsp;&nbsp;></p>
+          <p className='goknoemow' onClick={() => {
+              window.open('/form?formType=1');
+            }}>了解更多&nbsp;&nbsp;></p>
         </div>
       </Menu>
       <Content>

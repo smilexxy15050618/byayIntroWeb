@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { Col, Container, Row } from 'react-grid-system';
 import Carousel from 'react-bootstrap/Carousel';
 import CarouselItem from 'react-bootstrap/CarouselItem';
 import styled from 'styled-components';
 import imgurl from '../../../img.url.js';
 
-const DevelopBg = `/static/img2023/devehistBg.png`;
-const DevelopLeft = `/static/img2023/devehisLeft.svg`;
-const DevelopRight = `/static/img2023/devehisRight.svg`;
+const DevelopBg = `${imgurl}/devehistBg.png`;
+const DevelopLeft = `${imgurl}/devehisLeft.svg`;
+const DevelopRight = `${imgurl}/devehisLeft.svg`;
 
 const DevelopWrap = styled.div`
   position: relative;
@@ -34,7 +33,6 @@ const DevelopWrap = styled.div`
     background-image: ${`url(${DevelopLeft})`};
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #fff;
   }
   .right{
     width: 18px;
@@ -42,7 +40,7 @@ const DevelopWrap = styled.div`
     background-image: ${`url(${DevelopRight})`};
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #fff;
+    transform: rotate(180deg);
   }
 `
 
@@ -75,6 +73,7 @@ const Wrap = styled.div`
     font-weight: 500;
     line-height: 32px;
     color: rgba(90, 90, 90, 1);
+    text-align: center;
   }
 `;
 
@@ -217,7 +216,7 @@ const COURSE_TIME = [
 ];
 
 const DevelopHistoryWap: React.SFC<IAiProps> = ({}) => (
-  <DevelopWrap>
+  <DevelopWrap id="DevelopHistory">
     <div className="title">发展历程</div>
     <Carousel
       nextIcon={

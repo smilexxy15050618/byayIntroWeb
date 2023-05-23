@@ -103,11 +103,10 @@ const CardContent = styled.aside`
     margin-left: 20px;
     margin-bottom: 12px;
     span {
-      font-size: 20px;
+      font-size: 13px;
       font-weight: 400;
       letter-spacing: 0px;
-      line-height: 20px;
-      color: rgba(51, 51, 51, 1);
+      line-height: 14px;
     }
   }
   .introduce_area {
@@ -205,7 +204,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
 
 const carouselDataList = [
   {
-    avatarSrc: `${imgurl}/sxydkj1.png`,
+    avatarSrc: `${imgurl}/信雅达1.png`,
     logoSrc: `${imgurl}/xyd3.png`,
     bigSrc: `${imgurl}/xyd2.png`,
     content:
@@ -214,7 +213,7 @@ const carouselDataList = [
     tagName: '信雅达科技股份有限公司（600571）董事长',
   },
   {
-    avatarSrc: `${imgurl}/hengsheng1.png`,
+    avatarSrc: `${imgurl}/恒生电子2.png`,
     logoSrc: `${imgurl}/hengsheng3.png`,
     bigSrc: `${imgurl}/hengsheng2.png`,
     content:
@@ -223,7 +222,7 @@ const carouselDataList = [
     tagName: '恒生电子股份有限公司（600570）董事长',
   },
   {
-    avatarSrc: `${imgurl}/amiba1.png`,
+    avatarSrc: `${imgurl}/阿米巴资本3.png`,
     logoSrc: `${imgurl}/amiba3.png`,
     bigSrc: `${imgurl}/amiba2.png`,
     content:
@@ -232,7 +231,7 @@ const carouselDataList = [
     tagName: '阿米巴资本 创始及执行合伙人',
   },
   {
-    avatarSrc: `${imgurl}/gxin1.png`,
+    avatarSrc: `${imgurl}/光信4.png`,
     logoSrc: `${imgurl}/gxin3.png`,
     bigSrc: `${imgurl}/gxin2.png`,
     content:
@@ -419,7 +418,7 @@ const LabelList = styled.div`
   margin: 14px auto 0;
   div {
     width: 47%;
-    height: 64px;
+    // height: 64px;
     margin-top: 10px;
     margin-right: 10px;
     position: relative;
@@ -449,8 +448,8 @@ const LabelList = styled.div`
     margin-right: 0;
   }
   img {
-    width: 256px;
-    height: 64px;
+    // width: 256px;
+    // height: 64px;
     margin-bottom: 0;
   }
 `;

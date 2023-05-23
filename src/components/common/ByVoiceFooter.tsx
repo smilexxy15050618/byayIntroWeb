@@ -1,7 +1,6 @@
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, ReactNode, useState,useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import ByNormalBtn from './ByNormalBtn';
-
 // import Dropdown from 'react-dropdown';
 import { Container, Dropdown, DropdownButton } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -37,7 +36,7 @@ button:last-child {
   width: 132px;
 height: 46px;
 @media (max-width: 768px) {
-  width:70px;
+  width:80px;
   font-size:12px;
 }
 opacity: 1;
@@ -61,6 +60,12 @@ color: rgba(255, 255, 255, 1);
     background: none;
     border-radius: 0;
     font-size: 14px;
+
+    @media (max-width: 768px) {
+        min-width: 90px;
+        padding: 0 10px;
+        font-size:12px;
+    }
 font-weight: 400;
 letter-spacing: 0px;
 line-height: 24px;
@@ -94,7 +99,7 @@ padding-left: 16px;
 `
 const list = [
   {
-    area:'中国大陆 ',
+    area:'中国大陆',
     number:'+86'
   },
   {
@@ -191,7 +196,28 @@ const list = [
 ];
 const defaultOption = 1;
 const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText }) => {
-  const [sleindex, setSleindex] = useState(list[0]);
+  const linkgo  = useRef(null);
+  const [sleindex,  setSleindex] = useState(list[0]);
+ 
+  useEffect(()=>{
+    // document.body.addEventListener('click',function(e){
+    //   // console.log(e);
+    // })
+    document.onkeydown = function (e) { // 回车提交表单
+      // 兼容FF和IE和Opera
+          var theEvent = window.event || e;
+          var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+          if (code == 13) {
+            const number = parseInt(sleindex.number)+document.querySelector('#input_value_number').value;
+            if(number) {
+              window.open('/form?formType=1&phone='+document.querySelector('#input_value_number').value)
+            }
+         
+            
+          }
+      }
+  },[sleindex])
+  
   return (
     <div className={className}>
       <div style={{ letterSpacing: '3px' }} className="title">
@@ -217,11 +243,11 @@ const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText
           </Dropdown.Menu>
         </Dropdown>
         <input type="text" id='input_value_number' placeholder='请输入您的手机号' />
-        <button onClick={() => {
-          console.log(parseInt(sleindex.number)+document.querySelector('#input_value_number').value);
+        <button ref={linkgo}  onClick={() => {
+          // console.log(parseInt(sleindex.number)+document.querySelector('#input_value_number').value);
           const number = parseInt(sleindex.number)+document.querySelector('#input_value_number').value;
           if(number) {
-            window.open('/form?formType=1&phone='+number)
+            window.open('/form?formType=1&phone='+document.querySelector('#input_value_number').value)
           }
         }}>马上体验</button>
       </Phone>
@@ -297,8 +323,8 @@ const ByVoiceFooter = styled(RawByVoiceFooter) <IByVoiceFooterProps>`
       letter-spacing: 0 !important;
     }
     .desc {
-      font-size: 14px;
-      line-height: 22px;
+      font-size: 12px;
+      line-height: 20px;
       margin: 12px 0px 16px;
       color: #ffffff;
       letter-spacing: 0 !important;

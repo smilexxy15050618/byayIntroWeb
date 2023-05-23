@@ -175,25 +175,25 @@ const Wrapper = styled.div`
 const carouselDataList = [
   {
     imgSrc:'/responsibility-1.png',
-    imgSrcWap:'/responsibility-1.svg',
+    imgSrcWap:'/responsibility-1.svg.png',
     content: '400+公安机构通过百应Al解决电信网络诈骗问题，为超1亿+民众提供了反欺诈知识，预警诈骗电话超5000万次，成功劝阻100余万名民众受骗。助力基层派出所全年警情下降26.5%。诈骗案发数下降67.7%，案损金额下降 86.5%。',
     title: '用AI宣防反诈知识，助力电诈“双降”',
   },
   {
     imgSrc:'/responsibility-2.png',
-    imgSrcWap:'/responsibility-2.svg',
+    imgSrcWap:'/responsibility-2.svg.png',
     content: '2020-2022年，百应在疫情爆发的第一时间上线了「智能疫情通知回访系统」，助力公安高效开展疫情流调和排查工作，减轻民警工作负荷。帮助了湖北、浙江、北京、辽宁、新疆等全国12个省市地区，回访了数千万人次，筛查了5万多隔离人员，覆盖200多个政府部门、医院、学校和社区。',
     title: '智能AI系统，助力疫情高效流调和排查',
   },
   {
     imgSrc:'/responsibility-3.png',
-    imgSrcWap:'/responsibility-3.svg',
+    imgSrcWap:'/responsibility-3.svg.png',
     content: '百应易窗虚拟政务服务大厅，加速推进社保经办向数字化转型，全面落实社保办理“一次也不用跑”、“一网通办”。助力上百家社保、医保服务机构通过百应Al提升数字化服务能力，在线解答71%重复性咨询问题，累计服务量达1000万余次。',
     title: '全面落实社保办理“一网通办”',
   },
   {
     imgSrc:'/responsibility-4.png',
-    imgSrcWap:'/responsibility-4.svg',
+    imgSrcWap:'/responsibility-4.svg.png',
     content: '百应积极践行企业社会公益责任，持续推出「翻书越岭」、「公益助农」等公益活动，帮助山区的小朋友们透过阅读感受外面的世界，通过助农项目帮扶贫困地区。收到公益组织的多封感谢信，并获得数央公益颁发的「2022年度科技责任先锋奖」。',
     title: '「翻书越岭」、「公益助农」',
   },
@@ -201,6 +201,7 @@ const carouselDataList = [
 
 
 interface SocietyDutyProps {
+  indexTab: string;
   dataList: { content: string; imgSrc: string; title: string }[];
   style?: CSSProperties;
 }
@@ -261,7 +262,7 @@ const Carousel: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
 };
 
 
-const SocietyDuty: React.SFC<SocietyDutyProps> = () => {
+const SocietyDuty: React.SFC<SocietyDutyProps> = ({indexTab}) => {
   const myRef = useRef(null);
   
   useEffect(() => {
@@ -287,7 +288,7 @@ const SocietyDuty: React.SFC<SocietyDutyProps> = () => {
   }, [myRef]);
 
   return (
-  <SocietyDutyContainer id="SocietyDuty" maxWidthPc="1200px">
+  <SocietyDutyContainer id="SocietyDuty" maxWidthPc="1200px" style={{paddingTop: indexTab == 3 ? '109px' : '0'}}>
     <Title>社会责任</Title>
     <SocietyDutyContainerWrap ref={myRef}>
       <Hidden xs sm>
@@ -307,7 +308,7 @@ const SocietyDuty: React.SFC<SocietyDutyProps> = () => {
                 {carouselDataList.map(({ imgSrcWap, content, title }) => (
                     <div style={{width: '100vw',background: '#fff' }}>
                         <div className='card'>
-                            <img src={`/static/img2023${imgSrcWap}`} />
+                            <img src={`${imgurl}${imgSrcWap}`} />
                             <div className='title'>{title}</div>
                             <div className='subtitle'>{content}</div>
                         </div>

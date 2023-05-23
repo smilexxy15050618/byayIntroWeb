@@ -60,7 +60,7 @@ const BriefCover = styled.div<{ backgroundImage?: string }>`
     width: 472px;
     height: 360px;
     @media (max-width: 768px) {
-      width: 331px;
+      width: 100%;
       height: 242px;
       margin: 0;
     }
@@ -92,6 +92,7 @@ const BriefIntro = styled.div`
       font-size: 18px;
       font-weight: 500;
       color: rgba(26, 26, 26, 1);
+      text-align: center;
     }
   }
   p {
@@ -111,11 +112,12 @@ const BriefIntro = styled.div`
 `;
 
 interface IBriefProps {
+  indexTab?: string;
   cover?: string;
 }
-const AiTSXID = 'aitsx';
+const AiTSXID = 'qiyejieshao';
 
-const EnterpriseIntroduction: FC<IBriefProps> = ({ cover }) => {
+const EnterpriseIntroduction: FC<IBriefProps> = ({ cover, indexTab }) => {
 
   const myRef = useRef(null);
 

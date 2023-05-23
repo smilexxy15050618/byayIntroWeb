@@ -8,8 +8,9 @@ const MainWrap = styled.div`
     box-sizing:border-box;
     margin: 0 auto;
     @media(max-width: 768px) {
+        width: 100%;
         padding: 40px 0;
-        }
+    }
     .title {
         font-size: 40px;
         font-weight: 500;
@@ -18,6 +19,9 @@ const MainWrap = styled.div`
         color: rgba(26, 26, 26, 1);
         text-align: center;
         margin-bottom: 16px;
+        @media(max-width: 768px) {
+            padding: 40px 0;
+        }
     }
     .sec-title{
         font-size: 16px;
@@ -43,7 +47,7 @@ export const ApplicationIndustry: FC = () => {
             <div className="title">数据智能</div>
             <div className="sec-title">利用大数据、人工智能和机器学习技术，挖掘数据价值、优化决策</div>
             <div class="content">
-                <img src={'/static/img2023/data-intell.png'} alt="" />
+                <img src={imgurl+'/data-intell.png'} alt="" />
             </div>
         </MainWrap>
     )

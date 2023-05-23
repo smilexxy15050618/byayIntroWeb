@@ -83,16 +83,17 @@ const Wrapper = styled.div`
         margin-bottom: 38px;
       }
       button {
-        width: 120px;
-        height: 36px;
+        // width: 60px;
+        // height: 20px;
+        padding: 0 5px;
         opacity: 1;
         border-radius: 4px;
 
         border: 1px solid #1a1a1a;
-        font-size: 16px;
+        font-size: 12px;
         font-weight: 400;
         letter-spacing: 0px;
-        line-height: 34px;
+        // line-height: 18px;
         color: #1a1a1a;
         text-align: center;
         background: none;
@@ -105,6 +106,7 @@ width: 100%;
 border-radius: 8px;
 background: rgba(246, 252, 255, 1);
 padding: 20px;
+margin-top: 24px;
 .top {
     display: flex;
     justify-content: space-between;
@@ -139,6 +141,7 @@ color: rgba(26, 26, 26, 1);
         height:140px;
         line-height:140px;
         text-align:center;
+        z-index: 3;
     position: absolute;
         top: 0;
     transform: translateY(-100%) translateX(25%);
@@ -307,12 +310,12 @@ export const NewsPhone = () => {
             <span>百应动态</span>
             <span className="hoverCode">
               查看更多
-              {/* <div className="bgsks">
+              <div className="bgsks">
                 <img
                   src="https://cdn.byai.com/by-fe-cdn/static/pmp/77229f52-63fc-45b3-a901-4e54192c540a.png"
                   className="qrcode"
                 />
-              </div> */}
+              </div>
             </span>
           </div>
           <div className="center">

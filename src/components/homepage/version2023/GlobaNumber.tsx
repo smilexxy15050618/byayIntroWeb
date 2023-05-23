@@ -329,7 +329,7 @@ const Menu = styled.div`
   }
   .right-menu {
     width: 528px;
-    height: 418px;
+    height: 382px;
     padding-left: 58px;
     padding-right: 108px;
 
@@ -343,7 +343,7 @@ const Menu = styled.div`
       letter-spacing: 0px;
       line-height: 32px;
       color: rgba(43, 88, 249, 1);
-      margin-top: 85px;
+      margin-top: 44px;
       margin-bottom: 4px;
 
       &::after {
@@ -386,6 +386,7 @@ letter-spacing: 0px;
 line-height: 24px;
 color: rgba(26, 26, 26, 1);
 display: flex;
+margin-bottom:0;
 img {
   width: 24px;
   height: 24px;
@@ -458,7 +459,11 @@ const GlobalNumber = ({}) => {
               return <p>{item}</p>;
             })}
           </div>
-          <p className='goknoemow'>了解更多&nbsp;&nbsp;<img src={imgurl+'/aitime_arrow.png'} alt="" /></p>
+          <p className='goknoemow'   onClick={() => {
+              window.open('/form?formType=1');
+            }}>了解更多&nbsp; >
+          {/* <img src={imgurl+'/aitime_arrow.png'} alt="" /> */}
+          </p>
         </div>
       </Menu>
       <Content>

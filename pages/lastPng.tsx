@@ -28,7 +28,7 @@ const Pane = styled.div`
       font-size: 20px;
       font-weight: 400;
       letter-spacing: 0px;
-      line-height: 28px;
+      line-height: 31px;
       color: rgba(51, 51, 51, 1);
     }
   }
@@ -41,7 +41,7 @@ const Pane = styled.div`
     margin-top: 24px;
   }
   .hengtiaoxiafang {
-    margin-top: 122px;
+    margin-top: 152px;
     display: flex;
     flex-wrap: wrap;
     .hengtiaoxiafang_list {
