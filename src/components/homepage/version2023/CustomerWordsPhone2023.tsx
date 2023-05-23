@@ -23,7 +23,7 @@ const CardContent = styled.div`
   .customer-words-icon {
     margin-top: 10px;
     img {
-      width: 150px;
+      // width: 150px;
       height: 50px;
       margin-bottom: 0;
     }
@@ -123,11 +123,13 @@ const Card = styled.div<{ bg: string }>`
     img {
       margin-bottom: unset;
     }
+    
     .icon23 {
       width: 100px;
       position: absolute;
       left: 0;
       top: 0;
+      border-radius:0 0 8px 0;
       z-index: 2;
     }
     .mengbanm {
