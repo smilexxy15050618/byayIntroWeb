@@ -1,4 +1,3 @@
-import { Visible, Hidden } from 'react-grid-system';
 import { Layout } from '../../src/components/Layout';
 import { NextFunctionComponent } from 'next';
 import { Banner } from './components/Banner';
