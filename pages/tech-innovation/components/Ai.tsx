@@ -173,9 +173,48 @@ const LabelListWap = styled.div`
 `
 
 const LabelContentWap = styled.div`
+    position: relative;
     margin: 24px 16px;
+    padding-top: 40px;
+    padding-bottom: 100px;
     border-radius: 4.72px;
     background: rgba(246, 252, 255, 1);
+    .con-title{
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0px;
+        line-height: 32px;
+        color: rgba(26, 26, 26, 1);
+        text-align: center;
+    }
+    .sub-title{
+        padding: 16px 24px 10px;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: 26px;
+        color: rgba(90, 90, 90, 1);
+    }
+    img{
+        width: 100%;
+        margin-top: 24px;
+    }
+    .ljzx{
+        position: absolute;
+        left: 50%;
+        margin-left: -54px;
+        bottom: 40px;
+        width: 104px;
+        height: 36px;
+        text-align: center;
+        border-radius: 4px;
+        background: rgba(43, 88, 249, 1);
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: 36px;
+        color: rgba(255, 255, 255, 1);
+    }
 `
 
 const labelInfo = [
@@ -315,7 +354,12 @@ export const Ai: FC<IAiProps> = ({ }) => {
                     </Swiper>
                 </LabelListWap>
                 <LabelContentWap>
-
+                    <div className="con-title">{labelInfoWap[currIndex].name}</div>
+                    <div className="sub-title" style={{display: labelInfoWap[currIndex].fontTitle ? 'block' : 'none'}}>{labelInfoWap[currIndex].fontTitle}</div>
+                    <img src={imgurl+labelInfoWap[currIndex].imgs} className={'img'+currIndex} />
+                    <div onClick={() => window.open('/form?formType=1')} className="ljzx">
+                        立即咨询
+                    </div>
                 </LabelContentWap>
             </Visible>
         </Pane>
