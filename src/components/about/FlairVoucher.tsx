@@ -185,6 +185,7 @@ const carouselDataListWap = [
 ];
 
 interface SocietyDutyProps {
+  indexTab: string;
   dataList: { content: string; imgSrc: string; title: string }[];
   style?: CSSProperties;
 }
@@ -222,7 +223,7 @@ const Carousel: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
   );
 };
 
-const FlairVoucher: FC<SocietyDutyProps> = () => {
+const FlairVoucher: FC<SocietyDutyProps> = ({indexTab}) => {
 
   const myRef = useRef(null);
   useEffect(() => {
@@ -248,7 +249,7 @@ const FlairVoucher: FC<SocietyDutyProps> = () => {
   }, [myRef]);
   
   return (
-  <WrapperContent id="CreditMedal">
+  <WrapperContent id="CreditMedal" style={{paddingTop: indexTab == 4 ? '109px' : '0'}}>
     <FlairVoucherContainer>
       <Title>资质认证</Title>
       <SubTitle>从自身产品安全性到对外数据服务，为数据安全保驾护航</SubTitle>

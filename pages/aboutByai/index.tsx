@@ -42,7 +42,9 @@ const BigTitle = styled.div`
     width: 100%;
     text-align: center;
     font-size: 32px;
-    line-height: 47px;
+    font-weight: 500;
+    line-height: 40px;
+    color: rgba(0, 0, 0, 1);
     padding: 0 12px;
     margin-bottom: 8px !important;
   }
@@ -58,7 +60,7 @@ const Desc = styled.div`
     text-align: center;
     font-size: 16px;
     line-height: 26px;
-    margin: 0 12px 46px !important;
+    margin: 0 12px 24px !important;
   }
 `;
 
@@ -191,19 +193,19 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
                 ]}
                 onCancel={hadnleNav}
               />
-              <EnterpriseIntroduction cover={ABOUT_INTRO} />
+              <EnterpriseIntroduction cover={ABOUT_INTRO} indexTab={indexTab} />
             </EnIntroductionWrap>
-            <MissionVision />
+            <MissionVision indexTab={indexTab} />
             <Visible md lg xl xxl xxxl>
               <DevelopHistory backgroundImage={DEVELOPHIS_BG} />
             </Visible>
             <Visible xs sm>
               <DevelopHistoryWap />
             </Visible>
-            <SocietyDuty />
-            <FlairVoucher />
+            <SocietyDuty indexTab={indexTab} />
+            <FlairVoucher indexTab={indexTab} />
             <CustomerWords />
-            <JoinUs backgroundImage={JOINUS_BG} />
+            <JoinUs indexTab={indexTab} backgroundImage={JOINUS_BG} />
           <ByVoiceFooter
             title="立即体验AI时代的新一代用户运营平台"
             desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"

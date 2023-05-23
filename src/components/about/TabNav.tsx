@@ -18,7 +18,8 @@ interface TabNavProps {
 }
 
 const Wrapper = styled.div`
-  .one-slide{
+  
+  .swiper-slide{
     position: relative;
     width: 90px;
     height: 45px;
@@ -44,6 +45,8 @@ const Wrapper = styled.div`
   }
   .capacity-tab{
     position: relative;
+    height: 45px;
+    width: 100%;
   }
   .fixedTop{
     z-index: 111;
@@ -126,6 +129,7 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
   const [index, setIndex] = useState(0);
   const [actIndex, setActIndex] = useState(0)
   const [controlledSwiper, setControlledSwiper] = useState(null);
+  const [slideTranslate,setSlideTranslate]  = useState(0)
   const [is_fixed, set_is_fixed] = useState(false);
   const navRef = useRef(null);
 
@@ -134,7 +138,7 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
   };
 
   useEffect(() => {
-    
+
     const fixedTop = document.getElementById('tabNav').offsetTop;
 
     window.onscroll = () => {
@@ -197,16 +201,23 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
     </Visible>
     <Visible xs sm>
       {/* 吸顶占位 onSlideChange={swiper => onSlideChange(swiper.activeIndex)} */}
+      <div class="capacity-tab" style={{display: is_fixed ? 'block' : 'none'}}></div>
       <div className={`capacity-tab ${is_fixed ? 'fixedTop' : ''}`} id="tabNav">
         <ArrowClickL
           onClick={e => {
             const res = controlledSwiper.navigation.onPrevClick(e);
           }}
-          style={{display: actIndex == 0 ? 'none' : 'block'}}
+          style={{display: slideTranslate == 0 ? 'none' : 'block'}}
         ></ArrowClickL>
         <Swiper
           slidesPerView="auto"
-          onSwiper={swiper => setControlledSwiper(swiper)}
+          onSlideChange = {swiper => {
+            console.log('BBB',swiper.activeIndex)
+            setSlideTranslate(swiper.activeIndex)
+          }}
+          onSwiper={swiper => {
+            setControlledSwiper(swiper)
+          }}
         >
           {bannerList.map(({ name, jumpTarget }, navIndex) => {
             return (
@@ -231,7 +242,7 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
           onClick={e => {
             controlledSwiper.navigation.onNextClick(e);
           }}
-          style={{display: actIndex == bannerList.length -1 ? 'none' : 'block'}}
+          style={{display: actIndex == bannerList.length -1 || slideTranslate == 2 ? 'none' : 'block'}}
         ></ArrowClickR>
       </div>
     </Visible>

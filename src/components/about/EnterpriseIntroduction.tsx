@@ -112,11 +112,12 @@ const BriefIntro = styled.div`
 `;
 
 interface IBriefProps {
+  indexTab?: string;
   cover?: string;
 }
 const AiTSXID = 'qiyejieshao';
 
-const EnterpriseIntroduction: FC<IBriefProps> = ({ cover }) => {
+const EnterpriseIntroduction: FC<IBriefProps> = ({ cover, indexTab }) => {
 
   const myRef = useRef(null);
 
