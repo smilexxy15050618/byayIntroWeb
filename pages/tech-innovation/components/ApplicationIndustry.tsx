@@ -8,8 +8,9 @@ const MainWrap = styled.div`
     box-sizing:border-box;
     margin: 0 auto;
     @media(max-width: 768px) {
+        width: 100%;
         padding: 40px 0;
-        }
+    }
     .title {
         font-size: 40px;
         font-weight: 500;
@@ -18,6 +19,9 @@ const MainWrap = styled.div`
         color: rgba(26, 26, 26, 1);
         text-align: center;
         margin-bottom: 16px;
+        @media(max-width: 768px) {
+            padding: 40px 0;
+        }
     }
     .sec-title{
         font-size: 16px;
