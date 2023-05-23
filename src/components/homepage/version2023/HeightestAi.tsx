@@ -63,11 +63,11 @@ const CardContent = styled.aside`
     top: 0;
   }
   .diwen {
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    // height: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -34px;
+    left: -14px;
     margin-bottom: 0;
   }
   .img_area {
@@ -169,7 +169,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
         <Swiper
           effect="slide"
           autoplay={{
-            delay: 3000,
+            delay: 30000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
