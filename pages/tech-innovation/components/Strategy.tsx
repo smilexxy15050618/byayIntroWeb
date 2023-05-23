@@ -147,7 +147,7 @@ export const Strategy: FC = () => {
                 </div>
                 <div className="right">
                     <video
-                        src="/static/img2023/策略智能.mp4"
+                        src={imgurl+'/策略智能.mp4'}
                         controls
                         playsInline
                     />

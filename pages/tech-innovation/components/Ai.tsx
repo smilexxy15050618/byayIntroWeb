@@ -306,8 +306,8 @@ export const Ai: FC<IAiProps> = ({ }) => {
                                     setCurrIndex(navIndex)
                                 }}
                             >
-                                <img className="normal" src={'static/img2023' + item.activeImg} />
-                                <img className="active" src={'static/img2023' + item.titleImg} />
+                                <img className="normal" src={imgurl + item.activeImg} />
+                                <img className="active" src={imgurl + item.titleImg} />
                                 {item.name}
                             </SwiperSlide>
                             );

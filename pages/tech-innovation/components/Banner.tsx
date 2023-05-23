@@ -5,7 +5,7 @@ import { Visible } from 'react-grid-system';
 
 export interface IAiProps {};
 
-const bannerBg = '/static/img2023/tech-banner-bg.png'
+const bannerBg = imgurl+'/tech-banner-bg.png'
 
 const BannerWrap = styled.div`
     width: 100%;

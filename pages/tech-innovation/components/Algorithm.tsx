@@ -182,7 +182,7 @@ export const Algorithm: FC = () => {
                 {tag.map((item, i) => {
                     return (
                         <div className="item">
-                            <img src={'static/img2023' + item.img} />
+                            <img src={imgurl + item.img} />
                             <div className="tag-title">{item.title}</div>
                             <div className="tag-subtitle">{item.content}</div>
                         </div>
