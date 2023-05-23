@@ -963,7 +963,10 @@ export default class TryForm extends React.Component<TryFormProps, TryFormState>
     // phone = 
     // console.log( this.getparamsfromurl('phone'));
     // 获取地址栏参数
-    phone = this.getparamsfromurl('phone')
+    if(this.getparamsfromurl('phone')){
+      phone = this.getparamsfromurl('phone')
+    }
+  
     return (
       <FormWrapper origin={origin}>
         <div className="free-page-head">
