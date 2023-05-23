@@ -817,7 +817,8 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
             </Carousel.Item>
             <Carousel.Item className="no_duration " key={3}>
               <div className="main-container">
-                <div style={{ marginBottom: '14px', lineHeight: '38px'}} className="main-title-m">四大人工智能关键技术标准编写单位</div>
+                <div style={{ marginBottom: '14px', lineHeight: '38px'}} className="main-title-m">4项人工智能关键</div>
+                <div style={{ marginBottom: '14px', lineHeight: '38px'}} className="main-title-m">技术标准编写单位</div>
                 <div className='third-group'>
                     <div style={{ padding: '0', lineHeight: '36px' }}>大规模训练技术模型开发</div>
                     <div style={{ padding: '0', lineHeight: '36px' }}>大规模训练技术模型能力</div>

@@ -164,7 +164,7 @@ const Item = styled.div`
     background: rgba(0, 200, 189, 1);
   }
   div:first-child {
-    font-size: 48px;
+    font-size: 33px;
     font-weight: 700;
     letter-spacing: 0px;
     line-height: 40px;
@@ -217,6 +217,8 @@ const Menu = styled.div`
     opacity: 1;
   }
   .left-menu {
+    transform: scale(.9);
+    margin-left: 6px;
     width: 100%;
     height: 260px;
     position: relative;
@@ -305,14 +307,14 @@ const Menu = styled.div`
   }
   @keyframes fangda {
     0% {
-      transform: scale(0.93);
+      transform: scale(0.83);
     }
 
     50% {
-      transform: scale(0.8);
+      transform: scale(0.7);
     }
     100% {
-      transform: scale(0.93);
+      transform: scale(0.83);
     }
   }
   .pakksl {

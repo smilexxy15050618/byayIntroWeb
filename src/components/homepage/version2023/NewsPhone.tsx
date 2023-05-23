@@ -85,7 +85,7 @@ const Wrapper = styled.div`
       button {
         // width: 60px;
         // height: 20px;
-        padding: 3px 14px;
+        padding: 0 5px;
         opacity: 1;
         border-radius: 4px;
 
@@ -141,6 +141,7 @@ color: rgba(26, 26, 26, 1);
         height:140px;
         line-height:140px;
         text-align:center;
+        z-index: 3;
     position: absolute;
         top: 0;
     transform: translateY(-100%) translateX(25%);
@@ -309,12 +310,12 @@ export const NewsPhone = () => {
             <span>百应动态</span>
             <span className="hoverCode">
               查看更多
-              {/* <div className="bgsks">
+              <div className="bgsks">
                 <img
                   src="https://cdn.byai.com/by-fe-cdn/static/pmp/77229f52-63fc-45b3-a901-4e54192c540a.png"
                   className="qrcode"
                 />
-              </div> */}
+              </div>
             </span>
           </div>
           <div className="center">

@@ -76,7 +76,7 @@ export default class extends Document<IProps> {
           <link rel="stylesheet" href="https://cdn.byai.com/static/intro/img/index/animate.min.css" />
           <style
             dangerouslySetInnerHTML={{
-              __html: `::-webkit-scrollbar { width: 0!important;height:0!important }`,
+              __html: `::-webkit-scrollbar { width: 0!important;height:0!important; }`,
             }}></style>
           <script src="//pv.sohu.com/cityjson" />
           <script src="//www.yunpian.com/static/official/js/libs/riddler-sdk-0.2.2.js" defer={true}></script>

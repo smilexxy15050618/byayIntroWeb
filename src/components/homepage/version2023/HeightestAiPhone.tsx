@@ -418,7 +418,7 @@ const LabelList = styled.div`
   margin: 14px auto 0;
   div {
     width: 47%;
-    height: 64px;
+    // height: 64px;
     margin-top: 10px;
     margin-right: 10px;
     position: relative;
@@ -448,8 +448,8 @@ const LabelList = styled.div`
     margin-right: 0;
   }
   img {
-    width: 256px;
-    height: 64px;
+    // width: 256px;
+    // height: 64px;
     margin-bottom: 0;
   }
 `;

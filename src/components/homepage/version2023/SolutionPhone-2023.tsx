@@ -430,6 +430,20 @@ const ContentWrapper = styled.div`
     color: #5a5a5a;
     margin-right: 4px;
     margin-bottom: 24px;
+
+    &::-webkit-scrollbar {
+      // height: 0.5em;
+      display:none;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background-color: #fff;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: #000;
+    } 
+
     .active {
       background: rgba(43, 88, 249, 1);
       color: #fff;
@@ -620,7 +634,7 @@ const labelInfo = [
     labels: [
       ['高效劝阻', '有效宣传', '智能交互', '分类管理'],
       ['线上服务大厅', '智能AI客服', '社保帮办', '医保服务'],
-      ['居民咨询服务', '群众业务导办', '工作宣传', '民意回访'],
+      ['咨询服务', '业务导办', '工作宣传', '民意回访'],
     ],
     urls: ['/unfraud', '', ''],
     banner: ['/007fz.png', '/zwfw008.png', '/zz009.png'],
