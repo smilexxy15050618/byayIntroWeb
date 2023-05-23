@@ -52,7 +52,7 @@ const CardContent = styled.div`
     }
   }
   .customer-words-name {
-    border-top: .5px solid rgba(90, 90, 90, 0.3);
+    border-top: 0.5px solid rgba(90, 90, 90, 0.3);
     padding-top: 24px;
     /* font-size: 18px; */
     font-family: PingFangSC-Regular, PingFang SC;
@@ -72,7 +72,7 @@ const CardContent = styled.div`
         height: 23px;
         right: 0;
         opacity: 1;
-        border-left: 0.5px solid rgba(90, 90, 90, 0.3);
+        border-left: 0.5px solid rgba(90, 90, 90, 0.1);
       }
     }
     .rightPskjak {
@@ -373,6 +373,20 @@ const carouselDataList = [
     right_title: '用户黏性',
     right_title2: '有效提升',
   },
+
+  {
+    bg: `${imgurl}/腾讯1.png`,
+    avatarSrc: `${imgurl}/腾讯2.png`,
+
+    content: '百应AI解决方案非常专业，是真正的行业创新引领者',
+    personName: 'AI标记准确率97%；触达人效提升3倍',
+    tagName: '腾讯',
+    icon: `${imgurl}/lscion12.png`,
+    left_title: '触达成功率',
+    left_title2: '70%+',
+    right_title: '有效沟通时长超',
+    right_title2: '60s',
+  },
   {
     bg: `${imgurl}/农行-图.png`,
     avatarSrc: `${imgurl}/农行logo.png`,
@@ -427,6 +441,19 @@ const carouselDataList = [
     right_title2: '90%',
   },
   {
+    bg: `${imgurl}/联通1.png`,
+    avatarSrc: `${imgurl}/联通2.png`,
+
+    content: '百应科技是一家值得信赖的企业，我们的合作非常愉快',
+    personName: 'AI标记准确率97%；触达人效提升3倍',
+    tagName: '中国联通',
+    icon: `${imgurl}/lscion28.png`,
+    right_title: '触达效果提升',
+    right_title2: '82%',
+    left_title: '日均触达用户超',
+    left_title2: '百万',
+  },
+  {
     bg: `${imgurl}/人寿-图.png`,
     avatarSrc: `${imgurl}/人寿logo.png`,
 
@@ -479,32 +506,6 @@ const carouselDataList = [
     left_title2: '10%',
     right_title: '综合人效显著',
     right_title2: '提升',
-  },
-  {
-    bg: `${imgurl}/联通1.png`,
-    avatarSrc: `${imgurl}/联通1.png`,
-
-    content: '百应科技是一家值得信赖的企业，我们的合作非常愉快',
-    personName: 'AI标记准确率97%；触达人效提升3倍',
-    tagName: '中国联通',
-    icon: `${imgurl}/lscion28.png`,
-    left_title: '触达效果提升',
-    left_title2: '82%',
-    right_title: '日均触达用户超',
-    right_title2: '百万',
-  },
-  {
-    bg: `${imgurl}/腾讯1.png`,
-    avatarSrc: `${imgurl}/腾讯2.png`,
-
-    content: '百应AI解决方案非常专业，是真正的行业创新引领者',
-    personName: 'AI标记准确率97%；触达人效提升3倍',
-    tagName: '腾讯',
-    icon: `${imgurl}/lscion12.png`,
-    left_title: '触达成功率',
-    left_title2: '70%+',
-    right_title: '有效沟通时长超',
-    right_title2: '60s',
   },
   {
     bg: `${imgurl}/百度1.png`,

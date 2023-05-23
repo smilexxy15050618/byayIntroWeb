@@ -713,9 +713,9 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
               <div className="main-container">
                 <div className="main-title">四大人工智能<br></br>关键技术标准编写单位</div>
                <div className='third-group'>
-                <div>大规模训练技术模型开发</div>
-                <div>大规模训练技术模型能力</div>
-                <div>智能对话平台<br></br>开发及服务能力</div>
+                <div>大规模训练技术<br/>模型开发</div>
+                <div>大规模训练技术<br/>模型能力</div>
+                <div>智能对话平台开发<br/>及服务能力</div>
                 <div>智能客服<br />系统服务</div>
                </div>
 
@@ -817,7 +817,8 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
             </Carousel.Item>
             <Carousel.Item className="no_duration " key={3}>
               <div className="main-container">
-                <div style={{ marginBottom: '14px', lineHeight: '38px'}} className="main-title-m">四大人工智能关键技术标准编写单位</div>
+                <div style={{ marginBottom: '14px', lineHeight: '38px'}} className="main-title-m">4项人工智能关键</div>
+                <div style={{ marginBottom: '14px', lineHeight: '38px'}} className="main-title-m">技术标准编写单位</div>
                 <div className='third-group'>
                     <div style={{ padding: '0', lineHeight: '36px' }}>大规模训练技术模型开发</div>
                     <div style={{ padding: '0', lineHeight: '36px' }}>大规模训练技术模型能力</div>

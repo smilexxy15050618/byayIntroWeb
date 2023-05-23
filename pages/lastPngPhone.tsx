@@ -97,6 +97,7 @@ const Pane = styled.div`
           line-height: 13.45px;
           color: rgba(90, 90, 90, 1);
           transform: scale(.8);
+          white-space: nowrap;
         }
         &:hover img {
           box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
