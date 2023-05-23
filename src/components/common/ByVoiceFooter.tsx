@@ -204,7 +204,7 @@ const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText
           if (code == 13) {
             const number = parseInt(sleindex.number)+document.querySelector('#input_value_number').value;
             if(number) {
-              window.open('/form?formType=1&phone='+number)
+              window.open('/form?formType=1&phone='+document.querySelector('#input_value_number').value)
             }
          
             

@@ -48,8 +48,8 @@ const Pane = styled.div`
       display: flex;
       align-items: center;
       .iconself {
-        width: 20px;
-        height: 20px;
+        width: 26px;
+        // height: 20px;
         margin-right: 8px;
         img {
           width: 100%;
