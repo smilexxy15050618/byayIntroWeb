@@ -569,7 +569,7 @@ const QuickAreaPhone = styled.div`
   // width: 96%;
   flex-wrap: wrap;
   margin: 0 8px;
-  padding: 16px 0;
+  padding: 25px 0;
   background: #ffffff;
   border-radius: 10px;
   position: absolute;
@@ -582,14 +582,17 @@ const QuickAreaPhone = styled.div`
     width: 45%;
 
     img {
-      margin-top: -6px;
+      // margin-top: -6px;
       width: 36px;
       height: 36px;
     }
     .content {
-      margin-left: 8px;
+      // margin-left: 8px;
+      
       div:first-child {
+      margin-left: 8px;
         font-size: 12px;
+        white-space:nowrap;
         font-weight: 500;
         letter-spacing: 0px;
         line-height: 14.4px;
@@ -598,11 +601,11 @@ const QuickAreaPhone = styled.div`
         vertical-align: top;
       }
       div:last-child {
-        margin-top: 4px;
+        // margin-top: 4px;
         font-size: 12px;
         font-weight: 400;
         letter-spacing: 0px;
-        line-height: 12px;
+        line-height: 16px;
         color: #5a5a5a;
         text-align: left;
         vertical-align: top;
@@ -711,7 +714,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
             </Carousel.Item>
             <Carousel.Item className="no_duration " key={3}>
               <div className="main-container">
-                <div className="main-title">四大人工智能<br></br>关键技术标准编写单位</div>
+                <div className="main-title">4项人工智能<br></br>关键技术标准编写单位</div>
                <div className='third-group'>
                 <div>大规模训练技术<br/>模型开发</div>
                 <div>大规模训练技术<br/>模型能力</div>
@@ -847,9 +850,9 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
               return (
                 <div>
                   <img src={item.img} alt="" />
-                  <div className="content">
+                  <div className="content" >
                     <div>{item.title}</div>
-                    <div>{item.desc}</div>
+                    <div style={{transform:'scale(0.9)',float:'left'}}>{item.desc}</div>
                   </div>
                 </div>
               );
