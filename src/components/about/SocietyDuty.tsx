@@ -201,6 +201,7 @@ const carouselDataList = [
 
 
 interface SocietyDutyProps {
+  indexTab: string;
   dataList: { content: string; imgSrc: string; title: string }[];
   style?: CSSProperties;
 }
@@ -261,7 +262,7 @@ const Carousel: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
 };
 
 
-const SocietyDuty: React.SFC<SocietyDutyProps> = () => {
+const SocietyDuty: React.SFC<SocietyDutyProps> = ({indexTab}) => {
   const myRef = useRef(null);
   
   useEffect(() => {
@@ -287,7 +288,7 @@ const SocietyDuty: React.SFC<SocietyDutyProps> = () => {
   }, [myRef]);
 
   return (
-  <SocietyDutyContainer id="SocietyDuty" maxWidthPc="1200px">
+  <SocietyDutyContainer id="SocietyDuty" maxWidthPc="1200px" style={{paddingTop: indexTab == 3 ? '109px' : '0'}}>
     <Title>社会责任</Title>
     <SocietyDutyContainerWrap ref={myRef}>
       <Hidden xs sm>
