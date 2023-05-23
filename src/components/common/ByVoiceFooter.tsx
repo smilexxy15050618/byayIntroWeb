@@ -93,7 +93,7 @@ padding-left: 16px;
 `
 const list = [
   {
-    area:'',
+    area:'中国大陆',
     number:'+86'
   },
   {
@@ -241,7 +241,7 @@ const RawByVoiceFooter: FC<IProps> = ({ className, title, desc, onClick, btnText
           // console.log(parseInt(sleindex.number)+document.querySelector('#input_value_number').value);
           const number = parseInt(sleindex.number)+document.querySelector('#input_value_number').value;
           if(number) {
-            window.open('/form?formType=1&phone='+number)
+            window.open('/form?formType=1&phone='+document.querySelector('#input_value_number').value)
           }
         }}>马上体验</button>
       </Phone>

@@ -458,7 +458,11 @@ const GlobalNumber = ({}) => {
               return <p>{item}</p>;
             })}
           </div>
-          <p className='goknoemow'>了解更多&nbsp;&nbsp;<img src={imgurl+'/aitime_arrow.png'} alt="" /></p>
+          <p className='goknoemow'   onClick={() => {
+              window.open('/form?formType=1');
+            }}>了解更多&nbsp; >
+          {/* <img src={imgurl+'/aitime_arrow.png'} alt="" /> */}
+          </p>
         </div>
       </Menu>
       <Content>
