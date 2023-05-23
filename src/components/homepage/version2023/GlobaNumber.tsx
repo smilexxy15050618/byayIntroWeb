@@ -387,6 +387,8 @@ line-height: 24px;
 color: rgba(26, 26, 26, 1);
 display: flex;
 margin-bottom:0;
+position: absolute;
+bottom: 30px;
 img {
   width: 24px;
   height: 24px;
