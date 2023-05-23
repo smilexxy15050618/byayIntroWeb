@@ -83,16 +83,17 @@ const Wrapper = styled.div`
         margin-bottom: 38px;
       }
       button {
-        width: 120px;
-        height: 36px;
+        // width: 60px;
+        // height: 20px;
+        padding: 3px 14px;
         opacity: 1;
         border-radius: 4px;
 
         border: 1px solid #1a1a1a;
-        font-size: 16px;
+        font-size: 12px;
         font-weight: 400;
         letter-spacing: 0px;
-        line-height: 34px;
+        // line-height: 18px;
         color: #1a1a1a;
         text-align: center;
         background: none;
@@ -105,6 +106,7 @@ width: 100%;
 border-radius: 8px;
 background: rgba(246, 252, 255, 1);
 padding: 20px;
+margin-top: 24px;
 .top {
     display: flex;
     justify-content: space-between;

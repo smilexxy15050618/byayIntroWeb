@@ -38,7 +38,7 @@ const Pane = styled.div`
     background: rgba(0, 200, 189, 1);
   }
   .hengtiaoxiafang {
-    margin-top: 56px;
+    margin-top: 26px;
     display: flex;
     flex-wrap: wrap;
     .hengtiaoxiafang_list {
@@ -48,8 +48,8 @@ const Pane = styled.div`
       display: flex;
       align-items: center;
       .iconself {
-        width: 40px;
-        height: 40px;
+        width: 20px;
+        height: 20px;
         margin-right: 8px;
         img {
           width: 100%;

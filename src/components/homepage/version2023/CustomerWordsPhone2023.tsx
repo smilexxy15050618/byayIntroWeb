@@ -31,7 +31,10 @@ const CardContent = styled.div`
     @media (max-width: 768px) {
       margin-bottom: 20px;
       width: 150px;
-      height: 50px;
+      height: 30px;
+      img {
+        height: 30px;
+      }
     }
   }
   .customer-words-desc {
@@ -49,7 +52,7 @@ const CardContent = styled.div`
     }
   }
   .customer-words-name {
-    border-top: 1px solid rgba(90, 90, 90, 0.3);
+    border-top: .5px solid rgba(90, 90, 90, 0.3);
     padding-top: 24px;
     /* font-size: 18px; */
     font-family: PingFangSC-Regular, PingFang SC;
@@ -228,7 +231,7 @@ const HoveUp = styled.div`
     transition: all 0.3s;
     margin-right: 20px;
     &:hover {
-      transform: translateY(-19px);
+      // transform: translateY(-19px);
     }
   }
 `;

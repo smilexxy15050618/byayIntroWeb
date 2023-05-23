@@ -47,8 +47,8 @@ const list = [
     content: '日对话服务频次',
   },
   {
-    title: 96,
-    unit: '%+',
+    title: '96%+',
+    unit: '',
     sub: '',
     content: '识别准确率',
   },
@@ -124,6 +124,7 @@ const menuList = [
   },
 ];
 const Wrapper = styled.div`
+  font-family: 'PingFangSC';
   width: 100%;
   padding-top: 56px;
 
@@ -168,9 +169,7 @@ const Item = styled.div`
     letter-spacing: 0px;
     line-height: 40px;
     color: rgba(51, 51, 51, 1);
-    font-family: DINAlternate;
     span:first-child {
-      font-family: DINAlternate;
       font-size: 33px;
       font-weight: 700;
       letter-spacing: 0px;
@@ -288,7 +287,7 @@ const Menu = styled.div`
       right: 28px;
       top: 164px;
       div {
-        text-align: right;
+        text-align: left;
       }
     }
     .menu-item:nth-child(6) {
@@ -337,7 +336,7 @@ const Menu = styled.div`
       left: 50%;
       top: 50%;
       margin-left: -80px;
-      margin-top: -91px;
+      margin-top: -89px;
       transform-origin: center;
     }
   }
@@ -387,6 +386,9 @@ const Menu = styled.div`
         letter-spacing: 0px;
         line-height: 24px;
         color: rgba(51, 51, 51, 1);
+      }
+      p:nth-child(1) {
+        margin-bottom: 0;
       }
     }
     .goknoemow{
