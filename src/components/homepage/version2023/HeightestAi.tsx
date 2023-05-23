@@ -242,7 +242,7 @@ const carouselDataList = [
     tagName: '信雅达科技股份有限公司（600571）董事长',
   },
   {
-    avatarSrc: `${'/static/img2023'}/hungsun.png`,
+    avatarSrc: `${imgurl}/hungsun.png`,
     logoSrc: `${imgurl}/hengsheng3.png`,
     bigSrc: `${imgurl}/hengsheng2.png`,
     content:
