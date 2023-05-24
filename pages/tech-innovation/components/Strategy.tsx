@@ -52,8 +52,19 @@ const StrateWrap = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    transform: translateY(50%);
+    transition: all 0.4s;
+    opacity: 0;
+    &.appear {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
     @media(max-width: 768px) {
         display: block;
+        transition: none;
+        opacity: 1;
     }
     .left{
         width: 432px;
@@ -82,6 +93,10 @@ const StrateWrap = styled.div`
             color: rgba(90, 90, 90, 1);
         }
         .copilot-tag{
+            width: 407px;
+            @media(max-width: 768px) {
+                width: 100%;
+            }
             span{
                 display: inline-block;
                 width: 136px;
@@ -147,6 +162,7 @@ const StrateWrap = styled.div`
                 width: 100%;
                 height: auto;
                 margin: 0;
+                border: 1px solid rgba(90, 90, 90, 0.2);
             }
         }
     }
@@ -173,7 +189,29 @@ const copilotList = [
         name: '分析不同运营策略效果数据，根据prompt进行自动分析，得出结论。'
     }
 ]
+
+const AISOLUTION = 'ai_jiejue_2942';
+
 export const Strategy: FC = () => {
+
+    useEffect(() => {
+        const ScrollMagic = require('scrollmagic');
+        var controller = new ScrollMagic.Controller();
+        const videoContent = document.getElementById(AISOLUTION);
+        new ScrollMagic.Scene({
+        triggerElement: videoContent, //触发元素
+        triggerHook: 'onEnter', //触发元素开始离开视口时触发
+        offset: 10, //从开始点滚动多少px触发（施法前摇）
+        duration: 400, //效果持续的距离（法术持续时间/距离）
+        })
+        // .setClassToggle('.aitxs', 'appear')
+        .addTo(controller)
+        .on('enter', () => {
+            videoContent.classList.add('appear');
+            controller.destroy();
+        });
+    }, []);
+
     return (
         <MainWrap>
             <div className="title">策略智能</div>
@@ -184,7 +222,7 @@ export const Strategy: FC = () => {
             <Visible xs sm>
                 <div className="sec-title">策略自动生成、数据验证、自动化运行<br />提升关键指标和运营效率</div>
             </Visible>
-            <StrateWrap>
+            <StrateWrap id={AISOLUTION}>
                 <div className="left">
                     <div className="copilot">MA Copilot</div>
                     <div className="copilot-sub">一键拓展思路，高效生成运营策略</div>

@@ -46,14 +46,27 @@ const MainWrap = styled.div`
     }
     .content{
         width: 1200px;
-        height: 512px;
+        height: 516px;
+        transform: translateY(50%);
+        transition: all 0.4s;
+        opacity: 0;
+
         @media(max-width: 768px) {
             width: 100%;
             height: auto;
+            transition: none;
+            opacity: 1;
         }
+
+        &.appear {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
         img{
-            width: 1200px;
-            height: 512px;
+            width: 1142px;
+            height: 516px;
+            margin: 0 auto;
             @media(max-width: 768px) {
                 width: 100%;
                 height: auto;
@@ -63,20 +76,41 @@ const MainWrap = styled.div`
     }
 }
 `
+const AISOLUTION = 'ai_jiejue_2940';
+
 export const ApplicationIndustry: FC = () => {
+
+    useEffect(() => {
+        const ScrollMagic = require('scrollmagic');
+        var controller = new ScrollMagic.Controller();
+        const videoContent = document.getElementById(AISOLUTION);
+        new ScrollMagic.Scene({
+        triggerElement: videoContent, //触发元素
+        triggerHook: 'onEnter', //触发元素开始离开视口时触发
+        offset: 10, //从开始点滚动多少px触发（施法前摇）
+        duration: 400, //效果持续的距离（法术持续时间/距离）
+        })
+        // .setClassToggle('.aitxs', 'appear')
+        .addTo(controller)
+        .on('enter', () => {
+            videoContent.classList.add('appear');
+            controller.destroy();
+        });
+    }, []);
+
     return (
         <MainWrap>
             <div className="title">数据智能</div>
             <Visible md lg xl xxl xxxl>
                 <div className="sec-title">利用大数据、人工智能和机器学习技术，挖掘数据价值、优化决策</div>
-                <div class="content">
+                <div class="content" id={AISOLUTION}>
                     <img src={imgurl+'/data-intell.png'} alt="" />
                 </div>
             </Visible>
             <Visible xs sm>
             <div className="sec-title">利用大数据、人工智能和机器学习技术<br />挖掘数据价值、优化决策</div>
-            <div class="content">
-                <img src={'static/img2023/data-intell-wap.png'} alt="" />
+            <div class="content" id={AISOLUTION}>
+                <img src={imgurl+'/data-intell-wap.png'} alt="" />
             </div>
             </Visible>
             

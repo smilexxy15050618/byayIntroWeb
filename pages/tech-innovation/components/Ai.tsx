@@ -10,12 +10,23 @@ const MainWrap = styled.div``
 
 const Pane = styled.div`
     width: 1200px;
-    padding: 267px 0 50px;
+    padding: 320px 0 50px;
     box-sizing:border-box;
     margin: 0 auto;
+
+    .wrapContent{
+        transform: translateY(50%);
+        transition: all 0.4s;
+        opacity: 0;
+        &.appear {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
     @media(max-width: 768px) {
         width: 100%;
-        padding: 344px 0 50px;
+        padding: 344px 0 0;
     }
     .title {
         font-size: 40px;
@@ -174,7 +185,7 @@ const LabelListWap = styled.div`
 
 const LabelContentWap = styled.div`
     position: relative;
-    margin: 24px 16px;
+    margin: 24px 16px 0;
     padding-top: 40px;
     padding-bottom: 100px;
     border-radius: 4.72px;
@@ -287,14 +298,30 @@ const labelInfo = [
     },
   ];
 
+const AISOLUTION = 'ai_jiejue_2941';
 
 export const Ai: FC<IAiProps> = ({ }) => {
     const [currIndex, setCurrIndex] = useState(0);
     const [controlledSwiper, setControlledSwiper] = useState(null);
 
     useEffect(() => {
-        
+        const ScrollMagic = require('scrollmagic');
+        var controller = new ScrollMagic.Controller();
+        const videoContent = document.getElementById(AISOLUTION);
+        new ScrollMagic.Scene({
+        triggerElement: videoContent, //触发元素
+        triggerHook: 'onEnter', //触发元素开始离开视口时触发
+        offset: 10, //从开始点滚动多少px触发（施法前摇）
+        duration: 400, //效果持续的距离（法术持续时间/距离）
+        })
+        // .setClassToggle('.aitxs', 'appear')
+        .addTo(controller)
+        .on('enter', () => {
+            videoContent.classList.add('appear');
+            controller.destroy();
+        });
     }, []);
+
     return (
     <MainWrap>
         <Pane>
@@ -306,31 +333,33 @@ export const Ai: FC<IAiProps> = ({ }) => {
                 <div className="sec-title">先进的认知智能算法和模型<br />高度模拟人类思维和理解的能力</div> 
             </Visible>     
             <Hidden xs sm>
-                <LabelList>
-                {labelInfo.map((item, i) => {
-                    return (
-                    <LabelWrapper
-                        onClick={() => {
-                        setCurrIndex(i);
-                        }}
-                        className={i == currIndex ? 'active' : ''}>
-                        <img className="normal" src={imgurl + item.titleImg} />
-                        <img className="active" src={imgurl + item.activeImg} />
-                        {item.name}
-                    </LabelWrapper>
-                    );
-                })}
-                </LabelList>
-                <ContentWrapper>
-                    <div className="con-title">{labelInfo[currIndex].name}</div>
-                    <img src={imgurl+labelInfo[currIndex].imgs} className={'img'+currIndex} />
-                    <div onClick={() => window.open('/form?formType=1')} className="ljzx">
-                        立即咨询
-                    </div>
-                </ContentWrapper>
+                <div className="wrapContent" id={AISOLUTION}>
+                    <LabelList>
+                        {labelInfo.map((item, i) => {
+                            return (
+                            <LabelWrapper
+                                onClick={() => {
+                                setCurrIndex(i);
+                                }}
+                                className={i == currIndex ? 'active' : ''}>
+                                <img className="normal" src={imgurl + item.titleImg} />
+                                <img className="active" src={imgurl + item.activeImg} />
+                                {item.name}
+                            </LabelWrapper>
+                            );
+                        })}
+                    </LabelList>
+                    <ContentWrapper>
+                        <div className="con-title">{labelInfo[currIndex].name}</div>
+                        <img src={imgurl+labelInfo[currIndex].imgs} className={'img'+currIndex} />
+                        <div onClick={() => window.open('/form?formType=1')} className="ljzx">
+                            立即咨询
+                        </div>
+                    </ContentWrapper>
+                </div>
             </Hidden>
             <Visible xs sm>
-                <LabelListWap>
+                <LabelListWap id={AISOLUTION}>
                     <Swiper
                         slidesPerView="auto"
                         onSwiper={swiper => setControlledSwiper(swiper)}
