@@ -293,7 +293,7 @@ const tag = [
     }
 ]
 
-const AISOLUTION = 'ai_jiejue_2943';
+const AISOLUTION = 'tech_Algor';
 
 export const Algorithm: FC = () => {
 

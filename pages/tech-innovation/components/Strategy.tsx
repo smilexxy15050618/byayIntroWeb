@@ -190,7 +190,7 @@ const copilotList = [
     }
 ]
 
-const AISOLUTION = 'ai_jiejue_2942';
+const AISOLUTION = 'tech_Strategy';
 
 export const Strategy: FC = () => {
 

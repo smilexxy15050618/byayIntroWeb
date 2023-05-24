@@ -5,7 +5,7 @@ import imgurl from '../../../img.url.js'
 
 const MainWrap = styled.div`
     width: 1200px;
-    padding: 80px 0 33px;
+    padding: 80px 0 0;
     box-sizing:border-box;
     margin: 0 auto;
     @media(max-width: 768px) {
@@ -33,7 +33,7 @@ const MainWrap = styled.div`
         font-weight: 400;
         line-height: 32px;
         color: rgba(51, 51, 51, 1);
-        margin-bottom: 56px;
+        margin-bottom: 22px;
         text-align:center;
         @media(max-width: 768px) {
             font-size: 16px;
@@ -46,26 +46,12 @@ const MainWrap = styled.div`
     }
     .content{
         width: 1200px;
-        height: 516px;
-        transform: translateY(50%);
-        transition: all 0.4s;
-        opacity: 0;
-
         @media(max-width: 768px) {
             width: 100%;
             height: auto;
-            transition: none;
-            opacity: 1;
         }
-
-        &.appear {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
         img{
             width: 1142px;
-            height: 516px;
             margin: 0 auto;
             @media(max-width: 768px) {
                 width: 100%;
@@ -76,7 +62,28 @@ const MainWrap = styled.div`
     }
 }
 `
-const AISOLUTION = 'ai_jiejue_2940';
+
+const ContentWrap = styled.div`
+    width: 1200px;
+    transform: translateY(50%);
+    transition: all 0.4s;
+    opacity: 0;
+
+    @media(max-width: 768px) {
+        width: 100%;
+        height: auto;
+        transition: none;
+        opacity: 1;
+    }
+
+    &.appear {
+        transform: translateY(0);
+        opacity: 1;
+    }
+`
+
+
+const AISOLUTION = 'tech_applicat';
 
 export const ApplicationIndustry: FC = () => {
 
@@ -101,19 +108,20 @@ export const ApplicationIndustry: FC = () => {
     return (
         <MainWrap>
             <div className="title">数据智能</div>
-            <Visible md lg xl xxl xxxl>
-                <div className="sec-title">利用大数据、人工智能和机器学习技术，挖掘数据价值、优化决策</div>
-                <div class="content" id={AISOLUTION}>
-                    <img src={imgurl+'/data-intell.png'} alt="" />
+            <ContentWrap id={AISOLUTION}>
+                <Visible md lg xl xxl xxxl>
+                    <div className="sec-title">利用大数据、人工智能和机器学习技术，挖掘数据价值、优化决策</div>
+                    <div class="content">
+                        <img src={imgurl+'/data-intell.png'} alt="" />
+                    </div>
+                </Visible>
+                <Visible xs sm>
+                <div className="sec-title">利用大数据、人工智能和机器学习技术<br />挖掘数据价值、优化决策</div>
+                <div class="content">
+                    <img src={imgurl+'/data-intell-wap.png'} alt="" />
                 </div>
-            </Visible>
-            <Visible xs sm>
-            <div className="sec-title">利用大数据、人工智能和机器学习技术<br />挖掘数据价值、优化决策</div>
-            <div class="content" id={AISOLUTION}>
-                <img src={imgurl+'/data-intell-wap.png'} alt="" />
-            </div>
-            </Visible>
-            
+                </Visible>
+            </ContentWrap>
         </MainWrap>
     )
 }

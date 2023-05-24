@@ -5,12 +5,12 @@ import imgurl from '../../../img.url.js'
 
 const MainWrap = styled.div`
     width: 1200px;
-    padding: 80px 0 100px;
+    padding: 80px 0;
     box-sizing:border-box;
     margin: 0 auto;
     @media(max-width: 768px) {
         width: 100%;
-        padding: 40px 0;
+        padding: 40px 0 8px;
     }
     .title {
         font-size: 40px;
@@ -19,27 +19,18 @@ const MainWrap = styled.div`
         line-height: 48px;
         color: rgba(26, 26, 26, 1);
         text-align: center;
-        margin-bottom: 16px;
+        margin-bottom: 46px;
         @media(max-width: 768px) {
             font-size: 24px;
             font-weight: 500;
             letter-spacing: 0px;
             line-height: 32px;
             color: rgba(26, 26, 26, 1);
+            margin-bottom: 0;
         }
     }
     .content{
         width: 1200px;
-        padding-top: 50px;
-
-        transform: translateY(50%);
-        transition: all 0.4s;
-        opacity: 0;
-        &.appear {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
         img{
             display: block;
             margin: 0 auto;
@@ -63,7 +54,35 @@ const MainWrap = styled.div`
     }
 }
 `
-const AISOLUTION = 'ai_jiejue_2944';
+
+const ContentWrap = styled.div`
+    width: 1200px;
+
+    transform: translateY(50%);
+    transition: all 0.4s;
+    opacity: 0;
+
+    @media(max-width: 768px) {
+        width: 100%;
+        transition: 1;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &.appear {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    img{
+        display: block;
+        margin: 0 auto;
+        width: 1181px;
+        height: 488px;
+    }
+`
+
+const AISOLUTION = 'tech_Core';
 export const CoreAi: FC = () => {
 
     useEffect(() => {
@@ -86,19 +105,21 @@ export const CoreAi: FC = () => {
 
     return (
         <MainWrap>
+            <ContentWrap id={AISOLUTION}>
             <Visible md lg xl xxl xxxl>
                 <div className="title">百余项核心AI技术专利，赢得行业广泛认可</div>
-                <div class="content" id={AISOLUTION}>
+                <div class="content">
                     <img src={imgurl+'/honor-pc.png'} alt="" />
                 </div>
             </Visible>
             <Visible xs sm>
                 <div className="title">百余项核心AI技术专利<br />赢得行业广泛认可</div>
-                <div class="content-wap" id={AISOLUTION}>
+                <div class="content-wap">
                     <img className="honor1" src={imgurl+'/honor-wap-tech-1.png'} alt="" />
                     <img className="honor2" src={imgurl+'/honor-wap-tech-2.png'} alt="" />
                 </div>
-            </Visible>  
+            </Visible>
+            </ContentWrap>
         </MainWrap>
     )
 }

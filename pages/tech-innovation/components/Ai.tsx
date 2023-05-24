@@ -6,23 +6,11 @@ import imgurl from '../../../img.url.js'
 
 export interface IAiProps {};
 
-const MainWrap = styled.div``
-
-const Pane = styled.div`
+const MainWrap = styled.div`
     width: 1200px;
-    padding: 320px 0 50px;
+    padding: 320px 0 0;
     box-sizing:border-box;
     margin: 0 auto;
-
-    .wrapContent{
-        transform: translateY(50%);
-        transition: all 0.4s;
-        opacity: 0;
-        &.appear {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
 
     @media(max-width: 768px) {
         width: 100%;
@@ -59,6 +47,22 @@ const Pane = styled.div`
         
     }
 `
+
+const WrapContent = styled.div`
+    width: 1200px;
+    transform: translateY(50%);
+    transition: all 0.4s;
+    opacity: 0;
+    &.appear {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    @media(max-width: 768px) {
+        width: 100%;
+        transform: none;
+        opacity: 1;
+    }
+`;
 
 const LabelList = styled.div`
   height: 64px;
@@ -298,7 +302,7 @@ const labelInfo = [
     },
   ];
 
-const AISOLUTION = 'ai_jiejue_2941';
+const AISOLUTION = 'tech_Ai';
 
 export const Ai: FC<IAiProps> = ({ }) => {
     const [currIndex, setCurrIndex] = useState(0);
@@ -324,39 +328,37 @@ export const Ai: FC<IAiProps> = ({ }) => {
 
     return (
     <MainWrap>
-        <Pane>
-            <div className="title">认知智能</div>
-            <Visible md lg xl xxl xxxl>
-                <div className="sec-title">先进的认知智能算法和模型，高度模拟人类思维和理解的能力</div>
-            </Visible>
-            <Visible xs sm>
-                <div className="sec-title">先进的认知智能算法和模型<br />高度模拟人类思维和理解的能力</div> 
-            </Visible>     
-            <Hidden xs sm>
-                <div className="wrapContent" id={AISOLUTION}>
-                    <LabelList>
-                        {labelInfo.map((item, i) => {
-                            return (
-                            <LabelWrapper
-                                onClick={() => {
-                                setCurrIndex(i);
-                                }}
-                                className={i == currIndex ? 'active' : ''}>
-                                <img className="normal" src={imgurl + item.titleImg} />
-                                <img className="active" src={imgurl + item.activeImg} />
-                                {item.name}
-                            </LabelWrapper>
-                            );
-                        })}
-                    </LabelList>
-                    <ContentWrapper>
-                        <div className="con-title">{labelInfo[currIndex].name}</div>
-                        <img src={imgurl+labelInfo[currIndex].imgs} className={'img'+currIndex} />
-                        <div onClick={() => window.open('/form?formType=1')} className="ljzx">
-                            立即咨询
-                        </div>
-                    </ContentWrapper>
+        <div className="title">认知智能</div>
+        <Visible md lg xl xxl xxxl>
+            <div className="sec-title">先进的认知智能算法和模型，高度模拟人类思维和理解的能力</div>
+        </Visible>
+        <Visible xs sm>
+            <div className="sec-title">先进的认知智能算法和模型<br />高度模拟人类思维和理解的能力</div> 
+        </Visible>     
+        <WrapContent id={AISOLUTION}>
+            <Hidden xs sm> 
+            <LabelList>
+                {labelInfo.map((item, i) => {
+                    return (
+                    <LabelWrapper
+                        onClick={() => {
+                        setCurrIndex(i);
+                        }}
+                        className={i == currIndex ? 'active' : ''}>
+                        <img className="normal" src={imgurl + item.titleImg} />
+                        <img className="active" src={imgurl + item.activeImg} />
+                        {item.name}
+                    </LabelWrapper>
+                    );
+                })}
+            </LabelList>
+            <ContentWrapper>
+                <div className="con-title">{labelInfo[currIndex].name}</div>
+                <img src={imgurl+labelInfo[currIndex].imgs} className={'img'+currIndex} />
+                <div onClick={() => window.open('/form?formType=1')} className="ljzx">
+                    立即咨询
                 </div>
+            </ContentWrapper>
             </Hidden>
             <Visible xs sm>
                 <LabelListWap id={AISOLUTION}>
@@ -390,7 +392,7 @@ export const Ai: FC<IAiProps> = ({ }) => {
                     </div>
                 </LabelContentWap>
             </Visible>
-        </Pane>
+        </WrapContent>
     </MainWrap>
     );
 };
