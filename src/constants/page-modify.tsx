@@ -122,6 +122,10 @@ export const NAV_CONFIG = [
     ],
   },
   {
+    path: '/tech-innovation',
+    name: '技术创新',
+  },
+  {
     path: '/partner/ecology',
     name: '生态合作',
   },
