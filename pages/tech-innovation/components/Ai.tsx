@@ -188,12 +188,14 @@ const LabelListWap = styled.div`
 `
 
 const LabelContentWap = styled.div`
-    position: relative;
-    margin: 24px 16px 0;
+    margin: 24px 0 0;
     padding-top: 40px;
-    padding-bottom: 100px;
     border-radius: 4.72px;
     background: rgba(246, 252, 255, 1);
+    .swiper-slide{
+        position: relative;
+        padding-bottom: 60px;
+    }
     .con-title{
         font-size: 20px;
         font-weight: 500;
@@ -217,7 +219,7 @@ const LabelContentWap = styled.div`
         position: absolute;
         left: 50%;
         margin-left: -54px;
-        bottom: 40px;
+        bottom: 0;
         width: 104px;
         height: 36px;
         text-align: center;
@@ -306,8 +308,10 @@ const AISOLUTION = 'tech_Ai';
 
 export const Ai: FC<IAiProps> = ({ }) => {
     const [currIndex, setCurrIndex] = useState(0);
-    const [controlledSwiper, setControlledSwiper] = useState(null);
-
+    const [oneSwiper, setOneSwiper] = useState(null);
+    const [twoSwiper, setTwoSwiper] = useState(null);
+    const oneSwipers = useRef(null);
+    const twoSwipers = useRef(null);
     useEffect(() => {
         const ScrollMagic = require('scrollmagic');
         var controller = new ScrollMagic.Controller();
@@ -324,6 +328,9 @@ export const Ai: FC<IAiProps> = ({ }) => {
             videoContent.classList.add('appear');
             controller.destroy();
         });
+
+        console.log('oneSwiper',oneSwiper)
+        console.log('twoSwiper',twoSwiper)
     }, []);
 
     return (
@@ -363,8 +370,12 @@ export const Ai: FC<IAiProps> = ({ }) => {
             <Visible xs sm>
                 <LabelListWap id={AISOLUTION}>
                     <Swiper
+                        ref={oneSwipers}
                         slidesPerView="auto"
-                        onSwiper={swiper => setControlledSwiper(swiper)}
+                        onSwiper={swiper => setOneSwiper(swiper.activeIndex)}
+                        onSlideChange={swiper=>{
+                            twoSwipers.current.swiper.slideTo(swiper.activeIndex)
+                        }}
                     >
                         {labelInfoWap.map((item, navIndex) => {
                             return (
@@ -373,6 +384,7 @@ export const Ai: FC<IAiProps> = ({ }) => {
                                 key={navIndex} 
                                 onClick={() => {
                                     setCurrIndex(navIndex)
+                                    twoSwipers.current.swiper.slideTo(navIndex)
                                 }}
                             >
                                 <img className="normal" src={imgurl + item.activeImg} />
@@ -384,12 +396,38 @@ export const Ai: FC<IAiProps> = ({ }) => {
                     </Swiper>
                 </LabelListWap>
                 <LabelContentWap>
-                    <div className="con-title">{labelInfoWap[currIndex].name}</div>
+                    <Swiper
+                        ref={twoSwipers}
+                        slidesPerView="auto"
+                        onSwiper={swiper => setTwoSwiper(swiper.activeIndex)}
+                        onSlideChange={swiper=>{
+                            setCurrIndex(swiper.activeIndex)
+                            oneSwipers.current.swiper.slideTo(swiper.activeIndex)
+                        }}
+                    >
+                        {labelInfoWap.map((item, navIndex) => {
+                            return (
+                            <SwiperSlide 
+                                className={currIndex == navIndex ? 'one-slide-active one-slide' : 'one-slide'} 
+                                key={navIndex} 
+                            >
+                                <div className="con-title">{item.name}</div>
+                                <div className="sub-title" style={{display: item.fontTitle ? 'block' : 'none'}}>{item.fontTitle}</div>
+                                <img src={imgurl+item.imgs} className={'img'+currIndex} />
+                                <div onClick={() => window.open('/form?formType=1')} className="ljzx">
+                                    立即咨询
+                                </div>
+                            </SwiperSlide>
+                            );
+                        })}
+                    </Swiper>
+
+                    {/*<div className="con-title">{labelInfoWap[currIndex].name}</div>
                     <div className="sub-title" style={{display: labelInfoWap[currIndex].fontTitle ? 'block' : 'none'}}>{labelInfoWap[currIndex].fontTitle}</div>
                     <img src={imgurl+labelInfoWap[currIndex].imgs} className={'img'+currIndex} />
                     <div onClick={() => window.open('/form?formType=1')} className="ljzx">
                         立即咨询
-                    </div>
+                    </div>*/}
                 </LabelContentWap>
             </Visible>
         </WrapContent>
