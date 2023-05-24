@@ -111,7 +111,7 @@ const AcademyTram = styled.div`
 
     .team{
         padding-left: 57px;
-        width: 480px;
+        width: 460px;
         @media (max-width: 768px) {
             padding: 0;
             width: 100%;
@@ -157,7 +157,7 @@ const AcademyTram = styled.div`
     }
     .team-info{
         padding-top: 42px;
-        width: 663px;
+        width: 683px;
         font-size: 16px;
         font-weight: 400;
         letter-spacing: 0px;

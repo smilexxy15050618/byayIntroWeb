@@ -10,7 +10,7 @@ const MainWrap = styled.div`
     margin: 0 auto;
     @media(max-width: 768px) {
         width: 100%;
-        padding: 40px 0 0px;
+        padding: 40px 0;
     }
     .title {
         font-size: 40px;

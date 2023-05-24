@@ -148,21 +148,49 @@ const StrateWrap = styled.div`
         }
     }
     .right{
+        position: relative;
         width: 660px;
         height: 378px;
+        &::after{
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+            content: '';
+            width: 640px;
+            height: 389px;
+            border-radius: 8px;
+            background: rgba(246, 252, 255, 1);
+        }
         @media(max-width: 768px) {
             width: 100%;
             height: auto;
             padding: 20px 16px 0;
+            &::after{
+                display: block;
+                position: absolute;
+                right: 16px;
+                top: 10px;
+                z-index: 1;
+                content: '';
+                width: calc(100% - 42px);
+                height: calc(100% - 15px);
+                border-radius: 8px;
+                background: rgba(246, 252, 255, 1);
+            }
         }
         video{
-            width: 660px;
+            position: relative;
+            z-index: 2;
+            width: 640px;
             height: 378px;
+            margin-top: 11px;
+            margin-right: 20px;
+            border-radius: 8px;
             @media(max-width: 768px) {
-                width: 100%;
+                width: calc(100% - 10px);
                 height: auto;
                 margin: 0;
-                border: 1px solid rgba(90, 90, 90, 0.2);
             }
         }
     }

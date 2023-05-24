@@ -337,28 +337,28 @@ export const Ai: FC<IAiProps> = ({ }) => {
         </Visible>     
         <WrapContent id={AISOLUTION}>
             <Hidden xs sm> 
-            <LabelList>
-                {labelInfo.map((item, i) => {
-                    return (
-                    <LabelWrapper
-                        onClick={() => {
-                        setCurrIndex(i);
-                        }}
-                        className={i == currIndex ? 'active' : ''}>
-                        <img className="normal" src={imgurl + item.titleImg} />
-                        <img className="active" src={imgurl + item.activeImg} />
-                        {item.name}
-                    </LabelWrapper>
-                    );
-                })}
-            </LabelList>
-            <ContentWrapper>
-                <div className="con-title">{labelInfo[currIndex].name}</div>
-                <img src={imgurl+labelInfo[currIndex].imgs} className={'img'+currIndex} />
-                <div onClick={() => window.open('/form?formType=1')} className="ljzx">
-                    立即咨询
-                </div>
-            </ContentWrapper>
+                <LabelList>
+                    {labelInfo.map((item, i) => {
+                        return (
+                        <LabelWrapper
+                            onClick={() => {
+                            setCurrIndex(i);
+                            }}
+                            className={i == currIndex ? 'active' : ''}>
+                            <img className="normal" src={imgurl + item.titleImg} />
+                            <img className="active" src={imgurl + item.activeImg} />
+                            {item.name}
+                        </LabelWrapper>
+                        );
+                    })}
+                </LabelList>
+                <ContentWrapper>
+                    <div className="con-title">{labelInfo[currIndex].name}</div>
+                    <img src={imgurl+labelInfo[currIndex].imgs} className={'img'+currIndex} />
+                    <div onClick={() => window.open('/form?formType=1')} className="ljzx">
+                        立即咨询
+                    </div>
+                </ContentWrapper>
             </Hidden>
             <Visible xs sm>
                 <LabelListWap id={AISOLUTION}>
