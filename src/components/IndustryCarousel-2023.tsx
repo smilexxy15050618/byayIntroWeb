@@ -770,7 +770,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                   onClick={() => {
                     window.open(`/form?formType=1`);
                   }}>
-                  预约体验
+                  立即体验
                 </div>
                 <div style={{ width: '375px',height: '279px' }} className="bg-img-blue-phone">
                   <img style={{ height: '100%' }} src={imgurl + '/sy-banner1.png'} alt="" />
@@ -852,7 +852,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                   <img src={item.img} alt="" />
                   <div className="content" >
                     <div>{item.title}</div>
-                    <div style={{transform:'scale(0.9)',float:'left'}}>{item.desc}</div>
+                    <div style={{transform:'scale(0.9)',float:'left',fontFamily:'PingFangSC-Regular, PingFang SC'}}>{item.desc}</div>
                   </div>
                 </div>
               );

@@ -70,8 +70,8 @@ const Card = styled.div<{bg:number}>`
         position: absolute;
         width: 236px;
         height: 112px;
-        left:24px;
-        top:60px;
+        left: 24px;
+        top: 60px;
         .title_area{
             font-size: 20px;
             font-weight: 600;

@@ -7,7 +7,7 @@ import ByProgressSwiper from '../common/ByProgressSwiper';
 const titleList = [
   {
     title: '三大保障&提升方案',
-    subTitle: '自研产品，全面保障用户体验<br />专业知识库，运营效率不断提<br />升行业方法论，保障外呼效果<br />全面运营服务，为效果负责',
+    subTitle: '自研产品，全面保障用户体验<br />专业知识库，运营效率不断提升<br />行业方法论，保障外呼效果<br />全面运营服务，为效果负责',
     url: '/internet-solution-1.png',
     urlWap: '/internet-solution-wap-1.png',
   },
@@ -104,21 +104,21 @@ const ListWrapper = styled.div`
   }
   .imgWrapper {
     width: 888px;
-    height: 448px;
+    height: 552px;
     border-radius: 8px;
     background: rgba(246, 252, 255, 1);
     box-sizing: border-box;
   }
   img {
     width: 100%;
-    height: 448px;
+    height: 552px;
     margin: 0;
   }
 `;
 const ListItem = styled.div`
   width: 296px;
-  height: 104px;
-  padding-top: 38px;
+  height: 156px;
+  padding-top: 66px;
   padding-left: 40px;
   background: rgba(246, 252, 255, 1);
   margin-bottom: 8px;

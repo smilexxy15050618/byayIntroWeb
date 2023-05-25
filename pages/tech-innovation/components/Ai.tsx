@@ -6,16 +6,15 @@ import imgurl from '../../../img.url.js'
 
 export interface IAiProps {};
 
-const MainWrap = styled.div``
-
-const Pane = styled.div`
+const MainWrap = styled.div`
     width: 1200px;
-    padding: 267px 0 50px;
+    padding: 320px 0 0;
     box-sizing:border-box;
     margin: 0 auto;
+
     @media(max-width: 768px) {
         width: 100%;
-        padding: 344px 0 50px;
+        padding: 344px 0 0;
     }
     .title {
         font-size: 40px;
@@ -48,6 +47,22 @@ const Pane = styled.div`
         
     }
 `
+
+const WrapContent = styled.div`
+    width: 1200px;
+    transform: translateY(50%);
+    transition: all 0.4s;
+    opacity: 0;
+    &.appear {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    @media(max-width: 768px) {
+        width: 100%;
+        transform: none;
+        opacity: 1;
+    }
+`;
 
 const LabelList = styled.div`
   height: 64px;
@@ -173,12 +188,14 @@ const LabelListWap = styled.div`
 `
 
 const LabelContentWap = styled.div`
-    position: relative;
-    margin: 24px 16px;
+    margin: 24px 0 0;
     padding-top: 40px;
-    padding-bottom: 100px;
     border-radius: 4.72px;
     background: rgba(246, 252, 255, 1);
+    .swiper-slide{
+        position: relative;
+        padding-bottom: 60px;
+    }
     .con-title{
         font-size: 20px;
         font-weight: 500;
@@ -202,7 +219,7 @@ const LabelContentWap = styled.div`
         position: absolute;
         left: 50%;
         margin-left: -54px;
-        bottom: 40px;
+        bottom: 0;
         width: 104px;
         height: 36px;
         text-align: center;
@@ -287,39 +304,60 @@ const labelInfo = [
     },
   ];
 
+const AISOLUTION = 'tech_Ai';
 
 export const Ai: FC<IAiProps> = ({ }) => {
     const [currIndex, setCurrIndex] = useState(0);
-    const [controlledSwiper, setControlledSwiper] = useState(null);
-
+    const [oneSwiper, setOneSwiper] = useState(null);
+    const [twoSwiper, setTwoSwiper] = useState(null);
+    const oneSwipers = useRef(null);
+    const twoSwipers = useRef(null);
     useEffect(() => {
-        
+        const ScrollMagic = require('scrollmagic');
+        var controller = new ScrollMagic.Controller();
+        const videoContent = document.getElementById(AISOLUTION);
+        new ScrollMagic.Scene({
+        triggerElement: videoContent, //触发元素
+        triggerHook: 'onEnter', //触发元素开始离开视口时触发
+        offset: 10, //从开始点滚动多少px触发（施法前摇）
+        duration: 400, //效果持续的距离（法术持续时间/距离）
+        })
+        // .setClassToggle('.aitxs', 'appear')
+        .addTo(controller)
+        .on('enter', () => {
+            videoContent.classList.add('appear');
+            controller.destroy();
+        });
+
+        console.log('oneSwiper',oneSwiper)
+        console.log('twoSwiper',twoSwiper)
     }, []);
+
     return (
     <MainWrap>
-        <Pane>
-            <div className="title">认知智能</div>
-            <Visible md lg xl xxl xxxl>
-                <div className="sec-title">先进的认知智能算法和模型，高度模拟人类思维和理解的能力</div>
-            </Visible>
-            <Visible xs sm>
-                <div className="sec-title">先进的认知智能算法和模型<br />高度模拟人类思维和理解的能力</div> 
-            </Visible>     
-            <Hidden xs sm>
+        <div className="title">认知智能</div>
+        <Visible md lg xl xxl xxxl>
+            <div className="sec-title">先进的认知智能算法和模型，高度模拟人类思维和理解的能力</div>
+        </Visible>
+        <Visible xs sm>
+            <div className="sec-title">先进的认知智能算法和模型<br />高度模拟人类思维和理解的能力</div> 
+        </Visible>     
+        <WrapContent id={AISOLUTION}>
+            <Hidden xs sm> 
                 <LabelList>
-                {labelInfo.map((item, i) => {
-                    return (
-                    <LabelWrapper
-                        onClick={() => {
-                        setCurrIndex(i);
-                        }}
-                        className={i == currIndex ? 'active' : ''}>
-                        <img className="normal" src={imgurl + item.titleImg} />
-                        <img className="active" src={imgurl + item.activeImg} />
-                        {item.name}
-                    </LabelWrapper>
-                    );
-                })}
+                    {labelInfo.map((item, i) => {
+                        return (
+                        <LabelWrapper
+                            onClick={() => {
+                            setCurrIndex(i);
+                            }}
+                            className={i == currIndex ? 'active' : ''}>
+                            <img className="normal" src={imgurl + item.titleImg} />
+                            <img className="active" src={imgurl + item.activeImg} />
+                            {item.name}
+                        </LabelWrapper>
+                        );
+                    })}
                 </LabelList>
                 <ContentWrapper>
                     <div className="con-title">{labelInfo[currIndex].name}</div>
@@ -330,10 +368,14 @@ export const Ai: FC<IAiProps> = ({ }) => {
                 </ContentWrapper>
             </Hidden>
             <Visible xs sm>
-                <LabelListWap>
+                <LabelListWap id={AISOLUTION}>
                     <Swiper
+                        ref={oneSwipers}
                         slidesPerView="auto"
-                        onSwiper={swiper => setControlledSwiper(swiper)}
+                        onSwiper={swiper => setOneSwiper(swiper.activeIndex)}
+                        onSlideChange={swiper=>{
+                            twoSwipers.current.swiper.slideTo(swiper.activeIndex)
+                        }}
                     >
                         {labelInfoWap.map((item, navIndex) => {
                             return (
@@ -342,6 +384,7 @@ export const Ai: FC<IAiProps> = ({ }) => {
                                 key={navIndex} 
                                 onClick={() => {
                                     setCurrIndex(navIndex)
+                                    twoSwipers.current.swiper.slideTo(navIndex)
                                 }}
                             >
                                 <img className="normal" src={imgurl + item.activeImg} />
@@ -353,15 +396,41 @@ export const Ai: FC<IAiProps> = ({ }) => {
                     </Swiper>
                 </LabelListWap>
                 <LabelContentWap>
-                    <div className="con-title">{labelInfoWap[currIndex].name}</div>
+                    <Swiper
+                        ref={twoSwipers}
+                        slidesPerView="auto"
+                        onSwiper={swiper => setTwoSwiper(swiper.activeIndex)}
+                        onSlideChange={swiper=>{
+                            setCurrIndex(swiper.activeIndex)
+                            oneSwipers.current.swiper.slideTo(swiper.activeIndex)
+                        }}
+                    >
+                        {labelInfoWap.map((item, navIndex) => {
+                            return (
+                            <SwiperSlide 
+                                className={currIndex == navIndex ? 'one-slide-active one-slide' : 'one-slide'} 
+                                key={navIndex} 
+                            >
+                                <div className="con-title">{item.name}</div>
+                                <div className="sub-title" style={{display: item.fontTitle ? 'block' : 'none'}}>{item.fontTitle}</div>
+                                <img src={imgurl+item.imgs} className={'img'+currIndex} />
+                                <div onClick={() => window.open('/form?formType=1')} className="ljzx">
+                                    立即咨询
+                                </div>
+                            </SwiperSlide>
+                            );
+                        })}
+                    </Swiper>
+
+                    {/*<div className="con-title">{labelInfoWap[currIndex].name}</div>
                     <div className="sub-title" style={{display: labelInfoWap[currIndex].fontTitle ? 'block' : 'none'}}>{labelInfoWap[currIndex].fontTitle}</div>
                     <img src={imgurl+labelInfoWap[currIndex].imgs} className={'img'+currIndex} />
                     <div onClick={() => window.open('/form?formType=1')} className="ljzx">
                         立即咨询
-                    </div>
+                    </div>*/}
                 </LabelContentWap>
             </Visible>
-        </Pane>
+        </WrapContent>
     </MainWrap>
     );
 };

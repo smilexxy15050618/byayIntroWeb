@@ -11,19 +11,19 @@ interface  SceneSolution{
 const carouselDataList = [
     {
         title:'降本增效<br />长效运营',
-        content:'搭建统一的知识库后台，<br />沉淀公安业务知识，重复<br />性常规性问题，机器人可<br />以做到100%标准专业回复',
+        content:'搭建统一的知识库后台，沉淀公安业务知识，重复性常规性问题，机器人可以做到100%标准专业回复',
         url: '/goan-use-1.png'
     },{
         title:'精准触达<br />千人千面',
-        content:'通过居民画像打标，熟知<br />每个居民特征特性，协助<br />民警在1对1的沟通中提供<br />更加精准的便民服务',
+        content:'通过居民画像打标，熟知每个居民特征特性，协助民警在1对1的沟通中提供更加精准的便民服务',
         url: '/goan-use-2.png'
     },{
         title:'及时响应<br />满意度提升',
-        content:'AI民警7*24小时全天候服<br />务，及时响应居民咨询，<br />提升基层工作，提升便民<br />服务效能和群众满意度',
+        content:'AI民警7*24小时全天候服务，及时响应居民咨询，提升基层工作，提升便民服务效能和群众满意度',
         url: '/goan-use-3.png'
     },{
         title:'形象统一<br />公信力强',
-        content:'树立统一的公安形象，如<br />果辖区民警有人员变化，<br />不用重新与居民建立关联<br />关系，居民有问题依然会<br />直接找虚拟民警',
+        content:'树立统一的公安形象，如果辖区民警有人员变化，不用重新与居民建立关联关系，居民有问题依然会直接找虚拟民警',
         url: '/goan-use-4.png'
     }
 ]
@@ -70,22 +70,20 @@ const Card = styled.div<{bg:number}>`
         position: absolute;
         width: 236px;
         height: 112px;
-        left:24px;
-        top:60px;
+        left: 24px;
+        top: 60px;
         .title_area{
             font-size: 20px;
             font-weight: 600;
             line-height: 24px;
-            color: rgba(255, 255, 255, 1);
-            margin-bottom:16px;
+            color: rgba(255,255,255,1);
+            margin-bottom: 16px;
         }
         .cont_area{
             font-size: 14px;
             font-weight: 400;
-            letter-spacing: 0px;
             line-height: 24px;
-            color: rgba(255, 255, 255, 1);
-            text-align: justify;
+            color: rgba(255,255,255,1);
         }
     }
    }

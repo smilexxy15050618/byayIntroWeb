@@ -48,7 +48,7 @@ const Desc = styled.div`
 `;
 
 const BlueBtn = styled.div`
-  margin: 46px auto 0;
+  margin: 48px auto 0;
   width: 132px;
   height: 48px;
   border-radius: 5.33px;

@@ -55,20 +55,28 @@ const Wrapper = styled.div`
     width: 100vw;
     background:#fff;
   }
+  .fixedTopPc{
+    position: fixed;
+    height: 80px;
+    z-index: 11;
+    left: 0;
+    top: 80px;
+    background: #fff;
+    margin-top: 0;
+  }
 `
 
 const NavItemContainer = styled.div`
-  @media (min-width: 768px) {
-    max-width: 1200px;
-    min-width: unset;
-    width: 1200px;
-    margin: 0 auto;
-  }
-  height: 100%;
-  padding-top: 16px;
+  width: 100%;
+  margin-top: 16px;
   @media (max-width: 768px) {
     width: 100% !important;
   }
+`;
+
+const NavItemContainerCom = styled.div`
+  width: 1200px;
+  margin:0 auto;
 `;
 
 const NavItem = styled.div<{ active: boolean }>`
@@ -126,7 +134,6 @@ const ArrowClickR = styled.div`
 
 
 const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) => {
-  const [index, setIndex] = useState(0);
   const [actIndex, setActIndex] = useState(0)
   const [controlledSwiper, setControlledSwiper] = useState(null);
   const [slideTranslate,setSlideTranslate]  = useState(0)
@@ -142,7 +149,7 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
     const fixedTop = document.getElementById('tabNav').offsetTop;
 
     window.onscroll = () => {
-      if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
+      // if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
         const scrollTop = document.documentElement.scrollTop;
         const qiyejieshao = document.getElementById('qiyejieshao');
         const MissionVision = document.getElementById('MissionVision');
@@ -155,52 +162,60 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
         set_is_fixed(isFixed);
 
         if (scrollTop >= qiyejieshao.offsetTop - 109 && scrollTop < MissionVision.offsetTop - 109) {
+          onCancel(6)
           setActIndex(0)
         }
         if (scrollTop >= MissionVision.offsetTop - 109 && scrollTop < DevelopHistory.offsetTop - 109) {
+          onCancel(6)
           setActIndex(1)
         }
         if (scrollTop >= DevelopHistory.offsetTop - 109 && scrollTop < SocietyDuty.offsetTop - 109) {
+          onCancel(6)
           setActIndex(2)
         }
         if (scrollTop >= SocietyDuty.offsetTop - 109 && scrollTop < CreditMedal.offsetTop - 109) {
+          onCancel(6)
           setActIndex(3)
         }
         if (scrollTop >= CreditMedal.offsetTop - 109 && scrollTop < JoinUs.offsetTop - 109) {
+          onCancel(6)
           setActIndex(4)
         }
         if (scrollTop >= JoinUs.offsetTop - 109) {
+          onCancel(6)
           setActIndex(5)
         }
       }
-    };
+    // };
   }, []);
 
   return (
     <Wrapper>
     <Visible md lg xl xxl xxxl>
-      <NavItemContainer maxWidthPc="1200px" minWidthPC={minWidthPC} id="tabNav">
+      <NavItemContainer className={`${is_fixed ? 'fixedTopPc' : ''}`} id="tabNav">
+        <NavItemContainerCom>
         {bannerList.map(({ name, jumpTarget }, navIndex) => {
           return (
             <NavItem
               key={navIndex}
-              active={navIndex === index}
+              active={navIndex === actIndex}
               onClick={() => {
+                setActIndex(navIndex)
                 const node = document.querySelector(jumpTarget);
                 if (node) {
                   node.scrollIntoView({ behavior: 'smooth' });
                 }
-                onCancel()
+                onCancel(navIndex)
               }}
             >
             {name}
           </NavItem>
           );
         })}
+        </NavItemContainerCom>
       </NavItemContainer>
     </Visible>
     <Visible xs sm>
-      {/* 吸顶占位 onSlideChange={swiper => onSlideChange(swiper.activeIndex)} */}
       <div class="capacity-tab" style={{display: is_fixed ? 'block' : 'none'}}></div>
       <div className={`capacity-tab ${is_fixed ? 'fixedTop' : ''}`} id="tabNav">
         <ArrowClickL
@@ -212,7 +227,6 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
         <Swiper
           slidesPerView="auto"
           onSlideChange = {swiper => {
-            console.log('BBB',swiper.activeIndex)
             setSlideTranslate(swiper.activeIndex)
           }}
           onSwiper={swiper => {

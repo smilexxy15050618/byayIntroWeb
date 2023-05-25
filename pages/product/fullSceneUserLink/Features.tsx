@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import FeatureIntroduce, { IFeatureIntroduceProps } from '../../../src/components/voice-robot/FeatureIntroduceNew';
 
 const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
+// const PREFIX = '/static/img2023';
 const FEATURE_TITLE: IFeatureIntroduceProps[] = [
   {
     iconnormal: `${PREFIX}/wechat-2.svg`,
@@ -111,14 +112,14 @@ const FeatureWrap = styled.div`
     height: 170px;
     display: flex;
     justify-content: center;
-    border-bottom: 4px solid #F4F8FE;
+    border-bottom: 2px solid #F4F8FE;
     @media (max-width: 768px) {
       height: 86px;
       border-bottom: 1px solid #F4F8FE;
     }
     .capacity-item{
       position: relative;
-      padding-top: 28px;
+      padding-top: 40px;
       width: 190px;
       height: 170px;
       margin-right: 90px;
@@ -144,12 +145,12 @@ const FeatureWrap = styled.div`
         content: '';
         position: absolute;
         left: 0;
-        bottom: 0;
+        bottom: -2px;
         width: 190px;
         height: 4px;
         background: rgba(43, 88, 249, 1);
         @media (max-width: 768px) {
-          width: 65px;
+          width: 95px;
           height: 2px;
           left: 15px;
         }
@@ -157,6 +158,7 @@ const FeatureWrap = styled.div`
       img{
         width: 36px;
         height: 36px;
+        margin-bottom: 16px;
         @media (max-width: 768px) {
           width: 18px;
           height: 18px;
