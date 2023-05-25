@@ -132,6 +132,7 @@ const FeatureValueWrap = styled.div`
         letter-spacing: 0px;
         color: rgba(26, 26, 26, 0.65);
         text-align: left;
+        margin-top: 18px;
         @media (max-width: 768px) {
           padding-top: 20px;
         }

@@ -102,14 +102,14 @@ const FeatureWrap = styled.div`
     height: 170px;
     display: flex;
     justify-content: center;
-    border-bottom: 4px solid #F4F8FE;
+    border-bottom: 2px solid #F4F8FE;
     @media (max-width: 768px) {
       height: 86px;
       border-bottom: 1px solid #F4F8FE;
     }
     .capacity-item{
       position: relative;
-      padding-top: 28px;
+      padding-top: 40px;
       width: 190px;
       height: 170px;
       margin-right: 90px;
@@ -135,7 +135,7 @@ const FeatureWrap = styled.div`
         content: '';
         position: absolute;
         left: 0;
-        bottom: 0;
+        bottom: -2px;
         width: 190px;
         height: 4px;
         background: rgba(43, 88, 249, 1);
@@ -148,6 +148,7 @@ const FeatureWrap = styled.div`
       img{
         width: 36px;
         height: 36px;
+        margin-bottom: 16px;
         @media (max-width: 768px) {
           width: 18px;
           height: 18px;

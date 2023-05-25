@@ -29,15 +29,16 @@ const ABOUT_INTRO = `${imgurl}/about-intro.jpg`;
 
 const DEVELOPHIS_BG = `${imgurl}/develophis_bg.png`;
 const JOINUS_BG = `${imgurl}/web-com.png`;
-const FOOTER_BG = `${imgurl}/kqaizl.png`;
+const FOOTER_BG = `https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/by-voice-bg.png`;
 
 const Wrapper = styled.div``;
 
 const BigTitle = styled.div`
-  margin-top: 20px;
-  font-size: 48px;
-  line-height: 80px;
-  color: rgba(26, 26, 26, 1);
+    margin-bottom: 16px;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 60px;
+    color: rgba(26,26,26,1);
   @media (max-width: 768px) {
     width: 100%;
     text-align: center;
@@ -51,10 +52,13 @@ const BigTitle = styled.div`
 `;
 
 const Desc = styled.div`
-  margin-top: 10px;
-  font-size: 20px;
-  line-height: 32px;
-  color: rgba(51, 51, 51, 1);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.91px;
+    line-height: 32px;
+    color: rgba(51,51,51,1);
+    padding-top: 20px;
+    margin-bottom: 56px;
   @media (max-width: 768px) {
     padding-top: 8px;
     text-align: center;
@@ -197,7 +201,7 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
             </EnIntroductionWrap>
             <MissionVision indexTab={indexTab} />
             <Visible md lg xl xxl xxxl>
-              <DevelopHistory backgroundImage={DEVELOPHIS_BG} />
+              <DevelopHistory backgroundImage={DEVELOPHIS_BG} indexTab={indexTab} />
             </Visible>
             <Visible xs sm>
               <DevelopHistoryWap />

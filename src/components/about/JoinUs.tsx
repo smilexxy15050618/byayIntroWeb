@@ -122,7 +122,7 @@ interface IBriefProps {
 }
 
 const JoinUs: React.SFC<IBriefProps> = ({ backgroundImage, indexTab }) => (
-  <JoinUsWrap id="JoinUs" style={{paddingTop: indexTab == 5 ? '109px' : '0'}}>
+  <JoinUsWrap id="JoinUs" style={{paddingTop: indexTab == 5 ? /Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent) ? '109px' : '0' : '0',marginTop: indexTab == 5 ? /Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent) ? '0' : '256px' : '0' }}>
     <Hidden xs sm>
       <BriefContainer backgroundImage={backgroundImage}>
         <div className='title'>极致工作 快乐生活</div>

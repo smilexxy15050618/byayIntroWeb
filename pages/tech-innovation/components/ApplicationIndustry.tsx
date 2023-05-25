@@ -33,7 +33,7 @@ const MainWrap = styled.div`
         font-weight: 400;
         line-height: 32px;
         color: rgba(51, 51, 51, 1);
-        margin-bottom: 22px;
+        margin-bottom: 56px;
         text-align:center;
         @media(max-width: 768px) {
             font-size: 16px;

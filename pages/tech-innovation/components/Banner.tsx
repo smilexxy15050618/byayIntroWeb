@@ -237,7 +237,7 @@ export const Banner: FC<IAiProps> = ({ }) => {
     return (
     <BannerWrap>
         <TechInnovWrap>
-            <TextArea>
+            <TextArea className="animate__animated animate__fadeInDown">
                 <div className="title">全栈自研的AI核心技术</div>
                 <Visible md lg xl xxl xxxl>
                     <div className="subtitle">百应拥有近百项 AI 及大数据领域相关专利和软件著作，研发水平位列行业前沿，保<br />证了超高语音识别率、超强语义理解，实现人机无障碍交流沟通</div>
@@ -252,7 +252,7 @@ export const Banner: FC<IAiProps> = ({ }) => {
                     立即体验
                 </BlueBtn>
             </TextArea>
-            <AcademyTram>
+            <AcademyTram className="animate__animated animate__fadeInUp">
                 <div className="team">
                     <div className="title">百应智能研究院<br />中美两地联合算法团队</div>
                     <div className="img">

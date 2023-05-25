@@ -17,9 +17,9 @@ import ReasonToBePartner from '../../src/components/partner/ReasonToBePartner';
 import ServiceSystem from '../../src/components/partner/ServiceSystem';
 import { FormType } from '../../src/components/TryForm';
 import { HOST_ENUM } from '../../src/lib/utils';
-const FOOTER_BG = 'https://cdn.byai.com/static/intro/img/common/voice-footer-img.png';
 const BANNER = `${BASE_URL}ecology.png`;
 const BANNER_XS = `${BASE_URL}ecology-xs.png`;
+const FOOTER_BG = `https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/by-voice-bg.png`;
 
 export default ({ hostType = HOST_ENUM.HOST }) => (
   <Layout hostType={hostType} headPlaceholder={[false, '#F9FAFF']}>
@@ -63,13 +63,11 @@ export default ({ hostType = HOST_ENUM.HOST }) => (
         <CoopProcedure />
         {/* 口号 */}
         <ByVoiceFooter
-          title="发现适合您的智能转型方案"
-          desc="留下联系方式，将有AI行业专家为您提供专属服务"
+          title="立即体验AI时代的新一代用户运营平台"
+          desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"
           btnText="与我联系"
           background={`url(${FOOTER_BG})`}
-          onClick={() => {
-            setVisible(true, FormType.ECOLOGY);
-          }}
+          onClick={() => window.open('/form?formType=1')}
         />
       </>
     )}

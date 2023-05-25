@@ -147,7 +147,7 @@ const MissionVision: FC<MissionVisionProps> = ({ indexTab }) => {
   }, [myRef]);
       
   return (
-    <MissionVisionContainer id={AiTSXID} style={{paddingTop: indexTab == 1 ? '109px' : '0'}}>
+    <MissionVisionContainer id={AiTSXID} style={{paddingTop: indexTab == 1 ? /Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent) ? '109px' : '0' : '0',marginTop: indexTab == 1 ? /Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent) ? '0' : '256px' : '0' }}>
       <Hidden xs sm>
         <MissionVisionContainerWrap ref={myRef}>
             <div className='mission-tips'><p className="title">使命</p><p className="subtitle">以AI赋能经济发展和社会生活</p></div>

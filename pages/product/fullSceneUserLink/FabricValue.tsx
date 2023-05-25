@@ -131,6 +131,7 @@ const FeatureValueWrap = styled.div`
         text-align: center;
       }
       div:last-child {
+        margin-top: 18px;
         font-size: 14px;
         font-weight: 400;
         letter-spacing: 0px;
