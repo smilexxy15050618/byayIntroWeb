@@ -73,6 +73,7 @@ const ContentWrap = styled.div`
         width: 100%;
         height: auto;
         transition: none;
+        transform: translateY(0);
         opacity: 1;
     }
 

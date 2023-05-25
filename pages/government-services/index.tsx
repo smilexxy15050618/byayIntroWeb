@@ -65,7 +65,7 @@ const Desc = styled.div`
     text-align: left;
     font-size: 16px;
     line-height: 26px;
-    margin: 0 28px 46px !important;
+    margin: 0 24px 26px 28px !important;
   }
 `;
 
@@ -118,7 +118,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                   className: ['animate__fadeInRight', 'animate__ahead_300ms'],
                 },
               ]}
-              mobileStyle={{height:'304px',paddingTop: '0'}}
+              mobileStyle={{height:'304px',paddingTop: '21px'}}
               mobileImg={JOIN_US_IMG}>
               <TextArea spaces={['', '']}>
                 <Hidden xs sm>

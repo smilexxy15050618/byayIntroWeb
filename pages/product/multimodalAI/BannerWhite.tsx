@@ -98,7 +98,7 @@ const BannerWhite = styled(RawBannerWhite) < IBannerWhiteProps > `
       padding-top: 131px;
     }
     .wap-banner {
-      padding-top: 20px;
+      padding-top: 32px;
     }
   }
   @media (min-height: 750px) and (max-width: 768px) {
@@ -106,7 +106,7 @@ const BannerWhite = styled(RawBannerWhite) < IBannerWhiteProps > `
       padding-top: 131px;
     }
     .wap-banner {
-      padding-top: 40px;
+      padding-top: 32px;
     }
   }
   @media (max-width: 768px) {
@@ -114,7 +114,7 @@ const BannerWhite = styled(RawBannerWhite) < IBannerWhiteProps > `
       padding-top: 131px;
     }
     .wap-banner {
-      padding-top: 20px;
+      padding-top: 32px;
     }
   }
 `;

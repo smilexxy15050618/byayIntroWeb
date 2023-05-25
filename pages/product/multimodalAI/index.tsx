@@ -9,8 +9,8 @@ import BannerWhite from './BannerWhite';
 import FabricValue from './FabricValue';
 import Features from './Features';
 
-// const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
-const PREFIX = '/static/img2023';
+const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
+// const PREFIX = '/static/img2023';
 const BANNER_BG = `${PREFIX}/multimodal-banner-bg.png`;
 const PC_BANNER_IMGS = [
   {
