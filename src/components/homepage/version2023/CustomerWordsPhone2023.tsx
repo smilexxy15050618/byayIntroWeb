@@ -686,7 +686,7 @@ const CustomerWordsPhone: FC<ICustomerWordsProps> = ({}) => {
       title="众多政府机构及头部企业的信赖之选"
       titleStyle={{ marginBottom: '53px' }}
       paneBgColor="white"
-      style={{ padding: '40px 20px',
+      style={{ padding: '80px 20px 93px',
         fontSize: '24px',
         fontWeight: '500',
         letterSpacing: '0px',

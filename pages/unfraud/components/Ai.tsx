@@ -97,6 +97,7 @@ const ListWrapper = styled.div`
       height: 340px;
       border-radius: 8px;
       background: rgba(246, 252, 255, 1);
+      position: relative;
       div:first-child {
         font-size: 16px;
        font-weight: 600;
@@ -117,6 +118,8 @@ const ListWrapper = styled.div`
       }
       img {
         margin-bottom: 0px;
+        position: absolute;
+        bottom: 0;
       }
     }
   }

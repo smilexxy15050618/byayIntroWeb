@@ -32,7 +32,7 @@ background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 25
     color: rgba(51,51,51,1);
     text-align: center;
     @media (max-width: 768px) {
-      width:328px;
+      width:337px;
       font-size: 16px;
       font-weight: 400;
       line-height: 26px;
@@ -105,7 +105,7 @@ export const IndustryCarousel = () => {
         />
       </Visible>
       <Visible xs sm>
-      <div className='desc'>策略自动生成、数据验证、自动化运行,实现目标人群的精准触达,提升关键指标和运营效率</div>
+      <div className='desc'>策略自动生成、数据验证、自动化运行，实现目标人群的精准触达，提升关键指标和运营效率</div>
         <div className="jumpbtn" onClick={() => window.open('/form?formType=1')}>
           立即体验
         </div>

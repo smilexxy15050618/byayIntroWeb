@@ -8,7 +8,7 @@ import classNames from 'classnames';
 const AITime = styled.div`
   background: url(${imgurl}/aisd.png) no-repeat;
   background-size: 100% 100%;
-  padding-top: 185px;
+  padding-top: 160px;
 `
 const Title = styled.div`
 font-size: 24px;
@@ -81,6 +81,7 @@ aside{
   letter-spacing: 0px;
   line-height: 20px;
   color: rgba(51, 51, 51, 1);
+  text-align: justify;
 }
 
 .button-group {
@@ -97,7 +98,7 @@ aside{
     font-size: 10px;
     font-weight: 400;
     letter-spacing: 0px;
-    line-height: 18px;
+    line-height: 22px;
     color: rgba(36, 91, 219, 1);
     text-align: center;
     margin-right: 4px;
@@ -135,9 +136,9 @@ aside{
     position: absolute;
     right: 0;
     top: 0;
-
     width: 294px;
     animation: myplanet 0.8s   forwards;
+    z-index: -1;
   }
 .title {
   color: #fff;
