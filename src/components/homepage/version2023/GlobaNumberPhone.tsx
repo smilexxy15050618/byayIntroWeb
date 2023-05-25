@@ -76,7 +76,7 @@ const menuList = [
     subTitle1: 'Knowledge Graph',
     content: [
       '丰富的行业知识图谱：行业知识库、金牌话术库、会话策略库、画像标签库、闲聊库、常识库...',
-      '构建机器人大脑知识体系，不断优化和升级AI模型，为各个垂直行业提供智能化服务。',
+      '构建机器人大脑知识体系，不断优化和升级AI模型，为各个垂直行业提供智能化服务',
     ],
   },
   {
@@ -470,7 +470,7 @@ export const GlobaNumberPhone = ({}) => {
             })}
           </div>
           <p className='goknoemow' onClick={() => {
-              window.open('/form?formType=1');
+              window.open('/tech-innovation');
             }}>了解更多&nbsp;&nbsp;></p>
         </div>
       </Menu>

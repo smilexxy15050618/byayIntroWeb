@@ -22,7 +22,7 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
       }
     ],
     title: '增强型用户画像洞察',
-    subtitle: '综合客户数据建立多维标签，构建全景客户画像，获得深入洞察，为精细化运营提供策略基础。',
+    subtitle: '综合客户数据建立多维标签，构建全景客户画像，获得深入洞察，为精细化运营提供策略基础',
   },
   {
     img1: `${PREFIX}/intel-nl-2.png`,
@@ -41,7 +41,7 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
       }
     ],
     title: '策略智能与自动化',
-    subtitle: '充分收集并洞察客户行为、属性、标签，并针对性制定触达与沟通策略，实现目标人群精准自动化触达，提升关键指标和运营效率。',
+    subtitle: '充分收集并洞察客户行为、属性、标签，并针对性制定触达与沟通策略，实现目标人群精准自动化触达，提升关键指标和运营效率',
   },
   {
     img1: `${PREFIX}/intel-nl-3.png`,
@@ -72,7 +72,7 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
       }
     ],
     title: '多模态情感化AI',
-    subtitle: '在不同的渠道和场景中使用多模态Al形式沟通，情感化沟通感知，跨端能力共享，为用户提供个性化服务和推荐，提高用户体验。',
+    subtitle: '在不同的渠道和场景中使用多模态Al形式沟通，情感化沟通感知，跨端能力共享，为用户提供个性化服务和推荐，提高用户体验',
   },
   {
     img1: `${PREFIX}/intel-nl-4.png`,
@@ -91,7 +91,7 @@ const FEATURE_TITLE: IFeatureIntroduceProps[] = [
       },
     ],
     title: '全场景用户连接与对话',
-    subtitle: '充分洞察用户，并针对性制定触达与沟通策略，使用合适的内容，在合适的时间触达合适的客户。',
+    subtitle: '充分洞察用户，并针对性制定触达与沟通策略，使用合适的内容，在合适的时间触达合适的客户',
   },
   {
     img1: `${PREFIX}/intel-nl-5.png`,

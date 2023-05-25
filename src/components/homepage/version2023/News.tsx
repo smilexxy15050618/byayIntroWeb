@@ -206,7 +206,7 @@ const list = [
 export const News = () => {
   return (
     <div style={{ paddingTop: '80px' }}>
-      <Title>了解百应最新动态，洞察行业趋势发展</Title>
+      <Title>新闻与动态</Title>
       <Wrapper>
         <Swiper
           effect="slide"

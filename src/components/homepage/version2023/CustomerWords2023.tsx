@@ -52,7 +52,7 @@ const CardContent = styled.div`
     }
   }
   .customer-words-name {
-    border-top: 1px solid rgba(90, 90, 90, 0.3);
+    border-top: 0.5px solid rgba(90, 90, 90, 0.2);
     padding-top: 24px;
     /* font-size: 18px; */
     font-family: PingFangSC-Regular, PingFang SC;
@@ -292,7 +292,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
           style={{ paddingRight: 32, paddingBottom: 30, marginBottom: -30, paddingTop: 20 }}>
           {dataList.map(
             (
-              { bg, avatarSrc, content, personName, tagName, icon, left_title, left_title2, right_title, right_title2 },
+              { bg, avatarSrc, content,avatHeight, personName, tagName, icon, left_title, left_title2, right_title, right_title2 },
               i,
             ) => (
               <SwiperSlide style={{ width: 'auto' }} className="hoer_bg_more" key={i}>
@@ -310,7 +310,8 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
                   </div>
                   <CardContent>
                     <div className="customer-words-icon">
-                      <img src={avatarSrc} />
+                      {/* {avatHeight? <img src={avatarSrc} style={{height:avatHeight+'px'}}/>: <img src={avatarSrc} />} */}
+                      <img src={avatarSrc} style={{height:avatHeight+'px'}}/>
                     </div>
                     <div className="customer-words-desc">{content}</div>
                     <div className="customer-words-name">
@@ -472,7 +473,7 @@ const carouselDataList = [
   {
     bg: `${imgurl}/临平公安-图.png`,
     avatarSrc: `${imgurl}/临平logo.png`,
-
+    avatHeight:'45',
     content: '24小时在线的警察朋友',
     personName: '累计加民人数106w+，有效解答咨询次数4w+',
     tagName: '临平区公安局',
@@ -781,7 +782,7 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
           onSlideChange={swiper => {
             setCurrIndex(swiper.activeIndex);
           }}>
-          {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
+          {dataList.map(({ bg, avatarSrc, content, personName, tagName,avatHeight }, i) => (
             <SwiperSlide style={{ width: '295px' }} key={i}>
               <Card bg={bg}>
                 <div className="customer-words-tag">
@@ -791,7 +792,8 @@ const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
                 <div className="customer-words-bg"></div>
                 <CardContent>
                   <div className="customer-words-icon">
-                    <img src={avatarSrc} />
+                    <img src={avatarSrc} style={{height:avatHeight-10+'px'}}/>
+
                   </div>
                   <div className="customer-words-desc">{content}</div>
                   <div className="customer-words-name">{personName}</div>

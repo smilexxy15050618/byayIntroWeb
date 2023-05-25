@@ -117,16 +117,18 @@ const Game: NextFunctionComponent<IGameProps> = () => {
                 mobileImg={JOIN_US_IMG}>
                 <TextArea spaces={['', '']}>
                   <Hidden xs sm>
+                  <div style={{width:'480px'}}>
                     <BigTitle>
                       保险行业<br />BPO解决方案
                     </BigTitle>
-                    <Desc>“大数据+AI+人”三驱模式，为保险客户提供从赠险<br />到长险的全业务链条服务</Desc>
+                    <Desc>“大数据+AI+人”三驱模式，为保险客户提供从赠险到长险的全业务链条服务</Desc>
                     <BlueBtn
                       onClick={() =>
                         window.open('/form?formType=1')
                       }>
                       立即体验
                     </BlueBtn>
+                    </div>
                   </Hidden>
                 </TextArea>
               </BannerWhite>
