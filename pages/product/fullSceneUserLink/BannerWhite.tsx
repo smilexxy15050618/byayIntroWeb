@@ -62,7 +62,7 @@ const RawBannerWhite: FC<IProps> = ({
     <ByContainer
       background={background}
       style={{ backgroundSize: 'cover' }}
-      height={['1184px', '670px']}
+      height={['1184px', '610px']}
       className={className}>
       {/* 头部空白占位，以便中间中间部分对齐 */}
       <Hidden xs sm>
@@ -98,7 +98,7 @@ const BannerWhite = styled(RawBannerWhite) < IBannerWhiteProps > `
       padding-top: 131px;
     }
     .wap-banner {
-      padding-top: 30px;
+      padding-top: 32px;
     }
   }
   @media (min-height: 750px) and (max-width: 768px) {
@@ -106,7 +106,7 @@ const BannerWhite = styled(RawBannerWhite) < IBannerWhiteProps > `
       padding-top: 131px;
     }
     .wap-banner {
-      padding-top: 40px;
+      padding-top: 32px;
     }
   }
 
@@ -115,7 +115,7 @@ const BannerWhite = styled(RawBannerWhite) < IBannerWhiteProps > `
       padding-top: 131px;
     }
     .wap-banner {
-      padding-top: 20px;
+      padding-top: 32px;
     }
   }
   

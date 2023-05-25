@@ -71,8 +71,9 @@ const FlairVoucherSlide = styled.div`
   transition: all 0.4s;
   opacity: 0;
   @media(max-width: 768px) {
-      transition: none;
-      opacity: 1;
+    transition: none;
+    transform: translateY(0);
+    opacity: 1;
   }
   &.appear{
     transform: translateY(0);
@@ -81,6 +82,7 @@ const FlairVoucherSlide = styled.div`
 
   .wrap_hovres{
     width: 100vw;
+    // transition-timing-function: linear !important;
     .custom-bar-wrapper{
         display: none;
     }
@@ -264,7 +266,7 @@ const FlairVoucher: FC<SocietyDutyProps> = ({indexTab}) => {
                   newProgress={true}
                   initialSlide={0}
                   slidesPerView="auto"
-                  autoplayDelay={5000}
+                  autoplayDelay={1000}
                   spaceBetween={16}
                   centeredSlides={true}
                 >

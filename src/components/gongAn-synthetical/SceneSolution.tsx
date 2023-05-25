@@ -171,7 +171,7 @@ const carouselDataListWap = [
     {
         bgImg:'/gongan-scene-4.svg',
         title: '政务服务场景',
-        subtitle:'政务服务向乡镇街道延伸，以AI支撑业务咨询引导办理，提升网办率，打通服务群众“最后一百米”'
+        subtitle:'政务服务向乡镇街道延伸，以AI支撑业务咨询引导办理，提升网办率，打通服务群众“最后一公里”'
     },
 ]
 

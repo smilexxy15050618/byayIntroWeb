@@ -204,20 +204,41 @@ export const FOOTER_WAP_CONFIG = [
     title: '解决方案',
     list: [
       {
-        name: '品牌零售', href: '/retail'
+        name: '银行',
+        href: '/bank'
       },
       {
-        name: '公安反诈', href: '/unfraud'
+        name: '零售',
+        href: '/retail',
       },
       {
-        name: '互联网', href: '/internet-solution'
+        name: '保险',
+        href: '/insure'
       },
       {
-        name: '保险', href: '/insure'
+        name: '互联网',
+        href: '/internet-solution'
       },
       {
-        name: '消费金融', href: '/customer-finance'
+        name: '消费金融',
+        href: '/customer-finance'
       },
+      {
+        name: '汽车',
+        href: '/selection_car'
+      },
+      {
+        name: '公安综治',
+        href: '/gongAn-synthetical'
+      },
+      {
+        name: '公安反诈',
+        href: '/unfraud'
+      },
+      {
+        name: '政务服务',
+        hrf: '/government-services'
+      }
     ],
   },
   {

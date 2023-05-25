@@ -59,7 +59,8 @@ const WrapContent = styled.div`
     }
     @media(max-width: 768px) {
         width: 100%;
-        transform: none;
+        transition: none;
+        transform: translateY(0);
         opacity: 1;
     }
 `;

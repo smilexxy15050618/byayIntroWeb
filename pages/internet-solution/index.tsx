@@ -69,7 +69,7 @@ const Desc = styled.div`
     text-align: left;
     font-size: 16px;
     line-height: 26px;
-    margin: 0 28px 46px !important;
+    margin: 0 24px 26px 28px !important;
   }
 `;
 
@@ -139,7 +139,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                 </Hidden>
                 <Visible xs sm>
                   <BigTitle>
-                  互联网<br/>数智化运营解决方案
+                  互联网行业<br/>数智化运营解决方案
                   </BigTitle>
                   <Desc>构建高转化用户触达模型，深度挖掘会员用户价值，打造更优的沟通服务体验</Desc>
                   <BlueBtnWrap>

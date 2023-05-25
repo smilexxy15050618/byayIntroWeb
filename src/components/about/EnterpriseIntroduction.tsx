@@ -31,6 +31,7 @@ const BriefContainer = styled.div`
       padding: 0 16px;
       animation: none;
       opacity: 1;
+      transform: translateY(0);
     }
     &.appear{
       transform: translateY(0);

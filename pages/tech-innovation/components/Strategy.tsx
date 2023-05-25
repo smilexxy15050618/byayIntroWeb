@@ -64,6 +64,7 @@ const StrateWrap = styled.div`
     @media(max-width: 768px) {
         display: block;
         transition: none;
+        transform: translateY(0);
         opacity: 1;
     }
     .left{

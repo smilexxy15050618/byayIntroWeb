@@ -72,7 +72,9 @@ const MainWrap = styled.div`
     }
    
     @media (max-width: 768px) {
-        animation: none;
+        transition: none;
+        transform: translateY(0);
+        opacity: 1;
         .swiper-slide {
         width: 300px !important;
         }
