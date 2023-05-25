@@ -176,6 +176,14 @@ color: rgba(26, 26, 26, 1);
           line-height: 20px;
           color: rgba(90, 90, 90, 1);
           cursor: pointer;
+          overflow: hidden;
+    text-overflow: ellipsis;
+  // 只要超过宽度就换行，不论中文还是英文
+    word-break: break-all;
+ //最多展示两行
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
           &:hover {
               color: #2B58F9;
           }

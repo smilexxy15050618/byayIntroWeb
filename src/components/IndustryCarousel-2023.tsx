@@ -432,6 +432,7 @@ padding-top: 9px;
       letter-spacing: 0px;
       line-height: 20.27px;
       margin-bottom: 24px;
+      margin-top: 14px;
     }
 
     .carousel-indicators {
@@ -569,8 +570,8 @@ const QuickAreaPhone = styled.div`
   // width: 96%;
   flex-wrap: wrap;
   margin: 0 8px;
-  padding: 25px 0;
-  background: #ffffff;
+  // padding: 25px 0;
+  // background: #ffffff;
   border-radius: 10px;
   position: absolute;
 

@@ -34,7 +34,7 @@ padding-bottom: 100px;
     color: rgba(51,51,51,1);
     text-align: center;
     @media (max-width: 768px) {
-      width:328px;
+      width:337px;
       font-size: 16px;
       font-weight: 400;
       line-height: 26px;
@@ -192,28 +192,16 @@ export const IndustryCarousel = () => {
         />
       </Visible> */}
       <Visible xs sm>
-      <BannerWhite 
-            className='bannerImg'
-            background={[
-              `url(${BANNER_BG}) center, linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);`,
-              'linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);',
-            ]}
-            pcImgs={[
-              {
-                src: `${imgurl}/intelligence_banner.png`,
-                style: { width: '1200px', left: 0, top: 50 },
-                className: ['animate__fadeInUp', 'animate__ahead_300ms'],
-              },
-            ]}
-            mobileImg={imgurl + '/intelligence_banner.png'}>
-            <TextArea spaces={['', '']}>
-              <BigTitle>策略智能与自动化</BigTitle>
-              <Desc>
-              策略自动生成、数据验证、自动化运行，实现目标人群的精准触达，提升关键指标和运营效率
-              </Desc>
-              <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
-            </TextArea>
-          </BannerWhite>
+      <div className='desc'>策略自动生成、数据验证、自动化运行，实现目标人群的精准触达，提升关键指标和运营效率</div>
+        <div className="jumpbtn" onClick={() => window.open('/form?formType=1')}>
+          立即体验
+        </div>
+        <video
+          muted
+          controls
+          src={imgurl + '/20230427-103948.mp4'}
+          poster={imgurl + '/intelligence_banner.png'}
+        />
       </Visible>
     </Wrapper>
   )

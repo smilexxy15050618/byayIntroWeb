@@ -70,9 +70,9 @@ const RawSuspenMobileNew: FC<IProps> = ({ className, setForm }) => {
   return (
     <div className={className}>
       <div onClick={() => setShow(true)}>一对一咨询</div>
-      <div onClick={() => setForm(true, FormType.PARTNER)}>立即体验</div>
-      <div onClick={() => setForm(true, FormType.PARTNER)}>渠道合作</div>
-      {/* <HoverIcon onClick={() => setForm(true, FormType.CUSTOMER)} /> */}
+      <div onClick={() => setForm(true, 1)}>立即体验</div>
+      <div onClick={() => setForm(true, 1)}>渠道合作</div>
+      <HoverIcon onClick={() => setForm(true, 1)} />
       <Modal show={show} centered>
         <ModalBody>
           <div className="descc">微信扫码，1对1沟通</div>

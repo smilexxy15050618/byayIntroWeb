@@ -8,7 +8,6 @@ const Pane = styled.div`
   overflow: hidden;
   background: #ffffff;
   .title {
-    margin-top: 40px;
     margin-bottom: 32px;
     width: 100%;
     text-align: center;

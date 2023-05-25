@@ -189,8 +189,8 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
               <div
                 className={index == currIndex ? 'active' : ''}
                 onClick={() => {
-                  setCurrIndex(index);
-                  controlledSwiper.slideTo(index);
+                  setCurrIndex(index+1);
+                  controlledSwiper.slideTo(index+1);
                 }}>
                 <img src={avatarSrc} alt="" />
               </div>

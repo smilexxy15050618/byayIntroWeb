@@ -171,6 +171,7 @@ const Item = styled.div`
     letter-spacing: 0px;
     line-height: 40px;
     color: rgba(51, 51, 51, 1);
+    font-family: DINAlternate;
     span:first-child {
       font-size: 33px;
       font-weight: 700;
@@ -347,7 +348,7 @@ const Menu = styled.div`
   .right-menu {
     width: 100%;
     // height: 358px;
-    padding: 30px 42px;
+    padding: 50px 42px;
 
     box-sizing: border-box;
     background: url(${imgurl}/rotatebg.png) no-repeat;
@@ -390,6 +391,7 @@ const Menu = styled.div`
         letter-spacing: 0px;
         line-height: 24px;
         color: rgba(51, 51, 51, 1);
+        margin-bottom: 0;
       }
       p:nth-child(1) {
         margin-bottom: 0;
@@ -401,6 +403,7 @@ const Menu = styled.div`
       letter-spacing: 0px;
       line-height: 20px;
       color: rgba(26, 26, 26, 1);
+      margin-bottom: 0;
       &:hover{
         color: #2b58f9;
         cursor: pointer;
