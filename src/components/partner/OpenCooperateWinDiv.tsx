@@ -59,9 +59,8 @@ const RawOpenCooperateWinDiv: FC<IProps> = ({ className }) => {
         <FirstLine>
           作为认知智能领域前列的准独角兽企业，百应坚持
           <span>开放、合作、共赢</span>
-          的生态合作，坚定执行公平、公开、透明的
+          的生态合作，坚定执行公平、公开、透明的原则，与合作伙伴开放合作，共同营造健康的生态环境，实现多赢共赢。
         </FirstLine>
-        原则，与合作伙伴开放合作，共同营造健康的生态环境，实现多赢共赢。
       </Desc>
     </div>
   );

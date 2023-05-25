@@ -565,8 +565,8 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
       <Container>
         <Row justify="between" style={{paddingBottom: '52px'}}>
           <Visible md lg xl xxl xxxl>
-            <div style={{ width: '244px',}}>
-              <div style={{ width: '182px', marginTop: 32 }}>
+            <div style={{ width: '206px',}}>
+              <div style={{ width: '184px', marginTop: 32 }}>
                 <img src={BOTTOM_WHITE_LOGO} />
               </div>
             </div>

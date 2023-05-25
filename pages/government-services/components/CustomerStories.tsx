@@ -12,7 +12,7 @@ const list = [
         content: '实现业务办理从“多次跑”转变为“零次跑”。'
     },
     {
-        banner: '/government-dq.svg.png',
+        banner: '/government-dq-new.png',
         wapBanner: '/overnment-wap-dq.png',
         title: '德清公安',
         content: '聚焦高频办理业务，打造智能、便利公安服务。'

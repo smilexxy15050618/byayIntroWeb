@@ -8,7 +8,7 @@ const titleList = [
   {
     title: '线上警民互动平台',
     subTitle: '以AI机器人为技术依托打造统一的虚拟IP民警，通过全渠道通道，实现警民长效高效连接',
-    url: '/gongan-govern-1.svg',
+    url: '/gongan-govern-1-new.png',
     urlWap: '/gongan-govern-1.svg',
   },
 

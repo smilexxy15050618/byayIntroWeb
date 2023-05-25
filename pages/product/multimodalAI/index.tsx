@@ -9,29 +9,15 @@ import BannerWhite from './BannerWhite';
 import FabricValue from './FabricValue';
 import Features from './Features';
 
-const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
-const BANNER_BG = `${PREFIX}/multimodal-banner-bg.svg`;
+// const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023';
+const PREFIX = '/static/img2023';
+const BANNER_BG = `${PREFIX}/multimodal-banner-bg.png`;
 const PC_BANNER_IMGS = [
   {
-    src: `${PREFIX}/multimodal-banner-content.png`,
-    style: { width: '1200px', top: 70, left: 0 },
-    className: [],
-  },
-  {
-    src: `${PREFIX}/multimodal-banner-left.png`,
-    style: { width: '260px', top: 70, left: 32 },
-    className: ['animate__fadeInLeft', 'animate__delay_700ms'],
-  },
-  {
-    src: `${PREFIX}/multimodal-banner-right.png`,
-    style: { width: '260px', top: 70, right: 32 },
-    className: ['animate__fadeInRight', 'animate__delay_700ms'],
-  },
-  {
-    src: `${PREFIX}/multimodal-banner-bottom.png`,
-    style: { width: '1130px', left: 32, top: 723 },
+    src: `${PREFIX}/multimodal-banner-new-content.png`,
+    style: { width: '1200px', top: 50, left: 0 },
     className: ['animate__fadeInUp', 'animate__delay_700ms'],
-  },
+  }
 ];
 const WAP_BANNER_IMGS = `${PREFIX}/multimodalAI-wp-banner.png`;
 
@@ -103,7 +89,6 @@ export default ({ hostType = HOST_ENUM.HOST }) => {
       {(visible, setVisible) => (
         <Wrapper>
           <BannerWhite
-            minWidthPC="1586px"
             background={[
               `url(${BANNER_BG}) center, linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);`,
               'linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%);',

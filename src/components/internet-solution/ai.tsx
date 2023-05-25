@@ -104,21 +104,21 @@ const ListWrapper = styled.div`
   }
   .imgWrapper {
     width: 888px;
-    height: 448px;
+    height: 552px;
     border-radius: 8px;
     background: rgba(246, 252, 255, 1);
     box-sizing: border-box;
   }
   img {
     width: 100%;
-    height: 448px;
+    height: 552px;
     margin: 0;
   }
 `;
 const ListItem = styled.div`
   width: 296px;
-  height: 104px;
-  padding-top: 38px;
+  height: 156px;
+  padding-top: 66px;
   padding-left: 40px;
   background: rgba(246, 252, 255, 1);
   margin-bottom: 8px;
