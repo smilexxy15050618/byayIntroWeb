@@ -55,6 +55,9 @@ padding-bottom: 100px;
     transition: all 0.4s;
     @media (max-width: 768px) {
         width: 100vw;
+        transition: none;
+        transform: translateY(0);
+        opacity: 1;
         margin: 24px auto 0;
         .custom-bar-wrapper{
             width: 300px;

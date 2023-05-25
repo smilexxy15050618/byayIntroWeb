@@ -60,7 +60,9 @@ const MainWrap = styled.div`
       opacity: 1;
     }
     @media (max-width: 768px) {
-        animation: none;
+        transition: none;
+        transform: translateY(0);
+        opacity: 1;
     }
 `
 

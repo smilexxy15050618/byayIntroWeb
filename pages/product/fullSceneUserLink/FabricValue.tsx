@@ -49,6 +49,7 @@ const FeatureValueWrap = styled.div`
     font-size: 40px;
     font-weight: 500;
     letter-spacing: 0px;
+    line-height: 228px;
     color: rgba(26, 26, 26, 1);
     @media (max-width: 768px) {
       font-size: 24px;
@@ -66,14 +67,16 @@ const FeatureValueWrap = styled.div`
     @media (max-width: 768px) {
       width: 100vw;
       margin: 24px auto 0;
-      .swiper-slide {
-        width: 300px !important;
+      transition: none;
+        transform: translateY(0);
+        opacity: 1;
+        .swiper-slide {
+          width: 240px !important;
         }
       .custom-bar-wrapper{
           width: 300px;
       }
     }
-
     &.appear {
       transform: translateY(0);
       opacity: 1;
@@ -87,9 +90,9 @@ const FeatureValueWrap = styled.div`
       transition: all 0.3s ease-in;
       @media (max-width: 768px) {
         width: 240px;
-        height: 250px;
-        margin-right: 0;
-        padding: 30px;
+        height: 255px;
+        box-sizing: border-box;
+        padding: 40px 0px 0;
       }
       img {
         transition: all 0.3s;
@@ -122,6 +125,11 @@ const FeatureValueWrap = styled.div`
         width: 80px;
         height: 80px;
         margin: 0 auto 24px;
+        @media (max-width: 768px) {
+          width: 48px;
+          height: 48px;
+          margin: 0 auto 21px;
+        }
       }
       div:nth-child(2) {
         font-size: 18px;
@@ -129,16 +137,30 @@ const FeatureValueWrap = styled.div`
         letter-spacing: 0px;
         color: rgba(26, 26, 26, 1);
         text-align: center;
+        @media (max-width: 768px) {
+          font-size: 15px;
+          font-weight: 500;
+          letter-spacing: 0px;
+          line-height: 21.72px;
+          color: rgba(26, 26, 26, 1);
+        }
+        
       }
       div:last-child {
-        margin-top: 18px;
         font-size: 14px;
         font-weight: 400;
         letter-spacing: 0px;
         color: rgba(26, 26, 26, 0.65);
         text-align: left;
+        margin-top: 18px;
         @media (max-width: 768px) {
-          padding-top: 20px;
+          margin-top: 13px;
+          padding: 0 28px;
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 0px;
+          line-height: 17.38px;
+          color: rgba(26, 26, 26, 0.65);
         }
       }
       img {
@@ -148,6 +170,10 @@ const FeatureValueWrap = styled.div`
           width: 80px;
           top: -1px;
           right: 0px;
+          @media (max-width: 768px) {
+            width: 48px;
+            height: 48px;
+          }
         }
       }
     }
@@ -211,24 +237,26 @@ const RawFabricValue: FC<IProps> = ({ className }) => {
       </Visible>
       <Visible xs sm>
         <div className="FeatureValue-tab" id={AISOLUTION}>
-          <ByProgressSwiper
-            newProgress={true}
-            initialSlide={0}
-            slidesPerView="auto"
-            autoplayDelay={5000}
-            spaceBetween={16}
-            centeredSlides={true}>
-            {FEATURE_TITLE.map((item, i) => (
-              // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
-              <div className="FeatureValue-item">
-                <div>
-                  <img src={item.img3} alt="" />
-                </div>
-                <div>{item.title}</div>
-                <div>{item.subtitle}</div>
-              </div>
-            ))}
-          </ByProgressSwiper>
+        <ByProgressSwiper
+          newProgress={true}
+          initialSlide={0}
+          slidesPerView="auto"
+          autoplayDelay={5000}
+          spaceBetween={16}
+          centeredSlides={true}
+          >
+            {FEATURE_TITLE.map((item, index) => {
+                return (
+                    <div className='FeatureValue-item'>
+                        <div>
+                            <img src={item.img3} alt="" />
+                        </div>
+                        <div>{item.title}</div>
+                        <div>{item.subtitle}</div>
+                    </div>
+                )
+            })}
+        </ByProgressSwiper>
         </div>
       </Visible>
     </FeatureValueWrap>

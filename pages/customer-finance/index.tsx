@@ -67,7 +67,7 @@ const Desc = styled.div`
     text-align: left;
     font-size: 16px;
     line-height: 26px;
-    margin: 0 28px 46px !important;
+    margin: 0 24px 26px 28px !important;
   }
 `;
 
@@ -123,7 +123,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
               },
             ]}
             mobileImg={JOIN_US_IMG_WAP}
-            mobileStyle={{height:'288px'}}>
+            mobileStyle={{height:'288px',marginTop: '21px'}}>
             <TextArea spaces={['', '']}>
               <Hidden xs sm>
                 <BigTitle>
@@ -139,7 +139,7 @@ const About: React.SFC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST 
               </Hidden>
               <Visible xs sm>
                 <BigTitle>
-                  消费金融<br/>智能用户运营解决方案
+                消费金融行业<br/>智能用户运营解决方案
                 </BigTitle>
                 <Desc>针对消费金融业务全链路提供智能化运营方案，用数据驱动精细化运营策略升级，用AI助力消费金融机构业务增长</Desc>
                 <BlueBtnWrap>

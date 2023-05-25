@@ -19,8 +19,9 @@ const SocietyDutyContainerWrap = styled.div`
   transition: all 0.4s;
   opacity: 0;
   @media(max-width: 768px) {
-      transition: none;
-      opacity: 1;
+    transition: none;
+    transform: translateY(0);
+    opacity: 1;
   }
   &.appear{
     transform: translateY(0);

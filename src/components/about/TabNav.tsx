@@ -1,7 +1,6 @@
 import React, { FC, ReactNode, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Hidden, Visible } from 'react-grid-system';
-import { Theme } from '../../constants/style';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import imgurl from '../../../img.url.js'
 
@@ -17,8 +16,9 @@ interface TabNavProps {
   minWidthPC?: string;
 }
 
-const Wrapper = styled.div`
-  
+const Wrapper = styled.div<{
+  active?: string;
+}>`
   .swiper-slide{
     position: relative;
     width: 90px;
@@ -27,22 +27,22 @@ const Wrapper = styled.div`
     line-height: 45px;
     font-size: 16px;
     font-weight: 400;
-    color: rgba(90, 90, 90, 1);
+    color: rgba(90,90,90,1);
+    // &:nth-child(${props => props.active+1}){
+    //   &::after{
+    //     position: absolute;
+    //     left: 30px;
+    //     bottom: 0;
+    //     content: '';
+    //     width: 30px;
+    //     height: 2px;
+    //     opacity: 1;
+    //     border-radius: 2px;
+    //     background: rgba(43, 88, 249, 1);
+    //   }
+    // }
   }
-  .one-slide-active{
-    color: rgba(43, 88, 249, 1);
-    &::after{
-      position: absolute;
-      left: 30px;
-      bottom: 0;
-      content: '';
-      width: 30px;
-      height: 2px;
-      opacity: 1;
-      border-radius: 2px;
-      background: rgba(43, 88, 249, 1);
-    }
-  }
+  
   .capacity-tab{
     position: relative;
     height: 45px;
@@ -133,7 +133,7 @@ const ArrowClickR = styled.div`
 `;
 
 
-const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) => {
+const TabNav: React.SFC<TabNavProps> = ({ bannerList, onCancel }) => {
   const [actIndex, setActIndex] = useState(0)
   const [controlledSwiper, setControlledSwiper] = useState(null);
   const [slideTranslate,setSlideTranslate]  = useState(0)
@@ -162,27 +162,27 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
         set_is_fixed(isFixed);
 
         if (scrollTop >= qiyejieshao.offsetTop - 109 && scrollTop < MissionVision.offsetTop - 109) {
-          onCancel(6)
+          // onCancel(6)
           setActIndex(0)
         }
         if (scrollTop >= MissionVision.offsetTop - 109 && scrollTop < DevelopHistory.offsetTop - 109) {
-          onCancel(6)
+          // onCancel(6)
           setActIndex(1)
         }
         if (scrollTop >= DevelopHistory.offsetTop - 109 && scrollTop < SocietyDuty.offsetTop - 109) {
-          onCancel(6)
+          // onCancel(6)
           setActIndex(2)
         }
         if (scrollTop >= SocietyDuty.offsetTop - 109 && scrollTop < CreditMedal.offsetTop - 109) {
-          onCancel(6)
+          // onCancel(6)
           setActIndex(3)
         }
         if (scrollTop >= CreditMedal.offsetTop - 109 && scrollTop < JoinUs.offsetTop - 109) {
-          onCancel(6)
+          // onCancel(6)
           setActIndex(4)
         }
         if (scrollTop >= JoinUs.offsetTop - 109) {
-          onCancel(6)
+          // onCancel(6)
           setActIndex(5)
         }
       }
@@ -190,7 +190,7 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
   }, []);
 
   return (
-    <Wrapper>
+    <Wrapper active={actIndex}>
     <Visible md lg xl xxl xxxl>
       <NavItemContainer className={`${is_fixed ? 'fixedTopPc' : ''}`} id="tabNav">
         <NavItemContainerCom>
@@ -236,8 +236,8 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
           {bannerList.map(({ name, jumpTarget }, navIndex) => {
             return (
               <SwiperSlide 
-                className={actIndex == navIndex ? 'one-slide-active one-slide' : 'one-slide'} 
-                key={navIndex} 
+                style={{color: actIndex == navIndex ? 'rgba(43, 88, 249, 1)' : 'rgba(90, 90, 90, 1)'}}
+                
                 onClick={() => {
                   onSlideChange(navIndex)
                   const node = document.querySelector(jumpTarget);
@@ -260,7 +260,6 @@ const TabNav: React.SFC<TabNavProps> = ({ minWidthPC, bannerList, onCancel }) =>
         ></ArrowClickR>
       </div>
     </Visible>
-    {/*<div style={{width: '100%', height: '129px', paddingTop: '129px', display: is_fixed ? 'block' : 'none'}}></div>*/}
     </Wrapper>
   )
 };

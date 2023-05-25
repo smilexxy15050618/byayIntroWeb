@@ -16,7 +16,6 @@ import {
   CustomerWords,
   JoinUs,
 } from '../../src/components/about';
-import AboutOld, { AboutContent } from '../about';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 import imgurl from '../../img.url.js';
 import { HOST_ENUM } from '../../src/lib/utils';
