@@ -139,13 +139,14 @@ const TabNav: React.SFC<TabNavProps> = ({ bannerList, onCancel }) => {
   const [slideTranslate,setSlideTranslate]  = useState(0)
   const [is_fixed, set_is_fixed] = useState(false);
   const navRef = useRef(null);
+  const oneSwipers = useRef(null);
 
   const onSlideChange = index => {
     setActIndex(index);
   };
 
   useEffect(() => {
-
+    
     const fixedTop = document.getElementById('tabNav').offsetTop;
 
     window.onscroll = () => {
@@ -161,30 +162,41 @@ const TabNav: React.SFC<TabNavProps> = ({ bannerList, onCancel }) => {
         const isFixed = scrollTop >= fixedTop - 110;
         set_is_fixed(isFixed);
 
-        if (scrollTop >= qiyejieshao.offsetTop - 109 && scrollTop < MissionVision.offsetTop - 109) {
-          // onCancel(6)
+        if (scrollTop >= qiyejieshao.offsetTop - 100 && scrollTop < MissionVision.offsetTop - 100) {
           setActIndex(0)
+          if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
+            oneSwipers.current.swiper.slideTo(0)
+          }
         }
-        if (scrollTop >= MissionVision.offsetTop - 109 && scrollTop < DevelopHistory.offsetTop - 109) {
-          // onCancel(6)
+        if (scrollTop >= MissionVision.offsetTop - 100 && scrollTop < DevelopHistory.offsetTop - 100) {
           setActIndex(1)
+          if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
+            oneSwipers.current.swiper.slideTo(0)
+          }
         }
-        if (scrollTop >= DevelopHistory.offsetTop - 109 && scrollTop < SocietyDuty.offsetTop - 109) {
-          // onCancel(6)
+        if (scrollTop >= DevelopHistory.offsetTop - 120 && scrollTop < SocietyDuty.offsetTop - 120) {
           setActIndex(2)
         }
-        if (scrollTop >= SocietyDuty.offsetTop - 109 && scrollTop < CreditMedal.offsetTop - 109) {
-          // onCancel(6)
+        if (scrollTop >= SocietyDuty.offsetTop - 120 && scrollTop < CreditMedal.offsetTop - 120) {
           setActIndex(3)
         }
-        if (scrollTop >= CreditMedal.offsetTop - 109 && scrollTop < JoinUs.offsetTop - 109) {
-          // onCancel(6)
+        if (scrollTop >= CreditMedal.offsetTop - 120 && scrollTop < JoinUs.offsetTop - 120) {
           setActIndex(4)
+          if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
+            oneSwipers.current.swiper.slideTo(2)
+          }
         }
-        if (scrollTop >= JoinUs.offsetTop - 109) {
-          // onCancel(6)
+        if (scrollTop >= JoinUs.offsetTop - 120) {
           setActIndex(5)
+          if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
+            oneSwipers.current.swiper.slideTo(2)
+          }
         }
+
+        if (scrollTop >= JoinUs.offsetTop + JoinUs.offsetHeight - 10) {
+        set_is_fixed(false);
+      }
+
       }
     // };
   }, []);
@@ -225,6 +237,7 @@ const TabNav: React.SFC<TabNavProps> = ({ bannerList, onCancel }) => {
           style={{display: slideTranslate == 0 ? 'none' : 'block'}}
         ></ArrowClickL>
         <Swiper
+        ref={oneSwipers}
           slidesPerView="auto"
           onSlideChange = {swiper => {
             setSlideTranslate(swiper.activeIndex)
@@ -235,9 +248,8 @@ const TabNav: React.SFC<TabNavProps> = ({ bannerList, onCancel }) => {
         >
           {bannerList.map(({ name, jumpTarget }, navIndex) => {
             return (
-              <SwiperSlide 
+              <SwiperSlide
                 style={{color: actIndex == navIndex ? 'rgba(43, 88, 249, 1)' : 'rgba(90, 90, 90, 1)'}}
-                
                 onClick={() => {
                   onSlideChange(navIndex)
                   const node = document.querySelector(jumpTarget);
