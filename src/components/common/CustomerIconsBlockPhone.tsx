@@ -67,7 +67,7 @@ const RawCustomerIconsBlock: FC<IProps> = ({ className }) => {
               key={i}>
               <div className="customer-icon-row">
                 {row.map((imgUrl, j) => (
-                  <div className={i % 2 === 1 ? 'customer-icon border-i' : 'customer-icon shadow-i'} key={j}>
+                  <div className={i % 2 === 1 ? 'customer-icon border-i' : 'customer-icon shadow-i'} key={j} data-v={imgUrl} style={{display:imgUrl =='23.png'? 'none':''}}>
                     <img
                       src={
                         'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/logo/logo%E5%A2%99-' +

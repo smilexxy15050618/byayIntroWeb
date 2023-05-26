@@ -536,8 +536,8 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
           <CompanyDescCol lg={7}>
             <div className="title">联系我们</div>
             <a href="tel:4000235100" className="margin-adjust phone">
-              <div>电话: </div>
-              <div>400-0235-100</div>
+            <div>400-0235-100</div>
+              <br />
             </a>
 
             <div className="margin-adjust addr">

@@ -398,12 +398,26 @@ padding-top: 9px;
       div {
         font-size: 11px;
         font-weight: 400;
-        letter-spacing: 0.5px;
+        // letter-spacing: 0.5px;
         height: 39px;
-        line-height: 20px;
+        // line-height: 20px;
         color: rgba(43, 88, 249, 1);
         width: 48%;
         margin-bottom: 5px;
+        position:relative;
+
+      }
+      .moreClick{
+        // text-align:left;
+        span{
+          transform: scale(0.8);
+          display: inline-block;
+          width: 90%;
+          white-space: nowrap;
+        position: absolute;
+        text-align:left;
+        left: -5px;
+        }
       }
       div:nth-child(2), div:nth-child(4) {
         margin-right: 0;
@@ -570,8 +584,8 @@ const QuickAreaPhone = styled.div`
   // width: 96%;
   flex-wrap: wrap;
   margin: 0 8px;
-  // padding: 25px 0;
-  // background: #ffffff;
+  padding: 25px 0;
+  background: #ffffff;
   border-radius: 10px;
   position: absolute;
 
@@ -680,7 +694,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                 </div>
 
                 <div className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/f2fOn80IdZv1LYT5BtItng')}>
-                  点击查看
+                  立即体验
                 </div>
                 <div className="bg-img-blue">
                   <img style={{width: '644px', height: '496px'}} src={imgurl + '/sy-banner3.png'} alt="" />
@@ -706,7 +720,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                   onClick={() => {
                     window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
                   }}>
-                  点击查看
+                  立即体验
                 </div>
                 <div className="bg-img-blue">
                   <img style={{  width: '644px', height: '496px'}} src={imgurl + '/sy-banner2.png'} alt="" />
@@ -768,6 +782,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                 </div>
                 <div
                   className="carousel-btn"
+                  style={{ marginBottom : '66px' }}
                   onClick={() => {
                     window.open(`/form?formType=1`);
                   }}>
@@ -787,7 +802,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                 浙江省经济和信息化厅公示｜2023年度第一批企业名单
                 </div>
                 <div style={{marginBottom: '33px',}} className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/f2fOn80IdZv1LYT5BtItng')}>
-                  点击查看
+                  立即体验
                 </div>
                 <div style={{ width: '100%',height: '279px' }} className="bg-img-blue-phone">
                   <img style={{ height: '100%' }} src={imgurl + '/sy-banner3.png'} alt="" />
@@ -812,7 +827,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                   onClick={() => {
                     window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
                   }}>
-                  点击查看
+                  立即体验
                 </div>
                 <div className="bg-img-blue-phone">
                   <img style={{ width: '610px' }} src={imgurl + '/sy-banner2.png'} alt="" />
@@ -824,10 +839,10 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                 <div style={{ marginBottom: '14px', lineHeight: '38px'}} className="main-title-m">4项人工智能关键</div>
                 <div style={{ marginBottom: '14px', lineHeight: '38px'}} className="main-title-m">技术标准编写单位</div>
                 <div className='third-group'>
-                    <div style={{ padding: '0', lineHeight: '36px' }}>大规模训练技术模型开发</div>
-                    <div style={{ padding: '0', lineHeight: '36px' }}>大规模训练技术模型能力</div>
-                    <div style={{ padding: '0' ,lineHeight: '36px' }}>智能对话平台开发及服务能力</div>
-                    <div style={{ padding: '0', lineHeight: '36px' }}>智能客服系统服务</div>
+                    <div className='moreClick' style={{ padding: '0', lineHeight: '36px' }}><span>大规模训练技术模型开发</span> </div>
+                    <div className='moreClick' style={{ padding: '0', lineHeight: '36px' }}><span>大规模训练技术模型能力</span></div>
+                    <div className='moreClick' style={{ padding: '0' ,lineHeight: '36px' }}><span>智能对话平台开发及服务能力</span></div>
+                    <div className='moreClick' style={{ padding: '0', lineHeight: '36px' }}><span>智能客服系统服务</span></div>
                 </div>
 
                 <div
@@ -836,7 +851,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                   onClick={() => {
                     window.open(`/form?formType=1`);
                   }}>
-                  点击查看
+                  立即体验
                 </div>
                 <div className="bg-img-blue-phone">
                   <img src={imgurl + '/sy-banner4.png'} alt="" />

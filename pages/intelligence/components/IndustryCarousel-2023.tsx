@@ -8,9 +8,10 @@ import { TextArea } from '../../../src/components/common/BannerTextElements';
 const Wrapper = styled.div`
 padding-top: 60px;
 padding-bottom: 100px;
-/* background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%); */
 @media (max-width: 768px) {
   padding-bottom: 40px;
+ background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%); 
+
 }  
 .title {
     margin-top: 100px;
@@ -127,7 +128,8 @@ const PREFIX = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2
 const BANNER_BG = `${PREFIX}/multimodal-banner-bg.svg`;
 export const IndustryCarousel = () => {
   useEffect(() => {
-    let img =  document.querySelector('.bannerImg').querySelector('img');
+    try {
+      let img =  document.querySelector('.bannerImg').querySelector('img');
     const video = document.createElement('video');
     video.src = imgurl + '/20230427-103948.mp4'
     video.controls = true;
@@ -148,6 +150,26 @@ export const IndustryCarousel = () => {
         console.log(e)
       }
     }, 5000);
+    } catch (error) {
+      
+    }
+
+    try {
+      const video = document.querySelector('video');
+      // img.parentElement.replaceChild(video,img)
+     
+      setTimeout(() => {
+        
+        try {
+          video.play();
+        }
+        catch(e) {
+          console.log(e)
+        }
+      }, 5000);
+    } catch (error) {
+      
+    }
   })
   return (
     <Wrapper>
@@ -192,6 +214,9 @@ export const IndustryCarousel = () => {
         />
       </Visible> */}
       <Visible xs sm>
+      <div className='title'>
+        策略智能与自动化
+      </div>
       <div className='desc'>策略自动生成、数据验证、自动化运行，实现目标人群的精准触达，提升关键指标和运营效率</div>
         <div className="jumpbtn" onClick={() => window.open('/form?formType=1')}>
           立即体验

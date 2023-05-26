@@ -62,6 +62,7 @@ const CardContent = styled.aside`
     position: absolute;
     right: 0;
     top: 0;
+    opacity:0.7;
   }
   .diwen {
     width: 100%;

@@ -71,7 +71,7 @@ const MainWrap = styled.div`
 `
 
 const carouselDataList = imgurl+'/bank-scene-solution.svg'
-const carouselDataListWap = '/static/img2023/bank-scene-solution-wap.png'
+const carouselDataListWap = imgurl+'/bank-scene-solution-wap.png'
 
 const SceneSolution: FC<SceneSolution> = ({}) => {
    

@@ -8,7 +8,7 @@ import classNames from 'classnames';
 const AITime = styled.div`
   background: url(${imgurl}/aisd.png) no-repeat;
   background-size: 100% 100%;
-  padding-top: 160px;
+  padding-top: 190px;
 `
 const Title = styled.div`
 font-size: 24px;
@@ -18,6 +18,8 @@ line-height: 32px;
 color: rgba(26, 26, 26, 1);
 text-align: center;
 // padding-top: 66px;
+  margin-top:20px;
+
 `
 const SubTitle = styled.div`
 font-size: 13px;
@@ -353,7 +355,9 @@ export const NewVideoPhone = () => {
         return (<div
           onClick={()=>{
             if(item.path){
-            //   window.location.href = item.path;
+              if(index>3){
+                window.location.href = item.path;
+              }
             }
           }}
           className={classNames('listItem', {
