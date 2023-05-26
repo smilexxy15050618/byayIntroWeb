@@ -211,14 +211,30 @@ const FeatureWrap = styled.div`
     background:#fff;
   }
     .relative-position{
-      
+      position: relative;
+      text-align: center;
+      padding-top: 36px;
+      padding-bottom: 34px;
+      background: rgba(255, 255, 255, 1);
       &:nth-child(2) {
         background: rgba(244, 248, 254, 1);
+        img{
+          width: 343px;
+          height: 312px;
+        }
       }
       &:nth-child(4) {
         background: rgba(244, 248, 254, 1);
+        img{
+          width: 343px;
+          height: 261px;
+        }
       }
       &:nth-child(3) {
+        img{
+          width: 343px;
+          height: 261px;
+        }
       }
       img{
         width: 343px;
@@ -336,7 +352,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
         </div>
       </Visible>
       <Visible xs sm>
-        <div className='FeatureIntroduceWrap FeatureWap' ref={navRef}>
+        <div className='FeatureIntroduceWrap' ref={navRef}>
           {FEATURE_INFO.map((item, i) => (
             <div className="relative-position" id={item.id} ref={i == 0 ? navRefWeChat : i == 1 ? navRefCommunicate : i == 2 ? navRefOnlineCommunication : navRefIntelligentTerminal}>
               <img src={item.pcImgs[0].src} />
