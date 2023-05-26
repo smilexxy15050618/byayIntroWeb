@@ -27,8 +27,8 @@ const list = [
         img1: '/lp_i_m.png',
         banner: '/lp.png',
         banner1: '/lp_p.png',
-        content: '宣传劝阻全量铺开，首创百万级居民反诈“新路径”。',
-        title:'临平公安局'
+        content: 'AI代替民警24小时在线执勤，实现全时全域可触达。',
+        title:'中山市公安局'
 
     }
 ]
@@ -229,6 +229,68 @@ const ListItem = styled.div`
     }
 `
 
+const SolutionWap = styled.div`
+    width: 100%;
+    padding-bottom: 40px;
+    @media (max-width: 768px) {
+         width: 100%;
+        display: block;
+        .swiper-slide {
+            width: 300px !important;
+        }
+        .custom-bar-wrapper{
+            width: 300px;
+        }
+    }
+    .solution-item{
+        position: relative;
+        width: 300px;
+        height: 356px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
+        box-sizing: border-box;
+        img{
+            width: 300px;
+            height: 160px;
+            margin: 0;
+        }
+        .title{
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 26px;
+            color: rgba(43, 88, 249, 1);
+            padding: 24px 24px 0;
+            &::before{
+                display: inline-block;
+                content: '';
+                width: 18px;
+                height: 18px;
+                background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTlweCIgaGVpZ2h0PSIxOXB4IiB2aWV3Qm94PSIwIDAgMTkgMTkiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+6ZK755+zPC90aXRsZT4KICAgIDxnIGlkPSLpobXpnaItMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IueUu+advyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMC4wMDAwMDAsIC0zOTEuMDAwMDAwKSIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPGcgaWQ9IuWuouaIt+ahiOS+i+agt+W8jy005qC85aSH5Lu9IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5NS4wMDAwMDAsIDIwNS4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxnIGlkPSLnvJbnu4QtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjUuODQwOTczLCAxODIuNTAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgPGcgaWQ9IumSu+efsyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsIDQuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxyZWN0IGlkPSLnn6nlvaIiIGZpbGw9IiMwMDAwMDAiIG9wYWNpdHk9IjAiIHg9IjAiIHk9IjAiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PC9yZWN0PgogICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNi44NTM5NTcwMywwLjkgTDIuNywwLjkgTDAsNS44NSBMNC45NSw1Ljg1IEw2Ljg1Mzk1NzAzLDAuOSBaIE0xOCw1Ljg1IEwxNS4zLDAuOSBMMTEuMTQ2NSwwLjkgTDEzLjA1LDUuODUgTDE4LDUuODUgWiBNMTIuMTUsNS44NSBMMTAuMjQ2NSwwLjkgTDcuNzUzOTU3MDMsMC45IEw1Ljg1LDUuODUgTDEyLjE1LDUuODUgWiBNMTAuMzg0NjQ2NSwxNS44ODg2MDM1IEwxOCw2Ljc1IEwxMy4wNSw2Ljc1IEwxMC4zODQ2NDY1LDE1Ljg4ODYwMzUgWiBNMCw2Ljc1IEw3LjYxNTM1MzUyLDE1Ljg4ODYwMzUgTDQuOTUsNi43NSBMMCw2Ljc1IFogTTUuODUsNi43NSBMOSwxNy41NSBMMTIuMTUsNi43NSBMNS44NSw2Ljc1IFoiIGlkPSLlvaLnirYiIGZpbGw9IiMyQjU4RjkiPjwvcGF0aD4KICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                vertical-align: -4px;
+                margin-right: 4px;
+            }
+        }
+        .content {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 26px;
+            color: rgba(0, 0, 0, 1);
+            padding: 16px 24px 25px;
+        }
+        .demo-go{
+            padding-top: 10px;
+            padding-left: 24px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: rgba(43, 88, 249, 1);
+        }
+    }
+`
 
 const UNFRAUD = 'unfraud_case'
 export const CustomerStories: FC = () => {
@@ -292,7 +354,30 @@ export const CustomerStories: FC = () => {
                 <Visible xs sm>
                 <Title>客户案例</Title>
                 <ListWrapper id={UNFRAUD}>
+                    <SolutionWap>
                 <ByProgressSwiper
+                        newProgress={true}
+                        initialSlide={0}
+                        slidesPerView="auto"
+                        autoplayDelay={5000}
+                        spaceBetween={16}
+                        centeredSlides={true}>
+                        {list.map((item, i) => (
+                        // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
+                        <div className='solution-item'>
+                            <img src={imgurl+item.banner} />
+                            <div className='title'>{item.title}</div>
+                            <div className="content">{item.content}</div>
+                            <a 
+                            onClick={() =>
+                                window.open('/form?formType=1')
+                            }
+                            className="demo-go">了解详情 →</a>
+                        </div>
+                        ))}
+                    </ByProgressSwiper>
+                    </SolutionWap>
+                {/* <ByProgressSwiper
             newProgress={true}
             initialSlide={0}
             slidesPerView="auto"
@@ -316,7 +401,7 @@ export const CustomerStories: FC = () => {
                             )
                         })
                     }
-                    </ByProgressSwiper>
+                    </ByProgressSwiper> */}
                 </ListWrapper>
                 </Visible>
             </MainWrapper>

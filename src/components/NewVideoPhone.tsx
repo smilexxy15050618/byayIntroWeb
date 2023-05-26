@@ -353,7 +353,9 @@ export const NewVideoPhone = () => {
         return (<div
           onClick={()=>{
             if(item.path){
-            //   window.location.href = item.path;
+              if(index>3){
+                window.location.href = item.path;
+              }
             }
           }}
           className={classNames('listItem', {
