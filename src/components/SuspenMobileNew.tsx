@@ -96,29 +96,29 @@ const SuspenMobileNew = styled(RawSuspenMobileNew) < ISuspenMobileNewProps > `
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 52px;
+  height: 56px;
   background: #ffffff;
   > div {
     font-size: 16px;
-    font-weight: 500;
-    color: #2b58f9;
+    font-weight: 400;
+    color: rgba(43, 88, 249, 1);
     line-height: 24px;
     text-align: center;
   }
   > div:nth-child(1) {
-    // border-right: 1px solid rgb(230, 230, 230);
     flex: 1;
   }
   > div:nth-child(2) {
-    flex: 1;
-    // border-left: 1px solid rgb(230, 230, 230);
-    // border-right: 1px solid rgb(230, 230, 230);
+    width: 112px;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
     background: rgba(43,88,249,1);
-    height: 60px;
-    line-height: 60px;
     border-radius: 30px;
     margin-top: -8px;
     color: #fff;
+    border-radius: 32px;
+    background: rgba(43, 88, 249, 1);
   }
   > div:nth-child(3) {
     flex: 1;

@@ -48,7 +48,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
       },
     ],
     id: 'WeChat',
-    boxheight: '718px',
+    boxheight: '773px',
   },
   {
     title: '电话 / 短信 / 5G消息',
@@ -61,7 +61,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
       },
     ],
     id: 'Communicate',
-    boxheight: '784px',
+    boxheight: '819px',
   },
   {
     title: '在线沟通',
@@ -87,7 +87,7 @@ const FEATURE_INFO: IFeatureIntroduceProps[] = [
       },
     ],
     id: 'IntelligentTerminal',
-    boxheight: '750px',
+    boxheight: '718px',
   },
 ];
 
@@ -210,46 +210,15 @@ const FeatureWrap = styled.div`
     width: 100vw;
     background:#fff;
   }
-  .FeatureWap{
     .relative-position{
-      position: relative;
-      text-align: center;
-      padding-top: 36px;
-      padding-bottom: 34px;
-      background: rgba(255, 255, 255, 1);
-      .relative-position-wap0{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        background:#fff;
-      }
-      .relative-position-wap1{
-        position: absolute;
-        top: -230px;
-        left: 0;
-        width: 100vw;
-        background:#fff;
-      }
-      .relative-position-wap2{
-        position: absolute;
-        top: -150px;
-        left: 0;
-        width: 100vw;
-        background:#fff;
-      }
+      
       &:nth-child(2) {
         background: rgba(244, 248, 254, 1);
-        img{
-          width: 343px;
-          height: 312px;
-        }
+      }
+      &:nth-child(4) {
+        background: rgba(244, 248, 254, 1);
       }
       &:nth-child(3) {
-        img{
-          width: 343px;
-          height: 261px;
-        }
       }
       img{
         width: 343px;
@@ -276,10 +245,6 @@ const FeatureWrap = styled.div`
         color: rgba(0, 0, 0, 0.65);
       }
     }
-    .placeholderDom{
-      padding-top: 186px;
-    }
-  }
 `;
 
 interface IProps {
@@ -297,48 +262,55 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
   const navRefIntelligentTerminal = useRef(null);
 
   useEffect(() => {
-    // const fixedTop = navRef.current.offsetTop;
-    // window.onscroll = () => {
-    //   let scrollTop = document.documentElement.scrollTop;
-    //   const isFixed = scrollTop >= fixedTop - 110;
-    //   set_is_fixed(isFixed);
-    //   if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
-    //     if (scrollTop >= navRefWeChat.current.offsetTop - 140 && scrollTop < navRefCommunicate.current.offsetTop - 140) {
-    //       setCurrIndex(0)
-    //     }
-    //     if (scrollTop >= navRefCommunicate.current.offsetTop - 140 && scrollTop < navRefOnlineCommunication.current.offsetTop - 140) {
-    //       setCurrIndex(1)
-    //     }
-    //     if (scrollTop >= navRefOnlineCommunication.current.offsetTop - 140 && scrollTop < navRefIntelligentTerminal.current.offsetTop - 140) {
-    //       setCurrIndex(2)
-    //     }
-    //     if (scrollTop >= navRefIntelligentTerminal.current.offsetTop - 140) {
-    //       setCurrIndex(3)
-    //     }
+    const fixedTop = navRef.current.offsetTop;
+    window.onscroll = () => {
+      let scrollTop = document.documentElement.scrollTop;
+      const isFixed = scrollTop >= fixedTop - 170;
+      set_is_fixed(isFixed);
+      
+      if (scrollTop >= navRefWeChat.current.offsetTop - 220 && scrollTop < navRefCommunicate.current.offsetTop - 220) {
+        setCurrIndex(0)
+      }
+      if (scrollTop >= navRefCommunicate.current.offsetTop - 220 && scrollTop < navRefOnlineCommunication.current.offsetTop - 220) {
+        setCurrIndex(1)
+      }
+      if (scrollTop >= navRefOnlineCommunication.current.offsetTop - 220 && scrollTop < navRefIntelligentTerminal.current.offsetTop - 220) {
+        setCurrIndex(2)
+      }
+      if (scrollTop >= navRefIntelligentTerminal.current.offsetTop - 220) {
+        setCurrIndex(3)
+      }
 
-    //     if (scrollTop >= navRefIntelligentTerminal.current.offsetTop + navRefIntelligentTerminal.current.offsetHeight - 118) {
-    //       set_is_fixed(false);
-    //     }
-    //   }
+      if (scrollTop >= navRefIntelligentTerminal.current.offsetTop + navRefIntelligentTerminal.current.offsetHeight - 10) {
+        set_is_fixed(false);
+      }
 
-    // };
+    };
   }, []);
 
   return (
     <FeatureWrap>
       <div className="title">产品能力</div>
       <Visible md lg xl xxl xxxl>
-        <div className="capacity-tab" ref={navRef}>
+        <div ref={navRef} className={`capacity-tab ${is_fixed ? 'fixedTop' : ''}`}>
           {FEATURE_TITLE.map((item, i) => (
             <div
               className={i == currIndex ? 'capacity-item active' : 'capacity-item'}
               onClick={() => {
-                const node = document.querySelector(`.FeatureIntroduceWrap > .${item.id}`);
-                if (node) {
-                  node.scrollIntoView({ behavior: 'smooth' });
-                }
                 onCancel();
                 setCurrIndex(i);
+
+                const node = document.getElementById(`${item.id}`).offsetTop
+                if(i==1){
+                  if(is_fixed){
+                    window.scrollTo({top:node-220,behavior:'smooth'});
+                  } else{
+                    window.scrollTo({top:node-390,behavior:'smooth'});
+                  }
+                } else{
+                  window.scrollTo({top:node-220,behavior:'smooth'});
+                }
+                
               }}>
               <img src={i == currIndex ? item.iconnormal : item.iconactive} />
               <img src={item.iconnormal} />
@@ -349,43 +321,24 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
         </div>
         <div className="FeatureIntroduceWrap">
           {FEATURE_INFO.map((item, i) => (
-            <FeatureIntroduce
-              {...item}
-              key={i}
-              id={item.id}
-              imgFirst={i % 2 === 1}
-              background={i == 1 ? 'rgba(244, 248, 254, 1)' : '#FFFFFF'}
-              height={item.boxheight}
-              padding="0 0"
-              className={'relative-position ' + item.id}
-            />
+            <div className={'relative-position'} id={item.id} ref={i == 0 ? navRefWeChat : i == 1 ? navRefCommunicate : i == 2 ? navRefOnlineCommunication : navRefIntelligentTerminal}>
+              <FeatureIntroduce
+                {...item}
+                key={i}
+                id={item.id}
+                imgFirst={i % 2 === 1}
+                background={i == 1 ? 'rgba(244, 248, 254, 1)' : i == 3 ? 'rgba(244, 248, 254, 1)' : '#FFFFFF'}
+                height={item.boxheight}
+                padding="0 0"
+              />
+            </div>
           ))}
         </div>
       </Visible>
       <Visible xs sm>
-        {/* <div className={`capacity-tab ${is_fixed ? 'fixedTop' : ''}`} ref={navRef}>
-          {FEATURE_TITLE.map((item, i) => (
-            <div
-              className={i == currIndex ? 'capacity-item active' : 'capacity-item'}
-              onClick={() => {
-                const node = document.querySelector(`.FeatureIntroduceWrap > .${item.id}`);
-                if (node) {
-                  node.scrollIntoView({ behavior: 'smooth' });
-                }
-                onCancel();
-                setCurrIndex(i);
-              }}>
-              <img src={i == currIndex ? item.iconnormal : item.iconactive} />
-              <img src={item.iconnormal} />
-              <div className="title-tab">{item.title}</div>
-              <div className="subtitle">{item.subtitle}</div>
-            </div>
-          ))}
-        </div> */}
-        <div className='FeatureIntroduceWrap FeatureWap'>
+        <div className='FeatureIntroduceWrap FeatureWap' ref={navRef}>
           {FEATURE_INFO.map((item, i) => (
-            <div className={currIndex == i && is_fixed ? `relative-position ${item.id} placeholderDom` : `relative-position ${item.id}`} ref={i == 0 ? navRefWeChat : i == 1 ? navRefCommunicate : i == 2 ? navRefOnlineCommunication : navRefIntelligentTerminal}>
-              {/*占位div,吸定后脱离文档流，dom高度发生变化了*/}
+            <div className="relative-position" id={item.id} ref={i == 0 ? navRefWeChat : i == 1 ? navRefCommunicate : i == 2 ? navRefOnlineCommunication : navRefIntelligentTerminal}>
               <img src={item.pcImgs[0].src} />
               <div className="title1">{item.title}</div>
               <div className="title2">{item.textOne}</div>
