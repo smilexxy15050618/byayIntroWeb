@@ -160,12 +160,21 @@ export const FOOTER_CONFIG = [
   {
     title: '解决方案',
     list: [
+      { name: '银行', href: '/bank' },
       { name: '零售', href: '/retail' },
-      { name: '公安反诈', href: '/unfraud' },
-      { name: '互联网', href: '/internet-solution' },
       { name: '保险', href: '/insure' },
+      { name: '互联网', href: '/internet-solution' },
       { name: '消费金融', href: '/customer-finance' },
-      { name: '', href: '' }, // 占位防止3项时居中问题
+      { name: '汽车', href: '/selection_car' },
+      // { name: '', href: '' }, // 占位防止3项时居中问题
+    ],
+  },
+  {
+    title: '解决方案',
+    list: [
+      { name: '公安综治', href: '/gongAn-synthetical' },
+      { name: '公安反诈', href: '/unfraud' },
+      { name: '政务服务', href: '/government-services' },
     ],
   },
   {

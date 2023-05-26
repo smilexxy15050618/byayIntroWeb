@@ -370,12 +370,17 @@ const LinkCol = styled(Col)`
       margin-bottom: 22px;
     `}
     span {
-      display: inline-block;
-      margin-left: 3px;
-      width: 26px;
-      height: 12px;
-      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAYCAYAAAC1Ft6mAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAILSURBVFiF1ZdBkuIwDEWf3FyDZkWKW2B2vpWTW2VH5hYUs0r6HG3PwlERmATCtNNMvyo2trElW/pSBODD7Wzk04NYfhyxicivTX0uASQ5E47DyRda9zQCHiBCtanPJa0rys4V8dWGfYXObY/qgxHwEapXG/UVhLcKUuqsxhZ8uJ0NBGswzbo+NVMbta4oATR+x/YBCAQ7HB9br2fOsP+vPdb1qelcAcCoQ4FgBXwgADRTm6b4jaPzrSvKSPD9uis6V3jBHIaXpWfOcWbqTAAzb4PnaF1RqrOCObzXZ3mvzxKh0vCOhKO+IKQbF8xh+FPDb8c1xMYYfaEcziTV+V0O5zRMWleQ1nx6BhFwG96d2/qx8XtkfyENm6m8uszFBsQOXykHWR1S4+aopoZN/0rZuBtyQtyrks2hT+yX8iCHxArYJQ6+SG3eduuuQxEqg2mm57Vluubef5bmocrdUxgtZorBNJHg+wI5+b8hubuUrKKgzgtx/2jtM7n5DAsU1iTHjwxWec8dngvUoSTHAn7MqQ+3s53bHiGF2zNFcw7ZO4V1fWpaV1QCXsB3brvXbywh7iPBgly+XzKzSC+3qc+l9m699PtL45n6uyWcAZDOFXGp2/pOOldEwRxW6cZ4qEr/M5qr6/rUrIS3KhKOOvjKovgv9L2g1XomMPx++ZkMU+aql8zdyn8Ht7L/B8AQ9/bBLiWNAAAAAElFTkSuQmCC')
-        no-repeat center center/ contain;
+      margin-left: 6px;
+      width: 24px;
+      height: 13px;
+      // background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAYCAYAAAC1Ft6mAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAILSURBVFiF1ZdBkuIwDEWf3FyDZkWKW2B2vpWTW2VH5hYUs0r6HG3PwlERmATCtNNMvyo2trElW/pSBODD7Wzk04NYfhyxicivTX0uASQ5E47DyRda9zQCHiBCtanPJa0rys4V8dWGfYXObY/qgxHwEapXG/UVhLcKUuqsxhZ8uJ0NBGswzbo+NVMbta4oATR+x/YBCAQ7HB9br2fOsP+vPdb1qelcAcCoQ4FgBXwgADRTm6b4jaPzrSvKSPD9uis6V3jBHIaXpWfOcWbqTAAzb4PnaF1RqrOCObzXZ3mvzxKh0vCOhKO+IKQbF8xh+FPDb8c1xMYYfaEcziTV+V0O5zRMWleQ1nx6BhFwG96d2/qx8XtkfyENm6m8uszFBsQOXykHWR1S4+aopoZN/0rZuBtyQtyrks2hT+yX8iCHxArYJQ6+SG3eduuuQxEqg2mm57Vluubef5bmocrdUxgtZorBNJHg+wI5+b8hubuUrKKgzgtx/2jtM7n5DAsU1iTHjwxWec8dngvUoSTHAn7MqQ+3s53bHiGF2zNFcw7ZO4V1fWpaV1QCXsB3brvXbywh7iPBgly+XzKzSC+3qc+l9m699PtL45n6uyWcAZDOFXGp2/pOOldEwRxW6cZ4qEr/M5qr6/rUrIS3KhKOOvjKovgv9L2g1XomMPx++ZkMU+aql8zdyn8Ht7L/B8AQ9/bBLiWNAAAAAElFTkSuQmCC')
+      //   no-repeat center center/ contain;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0px;
+      line-height: 13px;
+      color: rgba(255, 255, 255, 1);
+      text-align: center;
     }
   }
   a {
@@ -563,7 +568,7 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
   return (
     <FooterWrapper>
       <Container>
-        <Row justify="between" style={{paddingBottom: '52px'}}>
+        <Row justify="between" style={{paddingBottom: '42px'}}>
           <Visible md lg xl xxl xxxl>
             <div style={{ width: '206px',}}>
               <div style={{ width: '184px', marginTop: 32 }}>
@@ -575,10 +580,11 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
             {(origin === 'crm' ? CRM_FOOTER_CONFIG : FOOTER_CONFIG)
             .filter(block => block.title !== '热门搜索产品')
             .map((block, index) => (
-              <LinkCol key={block.title} style={{width: block.title=='百应产品' ? '296px' : block.title=='解决方案' ? '192px' : block.title == '探索百应' ? '168px' : 'auto', flex:'none'}}>
-                <h6>
+              <LinkCol key={block.title} style={{width: block.title=='百应产品' ? '280px' : block.title=='解决方案' ? '176px' : block.title == '探索百应' ? '134px' : 'auto', flex:'none'}}>
+                <h6 style={{display: 'flex', alignItems: 'center'}}>
                   {block.title}
-                  <span style={{ display: index == 1 ? 'inline-block' : 'none' }}></span>
+                  <span style={{ display: index == 1 ? 'inline-block' : 'none', background: 'rgba(234, 85, 0, 1)' }}>企业</span>
+                  <span style={{ display: index == 2 ? 'inline-block' : 'none', background: 'rgba(43, 88, 249, 1)' }}>政务</span>
                 </h6>
                 <Row style={block.style}>
                   {block.list.map((item, i) => (
