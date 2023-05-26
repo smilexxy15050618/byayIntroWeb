@@ -230,9 +230,9 @@ export const Ai: FC<IAiProps> = ({ }) => {
                     <div className="lists">
                     {titleList.map(({ title, subTitle }, index) => {
                         return (
-                                <ListItem className={index==currIndex?'active':null} onClick={()=>setCurrIndex(index)}>
+                                <ListItem style={{cursor:'pointer'}}  className={index==currIndex?'active':null} onClick={()=>setCurrIndex(index)}>
                                     <div>{title}</div>
-                                    {index==currIndex&&<div dangerouslySetInnerHTML={{ __html: subTitle }}></div>}
+                                    {index==currIndex&&<div  dangerouslySetInnerHTML={{ __html: subTitle }}></div>}
                                 </ListItem>
                         )
                     })}
@@ -262,9 +262,9 @@ export const Ai: FC<IAiProps> = ({ }) => {
             >
              {titleList.map((item,index)=> {
                return (
-                  <div className='lists'>
+                  <div style={{cursor:'pointer'}}  className='lists'>
                   <div>{item.title}</div>
-                  <div dangerouslySetInnerHTML={{ __html: item.subTitle }}></div>
+                  <div style={{cursor:'pointer'}} dangerouslySetInnerHTML={{ __html: item.subTitle }}></div>
                   <img style={{height: '200px'}} src={`${imgurl}${item.urlm}`} alt="" />
                   </div>
                )

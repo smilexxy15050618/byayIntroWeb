@@ -229,7 +229,7 @@ export const Ai: FC<IAiProps> = ({ }) => {
           <div style={{ maxWidth: 1200, width: '100vw', margin: '0 auto' }}>
             <div id={UNFRAUDAI} className="aitxs">
               <ListWrapper>
-                <div className="lists">
+                <div className="lists" style={{cursor:'pointer'}}>
                   {titleList.map(({ title, subTitle }, index) => {
                     return (
                       <ListItem className={index == currIndex ? 'active' : null} onClick={() => setCurrIndex(index)}>
@@ -263,7 +263,7 @@ export const Ai: FC<IAiProps> = ({ }) => {
                 >
                   {titleList.map((item, index) => {
                     return (
-                      <div className='lists'>
+                      <div className='lists' style={{cursor:'pointer'}}>
                         <div>{item.title}</div>
                         <div dangerouslySetInnerHTML={{ __html: item.subTitlem }}></div>
                         <img style={{ width: '100%', height: '200px' }} src={imgurl + item.urlm} alt="" />
