@@ -333,13 +333,13 @@ const Menu = styled.div`
   }
   .right-menu {
     width: 528px;
-    /* height: 382px; */
-    padding-left: 58px;
-    padding-right: 108px;
+    height: 418px; 
+    background: url(${imgurl}/rotatebg.png) no-repeat;
+    padding-left: 59px;
+    padding-right: 98px;
 
     box-sizing: border-box;
-    background: url(${imgurl}/rotatebg.png) no-repeat;
-    background-size: contain;
+    background-size: 100% 100%;
     .title {
       width: 100%;
       font-size: 20px;
@@ -347,8 +347,7 @@ const Menu = styled.div`
       letter-spacing: 0px;
       line-height: 32px;
       color: rgba(43, 88, 249, 1);
-      margin-top: 44px;
-      margin-bottom: 4px;
+      margin-top: 70px;
 
       &::after {
         display: block;
@@ -358,6 +357,8 @@ const Menu = styled.div`
         opacity: 1;
         border-radius: 20px;
         background: rgba(0, 200, 189, 1);
+        margin-top: 4px;
+        margin-bottom: 4px;
       }
     }
     .sub {
@@ -370,14 +371,15 @@ const Menu = styled.div`
     }
     .contentImg {
       width: 100%;
-      margin-top: 24px;
+      margin-top: 26px;
       p {
         font-size: 14px;
         font-weight: 400;
         letter-spacing: 0px;
-        line-height: 32px;
+        line-height: 28px;
         color: rgba(51, 51, 51, 1);
         text-align: justify;
+        margin-bottom: 0;
         &:last-child {
           margin-bottom: 40px;
         }
@@ -390,7 +392,9 @@ letter-spacing: 0px;
 line-height: 24px;
 color: rgba(26, 26, 26, 1);
 display: flex;
-padding-bottom: 50px;
+margin-bottom: 0;
+position: absolute;
+bottom: 64px;
 img {
   width: 24px;
   height: 24px;

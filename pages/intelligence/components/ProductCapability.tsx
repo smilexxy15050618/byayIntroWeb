@@ -223,7 +223,7 @@ export const ProductCapability = () => {
     try {
       const fixedTop = navRef.current.offsetTop;
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
     const ScrollMagic = require('scrollmagic');
     const controller1 = new ScrollMagic.Controller();
@@ -268,29 +268,36 @@ export const ProductCapability = () => {
       });
 
     window.onscroll = () => {
-      return false;
+      // return false;
       let scrollTop = document.documentElement.scrollTop;
       // const isFixed = scrollTop >= fixedTop;
       // set_is_fixed(isFixed);
       if (!lock) {
-        if (scrollTop >= scrollContent1.offsetTop - 153) {
+        if (scrollTop >= scrollContent1.offsetTop - 220) {
           setActiveIndex(0)
         }
-        if (scrollTop >= scrollContent2.offsetTop - 153) {
+        if (scrollTop >= scrollContent2.offsetTop - 220) {
           setActiveIndex(1)
         }
-        if (scrollTop >= scrollContent3.offsetTop - 153) {
+        if (scrollTop >= scrollContent3.offsetTop - 220) {
           setActiveIndex(2)
         }
         setLock(false);
       }
-      if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
-        if (scrollTop >= scrollContent3.offsetTop + scrollContent3.offsetHeight - 130) {
-          set_is_fixed(false);
-        } else if (scrollTop >= fixedTop) {
+      // if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
+        if (scrollTop >= scrollContent1.offsetTop) {
           set_is_fixed(true);
+        } 
+        if(scrollTop<scrollContent1.offsetTop) {
+          set_is_fixed(false);
         }
-      }
+        if(scrollTop>=scrollContent3.offsetHeight+scrollContent3.offsetTop) {
+          set_is_fixed(false);
+        }
+        // else if (scrollTop >= fixedTop) {
+        //   set_is_fixed(true);
+        // }
+      // }
     }
 
 
@@ -300,7 +307,10 @@ export const ProductCapability = () => {
     setLock(true);
     setActiveIndex(index);
     var dom = document.querySelectorAll('.contents>div')[index];
-    var scrollHeight = dom.offsetTop - '153';
+    var scrollHeight = dom.offsetTop - '220';
+    if(index==1) {
+      scrollHeight = dom.offsetTop - '230';
+    }
     if (dom) {
       // dom.scrollIntoView({ behavior: "smooth" });
       window.scrollTo({
@@ -313,7 +323,7 @@ export const ProductCapability = () => {
     <Wrapper>
       <Title>产品能力</Title>
       <Visible md lg xl xxl xxxl>
-        <Label ref={navRef} className='bottom_border'>
+        <Label ref={navRef} className={`bottom_border ${is_fixed ? 'fixedTop' : ''}`}>
           {
             labelList.map((({ img, activeImg, text, english_text }, index) => {
               return (
