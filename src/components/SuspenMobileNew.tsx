@@ -106,7 +106,6 @@ const SuspenMobileNew = styled(RawSuspenMobileNew) < ISuspenMobileNewProps > `
     text-align: center;
   }
   > div:nth-child(1) {
-    // border-right: 1px solid rgb(230, 230, 230);
     flex: 1;
   }
   > div:nth-child(2) {
@@ -119,6 +118,8 @@ const SuspenMobileNew = styled(RawSuspenMobileNew) < ISuspenMobileNewProps > `
     border-radius: 32px;
     margin-top: -8px;
     color: #fff;
+    border-radius: 32px;
+    background: rgba(43, 88, 249, 1);
   }
   > div:nth-child(3) {
     flex: 1;

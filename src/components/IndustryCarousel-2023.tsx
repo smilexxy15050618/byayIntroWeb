@@ -680,7 +680,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                 </div>
 
                 <div className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/f2fOn80IdZv1LYT5BtItng')}>
-                  点击查看
+                  立即体验
                 </div>
                 <div className="bg-img-blue">
                   <img style={{width: '644px', height: '496px'}} src={imgurl + '/sy-banner3.png'} alt="" />
@@ -706,7 +706,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                   onClick={() => {
                     window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
                   }}>
-                  点击查看
+                  立即体验
                 </div>
                 <div className="bg-img-blue">
                   <img style={{  width: '644px', height: '496px'}} src={imgurl + '/sy-banner2.png'} alt="" />
@@ -787,7 +787,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                 浙江省经济和信息化厅公示｜2023年度第一批企业名单
                 </div>
                 <div style={{marginBottom: '33px',}} className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/f2fOn80IdZv1LYT5BtItng')}>
-                  点击查看
+                  立即体验
                 </div>
                 <div style={{ width: '100%',height: '279px' }} className="bg-img-blue-phone">
                   <img style={{ height: '100%' }} src={imgurl + '/sy-banner3.png'} alt="" />
@@ -812,7 +812,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                   onClick={() => {
                     window.open(`https://mp.weixin.qq.com/s/igc5Z-Lu8AeoSoqJ3ZZDYw`);
                   }}>
-                  点击查看
+                  立即体验
                 </div>
                 <div className="bg-img-blue-phone">
                   <img style={{ width: '610px' }} src={imgurl + '/sy-banner2.png'} alt="" />
@@ -836,7 +836,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                   onClick={() => {
                     window.open(`/form?formType=1`);
                   }}>
-                  点击查看
+                  立即体验
                 </div>
                 <div className="bg-img-blue-phone">
                   <img src={imgurl + '/sy-banner4.png'} alt="" />

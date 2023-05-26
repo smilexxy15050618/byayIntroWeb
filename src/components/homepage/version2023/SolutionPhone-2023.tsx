@@ -614,7 +614,7 @@ const labelInfo = [
     ],
     urls: ['/retail', '/internet-solution', '', '/insure', '/customer-finance', ''],
     imgs: [
-      ['lslogo1.png', 'lslogo2.png', '新希望logo.png', 'lslogo4.png', 'lslogo5.png'],
+      ['lslogo1.png', 'lslogo2.png', '新希望logo_m.png', 'lslogo4.png', 'lslogo5.png'],
       ['hlwlogo1.png', 'hlwlogo2.png', 'hlwlogo3.png', 'hlwlogo4.png', 'hlwlogo5.png'],
       ['qclogo1.png', 'qclogo2.png', 'qclogo3.png', 'qclogo4.png', 'qclogo5.png'],
       ['bxlogo1.png', 'bxlogo2.png', 'bxlogo3.png', 'bxlogo4.png', 'bxlogo5.png'],

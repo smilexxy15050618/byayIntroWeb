@@ -32,6 +32,7 @@ export default class extends App<
 > {
   static async getInitialProps(ctx) {
     const initialProps = await App.getInitialProps(ctx);
+    
     const originalRenderPage = ctx.renderPage;
     let styles: any = undefined;
     if (ctx.ctx.req) {

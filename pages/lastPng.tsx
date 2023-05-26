@@ -87,7 +87,7 @@ const Pane = styled.div`
         flex-direction: column;
         margin-bottom: 24px;
         margin-right: 5%;
-        cursor: pointer;
+        // cursor: pointer;
         img {
           margin-bottom: 12px;
           width: 72px;

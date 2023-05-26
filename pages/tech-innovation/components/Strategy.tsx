@@ -253,7 +253,7 @@ export const Strategy: FC = () => {
             </Visible>
             <StrateWrap id={AISOLUTION}>
                 <div className="left">
-                    <div className="copilot">MA Copilot</div>
+                    <div className="copilot">OSA Copilot</div>
                     <div className="copilot-sub">一键拓展思路，高效生成运营策略</div>
                     <div className="copilot-tag">
                         {copilotTag.map((item, i) => {

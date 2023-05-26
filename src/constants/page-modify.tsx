@@ -159,6 +159,7 @@ export const FOOTER_CONFIG = [
   },
   {
     title: '解决方案',
+    type:'qy',
     list: [
       { name: '银行', href: '/bank' },
       { name: '零售', href: '/retail' },

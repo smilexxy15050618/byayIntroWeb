@@ -216,8 +216,8 @@ const list = [
 export const NewsPhone = () => {
   return (
     <div style={{ paddingTop: '40px' }}>
-      <Title>了解百应最新动态</Title>
-      <Title>洞察行业趋势发展</Title>
+      <Title>新闻与动态</Title>
+      {/* <Title>洞察行业趋势发展</Title> */}
       <Wrapper>
         <Swiper
           effect="slide"

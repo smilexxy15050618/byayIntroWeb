@@ -12,6 +12,7 @@ import Box from './Box';
 import { BOTTOM_WHITE_LOGO } from './Header-2021';
 const ByLink = withOpenOriginLink(Link);
 
+
 const CMMI_SRC = 'https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/底部隐私政策.png';
 const XIN_SRC = '//cdn.byai.com/static/official-website/crm/xin.png';
 const PREFIX = 'https://cdn.byai.com/static/intro/img/footer';
@@ -65,7 +66,7 @@ const CRM_FOOTER_CONFIG = [
 const FooterWrapper = styled.footer`
   width: 100%;
   position: relative;
-  min-height: 514px;
+  min-height: 510px;
   background: #0d1727;
   > div {
     max-width: 1200px !important;
@@ -356,11 +357,10 @@ const LinkCol = styled(Col)`
     margin-bottom: 3px;
     font-size: 16px;
     font-weight: 500;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 1);
     height: 44px;
     line-height: 44px;
-    letter-spacing: 1px;
-    margin-top: 26px;
+    margin-top: 34px;
     ${media.desktop`text-align: center;`}
     ${media.phone`
       text-align: left;
@@ -384,10 +384,11 @@ const LinkCol = styled(Col)`
     }
   }
   a {
+    height: 24px;
+    display: block;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.65) !important;
     line-height: 24px;
-    letter-spacing: 1px;
     &:hover,
     &:active {
       text-decoration: none;
@@ -493,14 +494,6 @@ const LinkColWap = styled.div`
       background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAABnSURBVFiFY2AYCuD///8F////LxhIB8DAwDgCGgKjjhh1xKgjRh0x6ohRR5DjiPeE1DLRyA0BUPoijczHDf7//38A6vsDI9ZygvE+avmo5aOWj1pOjuVEVy60csDAWQ51wMB1TGkNAP36ZwJAerQYAAAAAElFTkSuQmCC') no-repeat center center/ contain;
       transition: all 0.3s ease-in-out;
     }
-    // span {
-    //   display: inline-block;
-    //   margin-left: 3px;
-    //   width: 20px;
-    //   height: 9px;
-    //   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAYCAYAAAC1Ft6mAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAILSURBVFiF1ZdBkuIwDEWf3FyDZkWKW2B2vpWTW2VH5hYUs0r6HG3PwlERmATCtNNMvyo2trElW/pSBODD7Wzk04NYfhyxicivTX0uASQ5E47DyRda9zQCHiBCtanPJa0rys4V8dWGfYXObY/qgxHwEapXG/UVhLcKUuqsxhZ8uJ0NBGswzbo+NVMbta4oATR+x/YBCAQ7HB9br2fOsP+vPdb1qelcAcCoQ4FgBXwgADRTm6b4jaPzrSvKSPD9uis6V3jBHIaXpWfOcWbqTAAzb4PnaF1RqrOCObzXZ3mvzxKh0vCOhKO+IKQbF8xh+FPDb8c1xMYYfaEcziTV+V0O5zRMWleQ1nx6BhFwG96d2/qx8XtkfyENm6m8uszFBsQOXykHWR1S4+aopoZN/0rZuBtyQtyrks2hT+yX8iCHxArYJQ6+SG3eduuuQxEqg2mm57Vluubef5bmocrdUxgtZorBNJHg+wI5+b8hubuUrKKgzgtx/2jtM7n5DAsU1iTHjwxWec8dngvUoSTHAn7MqQ+3s53bHiGF2zNFcw7ZO4V1fWpaV1QCXsB3brvXbywh7iPBgly+XzKzSC+3qc+l9m699PtL45n6uyWcAZDOFXGp2/pOOldEwRxW6cZ4qEr/M5qr6/rUrIS3KhKOOvjKovgv9L2g1XomMPx++ZkMU+aql8zdyn8Ht7L/B8AQ9/bBLiWNAAAAAElFTkSuQmCC')
-    //     no-repeat center center/ contain;
-    // }
   }
   h6.active{
     &::after{
@@ -570,8 +563,8 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
       <Container>
         <Row justify="between" style={{paddingBottom: '42px'}}>
           <Visible md lg xl xxl xxxl>
-            <div style={{ width: '206px',}}>
-              <div style={{ width: '184px', marginTop: 32 }}>
+            <div style={{ width: '242px'}}>
+              <div style={{ width: '184px', marginLeft: 14, marginTop: 44 }}>
                 <img src={BOTTOM_WHITE_LOGO} />
               </div>
             </div>
@@ -630,7 +623,6 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
                   }} 
                 >
                   {item.title}
-                  <span style={{ display: item.title == '解决方案' ? 'inline-block' : 'none' }}></span>
                 </h6>
                 <div className="type-wap-wrap" style={{display: footetWapIndex == index ? 'block' : 'none'}}>
                   {item.list.map((items, i) => (
