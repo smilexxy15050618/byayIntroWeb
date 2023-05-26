@@ -229,7 +229,7 @@ export const ProductCapability = () => {
     try {
       const fixedTop = navRef.current.offsetTop;
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
     const ScrollMagic = require('scrollmagic');
     const controller1 = new ScrollMagic.Controller();
@@ -315,7 +315,6 @@ export const ProductCapability = () => {
           set_is_fixed(false);
         }
         if(scrollTop>=scrollContent.offsetHeight+scrollContent.offsetTop - 50) {
-          console.log('为false')
           set_is_fixed(false);
         }
       // }

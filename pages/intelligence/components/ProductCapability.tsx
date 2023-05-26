@@ -223,7 +223,7 @@ export const ProductCapability = () => {
     try {
       const fixedTop = navRef.current.offsetTop;
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
     const ScrollMagic = require('scrollmagic');
     const controller1 = new ScrollMagic.Controller();
@@ -285,16 +285,13 @@ export const ProductCapability = () => {
         setLock(false);
       }
       // if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
-        console.log(scrollTop,'scrollTop')
         if (scrollTop >= scrollContent1.offsetTop) {
-          console.log('为true')
           set_is_fixed(true);
         } 
         if(scrollTop<scrollContent1.offsetTop) {
           set_is_fixed(false);
         }
         if(scrollTop>=scrollContent3.offsetHeight+scrollContent3.offsetTop) {
-          console.log('为false')
           set_is_fixed(false);
         }
         // else if (scrollTop >= fixedTop) {
