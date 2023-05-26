@@ -667,9 +667,10 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
           <Carousel pause={false} style={{ width: '100%' }} interval={3000} fade activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item className="no_duration" key={1}>
               <div className="main-container">
-                <div className="main-title">智能用户运营领域创领者</div>
+                <div className="main-title">AI驱动高效商业和高效治理</div>
                 <div style={{ marginBottom: '56px',marginTop:0 }} className="sec-title">
-                  用AI助力构建用户长期信任关系
+                  致力于以AI和大数据技术
+                  <br /> 为客户提供智能化的用户运营解决方案
                 </div>
                 <div style={{ width: '644px', height: '496px' }} className="bg-img-blue">
                   <img style={{ height: '100%' }} src={imgurl + '/sy-banner1.png'} alt="" />
@@ -773,12 +774,13 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
           <Carousel style={{ width: '100%' }} interval={3000} fade activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item className="no_duration" key={1}>
               <div className="main-container">
-                <div className="main-title-m">智能用户</div>
-                <div className="main-title-m">运营领域创领者</div>
+                {/* <div className="main-title-m">智能用户</div> */}
+                <div className="main-title-m">AI驱动<br />高效商业和高效治理</div>
                 <div className="sec-title"
-                  style={{ marginBottom : '14px' }}
+                  style={{ marginBottom : '24px' }}
                 >
-                  用AI助力构建用户长期信任关系
+                  致力于以AI和大数据技术
+                  <br />为客户提供智能化的用户运营解决方案
                 </div>
                 <div
                   className="carousel-btn"
