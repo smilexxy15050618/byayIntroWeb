@@ -204,7 +204,7 @@ const CompanyInfoCol = styled.span`
   max-width: 1200px;
   text-align: center;
   height: 94px;
-  border-top: 1px solid rgb(255, 255, 255, 0.16);
+  // border-top: 1px solid rgb(255, 255, 255, 0.16);
   font-size: 16px;
   color: rgba(255, 255, 255, 0.65);
   line-height: 22px;
