@@ -473,7 +473,7 @@ export const GlobaNumberPhone = ({}) => {
             })}
           </div>
           <p className='goknoemow' onClick={() => {
-              window.open('/form?formType=1');
+              window.open('/tech-innovation');
             }}>了解更多&nbsp;&nbsp;></p>
         </div>
       </Menu>

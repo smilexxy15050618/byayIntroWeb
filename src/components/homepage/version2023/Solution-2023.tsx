@@ -572,7 +572,7 @@ const labelInfo = [
     ],
     urls: ['/retail', '/internet-solution', '/selection_car', '/insure', '/customer-finance', '/bank'],
     imgs: [
-      ['lslogo1.png', 'lslogo2.png', '新希望logo.png', 'lslogo4.png', 'lslogo5.png'],
+      ['lslogo1.png', 'lslogo2.png', '新希望3344logo.png', 'lslogo4.png', 'lslogo5.png'],
       ['hlwlogo1.png', 'hlwlogo2.png', 'hlwlogo3.png', 'hlwlogo4.png', 'hlwlogo5.png'],
       ['qclogo1.png', 'qclogo2.png', 'qclogo3.png', 'qclogo4.png', 'qclogo5.png'],
       ['bxlogo1.png', 'bxlogo2.png', 'bxlogo3.png', 'bxlogo4.png', 'bxlogo5.png'],
@@ -598,8 +598,9 @@ const labelInfo = [
     banner: ['/007fz.png', '/zwfw008.png', '/zz009.png'],
     imgs: [
       ['fzlogo1.png', 'fzlogo2.png', 'fzlogo3.png', 'fzlogo4.png', 'fzlogo5.png'],
-      ['zwlogo1.png', 'zwlogo2.png', 'zwlogo3.png', 'zwlogo4.png', 'zwlogo5.png'],
       ['zzlogo1.png', 'zzlogo2.png', 'zzlogo3.png', 'zzlogo4.png', 'zzlogo5.png'],
+      ['zwlogo1.png', 'zwlogo2.png', 'zwlogo3.png', 'zwlogo4.png', 'zwlogo5.png'],
+   
     ],
   },
 ];

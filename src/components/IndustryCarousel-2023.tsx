@@ -650,11 +650,11 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
           })}>
           {<img className="carousel-bg-ball" src={BG_BALL} />}
           <div className="carousel-bg-right"></div>
-          <Carousel style={{ width: '100%' }} interval={333000} fade activeIndex={index} onSelect={handleSelect}>
+          <Carousel style={{ width: '100%' }} interval={3000} fade activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item className="no_duration" key={1}>
               <div className="main-container">
                 <div className="main-title">智能用户运营领域创领者</div>
-                <div style={{ marginBottom: '56px' }} className="sec-title">
+                <div style={{ marginBottom: '56px',marginTop:0 }} className="sec-title">
                   用AI助力构建用户长期信任关系
                 </div>
                 <div style={{ width: '644px', height: '496px' }} className="bg-img-blue">
@@ -675,11 +675,11 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
               <div className="main-container">
                 <div className="main-title1">百应科技荣获</div>
                 <div style={{lineHeight: '48px', marginTop: '8px'}} className="main-title">浙江省“专精特新”中小企业称号</div>
-                <div style={{ marginBottom: '16px', lineHeight: '48px' }}  className="third-title" style={{ marginBottom: '16px' }}>
+                <div style={{  lineHeight: '48px' }}  className="third-title">
                 浙江省经济和信息化厅公示｜2023年度第一批企业名单
                 </div>
 
-                <div className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/Ebu43ZcMV6ted0f55efIRg')}>
+                <div className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/f2fOn80IdZv1LYT5BtItng')}>
                   点击查看
                 </div>
                 <div className="bg-img-blue">
@@ -699,7 +699,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                    国家人工智能
                 </div>
                 <div style={{ marginBottom: '16px', lineHeight: '48px' }} className="main-title">创新应用先导区“智赋百景”</div>
-                <div className="third-title">工信部公示｜「城市管理」领域应用场景的优秀技术提供单位</div>
+                <div style={{ marginBottom: '36px' }} className="third-title">工信部公示｜「城市管理」领域应用场景的优秀技术提供单位</div>
 
                 <div
                   className="carousel-btn"
@@ -709,7 +709,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                   点击查看
                 </div>
                 <div className="bg-img-blue">
-                  <img style={{ width: '610px' }} src={imgurl + '/sy-banner2.png'} alt="" />
+                  <img style={{  width: '644px', height: '496px'}} src={imgurl + '/sy-banner2.png'} alt="" />
                 </div>
               </div>
             </Carousel.Item>
@@ -728,7 +728,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                   onClick={() => {
                     window.open(`/form?formType=1`);
                   }}>
-                  点击查看
+                  立即体验
                 </div>
                 <div className="bg-img-blue">
                   <img style={{width: '644px', height: '496px'}} src={imgurl + '/sy-banner4.png'} alt="" />
@@ -756,7 +756,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
           className={classNames('carousel-body')}>
           {<img className="carousel-bg-ball" src={BG_BALL_PHONE} />}
           <div className="carousel-bg-right"></div>
-          <Carousel style={{ width: '100%' }} interval={333000} fade activeIndex={index} onSelect={handleSelect}>
+          <Carousel style={{ width: '100%' }} interval={3000} fade activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item className="no_duration" key={1}>
               <div className="main-container">
                 <div className="main-title-m">智能用户</div>
@@ -786,7 +786,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                 <div  style={{fontSize: '14px', fontWeight: '400', letterSpacing: '0px',lineHeight: '24px', marginBottom: '24px', lineHeight: '20.27px' }}  className="third-title">
                 浙江省经济和信息化厅公示｜2023年度第一批企业名单
                 </div>
-                <div style={{marginBottom: '33px',}} className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/Ebu43ZcMV6ted0f55efIRg')}>
+                <div style={{marginBottom: '33px',}} className="carousel-btn" onClick={() => window.open('https://mp.weixin.qq.com/s/f2fOn80IdZv1LYT5BtItng')}>
                   点击查看
                 </div>
                 <div style={{ width: '100%',height: '279px' }} className="bg-img-blue-phone">

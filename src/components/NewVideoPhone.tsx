@@ -232,7 +232,7 @@ aside{
 const lists = [
   {
     title: '增强型用户画像洞察',
-    subTitle: '综合客户数据建立多维标签，构建全景客户画像，获得深入洞察，为精细化运营提供策略基础。',
+    subTitle: '综合客户数据建立多维标签，构建全景客户画像，获得深入洞察，为精细化运营提供策略基础',
     hovSubtitle: '构建全景客户画像',
     contents: ['体系化标签管理', '个性化用户分群', '360°深度洞察', '行业算法模型标签'],
     url: `${imgurl}/aiimg1.png`,
@@ -258,7 +258,7 @@ const lists = [
     width: '300px',
     title: '策略智能与自动化',
     hovSubtitle: '实现目标人群精准自动化触达',
-    subTitle: '充分收集并洞察客户行为、属性、标签，并针对性制定触达与沟通策略，实现目标人群精准自动化触达，提升关键指标和运营效率。',
+    subTitle: '充分收集并洞察客户行为、属性、标签，并针对性制定触达与沟通策略，实现目标人群精准自动化触达，提升关键指标和运营效率',
     contents: ['智能化生成运营策略', '自动化完成策略触达', '科学性验证效果数据', '实时性增强客户洞察'],
     url: `${imgurl}/aiimg2.png`,
     contentArr: [{
@@ -281,7 +281,7 @@ const lists = [
     width: '340px',
     title: '多模态情感化AI',
     hovSubtitle: '多模态Al形情感化沟通感知',
-    subTitle: '在不同的渠道和场景中使用多模态Al形式沟通，情感化沟通感知，跨端能力共享，为用户提供个性化服务和推荐，提高用户体验。',
+    subTitle: '在不同的渠道和场景中使用多模态Al形式沟通，情感化沟通感知，跨端能力共享，为用户提供个性化服务和推荐，提高用户体验',
     contents: ['文本交互', '语音交互', '视觉交互', '虚拟数字人', '情感化', '拟人化', '全双工', '主动式'],
     url: `${imgurl}/aiimg3.png`,
     contentArr: [{
@@ -304,7 +304,7 @@ const lists = [
     width: '300px',
     title: '全场景用户连接与对话',
     hovSubtitle: '个性化触达与沟通策略',
-    subTitle: '充分洞察用户，并针对性制定触达与沟通策略，使用合适的内容，在合适的时间触达合适的客户。',
+    subTitle: '充分洞察用户，并针对性制定触达与沟通策略，使用合适的内容，在合适的时间触达合适的客户',
     contents: ['微信：企微｜公众号', '通信：电话｜短信', '在线：音视频｜直播', '线下：智能终端'],
     url: `${imgurl}/aiimg4.png`,
     contentArr: [{
@@ -329,7 +329,8 @@ const lists = [
     url: `${imgurl}/aiimg5.png`,
     contentArr: [],
     width: '100%',
-    path:''
+    path:'/tech-innovation'
+
   },
   {
     title: '数据智能能力平台',
@@ -338,7 +339,8 @@ const lists = [
     url: `${imgurl}/aiimg6.png`,
     contentArr: [],
     width: '100%',
-    path:''
+    path:'/tech-innovation'
+
   }
 ]
 export const NewVideoPhone = () => {

@@ -94,6 +94,9 @@ position: relative;
 .banner {
     width: 100%;
     height: 160px;
+    transition:  all 0.3s;
+    background-position: center;
+
     &::after {
         display: block;
         content: "";
@@ -105,6 +108,9 @@ position: relative;
         border-radius: 8px 8px, 0px, 0px;
         background: #2B58F9;
         opacity: 0.2;
+    }
+    &:hover{
+        background-size: 105% 105% !important;
     }
 }
 .detail {

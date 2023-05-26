@@ -76,7 +76,7 @@ const menuList = [
     subTitle1: 'Knowledge Graph',
     content: [
       '丰富的行业知识图谱：行业知识库、金牌话术库、会话策略库、画像标签库、闲聊库、常识库...',
-      '构建机器人大脑知识体系，不断优化和升级AI模型，为各个垂直行业提供智能化服务。',
+      '构建机器人大脑知识体系，不断优化和升级AI模型，为各个垂直行业提供智能化服务',
     ],
   },
   {
@@ -254,7 +254,7 @@ const Menu = styled.div`
     .menu-item:nth-child(2) {
       position: absolute;
       top: 104px;
-      left: 103px;
+      left: 123px;
       div {
         text-align: right;
       }
@@ -279,11 +279,15 @@ const Menu = styled.div`
       position: absolute;
       right: 95px;
       bottom: 116px;
+
+      div {
+        text-align: left;
+      }
     }
     .menu-item:nth-child(6) {
       position: absolute;
       bottom: 17px;
-      left: 280px;
+      left: 272px;
       div {
         text-align: center;
       }
@@ -329,13 +333,13 @@ const Menu = styled.div`
   }
   .right-menu {
     width: 528px;
-    height: 382px;
+    /* height: 382px; */
     padding-left: 58px;
     padding-right: 108px;
 
     box-sizing: border-box;
     background: url(${imgurl}/rotatebg.png) no-repeat;
-    background-size: 100% 100%;
+    background-size: contain;
     .title {
       width: 100%;
       font-size: 20px;
@@ -386,9 +390,7 @@ letter-spacing: 0px;
 line-height: 24px;
 color: rgba(26, 26, 26, 1);
 display: flex;
-margin-bottom:0;
-position: absolute;
-bottom: 30px;
+padding-bottom: 50px;
 img {
   width: 24px;
   height: 24px;
@@ -462,7 +464,7 @@ const GlobalNumber = ({}) => {
             })}
           </div>
           <p className='goknoemow'   onClick={() => {
-              window.open('/form?formType=1');
+              window.open('/tech-innovation');
             }}>了解更多&nbsp; >
           {/* <img src={imgurl+'/aitime_arrow.png'} alt="" /> */}
           </p>

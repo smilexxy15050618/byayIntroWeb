@@ -23,7 +23,7 @@ export const MOBILE_SCENE_SOLUTION_LIST = [
     detailList: [
       {
         title: '高效激活沉睡会员\n实现老客批量召回',
-        desc: '全域触点管理，提升会员召回率和活跃度。',
+        desc: '全域触点管理，提升会员召回率和活跃度',
         btnName: '免费领取AI会员增长解决方案',
       },
       {
@@ -70,7 +70,7 @@ export const MOBILE_SCENE_SOLUTION_LIST = [
         desc: [
           { title: '接通率', content: '60%-75%', content2: '触达效率更高' },
           { title: '加粉率', content: '18%-35%', content2: '转化率更高' },
-          { title: '加粉成本', content: '2-5元', content2: '转化率更高' },
+          { title: '加粉成本', content: '2-5元', content2: '营销成本更低' },
         ],
         btnName: '立即开启私域增长',
       },

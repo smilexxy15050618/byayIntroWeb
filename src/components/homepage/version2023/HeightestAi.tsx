@@ -169,7 +169,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
         <Swiper
           effect="slide"
           autoplay={{
-            delay: 30000,
+            delay: 3000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}

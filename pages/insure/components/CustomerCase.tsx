@@ -110,7 +110,7 @@ position: relative;
     align-items: center;
     transition: all 0.3s;
     &:hover {
-        background-size: 150% 150% !important;
+        background-size: 102% 102% !important;
     }
     &::after {
         display: block;

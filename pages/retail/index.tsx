@@ -140,17 +140,17 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                 mobileImg={JOIN_US_IMG}>
                 <TextArea spaces={['', '']}>
                   <Hidden xs sm>
+                    <div style={{width:'480px'}}>
                     <BigTitle>
                     零售行业
                       <br />
                       智能用户运营解决方案
                     </BigTitle>
                     <Desc>
-                      通过对话式AI助力品牌实现「极致用户体验+极致
-                      <br />
-                      ROI」的全域营销服务
+                      通过对话式AI助力品牌实现「极致用户体验+极致ROI」的全域营销服务
                     </Desc>
                     <BlueBtn onClick={() => window.open('/form?formType=1')}>立即体验</BlueBtn>
+                    </div>
                   </Hidden>
                 </TextArea>
               </BannerWhite>
@@ -169,7 +169,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                     content: [
                       {
                         title: ['高效激活沉睡会员', '实现老客批量召回'],
-                        content: <div>全域触点管理，提升会员召回率和活跃度。</div>,
+                        content: <div>全域触点管理，提升会员召回率和活跃度</div>,
                       },
                       {
                         title: ['一年前下单的消费者', '还是你的用户吗?'],
@@ -226,9 +226,9 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                         content: (
                           <VPane
                             infoList={[
-                              ['接通率', '60%-75%', <SmallLabel>触达效率更高 </SmallLabel>],
-                              ['加粉率', '18%-35%', <SmallLabel>转化率更高 </SmallLabel>],
-                              ['加粉成本', '2-5元', <SmallLabel>转化率更高 </SmallLabel>],
+                              ['接通率', '60%-75%', <SmallLabel>触达效率更高</SmallLabel>],
+                              ['加粉率', '18%-35%', <SmallLabel>转化率更高</SmallLabel>],
+                              ['加粉成本', '2-5元', <SmallLabel>营销成本更低</SmallLabel>],
                             ]}></VPane>
                         ),
                       },
