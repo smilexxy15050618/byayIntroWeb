@@ -146,7 +146,7 @@ const Content = styled.div`
 `;
 const Item = styled.div`
   width: 50%;
-  height: 72px;
+  height: 64px;
   padding-left: 26px;
   position: relative;
   margin-bottom: 29px;
