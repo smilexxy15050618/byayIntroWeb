@@ -288,30 +288,37 @@ export const ProductCapability = () => {
       });
     window.onscroll = () => {
       // 以下代码为移动端滚动 tab跟随高亮
-      return false;
+      // return false;
       let scrollTop = document.documentElement.scrollTop;
-      const isFixed = scrollTop >= fixedTop;
-      set_is_fixed(isFixed);
+      // const isFixed = scrollTop >= fixedTop;
+      // set_is_fixed(isFixed);
       if (!lock) {
-        if (scrollTop >= scrollContent1.offsetTop - 153) {
+        if (scrollTop >= scrollContent1.offsetTop - 220) {
           setActiveIndex(0)
         }
-        if (scrollTop >= scrollContent2.offsetTop - 153) {
+        if (scrollTop >= scrollContent2.offsetTop - 220) {
           setActiveIndex(1)
         }
-        if (scrollTop >= scrollContent3.offsetTop - 153) {
+        if (scrollTop >= scrollContent3.offsetTop - 220) {
           setActiveIndex(2)
         }
-        if (scrollTop >= scrollContent.offsetTop - 153) {
+        if (scrollTop >= scrollContent.offsetTop - 220) {
           setActiveIndex(3)
         }
         setLock(false);
       }
-      if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
-        if (scrollTop >= scrollContent.offsetTop + scrollContent.offsetHeight - 118) {
+      // if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
+        if (scrollTop >= scrollContent1.offsetTop) {
+          set_is_fixed(true);
+        }
+        if(scrollTop<scrollContent1.offsetTop) {
           set_is_fixed(false);
         }
-      }
+        if(scrollTop>=scrollContent.offsetHeight+scrollContent.offsetTop - 50) {
+          console.log('为false')
+          set_is_fixed(false);
+        }
+      // }
 
     }
   })
@@ -319,7 +326,7 @@ export const ProductCapability = () => {
     setLock(true);
     setActiveIndex(index);
     var dom = document.querySelectorAll('.contents>div')[index];
-    var scrollHeight = dom.offsetTop - '153';
+    var scrollHeight = dom.offsetTop - '220';
     if (dom) {
       // dom.scrollIntoView({ behavior: "smooth" });
       window.scrollTo({
@@ -332,7 +339,7 @@ export const ProductCapability = () => {
     <Wrapper>
       <Title>产品能力</Title>
       <Visible md lg xl xxl xxxl>
-        <Label className='bottom_border' ref={navRef}>
+        <Label className={`bottom_border ${is_fixed ? 'fixedTop' : ''}`} ref={navRef}>
           {
             labelList.map((({ img, activeImg, text, english_text }, index) => {
               return (
