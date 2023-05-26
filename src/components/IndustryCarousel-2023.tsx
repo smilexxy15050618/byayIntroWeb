@@ -664,7 +664,7 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
           })}>
           {<img className="carousel-bg-ball" src={BG_BALL} />}
           <div className="carousel-bg-right"></div>
-          <Carousel style={{ width: '100%' }} interval={3000} fade activeIndex={index} onSelect={handleSelect}>
+          <Carousel pause={false} style={{ width: '100%' }} interval={3000} fade activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item className="no_duration" key={1}>
               <div className="main-container">
                 <div className="main-title">智能用户运营领域创领者</div>
