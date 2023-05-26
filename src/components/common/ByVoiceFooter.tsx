@@ -22,7 +22,8 @@ height: 48px;
 border-radius: 6px;
 background: rgba(255, 255, 255, 1);
 @media (max-width: 768px) {
-  width: 97%;
+  width: 83%;
+  height: 34px;
   margin:0 auto;
   // margin: 0 16px;
 .dropdown botton{
@@ -32,12 +33,16 @@ background: rgba(255, 255, 255, 1);
 }
 
 border: 1px solid rgba(255, 255, 255, 1);
-button:last-child {
+>button:last-child {
   width: 132px;
 height: 46px;
 @media (max-width: 768px) {
-  width:80px;
-  font-size:12px;
+  width:104px;
+  height: 32px;
+  font-size: 14px;
+font-weight: 500;
+letter-spacing: 0px;
+line-height: 32px;
 }
 opacity: 1;
 border-radius: 6px;
@@ -62,7 +67,7 @@ color: rgba(255, 255, 255, 1);
     font-size: 14px;
 
     @media (max-width: 768px) {
-        min-width: 90px;
+        min-width: 65px;
         padding: 0 10px;
         font-size:12px;
     }
@@ -87,6 +92,7 @@ justify-content: center;
 }
 input {
   flex: 1;
+  width: 0;
   outline: none;
   border: none;
   font-size: 14px;
@@ -94,7 +100,7 @@ font-weight: 400;
 letter-spacing: 0px;
 line-height: 24px;
 color: rgba(90, 90, 90, 0.75);
-padding-left: 16px;
+padding-left: 8px;
 }
 `
 const list = [
@@ -317,17 +323,17 @@ const ByVoiceFooter = styled(RawByVoiceFooter) <IByVoiceFooterProps>`
     text-align: center;
   }
   @media (max-width: 768px) {
-    padding: 46px 0;
+    padding: 48px 0 44px;
     .title {
       font-size: 20px;
       color: #ffffff;
       line-height: 32px;
-      letter-spacing: 0 !important;
+      letter-spacing: 2.5 !important;
     }
     .desc {
       font-size: 12px;
       line-height: 20px;
-      margin: 12px 0px 16px;
+      margin: 0px 0px 16px;
       color: #ffffff;
       letter-spacing: 0 !important;
     }

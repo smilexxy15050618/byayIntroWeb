@@ -96,12 +96,12 @@ const SuspenMobileNew = styled(RawSuspenMobileNew) < ISuspenMobileNewProps > `
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 52px;
+  height: 56px;
   background: #ffffff;
   > div {
     font-size: 16px;
-    font-weight: 500;
-    color: #2b58f9;
+    font-weight: 400;
+    color: rgba(43, 88, 249, 1);
     line-height: 24px;
     text-align: center;
   }
@@ -110,13 +110,13 @@ const SuspenMobileNew = styled(RawSuspenMobileNew) < ISuspenMobileNewProps > `
     flex: 1;
   }
   > div:nth-child(2) {
-    flex: 1;
+    width: 112px;
     // border-left: 1px solid rgb(230, 230, 230);
     // border-right: 1px solid rgb(230, 230, 230);
     background: rgba(43,88,249,1);
-    height: 60px;
-    line-height: 60px;
-    border-radius: 30px;
+    height: 64px;
+    line-height: 64px;
+    border-radius: 32px;
     margin-top: -8px;
     color: #fff;
   }
