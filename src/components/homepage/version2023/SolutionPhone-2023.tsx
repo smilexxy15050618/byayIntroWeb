@@ -619,7 +619,7 @@ const labelInfo = [
       ['qclogo1.png', 'qclogo2.png', 'qclogo3.png', 'qclogo4.png', 'qclogo5.png'],
       ['bxlogo1.png', 'bxlogo2.png', 'bxlogo3.png', 'bxlogo4.png', 'bxlogo5.png'],
       ['xjlogo1.png', 'xjlogo2.png', 'xjlogo3.png', 'xjlogo4.png', 'xjlogo5.png'],
-      ['yhlogo1.jpg', 'yhlogo2.jpg', 'yhlogo3.jpg', 'yhlogo4.jpg', 'yhlogo5.jpg'],
+      ['yhlogo1.png', 'yhlogo2.png', 'yhlogo3.png', 'yhlogo4.png', 'yhlogo5.png'],
     ],
     banner: ['/001ls.png', '/002hlw.png', '/003qc.png', '/004bx.png', '/005xj.png', '/006yh.png'],
   },

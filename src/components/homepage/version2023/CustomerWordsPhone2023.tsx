@@ -73,7 +73,7 @@ const CardContent = styled.div`
         height: 23px;
         right: 0;
         opacity: 1;
-        border-left: 0.5px solid rgba(90, 90, 90, 0.1);
+        border-left: 0.5px solid rgba(90, 90, 90, 0.3);
       }
     }
     .rightPskjak {
