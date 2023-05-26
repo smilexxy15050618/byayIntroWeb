@@ -398,12 +398,26 @@ padding-top: 9px;
       div {
         font-size: 11px;
         font-weight: 400;
-        letter-spacing: 0.5px;
+        // letter-spacing: 0.5px;
         height: 39px;
-        line-height: 20px;
+        // line-height: 20px;
         color: rgba(43, 88, 249, 1);
         width: 48%;
         margin-bottom: 5px;
+        position:relative;
+
+      }
+      .moreClick{
+        // text-align:left;
+        span{
+          transform: scale(0.8);
+          display: inline-block;
+          width: 90%;
+          white-space: nowrap;
+        position: absolute;
+        text-align:left;
+        left: -5px;
+        }
       }
       div:nth-child(2), div:nth-child(4) {
         margin-right: 0;
@@ -570,8 +584,8 @@ const QuickAreaPhone = styled.div`
   // width: 96%;
   flex-wrap: wrap;
   margin: 0 8px;
-  // padding: 25px 0;
-  // background: #ffffff;
+  padding: 25px 0;
+  background: #ffffff;
   border-radius: 10px;
   position: absolute;
 
@@ -650,12 +664,13 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
           })}>
           {<img className="carousel-bg-ball" src={BG_BALL} />}
           <div className="carousel-bg-right"></div>
-          <Carousel style={{ width: '100%' }} interval={3000} fade activeIndex={index} onSelect={handleSelect}>
+          <Carousel pause={false} style={{ width: '100%' }} interval={3000} fade activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item className="no_duration" key={1}>
               <div className="main-container">
-                <div className="main-title">智能用户运营领域创领者</div>
+                <div className="main-title">AI驱动高效商业和高效治理</div>
                 <div style={{ marginBottom: '56px',marginTop:0 }} className="sec-title">
-                  用AI助力构建用户长期信任关系
+                  致力于以AI和大数据技术
+                  <br /> 为客户提供智能化的用户运营解决方案
                 </div>
                 <div style={{ width: '644px', height: '496px' }} className="bg-img-blue">
                   <img style={{ height: '100%' }} src={imgurl + '/sy-banner1.png'} alt="" />
@@ -759,15 +774,17 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
           <Carousel style={{ width: '100%' }} interval={3000} fade activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item className="no_duration" key={1}>
               <div className="main-container">
-                <div className="main-title-m">智能用户</div>
-                <div className="main-title-m">运营领域创领者</div>
+                {/* <div className="main-title-m">智能用户</div> */}
+                <div className="main-title-m">AI驱动<br />高效商业和高效治理</div>
                 <div className="sec-title"
-                  style={{ marginBottom : '14px' }}
+                  style={{ marginBottom : '24px' }}
                 >
-                  用AI助力构建用户长期信任关系
+                  致力于以AI和大数据技术
+                  <br />为客户提供智能化的用户运营解决方案
                 </div>
                 <div
                   className="carousel-btn"
+                  style={{ marginBottom : '66px' }}
                   onClick={() => {
                     window.open(`/form?formType=1`);
                   }}>
@@ -824,10 +841,10 @@ export const IndustryCarousel: FC<ICarousel> = ({ onChange, hadnleNav }) => {
                 <div style={{ marginBottom: '14px', lineHeight: '38px'}} className="main-title-m">4项人工智能关键</div>
                 <div style={{ marginBottom: '14px', lineHeight: '38px'}} className="main-title-m">技术标准编写单位</div>
                 <div className='third-group'>
-                    <div style={{ padding: '0', lineHeight: '36px' }}>大规模训练技术模型开发</div>
-                    <div style={{ padding: '0', lineHeight: '36px' }}>大规模训练技术模型能力</div>
-                    <div style={{ padding: '0' ,lineHeight: '36px' }}>智能对话平台开发及服务能力</div>
-                    <div style={{ padding: '0', lineHeight: '36px' }}>智能客服系统服务</div>
+                    <div className='moreClick' style={{ padding: '0', lineHeight: '36px' }}><span>大规模训练技术模型开发</span> </div>
+                    <div className='moreClick' style={{ padding: '0', lineHeight: '36px' }}><span>大规模训练技术模型能力</span></div>
+                    <div className='moreClick' style={{ padding: '0' ,lineHeight: '36px' }}><span>智能对话平台开发及服务能力</span></div>
+                    <div className='moreClick' style={{ padding: '0', lineHeight: '36px' }}><span>智能客服系统服务</span></div>
                 </div>
 
                 <div

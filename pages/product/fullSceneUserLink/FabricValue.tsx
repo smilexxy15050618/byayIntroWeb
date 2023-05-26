@@ -239,7 +239,7 @@ const RawFabricValue: FC<IProps> = ({ className }) => {
         <div className="FeatureValue-tab" id={AISOLUTION}>
         <ByProgressSwiper
           newProgress={true}
-          initialSlide={0}
+          initialSlide={1}
           slidesPerView="auto"
           autoplayDelay={5000}
           spaceBetween={16}

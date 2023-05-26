@@ -17,6 +17,7 @@ interface IGameProps {
 }
 
 const Game: NextFunctionComponent<IGameProps> = () => {
+  
   return (
     <Layout headPlaceholder={[false, false]} headFontStyle={['dark', 'dark']}>
       {(visible, setVisible) => (

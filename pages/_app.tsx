@@ -56,6 +56,7 @@ export default class extends App<
       console.log('useragent', ctx.ctx.req.headers['user-agent']);
       const pathname = ctx.ctx.pathname;
       let tdk = ByaiTdk[0];
+      console.log('-----AA-----',ByaiTdk)
       const userAgentIsMobile = isMobile(ctx.ctx.req.headers['user-agent']);
       console.log(pathname, host, ctx.ctx.req.query);
       if (host) {
@@ -84,7 +85,7 @@ export default class extends App<
             }
           }
         }
-        // console.log(tdk, "23222222")
+        console.log(tdk, "----23222222")
         return { ...initialProps, ...tdk, isPC: !userAgentIsMobile, styles };
       }
     }
@@ -125,10 +126,14 @@ export default class extends App<
       <Container>
         <isPCContext.Provider value={isPC}>
           <Head>
-            {title && <title>{title}</title>}
+            {/*{title && <title>{title}</title>}
             {title && <meta name="title" content={title} key="title" />}
             {keywords && <meta name="keywords" content={keywords} />}
-            {description && <meta name="description" content={description} />}
+            {description && <meta name="description" content={description} />}*/}
+            <title>{title}</title>
+            <meta name="title" content={title} key="title" />
+            <meta name="keywords" content={keywords} />
+            <meta name="description" content={description} />
           </Head>
           <Component {...pageProps} />
         </isPCContext.Provider>

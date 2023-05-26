@@ -18,7 +18,8 @@ const Pane = styled.div`
     color: rgba(26, 26, 26, 1);
   }
   .left {
-    width: 34%;
+    /* width: 34%; */
+    width: 600px;
     // img{
     //     width: 100%;
     //     margin-top: 73px;
@@ -68,12 +69,14 @@ const Pane = styled.div`
     }
   }
   .content {
+    width: 1280px;
+    margin:0 auto;
     margin-bottom: 54px;
     display: flex;
   }
   .right {
-    width: 39%;
-    margin-left: 12.3%;
+    width:680px;
+    /* margin-left: 12.3%; */
     .right_box {
       display: flex;
       justify-content: space-between;

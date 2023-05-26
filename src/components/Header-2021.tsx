@@ -469,6 +469,7 @@ class Nav extends React.Component<
   }
 
   componentWillUnmount() {
+    window.onscroll = null;
     document.removeEventListener('wheel', this.handleHeaderOpacity);
   }
   // 向外查找符合className 的元素，fix一进页面鼠标就在菜单选项中

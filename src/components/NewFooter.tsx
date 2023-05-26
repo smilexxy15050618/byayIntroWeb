@@ -600,11 +600,11 @@ export const Footer: React.FunctionComponent<{ origin?: 'crm'; disableLink?: boo
             <LinkCol style={{width: '300px'}}>
               <h6>联系我们</h6>
               <a href="tel:4000235100" className="margin-adjust phone">
-                <div>电话: </div>
-                <div>400-0235-100</div>
+              <div>400-0235-100</div>
+              <br />
               </a>
               <div className="margin-adjust addr">
-                <div>公司地址：</div>
+              <br />
                 <div>浙江省杭州市余杭区梦想小镇天使村11幢</div>
               </div>
             </LinkCol>

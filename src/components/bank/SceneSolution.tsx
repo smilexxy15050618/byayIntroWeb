@@ -45,10 +45,10 @@ const HoveUp = styled.div`
    margin:0 auto; 
    @media (max-width: 768px) {
      width: 100%;
-     padding: 0 12px;
+     padding: 0 16px;
      img{
         width:100%;
-        margin:147px;
+        height: auto;
       }
    }
    img{
