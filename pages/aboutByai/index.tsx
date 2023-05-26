@@ -18,7 +18,7 @@ import {
 } from '../../src/components/about';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 import imgurl from '../../img.url.js';
-import { HOST_ENUM } from '../../src/lib/utils';
+import { HOST_ENUM, isPc } from '../../src/lib/utils';
 
 const BANNER_BG = `${imgurl}/about_banner_bg.png`;
 const BANNER_WAP_BG = `${imgurl}/about-wap-bg.png`;
@@ -117,26 +117,22 @@ const CreditMedal = styled.div<{ backgroundImage?: string }>`
 const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
   const [initial, setInitial] = useState(true);
   const [indexTab, setIndexTab] = useState(0);
-  // const [is_fixed, set_is_fixed] = useState(false);
 
   const handleHeaderOpacity = () => {
     document.body.getBoundingClientRect().top > -10 ? setInitial(true) : setInitial(false);
   };
 
   const hadnleNav = (e) => {
-    setInitial(false);
+    if(isPc()){
+      setInitial(false)
+    }
     setIndexTab(e)
   };
 
   useEffect(() => {
     document.addEventListener('wheel', handleHeaderOpacity);
-    // const fixedTop = document.getElementById('tabNav').offsetTop;
-    // window.onscroll = () => {
-    //   const scrollTop = document.documentElement.scrollTop;
-    //   const isFixed = scrollTop >= fixedTop - 110;
-    //   set_is_fixed(isFixed);
-    // };
   }, []);
+
 
   return (
     <Layout initialOpacity={initial} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>

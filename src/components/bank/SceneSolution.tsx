@@ -45,10 +45,10 @@ const HoveUp = styled.div`
    margin:0 auto; 
    @media (max-width: 768px) {
      width: 100%;
-     padding: 0 12px;
+     padding: 0 16px;
      img{
         width:100%;
-        margin:147px;
+        height: auto;
       }
    }
    img{
@@ -71,7 +71,7 @@ const MainWrap = styled.div`
 `
 
 const carouselDataList = imgurl+'/bank-scene-solution.svg'
-const carouselDataListWap = imgurl+'/bank-scene-solution-wap.png'
+const carouselDataListWap = '/static/img2023/bank-scene-solution-wap.png'
 
 const SceneSolution: FC<SceneSolution> = ({}) => {
    

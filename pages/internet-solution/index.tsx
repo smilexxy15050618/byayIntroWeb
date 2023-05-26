@@ -18,6 +18,7 @@ import { BANNER_LIST, MOBILE_SCENE_SOLUTION_LIST } from '../../src/constants/pla
 import { HOST_ENUM, scrollIntoOffset } from '../../src/lib/utils';
 import imgurl from '../../img.url.js';
 const JOIN_US_IMG = `${imgurl}/internet-banner.svg`;
+const JOIN_US_IMG_WAP = `${imgurl}/internet-banner-new.png`;
 const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
 
 const Wrapper = styled.div`
@@ -111,7 +112,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
         {(visible, setFormVisible) => (
           <Wrapper>
             <BannerWhite
-              height={['560px', '657px']}
+              height={['560px', '637px']}
               LinearHeight={['500px', '100%']}
               background={[`rgba(246, 252, 255, 1);`, 'rgba(246, 252, 255, 1)']}
               pcImgs={[
@@ -121,8 +122,8 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                   className: ['animate__fadeInRight', 'animate__ahead_300ms'],
                 },
               ]}
-              mobileStyle={{height:'270px',paddingTop: '21px'}}
-              mobileImg={JOIN_US_IMG}>
+              mobileStyle={{display:'block', width:'223px', height:'218px',margin: '27px auto 0'}}
+              mobileImg={JOIN_US_IMG_WAP}>
               <TextArea spaces={['', '']}>
                 <Hidden xs sm>
                   <BigTitle>
