@@ -693,6 +693,7 @@ const ProgressContent = styled.div`
 const MainWrap = styled.div`
   transform: translateY(50%);
   transition: all 0.4s;
+
   opacity: 0;
   &.appear {
     transform: translateY(0);
@@ -848,8 +849,8 @@ const CustomerWords: FC<ICustomerWordsProps> = ({}) => {
       id={CustomerId}
       title="众多政府机构及头部企业的信赖之选"
       titleStyle={{ marginBottom: '53px' }}
-      paneBgColor="white"
-      style={{ paddingBottom: 70 }}
+      paneBgColor="grey"
+      style={{ paddingBottom: 70,background:'rgba(246, 252, 255, 1)' }}
       mobileStyle={{ paddingBottom: 40 }}>
       <Hidden xs sm>
         <MainWrap id={CustomerIdwrap} ref={myRef}>

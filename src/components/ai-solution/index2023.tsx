@@ -71,6 +71,15 @@ const Card = styled.div<{ bg: number }>`
     border-radius: 8px;
     background: rgba(43, 88, 249, 1);
     position: relative;
+    transition: all 0.3s ease-in;
+    &:hover{
+      
+        transform: translateY(-8px);
+        @media (max-width: 728px) {
+          transform:none;
+
+        }
+    }
     img{
         position: absolute;
         right: 0;

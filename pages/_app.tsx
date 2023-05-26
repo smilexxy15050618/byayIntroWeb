@@ -32,6 +32,7 @@ export default class extends App<
 > {
   static async getInitialProps(ctx) {
     const initialProps = await App.getInitialProps(ctx);
+    
     const originalRenderPage = ctx.renderPage;
     let styles: any = undefined;
     if (ctx.ctx.req) {
@@ -83,7 +84,7 @@ export default class extends App<
             }
           }
         }
-        // console.log(tdk, "23222222")
+        console.log(tdk, "23222222")
         return { ...initialProps, ...tdk, isPC: !userAgentIsMobile, styles };
       }
     }

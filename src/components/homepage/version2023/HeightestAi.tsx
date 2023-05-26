@@ -207,7 +207,7 @@ const Carousel: React.FC<ICarouselProps> = ({ dataList, style }) => {
                 onClick={() => {
                   setCurrIndex(index+1);
                   controlledSwiper.slideTo(index+1);
-                }}>
+                }} style={{cursor:'pointer'}}>
                 <img src={avatarSrc} alt="" />
               </div>
             );

@@ -55,7 +55,7 @@ color: rgba(255, 255, 255, 1);
 }
 .dropdown {
   button {
-    min-width: 89px;
+    min-width: 132px;
     height: 24px;
     background: none;
     border-radius: 0;
