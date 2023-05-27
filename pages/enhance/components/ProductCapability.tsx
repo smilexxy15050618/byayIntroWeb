@@ -292,7 +292,7 @@ export const ProductCapability = () => {
       let scrollTop = document.documentElement.scrollTop;
       // const isFixed = scrollTop >= fixedTop;
       // set_is_fixed(isFixed);
-      if (!lock) {
+      // if (!lock) {
         if (scrollTop >= scrollContent1.offsetTop - 220) {
           setActiveIndex(0)
         }
@@ -306,8 +306,8 @@ export const ProductCapability = () => {
           setActiveIndex(3)
         }
         setLock(false);
-      }
-      if(scrollTop<scrollContent1.offsetTop-172) {
+      // }
+      if(scrollTop<scrollContent1.offsetTop-180) {
           set_is_fixed(false);
         } else if(scrollTop<scrollContent.offsetHeight+scrollContent.offsetTop) {
           set_is_fixed(true);
@@ -322,7 +322,7 @@ export const ProductCapability = () => {
   })
   const scrollTo = (index) => {
     setLock(true);
-    setActiveIndex(index);
+    // setActiveIndex(index);
     var dom = document.querySelectorAll('.contents>div')[index];
     var scrollHeight = dom.offsetTop - '220';
     if (dom) {
