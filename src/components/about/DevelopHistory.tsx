@@ -348,7 +348,7 @@ class DevelopHistory extends React.Component<ICourseProps, ICourseState> {
     }
 
     return (
-      <ByRatioBox width="100%" calcHeight={() => 'calc(60% - 293px)'} backgroundImage={backgroundImage} style={{marginTop: indexTab == 2 ? /Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent) ? '0' : '256px' : '0' }}>
+      <ByRatioBox width="100%" calcHeight={() => 'calc(60% - 293px)'} backgroundImage={backgroundImage}>
         <div className="title" id="DevelopHistory">发展历程</div>
         <CourseList onMouseLeave={this.handleCourseLeave}>
           <CourseListInner width={(clientWidth / 5) * courseList.length} translateX={translateX}>

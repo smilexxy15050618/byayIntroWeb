@@ -107,7 +107,10 @@ const FeatureWrap = styled.div`
       padding: 34px 15px 0;
     }
   }
-  
+  .flex-placeholder{
+    height: 170px;
+    width: 100%;
+  }
   .capacity-tab{
     height: 170px;
     display: flex;
@@ -276,13 +279,12 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
   const navRefCommunicate = useRef(null);
   const navRefOnlineCommunication = useRef(null);
   const navRefIntelligentTerminal = useRef(null);
-
+  
   useEffect(() => {
     const fixedTop = navRef.current.offsetTop;
+    
     window.onscroll = () => {
       let scrollTop = document.documentElement.scrollTop;
-      const isFixed = scrollTop >= fixedTop - 170;
-      set_is_fixed(isFixed);
       
       if (scrollTop >= navRefWeChat.current.offsetTop - 220 && scrollTop < navRefCommunicate.current.offsetTop - 220) {
         setCurrIndex(0)
@@ -297,7 +299,11 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
         setCurrIndex(3)
       }
 
-      if (scrollTop >= navRefIntelligentTerminal.current.offsetTop + navRefIntelligentTerminal.current.offsetHeight - 10) {
+      if(scrollTop < fixedTop-67) {
+        set_is_fixed(false);
+      } else if(scrollTop<navRefIntelligentTerminal.current.offsetHeight+navRefIntelligentTerminal.current.offsetTop) {
+        set_is_fixed(true);
+      } else if(scrollTop>=navRefIntelligentTerminal.current.offsetHeight+navRefIntelligentTerminal.current.offsetTop+50) {
         set_is_fixed(false);
       }
 
@@ -308,25 +314,18 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
     <FeatureWrap>
       <div className="title">产品能力</div>
       <Visible md lg xl xxl xxxl>
-        <div ref={navRef} className={`capacity-tab ${is_fixed ? 'fixedTop' : ''}`}>
+        <div className={`capacity-tab ${is_fixed ? 'fixedTop' : ''}`} ref={navRef}>
           {FEATURE_TITLE.map((item, i) => (
             <div
               className={i == currIndex ? 'capacity-item active' : 'capacity-item'}
               onClick={() => {
                 onCancel();
                 setCurrIndex(i);
-
-                const node = document.getElementById(`${item.id}`).offsetTop
-                if(i==1){
-                  if(is_fixed){
-                    window.scrollTo({top:node-220,behavior:'smooth'});
-                  } else{
-                    window.scrollTo({top:node-390,behavior:'smooth'});
-                  }
-                } else{
-                  window.scrollTo({top:node-220,behavior:'smooth'});
-                }
-                
+                const node = document.getElementById(`${item.id}`).offsetTop - '220'
+                window.scrollTo({
+                  top:node,
+                  behavior:'smooth'
+                });
               }}>
               <img src={i == currIndex ? item.iconnormal : item.iconactive} />
               <img src={item.iconnormal} />
@@ -335,6 +334,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
             </div>
           ))}
         </div>
+        <div className='flex-placeholder' style={{display: is_fixed ? 'block' : 'none'}}></div>
         <div className="FeatureIntroduceWrap">
           {FEATURE_INFO.map((item, i) => (
             <div className={'relative-position'} id={item.id} ref={i == 0 ? navRefWeChat : i == 1 ? navRefCommunicate : i == 2 ? navRefOnlineCommunication : navRefIntelligentTerminal}>

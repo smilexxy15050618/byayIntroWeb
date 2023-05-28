@@ -16,9 +16,7 @@ interface TabNavProps {
   minWidthPC?: string;
 }
 
-const Wrapper = styled.div<{
-  active?: string;
-}>`
+const Wrapper = styled.div`
   .swiper-slide{
     position: relative;
     width: 90px;
@@ -28,19 +26,6 @@ const Wrapper = styled.div<{
     font-size: 16px;
     font-weight: 400;
     color: rgba(90,90,90,1);
-    // &:nth-child(${props => props.active+1}){
-    //   &::after{
-    //     position: absolute;
-    //     left: 30px;
-    //     bottom: 0;
-    //     content: '';
-    //     width: 30px;
-    //     height: 2px;
-    //     opacity: 1;
-    //     border-radius: 2px;
-    //     background: rgba(43, 88, 249, 1);
-    //   }
-    // }
   }
   
   .capacity-tab{
@@ -55,14 +40,9 @@ const Wrapper = styled.div<{
     width: 100vw;
     background:#fff;
   }
-  .fixedTopPc{
-    position: fixed;
-    height: 80px;
-    z-index: 11;
-    left: 0;
-    top: 80px;
-    background: #fff;
-    margin-top: 0;
+  .capacity-placeholder{
+    width: 100vw;
+    height: 45px;
   }
 `
 
@@ -77,6 +57,12 @@ const NavItemContainer = styled.div`
 const NavItemContainerCom = styled.div`
   width: 1200px;
   margin:0 auto;
+`;
+
+const NavItemPlaceholder = styled.div`
+  width: 100%;
+  height: 80px;
+  margin-top: 16px;
 `;
 
 const NavItem = styled.div<{ active: boolean }>`
@@ -150,7 +136,6 @@ const TabNav: React.SFC<TabNavProps> = ({ bannerList, onCancel }) => {
     const fixedTop = document.getElementById('tabNav').offsetTop;
 
     window.onscroll = () => {
-      // if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
         const scrollTop = document.documentElement.scrollTop;
         const qiyejieshao = document.getElementById('qiyejieshao');
         const MissionVision = document.getElementById('MissionVision');
@@ -159,76 +144,91 @@ const TabNav: React.SFC<TabNavProps> = ({ bannerList, onCancel }) => {
         const CreditMedal = document.getElementById('CreditMedal');
         const JoinUs = document.getElementById('JoinUs');
 
-        const isFixed = scrollTop >= fixedTop - 110;
-        set_is_fixed(isFixed);
-
-        if (scrollTop >= qiyejieshao.offsetTop - 100 && scrollTop < MissionVision.offsetTop - 100) {
+        if (scrollTop >= qiyejieshao.offsetTop - 145 && scrollTop < MissionVision.offsetTop - 145) {
           setActIndex(0)
           if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
             oneSwipers.current.swiper.slideTo(0)
           }
         }
-        if (scrollTop >= MissionVision.offsetTop - 100 && scrollTop < DevelopHistory.offsetTop - 100) {
+
+        if (scrollTop >= MissionVision.offsetTop - 145 && scrollTop < DevelopHistory.offsetTop - 145) {
           setActIndex(1)
           if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
             oneSwipers.current.swiper.slideTo(0)
           }
         }
-        if (scrollTop >= DevelopHistory.offsetTop - 120 && scrollTop < SocietyDuty.offsetTop - 120) {
+
+        if (scrollTop >= DevelopHistory.offsetTop - 145 && scrollTop < SocietyDuty.offsetTop - 145) {
           setActIndex(2)
         }
-        if (scrollTop >= SocietyDuty.offsetTop - 120 && scrollTop < CreditMedal.offsetTop - 120) {
+
+        if (scrollTop >= SocietyDuty.offsetTop - 145 && scrollTop < CreditMedal.offsetTop - 145) {
           setActIndex(3)
         }
-        if (scrollTop >= CreditMedal.offsetTop - 120 && scrollTop < JoinUs.offsetTop - 120) {
+
+        if (scrollTop >= CreditMedal.offsetTop - 145 && scrollTop < JoinUs.offsetTop - 145) {
           setActIndex(4)
           if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
             oneSwipers.current.swiper.slideTo(2)
           }
         }
-        if (scrollTop >= JoinUs.offsetTop - 120) {
+
+        if (scrollTop >= JoinUs.offsetTop - 145) {
           setActIndex(5)
           if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
             oneSwipers.current.swiper.slideTo(2)
           }
         }
-
-        if (scrollTop >= JoinUs.offsetTop + JoinUs.offsetHeight - 10) {
-        set_is_fixed(false);
+        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
+          if(scrollTop < fixedTop-64) {
+            set_is_fixed(false);
+          } else if(scrollTop<JoinUs.offsetHeight+JoinUs.offsetTop) {
+            set_is_fixed(true);
+          } else if(scrollTop>=JoinUs.offsetHeight+JoinUs.offsetTop+50) {
+            set_is_fixed(false);
+          }
+        } else {
+          if(scrollTop < fixedTop-80) {
+            set_is_fixed(false);
+          } else if(scrollTop<JoinUs.offsetHeight+JoinUs.offsetTop) {
+            set_is_fixed(true);
+          } else if(scrollTop>=JoinUs.offsetHeight+JoinUs.offsetTop+50) {
+            set_is_fixed(false);
+          }
+        }
       }
-
-      }
-    // };
   }, []);
 
   return (
-    <Wrapper active={actIndex}>
+    <Wrapper>
     <Visible md lg xl xxl xxxl>
-      <NavItemContainer className={`${is_fixed ? 'fixedTopPc' : ''}`} id="tabNav">
+      <NavItemContainer className={`${is_fixed ? 'fixedTop' : ''}`} id="tabNav">
         <NavItemContainerCom>
-        {bannerList.map(({ name, jumpTarget }, navIndex) => {
-          return (
-            <NavItem
-              key={navIndex}
-              active={navIndex === actIndex}
-              onClick={() => {
-                setActIndex(navIndex)
-                const node = document.querySelector(jumpTarget);
-                if (node) {
-                  node.scrollIntoView({ behavior: 'smooth' });
-                }
-                onCancel(navIndex)
-              }}
-            >
-            {name}
-          </NavItem>
-          );
-        })}
+          {bannerList.map(({ name, jumpTarget }, navIndex) => {
+            return (
+              <NavItem
+                key={navIndex}
+                active={navIndex === actIndex}
+                onClick={() => {
+                  onCancel();
+                  setActIndex(navIndex);
+                  const node = document.getElementById(`${jumpTarget}`).offsetTop - '145'
+                  window.scrollTo({
+                    top:node,
+                    behavior:'smooth'
+                  });
+
+                }}
+              >
+              {name}
+            </NavItem>
+            );
+          })}
         </NavItemContainerCom>
       </NavItemContainer>
+      <NavItemPlaceholder style={{display: is_fixed ? 'block' : 'none'}}></NavItemPlaceholder>
     </Visible>
     <Visible xs sm>
-      <div class="capacity-tab" style={{display: is_fixed ? 'block' : 'none'}}></div>
       <div className={`capacity-tab ${is_fixed ? 'fixedTop' : ''}`} id="tabNav">
         <ArrowClickL
           onClick={e => {
@@ -271,6 +271,7 @@ const TabNav: React.SFC<TabNavProps> = ({ bannerList, onCancel }) => {
           style={{display: actIndex == bannerList.length -1 || slideTranslate == 2 ? 'none' : 'block'}}
         ></ArrowClickR>
       </div>
+      <div class="capacity-placeholder" style={{display: is_fixed ? 'block' : 'none'}}></div>
     </Visible>
     </Wrapper>
   )

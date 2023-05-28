@@ -7,7 +7,6 @@ import { TextArea } from '../../../src/components/common/BannerTextElements';
 
 const Wrapper = styled.div`
 padding-top: 60px;
-padding-bottom: 100px;
 @media (max-width: 768px) {
   padding-bottom: 40px;
  background: linear-gradient(180deg, rgba(226, 243, 255, 1) 0%, rgba(215, 221, 255, 1) 100%); 

@@ -289,7 +289,7 @@ const SocietyDuty: React.SFC<SocietyDutyProps> = ({indexTab}) => {
   }, [myRef]);
 
   return (
-  <SocietyDutyContainer id="SocietyDuty" maxWidthPc="1200px" style={{paddingTop: indexTab == 3 ? /Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent) ? '109px' : '0' : '0',marginTop: indexTab == 3 ? /Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent) ? '0' : '256px' : '0' }}>
+  <SocietyDutyContainer id="SocietyDuty">
     <Title>社会责任</Title>
     <SocietyDutyContainerWrap ref={myRef}>
       <Hidden xs sm>

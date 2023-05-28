@@ -167,27 +167,27 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
                 bannerList={[
                   {
                     name: '企业介绍',
-                    jumpTarget: '#qiyejieshao',
+                    jumpTarget: 'qiyejieshao',
                   },
                   {
                     name: '使命愿景',
-                    jumpTarget: '#MissionVision',
+                    jumpTarget: 'MissionVision',
                   },
                   {
                     name: '发展历程',
-                    jumpTarget: '#DevelopHistory',
+                    jumpTarget: 'DevelopHistory',
                   },
                   {
                     name: '社会责任',
-                    jumpTarget: '#SocietyDuty',
+                    jumpTarget: 'SocietyDuty',
                   },
                   {
                     name: '荣誉证书',
-                    jumpTarget: '#CreditMedal',
+                    jumpTarget: 'CreditMedal',
                   },
                   {
                     name: '加入我们',
-                    jumpTarget: '#JoinUs',
+                    jumpTarget: 'JoinUs',
                   },
                 ]}
                 onCancel={hadnleNav}

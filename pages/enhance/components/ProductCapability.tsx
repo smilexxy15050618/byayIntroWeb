@@ -73,6 +73,12 @@ const Label = styled.div`
     padding: 0;
   }
 `
+
+const labelPlaceholder = styled.div`
+  width: 100%;
+  height: 172px;
+`
+
 const LabelItem = styled.div`
   width: 190px;
   height: 170px;
@@ -169,12 +175,6 @@ const LabelItem = styled.div`
 `
 const Content = styled.div`
     opacity: 1;
-    // transform: translateY(10%);
-    // transition: all 0.4s;
-    // &.appear {
-    //     opacity: 1;
-    //     transform: translateY(0);
-    // }
   img {
     margin-bottom: 0px;
   }
@@ -226,11 +226,8 @@ export const ProductCapability = () => {
   const navRef = useRef(null);
   const [lock, setLock] = useState(false);
   useEffect(() => {
-    try {
-      const fixedTop = navRef.current.offsetTop;
-    } catch (error) {
-      // console.log(error);
-    }
+    
+    const fixedTop = navRef.current.offsetTop;
     const ScrollMagic = require('scrollmagic');
     const controller1 = new ScrollMagic.Controller();
     const scrollContent1 = document.getElementById('ProductCapContent');
@@ -273,7 +270,6 @@ export const ProductCapability = () => {
         controller3.destroy();
       });
 
-
     const controller = new ScrollMagic.Controller();
     const scrollContent = document.getElementById('ProductCapContent4');
     var scene = new ScrollMagic.Scene({
@@ -290,9 +286,7 @@ export const ProductCapability = () => {
       // 以下代码为移动端滚动 tab跟随高亮
       // return false;
       let scrollTop = document.documentElement.scrollTop;
-      // const isFixed = scrollTop >= fixedTop;
-      // set_is_fixed(isFixed);
-      // if (!lock) {
+
         if (scrollTop >= scrollContent1.offsetTop - 220) {
           setActiveIndex(0)
         }
@@ -307,17 +301,13 @@ export const ProductCapability = () => {
         }
         setLock(false);
       // }
-      if(scrollTop<scrollContent1.offsetTop-180) {
-          set_is_fixed(false);
-        } else if(scrollTop<scrollContent.offsetHeight+scrollContent.offsetTop) {
-          set_is_fixed(true);
-        } else if(scrollTop>=scrollContent.offsetHeight+scrollContent.offsetTop+50) {
-          set_is_fixed(false);
-        }
-      // if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
-        
-      // }
-
+      if(scrollTop < fixedTop - 172) {
+        set_is_fixed(false);
+      } else if(scrollTop<scrollContent.offsetHeight+scrollContent.offsetTop) {
+        set_is_fixed(true);
+      } else if(scrollTop>=scrollContent.offsetHeight+scrollContent.offsetTop+50) {
+        set_is_fixed(false);
+      }
     }
   })
   const scrollTo = (index) => {
@@ -351,6 +341,7 @@ export const ProductCapability = () => {
             }))
           }
         </Label>
+        <labelPlaceholder style={{display: is_fixed ? 'block' : 'none'}}></labelPlaceholder>
         <Content className='contents'>
           <div id='ProductCapContent'>
             <div>
@@ -379,19 +370,6 @@ export const ProductCapability = () => {
         </Content>
       </Visible>
       <Visible xs sm>
-        {/* <Label ref={navRef} className={`bottom_border ${is_fixed ? 'fixedTop' : ''}`}>
-          {
-            labelList.map((({ img, activeImg, text, english_text }, index) => {
-              return (
-                <LabelItem onClick={() => scrollTo(index)} className={activeIndex == index ? 'active' : ''}>
-                  <img src={activeIndex == index ? activeImg : img} alt="" />
-                  <img src={activeImg} alt="" />
-                  <div className="title-tab">{text}</div>
-                </LabelItem>
-              )
-            }))
-          }
-        </Label> */}
         <Content className='contents'>
           <div id='ProductCapContent'>
             <div>

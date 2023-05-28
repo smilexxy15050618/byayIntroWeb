@@ -69,6 +69,12 @@ const Label = styled.div`
     padding: 0;
   }
 `
+
+const labelPlaceholder = styled.div`
+  width: 100%;
+  height: 172px;
+`
+
 const LabelItem = styled.div`
   height: 170px;
   position: relative;
@@ -220,11 +226,7 @@ export const ProductCapability = () => {
   const navRef = useRef(null);
   const [lock, setLock] = useState(false);
   useEffect(() => {
-    try {
-      const fixedTop = navRef.current.offsetTop;
-    } catch (error) {
-      // console.log(error);
-    }
+    const fixedTop = navRef.current.offsetTop;
     const ScrollMagic = require('scrollmagic');
     const controller1 = new ScrollMagic.Controller();
     const scrollContent1 = document.getElementById('ProductCapContent1');
@@ -268,11 +270,8 @@ export const ProductCapability = () => {
       });
 
     window.onscroll = () => {
-      // return false;
       let scrollTop = document.documentElement.scrollTop;
-      // const isFixed = scrollTop >= fixedTop;
-      // set_is_fixed(isFixed);
-      // if (!lock) {
+      
         if (scrollTop >= scrollContent1.offsetTop - 220) {
           setActiveIndex(0)
         }
@@ -283,19 +282,13 @@ export const ProductCapability = () => {
           setActiveIndex(2)
         }
         setLock(false);
-      // }
-      // if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent)) {
-        if(scrollTop<scrollContent1.offsetTop-180) {
+        if(scrollTop<fixedTop-172) {
           set_is_fixed(false);
         } else if(scrollTop<scrollContent3.offsetHeight+scrollContent3.offsetTop) {
           set_is_fixed(true);
         } else if(scrollTop>=scrollContent3.offsetHeight+scrollContent3.offsetTop+50) {
           set_is_fixed(false);
         }
-        // else if (scrollTop >= fixedTop) {
-        //   set_is_fixed(true);
-        // }
-      // }
     }
 
 
@@ -335,6 +328,7 @@ export const ProductCapability = () => {
             }))
           }
         </Label>
+        <labelPlaceholder style={{display: is_fixed ? 'block' : 'none'}}></labelPlaceholder>
         <Content className='contents'>
           <div id="ProductCapContent1">
             <div>

@@ -251,7 +251,7 @@ const FlairVoucher: FC<SocietyDutyProps> = ({indexTab}) => {
   }, [myRef]);
   
   return (
-  <WrapperContent id="CreditMedal" style={{paddingTop: indexTab == 4 ? /Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent) ? '109px' : '0' : '0',marginTop: indexTab == 4 ? /Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent) ? '0' : '256px' : '0' }}>
+  <WrapperContent id="CreditMedal">
     <FlairVoucherContainer>
       <Title>资质认证</Title>
       <SubTitle>从自身产品安全性到对外数据服务，为数据安全保驾护航</SubTitle>
