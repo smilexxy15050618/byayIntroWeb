@@ -217,7 +217,6 @@ const TabNav: React.SFC<TabNavProps> = ({ bannerList, onCancel }) => {
                     top:node,
                     behavior:'smooth'
                   });
-
                 }}
               >
               {name}
@@ -251,12 +250,13 @@ const TabNav: React.SFC<TabNavProps> = ({ bannerList, onCancel }) => {
               <SwiperSlide
                 style={{color: actIndex == navIndex ? 'rgba(43, 88, 249, 1)' : 'rgba(90, 90, 90, 1)'}}
                 onClick={() => {
-                  onSlideChange(navIndex)
-                  const node = document.querySelector(jumpTarget);
-                  if (node) {
-                    node.scrollIntoView({ behavior: 'smooth' });
-                  }
-                  onCancel(navIndex)
+                  onCancel();
+                  onSlideChange(navIndex);
+                  const node = document.getElementById(`${jumpTarget}`).offsetTop - '109'
+                  window.scrollTo({
+                    top:node,
+                    behavior:'smooth'
+                  });
                 }}
               >
               {name}
