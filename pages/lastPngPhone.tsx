@@ -4,7 +4,7 @@ import imgurl from '../img.url.js';
 
 export interface IAiProps {}
 const Pane = styled.div`
-  padding: 40px 24px;
+  padding: 40px 16px;
   overflow: hidden;
   background: #ffffff;
   .title {
