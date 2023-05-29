@@ -161,6 +161,7 @@ const FeatureValueWrap = styled.div`
           letter-spacing: 0px;
           line-height: 17.38px;
           color: rgba(26, 26, 26, 0.65);
+          text-align: justify;
         }
       }
       img {

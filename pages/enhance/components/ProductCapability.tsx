@@ -224,7 +224,6 @@ export const ProductCapability = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [is_fixed, set_is_fixed] = useState(false);
   const navRef = useRef(null);
-  const [lock, setLock] = useState(false);
   useEffect(() => {
     
     const fixedTop = navRef.current.offsetTop;
@@ -299,8 +298,6 @@ export const ProductCapability = () => {
         if (scrollTop >= scrollContent.offsetTop - 220) {
           setActiveIndex(3)
         }
-        setLock(false);
-      // }
       if(scrollTop < fixedTop - 172) {
         set_is_fixed(false);
       } else if(scrollTop<scrollContent.offsetHeight+scrollContent.offsetTop) {
@@ -311,8 +308,6 @@ export const ProductCapability = () => {
     }
   })
   const scrollTo = (index) => {
-    setLock(true);
-    // setActiveIndex(index);
     var dom = document.querySelectorAll('.contents>div')[index];
     var scrollHeight = dom.offsetTop - '220';
     if (dom) {
@@ -370,7 +365,7 @@ export const ProductCapability = () => {
         </Content>
       </Visible>
       <Visible xs sm>
-        <Content className='contents'>
+        <Content className='contents' ref={navRef}>
           <div id='ProductCapContent'>
             <div>
               <img id='img1' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/qdsjcjm.png'} alt="" />

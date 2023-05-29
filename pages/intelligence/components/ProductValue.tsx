@@ -120,7 +120,7 @@ padding-bottom: 100px;
             color: rgba(26, 26, 26, 1);
             text-align: center;
             @media (max-width: 768px) {
-               /* font-size: 12px; */
+               
           }
         }
         div:last-child {
@@ -131,9 +131,8 @@ padding-bottom: 100px;
             text-align: left;
             margin-top: 18px;
             @media (max-width: 768px) {
-                /* margin-top: 10px;
-                font-size: 10px; */
-          }
+                text-align: justify;
+            }
         }
             img {
                 position: absolute;

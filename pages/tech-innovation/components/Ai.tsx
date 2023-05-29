@@ -212,6 +212,9 @@ const LabelContentWap = styled.div`
         letter-spacing: 0px;
         line-height: 26px;
         color: rgba(90, 90, 90, 1);
+        @media (max-width: 768px) {
+            text-align: justify;
+        }
     }
     img{
         width: 100%;
@@ -422,13 +425,6 @@ export const Ai: FC<IAiProps> = ({ }) => {
                             );
                         })}
                     </Swiper>
-
-                    {/*<div className="con-title">{labelInfoWap[currIndex].name}</div>
-                    <div className="sub-title" style={{display: labelInfoWap[currIndex].fontTitle ? 'block' : 'none'}}>{labelInfoWap[currIndex].fontTitle}</div>
-                    <img src={imgurl+labelInfoWap[currIndex].imgs} className={'img'+currIndex} />
-                    <div onClick={() => window.open('/form?formType=1')} className="ljzx">
-                        立即咨询
-                    </div>*/}
                 </LabelContentWap>
             </Visible>
         </WrapContent>

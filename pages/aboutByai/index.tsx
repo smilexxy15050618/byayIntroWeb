@@ -90,8 +90,8 @@ const EnIntroductionWrap = styled.div`
   @media (max-width: 768px) {
     padding-bottom: 35px;
     background: rgba(255, 255, 255, 1);
-    box-shadow: 20px -20px 110px 0px rgba(24, 63, 171, 0.12);
-    border-radius: 20px 20px 0 0;
+    border-radius: 0;
+    box-shadow: none;
   }
 `;
 

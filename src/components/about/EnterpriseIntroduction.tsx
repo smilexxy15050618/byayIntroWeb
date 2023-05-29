@@ -108,6 +108,7 @@ const BriefIntro = styled.div`
       color: rgba(43, 43, 43, 1);
       margin-bottom: 14px;
       letter-spacing: -0.7px;
+      text-align: justify;
     }
   }
 `;

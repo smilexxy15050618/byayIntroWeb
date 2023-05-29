@@ -139,6 +139,7 @@ const SolutionWap = styled.div`
             font-weight: 400;
             line-height: 20px;
             color: rgba(255, 255, 255, 1);
+            text-align: justify;
         }
     }
 `

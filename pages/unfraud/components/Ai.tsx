@@ -115,6 +115,7 @@ const ListWrapper = styled.div`
         text-align: justify;
         margin-bottom: 24px;
         padding: 0 0 0 16px;
+        text-align: justify;
       }
       img {
         margin-bottom: 0px;

@@ -219,6 +219,10 @@ const FeatureWrap = styled.div`
       padding-top: 36px;
       padding-bottom: 34px;
       background: rgba(255, 255, 255, 1);
+      @media (max-width: 768px) {
+        padding-top: 36px;
+        padding-bottom: 34px;
+      }
       &:nth-child(2) {
         background: rgba(244, 248, 254, 1);
         img{
@@ -262,6 +266,7 @@ const FeatureWrap = styled.div`
         font-weight: 400;
         line-height: 20px;
         color: rgba(0, 0, 0, 0.65);
+        text-align: justify;
       }
     }
 `;

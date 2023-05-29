@@ -351,20 +351,7 @@ export const ProductCapability = () => {
         </Content>
       </Visible>
       <Visible xs sm>
-        {/* <Label ref={navRef} className={`bottom_border ${is_fixed ? 'fixedTop' : ''}`}>
-          {
-            labelList.map((({ img, activeImg, text, english_text }, index) => {
-              return (
-                <LabelItem onClick={() => scrollTo(index)} className={activeIndex == index ? 'active' : ''}>
-                  <img src={activeIndex == index ? activeImg : img} alt="" />
-                  <img src={activeImg} alt="" />
-                  <div className="title-tab">{text}</div>
-                </LabelItem>
-              )
-            }))
-          }
-        </Label> */}
-        <Content className='contents'>
+        <Content className='contents' ref={navRef}>
           <div id="ProductCapContent1">
             <div>
               <img id='img1' style={{ width: '343px', }} src={imgurl + '/yxhbm.png'} alt="" />

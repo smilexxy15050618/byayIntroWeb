@@ -18,10 +18,10 @@ const HoveUp = styled.div`
   }
    .carditem{
     width: 179px;
-height: 192px;
-opacity: 1;
-border-radius: 8px;
-background: rgba(43, 88, 249, 1);
+    height: 192px;
+    opacity: 1;
+    border-radius: 8px;
+    background: rgba(43, 88, 249, 1);
     position: relative;
     &:hover {
       transform: translateY(-8px);
@@ -44,17 +44,18 @@ background: rgba(43, 88, 249, 1);
         top:60px;
         .title_area{
             font-size: 20px;
-font-weight: 600;
-line-height: 24px;
-color: rgba(255, 255, 255, 1);
-margin-bottom:16px;
+            font-weight: 600;
+            line-height: 24px;
+            color: rgba(255, 255, 255, 1);
+            margin-bottom:16px;
         }
         .cont_area{
             font-size: 14px;
-font-weight: 400;
-letter-spacing: 0px;
-line-height: 24px;
-color: rgba(255, 255, 255, 1);
+            font-weight: 400;
+            letter-spacing: 0px;
+            line-height: 24px;
+            color: rgba(255, 255, 255, 1);
+            text-align: justify;
         }
     }
    }

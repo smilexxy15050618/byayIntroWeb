@@ -96,6 +96,7 @@ const Pane = styled.div`
       font-size: 12px;
       font-weight: 400;
       line-height: 20px;
+      text-align: justify;      
     }
     img{
       position: absolute;

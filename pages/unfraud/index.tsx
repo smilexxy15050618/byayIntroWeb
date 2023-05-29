@@ -10,7 +10,6 @@ import {CustomerStories} from './components/CustomerStories'
 import { HOST_ENUM } from '../../src/lib/utils';
 import { Wrapper } from '../../src/components/voice-robot/style';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
-// import imgurl from '../../img.url.js'
 import BannerWhite from '../../src/components/common/BannerWhite';
 import { TextArea } from '../../src/components/common/BannerTextElements';
 import imgurl from '../../img.url.js'

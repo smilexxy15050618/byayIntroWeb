@@ -18,8 +18,8 @@ const HoveUp = styled.div`
     width: 100%;
     display: block;
     .swiper-slide {
-  width: 285px !important;
-}
+      width: 285px !important;
+    }
     .carditem {
     position: relative;
     width: 285px;

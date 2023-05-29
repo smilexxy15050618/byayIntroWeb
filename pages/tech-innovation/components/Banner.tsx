@@ -56,6 +56,7 @@ const TextArea = styled.div`
             font-weight: 400;
             line-height: 24px;
             color: rgba(51, 51, 51, 1);
+            text-align: justify;
         }
     }
 `
@@ -171,6 +172,7 @@ const AcademyTram = styled.div`
             color: rgba(51, 51, 51, 1);
             padding-top: 23px;
             box-sizing: border-box;
+            text-align: justify;
         }
         div{
             margin-bottom: 16px;

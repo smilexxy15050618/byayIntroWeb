@@ -72,6 +72,7 @@ const SocietyDutyContainerWrap = styled.div`
         font-weight: 400;
         line-height: 24px;
         color: rgba(43, 43, 43, 1);
+        text-align: justify;
       }
    }
 

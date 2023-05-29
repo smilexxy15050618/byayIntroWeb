@@ -19,9 +19,9 @@ const HoveUp = styled.div`
     width: 100vw;
     .custom-bar-wrapper{
       width: 300px;
-  }
-  .swiper-slide {
-    width: 224px !important;
+    }
+    .swiper-slide {
+      width: 224px !important;
     }
    }
    .carditem{
@@ -44,17 +44,20 @@ const HoveUp = styled.div`
         bottom:22px;
         .title_area{
             font-size: 20px;
-font-weight: 600;
-line-height: 24px;
-color: rgba(255, 255, 255, 1);
-margin-bottom:16px;
+            font-weight: 600;
+            line-height: 24px;
+            color: rgba(255, 255, 255, 1);
+            margin-bottom:16px;
         }
         .cont_area{
             font-size: 14px;
-font-weight: 400;
-letter-spacing: 0px;
-line-height: 24px;
-color: rgba(255, 255, 255, 1);
+            font-weight: 400;
+            letter-spacing: 0px;
+            line-height: 24px;
+            color: rgba(255, 255, 255, 1);
+             @media (max-width: 728px) {
+              text-align: justify;
+            }
         }
     }
   }

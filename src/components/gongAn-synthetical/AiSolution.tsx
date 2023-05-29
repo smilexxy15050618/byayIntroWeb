@@ -115,7 +115,7 @@ const SolutionWap = styled.div`
         position: relative;
         width: 180px;
         height: 192px;
-        padding: 18px 0 0 18px;
+        padding: 18px 16px 0 16px;
         border-radius: 8px;
         background: rgba(43, 88, 249, 1);
         box-sizing: border-box;
@@ -137,6 +137,7 @@ const SolutionWap = styled.div`
             font-weight: 400;
             line-height: 20px;
             color: rgba(255, 255, 255, 1);
+            text-align: justify;
         }
     }
 `

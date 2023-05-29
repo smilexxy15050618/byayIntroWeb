@@ -164,6 +164,7 @@ const AlgorItem = styled.div<{ backgroundColor?: string }>`
             letter-spacing: 0px;
             line-height: 22px;
             color: rgba(90, 90, 90, 1);
+            text-align: justify;
         }
     }
 `
@@ -236,6 +237,7 @@ const AlgorithmTag  = styled.div`
                 font-weight: 400;
                 line-height: 20px;
                 color: rgba(90, 90, 90, 1);
+                text-align: justify;
             }
         }
     }
