@@ -210,9 +210,14 @@ const Menu = styled.div`
   box-sizing: border-box;
   margin: 0 auto 0;
   position: relative;
-  transform: translateY(50%);
+  // transform: translateY(50%);
+  // transition: all 0.3s;
+  // opacity: 0;
+
+  transform: translateY(0);
+  opacity: 1;
   transition: all 0.3s;
-  opacity: 0;
+  
   flex-direction: column;
 
   &.appear {

@@ -239,49 +239,97 @@ export const Banner: FC<IAiProps> = ({ }) => {
     return (
     <BannerWrap>
         <TechInnovWrap>
-            <TextArea className="animate__animated animate__fadeInDown">
-                <div className="title">全栈自研的AI核心技术</div>
-                <Visible md lg xl xxl xxxl>
-                    <div className="subtitle">百应拥有近百项 AI 及大数据领域相关专利和软件著作，研发水平位列行业前沿，保<br />证了超高语音识别率、超强语义理解，实现人机无障碍交流沟通</div>
-                </Visible>
-                <Visible xs sm>
-                    <div className="subtitle">拥有百余项 AI 及大数据领域相关专利和软件著作，研发水平位列行业前沿，保证了超高语音识别率、超强语义理解，实现人机无障碍交流沟通</div>
-                </Visible>
-                <BlueBtn
-                    onClick={() =>
-                    window.open('/form?formType=1')
-                    }>
-                    立即体验
-                </BlueBtn>
-            </TextArea>
-            <AcademyTram className="animate__animated animate__fadeInUp">
-                <div className="team">
-                    <div className="title">百应智能研究院<br />中美两地联合算法团队</div>
-                    <div className="img">
-                        <Visible md lg xl xxl xxxl>
-                            {teamImg.map((item, index) => (
-                                <img src={item.img} />
-                            ))}
-                        </Visible>
-                        <Visible xs sm>
-                            {teamImgWap.map((item, index) => (
-                                <img src={item.img} />
-                            ))}
-                        </Visible>
+            <Visible md lg xl xxl xxxl>
+                <TextArea className="animate__animated animate__fadeInDown">
+                    <div className="title">全栈自研的AI核心技术</div>
+                    <Visible md lg xl xxl xxxl>
+                        <div className="subtitle">百应拥有近百项 AI 及大数据领域相关专利和软件著作，研发水平位列行业前沿，保<br />证了超高语音识别率、超强语义理解，实现人机无障碍交流沟通</div>
+                    </Visible>
+                    <Visible xs sm>
+                        <div className="subtitle">拥有百余项 AI 及大数据领域相关专利和软件著作，研发水平位列行业前沿，保证了超高语音识别率、超强语义理解，实现人机无障碍交流沟通</div>
+                    </Visible>
+                    <BlueBtn
+                        onClick={() =>
+                        window.open('/form?formType=1')
+                        }>
+                        立即体验
+                    </BlueBtn>
+                </TextArea>
+                <AcademyTram className="animate__animated animate__fadeInUp">
+                    <div className="team">
+                        <div className="title">百应智能研究院<br />中美两地联合算法团队</div>
+                        <div className="img">
+                            <Visible md lg xl xxl xxxl>
+                                {teamImg.map((item, index) => (
+                                    <img src={item.img} />
+                                ))}
+                            </Visible>
+                            <Visible xs sm>
+                                {teamImgWap.map((item, index) => (
+                                    <img src={item.img} />
+                                ))}
+                            </Visible>
 
-                        
+                            
+                        </div>
                     </div>
-                </div>
-                <div className="team-info">
-                    <div>百应科技在AI领域拥有资深技术团队，其核心团队拥有两名阿里云MVP及多名来自阿里、腾讯、华为的高管、人工智能科学家和多位技术骨干，也有来自于海内外顶尖院校的精英伙伴。</div>
-                    <div>包括麻省理工学院、卡内基梅隆大学、加州大学伯克利分校、哥伦比亚大学、加州大学洛杉矶分校、密歇根大学、瑞典皇家理工大学， 国内的香港科技大学、香港理工大学、清华大学、北京大学、复旦大学、浙江大学、中国科学技术大学、哈尔滨工业大学、华中科技大学等。</div>
-                </div>
-                <div className='tram-logo'>
-                {teamLogo.map((item, index) => (
-                    <img src={item.img} />
-                ))}
-                </div>
-            </AcademyTram>
+                    <div className="team-info">
+                        <div>百应科技在AI领域拥有资深技术团队，其核心团队拥有两名阿里云MVP及多名来自阿里、腾讯、华为的高管、人工智能科学家和多位技术骨干，也有来自于海内外顶尖院校的精英伙伴。</div>
+                        <div>包括麻省理工学院、卡内基梅隆大学、加州大学伯克利分校、哥伦比亚大学、加州大学洛杉矶分校、密歇根大学、瑞典皇家理工大学， 国内的香港科技大学、香港理工大学、清华大学、北京大学、复旦大学、浙江大学、中国科学技术大学、哈尔滨工业大学、华中科技大学等。</div>
+                    </div>
+                    <div className='tram-logo'>
+                    {teamLogo.map((item, index) => (
+                        <img src={item.img} />
+                    ))}
+                    </div>
+                </AcademyTram>
+            </Visible>
+            
+            <Visible xs sm>
+                <TextArea>
+                    <div className="title">全栈自研的AI核心技术</div>
+                    <Visible md lg xl xxl xxxl>
+                        <div className="subtitle">百应拥有近百项 AI 及大数据领域相关专利和软件著作，研发水平位列行业前沿，保<br />证了超高语音识别率、超强语义理解，实现人机无障碍交流沟通</div>
+                    </Visible>
+                    <Visible xs sm>
+                        <div className="subtitle">拥有百余项 AI 及大数据领域相关专利和软件著作，研发水平位列行业前沿，保证了超高语音识别率、超强语义理解，实现人机无障碍交流沟通</div>
+                    </Visible>
+                    <BlueBtn
+                        onClick={() =>
+                        window.open('/form?formType=1')
+                        }>
+                        立即体验
+                    </BlueBtn>
+                </TextArea>
+                <AcademyTram>
+                    <div className="team">
+                        <div className="title">百应智能研究院<br />中美两地联合算法团队</div>
+                        <div className="img">
+                            <Visible md lg xl xxl xxxl>
+                                {teamImg.map((item, index) => (
+                                    <img src={item.img} />
+                                ))}
+                            </Visible>
+                            <Visible xs sm>
+                                {teamImgWap.map((item, index) => (
+                                    <img src={item.img} />
+                                ))}
+                            </Visible>
+
+                            
+                        </div>
+                    </div>
+                    <div className="team-info">
+                        <div>百应科技在AI领域拥有资深技术团队，其核心团队拥有两名阿里云MVP及多名来自阿里、腾讯、华为的高管、人工智能科学家和多位技术骨干，也有来自于海内外顶尖院校的精英伙伴。</div>
+                        <div>包括麻省理工学院、卡内基梅隆大学、加州大学伯克利分校、哥伦比亚大学、加州大学洛杉矶分校、密歇根大学、瑞典皇家理工大学， 国内的香港科技大学、香港理工大学、清华大学、北京大学、复旦大学、浙江大学、中国科学技术大学、哈尔滨工业大学、华中科技大学等。</div>
+                    </div>
+                    <div className='tram-logo'>
+                    {teamLogo.map((item, index) => (
+                        <img src={item.img} />
+                    ))}
+                    </div>
+                </AcademyTram>
+            </Visible>
         </TechInnovWrap>
     </BannerWrap>
 

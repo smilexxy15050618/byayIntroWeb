@@ -4,7 +4,8 @@ import imgurl from '../img.url.js';
 
 export interface IAiProps {}
 const Pane = styled.div`
-  margin: 0 0px 0px 160px;
+  width: 1200px;
+  margin: 0 auto 160px;
   overflow: hidden;
   .title {
     margin-top: 80px;
@@ -18,14 +19,8 @@ const Pane = styled.div`
     color: rgba(26, 26, 26, 1);
   }
   .left {
-    /* width: 34%; */
-    width: 600px;
-    // img{
-    //     width: 100%;
-    //     margin-top: 73px;
-    // }
+    width: 490px;
     .text {
-      // padding-left: 20px;
       font-size: 20px;
       font-weight: 400;
       letter-spacing: 0px;
@@ -38,7 +33,6 @@ const Pane = styled.div`
     height: 2px;
     opacity: 1;
     background: rgba(0, 200, 189, 1);
-    // margin-left: 20px;
     margin-top: 24px;
   }
   .hengtiaoxiafang {
@@ -73,24 +67,27 @@ const Pane = styled.div`
     margin:0 auto;
     margin-bottom: 54px;
     display: flex;
+    justify-content: space-around;
   }
   .right {
-    width:680px;
-    /* margin-left: 12.3%; */
+    width:512px;
     .right_box {
       display: flex;
       justify-content: space-between;
-      /* align-items: center; */
       width: 100%;
       flex-wrap: wrap;
       .list {
+        width: 160px;
+        height: 108px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         margin-bottom: 24px;
-        margin-right: 5%;
-        // cursor: pointer;
+        margin-right: 16px;
+        &:nth-child(3n){
+          margin-right: 0;
+        }
         img {
           margin-bottom: 12px;
           width: 72px;
