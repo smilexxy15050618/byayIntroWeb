@@ -14,7 +14,7 @@ import { HOST_ENUM, scrollIntoOffset } from '../../src/lib/utils';
 const BANNER_BG = `${imgurl}/about_banner_bg.png`;
 const JOIN_US_IMG = `${imgurl}/consumer-finance-banner.png`;
 const JOIN_US_IMG_WAP = `${imgurl}/consumer-finance-banner-wap.png`;
-const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
+const FOOTER_BG = `https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/kqaizl.png`;
 
 
 const Wrapper = styled.div`

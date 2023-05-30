@@ -28,7 +28,7 @@ const ABOUT_INTRO = `${imgurl}/about-intro.jpg`;
 
 const DEVELOPHIS_BG = `${imgurl}/develophis_bg.png`;
 const JOINUS_BG = `${imgurl}/web-com.png`;
-const FOOTER_BG = `https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/by-voice-bg.png`;
+const FOOTER_BG = `https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/kqaizl.png`;
 
 const Wrapper = styled.div``;
 

@@ -19,8 +19,7 @@ import { FormType } from '../../src/components/TryForm';
 import { HOST_ENUM } from '../../src/lib/utils';
 const BANNER = `${BASE_URL}ecology.png`;
 const BANNER_XS = `${BASE_URL}ecology-xs.png`;
-const FOOTER_BG = `https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/by-voice-bg.png`;
-
+const FOOTER_BG = `https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/kqaizl.png`;
 export default ({ hostType = HOST_ENUM.HOST }) => (
   <Layout hostType={hostType} headPlaceholder={[false, '#F9FAFF']}>
     {(visible, setVisible) => (

@@ -14,7 +14,7 @@ import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 import { HOST_ENUM, scrollIntoOffset } from '../../src/lib/utils';
 import imgurl from '../../img.url.js';
 const JOIN_US_IMG = `${imgurl}/gongan-zh-banner.png`;
-const FOOTER_BG = `${imgurl}/by-voice-bg.png`;
+const FOOTER_BG = `https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/kqaizl.png`;
 
 const Wrapper = styled.div`
   .m-bg-arror {

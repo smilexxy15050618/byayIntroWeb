@@ -9,8 +9,7 @@ import { CoreAi } from './components/CoreAi'
 import { Wrapper } from '../../src/components/voice-robot/style';
 import ByVoiceFooter from '../../src/components/common/ByVoiceFooter';
 import imgurl from '../../img.url.js'
-
-const FOOTER_BG = `https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/by-voice-bg.png`;
+const FOOTER_BG = `https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/img2023/kqaizl.png`;
 
 interface IGameProps {
 
