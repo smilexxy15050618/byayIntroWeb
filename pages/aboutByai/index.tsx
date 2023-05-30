@@ -122,6 +122,9 @@ const PleactBg = styled.div`
   left: 0;
   top: 0;
   z-index: 1;
+  transition: background-color 1s;
+  background: rgba(255,255,255,1);
+  border-bottom: 1px solid #eeeeee;
 }
 `
 
@@ -148,7 +151,7 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
     <Layout initialOpacity={true} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
       {(visible, setVisible) => (
         <Wrapper>
-            <PleactBg style={{display: initialOpacity ? 'block' : 'none'}}></PleactBg>
+            <PleactBg style={{display: initialOpacity && !/Android|webOS|iPhone|iPod|BlackBerry/i.test(window.navigator.userAgent) ? 'block' : 'none'}}></PleactBg>
             <BannerWhite
               height={['560px', '584px']}
               LinearHeight={['500px', '100%']}
