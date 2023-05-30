@@ -209,6 +209,10 @@ const Content = styled.div`
     opacity:0;
   
     transition: all 0.4s;
+    @media (max-width: 768px) { 
+      opacity: 1;
+      transition: none;
+    }
   }
   .animate__fadeInRight,.animate__fadeInLeft{
     transform: translateX(0) !important;
@@ -366,26 +370,38 @@ export const ProductCapability = () => {
         <Content className='contents' ref={navRef}>
           <div id='ProductCapContent'>
             <div>
-              <img id='img1' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/qdsjcjm.png'} alt="" />
-              <img style={{ width: '335px' }} src={imgurl + '/qdsjcj_textm.png'} alt="" />
+              {/*<img id='img1' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/qdsjcjm.png'} alt="" />
+              <img style={{ width: '335px' }} src={imgurl + '/qdsjcj_textm.png'} alt="" />*/}
+
+              <img id='img1' style={{ marginBottom: '32px' }} src={imgurl + '/qdsjcjm.png'} alt="" />
+              <img src={imgurl + '/qdsjcj_textm.png'} alt="" />
             </div>
           </div>
           <div id='ProductCapContent1'>
             <div>
-              <img id='img2' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/oneidsbm.png'} alt="" />
-              <img style={{ width: '335px' }} src={imgurl + '/oneidsb_textm.png'} alt="" />
+              {/*<img id='img2' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/oneidsbm.png'} alt="" />
+              <img style={{ width: '335px' }} src={imgurl + '/oneidsb_textm.png'} alt="" />*/}
+
+              <img id='img2' style={{marginBottom: '32px' }} src={imgurl + '/oneidsbm.png'} alt="" />
+              <img src={imgurl + '/oneidsb_textm.png'} alt="" />
             </div>
           </div>
           <div id='ProductCapContent2'>
             <div>
-              <img id='img3' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/fjghsjwjm.png'} alt="" />
-              <img style={{ width: '335px' }} src={imgurl + '/fjghsjwj_textm.png'} alt="" />
+              {/*<img id='img3' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/fjghsjwjm.png'} alt="" />
+              <img style={{ width: '335px' }} src={imgurl + '/fjghsjwj_textm.png'} alt="" />*/}
+
+              <img id='img3' style={{ marginBottom: '32px' }} src={imgurl + '/fjghsjwjm.png'} alt="" />
+              <img src={imgurl + '/fjghsjwj_textm.png'} alt="" />
             </div>
           </div>
           <div id='ProductCapContent4'>
             <div>
-              <img id='img4' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/yhhxdcm.png'} alt="" />
-              <img style={{ width: '335px' }} src={imgurl + '/yhhxdc_textm.png'} alt="" />
+              {/*<img id='img4' style={{ width: '343px', marginBottom: '32px' }} src={imgurl + '/yhhxdcm.png'} alt="" />
+              <img style={{ width: '335px' }} src={imgurl + '/yhhxdc_textm.png'} alt="" />*/}
+
+              <img id='img4' style={{ marginBottom: '32px' }} src={imgurl + '/yhhxdcm.png'} alt="" />
+              <img src={imgurl + '/yhhxdc_textm.png'} alt="" />
             </div>
           </div>
         </Content>

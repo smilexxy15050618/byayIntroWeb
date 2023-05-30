@@ -65,6 +65,7 @@ const CardContent = styled.aside`
     opacity:0.7;
   }
   .diwen {
+    display: none;
     width: 100%;
     height: 100%;
     position: absolute;

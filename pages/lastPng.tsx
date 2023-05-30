@@ -100,12 +100,12 @@ const Pane = styled.div`
           box-shadow: 0px 0px 24px 1px rgba(36, 91, 219, 0.12);
         }
         p {
-          width: 140px;
           text-align: center;
           font-size: 14px;
           font-weight: 400;
           color: rgba(90, 90, 90, 1);
           margin-bottom: 0;
+          letter-spacing: -0.1px;
         }
       }
     }

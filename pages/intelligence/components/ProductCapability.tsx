@@ -175,6 +175,8 @@ const Content = styled.div`
   #img4,#img3,#img2,#img1{
     @media (max-width: 768px) { 
      margin-bottom: 32px;
+     opacity: 1;
+      transition: none;
     }
   }
   .animate__fadeInRight,.animate__fadeInLeft{
@@ -354,20 +356,29 @@ export const ProductCapability = () => {
         <Content className='contents' ref={navRef}>
           <div id="ProductCapContent1">
             <div>
-              <img id='img1' style={{ width: '343px', }} src={imgurl + '/yxhbm.png'} alt="" />
-              <img style={{ width: '335px' }} src={imgurl + '/yxhb_textm.png'} alt="" />
+              {/*<img id='img1' style={{ width: '343px', }} src={imgurl + '/yxhbm.png'} alt="" />
+              <img style={{ width: '335px' }} src={imgurl + '/yxhb_textm.png'} alt="" />*/}
+
+              <img id='img1' src={imgurl + '/yxhbm.png'} alt="" />
+              <img src={imgurl + '/yxhb_textm.png'} alt="" />
             </div>
           </div>
           <div id="ProductCapContent2">
             <div>
-              <img id='img2' style={{ width: '343px', }} src={imgurl + '/ywlcm.png'} alt="" />
-              <img style={{ width: '335px' }} src={imgurl + '/ywlc_textm.png'} alt="" />
+              {/*<img id='img2' style={{ width: '343px', }} src={imgurl + '/ywlcm.png'} alt="" />
+              <img style={{ width: '335px' }} src={imgurl + '/ywlc_textm.png'} alt="" />*/}
+
+              <img id='img2' src={imgurl + '/ywlcm.png'} alt="" />
+              <img src={imgurl + '/ywlc_textm.png'} alt="" />
             </div>
           </div>
           <div id="ProductCapContent3">
             <div>
-              <img id='img3' style={{ width: '343px', }} src={imgurl + '/zstpm.png'} alt="" />
-              <img style={{ width: '335px' }} src={imgurl + '/zstp_textm.png'} alt="" />
+              {/*<img id='img3' style={{ width: '343px', }} src={imgurl + '/zstpm.png'} alt="" />
+              <img style={{ width: '335px' }} src={imgurl + '/zstp_textm.png'} alt="" />*/}
+
+              <img id='img3' src={imgurl + '/zstpm.png'} alt="" />
+              <img src={imgurl + '/zstp_textm.png'} alt="" />
             </div>
           </div>
         </Content>

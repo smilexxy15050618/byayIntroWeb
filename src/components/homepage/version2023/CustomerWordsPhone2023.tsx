@@ -238,8 +238,7 @@ const HoveUp = styled.div`
     }
   }
   .swiper-slide{
-    border-radius: 8px;
-    overflow: hidden;
+    border-radius: 12px;
   }
 `;
 
