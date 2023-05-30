@@ -95,7 +95,7 @@ const CustomerIconsBlockPhone = styled(RawCustomerIconsBlock)<ICustomerIconsBloc
   }
   width: 100%;
   // 由于每一个商标块是有margin 17px 的所以 和默认padding83px 构成了整个模块上下边距100px，这里边距可以自己定义，但要注意计算
-  ${props => cssSwitch(props.padding, 'padding', ['83px 0', '60px 0'], false)}
+  ${props => cssSwitch(props.padding, 'padding', ['83px 0', '20px 0'], false)}
   .customer-icon-row {
     display: flex;
     align-items: center;
