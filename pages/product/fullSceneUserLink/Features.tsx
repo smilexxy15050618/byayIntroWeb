@@ -129,6 +129,7 @@ const FeatureWrap = styled.div`
       text-align: center;
       box-sizing: border-box;
       cursor: pointer;
+      z-index: 9;
       @media (max-width: 768px) {
         flex: 1;
         margin-right: 0;
@@ -325,7 +326,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
               className={i == currIndex ? 'capacity-item active' : 'capacity-item'}
               onClick={() => {
                 onCancel();
-                setCurrIndex(i);
+                {/*setCurrIndex(i);*/}
                 const node = document.getElementById(`${item.id}`).offsetTop - '220'
                 window.scrollTo({
                   top:node,

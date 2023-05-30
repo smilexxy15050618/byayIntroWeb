@@ -48,7 +48,7 @@ const Wrapper = styled.div`
 
 const NavItemContainer = styled.div`
   width: 100%;
-  margin-top: 16px;
+  
   @media (max-width: 768px) {
     width: 100% !important;
   }
@@ -62,7 +62,6 @@ const NavItemContainerCom = styled.div`
 const NavItemPlaceholder = styled.div`
   width: 100%;
   height: 80px;
-  margin-top: 16px;
 `;
 
 const NavItem = styled.div<{ active: boolean }>`
@@ -188,7 +187,7 @@ const TabNav: React.SFC<TabNavProps> = ({ bannerList, onCancel }) => {
             set_is_fixed(false);
           }
         } else {
-          if(scrollTop < fixedTop-80) {
+          if(scrollTop < fixedTop-64) {
             set_is_fixed(false);
           } else if(scrollTop<JoinUs.offsetHeight+JoinUs.offsetTop) {
             set_is_fixed(true);

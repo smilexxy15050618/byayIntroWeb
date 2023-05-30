@@ -237,6 +237,10 @@ const HoveUp = styled.div`
       // transform: translateY(-19px);
     }
   }
+  .swiper-slide{
+    border-radius: 8px;
+    overflow: hidden;
+  }
 `;
 
 let imglegt = `https://by-fe-cdn.oss-cn-hangzhou.aliyuncs.com/static/by-intro-2023/%E6%A1%88%E4%BE%8B/%E5%B7%A6.png`;

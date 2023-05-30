@@ -216,7 +216,7 @@ export const FOOTER_CONFIG = [
       { name: '生态合作', href: '/partner/ecology' },
       { name: '渠道合作', href: '/form?formType=3' },
       { name: '客户登录', href: 'https://crm.byai.com/login' },
-      { name: '服务商登陆', href: '/form?formType=3' },
+      { name: '服务商登陆', href: 'https://boss.byai.com/login' },
       { name: '', href: '' }, // 占位防止3项时居中问题
     ],
   },
@@ -289,7 +289,7 @@ export const FOOTER_WAP_CONFIG = [
       { name: '生态合作', href: '/partner/ecology' },
       { name: '渠道合作', href: '/form?formType=3' },
       { name: '客户登录', href: 'https://crm.byai.com/login' },
-      { name: '服务商登陆', href: '/form?formType=3' },
+      { name: '服务商登陆', href: 'https://boss.byai.com/login' },
     ],
   },
   {

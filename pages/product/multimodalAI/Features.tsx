@@ -118,6 +118,7 @@ const FeatureWrap = styled.div`
       text-align: center;
       box-sizing: border-box;
       cursor: pointer;
+      z-index: 9;
       @media (max-width: 768px) {
         flex: 1;
         margin-right: 0;
@@ -278,7 +279,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
       if (scrollTop >= navRefdigit.current.offsetTop-220) {
         setCurrIndex(2)
       }
-
+      // console.log('fixedTop',fixedTop)
       if(scrollTop < fixedTop-67) {
         set_is_fixed(false);
       } else if(scrollTop<navRefdigit.current.offsetHeight+navRefdigit.current.offsetTop) {
@@ -298,10 +299,10 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
         <div className={`capacity-tab ${is_fixed ? 'fixedTop' : ''}`} ref={navRef}>
           {FEATURE_TITLE.map((item, i) => (
             <div
-              className={i == currIndex ? 'capacity-item active' : 'capacity-item'}
+              className={`capacity-item ${i == currIndex ? 'active' : ''}`}
               onClick={() => {
                 onCancel();
-                setCurrIndex(i);
+                {/*setCurrIndex(i);*/}
                 const node = document.getElementById(`${item.id}`).offsetTop - '220'
                 window.scrollTo({
                   top:node,

@@ -37,7 +37,6 @@ const Wrapper = styled.div`
    }
   .bottom_border{
     position: relative;
-    padding: 0 4%;
     border-bottom:2px solid #f5f5f5; 
   }
 `
@@ -56,14 +55,13 @@ margin-bottom: 40px;
 }
 `
 const Label = styled.div`
- width: 100%;
-  padding: 0 24%;
+  width: 100%;
   display: flex;
   justify-content: center;
   cursor: pointer;
   &.fixedTop{
     z-index: 9;
-    position: sticky;
+    position: fixed;
     top: 64px;
     width: 100vw;
     background:#fff;
@@ -74,7 +72,7 @@ const Label = styled.div`
   }
 `
 
-const labelPlaceholder = styled.div`
+const LabelPlaceholder = styled.div`
   width: 100%;
   height: 172px;
 `
@@ -298,7 +296,7 @@ export const ProductCapability = () => {
         if (scrollTop >= scrollContent.offsetTop - 220) {
           setActiveIndex(3)
         }
-      if(scrollTop < fixedTop - 172) {
+      if(scrollTop < 1300) {
         set_is_fixed(false);
       } else if(scrollTop<scrollContent.offsetHeight+scrollContent.offsetTop) {
         set_is_fixed(true);
@@ -336,7 +334,7 @@ export const ProductCapability = () => {
             }))
           }
         </Label>
-        <labelPlaceholder style={{display: is_fixed ? 'block' : 'none'}}></labelPlaceholder>
+        <LabelPlaceholder style={{display: is_fixed ? 'block' : 'none'}}></LabelPlaceholder>
         <Content className='contents'>
           <div id='ProductCapContent'>
             <div>

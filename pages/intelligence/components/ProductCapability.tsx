@@ -31,9 +31,8 @@ const Wrapper = styled.div`
    }
   .bottom_border{
     position: relative;
-    border-bottom:4px solid #f5f5f5; 
+    border-bottom:2px solid #f5f5f5; 
     @media (max-width: 768px) {
-    padding: 0 4%;
     border-bottom:2px solid #f5f5f5; 
    }
   }
@@ -54,13 +53,12 @@ margin-bottom: 40px;
 `
 const Label = styled.div`
   width: 100%;
-  padding: 0 24%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   cursor: pointer;
   &.fixedTop{
     z-index: 9;
-    position: sticky;
+    position: fixed;
     top: 64px;
     width: 100vw;
     background:#fff;
@@ -70,19 +68,21 @@ const Label = styled.div`
   }
 `
 
-const labelPlaceholder = styled.div`
+const LabelPlaceholder = styled.div`
   width: 100%;
   height: 172px;
 `
 
 const LabelItem = styled.div`
+  width: 190px;
   height: 170px;
-  position: relative;
-  top: 4px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  top: 4px;
   align-items: center;
-  padding-top: 40px;
+margin-right: 90px;
+padding-top: 40px;
   @media (max-width: 768px) {
       font-size: 10px;
       font-weight: 600;
@@ -281,8 +281,8 @@ export const ProductCapability = () => {
         if (scrollTop >= scrollContent3.offsetTop - 220) {
           setActiveIndex(2)
         }
-        setLock(false);
-        if(scrollTop<fixedTop-172) {
+        console.log(fixedTop)
+        if(scrollTop<1366) {
           set_is_fixed(false);
         } else if(scrollTop<scrollContent3.offsetHeight+scrollContent3.offsetTop) {
           set_is_fixed(true);
@@ -328,7 +328,7 @@ export const ProductCapability = () => {
             }))
           }
         </Label>
-        <labelPlaceholder style={{display: is_fixed ? 'block' : 'none'}}></labelPlaceholder>
+        <LabelPlaceholder style={{display: is_fixed ? 'block' : 'none'}}></LabelPlaceholder>
         <Content className='contents'>
           <div id="ProductCapContent1">
             <div>
