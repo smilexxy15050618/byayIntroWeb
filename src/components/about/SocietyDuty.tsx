@@ -203,7 +203,6 @@ const carouselDataList = [
 
 
 interface SocietyDutyProps {
-  indexTab: string;
   dataList: { content: string; imgSrc: string; title: string }[];
   style?: CSSProperties;
 }
@@ -264,7 +263,7 @@ const Carousel: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
 };
 
 
-const SocietyDuty: React.SFC<SocietyDutyProps> = ({indexTab}) => {
+const SocietyDuty: React.SFC<SocietyDutyProps> = ({}) => {
   const myRef = useRef(null);
   
   useEffect(() => {

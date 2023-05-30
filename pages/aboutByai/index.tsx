@@ -114,19 +114,29 @@ const CreditMedal = styled.div<{ backgroundImage?: string }>`
   background-position: center;
 `;
 
+const PleactBg = styled.div`
+  height: 80px;
+  background: #fff;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+`
+
 const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
-  const [initial, setInitial] = useState(true);
-  const [indexTab, setIndexTab] = useState(0);
+  const [initialOpacity, setInitialOpacity] = useState(false);
 
   const handleHeaderOpacity = () => {
-    document.body.getBoundingClientRect().top > -10 ? setInitial(true) : setInitial(false);
+    document.body.getBoundingClientRect().top > -10 ? setInitialOpacity(false) : setInitialOpacity(true);
   };
 
   const hadnleNav = (e) => {
     if(isPc()){
-      setInitial(false)
+      setInitialOpacity(true)
     }
-    setIndexTab(e)
+    
   };
 
   useEffect(() => {
@@ -135,9 +145,10 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
 
 
   return (
-    <Layout initialOpacity={initial} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
+    <Layout initialOpacity={true} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
       {(visible, setVisible) => (
         <Wrapper>
+            <PleactBg style={{display: initialOpacity ? 'block' : 'none'}}></PleactBg>
             <BannerWhite
               height={['560px', '584px']}
               LinearHeight={['500px', '100%']}
@@ -192,19 +203,19 @@ const About: FC<{ hostType?: HOST_ENUM }> = ({ hostType = HOST_ENUM.HOST }) => {
                 ]}
                 onCancel={hadnleNav}
               />
-              <EnterpriseIntroduction cover={ABOUT_INTRO} indexTab={indexTab} />
+              <EnterpriseIntroduction cover={ABOUT_INTRO} />
             </EnIntroductionWrap>
-            <MissionVision indexTab={indexTab} />
+            <MissionVision />
             <Visible md lg xl xxl xxxl>
-              <DevelopHistory backgroundImage={DEVELOPHIS_BG} indexTab={indexTab} />
+              <DevelopHistory backgroundImage={DEVELOPHIS_BG} />
             </Visible>
             <Visible xs sm>
               <DevelopHistoryWap />
             </Visible>
-            <SocietyDuty indexTab={indexTab} />
-            <FlairVoucher indexTab={indexTab} />
+            <SocietyDuty />
+            <FlairVoucher />
             <CustomerWords />
-            <JoinUs indexTab={indexTab} backgroundImage={JOINUS_BG} />
+            <JoinUs backgroundImage={JOINUS_BG} />
           <ByVoiceFooter
             title="立即体验AI时代的新一代用户运营平台"
             desc="用“AI”构建你和用户的“亲密关系”；共建存量时代的增长引擎。"

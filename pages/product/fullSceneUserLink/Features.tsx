@@ -323,7 +323,7 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
         <div className={`capacity-tab ${is_fixed ? 'fixedTop' : ''}`} ref={navRef}>
           {FEATURE_TITLE.map((item, i) => (
             <div
-              className={i == currIndex ? 'capacity-item active' : 'capacity-item'}
+              className={`capacity-item ${i == currIndex ? 'active' : ''}`}
               onClick={() => {
                 onCancel();
                 {/*setCurrIndex(i);*/}

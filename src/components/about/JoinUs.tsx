@@ -117,11 +117,10 @@ const BriefWapWrap = styled.div`
 `
 
 interface IBriefProps {
-  indexTab: string;
   backgroundImage: string;
 }
 
-const JoinUs: React.SFC<IBriefProps> = ({ backgroundImage, indexTab }) => (
+const JoinUs: React.SFC<IBriefProps> = ({ backgroundImage }) => (
   <JoinUsWrap id="JoinUs">
     <Hidden xs sm>
       <BriefContainer backgroundImage={backgroundImage}>

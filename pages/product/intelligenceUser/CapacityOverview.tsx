@@ -248,7 +248,7 @@ const RawCapacityOverview: FC<IProps> = ({ className }) => {
                   return (
                     <TagItem>
                       <div className='tag-item-t'>{items.title}</div>
-                      <div className='tag-item-sub'><span className='number-tips'><Number number={items.number} /></span><span className='number-font'>{items.unit}</span></div>
+                      <div className='tag-item-sub'><span className='number-tips'>{showNumber && <Number number={items.number} />}</span><span className='number-font'>{items.unit}</span></div>
                     </TagItem>
                   )
                 })}

@@ -33,6 +33,13 @@ const Wrapper = styled.div`
     height: 45px;
     width: 100%;
   }
+  .fixedTopPc{
+    z-index: 111;
+    position: fixed;
+    top: 80px;
+    width: 100vw;
+    background:#fff;
+  }
   .fixedTop{
     z-index: 111;
     position: fixed;
@@ -187,7 +194,7 @@ const TabNav: React.SFC<TabNavProps> = ({ bannerList, onCancel }) => {
             set_is_fixed(false);
           }
         } else {
-          if(scrollTop < fixedTop-64) {
+          if(scrollTop < fixedTop-80) {
             set_is_fixed(false);
           } else if(scrollTop<JoinUs.offsetHeight+JoinUs.offsetTop) {
             set_is_fixed(true);
@@ -201,7 +208,7 @@ const TabNav: React.SFC<TabNavProps> = ({ bannerList, onCancel }) => {
   return (
     <Wrapper>
     <Visible md lg xl xxl xxxl>
-      <NavItemContainer className={`${is_fixed ? 'fixedTop' : ''}`} id="tabNav">
+      <NavItemContainer className={`${is_fixed ? 'fixedTopPc' : ''}`} id="tabNav">
         <NavItemContainerCom>
           {bannerList.map(({ name, jumpTarget }, navIndex) => {
             return (
@@ -210,7 +217,7 @@ const TabNav: React.SFC<TabNavProps> = ({ bannerList, onCancel }) => {
                 active={navIndex === actIndex}
                 onClick={() => {
                   onCancel();
-                  setActIndex(navIndex);
+                  {/*setActIndex(navIndex);*/}
                   const node = document.getElementById(`${jumpTarget}`).offsetTop - '145'
                   window.scrollTo({
                     top:node,
@@ -249,13 +256,20 @@ const TabNav: React.SFC<TabNavProps> = ({ bannerList, onCancel }) => {
               <SwiperSlide
                 style={{color: actIndex == navIndex ? 'rgba(43, 88, 249, 1)' : 'rgba(90, 90, 90, 1)'}}
                 onClick={() => {
-                  onCancel();
-                  onSlideChange(navIndex);
+                  {/*onCancel();*/}
+                  {/*onSlideChange(navIndex);*/}
                   const node = document.getElementById(`${jumpTarget}`).offsetTop - '109'
-                  window.scrollTo({
-                    top:node,
-                    behavior:'smooth'
-                  });
+                  if(jumpTarget == 'DevelopHistory'){
+                    window.scrollTo({
+                      top: node + 90,
+                      behavior:'smooth'
+                    });
+                  } else {
+                    window.scrollTo({
+                      top:node,
+                      behavior:'smooth'
+                    });
+                  }
                 }}
               >
               {name}

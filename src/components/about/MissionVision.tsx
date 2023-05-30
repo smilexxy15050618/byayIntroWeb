@@ -4,7 +4,6 @@ import {  Hidden, Visible } from 'react-grid-system';
 import imgurl from '../../../img.url.js';
 
 interface MissionVisionProps {
-  indexTab: string;
 }
 
 const MissionBG = `${imgurl}/mission-bg.png`;
@@ -122,7 +121,7 @@ const MissionVisionWap = styled.div`
 
 
 const AiTSXID = 'MissionVision';
-const MissionVision: FC<MissionVisionProps> = ({ indexTab }) => {
+const MissionVision: FC<MissionVisionProps> = ({  }) => {
   const myRef = useRef(null);
   useEffect(() => {
     const timer =  setInterval(()=>{

@@ -342,7 +342,7 @@ class DevelopHistory extends React.Component<ICourseProps, ICourseState> {
   render() {
     const { clientWidth, activeIndex, translateX, hoverIndex } = this.state;
     const courseList  = COURSE_TIME;
-    const { backgroundImage, indexTab } = this.props;
+    const { backgroundImage } = this.props;
     if (!courseList.length) {
       return null;
     }

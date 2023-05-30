@@ -187,7 +187,6 @@ const carouselDataListWap = [
 ];
 
 interface SocietyDutyProps {
-  indexTab: string;
   dataList: { content: string; imgSrc: string; title: string }[];
   style?: CSSProperties;
 }
@@ -225,7 +224,7 @@ const Carousel: React.FC<SocietyDutyProps> = ({ dataList, style }) => {
   );
 };
 
-const FlairVoucher: FC<SocietyDutyProps> = ({indexTab}) => {
+const FlairVoucher: FC<SocietyDutyProps> = ({}) => {
 
   const myRef = useRef(null);
   useEffect(() => {
