@@ -10,7 +10,6 @@ const titleList = [
     subTitle: '覆盖贷款、理财、网银、信用卡4<br />大类业务营销、唤醒、促销等20+<br />细分场景业务实践沉淀1000+套场<br />景运营策略模版',
     subTitleWap: '覆盖贷款、理财、网银、信用卡4大类业务<br />营销、唤醒、促销等20+细分场景<br />业务实践沉淀1000+套场景运营策略模版',
     url: '/bank-govern-1.svg',
-    urlWap: '/bank-govern-wap-1.png',
   },
 
   {
@@ -18,14 +17,12 @@ const titleList = [
     subTitle: '丰富数据标签建模分层<br />分层用户精细化运营<br />用户画像实时分析<br />赋能中长尾用户活跃激活',
     subTitleWap:'丰富数据标签建模分层<br />分层用户精细化运营<br />用户画像实时分析<br />赋能中长尾用户活跃激活',
     url: '/bank-govern-2.svg',
-    urlWap: '/bank-govern-wap-2.png',
   },
   {
     title: 'ROI导向升级运营服务',
-    subTitle: '运营策略制定与持续迭代<br />话术制作与持续调优<br />运营策略自动化执行<br />数据结果实时分析',
-    subTitleWap:'运营策略制定与持续迭代<br />话术制作与持续调优<br />运营策略自动化执行<br />数据结果实时分析',
-    url: '/bank-govern-3.svg',
-    urlWap: '/bank-govern-wap-3.png',
+    subTitle: '运营策略制定与持续迭代<br />运营流程自动化执行<br />话术制作与持续调优<br />数据结果实时分析',
+    subTitleWap:'运营策略制定与持续迭代<br />运营流程自动化执行<br />话术制作与持续调优<br />数据结果实时分析',
+    url: '/bank-govern-3-new.svg',
   },
 ];
 export type IAiProps = {};
@@ -154,7 +151,7 @@ const ListItem = styled.div`
     height: 240px;
     background: rgba(43, 88, 249, 1);
     color: rgba(255, 255, 255, 1);
-    padding: 40px 35px 48px 40px;
+    padding: 36px 35px 48px 40px;
     box-sizing: border-box;
     div:first-child {
       font-size: 20px;
@@ -225,7 +222,7 @@ const AI: FC<IAiProps> = ({}) => {
                           index == currIndex ? 'animate__animated animate__fadeIn animate__ahead_300ms active' : ''
                         }
                         onClick={() => setCurrIndex(index)}>
-                        <div>{title}</div>
+                        <div dangerouslySetInnerHTML={{ __html: title }}></div>
                         {index == currIndex && <div dangerouslySetInnerHTML={{ __html: subTitle }}></div>}
                       </ListItem>
                     );
@@ -249,7 +246,7 @@ const AI: FC<IAiProps> = ({}) => {
             {titleList.map((item, i) => (
               // 算垂直百分比时应该用对应(margin或padding)/父元素width，得到其占比
               <div className="channel-item">
-                <div className="title">{item.title}</div>
+                <div className="title" dangerouslySetInnerHTML={{ __html: item.title }}></div>
                 <div className="subtitle" dangerouslySetInnerHTML={{ __html: item.subTitleWap }}></div>
                 {/*'/static/img2023'*/}
                 <img src={imgurl+item.url} />

@@ -137,7 +137,6 @@ color: rgba(0, 0, 0, 1);
   }
 `;
 
-const carouselDataList = imgurl + '/scenario-img.png';
 
 const SceneSolution: FC<SceneSolution> = ({}) => {
   const HANGYE = 'hangye_2023_2009d';
@@ -217,7 +216,6 @@ const SceneSolution: FC<SceneSolution> = ({}) => {
             <img src={`${imgurl}/caryycj2.png`} alt="" />
             </div>
             </MainWrap>
-        {/* <CarouselMobile dataList={carouselDataList}></CarouselMobile> */}
       </Visible>
     </Pane>
   );

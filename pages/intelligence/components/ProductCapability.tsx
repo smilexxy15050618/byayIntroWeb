@@ -59,7 +59,7 @@ const Label = styled.div`
   &.fixedTop{
     z-index: 9;
     position: fixed;
-    top: 64px;
+    top: 0;
     width: 100vw;
     background:#fff;
   }
@@ -207,7 +207,7 @@ const Content = styled.div`
   }
   >div {
     width: 100%;
-    &:last-child {
+    &:nth-child(2) {
         background: #F4F8FE;
     }
   }
@@ -283,9 +283,9 @@ export const ProductCapability = () => {
         if (scrollTop >= scrollContent3.offsetTop - 220) {
           setActiveIndex(2)
         }
-        if(scrollTop<1366) {
+        if(scrollTop<1372) {
           set_is_fixed(false);
-        } else if(scrollTop>=scrollContent3.offsetHeight+scrollContent3.offsetTop-228) {
+        } else if(scrollTop>=scrollContent3.offsetHeight+scrollContent3.offsetTop-164) {
           set_is_fixed(false);
         } else {
           set_is_fixed(true);
@@ -297,14 +297,9 @@ export const ProductCapability = () => {
   })
   const scrollTo = (index) => {
     setLock(true);
-    // setActiveIndex(index);
     var dom = document.querySelectorAll('.contents>div')[index];
     var scrollHeight = dom.offsetTop - '220';
-    // if(index==1) {
-    //   scrollHeight = dom.offsetTop - '230';
-    // }
     if (dom) {
-      // dom.scrollIntoView({ behavior: "smooth" });
       window.scrollTo({
         top: scrollHeight,
         behavior: 'smooth'

@@ -210,7 +210,7 @@ const FeatureWrap = styled.div`
   .fixedTop{
     z-index: 9;
     position: fixed;
-    top: 64px;
+    top: 4px;
     width: 100vw;
     background:#fff;
   }
@@ -305,9 +305,9 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
         setCurrIndex(3)
       }
 
-      if(scrollTop < fixedTop-67) {
+      if(scrollTop < fixedTop-6) {
         set_is_fixed(false);
-      } else if(scrollTop>=navRefIntelligentTerminal.current.offsetHeight+navRefIntelligentTerminal.current.offsetTop-228) {
+      } else if(scrollTop>=navRefIntelligentTerminal.current.offsetHeight+navRefIntelligentTerminal.current.offsetTop-164) {
         set_is_fixed(false);
       } else {
         set_is_fixed(true);

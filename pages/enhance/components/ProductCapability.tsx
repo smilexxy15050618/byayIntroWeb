@@ -62,7 +62,7 @@ const Label = styled.div`
   &.fixedTop{
     z-index: 9;
     position: fixed;
-    top: 64px;
+    top: 0;
     width: 100vw;
     background:#fff;
   }
@@ -300,9 +300,9 @@ export const ProductCapability = () => {
         if (scrollTop >= scrollContent.offsetTop - 220) {
           setActiveIndex(3)
         }
-      if(scrollTop < 1300) {
+      if(scrollTop < 1372) {
         set_is_fixed(false);
-      } else if(scrollTop>=scrollContent.offsetHeight+scrollContent.offsetTop-228) {
+      } else if(scrollTop>=scrollContent.offsetHeight+scrollContent.offsetTop-164) {
         set_is_fixed(false);
       } else {
         set_is_fixed(true);
@@ -313,7 +313,6 @@ export const ProductCapability = () => {
     var dom = document.querySelectorAll('.contents>div')[index];
     var scrollHeight = dom.offsetTop - '220';
     if (dom) {
-      // dom.scrollIntoView({ behavior: "smooth" });
       window.scrollTo({
         top: scrollHeight,
         behavior: 'smooth'

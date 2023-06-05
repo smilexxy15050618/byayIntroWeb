@@ -9,7 +9,7 @@ const titleList = [
   {
     title: '全生命周期用户运营',
     subTitle: '用户旅程触达策略设计<br/>分层用户精细化运营<br/>业务节点数据实时采集<br/>用户画像实时分析',
-    url: '/run-01.png',
+    url: '/run-01-new.png',
   },
   {
     title: '策略营销自动化',

@@ -66,7 +66,7 @@ const MainWrap = styled.div`
     }
 `
 
-const carouselDataList = imgurl+'/scenario-img.png'
+const carouselDataList = imgurl+'/scenario-img-new.png'
 
 
 const SceneSolution: FC<SceneSolution> = ({}) => {
