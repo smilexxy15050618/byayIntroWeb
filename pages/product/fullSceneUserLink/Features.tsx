@@ -307,11 +307,11 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
 
       if(scrollTop < fixedTop-67) {
         set_is_fixed(false);
-      } else if(scrollTop<navRefIntelligentTerminal.current.offsetHeight+navRefIntelligentTerminal.current.offsetTop) {
-        set_is_fixed(true);
-      } else if(scrollTop>=navRefIntelligentTerminal.current.offsetHeight+navRefIntelligentTerminal.current.offsetTop+50) {
+      } else if(scrollTop>=navRefIntelligentTerminal.current.offsetHeight+navRefIntelligentTerminal.current.offsetTop-228) {
         set_is_fixed(false);
-      }
+      } else {
+        set_is_fixed(true);
+      } 
 
     };
   }, []);

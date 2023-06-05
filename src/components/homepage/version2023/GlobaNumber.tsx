@@ -35,7 +35,7 @@ const list = [
     content: '支持实体识别类型',
   },
   {
-    title: 100,
+    title: 10,
     unit: 'w+',
     sub: '',
     content: '实时并发量',

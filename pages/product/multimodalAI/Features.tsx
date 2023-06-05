@@ -279,14 +279,13 @@ const RawFeatures: FC<IProps> = ({ className, onCancel }) => {
       if (scrollTop >= navRefdigit.current.offsetTop-220) {
         setCurrIndex(2)
       }
-      // console.log('fixedTop',fixedTop)
       if(scrollTop < fixedTop-67) {
         set_is_fixed(false);
-      } else if(scrollTop<navRefdigit.current.offsetHeight+navRefdigit.current.offsetTop) {
-        set_is_fixed(true);
-      } else if(scrollTop>=navRefdigit.current.offsetHeight+navRefdigit.current.offsetTop+50) {
+      }else if(scrollTop>=navRefdigit.current.offsetHeight+navRefdigit.current.offsetTop-228) {
         set_is_fixed(false);
-      }
+      } else {
+        set_is_fixed(true);
+      } 
 
     }
 

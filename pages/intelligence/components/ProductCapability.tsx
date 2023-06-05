@@ -283,14 +283,13 @@ export const ProductCapability = () => {
         if (scrollTop >= scrollContent3.offsetTop - 220) {
           setActiveIndex(2)
         }
-        console.log(fixedTop)
         if(scrollTop<1366) {
           set_is_fixed(false);
-        } else if(scrollTop<scrollContent3.offsetHeight+scrollContent3.offsetTop) {
-          set_is_fixed(true);
-        } else if(scrollTop>=scrollContent3.offsetHeight+scrollContent3.offsetTop+50) {
+        } else if(scrollTop>=scrollContent3.offsetHeight+scrollContent3.offsetTop-228) {
           set_is_fixed(false);
-        }
+        } else {
+          set_is_fixed(true);
+        } 
     }
 
 

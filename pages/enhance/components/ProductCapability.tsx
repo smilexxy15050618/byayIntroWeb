@@ -302,10 +302,10 @@ export const ProductCapability = () => {
         }
       if(scrollTop < 1300) {
         set_is_fixed(false);
-      } else if(scrollTop<scrollContent.offsetHeight+scrollContent.offsetTop) {
-        set_is_fixed(true);
-      } else if(scrollTop>=scrollContent.offsetHeight+scrollContent.offsetTop+50) {
+      } else if(scrollTop>=scrollContent.offsetHeight+scrollContent.offsetTop-228) {
         set_is_fixed(false);
+      } else {
+        set_is_fixed(true);
       }
     }
   })
