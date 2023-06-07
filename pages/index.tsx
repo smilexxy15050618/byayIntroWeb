@@ -163,9 +163,7 @@ export default props => {
   }, []);
 
   return (
-    <Layout initialOpacity={true}
-    //  initialOpacity={initialOpacity}
-      headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
+    <Layout initialOpacity={true} headPlaceholder={[false, false]} headFontStyle={['light', 'light']}>
       {(visible, setFormVisible) => (
         <Wrapper>
           <IndustryCarousel hadnleNav={hadnleNav} />

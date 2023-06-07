@@ -16,7 +16,7 @@ const PC_BANNER_IMGS = [
   {
     src: `${PREFIX}/multimodal-banner-new-content.png`,
     style: { width: '1200px', top: 50, left: 0 },
-    className: ['animate__fadeInUp', 'animate__delay_700ms'],
+    className: ['animate__fadeInUp'],
   }
 ];
 const WAP_BANNER_IMGS = `${PREFIX}/multimodalAI-wp-banner.png`;

@@ -184,7 +184,7 @@ export const IndustryCarousel = () => {
               {
                 src: `${imgurl}/intelligence_banner.png`,
                 style: { width: '1200px', left: 0, top: 50 },
-                className: ['animate__fadeInUp', 'animate__ahead_300ms'],
+                className: ['animate__fadeInUp'],
               },
             ]}
             mobileImg={imgurl + '/intelligence_banner.png'}>
@@ -197,21 +197,6 @@ export const IndustryCarousel = () => {
             </TextArea>
           </BannerWhite>
       </Visible>
-      {/* <div className='title'>
-        策略智能与自动化
-      </div>
-      <Visible md lg xl xxl xxxl>
-        <div className='desc'>策略自动生成、数据验证、自动化运行，实现目标人群的精准触达，提升关键指标和运营效率</div>
-        <div className="jumpbtn" onClick={() => window.open('/form?formType=1')}>
-          立即体验
-        </div>
-        <video
-          muted
-          controls
-          src={imgurl + '/20230427-103948.mp4'}
-          poster={imgurl + '/intelligence_banner.png'}
-        />
-      </Visible> */}
       <Visible xs sm>
       <div className='title'>
         策略智能与自动化

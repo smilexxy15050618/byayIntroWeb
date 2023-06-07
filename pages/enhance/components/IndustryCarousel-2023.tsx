@@ -71,7 +71,7 @@ export const IndustryCarousel = () => {
               {
                 src: `${PREFIX}/enhance_banner.svg`,
                 style: { width: '1200px', left: 0, top: 50 },
-                className: ['animate__fadeInUp', 'animate__ahead_300ms'],
+                className: ['animate__fadeInUp'],
               },
             ]}
             mobileImg={`${PREFIX}/enhance_banner.svg`}>
@@ -94,7 +94,7 @@ export const IndustryCarousel = () => {
               {
                 src: `${PREFIX}/enhance_banner.svg`,
                 style: { width: '1200px', left: 0, top: 50 },
-                className: ['animate__fadeInUp', 'animate__ahead_300ms'],
+                className: ['animate__fadeInUp'],
               },
             ]}
             mobileImg={`${PREFIX}/enhance_banner.svg`}>

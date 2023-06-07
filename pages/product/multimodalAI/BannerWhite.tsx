@@ -69,7 +69,7 @@ const RawBannerWhite: FC<IProps> = ({
         <Placeholder />
       </Hidden>
       <Linear>
-        <TextArea className="linear animate__animated animate__fadeInDown animate__ahead_300ms">{children}</TextArea>
+        <TextArea className="linear animate__animated animate__fadeInDown">{children}</TextArea>
         <Hidden xs sm>
           <ImgArea>
             {pcImgs.map(({ className = [], ...rest }, index) => {
