@@ -585,163 +585,6 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const LabelListWap = styled.div`
-    margin-top: 30px;
-    width: 100%;
-    padding: 0 16px 24px;
-    .one-slide,.swiper-slide {
-      width: 72px !important;
-      height: 60px;
-      background: rgba(246, 252, 255, 1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: pointer;
-      padding: 12px 18px;
-      margin-right: 10px;
-      border-radius: 4px;
-      text-align: center;
-      span {
-        font-size: 12px;
-        font-weight: 400;
-        letter-spacing: 0px;
-        line-height: 14px;
-        white-space: nowrap;
-      }
-      img {
-        width: 24px;
-        height: 24px;
-        margin: 0;
-      }
-    }
-
-    .one-slide-active {
-      background: rgba(43, 88, 249, 1);
-      color: #fff;
-      img {
-        width: 24px;
-        height: 24px;
-        margin: 0;
-      }
-    }
-`
-
-const LabelContentWap = styled.div`
-    width: 100%;
-    .swiper-slide,.one-slide{
-      flex-shrink: 0;
-      width: 100% !important;
-      
-    }
-    .SwiperSlideCon{
-      position: relative;
-      background: linear-gradient(154.05deg, rgba(43, 88, 249, 0) 0%, rgba(43, 88, 249, 0.13) 100%),rgba(246, 252, 255, 1);
-      background-blend-mode: normal;
-      width: auto;
-      padding: 24px 16px;
-      border-radius: 4px;
-      margin: 0 16px;
-    }
-    .labels {
-      display: flex;
-      justify-content: space-evenly;
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: 0px;
-      line-height: 28px;
-      color: rgba(43, 88, 249, 1);
-      padding-bottom: 14px;
-      div {
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0px;
-        line-height: 16px;
-        color: rgba(43, 88, 249, 1);
-        display: flex;
-        white-space: nowrap;
-        align-items: center;
-        margin-right: 6px;
-      }
-      img {
-        width: 16px;
-        height: 16px;
-        margin-left: 2px;
-        margin-bottom: 0;
-      }
-    }
-    img {
-      margin-bottom: 0;
-    }
-    .posationbg {
-      width: 110px;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-    }
-    .title {
-      font-size: 16px;
-      font-weight: 500;
-      letter-spacing: 0px;
-      line-height: 24px;
-      color: rgba(26, 26, 26, 1);
-      margin-bottom: 10px;
-    }
-    .desc {
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: 0px;
-      line-height: 22px;
-      color: rgba(90, 90, 90, 1);
-      margin-bottom: 18px;
-      width: 100%;
-    }
-    .log_arrow {
-      height: 32px;
-      margin-bottom: 24px;
-    }
-    .bottomLogo {
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
-      padding-top: 15px;
-      padding-right: 70px;
-      display: flex;
-      flex-wrap: wrap;
-      div {
-        margin-bottom: 7px;
-      }
-    }
-    .logo_bottom {
-      width: 70px;
-      height: 24px;
-      margin-bottom: 0;
-      margin-right: 8px;
-    }
-    .btnGroup {
-      display: flex;
-      margin-top: 24px;
-    }
-    .btnGroup > div {
-      width: 60px;
-      height: 22px;
-      border-radius: 4px;
-      text-align: center;
-      cursor: pointer;
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0px;
-      line-height: 20px;
-    }
-    .ljzx {
-        color: #fff;
-        background: rgba(43, 88, 249, 1);
-    }
-    .ljgd {
-      color: rgba(43, 88, 249, 1);
-      border: 1px solid rgba(43, 88, 249, 1);
-      box-sizing: border-box;
-      margin-left: 16px;
-    }
-`
-
 const labelInfo = [
   {
     name: '企业数字化',
@@ -769,7 +612,7 @@ const labelInfo = [
       ['用户分层', '贷款营销', '客户服务', '催收管理'],
       ['信用卡贷款', '个性化营销', '客户服务', '风险控制'],
     ],
-    urls: ['/retail', '/internet-solution', '/selection_car', '/insure', '/customer-finance', '/bank'],
+    urls: ['/retail', '/internet-solution', '', '/insure', '/customer-finance', ''],
     imgs: [
       ['lslogo1.png', 'lslogo2.png', '新希望logo_m.png', 'lslogo4.png', 'lslogo5.png'],
       ['hlwlogo1.png', 'hlwlogo2.png', 'hlwlogo3.png', 'hlwlogo4.png', 'hlwlogo5.png'],
@@ -793,7 +636,7 @@ const labelInfo = [
       ['线上服务大厅', '智能AI客服', '社保帮办', '医保服务'],
       ['咨询服务', '业务导办', '工作宣传', '民意回访'],
     ],
-    urls: ['/unfraud', '/government-services', '/gongAn-synthetical '],
+    urls: ['/unfraud', '', ''],
     banner: ['/007fz.png', '/zwfw008.png', '/zz009.png'],
     imgs: [
       ['fzlogo1.png', 'fzlogo2.png', 'fzlogo3.png', 'fzlogo4.png', 'fzlogo5.png'],
@@ -803,7 +646,6 @@ const labelInfo = [
     ],
   },
 ];
-
 const leftMenuList = [
   [
     {
@@ -860,304 +702,138 @@ const leftMenuList = [
     },
   ],
 ];
-
-const labelInfoWap =[
-  {
-    name: '企业数字化',
-    list: [
-      {
-        icon: '/ppls_icon1.svg',
-        icon2: '/ppls_icon1lght.png',
-        label: '品牌零售',
-        fontTitle: '品牌零售行业解决方案',
-        fontSubTitle: '通过对话式AI实现对用户全生命周期的多触点精细化管理，助力品牌实现「极致用户体验+极致ROI」的全域增长服务',
-        labels: ['会员召回', '复购转化', '会员关怀', '私域引流'],
-        urls: '/retail',
-        imgs: ['lslogo1.png', 'lslogo2.png', '新希望logo_m.png', 'lslogo4.png', 'lslogo5.png'],
-        banner: '/001ls.png',
-      },
-      {
-        icon2: '/ppls_icon2lght.png',
-        icon: '/internet_icon1.svg',
-        label: '互联网',
-        fontTitle: '互联网行业解决方案',
-        fontSubTitle: '通过AI技术和大数据分析，助力互联网企业提高用户运营的效率和质量，降低成本，提高用户留存率和转化率，实现用户增长和商业价值的提升',
-        labels: ['用户激活', '会员订阅', '活动通知', '用户分析'],
-        urls: '/internet-solution',
-        imgs: ['hlwlogo1.png', 'hlwlogo2.png', 'hlwlogo3.png', 'hlwlogo4.png', 'hlwlogo5.png'],
-        banner: '/001ls.png',
-      },
-      {
-        icon2: '/ppls_icon3lght.png',
-        icon: '/car_icon1.svg',
-        label: '汽车',
-        fontTitle: '汽车行业解决方案',
-        fontSubTitle: '建立用户运营触达策略、完善用户画像体系，以数智化提升车企用户服务能力及转化效果，达成客户体验闭环，驱动业务持续增长',
-        labels: ['线索筛选', '运营转化', '私域引流', '售后服务'],
-        urls: '/selection_car',
-        imgs: ['qclogo1.png', 'qclogo2.png', 'qclogo3.png', 'qclogo4.png', 'qclogo5.png'],
-        banner: '/001ls.png',
-      },
-      {
-        icon2: '/ppls_icon4lght.png',
-        icon: '/insure_icon1.svg',
-        label: '保险',
-        fontTitle: '保险行业解决方案',
-        fontSubTitle: '基于“大数据+AI+人”三驱模式，制定精准AI触达策略，深度挖掘客户意向，为保险行业提供智能化的营销和服务方案，提升服务效率和客户粘性',
-        labels: ['赠险营销', '赠险转短险', '合规质检', '意向筛选'],
-        urls:  '/insure',
-        imgs: ['bxlogo1.png', 'bxlogo2.png', 'bxlogo3.png', 'bxlogo4.png', 'bxlogo5.png'],
-        banner: '/001ls.png',
-      },
-      {
-        icon2: '/ppls_icon5lght.png',
-        icon: '/xj_icon1.svg',
-        label: '消费金融',
-        fontTitle: '消费金融行业解决方案',
-        fontSubTitle: '针对消费金融业务全链路提供智能化用户运营方案，以转化效果为导向，驱动AI精细化触达策略升级，赋能机构转化效率提升',
-        labels: ['用户分层', '贷款营销', '客户服务', '催收管理'],
-        urls: '/customer-finance',
-        imgs: ['xjlogo1.png', 'xjlogo2.png', 'xjlogo3.png', 'xjlogo4.png', 'xjlogo5.png'],
-        banner: '/001ls.png',
-      },
-      {
-        icon2: '/ppls_icon6lght.png',
-        icon: '/bank_icon1.svg',
-        label: '银行',
-        fontTitle: '银行行业解决方案',
-        fontSubTitle: '全场景智能用户触达，助力银行实现数字化营销及服务转型，提高客户满意度和转化率，增强银行业务增长核心竞争力',
-        labels: ['信用卡贷款', '个性化营销', '客户服务', '风险控制'],
-        urls:  '/bank',
-        imgs: ['yhlogo1.png', 'yhlogo2.png', 'yhlogo3.png', 'yhlogo4.png', 'yhlogo5.png'],
-        banner: '/001ls.png',
-      },
-    ],
-  },
-  {
-    name: '政务数字化',
-    list: [
-      {
-        icon: '/gafz_icon1.svg',
-        icon2: '/gafz_icon1lght.svg',
-        label: '公安反诈',
-        fontTitle: '百应安盾电信网络诈骗预防平台',
-        fontSubTitle: '以AI能力为核心，全链条贯通反诈的宣传劝阻业务流程，助力电诈“双降”，打造具备“点面结合，长短并行”能力的AI虚拟民警',
-        labels: ['高效劝阻', '有效宣传', '智能交互', '分类管理'],
-        urls: '/unfraud',
-        banner: '/007fz.png',
-        imgs: ['fzlogo1.png', 'fzlogo2.png', 'fzlogo3.png', 'fzlogo4.png', 'fzlogo5.png'],
-      },
-      {
-        icon2: '/zwfw_icon1lght.svg',
-        icon: '/zwfw_icon1.svg',
-        label: '政务服务',
-        fontTitle: '易窗通办政务创新服务解决方案',
-        fontSubTitle: '创新性打造以AI客服为核心的智慧型、一体化、可持续政务服务窗口，实现专业、智能、即时地响应居民业务办理需求，提升居民办事满意度',
-        labels: ['线上服务大厅', '智能AI客服', '社保帮办', '医保服务'],
-        urls: '/government-services',
-        banner: '/zwfw008.png',
-        imgs: ['zzlogo1.png', 'zzlogo2.png', 'zzlogo3.png', 'zzlogo4.png', 'zzlogo5.png'],
-      },
-      {
-        icon2: '/zz_icon1lght.svg',
-        icon: '/zz_icon1.svg',
-        label: '公安综治',
-        fontSubTitle: '率先推出具备咨询、服务、宣传、分享功能的虚拟IP民警，帮助公安树立统一对外的“警察朋友”形象，开辟基层治理服务新路径',
-        labels: ['咨询服务', '业务导办', '工作宣传', '民意回访'],
-        urls: '/gongAn-synthetical',
-        banner: '/zz009.png',
-        imgs: ['zwlogo1.png', 'zwlogo2.png', 'zwlogo3.png', 'zwlogo4.png', 'zwlogo5.png']
-      },
-    ],
-  }
-]
+const CarouselMobile: React.FC<ICarouselProps> = ({ dataList, style }) => {
+  const [currIndex, setCurrIndex] = useState(0);
+  const [controlledSwiper, setControlledSwiper] = useState(null);
+  const length = dataList.length;
+  const currAnimateNumber = useRef(0);
+  const taskList = useRef<Array<() => void>>([]);
+  const taskFn = (index: number) => {
+    if (currAnimateNumber.current >= 1) {
+      taskList.current.push(() => taskFn(index));
+      return;
+    }
+    setCurrIndex(index);
+    currAnimateNumber.current++;
+    setTimeout(() => {
+      currAnimateNumber.current--;
+      if (taskList.current.length) {
+        const t = taskList.current.shift();
+        t();
+      }
+    }, 250);
+  };
+  return (
+    <>
+      <Wrapper>
+        <Swiper
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          slidesPerView="auto"
+          centeredSlides={true}
+          spaceBetween={24}
+          // onSwiper={swiper => setControlledSwiper(swiper)}
+          onSlideChange={swiper => {
+            setCurrIndex(swiper.activeIndex);
+          }}>
+          {dataList.map(({ bg, avatarSrc, content, personName, tagName }, i) => (
+            <SwiperSlide style={{ width: '295px' }} key={i}></SwiperSlide>
+          ))}
+        </Swiper>
+      </Wrapper>
+      <div>
+        <ProgressWrapper>
+          <ProgressContent style={{ width: `${((currIndex + 1) * 100) / dataList.length}%` }}></ProgressContent>
+        </ProgressWrapper>
+        <SwiperCounter>
+          {currIndex + 1}/{dataList.length}
+        </SwiperCounter>
+      </div>
+    </>
+  );
+};
 
 const SolutionPhone: FC<ICustomerWordsProps> = ({}) => {
   const [currIndex, setCurrIndex] = useState(0);
   const [currIndexicon, setCurrIndexicon] = useState(0);
-  const [currIndexCon, setCurrIndexCon] = useState(0);
-  const [oneSwiper, setOneSwiper] = useState(null);
-  const [twoSwiper, setTwoSwiper] = useState(null);
-  const oneSwipers = useRef(null);
-  const twoSwipers = useRef(null);
-
   return (
     <Pane
       style={{ paddingBottom: 40, padding: 0 }}>
       <div style={{ textAlign: 'center', fontSize: '24px',fontWeight: '500',letterSpacing: '0px',lineHeight: '32px',color: 'rgba(0, 0, 0, 1)' }}>定制化行业解决方案</div>
       <div style={{ marginBottom: '20px', textAlign: 'center', fontSize: '24px',fontWeight: '500',letterSpacing: '0px',lineHeight: '32px',color: 'rgba(0, 0, 0, 1)' }}>卓越的用户运营体验</div>
-      <Hidden xs sm>
-        <LabelList>
-          {labelInfo.map(({ name }, i) => {
+      <LabelList>
+        {labelInfo.map(({ name }, i) => {
+          return (
+            <LabelWrapper
+              onClick={() => {
+                setCurrIndex(i);
+                if (i != currIndex) {
+                  setCurrIndexicon(0);
+                }
+              }}
+              className={i == currIndex ? 'active' : ''}>
+              {name}
+            </LabelWrapper>
+          );
+        })}
+      </LabelList>
+      <ContentWrapper>
+        <div className="left">
+          {leftMenuList[currIndex].map((item, i) => {
             return (
-              <LabelWrapper
-                onClick={() => {
-                  setCurrIndex(i);
-                  if (i != currIndex) {
-                    setCurrIndexicon(0);
-                  }
-                }}
-                className={i == currIndex ? 'active' : ''}>
-                {name}
-              </LabelWrapper>
-            );
-          })}
-        </LabelList>
-        <ContentWrapper>
-          <div className="left">
-            {leftMenuList[currIndex].map((item, i) => {
-              return (
-                <div
-                  onClick={() => {
-                    setCurrIndexicon(i);
-                  }}
-                  className={i == currIndexicon ? 'active' : ''}>
-                  <img src={i == currIndexicon ? imgurl + item.icon2 : imgurl + item.icon} alt="" />
-                  <span>{item.label}</span>
-                </div>
-              );
-            })}
-          </div>
-          <div className="right">
-            <img className="posationbg" src={imgurl + labelInfo[currIndex].banner[currIndexicon]} />
-            <div className="title">{labelInfo[currIndex].fontTitle[currIndexicon]}</div>
-            <div className="desc">{labelInfo[currIndex].fontSubTitle[currIndexicon]}</div>
-            <div className="labels">
-              {labelInfo[currIndex].labels &&
-                labelInfo[currIndex].labels[currIndexicon].map((items, index) => {
-                  return (
-                    <div>
-                      <img src={imgurl + '/solu_icon.png'} alt="" />
-                      {items}
-                    </div>
-                  );
-                })}
-            </div>
-            <div className="bottomLogo">
-              {labelInfo[currIndex].imgs &&
-                labelInfo[currIndex].imgs[currIndexicon].map((item, index) => {
-                  return <div><img src={imgurl + '/' + item} className="logo_bottom" alt="" /></div>;
-                })}
-            </div>
-            <div className="btnGroup">
-              <div onClick={() => window.open('/form?formType=1')} className="ljzx">
-                立即咨询
-              </div>
               <div
                 onClick={() => {
-                  if (labelInfo[currIndex].urls[currIndexicon]) {
-                    window.open(labelInfo[currIndex].urls[currIndexicon]);
-                  }
+                  setCurrIndexicon(i);
                 }}
-                className="ljgd">
-                了解更多
+                className={i == currIndexicon ? 'active' : ''}>
+                <img src={i == currIndexicon ? imgurl + item.icon2 : imgurl + item.icon} alt="" />
+                <span>{item.label}</span>
               </div>
+            );
+          })}
+        </div>
+        <div className="right">
+          <img className="posationbg" src={imgurl + labelInfo[currIndex].banner[currIndexicon]} />
+          <div className="title">{labelInfo[currIndex].fontTitle[currIndexicon]}</div>
+          <div className="desc">{labelInfo[currIndex].fontSubTitle[currIndexicon]}</div>
+          <div className="labels">
+            {labelInfo[currIndex].labels &&
+              labelInfo[currIndex].labels[currIndexicon].map((items, index) => {
+                return (
+                  <div>
+                    <img src={imgurl + '/solu_icon.png'} alt="" />
+                    {items}
+                  </div>
+                );
+              })}
+          </div>
+          <div className="bottomLogo">
+            {labelInfo[currIndex].imgs &&
+              labelInfo[currIndex].imgs[currIndexicon].map((item, index) => {
+                return <div><img src={imgurl + '/' + item} className="logo_bottom" alt="" /></div>;
+              })}
+          </div>
+          <div className="btnGroup">
+            <div onClick={() => window.open('/form?formType=1')} className="ljzx">
+              立即咨询
+            </div>
+            <div
+              onClick={() => {
+                if (labelInfo[currIndex].urls[currIndexicon]) {
+                  window.open(labelInfo[currIndex].urls[currIndexicon]);
+                }
+              }}
+              className="ljgd">
+              了解更多
             </div>
           </div>
-        </ContentWrapper>
-      </Hidden>
+        </div>
+      </ContentWrapper>
       <Visible xs sm>
-         <LabelList>
-            { labelInfoWap.map(({ name }, i) => {
-              return (
-                <LabelWrapper
-                  onClick={() => {
-                    setCurrIndex(i);
-                    setCurrIndexCon(0)
-                  }}
-                  className={i == currIndex ? 'active' : ''}>
-                  {name}
-                </LabelWrapper>
-              );
-            })}
-        </LabelList>
-
-        <LabelListWap>
-          <Swiper
-            ref={oneSwipers}
-            slidesPerView="auto"
-            onSwiper={swiper => setOneSwiper(swiper.activeIndex)}
-            onSlideChange={swiper=>{
-                twoSwipers.current.swiper.slideTo(swiper.activeIndex)
-            }}
-          >
-            {labelInfoWap[currIndex].list.map((item, navIndex) => {
-                return (
-                <SwiperSlide 
-                    className={currIndexCon == navIndex ? 'one-slide one-slide-active' : 'one-slide'} 
-                    key={navIndex} 
-                    onClick={() => {
-                        setCurrIndexCon(navIndex)
-                        twoSwipers.current.swiper.slideTo(navIndex)
-                    }}
-                >
-                  <img src={navIndex == currIndexCon ? imgurl + item.icon2 : imgurl + item.icon} alt="" />
-                  <span>{item.label}</span>
-                </SwiperSlide>
-                );
-            })}
-          </Swiper>
-      </LabelListWap>
-      <LabelContentWap>
-          <Swiper
-              ref={twoSwipers}
-              slidesPerView="auto"
-              onSwiper={swiper => setTwoSwiper(swiper.activeIndex)}
-              onSlideChange={swiper=>{
-                  setCurrIndexCon(swiper.activeIndex)
-                  oneSwipers.current.swiper.slideTo(swiper.activeIndex)
-              }}
-          >
-              {labelInfoWap[currIndex].list.map((item, navIndex) => {
-                  return (
-                  <SwiperSlide 
-                      className={currIndexCon == navIndex ? 'one-slide-active one-slide' : 'one-slide'} 
-                      key={navIndex} 
-                  >
-                    <div className="SwiperSlideCon">
-                      <img className="posationbg" src={imgurl + item.banner} />
-                      <div className="title">{item.fontTitle}</div>
-                      <div className="desc">{item.fontSubTitle}</div>
-                      <div className="labels">
-                        {item.labels &&
-                          item.labels.map((items, index) => {
-                            return (
-                              <div>
-                                <img src={imgurl + '/solu_icon.png'} alt="" />
-                                {items}
-                              </div>
-                            );
-                          })}
-                      </div>
-                      <div className="bottomLogo">
-                        {item.imgs &&
-                          item.imgs.map((item, index) => {
-                            return <div><img src={imgurl + '/' + item} className="logo_bottom" alt="" /></div>;
-                          })}
-                      </div>
-                      <div className="btnGroup">
-                        <div onClick={() => window.open('/form?formType=1')} className="ljzx">
-                          立即咨询
-                        </div>
-                        <div
-                          onClick={() => {
-                            if (item.urls) {
-                              window.open(item.urls);
-                            }
-                          }}
-                          className="ljgd">
-                          了解更多
-                        </div>
-                      </div>
-                    </div>  
-                  </SwiperSlide>
-                  );
-              })}
-          </Swiper>
-
-      </LabelContentWap>
-
-
+        {/* <CarouselMobile dataList={carouselDataList}></CarouselMobile> */}
       </Visible>
     </Pane>
   );
