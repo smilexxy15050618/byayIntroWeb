@@ -43,16 +43,18 @@ width: 100%;
   }
 `;
 const Desc = styled.div`
+  width: 500px;
   margin-top: 16px;
   font-size: 20px;
   line-height: 34px;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
   @media (max-width: 768px) {
+    width: auto;
     font-size: 16px;
-font-weight: 400;
-letter-spacing: 0px;
-line-height: 26px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 26px;
   }
   
 `;
@@ -140,7 +142,7 @@ const HomePage: NextFunctionComponent<{ data: any }> = ({ data }) => {
                 mobileImg={JOIN_US_IMG}>
                 <TextArea spaces={['', '']}>
                   <Hidden xs sm>
-                    <div style={{width:'480px'}}>
+                    <div style={{width:'530px'}}>
                     <BigTitle>
                     零售行业
                       <br />

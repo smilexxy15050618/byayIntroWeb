@@ -72,6 +72,7 @@ const Title = styled.div`
   letter-spacing: 0px;
   line-height: 56px;
   color: rgba(0, 0, 0, 0.8);
+  text-align: left;
 `;
 const Text = styled.div`
   font-size: 22px;
@@ -79,6 +80,7 @@ const Text = styled.div`
   letter-spacing: 0px;
   line-height: 28px;
   color: rgba(0, 0, 0, 0.8);
+  text-align: left;
 `;
 
 const TextTwo = styled.div`
@@ -87,6 +89,7 @@ const TextTwo = styled.div`
   letter-spacing: 0px;
   line-height: 24px;
   color: rgba(0, 0, 0, 0.65);
+  text-align: left;
 `;
 
 const ImgXs = styled.img`

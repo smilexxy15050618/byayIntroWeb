@@ -609,9 +609,8 @@ const LabelListWap = styled.div`
       background-color: #000;
     } 
     
-    .one-slide {
-      min-width: 72px;
-      max-width: 72px;
+    .one-slide,.swiper-slide {
+      width: 72px !important;
       height: 60px;
       background: rgba(246, 252, 255, 1);
       display: flex;
@@ -648,10 +647,12 @@ const LabelListWap = styled.div`
 `
 
 const LabelContentWap = styled.div`
-    margin: 0 16px;
-    .swiper-slide{
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+    .swiper-slide,.one-slide{
       position: relative;
-      width: 100%;
+      width: 100% !important;
       background: linear-gradient(154.05deg, rgba(43, 88, 249, 0) 0%, rgba(43, 88, 249, 0.13) 100%),rgba(246, 252, 255, 1);
       background-blend-mode: normal;
       padding: 24px 16px;
@@ -899,7 +900,7 @@ const labelInfoWap =[
         fontSubTitle: '通过AI技术和大数据分析，助力互联网企业提高用户运营的效率和质量，降低成本，提高用户留存率和转化率，实现用户增长和商业价值的提升',
         labels: ['用户激活', '会员订阅', '活动通知', '用户分析'],
         urls: '/internet-solution',
-        imgs: ['lslogo1.png', 'lslogo2.png', '新希望logo_m.png', 'lslogo4.png', 'lslogo5.png'],
+        imgs: ['hlwlogo1.png', 'hlwlogo2.png', 'hlwlogo3.png', 'hlwlogo4.png', 'hlwlogo5.png'],
         banner: '/001ls.png',
       },
       {
@@ -910,7 +911,7 @@ const labelInfoWap =[
         fontSubTitle: '建立用户运营触达策略、完善用户画像体系，以数智化提升车企用户服务能力及转化效果，达成客户体验闭环，驱动业务持续增长',
         labels: ['线索筛选', '运营转化', '私域引流', '售后服务'],
         urls: '/selection_car',
-        imgs: ['lslogo1.png', 'lslogo2.png', '新希望logo_m.png', 'lslogo4.png', 'lslogo5.png'],
+        imgs: ['qclogo1.png', 'qclogo2.png', 'qclogo3.png', 'qclogo4.png', 'qclogo5.png'],
         banner: '/001ls.png',
       },
       {
@@ -921,7 +922,7 @@ const labelInfoWap =[
         fontSubTitle: '基于“大数据+AI+人”三驱模式，制定精准AI触达策略，深度挖掘客户意向，为保险行业提供智能化的营销和服务方案，提升服务效率和客户粘性',
         labels: ['赠险营销', '赠险转短险', '合规质检', '意向筛选'],
         urls:  '/insure',
-        imgs: ['lslogo1.png', 'lslogo2.png', '新希望logo_m.png', 'lslogo4.png', 'lslogo5.png'],
+        imgs: ['bxlogo1.png', 'bxlogo2.png', 'bxlogo3.png', 'bxlogo4.png', 'bxlogo5.png'],
         banner: '/001ls.png',
       },
       {
@@ -932,7 +933,7 @@ const labelInfoWap =[
         fontSubTitle: '针对消费金融业务全链路提供智能化用户运营方案，以转化效果为导向，驱动AI精细化触达策略升级，赋能机构转化效率提升',
         labels: ['用户分层', '贷款营销', '客户服务', '催收管理'],
         urls: '/customer-finance',
-        imgs: ['lslogo1.png', 'lslogo2.png', '新希望logo_m.png', 'lslogo4.png', 'lslogo5.png'],
+        imgs: ['xjlogo1.png', 'xjlogo2.png', 'xjlogo3.png', 'xjlogo4.png', 'xjlogo5.png'],
         banner: '/001ls.png',
       },
       {
@@ -943,7 +944,7 @@ const labelInfoWap =[
         fontSubTitle: '全场景智能用户触达，助力银行实现数字化营销及服务转型，提高客户满意度和转化率，增强银行业务增长核心竞争力',
         labels: ['信用卡贷款', '个性化营销', '客户服务', '风险控制'],
         urls:  '/bank',
-        imgs: ['lslogo1.png', 'lslogo2.png', '新希望logo_m.png', 'lslogo4.png', 'lslogo5.png'],
+        imgs: ['yhlogo1.png', 'yhlogo2.png', 'yhlogo3.png', 'yhlogo4.png', 'yhlogo5.png'],
         banner: '/001ls.png',
       },
     ],
