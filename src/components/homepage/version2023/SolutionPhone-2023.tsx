@@ -589,18 +589,16 @@ const LabelListWap = styled.div`
     margin-top: 30px;
     width: 100%;
     padding: 0 16px 24px;
-    .one-slide,.swiper-slide {
+    .swiper-slide{
       width: 72px !important;
+    }
+    .one-slide{
+      width: 72px;
       height: 60px;
       background: rgba(246, 252, 255, 1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: pointer;
-      padding: 12px 18px;
+      text-align: center;
       margin-right: 10px;
       border-radius: 4px;
-      text-align: center;
       span {
         font-size: 12px;
         font-weight: 400;
@@ -609,9 +607,10 @@ const LabelListWap = styled.div`
         white-space: nowrap;
       }
       img {
+        display: block;
         width: 24px;
         height: 24px;
-        margin: 0;
+        margin: 12px auto 0;
       }
     }
 
@@ -619,9 +618,10 @@ const LabelListWap = styled.div`
       background: rgba(43, 88, 249, 1);
       color: #fff;
       img {
+        display: block;
         width: 24px;
         height: 24px;
-        margin: 0;
+        margin: 12px auto 0;
       }
     }
 `
@@ -984,7 +984,7 @@ const SolutionPhone: FC<ICustomerWordsProps> = ({}) => {
   return (
     <Pane
       style={{ paddingBottom: 40, padding: 0 }}>
-      <div style={{ textAlign: 'center', fontSize: '24px',fontWeight: '500',letterSpacing: '0px',lineHeight: '32px',color: 'rgba(0, 0, 0, 1)' }}>定制化行业解决方案</div>
+      <div style={{ textAlign: 'center', fontSize: '24px',fontWeight: '500',letterSpacing: '0px',lineHeight: '32px',color: 'rgba(0, 0, 0, 1)' }}>AAA定制化行业解决方案</div>
       <div style={{ marginBottom: '20px', textAlign: 'center', fontSize: '24px',fontWeight: '500',letterSpacing: '0px',lineHeight: '32px',color: 'rgba(0, 0, 0, 1)' }}>卓越的用户运营体验</div>
       <Hidden xs sm>
         <LabelList>
@@ -1154,10 +1154,7 @@ const SolutionPhone: FC<ICustomerWordsProps> = ({}) => {
                   );
               })}
           </Swiper>
-
       </LabelContentWap>
-
-
       </Visible>
     </Pane>
   );
