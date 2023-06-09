@@ -72,7 +72,7 @@ const BriefIntro = styled.div`
   position: relative;
   z-index: 10;
   word-break: break-all;
-  width: 664px;
+  width: 668px;
   box-sizing: border-box;
   @media (max-width: 768px) {
     width: 100%;
@@ -150,7 +150,7 @@ const EnterpriseIntroduction: FC<IBriefProps> = ({ cover, indexTab }) => {
       </BriefCover>
       <BriefIntro>
         <div>百应科技-智能用户运营领域创领者</div>
-        <p>百应科技是对话式 &nbsp;AI &nbsp;应用领域创领者，致力于为政府机构及头部企业提供智能用户运营平台与解决方案，助力拥有大量 &nbsp;C &nbsp;端用户的政府机构及头部企业更有效地连接 &nbsp;C &nbsp;端用户，通过数智化连接与沟通形成长期信任、创造价值。</p>
+        <p>百应科技是一家专注于对话式AI技术应用的省级“专精特新”企业，通过人工智能及自动化技术为政府机构及头部企业提供智能用户运营平台与解决方案，以数智化连接与沟通形成长期信任、创造价值。</p>
         <p>基于多模态情感 &nbsp;AI（Multimodal & Emotional AI） 、用户标签画像（CDP+）、全场景连接与触达（AICC+）、策略智能与自动化（OSA ）等系列产品矩阵，百应科技为企业客户提供存量时代的精准营销平台，打造核心客户价值；同时为政务客户打造数字化连接平台，实现高效连接群众，高效解决企业增长及政企服务难题。</p>
         <p>自成立以来，百应科技连续六年保持增长，复合增长率（CAGR）超 &nbsp;100%。连续四年被认证为杭州准独角兽企业，拥有中美双 &nbsp;AI &nbsp;研究院，百余项AI及大数据领域相关专利和软件著作。</p>
       </BriefIntro>

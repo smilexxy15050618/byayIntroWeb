@@ -5,7 +5,7 @@ import imgurl from '../img.url.js';
 export interface IAiProps {}
 const Pane = styled.div`
   width: 1200px;
-  margin: 0 auto 80px;
+  margin: 0 auto;
   overflow: hidden;
   .title {
     margin-top: 80px;
@@ -65,7 +65,7 @@ const Pane = styled.div`
   .content {
     width: 1280px;
     margin:0 auto;
-    margin-bottom: 54px;
+    margin-bottom: 80px;
     display: flex;
     justify-content: space-around;
   }
